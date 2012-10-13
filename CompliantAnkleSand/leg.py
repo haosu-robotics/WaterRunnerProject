@@ -1,13 +1,13 @@
 import numpy as np
 import foot
 
-def Leg:
+class Leg:
 
 	def __init__(self,lengths,loc,pm):
 		self.L = lengths
 		self.x = loc[0]
 		self.y = loc[1]
-			self.theta = np.empty(4)p
+		self.theta = np.empty(4)
 		self.theta[0] = loc[3]
 
 	def calcAngles(self, theta1):
@@ -24,5 +24,3 @@ def Leg:
 		self.theta[3] = delta + pm*np.arccos(-1*gamma/np.sqrt(alpha**2 + beta**2))
 	
 		return self.theta
-
-	
