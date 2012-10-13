@@ -1,28 +1,20 @@
 #YAML
-
 robot:
-	len	:	0.3
-	width:	0.125
-	mass:	0.1
-	Iroll:	5.05e-4
-	Ipitch:	1.08e-3
-	Iyaw:	1.24e-3
-	lCOM:	0.12
-	hCOM:	0.002
+    len: 0.3
+    width: 0.125
+    mass: 0.1
+    Iroll: 5.05e-4
+    Ipitch: 1.08e-3
+    Iyaw: 1.24e-3
+    lCOM: 0.12
+    hCOM: 0.002
 
 footpad:
-	rf:	0.02
+    rf: 0.02
 
-linkLengths:
-	l1:		0.0615
-	l2:		0.0218
-	l3:		0.0748
-	l4:		00468
-	l5:		0.0624
-	
-	l6:		0.18
-	
+linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624]
+
 tail:
-	lt:		0.1
-	phit:	30
-	rt:		0.03
+    lt: 0.1
+    phit: 30
+    rt: 0.03
