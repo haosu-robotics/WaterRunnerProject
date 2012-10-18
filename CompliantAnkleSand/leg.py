@@ -1,14 +1,15 @@
 import numpy as np
-#	import foot
+import foot
 
 class Leg:
 
-	def __init__(self,lengths,loc,pm):
+	def __init__(self,lengths,loc,pm,footParams):
 		'''Initializes new leg. Takes link lengths vector, leg position vector, and plus/minus 1 for kinematics calc'''
 		self.L = lengths
 		self.loc = loc
 		self.pm = pm
-		
+		self.Foot = foot.Foot(self,footParams['rf'],footParams['angle'])
+
 		#Vectors that hold joint angles, ang speeds, and ang accel
 		self.theta = np.zeros(4)
 		self.theta = self.calcAngles(0)
@@ -17,10 +18,10 @@ class Leg:
 		self.alpha = np.zeros(4)
 		self.alpha = self.calcAngAccels(0)
 		
-		#x, y position of Joints rows are O, A, B, C, F respectively
-		self.jointPos =np.zeros((5,2))
+		#x, y position of joints. Rows are O, A, B, C, F respectively.
+		self.jointPos = np.zeros((5,2))
 		self.jointPos = self.calcPos()
-		#self.foot = Foot(self) 
+		
 
 	def calcAngles(self, theta1):
 		'''Takes input link angle, performs 4 bar kinematics calcs and returns angles of all links'''
@@ -84,13 +85,10 @@ class Leg:
 		self.jointPos[3,:] = O + np.array([self.L[0] * np.cos(self.theta[0]), self.L[0] * np.sin(self.theta[0])]) #C
 		self.jointPos[4,:] = (O + np.array([self.L[1] * np.cos(self.theta[1]), self.L[1] * np.sin(self.theta[1])])
 				+ np.array([self.L[4]*np.cos(self.theta[2] + np.pi), self.L[4]*np.sin(self.theta[2] + np.pi)])) #F
-		return self.jointPos	
-	
-	def calcFootSpeed(self, omega1):
-		'''Returns x, y speed of foot given input link speed omega1'''
-		omega2, omega3 = self.calcAngSpeeds(omega1)
-		Fs =  (np.array([-1*self.L[1]*np.sin(self.theta[1]), 
-		                    self.L[1]*np.cos(self.cos(self.theta[1]))])*omega2
-			 + np.array([-1*self.L[4]*np.sin(self.theta[2] + np.pi), 
-						    self.L[4]*np.cos(self.theta[2] + np.pi)])*omega3)
-		return Fs
+		return self.jointPos
+
+	#def calcShaftTorque(self):
+		'''Solves system of equations to find the torque on the input shaft
+		given the force and moment coming from the footpad'''
+		
+		
