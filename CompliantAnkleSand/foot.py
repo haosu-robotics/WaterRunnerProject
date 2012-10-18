@@ -6,7 +6,10 @@ class Foot():
 		self.Leg = Leg
 		self.radius = radius
 		self.angle = angle
-	
+		self.loadx
+		self.loady
+		self.moment
+
 	def calcEndPos():
 		return self.Leg.jointPos[4]
 
@@ -19,9 +22,11 @@ class Foot():
 						 [   self.Leg.L[4]*np.cos(self.Leg.theta[2] + np.pi)]])*self.Leg.omega[3])
 		return Fs
 
-	#def calcForce(self):
-		'''Calculates and returns ground reaction force'''
-		
-
+	def calcForce(self):
+		'''Returns Ground Reaction Force and Moment'''
+		self.loadx = 0
+		self.loady= 1
+		self.moment = 0
+		return self.loadx, self.loady, self.moment
 
 

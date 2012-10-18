@@ -87,8 +87,27 @@ class Leg:
 				+ np.array([self.L[4]*np.cos(self.theta[2] + np.pi), self.L[4]*np.sin(self.theta[2] + np.pi)])) #F
 		return self.jointPos
 
-	#def calcShaftTorque(self):
-		'''Solves system of equations to find the torque on the input shaft
-		given the force and moment coming from the footpad'''
-		
-		
+	def calcForceTorque(self):
+		'''Solves system of equations, and returns vector containing joint load
+		and motor shaft torque given ground reaction force force, and moment
+		x = [Fr1x Fr1y Fr2x Fr2y F2x F2y F4x F4y T]'''
+
+		A = np.array([[0 0 0 0 1  0  1                               0                               0],
+					  [0 0 0 0 0  1  0							     1							     0],		
+					  [0 0 0 0 0  0  self.L[2]*np.sin(self.theta[2]) self.L[2]*np.cos(self.theta[2]) 0],
+					  [0 0 1 0 -1 0  0							     0							     0],
+					  [0 0 0 1 0  -1 0								 0								 1],
+					  [1 0 0 0 0  0  -1								 0								 0],
+					  [0 1 0 0 0  0  0                               -1								 0],
+					  [0 0 0 0 0  0  self.L[3]*np.sin(self.theta[3]) self.L[3]*np.cos(self.theta[3]) 0]])
+
+		footLoadx, loadLoady, footMoment = self.Foot.calcForce()
+		b = np.array([[-1*footLoadx],
+					  [-1*footLoady],
+					  [-1*footMoment], 
+					  [0], [0], [0], [0], [0], [0]])
+	
+		jointLoad = np.linalg.solve(A,b)
+		return jointLoad
+
+
