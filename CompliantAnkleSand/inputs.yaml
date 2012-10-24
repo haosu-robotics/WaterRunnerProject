@@ -8,12 +8,15 @@ robot:
     Iyaw: 1.24e-3
     lCOM: 0.12
     hCOM: 0.002
+    initPos: [0, 0.02]
 
-footpad:
-    rf: 0.02
-    angle: 0
+foot:
+    radius: 0.02
+    angle: 0.
 
-linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624]
+leg:
+    linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624]
+    pm: 1.
 
 tail:
     lt: 0.1

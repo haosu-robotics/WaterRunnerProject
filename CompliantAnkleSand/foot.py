@@ -2,26 +2,50 @@ import numpy as np
 
 class Foot():
 	
-	def __init__(self,Leg,radius,angle):
-		self.Leg = Leg
-		self.radius = radius
-		self.angle = angle
+	def __init__(self,initAngle,initPos,footParams):
+		'''Arguments:
+		initAngle: vector containing initial angle, angular speed, angular accel of foot
+		initPos:   matrix whos rows are x,y initial position, speed, accel of foot attach pt'''
 
-	def calcEndPos():
-		return self.Leg.jointPos[4]
+		self.radius = footParams['radius']
+		self.angle = footParams['angle']
+		
+		#initialize angle position, speed, accel of foot
+		self.theta = initAngle[0]
+		self.omega = initAngle[1]
+		self.alpha = initAngle[2]
 
-	def calcSpeed(self):
-		'''Returns x, y speed of foot given omega1, the speed of leg link 1'''
+		#initialize cartesian position, speed, accel of foot
+		self.pos = initPos[0,:]
+		self.speed = initPos[1,:]
+		self.accel = initPos[2,:]
+	
+	def update(self, pos, speed, accel):
+		#udpate state of foot
+		self.calcPos(pos)
+		self.calcSpeed(speed)
+		self.calcAccel(accel)
+		self.calcForce()
 
-		Fs =  (np.array([[-1*self.Leg.L[1]*np.sin(self.Leg.theta[1])], 
-		                 [	 self.Leg.L[1]*np.cos(self.Leg.theta[1])]])*self.Leg.omega[1]
-			 + np.array([[-1*self.Leg.L[4]*np.sin(self.Leg.theta[2] + np.pi)], 
-						 [   self.Leg.L[4]*np.cos(self.Leg.theta[2] + np.pi)]])*self.Leg.omega[3])
-		return Fs
+	def calcPos(self, pos):
+		self.pos = pos
+		return pos
+		
+	def calcSpeed(self, speed):
+		self.speed = speed
+		return self.speed
+
+	def calcAccel(self, accel):
+		self.accel = accel
+		return accel
 
 	def calcForce(self):
 		'''Returns Ground Reaction Force and Moment'''
 		self.loadx = 0.
-		self.loady= 1.
+		y = self.pos[1]
+		if y < 0:
+			self.loady = -25*y
+		else:
+			self.loady = 0
 		self.moment = 0.
 		return self.loadx, self.loady, self.moment
