@@ -122,7 +122,7 @@ class Leg:
 		self.jointSpeed[2,:] = Ospeed + np.array([-1*self.L[3] * np.sin(self.theta[3]), self.L[3] * np.cos(self.theta[3])])*self.omega[3] #B
 		self.jointSpeed[3,:] = Ospeed #C
 		self.jointSpeed[4,:] = Ospeed + (np.array([-1*self.L[1]*np.sin(self.theta[1]),         self.L[1]*np.cos(self.theta[1])		  ])*self.omega[1]
-									  +  np.array([-1*self.L[4]*np.sin(self.theta[2] + np.pi), self.L[4]*np.cos(self.theta[2] + np.pi)])*self.omega[3]) #F
+									  +  np.array([-1*self.L[4]*np.sin(self.theta[2] + np.pi), self.L[4]*np.cos(self.theta[2] + np.pi)])*self.omega[2]) #F
 		return self.jointSpeed
 
 	def calcAccel(self, Oaccel):
@@ -159,5 +159,3 @@ class Leg:
 					  [0], [0], [0], [0], [0], [0]])
 		self.jointLoad = np.linalg.solve(A,b).reshape((1,9))
 		return self.jointLoad
-
-

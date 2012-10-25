@@ -104,16 +104,15 @@ ax2 = fig3.add_subplot(312)
 ax3 = fig3.add_subplot(313)
 
 p1 = ax1.plot(time,footPts)
-ax1.set_ylabel('Foot Coordinate (m)')
+ax1.set_ylabel(r'Foot Coordinate (m)')
 lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
 
 p2 = ax2.plot(time,ftspeed,time,np.sum(ftspeed**2,axis=-1)**(1./2))
-ax2.set_ylabel(r'Foot Speed $\frac{m}{s}$')
-ax2.set_xlabel('time (s)')
+ax2.set_ylabel(r'Foot Speed $(\frac{m}{s})$')
 lgd2 = ax2.legend(p2, ['x-speed', 'y-speed', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
 p3 = ax3.plot(time,ftaccel,time,np.sum(ftaccel**2,axis=-1)**(1./2))
-ax3.set_ylabel(r'Foot Accel $\frac{m}{s^2}$')
+ax3.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
 ax3.set_xlabel('time (s)')
 lgd3 = ax3.legend(p3, ['x-accel', 'y-accel', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
