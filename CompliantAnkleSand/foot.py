@@ -42,9 +42,11 @@ class Foot():
 	def calcForce(self):
 		'''Returns Ground Reaction Force and Moment'''
 		self.loadx = 0.
-		y = self.pos[1]
-		if y < 0:
-			self.loady = -25*y
+		yp = -1*self.pos[1]
+		ypdot = -1*self.speed[1]
+		if yp > 0:
+			self.loady = 0.25e9 * (np.abs(yp)**3)/ypdot
+			print yp, ypdot, self.loady
 		else:
 			self.loady = 0
 		self.moment = 0.

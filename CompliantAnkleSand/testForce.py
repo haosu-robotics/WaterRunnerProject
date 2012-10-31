@@ -17,7 +17,6 @@ footParams	= inputs['foot']
 Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams)
 Leg = leg.Leg(initLegAngle,initLegPos,legParams,Foot)
 
-
 #set up vectors to store data
 i = 0
 angle = np.empty((360,4))
@@ -123,11 +122,11 @@ fig4 = plt.figure(num = 4)
 tit = fig4.suptitle('Joint Forces')
 ax1 = fig4.add_subplot(111)
 
-p1 = ax1.plot(time,jointForces[:,0:8])
+p1 = ax1.plot(time,jointForces[:,0:4])
 ax1.set_ylabel('Force (N)')
 ax1.set_xlabel('Time (s)')
 
-lgd = ax1.legend(p1,['Fr1x', 'Fr1y', 'Fr2x', 'Fr2y', 'F2x', 'F2y', 'F4x', 'F4y'], loc = 6, bbox_to_anchor = (1.05,0.5))
+lgd = ax1.legend(p1,['Fr1x', 'Fr1y', 'Fr2x', 'Fr2y'], loc = 6, bbox_to_anchor = (1.05,0.5))
 
 plt.savefig('./plots/Force.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
 

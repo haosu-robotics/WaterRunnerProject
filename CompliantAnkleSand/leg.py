@@ -28,8 +28,9 @@ class Leg:
 		self.jointAccel = np.zeros((5,2))
 		self.jointAccel = self.calcAccel(initPos[2,:])
 		
-		#Vector that holds joint loads
-		self.jointLoad = np.empty(9)
+		#Vector that holds all joint loads and vector that holds loads transmitted to robot
+		self.jointLoad = np.zeros(9)
+		self.robotLoad = np.zeros(3) #[Fx, Fy, T]
 		self.Foot = Foot
 
 	def update(self, angle, pos):
@@ -158,4 +159,7 @@ class Leg:
 					  [-1*self.Foot.moment + self.Foot.loady*self.L[4]*np.cos(self.theta[2]) - self.Foot.loadx*self.L[4]*np.sin(self.theta[2])], 
 					  [0], [0], [0], [0], [0], [0]])
 		self.jointLoad = np.linalg.solve(A,b).reshape((1,9))
+		self.robotLoad[0] = -1*(self.jointLoad[0,0] + self.jointLoad[0,2])
+		self.robotLoad[1] = -1*(self.jointLoad[0,1] + self.jointLoad[0,3])
+		self.robotLoad[2] = -1*(self.jointLoad[0,8])
 		return self.jointLoad

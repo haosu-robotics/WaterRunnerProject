@@ -1,22 +1,35 @@
 #YAML
+world:
+    gravity: -9.81
+    timeStep: 0.001
+    endTime: 10
+
 robot:
     len: 0.3
     width: 0.125
     mass: 0.1
+    gravity: -9.81
     Iroll: 5.05e-4
     Ipitch: 1.08e-3
     Iyaw: 1.24e-3
     lCOM: 0.12
     hCOM: 0.002
-    initPos: [0, 0.02]
-
-foot:
-    radius: 0.02
-    angle: 0.
+    initPos: [0, 0.04]
+    initSpeed: [0., 0.]
+    initAccel: [0., 0.]
 
 leg:
     linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624]
     pm: 1.
+
+motor:
+    initPos: 0.
+    initSpeed: 6.28318530718
+    initAccel: 0.
+
+foot:
+    radius: 0.02
+    angle: 0.
 
 tail:
     lt: 0.1
