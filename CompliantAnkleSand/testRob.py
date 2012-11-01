@@ -4,8 +4,10 @@ import yaml
 import robot
 import leg
 import motor
-import foot
+import footwater as foot
+from subprocess import call
 
+movie = True
 
 #load set up file
 inputFile = open('inputs.yaml')
@@ -24,7 +26,7 @@ endtime = worldParams['endTime']
 time = np.arange(0,endtime+timestep,timestep)
 
 #initialize foot, leg, and robot
-Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams)
+Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,robotParams['mass'])
 Leg = leg.Leg(initLegAngle,initLegPos,legParams,Foot)
 Motor = motor.Motor(motorParams,worldParams)
 Robot = robot.Robot(robotParams,worldParams,(Leg,),(Motor,))
@@ -42,6 +44,7 @@ ftaccel = np.zeros((len(time),2))
 #calculate positions, speeds, and accels vs angle
 plt.figure(num = 1)
 i = 0
+j = 0
 while Robot.time < endtime:
 	#update robot
 	Robot.update()
@@ -61,9 +64,24 @@ while Robot.time < endtime:
 	ftpos[i,:] = Robot.legs[0].Foot.pos
 	ftspeed[i,:] = Robot.legs[0].Foot.speed
 	ftaccel[i,:] = Robot.legs[0].Foot.accel
-
-	legPts = np.array([O, A, F, B, C])
-	plt.plot(legPts[:,0],legPts[:,1],'k',lw = 0.2, markersize = 4, markeredgewidth = 0)
+	legPts = np.array([O, A, F, B, C, O])
+	if movie == True:
+		if i ==0:
+			plt.figure(figsize = (480./80.,320./80.), dpi = 80)
+			lines, = plt.plot(legPts[:,0],legPts[:,1],'k',lw = 0.2, markersize = 4, markeredgewidth = 0)
+			plt.plot([-0.08, 0.10],[0, 0],'g')
+			plt.axis((-0.08, 0.10, -0.02, 0.12))
+			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
+			print 'frame ',j,' saved',Robot.time,' s'
+			j += 1
+		if i%33== 0 and i > 0:
+			lines.set_xdata(legPts[:,0])
+			lines.set_ydata(legPts[:,1])
+			plt.draw()
+			plt.axis((-0.08, 0.10, -0.02, 0.12))
+			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
+			print 'frame ',j,' saved',Robot.time,' s'
+			j += 1
 	i += 1
 
 print 'force = ',robotForces
@@ -72,12 +90,8 @@ print 'speed = ',robotspeed
 print 'accel = ',robotaccel
 
 #plot results
-
-#figure 1 leg kinematics
-plt.title('Leg Position Kinematics')
-plt.axis('equal')
-x1, x2, y1,y2 = plt.axis()
-plt.savefig('./plots2/leg.pdf', bbox_inches='tight')
+if movie == True:
+	call(['ffmpeg', '-i', './movie/leg%d.png', '-r', '30','-b', '400000', '-y', './movie/water.avi'])
 
 #figure 2 robot position
 fig = plt.figure(num = 2)
@@ -92,14 +106,14 @@ lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1
 
 p2 = ax2.plot(time,robotspeed)
 ax2.set_ylabel(r'Robot Speed $(\frac{m}{s})$')
-lgd2 = ax2.legend(p2, ['x-speed', 'y-speed', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
 p3 = ax3.plot(time,robotaccel)
 ax3.set_ylabel(r'Robot Accel $(\frac{m}{s^2})$')
 ax3.set_xlabel('time (s)')
-lgd3 = ax3.legend(p3, ['x-accel', 'y-accel', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-plt.savefig('./plots2/robot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+plt.savefig('./plots/robot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
 
 #figure 3 forces
 fig = plt.figure(num = 3)
@@ -113,7 +127,7 @@ ax.set_xlabel('Time (s)')
 x1, x2, y1,y2 = plt.axis()
 plt.axis((x1,x2,y1-0.2,y2+0.2))
 lgd = ax.legend(loc = 6, bbox_to_anchor = (1.05,0.5))
-plt.savefig('./plots2/Force.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
+plt.savefig('./plots/Force.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
 
 #figure 4 foot position speed accel vs time
 fig = plt.figure(num = 4)
@@ -126,13 +140,13 @@ p1 = ax1.plot(time,ftpos)
 ax1.set_ylabel(r'Foot Coordinate (m)')
 lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
 
-p2 = ax2.plot(time,ftspeed,time,np.sum(ftspeed**2,axis=-1)**(1./2))
+p2 = ax2.plot(time,ftspeed)
 ax2.set_ylabel(r'Foot Speed $(\frac{m}{s})$')
-lgd2 = ax2.legend(p2, ['x-speed', 'y-speed', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-p3 = ax3.plot(time,ftaccel,time,np.sum(ftaccel**2,axis=-1)**(1./2))
+p3 = ax3.plot(time,ftaccel)
 ax3.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
 ax3.set_xlabel('time (s)')
-lgd3 = ax3.legend(p3, ['x-accel', 'y-accel', 'magnitude'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-plt.savefig('./plots2/foot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+plt.savefig('./plots/foot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')

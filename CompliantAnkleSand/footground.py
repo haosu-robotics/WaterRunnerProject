@@ -2,13 +2,16 @@ import numpy as np
 
 class Foot():
 	
-	def __init__(self,initAngle,initPos,footParams):
+	def __init__(self,initAngle,initPos,footParams,robotmass):
 		'''Arguments:
 		initAngle: vector containing initial angle, angular speed, angular accel of foot
 		initPos:   matrix whos rows are x,y initial position, speed, accel of foot attach pt'''
 
 		self.radius = footParams['radius']
 		self.angle = footParams['angle']
+		self.staticFrictionCoeff = footParams['staticFrictionCoeff']
+		self.kinFrictionCoeff = footParams['kinFrictionCoeff']
+		self.robotmass = robotmass
 		
 		#initialize angle position, speed, accel of foot
 		self.theta = initAngle[0]
@@ -41,13 +44,17 @@ class Foot():
 
 	def calcForce(self):
 		'''Returns Ground Reaction Force and Moment'''
-		self.loadx = 0.
 		yp = -1*self.pos[1]
 		ypdot = -1*self.speed[1]
 		if yp > 0:
 			self.loady = 0.25e9 * (np.abs(yp)**3)*(1-0.1*ypdot)
 			#print yp, ypdot, self.loady
+			if np.abs(self.robotmass*self.accel[0]) < self.staticFrictionCoeff*self.loady:
+				self.loadx = self.robotmass*self.accel[0]
+			else:
+				self.loadx = -1*self.kinFrictionCoeff*np.abs(self.loady)*np.sign(self.speed[0])
 		else:
 			self.loady = 0
+			self.loadx = 0
 		self.moment = 0.
 		return self.loadx, self.loady, self.moment
