@@ -4,10 +4,10 @@ import yaml
 import robot
 import leg
 import motor
-import footwater as foot
+import footground as foot
 from subprocess import call
 
-movie = True
+movie = False
 
 #load set up file
 inputFile = open('inputs.yaml')
@@ -118,15 +118,18 @@ plt.savefig('./plots/robot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_
 #figure 3 forces
 fig = plt.figure(num = 3)
 tit = fig.suptitle('Joint Forces')
-ax = fig.add_subplot(111)
-p1 = ax.plot(time,robotForces[:,0],label = 'Frx')
-p2 = ax.plot(time,robotForces[:,1],label = 'Fry')
-p3 = ax.plot(time,robotTorque,label = 'torque')
-ax.set_ylabel('Force (N)')
-ax.set_xlabel('Time (s)')
-x1, x2, y1,y2 = plt.axis()
-plt.axis((x1,x2,y1-0.2,y2+0.2))
-lgd = ax.legend(loc = 6, bbox_to_anchor = (1.05,0.5))
+ax1 = fig.add_subplot(111)
+ax2 = ax1.twinx()
+p1, = ax1.plot(time,robotForces[:,0],label = 'Frx')
+p2, = ax1.plot(time,robotForces[:,1],label = 'Fry')
+p3, = ax2.plot(time,robotTorque,'r',label = 'Torque')
+ax1.set_ylabel('Force (N)')
+ax2.set_ylabel('Torque (N-m)')
+ax1.set_xlabel('Time (s)')
+x1, x2, y1,y2 = ax1.axis()
+ax1.axis((x1,x2,y1-0.2,y2+0.2))
+lines = [p1, p2, p3]
+lgd = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.1,0.5))
 plt.savefig('./plots/Force.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
 
 #figure 4 foot position speed accel vs time

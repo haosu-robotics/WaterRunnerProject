@@ -20,12 +20,21 @@ class Foot():
 		self.speed = initPos[1,:]
 		self.accel = initPos[2,:]
 	
-	def update(self, pos, speed, accel):
-		#udpate state of foot
-		self.calcPos(pos)
-		self.calcSpeed(speed)
-		self.calcAccel(accel)
-		self.calcForce()
+	def update(self, angle, pos):
+		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
+		and cartesian posiiton, speed and accels.'''
+		#update angular state
+		self.calcAngle(angle[0])
+
+		#update cartesian state
+		self.calcPos(pos[0,:])
+		self.calcSpeed(pos[1,:])
+		self.calcAccel(pos[2,:])
+	
+	def calcAngle(angle):
+		'''calculates angle of foot'''
+		self.theta = angle
+		return angle
 
 	def calcPos(self, pos):
 		self.pos = pos
@@ -41,13 +50,14 @@ class Foot():
 
 	def calcForce(self):
 		'''Returns Ground Reaction Force and Moment'''
-		self.loadx = 0.
-		yp = -1*self.pos[1]
-		ypdot = -1*self.speed[1]
-		if yp > 0:
-			self.loady = 0.25e9 * (np.abs(yp)**3)*(1-0.1*ypdot)
-			#print yp, ypdot, self.loady
-		else:
-			self.loady = 0
+		Fw
 		self.moment = 0.
 		return self.loadx, self.loady, self.moment
+
+	def Drag(s
+	
+	
+	def a(s):
+		vs = 
+		
+		return np.dot(self.speed,np.array([np.cos(self.theta[0]), np.sin(self.theta[1])]))
