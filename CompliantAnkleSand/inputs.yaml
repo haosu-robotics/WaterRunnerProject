@@ -1,7 +1,7 @@
 #YAML
 world:
     gravity: -9.81
-    timeStep: 0.00001
+    timeStep: 0.0001
     endTime: 3
 
 robot:
