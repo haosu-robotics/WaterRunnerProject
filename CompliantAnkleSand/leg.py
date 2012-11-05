@@ -48,7 +48,7 @@ class Leg:
 		self.calcAccel(pos[2,:])
 		
 		#update Foot
-		self.Foot.update(self.jointPos[4,:], self.jointSpeed[4,:], self.jointAccel[4,:])
+		self.Foot.update(self.jointPos[4,:], self.jointSpeed[4,:], self.jointAccel[4,:],self.theta[2])
 		
 		#update Force/Torque
 		self.calcForceTorque()

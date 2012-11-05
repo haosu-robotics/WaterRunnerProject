@@ -7,7 +7,7 @@ import motor
 import footground as foot
 from subprocess import call
 
-movie = False
+movie = True
 
 #load set up file
 inputFile = open('inputs.yaml')
@@ -31,7 +31,7 @@ Leg = leg.Leg(initLegAngle,initLegPos,legParams,Foot)
 Motor = motor.Motor(motorParams,worldParams)
 Robot = robot.Robot(robotParams,worldParams,(Leg,),(Motor,))
 
-#set up lists to store data
+#set up list<D-]>s to store data
 robotForces = np.zeros((len(time),2))
 robotTorque = np.zeros(len(time))
 robotpos = np.zeros((len(time),2))
@@ -40,6 +40,7 @@ robotaccel = np.zeros((len(time),2))
 ftpos = np.zeros((len(time),2))
 ftspeed = np.zeros((len(time),2))
 ftaccel = np.zeros((len(time),2))
+footForce = np.zeros((len(time),2))
 
 #calculate positions, speeds, and accels vs angle
 plt.figure(num = 1)
@@ -61,24 +62,28 @@ while Robot.time < endtime:
 	robotpos[i,:] = Robot.pos
 	robotspeed[i,:] = Robot.speed
 	robotaccel[i,:] = Robot.accel
-	ftpos[i,:] = Robot.legs[0].Foot.pos
+	F2 = Robot.legs[0].Foot.pos[2,:]
 	ftspeed[i,:] = Robot.legs[0].Foot.speed
 	ftaccel[i,:] = Robot.legs[0].Foot.accel
-	legPts = np.array([O, A, F, B, C, O])
+	legPts = np.array([O, A, F, F2, F, B, C, O])
+
+	footForce[i,:] = [Robot.legs[0].Foot.loadx, Robot.legs[0].Foot.loady]
+	
 	if movie == True:
 		if i ==0:
-			plt.figure(figsize = (480./80.,320./80.), dpi = 80)
-			lines, = plt.plot(legPts[:,0],legPts[:,1],'k',lw = 0.2, markersize = 4, markeredgewidth = 0)
+			plt.figure(figsize = (480./80.,320./80.), dpi = 80, num = 1)
+			lines, = plt.plot(legPts[:,0],legPts[:,1],'-ok',lw = 0.2, markersize = 4, markeredgewidth = 0)
 			plt.plot([-0.08, 0.10],[0, 0],'g')
-			plt.axis((-0.08, 0.10, -0.02, 0.12))
+			plt.axis((O[0] - 0.08, O[0] + 0.10, O[1] -0.1, O[1]+ 0.05))
 			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 			print 'frame ',j,' saved',Robot.time,' s'
 			j += 1
-		if i%33== 0 and i > 0:
+		if i%3000== 0 and i > 0:
 			lines.set_xdata(legPts[:,0])
 			lines.set_ydata(legPts[:,1])
 			plt.draw()
-			plt.axis((-0.08, 0.10, -0.02, 0.12))
+			plt.axis((O[0] - 0.08, O[0] + 0.10, -0.02, O[1]+ 0.05))
+			#plt.axis((-0.08, 0.10, -0.02, 0.12))
 			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 			print 'frame ',j,' saved',Robot.time,' s'
 			j += 1
@@ -89,6 +94,7 @@ print 'pos = ',robotpos
 print 'speed = ',robotspeed
 print 'accel = ',robotaccel
 
+print footForce.T
 #plot results
 if movie == True:
 	call(['ffmpeg', '-i', './movie/leg%d.png', '-r', '30','-b', '400000', '-y', './movie/water.avi'])
@@ -113,7 +119,7 @@ ax3.set_ylabel(r'Robot Accel $(\frac{m}{s^2})$')
 ax3.set_xlabel('time (s)')
 lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-plt.savefig('./plots/robot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+plt.savefig('./plots/robot.png', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
 
 #figure 3 forces
 fig = plt.figure(num = 3)
@@ -130,7 +136,7 @@ x1, x2, y1,y2 = ax1.axis()
 ax1.axis((x1,x2,y1-0.2,y2+0.2))
 lines = [p1, p2, p3]
 lgd = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.1,0.5))
-plt.savefig('./plots/Force.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
+plt.savefig('./plots/Force.png', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
 
 #figure 4 foot position speed accel vs time
 fig = plt.figure(num = 4)
@@ -152,4 +158,19 @@ ax3.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
 ax3.set_xlabel('time (s)')
 lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-plt.savefig('./plots/foot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+plt.savefig('./plots/foot.png', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+
+#figure 5 forces
+fig = plt.figure(num = 5)
+tit = fig.suptitle('Ground Reaction Forces')
+ax1 = fig.add_subplot(111)
+p1, = ax1.plot(time,footForce[:,0],label = 'Grx')
+p2, = ax1.plot(time,footForce[:,1],label = 'Gry	')
+ax1.set_ylabel('Force (N)')
+ax1.set_xlabel('Time (s)')
+x1, x2, y1,y2 = ax1.axis()
+ax1.axis((x1,x2,y1-0.2,y2+0.2))
+lines = [p1, p2]
+lgd = ax1.legend(loc = 6, bbox_to_anchor = (1.1,0.5))
+plt.savefig('./plots/GroundForce.png', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
+
