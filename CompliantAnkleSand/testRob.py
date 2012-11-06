@@ -26,7 +26,7 @@ endtime = worldParams['endTime']
 time = np.arange(0,endtime+timestep,timestep)
 
 #initialize foot, leg, and robot
-Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,robotParams['mass'])
+Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,worldParams,robotParams['mass'])
 Leg = leg.Leg(initLegAngle,initLegPos,legParams,Foot)
 Motor = motor.Motor(motorParams,worldParams)
 Robot = robot.Robot(robotParams,worldParams,(Leg,),(Motor,))
@@ -79,7 +79,7 @@ while Robot.time < endtime:
 			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 			print 'frame ',j,' saved',Robot.time,' s'
 			j += 1
-		if i%100 == 0:
+		if F2[1] <= 0.001:
 			lines.set_xdata(legPts[:,0])
 			lines.set_ydata(legPts[:,1])
 			plt.draw()

@@ -33,10 +33,12 @@ foot:
     staticFrictionCoeff: 0.4
     kinFrictionCoeff: 0.3
     thickness: 0.00159375
-    EI: 0.001
+    E: 300. #Mpa
     PRBMK: 2.65
-    width: 0.04
     gamma: 0.85
+    damping: 1.2
+    width: 0.035
+    height: 0.001
 
 tail:
     lt: 0.1
