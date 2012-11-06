@@ -13,7 +13,7 @@ movie = True
 inputFile = open('inputs.yaml')
 inputs = yaml.load(inputFile)
 
-initLegPos = np.array([inputs['robot']['initPos'], [0., 0.], [0., 0.]])
+initLegPos = np.array([inputs['robot']['initPos'], np.array([0., 0.]), np.array([0., 0.])])
 initLegAngle = np.array([0., 0., 0.])
 robotParams = inputs['robot']
 legParams = inputs['leg']
@@ -62,10 +62,11 @@ while Robot.time < endtime:
 	robotpos[i,:] = Robot.pos
 	robotspeed[i,:] = Robot.speed
 	robotaccel[i,:] = Robot.accel
+	F1 = Robot.legs[0].Foot.pos[1,:]
 	F2 = Robot.legs[0].Foot.pos[2,:]
 	ftspeed[i,:] = Robot.legs[0].Foot.speed
 	ftaccel[i,:] = Robot.legs[0].Foot.accel
-	legPts = np.array([O, A, F, F2, F, B, C, O])
+	legPts = np.array([O, A, F, F1, F2, F1, F, B, C, O])
 
 	footForce[i,:] = [Robot.legs[0].Foot.loadx, Robot.legs[0].Foot.loady]
 	
@@ -74,15 +75,15 @@ while Robot.time < endtime:
 			plt.figure(figsize = (480./80.,320./80.), dpi = 80, num = 1)
 			lines, = plt.plot(legPts[:,0],legPts[:,1],'-ok',lw = 0.2, markersize = 4, markeredgewidth = 0)
 			plt.plot([-0.08, 0.10],[0, 0],'g')
-			plt.axis((O[0] - 0.08, O[0] + 0.10, O[1] -0.1, O[1]+ 0.05))
+			plt.axis((O[0] - 0.10, O[0] + 0.10, O[1] -0.10, O[1]+ 0.10))
 			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 			print 'frame ',j,' saved',Robot.time,' s'
 			j += 1
-		if i%3000== 0 and i > 0:
+		if i%100 == 0:
 			lines.set_xdata(legPts[:,0])
 			lines.set_ydata(legPts[:,1])
 			plt.draw()
-			plt.axis((O[0] - 0.08, O[0] + 0.10, -0.02, O[1]+ 0.05))
+			plt.axis((O[0] - 0.10, O[0] + 0.10, O[1] -0.10 , O[1]+ 0.10))
 			#plt.axis((-0.08, 0.10, -0.02, 0.12))
 			plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 			print 'frame ',j,' saved',Robot.time,' s'

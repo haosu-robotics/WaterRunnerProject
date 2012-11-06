@@ -58,10 +58,10 @@ class Leg:
 
 		self.theta[1] = theta1
 
-		Alpha = 2*self.L[0]*self.L[3] - 2*self.L[1]*self.L[3]*np.cos(self.theta[1])
-		Beta  = -2*self.L[1]*self.L[3]*np.sin(self.theta[1])
+		Alpha = 2.*self.L[0]*self.L[3] - 2*self.L[1]*self.L[3]*np.cos(self.theta[1])
+		Beta  = -2.*self.L[1]*self.L[3]*np.sin(self.theta[1])
 		Gamma = (self.L[1]**2 + self.L[3]**2 + self.L[0]**2 - self.L[2]**2 
-					- 2*self.L[0]*self.L[1]*np.cos(self.theta[1]))
+					- 2.*self.L[0]*self.L[1]*np.cos(self.theta[1]))
 		Delta = np.arctan2(Beta,Alpha)
 
 		self.theta[3] = Delta + self.pm*np.arccos(-1*Gamma/np.sqrt(Alpha**2 + Beta**2))
@@ -152,14 +152,15 @@ class Leg:
 					  [0, 0, 0, 0, self.L[1]*np.sin(self.theta[1]), self.L[1]*np.cos(self.theta[1]), 0,									 0,								  1],
 					  [1, 0, 0, 0, 0,								0,								 -1,								 0,								  0],
 					  [0, 1, 0, 0, 0,								0,							 	 0,									 -1,							  0],
-					  [0, 0, 0, 0, 0,								0,							 	 self.L[3]*np.sin(self.theta[3]),    self.L[3]*np.cos(self.theta[3]), 0]])
+					  [0, 0, 0, 0, 0,								0,							 	 self.L[3]*np.sin(self.theta[3]),    self.L[3]*np.cos(self.theta[3]), 0]]
+					  , dtype = float)
 		
 		b = np.array([[-1*self.Foot.loadx],
 					  [-1*self.Foot.loady],
 					  [-1*self.Foot.moment + self.Foot.loady*self.L[4]*np.cos(self.theta[2]) - self.Foot.loadx*self.L[4]*np.sin(self.theta[2])], 
-					  [0], [0], [0], [0], [0], [0]])
+					  [0.], [0.], [0.], [0.], [0.], [0.]])
 		self.jointLoad = np.linalg.solve(A,b).reshape((1,9))
-		self.robotLoad[0] = -1*(self.jointLoad[0,0] + self.jointLoad[0,2])
-		self.robotLoad[1] = -1*(self.jointLoad[0,1] + self.jointLoad[0,3])
-		self.robotLoad[2] = -1*(self.jointLoad[0,8])
+		self.robotLoad[0] = -1.*(self.jointLoad[0,0] + self.jointLoad[0,2])
+		self.robotLoad[1] = -1.*(self.jointLoad[0,1] + self.jointLoad[0,3])
+		self.robotLoad[2] = -1.*(self.jointLoad[0,8])
 		return self.jointLoad

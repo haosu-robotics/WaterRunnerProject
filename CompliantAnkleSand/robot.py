@@ -10,11 +10,11 @@ class Robot:
 		#initialize arrays holding properties
 		self.mass = robotParams['mass']
 		self.pos = np.array(2)
-		self.pos = robotParams['initPos']
+		self.pos = np.array(robotParams['initPos'])
 		self.speed = np.array(2)
-		self.speed = robotParams['initSpeed']
+		self.speed = np.array(robotParams['initSpeed'])
 		self.accel = np.array(2)
-		self.accel = robotParams['initAccel']
+		self.accel = np.array(robotParams['initAccel'])
 		self.Force = np.zeros(2)
 
 		self.grav = worldParams['gravity']
@@ -77,7 +77,6 @@ class Robot:
 		self.speed2 = self.speed1
 		self.speed1 = self.speed
 		#perform euler's for first 4 iterations then adams-bashforth
-		print self.accel, self.accel1, self.accel2, self.accel3
 		if self.accel3 == None:
 			self.speed += self.timeStep*self.accel
 		else:
