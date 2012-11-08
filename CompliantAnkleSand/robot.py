@@ -54,8 +54,9 @@ class Robot:
 		self.calcAccel()
 		self.calcSpeed()
 		self.calcPos()
-		
 		self.time += self.timeStep
+		
+		return 
 
 	def calcAccel(self):
 		'''sum forces and divide by mass to find x,y accel'''
@@ -64,13 +65,20 @@ class Robot:
 		self.accel2 = self.accel1
 		self.accel1 = self.accel
 		
-		self.Force = np.array([0, self.mass*self.grav])
+		self.Force = np.array([self.calcAirDrag(self.speed[0]), self.mass*self.grav])
 		for leg in self.legs:
 			self.Force += leg.robotLoad[0:2]
 	
 		self.accel = self.Force/self.mass
-		
+		self.accel[0] = 0.
 		return self.accel
+
+	def calcAirDrag(self, xspeed):
+		density = 1.225
+		A = 0.1*0.02
+		dragCoeff = 2.0
+		drag = -1*0.5*density*xspeed*np.abs(xspeed)*dragCoeff*A
+		return drag
 
 	def calcSpeed(self):
 		self.speed3 = self.speed2
@@ -81,6 +89,7 @@ class Robot:
 			self.speed += self.timeStep*self.accel
 		else:
 			self.speed += (self.timeStep/24.) * (55.*self.accel - 59.*self.accel1 + 37.*self.accel2 - 9.*self.accel3)
+		self.speed[0] = 0
 		return self.speed
 	
 	def calcPos(self):
@@ -89,4 +98,5 @@ class Robot:
 			self.pos += self.speed*self.timeStep + (self.accel/2)*self.timeStep**2
 		else:
 			self.pos += (self.timeStep/24.) * (55.*self.speed - 59.*self.speed1 + 37.*self.speed2 - 9.*self.speed3)
+		self.pos[0] = 0
 		return self.pos

@@ -11,12 +11,12 @@ class Foot():
 		self.kinFrictionCoeff = footParams['kinFrictionCoeff']
 		
 		self.length = footParams['length']
-		self.E = footParams['E']*10**6
+		self.E = footParams['E']*10.**6.
 		self.PRBMK = footParams['PRBMK']
 		self.gamma = footParams['gamma']
-		self.inertia = (footParams['width']*footParams['height']**3)/12.
+		self.inertia = (footParams['width']*footParams['thickness']**3)/12.
 		self.inertiaEff = 0.2708*self.inertia
-		self.k = (self.gamma*self.PRBMK*self.E*self.inertia/self.length)*np.pi/180
+		self.k = (self.gamma*self.PRBMK*self.E*self.inertia/self.length)*np.pi/180.
 		self.b = footParams['damping']
 		
 		self.gravity = worldParams['gravity']
@@ -118,15 +118,14 @@ class Foot():
 			self.moment = (self.loady*(self.pos[2,0]- self.pos[0,0])) - self.loadx*(self.pos[2,1] - self.pos[1,1])
 			self.bendingMoment =  (-1*self.loady*(self.pos[2,0]- self.pos[1,0]) + self.loadx*(self.pos[2,1] - self.pos[1,1]) 
 							        + self.loady*(self.pos[0,0]- self.pos[1,0]) - self.loadx*(self.pos[0,1] - self.pos[1,1]))
-			print 'alphaPRBM: ', self.alphaPRBM,  'omegaPRBM: ', self.omegaPRBM, 'thetaPRBM: ', self.thetaPRBM
-			print 'bendingMoment: ', self.bendingMoment, 'Fy: ',self.loady, 'Fx: ', self.loadx, 'yp: ', yp, 'ypdot: ', ypdot
-			print 'k: ', self.k, 'b: ', self.b, 'I*: ',self.inertiaEff
 		else:
 			self.loady = 0.
 			self.loadx = 0.
 			self.moment = 0.
 			self.bendingMoment = 0.
-
 		
-
+		if yp > -0.0001:
+			print 'alphaPRBM: ', self.alphaPRBM,  'omegaPRBM: ', self.omegaPRBM, 'thetaPRBM: ', self.thetaPRBM
+			print 'bendingMoment: ', self.bendingMoment, 'Fy: ',self.loady, 'Fx: ', self.loadx, 'yp: ', yp, 'ypdot: ', ypdot
+			print 'k: ', self.k, 'b: ', self.b, 'I*: ',self.inertiaEff
 

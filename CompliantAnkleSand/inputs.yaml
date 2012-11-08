@@ -1,20 +1,20 @@
 #YAML
 world:
     gravity: -9.81
-    timeStep: 0.0001
-    endTime: 3
+    timeStep: 0.001
+    endTime: 0.75
 
 robot:
     len: 0.3
     width: 0.125
-    mass: 0.1
+    mass: 0.025
     gravity: -9.81
     Iroll: 5.05e-4
     Ipitch: 1.08e-3
     Iyaw: 1.24e-3
     lCOM: 0.12
     hCOM: 0.002
-    initPos: [0, 0.08]
+    initPos: [0, 0.05]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
 
@@ -24,10 +24,10 @@ leg:
 
 motor:
     initPos: 0.
-    initSpeed: 6.28318530718
+    initSpeed: 40.
     initAccel: 0.
 
-foot:
+footGround:
     #PBRM foot
     length: 0.04
     staticFrictionCoeff: 0.4
@@ -38,7 +38,12 @@ foot:
     gamma: 0.85
     damping: 1.2
     width: 0.035
-    height: 0.001
+
+footWater:
+    radius: 0.02
+    radiusUp: 0.005
+    dragCoeff: .703
+    density: 1000.
 
 tail:
     lt: 0.1

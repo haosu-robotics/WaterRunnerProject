@@ -2,14 +2,11 @@ import numpy as np
 
 class Foot():
 	
-	def __init__(self,initAngle,initPos,footParams):
+	def __init__(self,initAngle,initPos,footParams,worldParams,robotMass):
 		'''Arguments:
 		initAngle: vector containing initial angle, angular speed, angular accel of foot
 		initPos:   matrix whos rows are x,y initial position, speed, accel of foot attach pt'''
 
-		self.radius = footParams['radius']
-		self.angle = footParams['angle']
-		
 		#initialize angle position, speed, accel of foot
 		self.theta = initAngle[0]
 		self.omega = initAngle[1]
@@ -20,11 +17,14 @@ class Foot():
 		self.speed = initPos[1,:]
 		self.accel = initPos[2,:]
 	
-	def update(self, pos, speed, accel):
-		#udpate state of foot
-		self.calcPos(pos)
-		self.calcSpeed(speed)
-		self.calcAccel(accel)
+	
+	def update(self, angle, pos):
+		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
+		and cartesian posiiton, speed and accels. Updates force/torque on leg.'''
+
+		self.calcPos(pos[0])
+		self.calcSpeed(pos[1])
+		self.calcAccel(pos[2])
 		self.calcForce()
 
 	def calcPos(self, pos):
@@ -43,10 +43,8 @@ class Foot():
 		'''Returns Ground Reaction Force and Moment'''
 		self.loadx = 0.
 		yp = -1*self.pos[1]
-		ypdot = -1*self.speed[1]
 		if yp > 0:
-			self.loady = 0.25e9 * (np.abs(yp)**3)*(1-0.1*ypdot)
-			#print yp, ypdot, self.loady
+			self.loady = 1.
 		else:
 			self.loady = 0
 		self.moment = 0.
