@@ -71,7 +71,9 @@ class Foot():
 				percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
 				if percentSub > 1:
 					percentSub = 1.
-				force, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*percentSub*self.radius, args =(self.radius,))
+				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
+				force1, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*percentSub*self.radius, args =(self.radius, normal1))
+				force2 = 0
 		else:
 			if  self.y_bf(self.radiusUp) > 0:
 				self.loadx = 0.
@@ -82,9 +84,14 @@ class Foot():
 				percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta + np.pi))
 				if percentSub > 1:
 					percentSub = 1.
-				force, _ = integrate.quad(self.drag_s,-1*self.radiusUp, -1.*self.radiusUp+2.*percentSub*self.radiusUp, args = (self.radiusUp,))
-		self.loadx = -1.*force*np.sin(self.theta)
-		self.loady =     force*np.cos(self.theta)
+				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
+				force1, _ = integrate.quad(self.drag_s,-1*self.radiusUp, -1.*self.radiusUp+2.*percentSub*self.radiusUp, args = (self.radiusUp, normal1))
+
+				normal2 = np.array([-1*np.cos(self.theta), -1.*np.sin(self.theta)])
+				force2, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*percentSub*self.radius, args = (self.radius, normal2))
+		
+		self.loadx = -1.*force1*np.sin(self.theta) + force2 * np.cos(self.theta)
+		self.loady =     force1*np.cos(self.theta) + force2 * np.sin(self.theta)
 		self.moment = 0.
 		print  'Fx: ', self.loadx, 'Fy: ', self.loady, 'normal: ', normalVelComp, 'vel: ', self.speed, 'y: ', self.y_bf(self.radius), 'theta: ',self.theta*180./np.pi
 	
@@ -97,8 +104,7 @@ class Foot():
 		vel = ((v_tf - v_bf)/(2.*radius))*s + (v_tf + v_bf)/2.
 		return vel
 
-	def normal_s(self, s, radius):
-		normal = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
+	def normal_s(self, s, radius, normal):
 		a_s = np.dot(normal,self.velocity_s(s, radius))
 		return a_s
 
@@ -106,6 +112,6 @@ class Foot():
 		depth = -1.*self.y_bf(radius)*(1. - (s + radius)/(2.*self.density*radius))
 		return depth
 
-	def drag_s(self, s, radius):
-		drag = self.dragCoeff*self.density*np.sqrt(radius**2. - s**2)*(-2.*self.gravity*self.depth_s(s, radius) + self.normal_s(s, radius)*np.abs(self.normal_s(s, radius)))
+	def drag_s(self, s, radius, normal):
+		drag = self.dragCoeff*self.density*np.sqrt(radius**2. - s**2)*(-2.*self.gravity*self.depth_s(s, radius) + self.normal_s(s, radius, normal)*np.abs(self.normal_s(s, radius, normal)))
 		return drag

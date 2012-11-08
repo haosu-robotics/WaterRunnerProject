@@ -106,7 +106,7 @@ print 'accel = ',robotaccel
 print 'footForce = ',footForce
 #plot results
 if movie == True:
-	os.system('ffmpeg -i ./movie/leg%d.png -s 688x516 -r 30 -qscale 1 -y ./movie/water.mp4')
+	os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
 
 #figure 2 robot position
 fig = plt.figure(num = 2)
