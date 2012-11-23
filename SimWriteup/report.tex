@@ -7,6 +7,8 @@
 \usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
+\usepackage{hyperref}
+
 \setlength{\headheight}{15.2pt}
 
 \pagestyle{fancy}
@@ -22,23 +24,25 @@
 \maketitle
 
 \section{Four Bar Angle Calculations}
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics{4bar.pdf}
 	\caption{Labeled 4-bar leg mechanism.}
 	\label{fig:4bar}
 \end{figure}
+
 \subsection{Angular Position}
-Under the assumption that $\theta_0 = 0$ and given $\theta_1$ angles $\theta_2$ and $\theta_3$ can be obtained as follows. First, we write the relationship between points $A$ and $B$ on the four bar linkage
+Under the assumption that $\theta_0 = 0$ and given $\theta_1$, angles $\theta_2$ and $\theta_3$ can be obtained as follows. First, we write the relationship between points $A$ and $B$ on the four bar linkage
 
 \begin{equation}
-	|B - A|^2 - L_2^2 = 0
+	(B - A)^2 - L_2^2 = 0
 	\label{eq:BArel}
 \end{equation}
 
 \begin{align}
-	A &= \begin{pmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{pmatrix} \label{eq:Aloc}\\
-	B &= \begin{pmatrix} L_0 \\ 0 \end{pmatrix} + \begin{pmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{pmatrix} \label{eq:Bloc}
+	A &= \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \label{eq:Aloc}\\
+	B &= \begin{bmatrix} L_0 \\ 0 \end{bmatrix} + \begin{bmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{bmatrix} \label{eq:Bloc}
 \end{align}
 
 \noindent Plugging equations \ref{eq:Aloc} and \ref{eq:Bloc} into \ref{eq:BArel} yields
@@ -78,13 +82,13 @@ Loop closure requires that
 \begin{align}
 	A + (B - A) &= C + (C - B) \notag \\
 	\dot{A} - \frac{d}{dt} (B - A) &= \frac{d}{dt} ( B - C) \label{eq:dloop}\\
-	\begin{pmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{pmatrix} \dot{\theta}_1 + \begin{pmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{pmatrix} \dot{\theta}_3 &= \begin{pmatrix} -L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{pmatrix} \dot{\theta}_1 \notag
+	\begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \dot{\theta}_3 &= \begin{bmatrix} -L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{bmatrix} \dot{\theta}_1 \notag
 	\end{align}
 
 \noindent Rearranging terms yields a system of linear equations that allows us to solve for $\dot{\theta}_3$ and $\dot{\theta}_2$ given $\dot{\theta}_1$,
 
 \begin{equation}
-	\begin{pmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && - L_2 \cos \theta_2 \end{pmatrix} \begin{pmatrix} \dot{\theta}_3 \\ \dot{\theta}_2 \end{pmatrix} = \begin{pmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{pmatrix} \dot{\theta}_1
+	\begin{bmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && - L_2 \cos \theta_2 \end{bmatrix} \begin{bmatrix} \dot{\theta}_3 \\ \dot{\theta}_2 \end{bmatrix} = \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1
 \end{equation}
 
 \subsection{Angular Acceleration}
@@ -96,12 +100,112 @@ Differentiating the loop closure equation (\ref{eq:dloop}) yields:
 \end{equation}
 
 \begin{equation*}
-	\begin{pmatrix} - L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{pmatrix} \ddot{\theta}_1 - \begin{pmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{pmatrix} \dot{\theta}_1^2 + \begin{pmatrix} - L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{pmatrix} \ddot{\theta}_2 - \begin{pmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{pmatrix} \dot{\theta}_2^2 = \begin{pmatrix} - L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{pmatrix} \ddot{\theta}_3 - \begin{pmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{pmatrix} \dot{\theta}_3
+	\begin{bmatrix} - L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1 - \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 + \begin{bmatrix} - L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{bmatrix} \ddot{\theta}_2 - \begin{bmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{bmatrix} \dot{\theta}_2^2 = \begin{bmatrix} - L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \ddot{\theta}_3 - \begin{bmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3
 \end{equation*}
 
-\noindent Rearranging terms yields a system of linear equations that allows us to solve for $\ddot{\theta}_3$ and $\ddot{\theta}_2$ given $\ddot{\theta}_1$, $\dot{\theta}_1$, $\dot{\theta}_2$, $\dot{\theta}_3$,
+\noindent Rearranging terms yields a system of linear equations that allows us to solve for $\ddot{\theta}_3$ and $\ddot{\theta}_2$ given $\ddot{\theta}_1$, $\dot{\theta}_1$, $\dot{\theta}_2$, $\dot{\theta}_3$, $\theta_1$, $\theta_2$, and $\theta_3$,
 
 \begin{equation}
-	\begin{pmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && -L_2 \cos \theta_2 \end{pmatrix} \begin{pmatrix} \ddot{\theta}_3 \\ \ddot{\theta}_2 \end{pmatrix} = \begin{pmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{pmatrix} \ddot{\theta}_1 - \begin{pmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{pmatrix} \dot{\theta}_1^2 - \begin{pmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{pmatrix} \dot{\theta}_2^2 + \begin{pmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{pmatrix} \dot{\theta}_3^2
+	\begin{bmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && -L_2 \cos \theta_2 \end{bmatrix} \begin{bmatrix} \ddot{\theta}_3 \\ \ddot{\theta}_2 \end{bmatrix} = \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1 - \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 - \begin{bmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{bmatrix} \dot{\theta}_2^2 + \begin{bmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3^2
 \end{equation}
+
+\section{Joint Position/Speed/Acceleration}
+\subsection{Joint A}
+
+\begin{align*}
+	A &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \\
+	\dot{A} &= \dot{O} + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 \\
+	\ddot{A} &= \ddot{O} + \begin{bmatrix} -L_1 \cos \theta_1 \\ -L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1
+\end{align*}
+
+\subsection{Joint B}
+
+\begin{align*}
+	B &= O + \begin{bmatrix} L_0 \\ 0 \end{bmatrix} + \begin{bmatrix} L_3 \cos \theta_2 \\ L_3 \sin \theta_4 \end{bmatrix} \\
+	\dot{B} &= \dot{O} + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \dot{\theta}_3 \\
+	\ddot{B} &= \ddot{O} \begin{bmatrix} -L_3 \cos \theta_3 \\ - L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3^2 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \ddot{\theta}_3 
+\end{align*}
+
+\subsection{Joint C}
+ 
+\begin{align*}
+	C &= O + \begin{bmatrix} L_0 \\ 0 \end{bmatrix} \\
+	\dot{C} &= \dot{O} \\
+	\ddot{C} &= \ddot{O}
+\end{align*}
+
+\subsection{Joint F}
+
+\begin{align*}
+	F &= O + A + (F-A) \\
+	  &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} + \begin{bmatrix} L_4 \cos(\theta_2 + \pi) \\ L_4 \sin(\theta_2 + \pi) \end{bmatrix} \\
+	\dot{F} &= \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} - L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2 \\
+	\ddot{F} &= \ddot{O} + \begin{bmatrix} -L_1 \cos \theta_1 \\ -L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 
+		+ \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_2 
+		+ \begin{bmatrix} -L_4 \cos(\theta_2 + \pi) \\ -L_4 \sin(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2^2 
+		+ \begin{bmatrix} -L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \ddot{\theta}_2
+\end{align*}
+
+\section{Force/Torque calculations}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{FB.pdf}
+	\caption{Free body diagrams of forces and moments on each link and the robot (in blue).}
+	\label{fig:FB}
+\end{figure}
+
+The links in the leg's four bar mechanism are assumed to have no mass. Therefore, all forces and moments on each link must sum to zero.
+\subsection{Leg Forces/Torques}
+\subsubsection{Summation of Loads on Links 2 and 4}
+
+\begin{align*}
+	\sum F_x &= 0 = P_x + F_{1x} + F_{3x} \\
+	\sum F_y &= 0 = P_y + F_{1y} + F_{3y} \\
+	\sum M_A &= 0 = M - F_{3x} L_2 \sin \theta_2 + F_{3y} L_2 \cos \theta_2 + P_x L_4 \sin \theta_2 - P_y L_4 \cos \theta_2
+\end{align*}
+
+\subsubsection{Summation of Loads on Link 1}
+
+\begin{align*}
+	\sum F_x &= 0 = -F_{1x} + F_{R1x} \\
+	\sum F_y &= 0 = -F_{1y} + F_{R1y} \\
+	\sum M_A &= 0 = T + F_{1y} L_1 \cos \theta_1 + F_{1x} L_1 \sin \theta_1
+\end{align*}
+
+\subsubsection{Summation of Loads on Link 3}
+
+\begin{align*}
+	\sum F_x &= 0 = -F_{3x} + F_{R3x} \\
+	\sum F_y &= 0 = -F_{3y} + F_{R3y} \\
+	\sum M_C &= 0 = F_{3y} L_3 \cos \theta_3 + F_{3x} L_3 \sin \theta_3
+\end{align*}
+
+\noindent In matrix form,
+
+\begin{equation*}
+\begin{bmatrix}
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 &0 \\ 
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 &0 \\
+0 & 0 & 0 & 0 & 0 & 0 & -L_2 \sin \theta_2 & L_2 \cos \theta_2 & 0 \\
+0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & L_1 \sin \theta_1 & L_1 \cos \theta_1 & 0 & 0 & 1\\
+1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & L_3 \sin \theta_3 & L_3 \cos \theta_3 & 0
+\end{bmatrix}
+=
+\begin{bmatrix} -P_x \\ - P_y \\ -M \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+\end{equation*}
+
+\subsection{Robot Forces/Torques}
+Once the forces on the legs are calculated, the relevant forces are transmitted to the robot through the following equations
+
+\begin{align*}
+	\sum F_x &= m \ddot{x} = -F_{R1x} - F_{R3x}  \\
+	\sum F_y &= m \ddot{y} = -F_{R1y} - F_{R3y} - mg \\
+	\sum M_O &= I \ddot{\theta}_0 = -F_{R3y} L_0 \cos \theta_0 + F_{R3x} L_0 \sin \theta_0 - T
+\end{align*}
+
 \end{document}
