@@ -65,7 +65,7 @@ class Robot:
 		self.accel2 = self.accel1
 		self.accel1 = self.accel
 		
-		self.Force = np.array([self.calcAirDrag(self.speed[0]), self.mass*self.grav])
+		self.Force = np.array([0, self.mass*self.grav])
 		for leg in self.legs:
 			self.Force += leg.robotLoad[0:2]
 	

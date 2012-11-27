@@ -4,7 +4,7 @@ import yaml
 import robot
 import leg
 import motor
-import footwater as foot
+import footground as foot
 import os
 
 movie = True
@@ -17,7 +17,7 @@ initLegPos = np.array([inputs['robot']['initPos'], np.array([0., 0.]), np.array(
 initLegAngle = np.array([0., 0., 0.])
 robotParams = inputs['robot']
 legParams = inputs['leg']
-footParams	= inputs['footWater']
+footParams	= inputs['footGround']
 worldParams = inputs['world']
 motorParams = inputs['motor']
 
@@ -60,16 +60,19 @@ while Robot.time < endtime:
 		A = jointPts[1,:]
 		B = jointPts[2,:]
 		C = jointPts[3,:]
-		F = jointPts[4,:]
+		F0 = jointPts[4,:]
+		F1 = Robot.legs[0].Foot.pos[1,:]
+		F2 = Robot.legs[0].Foot.pos[2,:]
+
 		robotForces[i,:] = Robot.Force
 		robotTorque[i] = Robot.motors[0].load
 		robotpos[i,:] = Robot.pos
 		robotspeed[i,:] = Robot.speed
 		robotaccel[i,:] = Robot.accel
-		ftpos[i,:] = Robot.legs[0].Foot.pos
-		ftspeed[i,:] = Robot.legs[0].Foot.speed
+		ftpos[i,:] = Robot.legs[0].Foot.pos[0,:]
+		ftspeed[i,:] = Robot.legs[0].Foot.speed[0,:]
 		ftaccel[i,:] = Robot.legs[0].Foot.accel
-		legPts = np.array([O, A, F, B, C, O])
+		legPts = np.array([O, A, F0, F1, F2, F1, F0, B, C, O])
 		
 		footForce[i,:] = [Robot.legs[0].Foot.loadx, Robot.legs[0].Foot.loady]
 		footAngle[i] = Robot.legs[0].Foot.theta
@@ -80,15 +83,15 @@ while Robot.time < endtime:
 				plt.figure(figsize = (480./80.,320./80.), dpi = 80, num = 1)
 				lines, = plt.plot(legPts[:,0],legPts[:,1],'-ok',lw = 0.2, markersize = 4, markeredgewidth = 0)
 				plt.plot([-100, 100],[0, 0],'b')
-				plt.axis((O[0] - 0.10, O[0] + 0.10, O[1] -0.10, O[1]+ 0.10))
+				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.10, O[1]+ 0.10))
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
 				j += 1
-			if i%10 == 0 and i != 0:
+			if i%1 == 0 and i != 0:
 				lines.set_xdata(legPts[:,0])
 				lines.set_ydata(legPts[:,1])
 				plt.draw()
-				plt.axis((O[0] - 0.10, O[0] + 0.10, O[1] -0.10 , O[1]+ 0.10))
+				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.10 , O[1]+ 0.10))
 				#plt.axis((-0.08, 0.10, -0.02, 0.12))
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'

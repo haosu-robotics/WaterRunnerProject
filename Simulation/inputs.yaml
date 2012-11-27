@@ -14,7 +14,7 @@ robot:
     Iyaw: 1.24e-3
     lCOM: 0.12
     hCOM: 0.002
-    initPos: [0, 0.05]
+    initPos: [0, 0.06]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
 
@@ -36,8 +36,9 @@ footGround:
     E: 300. #Mpa
     PRBMK: 2.65
     gamma: 0.85
-    damping: 1.2
+    damping: 3.5
     width: 0.035
+    timeStepFraction: 0.01
 
 footWater:
     radius: 0.02
