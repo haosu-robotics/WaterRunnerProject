@@ -114,7 +114,6 @@ class Leg:
 		self.jointPos[3,:] = Opos + np.array([self.L[0] * np.cos(self.theta[0]), self.L[0] * np.sin(self.theta[0])]) #C
 		self.jointPos[4,:] = (Opos + np.array([self.L[1] * np.cos(self.theta[1]), self.L[1] * np.sin(self.theta[1])])
 				+ np.array([self.L[4]*np.cos(self.theta[2] + np.pi), self.L[4]*np.sin(self.theta[2] + np.pi)]))      #F
-		print self.jointPos[4,:]
 		return self.jointPos
 	
 	def calcSpeed(self, Ospeed):
@@ -125,7 +124,6 @@ class Leg:
 		self.jointSpeed[3,:] = Ospeed #C
 		self.jointSpeed[4,:] = Ospeed + (np.array([-1*self.L[1]*np.sin(self.theta[1]),         self.L[1]*np.cos(self.theta[1])		  ])*self.omega[1]
 									  +  np.array([-1*self.L[4]*np.sin(self.theta[2] + np.pi), self.L[4]*np.cos(self.theta[2] + np.pi)])*self.omega[2]) #F
-		print self.jointSpeed[4,:]
 		return self.jointSpeed
 
 	def calcAccel(self, Oaccel):

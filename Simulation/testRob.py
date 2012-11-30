@@ -87,7 +87,7 @@ while Robot.time < endtime:
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
 				j += 1
-			if i%1 == 0 and i != 0:
+			if i%1000 == 0 and i != 0:
 				lines.set_xdata(legPts[:,0])
 				lines.set_ydata(legPts[:,1])
 				plt.draw()

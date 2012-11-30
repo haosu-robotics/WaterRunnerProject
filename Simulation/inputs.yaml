@@ -1,7 +1,7 @@
 #YAML
 world:
     gravity: -9.81
-    timeStep: 0.001
+    timeStep: 0.00001
     endTime: 2.
 
 robot:
@@ -36,7 +36,7 @@ footGround:
     E: 300. #Mpa
     PRBMK: 2.65
     gamma: 0.85
-    damping: 3.5
+    damping: 1.2
     width: 0.035
     timeStepFraction: 0.01
 
