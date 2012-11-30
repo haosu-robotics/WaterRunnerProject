@@ -23,7 +23,28 @@
 \begin{document}
 \maketitle
 
-\section{Four Bar Angle Calculations}
+\section{Foot Forces/Moments}
+
+The drag on the foot is approximated by the drag on a disk entering water vertically  given by:
+
+\begin{equation}
+	D(t) = C_D^* = [0.5 S \rho u^2 + S \rho g h(t)]
+\end{equation}
+
+\noindent Where $C_D^* \approx 0.703$ is the coefficient of drag, $\rho$ is the density of water, $u$ is the foot speed, $S = \pi r_{eff}^2$, and $h(t)$ is the depth of the foot under the water \cite{Glasheen1996a}. The integral of this drag force over the submerged area of the foot is:
+
+\begin{align}
+F_w &= C_D^* \int_{-R}^{-R+2pR} (\sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|) ds \label{eq:footF}\\
+M_w &= C_D^* \rho \int_{-R}^{-R + 2pR} (\sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|)(-s) ds \label{eq:footM} \\
+a(s) &= \vec{v}(s) \cdot \vec{n} \\
+h(s) &= (y_\mathrm{water} - y_\mathrm{BF} ) \left( 1 - \frac{s + R}{2 p R} \right)
+\end{align}
+
+\noindent Where $s$ is a point along the length of the foot, $\vec{v}(s)$ is the velocity of the point $s$, $\vec{n}$ is the footpad's normal vector, $h(s)$ is the depth of point $s$ and $F_w$ and $M_w$ are the total force and moment on the foot respectively \cite{Floyd2008}.
+
+When $a(s) < 0$, the component of the foot velocity normal to the footpad points down from above the foot, which causes the footpad to switch to its folded state. The reduction in drag in this state is approximated by a reduction in the footpad radius to $1/4^\textrm{th}$ its original value \cite{Floyd2009}. The folded foot area also causes an additional drag force. This added force is modeled by the drag created by a footpad, with equal radius and orthogonal to the original footpad.
+
+\section{Leg Four Bar Angle Calculations}
 
 \begin{figure}[htb]
 	\centering
@@ -47,33 +68,33 @@ Under the assumption that $\theta_0 = 0$ and given $\theta_1$, angles $\theta_2$
 
 \noindent Plugging equations \ref{eq:Aloc} and \ref{eq:Bloc} into \ref{eq:BArel} yields
 \begin{align}
-	0 &= (L_0 + L_3 \cos \theta_3 - L_1 \cos \theta_1)^2 + (L_3 \sin \theta_3 - L_1 \sin \theta_1)^2 - L_3^2 \notag \\
+	0 &= (L_0 + L_3 \cos \theta_3 - L_1 \cos \theta_1)^2 + (L_3 \sin \theta_3 - L_1 \sin \theta_1)^2 - L_2^2 \notag \\
 	  &= L_0^2 + 2 L_0 L_3 \cos \theta_3 - 2 L_0 L_1 \cos \theta_1 + L_3^2 \cos^2 \theta_3 - 2 L_3 L_1 \cos \theta_3 \cos \theta_1 \notag \\
 	  & \quad + L_1^2 \cos \theta_1 + L_3^2 \sin^2 \theta_3 - 2 L_3 L_1 \sin \theta_3 \sin \theta_1 + L_1^2 \sin \theta_1^2 - L_2^2 \notag \\
 	  &= (2 L_0 L_3 - 2 L_1 L_3 \cos \theta_1) \cos \theta_3 - 2 L_1 L_3 \sin \theta_1 \sin \theta_3 \notag\\
 	  & \quad + L_3^2 + L_1^2 + L_0^2 - L_2^2 - 2L_0 L_1 \cos \theta_1
 \end{align}
 
-\noindent Grouping the terms that do not depend on $\theta_3$ 
+\noindent Grouping the terms that do not depend on $\theta_3$,
 
-\begin{align*}
+\begin{align}
 	\alpha &= 2 L_0 L_3 - 2 L_1 L_3 \cos \theta_1 \\
 	\beta &= -2 L_1 L_3 \sin \theta_1 \\
 	\gamma &= L_1^2 L_3^2 L_0^2 - L_2^2 - 2 L_0 L_1 \cos \theta_1 
-\end{align*}
+\end{align}
 
 \noindent If we define $\delta = \tan^{-1} \left( \frac{\beta}{\alpha} \right)$ then it follows that
 
-\begin{equation*}
+\begin{equation}
 	\cos \delta \cos \theta_3 + \sin \delta \sin \theta_3 + \frac{\gamma}{\sqrt{\alpha^2 + \beta^2}} = 0
-\end{equation*}
+\end{equation}
 
 \noindent Therefore, 
 
-\begin{align*}
+\begin{align}
 	\theta_3 &= \delta \pm \cos^{-1} \left( \frac{- \gamma}{\sqrt{\alpha^2 + \beta^2}} \right) \\
 	\theta_2 &= \tan^{-1} \left( \frac{ L_3 \sin \theta_3 - L_1 \sin \theta_1}{L_0 + L_3 \cos \theta_3 - L_1 \sin \theta_1} \right)
-\end{align*}
+\end{align}
 
 \subsection{Angular Speed}
 
@@ -99,9 +120,9 @@ Differentiating the loop closure equation (\ref{eq:dloop}) yields:
 	\ddot{A} + \frac{d^2}{dt^2} (B -A) = \frac{d^2}{dt^2} (B - C) \\
 \end{equation}
 
-\begin{equation*}
+\begin{equation}
 	\begin{bmatrix} - L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1 - \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 + \begin{bmatrix} - L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{bmatrix} \ddot{\theta}_2 - \begin{bmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{bmatrix} \dot{\theta}_2^2 = \begin{bmatrix} - L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \ddot{\theta}_3 - \begin{bmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3
-\end{equation*}
+\end{equation}
 
 \noindent Rearranging terms yields a system of linear equations that allows us to solve for $\ddot{\theta}_3$ and $\ddot{\theta}_2$ given $\ddot{\theta}_1$, $\dot{\theta}_1$, $\dot{\theta}_2$, $\dot{\theta}_3$, $\theta_1$, $\theta_2$, and $\theta_3$,
 
@@ -112,31 +133,31 @@ Differentiating the loop closure equation (\ref{eq:dloop}) yields:
 \section{Joint Position/Speed/Acceleration}
 \subsection{Joint A}
 
-\begin{align*}
+\begin{align}
 	A &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \\
 	\dot{A} &= \dot{O} + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 \\
 	\ddot{A} &= \ddot{O} + \begin{bmatrix} -L_1 \cos \theta_1 \\ -L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1
-\end{align*}
+\end{align}
 
 \subsection{Joint B}
 
-\begin{align*}
+\begin{align}
 	B &= O + \begin{bmatrix} L_0 \\ 0 \end{bmatrix} + \begin{bmatrix} L_3 \cos \theta_2 \\ L_3 \sin \theta_4 \end{bmatrix} \\
 	\dot{B} &= \dot{O} + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \dot{\theta}_3 \\
-	\ddot{B} &= \ddot{O} \begin{bmatrix} -L_3 \cos \theta_3 \\ - L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3^2 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \ddot{\theta}_3 
-\end{align*}
+	\ddot{B} &= \ddot{O} + \begin{bmatrix} -L_3 \cos \theta_3 \\ - L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3^2 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \ddot{\theta}_3 
+\end{align}
 
 \subsection{Joint C}
  
-\begin{align*}
+\begin{align}
 	C &= O + \begin{bmatrix} L_0 \\ 0 \end{bmatrix} \\
 	\dot{C} &= \dot{O} \\
 	\ddot{C} &= \ddot{O}
-\end{align*}
+\end{align}
 
 \subsection{Joint F}
 
-\begin{align*}
+\begin{align}
 	F &= O + A + (F-A) \\
 	  &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} + \begin{bmatrix} L_4 \cos(\theta_2 + \pi) \\ L_4 \sin(\theta_2 + \pi) \end{bmatrix} \\
 	\dot{F} &= \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} - L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2 \\
@@ -144,7 +165,7 @@ Differentiating the loop closure equation (\ref{eq:dloop}) yields:
 		+ \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_2 
 		+ \begin{bmatrix} -L_4 \cos(\theta_2 + \pi) \\ -L_4 \sin(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2^2 
 		+ \begin{bmatrix} -L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \ddot{\theta}_2
-\end{align*}
+\end{align}
 
 \section{Force/Torque calculations}
 
@@ -159,31 +180,33 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 \subsection{Leg Forces/Torques}
 \subsubsection{Summation of Loads on Links 2 and 4}
 
-\begin{align*}
+\begin{align}
 	\sum F_x &= 0 = P_x + F_{1x} + F_{3x} \\
 	\sum F_y &= 0 = P_y + F_{1y} + F_{3y} \\
 	\sum M_A &= 0 = M - F_{3x} L_2 \sin \theta_2 + F_{3y} L_2 \cos \theta_2 + P_x L_4 \sin \theta_2 - P_y L_4 \cos \theta_2
-\end{align*}
+\end{align}
+
+\noindent Where $P_x$, $P_y$, and $M$ are the loads on the foot attached to the end of the leg given by equations \ref{eq:footF} and \ref{eq:footM}.
 
 \subsubsection{Summation of Loads on Link 1}
 
-\begin{align*}
+\begin{align}
 	\sum F_x &= 0 = -F_{1x} + F_{R1x} \\
 	\sum F_y &= 0 = -F_{1y} + F_{R1y} \\
 	\sum M_A &= 0 = T + F_{1y} L_1 \cos \theta_1 + F_{1x} L_1 \sin \theta_1
-\end{align*}
+\end{align}
 
 \subsubsection{Summation of Loads on Link 3}
 
-\begin{align*}
+\begin{align}
 	\sum F_x &= 0 = -F_{3x} + F_{R3x} \\
 	\sum F_y &= 0 = -F_{3y} + F_{R3y} \\
 	\sum M_C &= 0 = F_{3y} L_3 \cos \theta_3 + F_{3x} L_3 \sin \theta_3
-\end{align*}
+\end{align}
 
 \noindent In matrix form,
 
-\begin{equation*}
+\begin{equation}
 \begin{bmatrix}
 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 &0 \\ 
 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 &0 \\
@@ -195,17 +218,23 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 0 & 1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & L_3 \sin \theta_3 & L_3 \cos \theta_3 & 0
 \end{bmatrix}
+\begin{bmatrix} F_{R1x} \\ F_{R1y} \\ F_{R3x} \\ F_{R3y} \\ F_{1x} \\ F_{1y} \\ F_{3x} \\ F_{3y} \\ T \end{bmatrix}
 =
 \begin{bmatrix} -P_x \\ - P_y \\ -M \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{bmatrix}
-\end{equation*}
+\end{equation}
 
 \subsection{Robot Forces/Torques}
 Once the forces on the legs are calculated, the relevant forces are transmitted to the robot through the following equations
 
-\begin{align*}
+\begin{align}
 	\sum F_x &= m \ddot{x} = -F_{R1x} - F_{R3x}  \\
 	\sum F_y &= m \ddot{y} = -F_{R1y} - F_{R3y} - mg \\
 	\sum M_O &= I \ddot{\theta}_0 = -F_{R3y} L_0 \cos \theta_0 + F_{R3x} L_0 \sin \theta_0 - T
-\end{align*}
+\end{align}
+
+\noindent These equations are then integrated to obtain the motion of the robot.
+
+\bibliography{/Users/Nitish/Documents/Papers/library.bib}{}
+\bibliographystyle{plain}
 
 \end{document}
