@@ -9,6 +9,9 @@
 *.aux
 *.bbl
 *.out
+*.blg
+SimWriteup/report.pdf
+Simulation/plots*/*
 
 # Packages #
 ############
