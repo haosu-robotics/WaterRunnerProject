@@ -16,9 +16,9 @@ class Foot():
 		self.gamma = footParams['gamma']
 		self.inertia = (footParams['width']*footParams['thickness']**3.)/12.
 		self.inertiaEff = .3e-6
-		self.k = (self.gamma*self.PRBMK*self.E*self.inertia/self.length)*180./np.pi
+		#self.k = (self.gamma*self.PRBMK*self.E*self.inertia/self.length)*180./np.pi
+		self.k = 1
 		print(self.k)
-		self.k = 0.1
 		self.b = footParams['damping']*10.**-5.
 		print(self.b)
 
@@ -61,6 +61,11 @@ class Foot():
 		self.loady = 0.
 		self.moment = 0.
 		self.bendingMoment = 0.
+		
+		self.loadxfine = 0.
+		self.loadyfine = 0.
+		self.momentfine = 0.
+		self.bendingMomentfine = 0.
 
 	def update(self, angle, pos):
 		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
@@ -68,7 +73,7 @@ class Foot():
 		totalLoadx = 0
 		totalLoady = 0
 		totalMoment = 0
-		for i in np.arange(100):
+		for i in np.arange(self.timeStepRatio):
 			fineLoadx, fineLoady, fineMoment = self.calcForce()
 			totalLoadx += fineLoadx
 			totalLoady += fineLoady
@@ -83,10 +88,7 @@ class Foot():
 		self.loadx = totalLoadx/self.timeStepRatio
 		self.loady = totalLoady/self.timeStepRatio
 		self.moment = totalMoment/self.timeStepRatio
-		print 'alphaPRBM: ', self.alphaPRBM,  'omegaPRBM: ', self.omegaPRBM, 'thetaPRBM: ', self.thetaPRBM
-		print 'Fy: ',self.loady, 'Fx: ', self.loadx, 'y: ',  self.pos[2,1], 'ydot: ', self.speed[2,1]
-		print 'damping: ', -1*self.b*self.omegaPRBM, 'spring: ',  -1* self.k*self.thetaPRBM, 'bending :', self.bendingMoment
-		print 'k: ', self.k, 'b: ', self.b, 'I*: ',self.inertiaEff
+
 
 	def calcAngAccel(self, alpha):
 		#update history use euler's for first 4 then adam's bashforth
@@ -95,7 +97,7 @@ class Foot():
 		self.alphaPRBM1 = self.alphaPRBM
 	
 		self.alpha = alpha
-		self.alphaPRBM = (-1*self.b*self.omegaPRBM - self.k*self.thetaPRBM + self.bendingMoment)/self.inertiaEff
+		self.alphaPRBM = (-1*self.b*self.omegaPRBM - self.k*self.thetaPRBM + self.bendingMomentfine)/self.inertiaEff
 		#print 'damp Force: ', -1*self.b*self.omegaPRBM, 'spring force: ', -1*self.k*self.thetaPRBM, 'bending moment: ', self.bendingMoment
 
 	def calcAngSpeed(self, omega):
@@ -106,17 +108,17 @@ class Foot():
 		self.omegaPRBM2 = self.omegaPRBM1
 		self.omegaPRBM1 = self.omegaPRBM
 
-		#if self.alphaPRBM3 == None:
-		self.omegaPRBM += self.alphaPRBM*self.timeStep
-		#else:
-		#	self.omegaPRBM += (self.timeStep/24.) * (55.*self.alphaPRBM - 59.*self.alphaPRBM1 + 37.*self.alphaPRBM2 - 9.*self.alphaPRBM3)	
+		if self.alphaPRBM3 == None:
+			self.omegaPRBM += self.alphaPRBM*self.timeStep
+		else:
+			self.omegaPRBM += (self.timeStep/24.) * (55.*self.alphaPRBM - 59.*self.alphaPRBM1 + 37.*self.alphaPRBM2 - 9.*self.alphaPRBM3)	
 	
 	def calcAngPos(self, theta):
 		self.theta = theta
-		#if self.omegaPRBM3 == None:
-		self.thetaPRBM += self.omegaPRBM*self.timeStep + 0.5*self.alphaPRBM*self.timeStep**2
-		#else:
-		#	self.thetaPRBM += (self.timeStep/24.) * (55.*self.omegaPRBM - 59.*self.omegaPRBM1 + 37.*self.omegaPRBM2 - 9.*self.omegaPRBM3)
+		if self.omegaPRBM3 == None:
+			self.thetaPRBM += self.omegaPRBM*self.timeStep + 0.5*self.alphaPRBM*self.timeStep**2
+		else:
+			self.thetaPRBM += (self.timeStep/24.) * (55.*self.omegaPRBM - 59.*self.omegaPRBM1 + 37.*self.omegaPRBM2 - 9.*self.omegaPRBM3)
 	
 	def calcPos(self, pos):
 		self.pos[0,:] = pos
@@ -133,10 +135,10 @@ class Foot():
 
 	def calcForce(self):
 		'''Returns Ground Reaction Force and Moment'''
-
 		yp = -1.*self.pos[2,1]
 		ypdot = -1.*self.speed[2,1]
 		
+		'''
 		self.loadx = 0;
 		if yp > 0:
 			self.loady = 10.
@@ -145,24 +147,37 @@ class Foot():
 
 		self.moment = -1.*self.loady*(self.pos[2,0]- self.pos[0,0]) + self.loadx*(self.pos[2,1] - self.pos[1,1])
 		self.bendingMoment = self.moment - self.loady*(self.pos[0,0]- self.pos[1,0]) + self.loadx*(self.pos[0,1] - self.pos[1,1])
-		
 		'''
-		if yp > 0 and ypdot > 0:
-			self.loady = 0.25e9 * (np.abs(yp)**3.)*(1.- .25*ypdot)
-			if np.abs(self.robotMass*self.accel[0]) < self.staticFrictionCoeff*self.loady:
-				self.loadx = self.robotMass*self.accel[0]
+
+		if yp > 0:
+			if ypdot > 5:
+				ypdot = 5.
+			elif ypdot < -2:
+				ypdot = -2.
+			
+			if ypdot >=0:
+				self.loadyfine = 0.25e9 * (np.abs(yp)**3.)*(1.- 0.1*ypdot)
 			else:
-				self.loadx = -1.*self.kinFrictionCoeff*np.abs(self.loady)*np.sign(self.speed[2,0])
-			self.loadx = 0
-			self.moment = -1.*self.loady*(self.pos[2,0]- self.pos[0,0]) + self.loadx*(self.pos[2,1] - self.pos[1,1])
-			self.bendingMoment = self.moment - self.loady*(self.pos[0,0]- self.pos[1,0]) + self.loadx*(self.pos[0,1] - self.pos[1,1])
+				self.loadyfine = 0.25e9 * (np.abs(yp)**3.)*(1.+ ypdot)
+			
+			#self.speed = np.zeros((3,2))
+			if np.abs(self.robotMass*self.accel[0]) < self.staticFrictionCoeff*self.loadyfine:
+				self.loadxfine = -1*self.robotMass*self.accel[0]
+			else:
+				self.loadxfine = -1*self.kinFrictionCoeff*np.abs(self.loadyfine)*np.sign(self.speed[2,0])
+			self.momentfine = -1.*self.loadyfine*(self.pos[2,0]- self.pos[0,0]) + self.loadxfine*(self.pos[2,1] - self.pos[1,1])
+			self.bendingMomentfine = self.momentfine - self.loadyfine*(self.pos[0,0]- self.pos[1,0]) + self.loadxfine*(self.pos[0,1] - self.pos[1,1])
 
 		else:
-			self.loady = 0.
-			self.loadx = 0.
-			self.moment = 0.
-			self.bendingMoment = 0.
-
-
+			self.loadyfine = 0.
+			self.loadxfine = 0.
+			self.momentfine = 0.
+			self.bendingMomentfine = 0.
 		'''
-		return self.loadx, self.loady, self.moment
+		if yp > 0.001:
+			print 'alphaPRBM: ', self.alphaPRBM,  'omegaPRBM: ', self.omegaPRBM, 'thetaPRBM: ', self.thetaPRBM
+			print 'Fy: ',self.loadyfine, 'Fx: ', self.loadxfine, 'y: ',  self.pos[2,1], 'ydot: ', self.speed[2,1]
+			print 'damping: ', -1*self.b*self.omegaPRBM, 'spring: ',  -1* self.k*self.thetaPRBM, 'bending :', self.bendingMoment
+			print 'k: ', self.k, 'b: ', self.b, 'I*: ',self.inertiaEff
+		'''
+		return self.loadxfine, self.loadyfine, self.momentfine

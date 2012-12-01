@@ -40,7 +40,7 @@ class Robot:
 			self.motors.append(motor)
 
 		#motor voltage
-		self.motorVoltage = 5.
+		self.motorVoltage = 2.
 
 	def update(self):
 		'''Updates state of legs to calculate forces on robot then updates accel speed, position of robot'''

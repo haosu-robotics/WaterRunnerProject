@@ -2,7 +2,7 @@
 world:
     gravity: -9.81
     timeStep: 0.001
-    endTime: 2.
+    endTime: 5.
 
 robot:
     len: 0.3
@@ -23,7 +23,7 @@ leg:
 
 motor:
     initPos: 0.
-    initSpeed: 40.
+    initSpeed: 12.
     initAccel: 0.
 
 footGround:
@@ -37,7 +37,7 @@ footGround:
     gamma: 0.85
     damping: 1.2
     width: 0.035
-    timeStepRatio: 100.
+    timeStepRatio: 200.
 
 footWater:
     radius: 0.02

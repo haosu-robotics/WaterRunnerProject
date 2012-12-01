@@ -84,15 +84,15 @@ while Robot.time < endtime:
 				plt.figure(figsize = (480./80.,320./80.), dpi = 80, num = 1)
 				lines, = plt.plot(legPts[:,0],legPts[:,1],'-ok',lw = 0.2, markersize = 4, markeredgewidth = 0)
 				plt.plot([-100, 100],[0, 0],'b')
-				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.10, O[1]+ 0.10))
+				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.15, O[1]+ 0.15))
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
 				j += 1
-			if i%2 == 0 and i != 0:
+			if i%5 == 0 and i != 0:
 				lines.set_xdata(legPts[:,0])
 				lines.set_ydata(legPts[:,1])
 				plt.draw()
-				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.10 , O[1]+ 0.10))
+				plt.axis((O[0] - 0.15, O[0] + 0.15, O[1] -0.15 , O[1]+ 0.15))
 				#plt.axis((-0.08, 0.10, -0.02, 0.12))
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
