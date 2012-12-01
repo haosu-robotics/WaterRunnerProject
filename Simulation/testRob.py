@@ -4,8 +4,9 @@ import yaml
 import robot
 import leg
 import motor
-import footground as foot
+import footgroundtest as foot
 import os
+from sys import platform
 
 movie = True
 
@@ -31,7 +32,7 @@ Leg = leg.Leg(initLegAngle,initLegPos,legParams,Foot)
 Motor = motor.Motor(motorParams,worldParams)
 Robot = robot.Robot(robotParams,worldParams,(Leg,),(Motor,))
 
-#set up list<D-]>s to store data
+#set up lists to store data
 robotForces = np.zeros((len(time),2))
 robotTorque = np.zeros(len(time))
 robotpos = np.zeros((len(time),2))
@@ -87,7 +88,7 @@ while Robot.time < endtime:
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
 				j += 1
-			if i%1000 == 0 and i != 0:
+			if i%2 == 0 and i != 0:
 				lines.set_xdata(legPts[:,0])
 				lines.set_ydata(legPts[:,1])
 				plt.draw()
@@ -109,7 +110,10 @@ print 'accel = ',robotaccel
 print 'footForce = ',footForce
 #plot results
 if movie == True:
-	os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
+	if platform == 'darwin':	
+		os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
+	else:
+		os.system('avconv -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
 
 #figure 2 robot position
 fig = plt.figure(num = 2)
