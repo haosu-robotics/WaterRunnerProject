@@ -22,7 +22,6 @@ class Foot():
 		self.b = 0
 
 		self.gravity = worldParams['gravity']
-		self.timeStep = worldParams['timeStep']
 		self.robotMass = robotMass
 
 		#initialize angle position, speed, accel of foot

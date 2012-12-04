@@ -2,7 +2,7 @@ import numpy as np
 
 class Leg:
 
-	def __init__(self,initAngle,initPos,legParams,Foot):
+	def __init__(self,initAngle,initPos,legParams,worldParams,Foot):
 		'''Arguments:
 		initAngle: vector containing initial angle, angular speed, angular accel of leg input shaft
 		initPos:   matrix whos rows are x,y initial position, speed, accel of leg input shaft
@@ -33,7 +33,7 @@ class Leg:
 		self.robotLoad = np.zeros(3) #[Fx, Fy, T]
 		self.Foot = Foot
 
-	def update(self, angle, pos):
+	def update(self, angle, pos, timestep):
 		'''Updates state of leg by calling methods to calculate joint angular position, speed, and accel, 
 		and cartesian posiiton, speed and accels. Updates force/torque on leg.'''
 		
@@ -48,7 +48,7 @@ class Leg:
 		self.calcAccel(pos[2,:])
 		
 		#update Foot
-		self.Foot.update([self.theta[2], self.omega[2], self.alpha[2]],[self.jointPos[4,:], self.jointSpeed[4,:], self.jointAccel[4,:]])
+		self.Foot.update([self.theta[2], self.omega[2], self.alpha[2]],[self.jointPos[4,:], self.jointSpeed[4,:], self.jointAccel[4,:]], timestep)
 		
 		#update Force/Torque
 		self.calcForceTorque()

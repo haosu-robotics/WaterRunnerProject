@@ -1,8 +1,9 @@
 #YAML
 world:
-    gravity: -9.81
-    timeStep: 0.001
+    timeStep: 1.e-3
+    timeStepFine: 5.e-6
     endTime: 5.
+    gravity: -9.81
 
 robot:
     len: 0.3
@@ -23,8 +24,15 @@ leg:
 
 motor:
     initPos: 0.
-    initSpeed: 12.
+    initSpeed: 15.
     initAccel: 0.
+    voltage: 50000.
+    J: 0.01
+    b: .1
+    Ke: 0.01
+    Kt: 0.01
+    R: 1.
+    L: 0.5
 
 footGround:
     #PBRM foot
@@ -37,7 +45,6 @@ footGround:
     gamma: 0.85
     damping: 1.2
     width: 0.035
-    timeStepRatio: 200.
 
 footWater:
     radius: 0.02

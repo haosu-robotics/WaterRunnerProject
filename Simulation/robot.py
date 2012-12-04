@@ -18,7 +18,6 @@ class Robot:
 		self.Force = np.zeros(2)
 
 		self.grav = worldParams['gravity']
-		self.timeStep = worldParams['timeStep']
 		self.time = 0.
 		
 		#Adam's bashforth history
@@ -42,14 +41,14 @@ class Robot:
 		#motor voltage
 		self.motorVoltage = 2.
 
-	def update(self):
+	def update(self, timestep):
 		'''Updates state of legs to calculate forces on robot then updates accel speed, position of robot'''
-
+		self.timeStep = timestep
 		#calculate update leg/motor pairs
 		for leg, motor in zip(self.legs,self.motors):
-			leg.update([motor.pos, motor.speed, motor.accel], np.array([[self.pos], [self.speed], [self.accel]]))
+			leg.update([motor.pos, motor.speed, motor.accel], np.array([[self.pos], [self.speed], [self.accel]]), timestep)
 			torque = leg.robotLoad[2]
-			motor.update(torque,self.motorVoltage)
+			motor.update(torque,self.motorVoltage,timestep)
 			
 		self.calcAccel()
 		self.calcSpeed()

@@ -23,8 +23,7 @@ class Foot():
 		print(self.b)
 
 		self.gravity = worldParams['gravity']
-		self.timeStepRatio = footParams['timeStepRatio']
-		self.timeStep = worldParams['timeStep']/self.timeStepRatio
+		self.timeStepFine = worldParams['timeStepFine']
 		self.robotMass = robotMass
 
 		#initialize angle position, speed, accel of foot
@@ -67,13 +66,17 @@ class Foot():
 		self.momentfine = 0.
 		self.bendingMomentfine = 0.
 
-	def update(self, angle, pos):
+	def update(self, angle, pos, timestep):
 		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
 		and cartesian posiiton, speed and accels. Updates force/torque on leg.'''
 		totalLoadx = 0
 		totalLoady = 0
 		totalMoment = 0
-		for i in np.arange(self.timeStepRatio):
+		self.timeStep = self.timeStepFine
+		timeStepRatio = self.timeStep/self.timeStepFine
+
+		for i in np.arange(timeStepRatio):
+			#print i, timeStepRatio
 			fineLoadx, fineLoady, fineMoment = self.calcForce()
 			totalLoadx += fineLoadx
 			totalLoady += fineLoady
@@ -85,9 +88,9 @@ class Foot():
 			self.calcSpeed(pos[1])
 			self.calcAccel(pos[2])
 	
-		self.loadx = totalLoadx/self.timeStepRatio
-		self.loady = totalLoady/self.timeStepRatio
-		self.moment = totalMoment/self.timeStepRatio
+		self.loadx = totalLoadx/timeStepRatio
+		self.loady = totalLoady/timeStepRatio
+		self.moment = totalMoment/timeStepRatio
 
 
 	def calcAngAccel(self, alpha):
@@ -173,11 +176,10 @@ class Foot():
 			self.loadxfine = 0.
 			self.momentfine = 0.
 			self.bendingMomentfine = 0.
-		'''
-		if yp > 0.001:
+		
+		if yp > -0.02 and False:
 			print 'alphaPRBM: ', self.alphaPRBM,  'omegaPRBM: ', self.omegaPRBM, 'thetaPRBM: ', self.thetaPRBM
 			print 'Fy: ',self.loadyfine, 'Fx: ', self.loadxfine, 'y: ',  self.pos[2,1], 'ydot: ', self.speed[2,1]
 			print 'damping: ', -1*self.b*self.omegaPRBM, 'spring: ',  -1* self.k*self.thetaPRBM, 'bending :', self.bendingMoment
 			print 'k: ', self.k, 'b: ', self.b, 'I*: ',self.inertiaEff
-		'''
 		return self.loadxfine, self.loadyfine, self.momentfine
