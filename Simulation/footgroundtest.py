@@ -17,10 +17,8 @@ class Foot():
 		self.inertia = (footParams['width']*footParams['thickness']**3.)/12.
 		self.inertiaEff = .3e-6
 		#self.k = (self.gamma*self.PRBMK*self.E*self.inertia/self.length)*180./np.pi
-		self.k = 1
-		print(self.k)
+		self.k = footParams['k']
 		self.b = footParams['damping']*10.**-5.
-		print(self.b)
 
 		self.gravity = worldParams['gravity']
 		self.timeStepFine = worldParams['timeStepFine']
@@ -140,17 +138,6 @@ class Foot():
 		'''Returns Ground Reaction Force and Moment'''
 		yp = -1.*self.pos[2,1]
 		ypdot = -1.*self.speed[2,1]
-		
-		'''
-		self.loadx = 0;
-		if yp > 0:
-			self.loady = 10.
-		else:
-			self.loady = 0.
-
-		self.moment = -1.*self.loady*(self.pos[2,0]- self.pos[0,0]) + self.loadx*(self.pos[2,1] - self.pos[1,1])
-		self.bendingMoment = self.moment - self.loady*(self.pos[0,0]- self.pos[1,0]) + self.loadx*(self.pos[0,1] - self.pos[1,1])
-		'''
 
 		if yp > 0:
 			if ypdot > 5:

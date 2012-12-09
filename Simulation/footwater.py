@@ -31,7 +31,7 @@ class Foot():
 		self.loady = 0.
 		self.moment = 0.
 
-	def update(self, angle, pos):
+	def update(self, angle, pos, timestep):
 		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
 		and cartesian posiiton, speed and accels. Updates force/torque on leg.'''
 
@@ -60,7 +60,8 @@ class Foot():
 	def calcForce(self):
 		normalVect = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
 		normalVelComp = np.dot(normalVect, self.speed)
-
+		
+		#unfolded state
 		if normalVelComp >= 0:
 			if  self.y_bf(self.radius) > 0:
 				self.loadx = 0.
@@ -68,12 +69,13 @@ class Foot():
 				self.moment = 0.		
 				return
 			else:	
-				percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
-				if percentSub > 1:
-					percentSub = 1.
+				self.percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
+				if self.percentSub > 1:
+					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
-				force1, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*percentSub*self.radius, args =(self.radius, normal1))
+				force1, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*self.percentSub*self.radius, args =(self.radius, normal1))
 				force2 = 0
+		#folded state
 		else:
 			if  self.y_bf(self.radiusUp) > 0:
 				self.loadx = 0.
@@ -81,19 +83,19 @@ class Foot():
 				self.moment = 0.
 				return
 			else:
-				percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta + np.pi))
-				if percentSub > 1:
-					percentSub = 1.
+				self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta + np.pi))
+				if self.percentSub > 1:
+					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
-				force1, _ = integrate.quad(self.drag_s,-1*self.radiusUp, -1.*self.radiusUp+2.*percentSub*self.radiusUp, args = (self.radiusUp, normal1))
-
+				force1, _ = integrate.quad(self.drag_s,-1*self.radiusUp, -1.*self.radiusUp+2.*self.percentSub*self.radiusUp, args = (self.radiusUp, normal1))
+				
+				force2 = 0
 				normal2 = np.array([-1*np.cos(self.theta), -1.*np.sin(self.theta)])
-				force2, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*percentSub*self.radius, args = (self.radius, normal2))
-		
+				force2, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*self.percentSub*self.radius, args = (self.radius, normal2))
 		self.loadx = -1.*force1*np.sin(self.theta) + force2 * np.cos(self.theta)
 		self.loady =     force1*np.cos(self.theta) + force2 * np.sin(self.theta)
 		self.moment = 0.
-		print  'Fx: ', self.loadx, 'Fy: ', self.loady, 'normal: ', normalVelComp, 'vel: ', self.speed, 'y: ', self.y_bf(self.radius), 'theta: ',self.theta*180./np.pi
+		#print  'Fx: ', self.loadx, 'Fy: ', self.loady, 'normal: ', normalVelComp, 'vel: ', self.speed, 'y: ', self.y_bf(self.radius), 'theta: ',self.theta*180./np.pi
 	
 	def y_bf(self, radius):
 		return self.pos[1] + radius*np.sin(self.theta + np.pi)
@@ -109,7 +111,7 @@ class Foot():
 		return a_s
 
 	def depth_s(self, s, radius):
-		depth = -1.*self.y_bf(radius)*(1. - (s + radius)/(2.*self.density*radius))
+		depth = -1.*self.y_bf(radius)*(1. - (s + radius)/(2.*self.percentSub*radius))
 		return depth
 
 	def drag_s(self, s, radius, normal):

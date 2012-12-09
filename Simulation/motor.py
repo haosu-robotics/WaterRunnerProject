@@ -2,8 +2,8 @@ import numpy as np
 
 class Motor:
 
-	def __init__(self,motorParams):
-		self.pos = motorParams['initPos']
+	def __init__(self,motorParams, angleOffset):
+		self.pos = motorParams['initPos'] + angleOffset
 		self.speed = motorParams['initSpeed']
 		self.accel = motorParams['initAccel']
 		self.voltage = motorParams['voltage']
@@ -21,16 +21,16 @@ class Motor:
 							   [self.accel], 
 							   [0]])         #speed accel, di/dt
 		self.load = 0
+	
 	def update(self,load,voltage, timestep):
 		self.load = load
 		self.pos += timestep * self.speed
 	'''
-	
 	def update(self,load,voltage, timestep):
 		self.load = load
 		self.dstate = (np.dot(np.array([[0, 1,                 0               ], 
-					  				   [0,  -1*self.b/self.J,  self.Kt/self.J  ],
-									   [0,  -1*self.Ke/self.L, -1*self.R/self.L]]), 
+					  				    [0, -1*self.b/self.J,  self.Kt/self.J  ],
+									    [0, -1*self.Ke/self.L, -1*self.R/self.L]]), 
 									   self.state) 
 						+ np.array([[0], 
 								   [load/self.J], 
@@ -40,5 +40,4 @@ class Motor:
 		self.pos = self.state[0]
 		self.speed = self.state[1]
 		self.accel = self.dstate[1]
-		'''
-
+	'''

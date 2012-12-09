@@ -34,8 +34,8 @@ The drag on the foot is approximated by the drag on a disk entering water vertic
 \noindent Where $C_D^* \approx 0.703$ is the coefficient of drag, $\rho$ is the density of water, $u$ is the foot speed, $S = \pi r_{eff}^2$, and $h(t)$ is the depth of the foot under the water \cite{Glasheen1996a}. The integral of this drag force over the submerged area of the foot is:
 
 \begin{align}
-F_w &= C_D^* \int_{-R}^{-R+2pR} (\sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|) ds \label{eq:footF}\\
-M_w &= C_D^* \rho \int_{-R}^{-R + 2pR} (\sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|)(-s) ds \label{eq:footM} \\
+F_w &= C_D^* \int_{-R}^{-R+2pR} \sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|) ds \label{eq:footF}\\
+M_w &= C_D^* \rho \int_{-R}^{-R + 2pR} \sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|)(-s) ds \label{eq:footM} \\
 a(s) &= \vec{v}(s) \cdot \vec{n} \\
 h(s) &= (y_\mathrm{water} - y_\mathrm{BF} ) \left( 1 - \frac{s + R}{2 p R} \right)
 \end{align}
@@ -103,7 +103,7 @@ Loop closure requires that
 \begin{align}
 	A + (B - A) &= C + (C - B) \notag \\
 	\dot{A} - \frac{d}{dt} (B - A) &= \frac{d}{dt} ( B - C) \label{eq:dloop}\\
-	\begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \dot{\theta}_3 &= \begin{bmatrix} -L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{bmatrix} \dot{\theta}_1 \notag
+	\begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} -L_3 \sin \theta_3 \\ L_3 \cos \theta_3 \end{bmatrix} \dot{\theta}_3 &= \begin{bmatrix} -L_2 \sin \theta_2 \\ L_2 \cos \theta_2 \end{bmatrix} \dot{\theta}_2
 	\end{align}
 
 \noindent Rearranging terms yields a system of linear equations that allows us to solve for $\dot{\theta}_3$ and $\dot{\theta}_2$ given $\dot{\theta}_1$,
@@ -160,7 +160,7 @@ Differentiating the loop closure equation (\ref{eq:dloop}) yields:
 \begin{align}
 	F &= O + A + (F-A) \\
 	  &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} + \begin{bmatrix} L_4 \cos(\theta_2 + \pi) \\ L_4 \sin(\theta_2 + \pi) \end{bmatrix} \\
-	\dot{F} &= \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} - L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2 \\
+	\dot{F} &= \dot{O} + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} - L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2 \\
 	\ddot{F} &= \ddot{O} + \begin{bmatrix} -L_1 \cos \theta_1 \\ -L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 
 		+ \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_2 
 		+ \begin{bmatrix} -L_4 \cos(\theta_2 + \pi) \\ -L_4 \sin(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2^2 
@@ -193,7 +193,7 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 \begin{align}
 	\sum F_x &= 0 = -F_{1x} + F_{R1x} \\
 	\sum F_y &= 0 = -F_{1y} + F_{R1y} \\
-	\sum M_A &= 0 = T + F_{1y} L_1 \cos \theta_1 + F_{1x} L_1 \sin \theta_1
+	\sum M_A &= 0 = T - F_{1y} L_1 \cos \theta_1 + F_{1x} L_1 \sin \theta_1
 \end{align}
 
 \subsubsection{Summation of Loads on Link 3}
@@ -201,7 +201,7 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 \begin{align}
 	\sum F_x &= 0 = -F_{3x} + F_{R3x} \\
 	\sum F_y &= 0 = -F_{3y} + F_{R3y} \\
-	\sum M_C &= 0 = F_{3y} L_3 \cos \theta_3 + F_{3x} L_3 \sin \theta_3
+	\sum M_C &= 0 = - F_{3y} L_3 \cos \theta_3 + F_{3x} L_3 \sin \theta_3
 \end{align}
 
 \noindent In matrix form,
@@ -213,10 +213,10 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 0 & 0 & 0 & 0 & 0 & 0 & -L_2 \sin \theta_2 & L_2 \cos \theta_2 & 0 \\
 0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & L_1 \sin \theta_1 & L_1 \cos \theta_1 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 & L_1 \sin \theta_1 & -L_1 \cos \theta_1 & 0 & 0 & 1\\
 1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & L_3 \sin \theta_3 & L_3 \cos \theta_3 & 0
+0 & 0 & 0 & 0 & 0 & 0 & L_3 \sin \theta_3 & -L_3 \cos \theta_3 & 0
 \end{bmatrix}
 \begin{bmatrix} F_{R1x} \\ F_{R1y} \\ F_{R3x} \\ F_{R3y} \\ F_{1x} \\ F_{1y} \\ F_{3x} \\ F_{3y} \\ T \end{bmatrix}
 =
@@ -234,7 +234,8 @@ Once the forces on the legs are calculated, the relevant forces are transmitted 
 
 \noindent These equations are then integrated to obtain the motion of the robot.
 
-\bibliography{/Users/Nitish/Documents/Papers/library.bib}{}
+\bibliography{library.bib}{}
 \bibliographystyle{plain}
+
 
 \end{document}

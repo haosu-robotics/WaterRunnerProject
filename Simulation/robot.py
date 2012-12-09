@@ -38,17 +38,16 @@ class Robot:
 		for motor in motors:
 			self.motors.append(motor)
 
-		#motor voltage
-		self.motorVoltage = 2.
-
 	def update(self, timestep):
 		'''Updates state of legs to calculate forces on robot then updates accel speed, position of robot'''
 		self.timeStep = timestep
 		#calculate update leg/motor pairs
+		i = 0
 		for leg, motor in zip(self.legs,self.motors):
-			leg.update([motor.pos, motor.speed, motor.accel], np.array([[self.pos], [self.speed], [self.accel]]), timestep)
+			leg.update([motor.pos, motor.speed, motor.accel], np.array([[self.pos + leg.initPos[0,:]], [self.speed], [self.accel]]), timestep)
 			torque = leg.robotLoad[2]
-			motor.update(torque,self.motorVoltage,timestep)
+			motor.update(torque, motor.voltage,timestep)
+			i += 1
 			
 		self.calcAccel()
 		self.calcSpeed()
@@ -69,7 +68,7 @@ class Robot:
 			self.Force += leg.robotLoad[0:2]
 	
 		self.accel = self.Force/self.mass
-		#self.accel[0] = 0.
+		self.accel = np.zeros(2)
 		return self.accel
 
 	def calcAirDrag(self, xspeed):
@@ -88,7 +87,7 @@ class Robot:
 			self.speed += self.timeStep*self.accel
 		else:
 			self.speed += (self.timeStep/24.) * (55.*self.accel - 59.*self.accel1 + 37.*self.accel2 - 9.*self.accel3)
-		#self.speed[0] = 0
+		self.speed = np.zeros(2)
 		return self.speed
 	
 	def calcPos(self):
@@ -97,5 +96,4 @@ class Robot:
 			self.pos += self.speed*self.timeStep + (self.accel/2)*self.timeStep**2
 		else:
 			self.pos += (self.timeStep/24.) * (55.*self.speed - 59.*self.speed1 + 37.*self.speed2 - 9.*self.speed3)
-		#self.pos[0] = 0
 		return self.pos

@@ -21,6 +21,7 @@ class Leg:
 		self.alpha = self.calcAngAccels(initAngle[2])
 		
 		#Matricies that hold x, y position, speed, accel of joints. Rows are O, A, B, C, F respectively.
+		self.initPos = initPos
 		self.jointPos = np.zeros((5,2))
 		self.jointPos = self.calcPos(initPos[0,:])
 		self.jointSpeed = np.zeros((5,2))
@@ -144,15 +145,15 @@ class Leg:
 		and motor shaft torque using ground reaction force force, and moment
 		x = [Fr1x Fr1y Fr2x Fr2y F2x F2y F4x F4y T]'''
 
-		A = np.array([[0, 0, 0, 0, 1,								0,								 1,									 0,								  0],
-					  [0, 0, 0, 0, 0,								1,								 0,									 1,								  0],		
-					  [0, 0, 0, 0, 0,								0,								 -1*self.L[2]*np.sin(self.theta[2]), self.L[2]*np.cos(self.theta[2]), 0],
-					  [0, 0, 1, 0, -1,								0,								 0,									 0,								  0],
-					  [0, 0, 0, 1, 0,								-1,								 0,									 0,								  0],
-					  [0, 0, 0, 0, self.L[1]*np.sin(self.theta[1]), self.L[1]*np.cos(self.theta[1]), 0,									 0,								  1],
-					  [1, 0, 0, 0, 0,								0,								 -1,								 0,								  0],
-					  [0, 1, 0, 0, 0,								0,							 	 0,									 -1,							  0],
-					  [0, 0, 0, 0, 0,								0,							 	 self.L[3]*np.sin(self.theta[3]),    self.L[3]*np.cos(self.theta[3]), 0]]
+		A = np.array([[0, 0, 0, 0, 1,								0,								     1,									 0,								     0],
+					  [0, 0, 0, 0, 0,								1,								     0,									 1,								     0],		
+					  [0, 0, 0, 0, 0,								0,								     -1*self.L[2]*np.sin(self.theta[2]), self.L[2]*np.cos(self.theta[2]),    0],
+					  [0, 0, 1, 0, -1,								0,								     0,									 0,								     0],
+					  [0, 0, 0, 1, 0,								-1,								     0,									 0,								     0],
+					  [0, 0, 0, 0, self.L[1]*np.sin(self.theta[1]), -1.*self.L[1]*np.cos(self.theta[1]), 0,									 0,								     1],
+					  [1, 0, 0, 0, 0,								0,								     -1,								 0,								     0],
+					  [0, 1, 0, 0, 0,								0,							 	     0,									 -1,							     0],
+					  [0, 0, 0, 0, 0,								0,							 	     self.L[3]*np.sin(self.theta[3]),    -1*self.L[3]*np.cos(self.theta[3]), 0]]
 					  , dtype = float)
 		
 		b = np.array([[-1*self.Foot.loadx],

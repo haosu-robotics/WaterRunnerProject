@@ -1,36 +1,41 @@
 #YAML
 world:
     timeStep: 1.e-3
-    timeStepFine: 5.e-6
-    endTime: 5.
+    timeStepFine: 1.e-6
+    frameRate: .0075
+    endTime: 1.5
     gravity: -9.81
+    plotTimeStart: 1.
+    plotTimeEnd: 1.5
 
 robot:
     len: 0.3
     width: 0.125
-    mass: 0.025
+    mass: 0.05
     Iroll: 5.05e-4
     Ipitch: 1.08e-3
     Iyaw: 1.24e-3
     lCOM: 0.12
     hCOM: 0.002
-    initPos: [0, 0.10]
+    initPos: [0, 0.03]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
+    leg0Pos: [0, 0]
+    leg1Pos: [0.17325, 0]
 
 leg:
-    linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624]
+    linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624] 
     pm: 1.
 
 motor:
     initPos: 0.
-    initSpeed: 15.
+    initSpeed: 40.
     initAccel: 0.
-    voltage: 50000.
+    voltage: 50.
     J: 0.01
     b: .1
     Ke: 0.01
-    Kt: 0.01
+    Kt: 0.4
     R: 1.
     L: 0.5
 
@@ -42,6 +47,7 @@ footGround:
     thickness: 0.00159375
     E: 300. #Mpa
     PRBMK: 2.65
+    k: 0.5
     gamma: 0.85
     damping: 1.2
     width: 0.035
