@@ -9,6 +9,8 @@ class Robot:
 		
 		#initialize arrays holding properties
 		self.mass = robotParams['mass']
+		self.inertia = robotParams['Ipitch']
+
 		self.pos = np.array(2)
 		self.pos = np.array(robotParams['initPos'])
 		self.speed = np.array(2)
@@ -17,6 +19,10 @@ class Robot:
 		self.accel = np.array(robotParams['initAccel'])
 		self.Force = np.zeros(2)
 
+		self.theta = 0.
+		self.omega = 0.
+		self.alpha = 0.
+		self.Torque = 0.
 		self.grav = worldParams['gravity']
 		self.time = 0.
 		
@@ -27,6 +33,13 @@ class Robot:
 		self.speed3 = None
 		self.speed2 = None
 		self.speed1 = None
+		
+		self.alpha3 = None
+		self.alpha2 = None
+		self.alpha1 = None
+		self.omega3 = None
+		self.omega2 = None
+		self.omega1 = None
 
 		#add legs
 		self.legs = []
@@ -44,14 +57,19 @@ class Robot:
 		#calculate update leg/motor pairs
 		i = 0
 		for leg, motor in zip(self.legs,self.motors):
-			leg.update([motor.pos, motor.speed, motor.accel], np.array([[self.pos + leg.initPos[0,:]], [self.speed], [self.accel]]), timestep)
 			torque = leg.robotLoad[2]
-			motor.update(torque, motor.voltage,timestep)
+			motor.update(torque, motor.voltage,timestep)		
+			
+			position = self.pos + np.array([leg.initPos[0,0] * np.cos(self.theta), leg.initPos[0,0] * np.sin(self.theta)])
+			leg.update(np.array([self.theta, self.omega, self.alpha]), np.array([motor.pos, motor.speed, motor.accel]), np.array([[position], [self.speed], [self.accel]]), timestep)
 			i += 1
 			
 		self.calcAccel()
 		self.calcSpeed()
 		self.calcPos()
+		self.calcAlpha()
+		self.calcOmega()
+		self.calcTheta()
 		self.time += self.timeStep
 		
 		return 
@@ -63,20 +81,13 @@ class Robot:
 		self.accel2 = self.accel1
 		self.accel1 = self.accel
 		
-		self.Force = np.array([0, self.mass*self.grav])
+		self.Force = np.array([0., self.mass*self.grav])
 		for leg in self.legs:
 			self.Force += leg.robotLoad[0:2]
 	
 		self.accel = self.Force/self.mass
 		#self.accel = np.zeros(2)
 		return self.accel
-
-	def calcAirDrag(self, xspeed):
-		density = 1.225
-		A = 0.1*0.03
-		dragCoeff = 2.0
-		drag = -1*0.5*density*xspeed*np.abs(xspeed)*dragCoeff*A
-		return drag
 
 	def calcSpeed(self):
 		self.speed3 = self.speed2
@@ -97,3 +108,38 @@ class Robot:
 		else:
 			self.pos += (self.timeStep/24.) * (55.*self.speed - 59.*self.speed1 + 37.*self.speed2 - 9.*self.speed3)
 		return self.pos
+
+	def calcAlpha(self):
+		'''sum torques and divide by moment of inertia to find angular accel'''
+		#Update last accel history for adam's bashforth
+		self.alpha3 = self.alpha2
+		self.alpha2 = self.alpha1
+		self.alpha1 = self.alpha
+		
+		self.Torque = 0.
+		for leg in self.legs:
+			self.Torque += leg.robotLoad[2]
+	
+		self.alpha = self.Torque/self.inertia
+		#self.alpha = 0
+		return self.alpha
+
+	def calcOmega(self):
+		self.omega3 = self.omega2
+		self.omega2 = self.omega1
+		self.omega1 = self.omega
+		#perform euler's for first 4 iterations then adams-bashforth
+		if self.alpha3 == None:
+			self.omega += self.timeStep*self.alpha
+		else:
+			self.omega += (self.timeStep/24.) * (55.*self.alpha - 59.*self.alpha1 + 37.*self.alpha2 - 9.*self.alpha3)
+		#self.omega = 0
+		return self.omega
+	
+	def calcTheta(self):
+		#perform euler's for first 4 itereations then adams-bashforth
+		if self.omega3 == None:
+			self.pos += self.omega*self.timeStep + (self.alpha/2)*self.timeStep**2
+		else:
+			self.theta += (self.timeStep/24.) * (55.*self.omega - 59.*self.omega1 + 37.*self.omega2 - 9.*self.omega3)
+		return self.theta
