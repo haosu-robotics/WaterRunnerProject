@@ -68,7 +68,7 @@ class Robot:
 			self.Force += leg.robotLoad[0:2]
 	
 		self.accel = self.Force/self.mass
-		self.accel = np.zeros(2)
+		#self.accel = np.zeros(2)
 		return self.accel
 
 	def calcAirDrag(self, xspeed):
@@ -87,7 +87,7 @@ class Robot:
 			self.speed += self.timeStep*self.accel
 		else:
 			self.speed += (self.timeStep/24.) * (55.*self.accel - 59.*self.accel1 + 37.*self.accel2 - 9.*self.accel3)
-		self.speed = np.zeros(2)
+		#self.speed = np.zeros(2)
 		return self.speed
 	
 	def calcPos(self):

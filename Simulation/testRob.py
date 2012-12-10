@@ -1,3 +1,5 @@
+#! /usr/bin/env ipython
+
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
@@ -25,6 +27,7 @@ motorParams = inputs['motor']
 
 timeStep = worldParams['timeStep']
 timeStepFine = worldParams['timeStepFine']
+frameRate = worldParams['frameRate']
 curTimeStep = timeStep
 
 endtime = worldParams['endTime']
@@ -33,7 +36,7 @@ time = [0]
 #initialize foot, leg, and robot
 Foot = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,worldParams,robotParams['mass'])
 Leg = leg.Leg(initLegAngle,initLegPos,legParams,worldParams,Foot)
-Motor = motor.Motor(motorParams)
+Motor = motor.Motor(motorParams, 0)
 Robot = robot.Robot(robotParams,worldParams,(Leg,),(Motor,))
 
 #set up lists to store data
@@ -52,6 +55,7 @@ footAngle = []
 plt.figure(num = 1)
 i = 0
 j = 0
+firstFrame = True
 
 while Robot.time < endtime:
 	try:	
@@ -83,13 +87,11 @@ while Robot.time < endtime:
 		
 		if F2[1] < 0.001:
 			curTimeStep = timeStepFine
-			frames = 10*timeStep/timeStepFine
 		else:
 			curTimeStep = timeStep
-			frames = 10
 
 		if movie == True:
-			if i ==0:
+			if firstFrame:
 				os.system('rm movie/*')
 				fig = plt.figure(figsize = (480./80.,320./80.), dpi = 80, num = 1)
 				ax1 = fig.add_subplot(111)
@@ -99,8 +101,10 @@ while Robot.time < endtime:
 				ax1.xaxis.grid(color='gray', linestyle='dashed')
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
+				lastFrame = Robot.time
+				firstFrame = False
 				j += 1
-			if i%frames == 0 and i != 0:
+			if Robot.time - lastFrame >= frameRate and not firstFrame:
 				lines.set_xdata(legPts[:,0])
 				lines.set_ydata(legPts[:,1])
 				plt.draw()
@@ -108,6 +112,7 @@ while Robot.time < endtime:
 				ax1.xaxis.grid(color='gray', linestyle='dashed')
 				plt.savefig(''.join(['./movie/leg', str(j), '.png']), bbox_inches='tight')
 				print 'frame ',j,' saved',Robot.time,' s'
+				lastFrame = Robot.time
 				j += 1
 		i += 1
 	except KeyboardInterrupt:
@@ -116,13 +121,19 @@ while Robot.time < endtime:
 #plot results
 if movie == True:
 	if platform == 'darwin':	
-		os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
+		os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/a.mp4')
 	else:
-		os.system('avconv -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/water.mp4')
+		os.system('avconv -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/a.mp4')
 
 if plots == True:
 	time.pop()
 	time = np.array(time)
+	plotTimeStart = worldParams['plotTimeStart']
+	plotTimeEnd = worldParams['plotTimeEnd']
+	t1 = time >= plotTimeStart
+	t2 = time <= plotTimeEnd
+	timeToPlot = t1*t2
+
 	robotForces = np.array(robotForces)
 	robotTorque = np.array(robotTorque)
 	robotpos = np.array(robotpos)
@@ -141,15 +152,15 @@ if plots == True:
 	ax2 = fig.add_subplot(312)
 	ax3 = fig.add_subplot(313)
 	
-	p1 = ax1.plot(time,robotpos)
+	p1 = ax1.plot(time[timeToPlot],robotpos[timeToPlot])
 	ax1.set_ylabel(r'Robot Coordinate (m)')
 	lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
 
-	p2 = ax2.plot(time,robotspeed)
+	p2 = ax2.plot(time[timeToPlot],robotspeed[timeToPlot])
 	ax2.set_ylabel(r'Robot Speed $(\frac{m}{s})$')
 	lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-	p3 = ax3.plot(time,robotaccel)
+	p3 = ax3.plot(time[timeToPlot],robotaccel[timeToPlot])
 	ax3.set_ylabel(r'Robot Accel $(\frac{m}{s^2})$')
 	ax3.set_xlabel('time (s)')
 	lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
@@ -161,8 +172,8 @@ if plots == True:
 	#tit = fig.suptitle('Joint Forces')
 	ax1 = fig.add_subplot(111)
 	ax2 = ax1.twinx()
-	p1, = ax1.plot(time,robotForces[:,1],label = r'$F_y$')
-	p2, = ax2.plot(time,robotTorque,'r',linewidth = 0.5, label = 'Torque')
+	p1, = ax1.plot(time[timeToPlot],robotForces[timeToPlot,1],label = r'$F_y$')
+	p2, = ax2.plot(time[timeToPlot],robotTorque[timeToPlot],'r',linewidth = 0.5, label = 'Torque')
 	ax1.set_ylabel('Force (N)')
 	ax2.set_ylabel('Torque (N-m)')
 	ax1.set_xlabel('Time (s)')
@@ -180,15 +191,15 @@ if plots == True:
 	ax2 = fig.add_subplot(312)
 	ax3 = fig.add_subplot(313)
 
-	p1 = ax1.plot(time,ftpos)
+	p1 = ax1.plot(time[timeToPlot],ftpos[timeToPlot])
 	ax1.set_ylabel(r'Foot Coordinate (m)')
 	lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
 
-	p2 = ax2.plot(time,ftspeed)
+	p2 = ax2.plot(time[timeToPlot],ftspeed[timeToPlot])
 	ax2.set_ylabel(r'Foot Speed $(\frac{m}{s})$')
 	lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
 
-	p3 = ax3.plot(time,ftaccel)
+	p3 = ax3.plot(time[timeToPlot],ftaccel[timeToPlot])
 	ax3.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
 	ax3.set_xlabel('time (s)')
 	lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
@@ -199,8 +210,8 @@ if plots == True:
 	fig = plt.figure(num = 5)
 	tit = fig.suptitle('Ground Reaction Forces')
 	ax1 = fig.add_subplot(111)
-	p1, = ax1.plot(time,footForce[:,0],label = 'Grx')
-	p2, = ax1.plot(time,footForce[:,1],label = 'Gry	')
+	p1, = ax1.plot(time[timeToPlot],footForce[timeToPlot,0],label = 'Grx')
+	p2, = ax1.plot(time[timeToPlot],footForce[timeToPlot,1],label = 'Gry	')
 	ax1.set_ylabel('Force (N)')
 	ax1.set_xlabel('Time (s)')
 	x1, x2, y1,y2 = ax1.axis()

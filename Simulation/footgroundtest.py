@@ -64,14 +64,14 @@ class Foot():
 		self.momentfine = 0.
 		self.bendingMomentfine = 0.
 
-	def update(self, angle, pos, timestep):
+	def update(self, angle, pos, timeStep):
 		'''Updates state of foot by calling methods to calculate joint angular position, speed, and accel, 
 		and cartesian posiiton, speed and accels. Updates force/torque on leg.'''
 		totalLoadx = 0
 		totalLoady = 0
 		totalMoment = 0
 		self.timeStep = self.timeStepFine
-		timeStepRatio = self.timeStep/self.timeStepFine
+		timeStepRatio = timeStep/self.timeStepFine
 
 		for i in np.arange(timeStepRatio):
 			#print i, timeStepRatio
