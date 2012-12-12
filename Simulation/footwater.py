@@ -69,7 +69,10 @@ class Foot():
 				self.moment = 0.		
 				return
 			else:	
-				self.percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
+				if self.theta >= 0:
+					self.percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
+				else:
+					self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta))
 				if self.percentSub > 1:
 					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
@@ -83,7 +86,10 @@ class Foot():
 				self.moment = 0.
 				return
 			else:
-				self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta + np.pi))
+				if self.theta >= 0:
+					self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta + np.pi))
+				else:
+					self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta))
 				if self.percentSub > 1:
 					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
@@ -98,7 +104,10 @@ class Foot():
 		#print  'Fx: ', self.loadx, 'Fy: ', self.loady, 'normal: ', normalVelComp, 'vel: ', self.speed, 'y: ', self.y_bf(self.radius), 'theta: ',self.theta*180./np.pi
 	
 	def y_bf(self, radius):
-		return self.pos[1] + radius*np.sin(self.theta + np.pi)
+		if self.theta >= 0:
+			return self.pos[1] + radius*np.sin(self.theta + np.pi)
+		else:
+			return self.pos[1] + radius*np.sin(self.theta)
 
 	def velocity_s(self, s, radius):
 		v_bf = self.speed + radius*np.array([-1.*np.sin(self.theta + np.pi), np.cos(self.theta + np.pi)]) * self.omega

@@ -31,7 +31,7 @@ class Leg:
 		
 		#Vector that holds all joint loads and vector that holds loads transmitted to robot
 		self.jointLoad = np.zeros(9)
-		self.robotLoad = np.zeros(3) #[Fx, Fy, T]
+		self.robotLoad = np.zeros(5) #[Fx0, Fy0, Fx3, Fy3, T]
 		self.Foot = Foot
 
 	def update(self, angle0, angle1, pos, timestep):
@@ -155,25 +155,32 @@ class Leg:
 	def calcForceTorque(self):
 		'''Solves system of equations, and returns vector containing joint load
 		and motor shaft torque using ground reaction force force, and moment
-		x = [Fr1x Fr1y Fr2x Fr2y F2x F2y F4x F4y T]'''
+		x = [Fr1x Fr1y Fr3x Fr3y F1x F1y F3x F3y T]'''
 
-		A = np.array([[0, 0, 0, 0, 1,								0,								     1,									 0,								     0],
-					  [0, 0, 0, 0, 0,								1,								     0,									 1,								     0],		
-					  [0, 0, 0, 0, 0,								0,								     -1*self.L[2]*np.sin(self.theta[2]), self.L[2]*np.cos(self.theta[2]),    0],
-					  [0, 0, 1, 0, -1,								0,								     0,									 0,								     0],
-					  [0, 0, 0, 1, 0,								-1,								     0,									 0,								     0],
-					  [0, 0, 0, 0, self.L[1]*np.sin(self.theta[1]), -1.*self.L[1]*np.cos(self.theta[1]), 0,									 0,								     1],
-					  [1, 0, 0, 0, 0,								0,								     -1,								 0,								     0],
-					  [0, 1, 0, 0, 0,								0,							 	     0,									 -1,							     0],
-					  [0, 0, 0, 0, 0,								0,							 	     self.L[3]*np.sin(self.theta[3]),    -1*self.L[3]*np.cos(self.theta[3]), 0]]
+		A = np.array([[0, 0, 0, 0,  1,								   0,							       1,												0,				                              0],
+					  [0, 0, 0, 0,  0,								   1,							       0,												1,											  0],		
+					  [0, 0, 0, 0, -1*self.L[4]*np.sin(self.theta[2]), self.L[4]*np.cos(self.theta[2]),   -1*(self.L[2] + self.L[4])*np.sin(self.theta[2]), (self.L[2]+ self.L[4])*np.cos(self.theta[2]), 0],
+					  [1, 0, 0, 0, -1,								   0,							       0,									            0,											  0],
+					  [0, 1, 0, 0,  0,								   -1,							       0,												0,											  0],
+					  [0, 0, 0, 0,  self.L[1]*np.sin(self.theta[1]),  -1.*self.L[1]*np.cos(self.theta[1]), 0,												0,											  1],
+					  [0, 0, 1, 0,  0,								   0,							      -1,											    0,				                              0],
+					  [0, 0, 0, 1,  0,								   0,						 	       0,											   -1,				                              0],
+					  [0, 0, 0, 0,  0,								   0,						 	       self.L[3]*np.sin(self.theta[3]),				   -1*self.L[3]*np.cos(self.theta[3]),            0]]
 					  , dtype = float)
 		
 		b = np.array([[-1*self.Foot.loadx],
 					  [-1*self.Foot.loady],
-					  [-1*self.Foot.moment + self.Foot.loady*self.L[4]*np.cos(self.theta[2]) - self.Foot.loadx*self.L[4]*np.sin(self.theta[2])], 
+					  [-1*self.Foot.moment], 
 					  [0.], [0.], [0.], [0.], [0.], [0.]])
 		self.jointLoad = np.linalg.solve(A,b).reshape((1,9))
-		self.robotLoad[0] = -1.*(self.jointLoad[0,0] + self.jointLoad[0,2])
-		self.robotLoad[1] = -1.*(self.jointLoad[0,1] + self.jointLoad[0,3])
-		self.robotLoad[2] = -1.*(self.jointLoad[0,8])
+		'''
+		self.robotLoad[0] = -1.*self.jointLoad[0,0] - self.jointLoad[0,2]
+		self.robotLoad[1] = -1.*self.jointLoad[0,1] - self.jointLoad[0,3]
+		self.robotLoad[2] = -1.*self.jointLoad[0,8]
+		'''
+		self.robotLoad[0] = -1.*self.jointLoad[0,0]
+		self.robotLoad[1] = -1.*self.jointLoad[0,1] 
+		self.robotLoad[2] = -1.*self.jointLoad[0,2]
+		self.robotLoad[3] = -1.*self.jointLoad[0,3]
+		self.robotLoad[4] = -1.*self.jointLoad[0,8]
 		return self.jointLoad

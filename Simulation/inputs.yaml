@@ -1,10 +1,10 @@
 #YAML
 world:
+    gravity: -9.81
     timeStep: 1.e-3
-    timeStepFine: 1.e-5
+    timeStepFine: 5.e-6
     frameRate: .0075
     endTime: 5.
-    gravity: -9.81
     plotTimeStart: 3.
     plotTimeEnd: 5
     movie: True
@@ -17,13 +17,15 @@ robot:
     Iroll: 5.05e-4
     Ipitch: 1.08e-3
     Iyaw: 1.24e-3
-    lCOM: 0.12
+    lCOM: 0.
     hCOM: 0.002
     initPos: [0, 0.075]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
-    leg0Pos: [0, 0]
-    leg1Pos: [0.17325, 0]
+    leg0Pos: [-0.086625, 0]
+    leg0Angle: [3.14, 0., 0.]
+    leg1Pos: [0.086625, 0]
+    leg1Angle: [0., 0., 0.]
 
 leg:
     linkLengths: [0.0615, 0.0218, 0.0748, 0.0468, 0.0624] 
@@ -33,13 +35,15 @@ motor:
     initPos: 0.
     initSpeed: 12.
     initAccel: 0.
-    voltage: 50.
-    J: 0.01
-    b: .1
-    Ke: 0.01
-    Kt: 0.4
-    R: 1.
-    L: 0.5
+    voltage: 6.
+    J: 3.e-10
+    b: 0.
+    Kt: 0.382
+    Ke: 0.2827
+    R: 7.23
+    L: 0.0001
+    ratio: 298.
+    eff: 0.85
 
 footGround:
     #PBRM foot
@@ -49,9 +53,9 @@ footGround:
     thickness: 0.00159375
     E: 300. #Mpa
     PRBMK: 2.65
-    k: 0.5
+    k: 0.50
     gamma: 0.85
-    damping: 1.2
+    damping: 2.5
     width: 0.035
 
 footWater:

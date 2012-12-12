@@ -24,14 +24,14 @@
 \maketitle
 
 \section{Foot Forces/Moments}
-
-The drag on the foot is approximated by the drag on a disk entering water vertically  given by:
+\subsection{Water Running}
+The water runner robot locomotes on water by plunging its circular footpads into the water at high velocities generating lift and thrust. The drag on the foot is approximated by the drag on a disk entering water vertically given by:
 
 \begin{equation}
-	D(t) = C_D^* = [0.5 S \rho u^2 + S \rho g h(t)]
+	D(t) = C_D^* [0.5 S \rho u^2 + S \rho g h(t)]
 \end{equation}
 
-\noindent Where $C_D^* \approx 0.703$ is the coefficient of drag, $\rho$ is the density of water, $u$ is the foot speed, $S = \pi r_{eff}^2$, and $h(t)$ is the depth of the foot under the water \cite{Glasheen1996a}. The integral of this drag force over the submerged area of the foot is:
+\noindent Where $C_D^* \approx 0.703$ is the coefficient of drag, $\rho$ is the density of water, $u$ is the foot speed, $S = \pi r_{eff}^2$, and $h(t)$ is the depth of the foot under the water \cite{Glasheen1996a}. The integral of this drag pressure over the submerged area of the foot gives the total force $(F_w)$ and moment $(M_w)$ on the foot:
 
 \begin{align}
 F_w &= C_D^* \int_{-R}^{-R+2pR} \sqrt{R^2 - s^2} (2gh(s) + a(s)|a(s)|) ds \label{eq:footF}\\
@@ -40,9 +40,33 @@ a(s) &= \vec{v}(s) \cdot \vec{n} \\
 h(s) &= (y_\mathrm{water} - y_\mathrm{BF} ) \left( 1 - \frac{s + R}{2 p R} \right)
 \end{align}
 
-\noindent Where $s$ is a point along the length of the foot, $\vec{v}(s)$ is the velocity of the point $s$, $\vec{n}$ is the footpad's normal vector, $h(s)$ is the depth of point $s$ and $F_w$ and $M_w$ are the total force and moment on the foot respectively \cite{Floyd2008}.
+\noindent Where $s$ is a point along the length of the foot, $\vec{v}(s)$ is the velocity of the point $s$, $\vec{n}$ is the footpad's normal vector, $h(s)$ is the depth of point $s$, $p$ is the percent of the footpad that is submerged, and $F_w$ and $M_w$ are the total force and moment on the foot respectively \cite{Floyd2008}.
 
-When $a(s) < 0$, the component of the foot velocity normal to the footpad points down from above the foot, which causes the footpad to switch to its folded state. The reduction in drag in this state is approximated by a reduction in the footpad radius to $1/4^\textrm{th}$ its original value \cite{Floyd2009}. The folded foot area also causes an additional drag force. This added force is modeled by the drag created by a footpad, with equal radius and orthogonal to the original footpad.
+In order to reduce drag while withdrawing the foot from the water, the footpads feature a breakaway mechanism that folds when $a(s) < 0$, i.e. the component of the foot velocity normal to the footpad points down from above the foot. The reduction in area in this state is approximated by a reduction in the footpad radius to $1/4^\textrm{th}$ its original value \cite{Floyd2009}. The folded foot area also causes an additional drag force. This added force is modeled by the drag created by a footpad, with equal radius and orthogonal to the original footpad.
+
+\subsection{Ground Running with Compliant Feet}
+While rigid feet are desirable during water running as they ensure the robot presents the maximum area and generates the maximum drag possible during the downwards stroke phase, compliant feet are better suited for hard ground running. This is because spring-like feet can store kinetic energy as potential energy during ground impact and  then release it again during liftoff. Compliant rubber feet have been developed for the water running robot to assess its running performance on hard ground.
+
+During ground contact, the rubber feet bend and store the kinetic energy of the robot. To simplify the bending dynamics of the compliant rubber foot, it is approximated via a pseudo-rigid body model as two rigid links with an appropriately placed torsional spring as in figure \ref{fig:groundft}. Using this model, the dynamics of the compliant foot can be modeled with the following equation:
+
+\begin{equation}
+	I_{eff} \ddot{\theta} = -b\dot{\theta} - k\theta + M
+\end{equation} 
+
+Where $\theta$ is the compression angle of the torsional spring, $b$ is the damping constant, $k$ is the stiffness constant, $M$ is the bending moment at the location of the torsional spring, and $I_{eff}$ is the effective inertia of the psuedo-rigid foot. This term, as well as $b$, and $k$ are found experimentally \cite{Park2009}. In order to find $M$ we need to know the forces where the foot contacts the ground. These are given by the following ground contact model:
+
+\begin{equation}
+F_y = \left\{ \begin{array}{ll} 0.25 \times 10^9 |y_p|^3 (1 - \dot{y}_p) & \quad \textrm{if $y_p > 0$} \\ 0 & \quad \textrm{if $y_p \le 0$} \end{array} \right.
+\end{equation}
+
+\noindent Forces in the $x$-direction can be calculated using via a standard dry friction model:
+
+\begin{equation}
+F_x = \left\{ \begin{array}{ll} m_r a_x & \quad \textrm{if $m_r a_x < \mu_s F_y$} \\
+			                   \mu_k F_y &\quad \textrm{if $m_r a_x \ge \mu_s F_y$}
+			  \end{array} \right.
+\end{equation}
+
 
 \section{Leg Four Bar Angle Calculations}
 
@@ -130,7 +154,7 @@ Differentiating the velocity loop closure equation (\ref{eq:dloop}) yields:
 \noindent Rearranging terms yields a system of linear equations that allows us to solve for $\ddot{\theta}_3$ and $\ddot{\theta}_2$ given $\ddot{\theta}_0$, $\ddot{\theta}_1$, $\dot{\theta}_0$, $\dot{\theta}_1$, $\dot{\theta}_2$, $\dot{\theta}_3$, $\theta_0$, $\theta_1$, $\theta_2$, and $\theta_3$,
 
 \begin{align}
-	\begin{bmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && -L_2 \cos \theta_2 \end{bmatrix} \begin{bmatrix} \ddot{\theta}_3 \\ \ddot{\theta}_2 \end{bmatrix} &= \begin{bmatrix} L_0 \sin \theta_0 \\ - L_0 \cos \theta_0 \end{bmatrix} \ddot{\theta}_0^2 + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1 \notag \\
+	\begin{bmatrix} -L_3 \sin \theta_3 && L_2 \sin \theta_2 \\ L_3 \cos \theta_3 && -L_2 \cos \theta_2 \end{bmatrix} \begin{bmatrix} \ddot{\theta}_3 \\ \ddot{\theta}_2 \end{bmatrix} &= \begin{bmatrix} L_0 \sin \theta_0 \\ - L_0 \cos \theta_0 \end{bmatrix} \ddot{\theta}_0 + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_1 \notag \\
 		& \quad + \begin{bmatrix} L_0 \cos \theta_0 \\ L_0 \sin \theta_0 \end{bmatrix} \dot{\theta}_0^2- \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 - \begin{bmatrix} L_2 \cos \theta_2 \\ L_2 \sin \theta_2 \end{bmatrix} \dot{\theta}_2^2 + \begin{bmatrix} L_3 \cos \theta_3 \\ L_3 \sin \theta_3 \end{bmatrix} \dot{\theta}_3^2
 \end{align}
 
@@ -162,8 +186,7 @@ Differentiating the velocity loop closure equation (\ref{eq:dloop}) yields:
 \subsection{Joint F}
 
 \begin{align}
-	F &= O + A + (F-A) \\
-	  &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} + \begin{bmatrix} L_4 \cos(\theta_2 + \pi) \\ L_4 \sin(\theta_2 + \pi) \end{bmatrix} \\
+	F &= O + \begin{bmatrix} L_1 \cos \theta_1 \\ L_1 \sin \theta_1 \end{bmatrix} + \begin{bmatrix} L_4 \cos(\theta_2 + \pi) \\ L_4 \sin(\theta_2 + \pi) \end{bmatrix} \\
 	\dot{F} &= \dot{O} + \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \dot{\theta}_1 + \begin{bmatrix} - L_4 \sin(\theta_2 + \pi) \\ L_4 \cos(\theta_2 + \pi) \end{bmatrix} \dot{\theta}_2 \\
 	\ddot{F} &= \ddot{O} + \begin{bmatrix} -L_1 \cos \theta_1 \\ -L_1 \sin \theta_1 \end{bmatrix} \dot{\theta}_1^2 
 		+ \begin{bmatrix} -L_1 \sin \theta_1 \\ L_1 \cos \theta_1 \end{bmatrix} \ddot{\theta}_2 
@@ -187,7 +210,7 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 \begin{align}
 	\sum F_x &= 0 = P_x + F_{1x} + F_{3x} \\
 	\sum F_y &= 0 = P_y + F_{1y} + F_{3y} \\
-	\sum M_A &= 0 = M - F_{3x} L_2 \sin \theta_2 + F_{3y} L_2 \cos \theta_2 + P_x L_4 \sin \theta_2 - P_y L_4 \cos \theta_2
+	\sum M_F &= 0 = M - F_{3x} (L_2 + L_4) \sin \theta_2 + F_{3y} (L_2 + L_4) \cos \theta_2 + - F_{1x} L_4 \sin \theta_2 + F_{1y} L_4 \cos \theta_2
 \end{align}
 
 \noindent Where $P_x$, $P_y$, and $M$ are the loads on the foot attached to the end of the leg given by equations \ref{eq:footF} and \ref{eq:footM}.
@@ -214,12 +237,12 @@ The links in the leg's four bar mechanism are assumed to have no mass. Therefore
 \begin{bmatrix}
 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 &0 \\ 
 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 &0 \\
-0 & 0 & 0 & 0 & 0 & 0 & -L_2 \sin \theta_2 & L_2 \cos \theta_2 & 0 \\
-0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 1 & 0 & -1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 &  -L_4 \sin \theta_2 &  L_4 \cos \theta_2& -(L_2 + L_4) \sin \theta_2 & (L_2 + L_4) \cos \theta_2 & 0 \\
+1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & L_1 \sin \theta_1 & -L_1 \cos \theta_1 & 0 & 0 & 1\\
-1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 & 0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & -1 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0 & L_3 \sin \theta_3 & -L_3 \cos \theta_3 & 0
 \end{bmatrix}
 \begin{bmatrix} F_{R1x} \\ F_{R1y} \\ F_{R3x} \\ F_{R3y} \\ F_{1x} \\ F_{1y} \\ F_{3x} \\ F_{3y} \\ T \end{bmatrix}
@@ -233,10 +256,21 @@ Once the forces on the legs are calculated, the relevant forces are transmitted 
 \begin{align}
 	\sum F_x &= m \ddot{x} = -F_{R1x} - F_{R3x}  \\
 	\sum F_y &= m \ddot{y} = -F_{R1y} - F_{R3y} - mg \\
-	\sum M_O &= I \ddot{\theta}_0 = -F_{R3y} L_0 \cos \theta_0 + F_{R3x} L_0 \sin \theta_0 - T
+	\sum M_{COM} &= I \ddot{\theta}_0 = -F_{R1y} L_{COM} \cos \theta_0 + F_{R1x} L_{COM} \theta_0 \notag \\
+		& \phantom{I \ddot{\theta}_0 =} \qquad - F_{R3y} (L_{COM} - L_0) \cos \theta_0 + F_{R3x} (L_{COM} - L_0) \sin \theta_0 - T
 \end{align}
 
 \noindent These equations are then integrated to obtain the motion of the robot.
+
+\section{Numerical Methods}
+
+A design requirement for the simulator was that it allow for easy swapping of components simply by replacing objects in the code with different ones. For example, switching from the circular foot used for water running to the compliant rubber foot used for ground running simply requires loading the respective class for each type of foot. A side effect of this design is that it makes tracking the state of individual components at a high level in the program difficult, as each component keeps track of its own state and only passes relevant forces and constraints to its connected components. As a result, the simulation, at the robot-level, can only move forward in time.
+
+This became a problem as it prevented the use of some numerical methods that require multiple steps and backtracking. For example, in the Runge-Kutta method the current derivative is used to step forward in time and obtain future derivatives. Then, these derivatives are averaged to produce the final derivative used for that timestep. However, using this method on the robot is not possible as once the state of the robot is advanced it cannot be reversed. Therefore, the Adam's-Bashforth method was used to integrate the calculated acceleration of the robot because it does not use future timesteps to calculate the current derivative. Instead, it estimates the future derivatives by interpolating from past and current information.
+
+Another numerical issue that arose was that the interaction between the relatively compliant foot and the hard ground resulted in a stiff system that required extremely small timesteps to solve. Ideally, an implicit method would be used to integrate such a system, but due to the issues outlined above, these methods were infeasible. However, it was possible to use a Runge-Kutta to integrate the foot as it is the last component connected to the robot and does not have any child components. Therefore, Runge-Kutta was used to independently integrate the foot at a very fine timestep, while the robot is integrated at a much coarser timestep. Additionally, to prevent the tip of the foot from penetrating too far into the ground surface during initial contact, an adaptive timestep was used to reduce the timestep of the robot's Adam's-Bashforth method to that of the foot's Runge-Kutta method while the tip of the foot was less than some height above the ground. 
+
+
 
 \bibliography{library.bib}{}
 \bibliographystyle{plain}

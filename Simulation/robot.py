@@ -10,7 +10,7 @@ class Robot:
 		#initialize arrays holding properties
 		self.mass = robotParams['mass']
 		self.inertia = robotParams['Ipitch']
-
+		self.COM = robotParams['lCOM']
 		self.pos = np.array(2)
 		self.pos = np.array(robotParams['initPos'])
 		self.speed = np.array(2)
@@ -57,11 +57,14 @@ class Robot:
 		#calculate update leg/motor pairs
 		i = 0
 		for leg, motor in zip(self.legs,self.motors):
-			torque = leg.robotLoad[2]
+			torque = leg.robotLoad[-1]
 			motor.update(torque, motor.voltage,timestep)		
 			
 			position = self.pos + np.array([leg.initPos[0,0] * np.cos(self.theta), leg.initPos[0,0] * np.sin(self.theta)])
-			leg.update(np.array([self.theta, self.omega, self.alpha]), np.array([motor.pos, motor.speed, motor.accel]), np.array([[position], [self.speed], [self.accel]]), timestep)
+			speed = self.speed + np.array([-1*leg.initPos[0,0] * np.sin(self.theta)*self.omega, leg.initPos[0,0] * np.cos(self.theta) * self.omega])
+			accel = self.accel + np.array([-1*leg.initPos[0,0] * np.cos(self.theta)*self.omega**2, -1*leg.initPos[0,0] * np.sin(self.theta)*self.omega**2]) +  np.array([-1*leg.initPos[0,0] * np.sin(self.theta)*self.alpha, leg.initPos[0,0] * np.cos(self.theta)*self.alpha])
+
+			leg.update(np.array([self.theta, self.omega, self.alpha]), np.array([motor.pos, motor.speed, motor.accel]) + np.array([self.theta, self.omega, self.alpha]), np.array([[position], [speed], [accel]]), timestep)
 			i += 1
 			
 		self.calcAccel()
@@ -83,7 +86,8 @@ class Robot:
 		
 		self.Force = np.array([0., self.mass*self.grav])
 		for leg in self.legs:
-			self.Force += leg.robotLoad[0:2]
+			self.Force[0] += leg.Foot.loadx #leg.robotLoad[0] + leg.robotLoad[2]
+			self.Force[1] += leg.Foot.loady #leg.robotLoad[1] + leg.robotLoad[3]
 	
 		self.accel = self.Force/self.mass
 		#self.accel = np.zeros(2)
@@ -118,10 +122,15 @@ class Robot:
 		
 		self.Torque = 0.
 		for leg in self.legs:
-			self.Torque += leg.robotLoad[2]
-	
+			#print 'footloadx: ', leg.Foot.loadx, ' robotLoad: ', leg.robotLoad[0] + leg.robotLoad[2]
+			#print 'footloady: ', leg.Foot.loady, ' robotLoad: ', leg.robotLoad[1] + leg.robotLoad[3]
+			#print leg.jointLoad
+			Torque1 = leg.robotLoad[-1]
+			Torque2 = leg.robotLoad[0]*(self.pos[1] - leg.jointPos[0,1]) - leg.robotLoad[1]*(self.pos[0] - leg.jointPos[0,0])
+			Torque3 = leg.robotLoad[2]*(self.pos[1] - leg.jointPos[3,1]) - leg.robotLoad[3]*(self.pos[0] - leg.jointPos[3,0])
+			self.Torque += Torque1 + Torque2 + Torque3
 		self.alpha = self.Torque/self.inertia
-		#self.alpha = 0
+		self.alpha = 0
 		return self.alpha
 
 	def calcOmega(self):
@@ -133,7 +142,7 @@ class Robot:
 			self.omega += self.timeStep*self.alpha
 		else:
 			self.omega += (self.timeStep/24.) * (55.*self.alpha - 59.*self.alpha1 + 37.*self.alpha2 - 9.*self.alpha3)
-		#self.omega = 0
+		self.omega = 0
 		return self.omega
 	
 	def calcTheta(self):

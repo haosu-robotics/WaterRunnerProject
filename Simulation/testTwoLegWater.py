@@ -1,3 +1,5 @@
+#! /usr/bin/env ipython
+
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
@@ -18,11 +20,11 @@ inputFile = open('inputs.yaml')
 inputs = yaml.load(inputFile)
 leg0pos = np.array(inputs['robot']['leg0Pos'])
 initLegPos0 = np.array([leg0pos, [0., 0.],[0., 0.]])
-initLegAngle0 = np.array([0., 0., 0.])
+initLegAngle0 = np.array(inputs['robot']['leg0Angle'])
 
 leg1pos = np.array(inputs['robot']['leg1Pos'])
 initLegPos1 = np.array([leg1pos, [0., 0.], [0., 0.]])
-initLegAngle1 = np.array([np.pi, 0., 0.])
+initLegAngle1 = np.array(inputs['robot']['leg1Angle'])
 
 robotParams = inputs['robot']
 legParams = inputs['leg']
@@ -84,7 +86,6 @@ while Robot.time < endtime:
 			robotForces[num].append(copy(Robot.Force))
 			robotTorque[num].append(copy(Robot.motors[num].load))
 			robotpos[num].append(copy(Robot.pos))
-			#print Robot.pos[1]
 			robotspeed[num].append(copy(Robot.speed))
 			robotaccel[num].append(copy(Robot.accel))
 			ftpos[num].append(copy(leg.Foot.pos))
@@ -153,80 +154,72 @@ if plots == True:
 	footForce = np.array(footForce[1])
 	footAngle = np.array(footAngle[1])
 	
-	#figure 2 robot position
+	#figure 1 robot position, speed accel vs time
+
 	fig = plt.figure(num = 2)
 	tit = fig.suptitle('Robot Position')
 	ax1 = fig.add_subplot(311)
-	ax2 = fig.add_subplot(312)
-	ax3 = fig.add_subplot(313)
+	ax2 = ax1.twinx()
+	ax3 = fig.add_subplot(312)
+	ax4 = fig.add_subplot(313)
 	
-	p1 = ax1.plot(time[timeToPlot],robotpos[timeToPlot])
-	ax1.set_ylabel(r'Robot Coordinate (m)')
-	lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
+	p1, = ax1.plot(time[timeToPlot],robotpos[timeToPlot,0], 'b', label = 'x-position')
+	p2, = ax2.plot(time[timeToPlot],robotpos[timeToPlot,1], 'g', label = 'y-position')
+	ax1.set_ylabel(r'Robot x-position $(m)$')
+	ax2.set_ylabel(r'Robot y-position $(m)$')
+	lines = [p1, p2]
+	lgd1 = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.15,0.5))
+	
+	p3 = ax3.plot(time[timeToPlot],robotspeed[timeToPlot])
+	ax3.set_ylabel(r'Robot Speed $(\frac{m}{s})$')
+	lgd2 = ax3.legend(p3, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.15, 0.5))
 
-	p2 = ax2.plot(time[timeToPlot],robotspeed[timeToPlot])
-	ax2.set_ylabel(r'Robot Speed $(\frac{m}{s})$')
-	lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+	p4 = ax4.plot(time[timeToPlot],robotaccel[timeToPlot])
+	ax4.set_ylabel(r'Robot Accel $(\frac{m}{s^2})$')
+	ax4.set_xlabel(r'time $(s)$')
+	lgd3 = ax4.legend(p4, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.15, 0.5))
 
-	p3 = ax3.plot(time[timeToPlot],robotaccel[timeToPlot])
-	ax3.set_ylabel(r'Robot Accel $(\frac{m}{s^2})$')
-	ax3.set_xlabel('time (s)')
-	lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+	plt.savefig('./plots/robot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
 
-	plt.savefig('./plots/robot.png', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
-
-	#figure 3 forces
-	fig = plt.figure(num = 3,figsize = (8,6))
-	#tit = fig.suptitle('Joint Forces')
-	ax1 = fig.add_subplot(111)
-	#p1, = ax1.plot(time,robotForces[:,1],label = r'$F_y$')
-	p2, = ax1.plot(time[timeToPlot],robotTorque[timeToPlot],'r',linewidth = 0.5, label = 'Torque')
-	#ax1.set_ylabel('Force (N)')
-	ax1.set_ylabel('Torque (N-m)')
-	ax1.set_xlabel('Time (s)')
-	x1, x2, y1, y2 = ax1.axis()
-	#ax1.axis((x1,0.75,-1.5,1.5))
-	#ax2.axis((x1,0.75,0,100))
-	lines = [p2, ] #[p1, p2]
-	lgd = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.1,0.5))
-	plt.savefig('./plots/Torque.pdf', bbox_extra_artists = (lgd,), bbox_inches = 'tight')
-
-	#figure 4 foot position speed accel vs time
+	#figure 2 foot position speed accel vs time
 	fig = plt.figure(num = 4)
 	tit = fig.suptitle('Foot Kinematics')
 	ax1 = fig.add_subplot(311)
-	ax2 = fig.add_subplot(312)
-	ax3 = fig.add_subplot(313)
+	ax2 = ax1.twinx()
+	ax3 = fig.add_subplot(312)
+	ax4 = fig.add_subplot(313)
 
-	p1 = ax1.plot(time[timeToPlot],ftpos[timeToPlot])
-	ax1.set_ylabel(r'Foot Coordinate (m)')
-	lgd1 = ax1.legend(p1, ['x-position', 'y-position'], loc = 6, bbox_to_anchor = (1.05,0.5))
+	p1 = ax1.plot(time[timeToPlot],ftpos[timeToPlot,0] - robotpos[timeToPlot,0], 'b', label = 'x-position')
+	p2 = ax2.plot(time[timeToPlot],ftpos[timeToPlot,1] - robotpos[timeToPlot,1], 'g', label = 'y-position')
+	ax1.set_ylabel(r'Foot x-position $(m)$')
+	ax2.set_ylabel(r'Foot y-position $(m)$')
+	lgd1 = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.15,0.5))
 
-	p2 = ax2.plot(time[timeToPlot],ftspeed[timeToPlot])
-	ax2.set_ylabel(r'Foot Speed $(\frac{m}{s})$')
-	lgd2 = ax2.legend(p2, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+	p3 = ax3.plot(time[timeToPlot],ftspeed[timeToPlot] - robotspeed[timeToPlot])
+	ax3.set_ylabel(r'Foot Speed $(\frac{m}{s})$')
+	lgd2 = ax3.legend(p3, ['x-speed', 'y-speed'], loc = 6, bbox_to_anchor = (1.15, 0.5))
 
-	p3 = ax3.plot(time[timeToPlot],ftaccel[timeToPlot])
-	ax3.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
-	ax3.set_xlabel('time (s)')
-	lgd3 = ax3.legend(p3, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.05, 0.5))
+	p4 = ax4.plot(time[timeToPlot],ftaccel[timeToPlot] - robotaccel[timeToPlot])
+	ax4.set_ylabel(r'Foot Accel $(\frac{m}{s^2})$')
+	ax4.set_xlabel(r'time $(s)$')
+	lgd3 = ax4.legend(p4, ['x-accel', 'y-accel'], loc = 6, bbox_to_anchor = (1.15, 0.5))
 
-	plt.savefig('./plots/foot.png', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
+	plt.savefig('./plots/foot.pdf', bbox_extra_artists=(lgd1,lgd2,lgd3,tit),  bbox_inches = 'tight')
 
-	#figure 5 forces
+	#figure 3 forces/torques
 	fig = plt.figure(num = 5)
 	tit = fig.suptitle('Ground Reaction Forces')
 	ax1 = fig.add_subplot(111)
 	ax2 = ax1.twinx()
-	p1, = ax1.plot(time[timeToPlot],footForce[timeToPlot,0],label = 'Grx')
-	p2, = ax1.plot(time[timeToPlot],footForce[timeToPlot,1],label = 'Gry')
-	p3, = ax2.plot(time[timeToPlot],footAngle[timeToPlot],'r',linewidth = 0.5, label = 'Angle') 
-	ax1.set_ylabel('Force (N)')
-	ax1.set_xlabel('Time (s)')
-	x1, x2, y1,y2 = ax1.axis()
-	#ax1.axis((x1,x2,y1-0.2,y2+0.2))
+	p1, = ax1.plot(time[timeToPlot],footForce[timeToPlot,0], 'b', label = r'Fx')
+	p2, = ax1.plot(time[timeToPlot],footForce[timeToPlot,1], 'g', label = r'Fy')
+	p3, = ax2.plot(time[timeToPlot],robotTorque[timeToPlot], 'r', label = 'Torque')
+	ax1.set_ylabel(r'force $(N)$')
+	ax2.set_ylabel(r'torque $(N \cdot m)$')
+	ax1.set_xlabel(r'time $(s)$')
 	lines = [p1, p2, p3]
-	lgd = ax1.legend(loc = 6, bbox_to_anchor = (1.1,0.5))
-	plt.savefig('./plots/GroundForce.png', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
+	lgd = ax1.legend(lines, [l.get_label() for l in lines], loc = 6, bbox_to_anchor = (1.15,0.5))
+	plt.savefig('./plots/GroundForce.pdf', bbox_extra_artists = (lgd,tit), bbox_inches = 'tight')
 
+#pdb.set_trace()
 #pdb.set_trace()

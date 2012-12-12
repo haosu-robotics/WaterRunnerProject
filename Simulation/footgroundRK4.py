@@ -75,38 +75,24 @@ class Foot():
 		state = np.array([self.pos[2,0], self.pos[2,1], self.speed[2,0], self.speed[2,1], self.thetaPRBM, self.omegaPRBM])
 		#print state
 		for i in np.arange(timeStepRatio):
-			#print i, timeStepRatio
-			#pdb.set_trace()
 			_, _, _, fineBendingMoment1 = self.calcForce(self.pos[2,:], self.speed[2,:], self.accel[2,:])	
 			state1 = state
 			k1 = self.timeStep * self.calcStateDeriv(state1, fineBendingMoment1)
-			#print 'state1: ', state1
-			#print 'k1: ', k1
-			#pdb.set_trace()
 			state2 = state1 + 0.5 * k1
 			_, _, _, fineBendingMoment2 = self.calcForce(state2[[0,1]], state2[[2,3]], self.accel[2,:])
 			k2 = self.timeStep * self.calcStateDeriv(state2, fineBendingMoment2)
-			#print 'state2: ', state2
-			#print 'k2: ', k2
-
-			#pdb.set_trace()
+			
 			state3 = state1 + 0.5 * k2
 			_, _, _, fineBendingMoment3 = self.calcForce(state3[[0,1]], state3[[2,3]], self.accel[2,:])		
 			k3 = self.timeStep * self.calcStateDeriv(state3, fineBendingMoment3)
-			#print 'state3: ', state3
-			#print 'k3: ', k3
 
-			#pdb.set_trace()
 			state4 = state1 + k3
 			_, _, _, fineBendingMoment4 = self.calcForce(state4[[0,1]], state4[[2,3]], self.accel[2,:])	
 			k4 = self.timeStep * self.calcStateDeriv(state4, fineBendingMoment4)
-			#print 'state4: ', state4
-			#print 'k4: ', k4
 
-			#pdb.set_trace()
 			state += (1./6.) * (k1 + 2.*k2 + 2.*k3 + k4)		
 			fineLoadx, fineLoady, fineMoment, fineBendingMoment = self.calcForce(state[[0,1]], state[[2,3]], self.accel[2,:])
-			#print 'state: ', state
+
 			totalLoadx += fineLoadx
 			totalLoady += fineLoady
 			totalMoment += fineMoment
@@ -135,7 +121,6 @@ class Foot():
 					+ self.gamma * self.length * np.array([-1 * np.sin(self.theta + np.pi - thetaPRBM), np.cos(self.theta + np.pi - thetaPRBM)])*(self.alpha - self.alphaPRBM))
 		dstate = np.array([vx, vy, ax, ay, omegaPRBM, alphaPRBM])
 
-		#pdb.set_trace()
 		return dstate
 
 	def calcPos(self, pos):
@@ -175,7 +160,6 @@ class Foot():
 			else:
 				loady = 0.25e9 * (np.abs(yp)**3.)*(1.+ ypdot)
 			
-			#self.speed = np.zeros((3,2))
 			if np.abs(self.robotMass*accel[0]) < self.staticFrictionCoeff*loady:
 				loadx = -1*self.robotMass*accel[0]
 			else:
@@ -187,6 +171,5 @@ class Foot():
 			loadx = 0.
 			moment = 0.
 			bendingMoment = 0.
-		#pdb.set_trace()
 		return loadx, loady, moment, bendingMoment
 

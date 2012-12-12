@@ -12,17 +12,16 @@ from sys import platform
 from copy import copy
 import pdb
 
-
 #load set up file
 inputFile = open('inputs.yaml')
 inputs = yaml.load(inputFile)
 leg0pos = np.array(inputs['robot']['leg0Pos'])
 initLegPos0 = np.array([leg0pos, [0., 0.],[0., 0.]])
-initLegAngle0 = np.array([0., 0., 0.])
+initLegAngle0 = np.array(inputs['robot']['leg0Angle'])
 
 leg1pos = np.array(inputs['robot']['leg1Pos'])
 initLegPos1 = np.array([leg1pos, [0., 0.], [0., 0.]])
-initLegAngle1 = np.array([np.pi, 0., 0.])
+initLegAngle1 = np.array(inputs['robot']['leg1Angle'])
 
 robotParams = inputs['robot']
 legParams = inputs['leg']
@@ -45,8 +44,8 @@ Foot0 = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,worldParams,robotParams
 Foot1 = foot.Foot(np.zeros(3),np.zeros((3,2)),footParams,worldParams,robotParams['mass'])
 Leg0 = leg.Leg(initLegAngle0,initLegPos0,legParams,worldParams,Foot0)
 Leg1 = leg.Leg(initLegAngle1,initLegPos1,legParams,worldParams,Foot1)
-Motor0 = motor.Motor(motorParams, 0.)
-Motor1 = motor.Motor(motorParams, np.pi)
+Motor0 = motor.Motor(motorParams, initLegAngle0[0])
+Motor1 = motor.Motor(motorParams, initLegAngle1[0])
 Robot = robot.Robot(robotParams,worldParams,(Leg0, Leg1),(Motor0, Motor1))
 
 #set up lists to store data
