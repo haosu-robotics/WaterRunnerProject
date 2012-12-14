@@ -2,7 +2,7 @@
 world:
     gravity: -9.81
     timeStep: 1.e-3
-    timeStepFine: 5.e-6
+    timeStepFine: 2.e-6
     frameRate: .0075
     endTime: 5.
     plotTimeStart: 3.
@@ -55,7 +55,7 @@ footGround:
     PRBMK: 2.65
     k: 0.50
     gamma: 0.85
-    damping: 2.5
+    damping: 1.2
     width: 0.035
 
 footWater:

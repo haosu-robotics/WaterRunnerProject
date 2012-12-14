@@ -80,6 +80,7 @@ class Foot():
 				force2 = 0
 		#folded state
 		else:
+			print normalVect, normalVelComp
 			if  self.y_bf(self.radiusUp) > 0:
 				self.loadx = 0.
 				self.loady = 0.
@@ -94,7 +95,6 @@ class Foot():
 					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
 				force1, _ = integrate.quad(self.drag_s,-1*self.radiusUp, -1.*self.radiusUp+2.*self.percentSub*self.radiusUp, args = (self.radiusUp, normal1))
-				
 				force2 = 0
 				normal2 = np.array([-1*np.cos(self.theta), -1.*np.sin(self.theta)])
 				force2, _ = integrate.quad(self.drag_s,-1*self.radius, -1.*self.radius+2.*self.percentSub*self.radius, args = (self.radius, normal2))
