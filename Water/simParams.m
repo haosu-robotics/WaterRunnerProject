@@ -2,6 +2,8 @@ clc
 clear all
 close all
 
+water_level = 0;
+initRobHeight = 0.03;
 
 %%%%%% frame parameters %%%%%%%%%%%%%%%%%%
 frame_width  = 0.125; 
@@ -21,8 +23,9 @@ Iy = 1/12*frame_mass*( frame_width^2 +  frame_length^2 );
 Iz = 1/12*frame_mass*( frame_length^2 + frame_height^2 );
 
 frame_inertia = diag([Ix,Iy,Iz]);
-%%%%%%% motors parameters %%%%%%%
 
+%%%%%%% motors parameters %%%%%%%
+speed = 70;   % rotation speed in rad/s
 L6 = 0.17325;    % this is distance between front and hind motors
 
 frame_motor_FR = frame_FR;
@@ -109,5 +112,4 @@ L3_inertia = diag([I 0 I]);
 
 %%%%%%%%
 
-water_level = -.03;
-l3_angle_0 = 0;
+

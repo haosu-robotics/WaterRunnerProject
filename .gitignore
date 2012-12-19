@@ -10,6 +10,7 @@
 *.bbl
 *.out
 *.blg
+*/slprj/*
 
 # Packages #
 ############
@@ -44,3 +45,4 @@ Thumbs.db
 #Temp Files#
 #####################
 *.swp
+*.m~
