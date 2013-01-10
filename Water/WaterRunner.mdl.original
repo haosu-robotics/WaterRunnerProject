@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.204"
+    ComputedModelVersion    "1.195"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,7 +23,7 @@ Model {
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
   PhysicalModelingChecksum "111356772"
-  PhysicalModelingParameterChecksum "3305428420"
+  PhysicalModelingParameterChecksum "3966821850"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Thu Sep 02 21:13:30 2004"
   Creator		  "fumiyaiida"
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 20 18:01:09 2012"
-  RTWModifiedTimeStamp	  277927260
-  ModelVersionFormat	  "1.%<AutoIncrement:204>"
+  LastModifiedDate	  "Wed Dec 19 12:40:55 2012"
+  RTWModifiedTimeStamp	  277815014
+  ModelVersionFormat	  "1.%<AutoIncrement:195>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -106,7 +106,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    4
+    Dimension		    3
     Simulink.ConfigSet {
       $ObjectID		      1
       Version		      "1.12.0"
@@ -1619,7 +1619,7 @@ Model {
 	      WarnOnSingularInitialAssembly on
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     on
+	      VisDuringSimulation     off
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0.001"
 	      DisableBodyVisControl   off
@@ -1691,531 +1691,14 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration2"
-      CurrentDlgPage	      "SimMechanics 1G"
-      ConfigPrmDlgPosition     [ 314, 202, 1303, 987 ] 
-    }
-    Simulink.ConfigSet {
-      $ObjectID		      49
-      Version		      "1.12.0"
-      Array {
-	Type			"Handle"
-	Dimension		9
-	Simulink.SolverCC {
-	  $ObjectID		  50
-	  Version		  "1.12.0"
-	  StartTime		  "0.0"
-	  StopTime		  "3"
-	  AbsTol		  "1e-3"
-	  FixedStep		  "1e-3"
-	  InitialStep		  "auto"
-	  MaxNumMinSteps	  "-1"
-	  MaxOrder		  5
-	  ZcThreshold		  "auto"
-	  ConsecutiveZCsStepRelTol "10*128*eps"
-	  MaxConsecutiveZCs	  "1000"
-	  ExtrapolationOrder	  4
-	  NumberNewtonIterations  1
-	  MaxStep		  "1e-2"
-	  MinStep		  "auto"
-	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-3"
-	  SolverMode		  "Auto"
-	  EnableConcurrentExecution off
-	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
-	  SolverJacobianMethodControl "auto"
-	  ShapePreserveControl	  "DisableAll"
-	  ZeroCrossControl	  "DisableAll"
-	  ZeroCrossAlgorithm	  "Nonadaptive"
-	  AlgebraicLoopSolver	  "TrustRegion"
-	  SolverResetMethod	  "Fast"
-	  PositivePriorityOrder	  off
-	  AutoInsertRateTranBlk	  off
-	  SampleTimeConstraint	  "Unconstrained"
-	  InsertRTBMode		  "Whenever possible"
-	}
-	Simulink.DataIOCC {
-	  $ObjectID		  51
-	  Version		  "1.12.0"
-	  Decimation		  "1"
-	  ExternalInput		  "[t, u]"
-	  FinalStateName	  "xFinal"
-	  InitialState		  "xInitial"
-	  LimitDataPoints	  on
-	  MaxDataPoints		  "1000"
-	  LoadExternalInput	  off
-	  LoadInitialState	  off
-	  SaveFinalState	  off
-	  SaveCompleteFinalSimState off
-	  SaveFormat		  "Array"
-	  SignalLoggingSaveFormat "ModelDataLogs"
-	  SaveOutput		  on
-	  SaveState		  off
-	  SignalLogging		  on
-	  DSMLogging		  on
-	  InspectSignalLogs	  off
-	  SaveTime		  on
-	  ReturnWorkspaceOutputs  off
-	  StateSaveName		  "xout"
-	  TimeSaveName		  "tout"
-	  OutputSaveName	  "yout"
-	  SignalLoggingName	  "logsout"
-	  DSMLoggingName	  "dsmout"
-	  OutputOption		  "RefineOutputTimes"
-	  OutputTimes		  "[]"
-	  ReturnWorkspaceOutputsName "out"
-	  Refine		  "1"
-	}
-	Simulink.OptimizationCC {
-	  $ObjectID		  52
-	  Version		  "1.12.0"
-	  Array {
-	    Type		    "Cell"
-	    Dimension		    4
-	    Cell		    "ZeroExternalMemoryAtStartup"
-	    Cell		    "ZeroInternalMemoryAtStartup"
-	    Cell		    "NoFixptDivByZeroProtection"
-	    Cell		    "OptimizeModelRefInitCode"
-	    PropName		    "DisabledProps"
-	  }
-	  BlockReduction	  on
-	  BooleanDataType	  on
-	  ConditionallyExecuteInputs on
-	  InlineParams		  off
-	  UseIntDivNetSlope	  off
-	  UseFloatMulNetSlope	  off
-	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
-	  OptimizeBlockIOStorage  on
-	  BufferReuse		  on
-	  EnhancedBackFolding	  off
-	  StrengthReduction	  off
-	  ExpressionFolding	  on
-	  BooleansAsBitfields	  off
-	  BitfieldContainerType	  "uint_T"
-	  EnableMemcpy		  on
-	  MemcpyThreshold	  64
-	  PassReuseOutputArgsAs	  "Structure reference"
-	  ExpressionDepthLimit	  2147483647
-	  FoldNonRolledExpr	  on
-	  LocalBlockOutputs	  on
-	  RollThreshold		  5
-	  SystemCodeInlineAuto	  off
-	  StateBitsets		  off
-	  DataBitsets		  off
-	  UseTempVars		  off
-	  ZeroExternalMemoryAtStartup on
-	  ZeroInternalMemoryAtStartup on
-	  InitFltsAndDblsToZero	  on
-	  NoFixptDivByZeroProtection off
-	  EfficientFloat2IntCast  off
-	  EfficientMapNaN2IntZero off
-	  OptimizeModelRefInitCode off
-	  LifeSpan		  "inf"
-	  MaxStackSize		  "Inherit from target"
-	  BufferReusableBoundary  on
-	  SimCompilerOptimization "Off"
-	  AccelVerboseBuild	  off
-	  ParallelExecutionInRapidAccelerator on
-	}
-	Simulink.DebuggingCC {
-	  $ObjectID		  53
-	  Version		  "1.12.0"
-	  RTPrefix		  "error"
-	  ConsistencyChecking	  "none"
-	  ArrayBoundsChecking	  "none"
-	  SignalInfNanChecking	  "none"
-	  SignalRangeChecking	  "none"
-	  ReadBeforeWriteMsg	  "UseLocalSettings"
-	  WriteAfterWriteMsg	  "UseLocalSettings"
-	  WriteAfterReadMsg	  "UseLocalSettings"
-	  AlgebraicLoopMsg	  "warning"
-	  ArtificialAlgebraicLoopMsg "warning"
-	  SaveWithDisabledLinksMsg "warning"
-	  SaveWithParameterizedLinksMsg	"none"
-	  CheckSSInitialOutputMsg on
-	  UnderspecifiedInitializationDetection	"Classic"
-	  MergeDetectMultiDrivingBlocksExec "none"
-	  CheckExecutionContextPreStartOutputMsg off
-	  CheckExecutionContextRuntimeOutputMsg	off
-	  SignalResolutionControl "TryResolveAllWithWarning"
-	  BlockPriorityViolationMsg "warning"
-	  MinStepSizeMsg	  "warning"
-	  TimeAdjustmentMsg	  "none"
-	  MaxConsecutiveZCsMsg	  "error"
-	  MaskedZcDiagnostic	  "warning"
-	  IgnoredZcDiagnostic	  "warning"
-	  SolverPrmCheckMsg	  "warning"
-	  InheritedTsInSrcMsg	  "warning"
-	  DiscreteInheritContinuousMsg "warning"
-	  MultiTaskDSMMsg	  "warning"
-	  MultiTaskCondExecSysMsg "none"
-	  MultiTaskRateTransMsg	  "error"
-	  SingleTaskRateTransMsg  "none"
-	  TasksWithSamePriorityMsg "warning"
-	  SigSpecEnsureSampleTimeMsg "warning"
-	  CheckMatrixSingularityMsg "none"
-	  IntegerOverflowMsg	  "warning"
-	  Int32ToFloatConvMsg	  "warning"
-	  ParameterDowncastMsg	  "error"
-	  ParameterOverflowMsg	  "error"
-	  ParameterUnderflowMsg	  "none"
-	  ParameterPrecisionLossMsg "warning"
-	  ParameterTunabilityLossMsg "warning"
-	  FixptConstUnderflowMsg  "none"
-	  FixptConstOverflowMsg	  "none"
-	  FixptConstPrecisionLossMsg "none"
-	  UnderSpecifiedDataTypeMsg "none"
-	  UnnecessaryDatatypeConvMsg "none"
-	  VectorMatrixConversionMsg "none"
-	  InvalidFcnCallConnMsg	  "error"
-	  FcnCallInpInsideContextMsg "Use local settings"
-	  SignalLabelMismatchMsg  "none"
-	  UnconnectedInputMsg	  "warning"
-	  UnconnectedOutputMsg	  "warning"
-	  UnconnectedLineMsg	  "warning"
-	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
-	  UniqueDataStoreMsg	  "none"
-	  BusObjectLabelMismatch  "warning"
-	  RootOutportRequireBusObject "warning"
-	  AssertControl		  "UseLocalSettings"
-	  EnableOverflowDetection off
-	  ModelReferenceIOMsg	  "none"
-	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
-	  ModelReferenceVersionMismatchMessage "none"
-	  ModelReferenceIOMismatchMessage "none"
-	  ModelReferenceCSMismatchMessage "none"
-	  UnknownTsInhSupMsg	  "warning"
-	  ModelReferenceDataLoggingMessage "warning"
-	  ModelReferenceSymbolNameMessage "warning"
-	  ModelReferenceExtraNoncontSigs "error"
-	  StateNameClashWarn	  "warning"
-	  SimStateInterfaceChecksumMismatchMsg "warning"
-	  SimStateOlderReleaseMsg "error"
-	  InitInArrayFormatMsg	  "warning"
-	  StrictBusMsg		  "None"
-	  BusNameAdapt		  "WarnAndRepair"
-	  NonBusSignalsTreatedAsBus "none"
-	  LoggingUnavailableSignals "error"
-	  BlockIODiagnostic	  "none"
-	  SFUnusedDataAndEventsDiag "warning"
-	  SFUnexpectedBacktrackingDiag "warning"
-	  SFInvalidInputDataAccessInChartInitDiag "warning"
-	  SFNoUnconditionalDefaultTransitionDiag "warning"
-	  SFTransitionOutsideNaturalParentDiag "warning"
-	  SFUnconditionalTransitionShadowingDiag "warning"
-	}
-	Simulink.HardwareCC {
-	  $ObjectID		  54
-	  Version		  "1.12.0"
-	  ProdBitPerChar	  8
-	  ProdBitPerShort	  16
-	  ProdBitPerInt		  32
-	  ProdBitPerLong	  32
-	  ProdBitPerFloat	  32
-	  ProdBitPerDouble	  64
-	  ProdBitPerPointer	  32
-	  ProdLargestAtomicInteger "Char"
-	  ProdLargestAtomicFloat  "None"
-	  ProdIntDivRoundTo	  "Undefined"
-	  ProdEndianess		  "Unspecified"
-	  ProdWordSize		  32
-	  ProdShiftRightIntArith  on
-	  ProdHWDeviceType	  "32-bit Generic"
-	  TargetBitPerChar	  8
-	  TargetBitPerShort	  16
-	  TargetBitPerInt	  32
-	  TargetBitPerLong	  64
-	  TargetBitPerFloat	  32
-	  TargetBitPerDouble	  64
-	  TargetBitPerPointer	  64
-	  TargetLargestAtomicInteger "Char"
-	  TargetLargestAtomicFloat "None"
-	  TargetShiftRightIntArith on
-	  TargetIntDivRoundTo	  "Zero"
-	  TargetEndianess	  "LittleEndian"
-	  TargetWordSize	  64
-	  TargetTypeEmulationWarnSuppressLevel 0
-	  TargetPreprocMaxBitsSint 32
-	  TargetPreprocMaxBitsUint 32
-	  TargetHWDeviceType	  "MATLAB Host"
-	  TargetUnknown		  off
-	  ProdEqTarget		  off
-	}
-	Simulink.ModelReferenceCC {
-	  $ObjectID		  55
-	  Version		  "1.12.0"
-	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
-	  CheckModelReferenceTargetMessage "error"
-	  EnableParallelModelReferenceBuilds off
-	  ParallelModelReferenceErrorOnInvalidPool on
-	  ParallelModelReferenceMATLABWorkerInit "None"
-	  ModelReferenceNumInstancesAllowed "Multi"
-	  PropagateVarSize	  "Infer from blocks in model"
-	  ModelReferencePassRootInputsByReference on
-	  ModelReferenceMinAlgLoopOccurrences off
-	  PropagateSignalLabelsOutOfModel off
-	  SupportModelReferenceSimTargetCustomCode off
-	}
-	Simulink.SFSimCC {
-	  $ObjectID		  56
-	  Version		  "1.12.0"
-	  SFSimEnableDebug	  on
-	  SFSimOverflowDetection  on
-	  SFSimEcho		  on
-	  SimBlas		  on
-	  SimCtrlC		  on
-	  SimExtrinsic		  on
-	  SimIntegrity		  on
-	  SimUseLocalCustomCode	  off
-	  SimParseCustomCode	  on
-	  SimBuildMode		  "sf_incremental_build"
-	}
-	Simulink.RTWCC {
-	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  57
-	  Version		  "1.12.0"
-	  SystemTargetFile	  "grt.tlc"
-	  GenCodeOnly		  off
-	  MakeCommand		  "make_rtw"
-	  GenerateMakefile	  on
-	  TemplateMakefile	  "grt_default_tmf"
-	  GenerateReport	  off
-	  SaveLog		  off
-	  RTWVerbose		  on
-	  RetainRTWFile		  off
-	  ProfileTLC		  off
-	  TLCDebug		  off
-	  TLCCoverage		  off
-	  TLCAssert		  off
-	  ProcessScriptMode	  "Default"
-	  ConfigurationMode	  "Optimized"
-	  ConfigAtBuild		  off
-	  RTWUseLocalCustomCode	  off
-	  RTWUseSimCustomCode	  off
-	  IncludeHyperlinkInReport off
-	  LaunchReport		  off
-	  TargetLang		  "C"
-	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
-	  IncludeERTFirstTime	  off
-	  GenerateTraceInfo	  off
-	  GenerateTraceReport	  off
-	  GenerateTraceReportSl	  off
-	  GenerateTraceReportSf	  off
-	  GenerateTraceReportEml  off
-	  GenerateCodeInfo	  off
-	  GenerateWebview	  off
-	  GenerateCodeMetricsReport off
-	  GenerateCodeReplacementReport	off
-	  RTWCompilerOptimization "Off"
-	  CheckMdlBeforeBuild	  "Off"
-	  CustomRebuildMode	  "OnUpdate"
-	  Array {
-	    Type		    "Handle"
-	    Dimension		    2
-	    Simulink.CodeAppCC {
-	      $ObjectID		      58
-	      Version		      "1.12.0"
-	      ForceParamTrailComments off
-	      GenerateComments	      on
-	      IgnoreCustomStorageClasses on
-	      IgnoreTestpoints	      off
-	      IncHierarchyInIds	      off
-	      MaxIdLength	      128
-	      PreserveName	      off
-	      PreserveNameWithParent  off
-	      ShowEliminatedStatement off
-	      IncAutoGenComments      off
-	      SimulinkDataObjDesc     off
-	      SFDataObjDesc	      off
-	      MATLABFcnDesc	      off
-	      IncDataTypeInIds	      off
-	      MangleLength	      1
-	      CustomSymbolStrGlobalVar "$R$N$M"
-	      CustomSymbolStrType     "$N$R$M"
-	      CustomSymbolStrField    "$N$M"
-	      CustomSymbolStrFcn      "$R$N$M$F"
-	      CustomSymbolStrFcnArg   "rt$I$N$M"
-	      CustomSymbolStrBlkIO    "rtb_$N$M"
-	      CustomSymbolStrTmpVar   "$N$M"
-	      CustomSymbolStrMacro    "$R$N$M"
-	      DefineNamingRule	      "None"
-	      ParamNamingRule	      "None"
-	      SignalNamingRule	      "None"
-	      InsertBlockDesc	      off
-	      InsertPolySpaceComments off
-	      SimulinkBlockComments   on
-	      MATLABSourceComments    off
-	      EnableCustomComments    off
-	      InlinedPrmAccess	      "Literals"
-	      ReqsInCode	      off
-	      UseSimReservedNames     off
-	    }
-	    Simulink.GRTTargetCC {
-	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      59
-	      Version		      "1.12.0"
-	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
-	      TargetLibSuffix	      ""
-	      TargetPreCompLibLocation ""
-	      CodeReplacementLibrary  "ANSI_C"
-	      UtilityFuncGeneration   "Auto"
-	      ERTMultiwordTypeDef     "System defined"
-	      CodeExecutionProfiling  off
-	      ERTMultiwordLength      256
-	      MultiwordLength	      2048
-	      GenerateFullHeader      on
-	      GenerateSampleERTMain   off
-	      GenerateTestInterfaces  off
-	      IsPILTarget	      off
-	      ModelReferenceCompliant on
-	      ParMdlRefBuildCompliant on
-	      CompOptLevelCompliant   on
-	      ConcurrentExecutionCompliant on
-	      IncludeMdlTerminateFcn  on
-	      GeneratePreprocessorConditionals "Disable all"
-	      CombineOutputUpdateFcns off
-	      CombineSignalStateStructs	off
-	      SuppressErrorStatus     off
-	      ERTFirstTimeCompliant   off
-	      IncludeFileDelimiter    "Auto"
-	      ERTCustomFileBanners    off
-	      SupportAbsoluteTime     on
-	      LogVarNameModifier      "rt_"
-	      MatFileLogging	      on
-	      MultiInstanceERTCode    off
-	      SupportNonFinite	      on
-	      SupportComplex	      on
-	      PurelyIntegerCode	      off
-	      SupportContinuousTime   on
-	      SupportNonInlinedSFcns  on
-	      SupportVariableSizeSignals off
-	      EnableShiftOperators    on
-	      ParenthesesLevel	      "Nominal"
-	      PortableWordSizes	      off
-	      ModelStepFunctionPrototypeControlCompliant off
-	      CPPClassGenCompliant    off
-	      AutosarCompliant	      off
-	      GRTInterface	      on
-	      UseMalloc		      off
-	      ExtMode		      off
-	      ExtModeStaticAlloc      off
-	      ExtModeTesting	      off
-	      ExtModeStaticAllocSize  1000000
-	      ExtModeTransport	      0
-	      ExtModeMexFile	      "ext_comm"
-	      ExtModeIntrfLevel	      "Level1"
-	      RTWCAPISignals	      off
-	      RTWCAPIParams	      off
-	      RTWCAPIStates	      off
-	      RTWCAPIRootIO	      off
-	      GenerateASAP2	      off
-	    }
-	    PropName		    "Components"
-	  }
-	}
-	SSC.SimscapeCC {
-	  $ObjectID		  60
-	  Version		  "1.0"
-	  Array {
-	    Type		    "Cell"
-	    Dimension		    1
-	    Cell		    "Name"
-	    PropName		    "DisabledProps"
-	  }
-	  Array {
-	    Type		    "Handle"
-	    Dimension		    2
-	    MECH.SimMechanicsCC {
-	      $ObjectID		      61
-	      Version		      "1.12.0"
-	      Name		      "SimMechanics"
-	      WarnOnRedundantConstraints on
-	      WarnOnSingularInitialAssembly on
-	      ShowCutJoints	      off
-	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
-	      EnableVisSimulationTime on
-	      VisSampleTime	      "0.001"
-	      DisableBodyVisControl   off
-	      ShowCG		      off
-	      ShowCS		      off
-	      ShowOnlyPortCS	      off
-	      HighlightModel	      on
-	      FramesToBeSkipped	      "0"
-	      AnimationDelay	      "1"
-	      RecordAVI		      off
-	      CompressAVI	      on
-	      AutoFitVis	      "off"
-	      EnableSelection	      on
-	      LastVizWinPosition      "[2 2 958 976]"
-	      CamPosition	      "[0.784546;0.0276033;12.3846;]"
-	      CamTarget		      "[0.742597;-0.00982635;-0.00911848;]"
-	      CamUpVector	      "[-0.000894773;0.999995;-0.00301701;]"
-	      CamHeight		      "2.55"
-	      CamViewAngle	      "0"
-	      VisBackgroundColor      "[0.9;0.9;0.95;]"
-	      DefaultBodyColor	      "[1;0;0;]"
-	      MDLBodyVisualizationType "Convex hull from body CS locations"
-	      OVRRIDBodyVisualizationType "NONE"
-	    }
-	    simmechanics.ConfigurationSet {
-	      $ObjectID		      62
-	      Version		      "1.12.0"
-	      Description	      "SimMechanics 2G"
-	      Array {
-		Type			"Handle"
-		Dimension		2
-		simmechanics.DiagnosticsConfigSet {
-		  $ObjectID		  63
-		  Version		  "1.12.0"
-		  Description		  "Diagnostics"
-		  Name			  "DiagnosticsConfigSet"
-		  SimMechanicsInvalidVisualProperty "warning"
-		  SimMechanicsCrossSectionNullEdge "warning"
-		  SimMechanicsUnconnectedFramePorts "warning"
-		  SimMechanicsRedundantBlock "warning"
-		  SimMechanicsConflictingReferenceFrames "warning"
-		  SimMechanicsRigidlyBoundBlock	"error"
-		  SimMechanicsUnsatisfiedHighPriorityTargets "warning"
-		  SimMechanicsJointTargetOverSpecification "error"
-		}
-		simmechanics.ExplorerConfigSet {
-		  $ObjectID		  64
-		  Version		  "1.12.0"
-		  Description		  "Explorer"
-		  Name			  "ExplorerConfigSet"
-		  SimMechanicsOpenEditorOnUpdate on
-		}
-		PropName		"Components"
-	      }
-	      Name		      "SimMechanics2G"
-	    }
-	    PropName		    "Components"
-	  }
-	  Name			  "Simscape"
-	  EditingMode		  "Full"
-	  ExplicitSolverDiagnosticOptions "warning"
-	  GlobalZcOffDiagnosticOptions "warning"
-	  SimscapeLogType	  "none"
-	  SimscapeLogName	  "simlog"
-	  SimscapeLogDecimation	  1
-	  SimscapeLogLimitData	  on
-	  SimscapeLogDataHistory  5000
-	}
-	PropName		"Components"
-      }
-      Name		      "Configuration3"
-      CurrentDlgPage	      "SimMechanics 1G"
-      ConfigPrmDlgPosition     [ 275, 112, 1286, 919 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 315, 230, 1302, 986 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    49
+    $ObjectID		    33
   }
   ExplicitPartitioning	  off
   BlockDefaults {
@@ -2290,7 +1773,7 @@ Model {
   }
   System {
     Name		    "WaterRunner"
-    Location		    [1, 48, 1144, 1079]
+    Location		    [1, 47, 1919, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    216
@@ -2302,9 +1785,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "84"
+    ZoomFactor		    "63"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1333"
+    SIDHighWatermark	    "1331"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -2336,8 +1819,8 @@ Model {
       AttachedToCS	      "CG"
       CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
       WorkingFrames	      "Left$CS1$[-0.5 water_level -0.2 ]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Left$CS2"
-      "$[-0.5 water_level 0.2 ]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Left$CS3$[4 water_level -0.2 ]$CG$CG$m"
-      "$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Left$CS4$[4 water_level 0.2 ]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$fa"
+      "$[-0.5 water_level 0.2 ]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Left$CS3$[2 water_level -0.2 ]$CG$CG$m"
+      "$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Left$CS4$[2 water_level 0.2 ]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$fa"
       "lse$none"
       CGPos		      "[0 0 0]"
       CGRot		      "[0 0 0]"
@@ -2347,9 +1830,9 @@ Model {
       CS1Rot		      "[0 0 0]"
       CS2Pos		      "[-0.5 water_level 0.2 ]"
       CS2Rot		      "[0 0 0]"
-      CS3Pos		      "[4 water_level -0.2 ]"
+      CS3Pos		      "[2 water_level -0.2 ]"
       CS3Rot		      "[0 0 0]"
-      CS4Pos		      "[4 water_level 0.2 ]"
+      CS4Pos		      "[2 water_level 0.2 ]"
       CS4Rot		      "[0 0 0]"
       CS5Pos		      "[]"
       CS5Rot		      "[]"
@@ -2586,7 +2069,7 @@ Model {
       Position		      [525, 180, 660, 235]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2597,7 +2080,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1500, 180, 1635, 235]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2609,7 +2092,7 @@ Model {
       Position		      [525, 330, 660, 385]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2620,7 +2103,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1500, 310, 1635, 365]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2714,7 +2197,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 4, 4]
       Position		      [970, 159, 1170, 426]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Robot Body"
       SourceType	      ""
       initRobHeight	      "initRobHeight"
@@ -2738,8 +2221,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "2"
+      MachineId		      "[2 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -2932,7 +2415,7 @@ Model {
       Position		      [260, 321, 450, 399]
       BlockMirror	      on
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      ""
     }
@@ -2944,7 +2427,7 @@ Model {
       Position		      [260, 171, 450, 249]
       BlockMirror	      on
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      ""
     }
@@ -2955,7 +2438,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [1705, 171, 1895, 249]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      ""
     }
@@ -2966,7 +2449,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [1705, 301, 1895, 379]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      ""
     }
@@ -3000,7 +2483,7 @@ Model {
       Position		      [745, 165, 895, 225]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       speed		      "speed"
@@ -3014,7 +2497,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [1245, 168, 1395, 222]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       speed		      "speed"
@@ -3029,7 +2512,7 @@ Model {
       Position		      [745, 293, 895, 357]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       speed		      "speed"
@@ -3043,7 +2526,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [1245, 294, 1375, 356]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.29"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       speed		      "speed"

@@ -11,7 +11,6 @@ frame_length = 0.25;
 frame_height = 0.02;
 
 frame_CA = [0 0 0];
-frame_CG = [0 0 0];
 frame_FR = [ frame_length/2 0  frame_width/2 ];
 frame_FL = [ frame_length/2 0 -frame_width/2 ];
 frame_HR = [-frame_length/2 0  frame_width/2 ];
@@ -112,4 +111,4 @@ L3_inertia = diag([I 0 I]);
 
 %%%%%%%%
 
-
+totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass);

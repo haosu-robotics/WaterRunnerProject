@@ -47,7 +47,11 @@ function y = Foot(u)
 			return
 		%if unfolded and below water
         else
-            percentSub = -1 * y_bf() / (-2 *radius * sin(theta + pi));
+			if theta >=0
+				percentSub = -1 * y_bf() / (-2 *radius * sin(theta + pi));
+			else
+				percentSub = -1 * y_bf() / (-2 *radius * sin(theta));
+			end
 			if percentSub> 1
 				percentSub = 1;
 			end
@@ -73,7 +77,11 @@ function y = Foot(u)
 			return
         else
 			%if folded and below water
-			percentSub = -1 * y_bf() / (-2 *radius * sin(theta + pi));
+			if theta >=0
+				percentSub = -1 * y_bf() / (-2 *radius * sin(theta + pi));
+			else
+				percentSub = -1 * y_bf() / (-2 *radius * sin(theta));
+			end
 			if percentSub > 1
 				percentSub = 1;
 			end
@@ -119,7 +127,11 @@ function y = Foot(u)
 
     function location = y_bf()
         %returns location of bottom of foot with respect to water level
-        location = position(2) + radius*sin(theta + pi) - water_level;
+        if theta >= 0
+			location = position(2) + radius*sin(theta + pi) - water_level;
+		else
+			location = position(2) + radius*sin(theta) - water_level;
+		end
     end
 
     function vel = normalVel_s(s)

@@ -17,9 +17,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 18 20:45:14 2012"
-  RTWModifiedTimeStamp	  277764134
-  ModelVersionFormat	  "1.%<AutoIncrement:25>"
+  LastModifiedDate	  "Thu Dec 20 16:45:37 2012"
+  RTWModifiedTimeStamp	  277922729
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -842,7 +842,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [1, 577, 959, 1079]
+    Location		    [1, 48, 1053, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -856,7 +856,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "152"
+    SIDHighWatermark	    "161"
     Block {
       BlockType		      SubSystem
       Name		      "Leg"
@@ -871,6 +871,12 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      MaskDescription	      "mask for leg"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
 	Location		[390, 227, 950, 404]
@@ -1300,7 +1306,7 @@ Library {
       MaskValueString	      "initRobHeight"
       System {
 	Name			"Robot Body"
-	Location		[1, 47, 959, 1079]
+	Location		[1, 48, 1053, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1482,29 +1488,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "In-plane"
-	  SID			  "135"
-	  Ports			  [0, 0, 0, 0, 0, 3, 2]
-	  Position		  [95, 154, 145, 206]
-	  ZOrder		  11
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/In-plane"
-	  SourceType		  "In-plane"
-	  LConnTagsString	  "__newl0|SA1|SA2"
-	  RConnTagsString	  "__newr0|SA1"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "3"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic"
-	  ClassName		  "InplaneJoint"
-	  DialogClass		  "JointBlock"
-	  P1Axis		  "[1 0 0]"
-	  P2Axis		  "[0 1 0]"
-	}
-	Block {
-	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
 	  SID			  "136"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
@@ -1677,6 +1660,30 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Planar"
+	  SID			  "160"
+	  Ports			  [0, 0, 0, 0, 0, 3, 2]
+	  Position		  [95, 159, 145, 211]
+	  ZOrder		  4
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Planar"
+	  SourceType		  "Planar"
+	  LConnTagsString	  "__newl0|SA1|SA2"
+	  RConnTagsString	  "__newr0|SA1"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "3"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic_prismatic"
+	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic#R1$World$[0 0 1]$revolute"
+	  ClassName		  "PlanarJoint"
+	  DialogClass		  "JointBlock"
+	  P1Axis		  "[1 0 0]"
+	  P2Axis		  "[0 1 0]"
+	  R1Axis		  "[0 0 1]"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "RootGround"
 	  SID			  "140"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
@@ -1773,9 +1780,8 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  RConn1
-	  Points		  [0, 5]
 	  DstBlock		  "Frame"
 	  DstPort		  LConn1
 	}
@@ -1788,7 +1794,7 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  LConn1
 	  Points		  [-30, 0]
 	  DstBlock		  "RootGround"
@@ -1854,8 +1860,8 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "Joint Initial Condition"
 	  SrcPort		  RConn1
-	  Points		  [-50, 0; 0, 120]
-	  DstBlock		  "In-plane"
+	  Points		  [-50, 0; 0, 125]
+	  DstBlock		  "Planar"
 	  DstPort		  LConn2
 	}
 	Line {
@@ -1866,17 +1872,17 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  RConn2
-	  Points		  [50, 0; 0, 215]
+	  Points		  [50, 0; 0, 210]
 	  DstBlock		  "Joint Sensor"
 	  DstPort		  LConn1
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  LConn3
-	  Points		  [-5, 0; 0, 40; 125, 0; 0, 265]
+	  Points		  [-5, 0; 0, 35; 125, 0; 0, 265]
 	  DstBlock		  "Joint Sensor1"
 	  DstPort		  LConn1
 	}
@@ -1936,9 +1942,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      MaskDescription	      "Mask for water foot"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
       System {
 	Name			"Water Foot"
-	Location		[1, 577, 959, 1079]
+	Location		[853, 567, 1919, 1078]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2058,7 +2070,7 @@ Library {
 	  Name			  "Interpreted MATLAB\nFunction"
 	  SID			  "102"
 	  Ports			  [1, 1]
-	  Position		  [365, 240, 435, 270]
+	  Position		  [365, 245, 435, 275]
 	  ZOrder		  -2
 	  BlockMirror		  on
 	  MATLABFcn		  "water_model"
@@ -2120,7 +2132,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "10"
+	    SIDHighWatermark	    "20"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -2333,7 +2345,7 @@ Library {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Interpreted MATLAB\nFunction"
 	  SrcPort		  1
-	  Points		  [-60, 0; 0, 5; -5, 0]
+	  Points		  [-65, 0]
 	  Branch {
 	    Labels		    [2, 0]
 	    Points		    [0, -65; 200, 0; 0, 55]
@@ -2389,7 +2401,7 @@ Library {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 185]
+	    Points		    [0, 190]
 	    DstBlock		    "Interpreted MATLAB\nFunction"
 	    DstPort		    1
 	  }
@@ -2409,7 +2421,7 @@ Library {
       Name		      "contact_FR"
       SID		      "52"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [230, 359, 315, 411]
+      Position		      [230, 358, 370, 412]
       BlockMirror	      on
       BackgroundColor	      "cyan"
       MinAlgLoopOccurrences   off
@@ -2421,7 +2433,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"contact_FR"
-	Location		[-3, 142, 1013, 931]
+	Location		[369, 155, 1381, 940]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3323,8 +3335,8 @@ Library {
       MaskValueString	      "speed|0|work"
       System {
 	Name			"motor"
-	Location		[1, 47, 959, 548]
-	Open			on
+	Location		[853, 567, 1919, 1078]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3814,12 +3826,20 @@ Library {
 	  DstBlock		  "motor_body"
 	  DstPort		  RConn1
 	}
+	Annotation {
+	  SID			  "154"
+	  Position		  [298, 246]
+	}
       }
     }
     Annotation {
       SID		      "120"
       Name		      ""
       Position		      [631, 971]
+    }
+    Annotation {
+      SID		      "157"
+      Position		      [211, 427]
     }
   }
 }

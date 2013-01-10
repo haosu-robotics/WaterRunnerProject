@@ -1,5 +1,6 @@
 # Compiled source #
 ###################
+*.mexa64
 *.com
 *.class
 *.dll
