@@ -1,39 +1,47 @@
-load('speed_cg.mat')
+load('speed_df.mat')
 
 figure(1)
-scatter3(SS(:),CG(:),robot_speed(:))
+for i =1:5
+	scatter(DF(i,:),robot_speed(i,:))
+	hold on
+end
+hold off
+legend('$\omega = 60 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$', '$\omega = 70 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$','$\omega = 80 \frac{rad}{s}$', 'Interpreter','LaTex') 
 xlabel('Rotation speed [rad/s]')
 ylabel('COG [m]')
 zlabel('Robot speed [m/s]')
 grid on
 
 figure(2)
-h1 = scatter3(SS(:),CG(:),robot_vert_low(:));
-hold on
-h2 = scatter3(SS(:),CG(:),robot_vert_high(:));
+for i = 1:5
+	h1 = scatter(DF(i,:),robot_vert_avg(i,:));
+	hold on
+end
 hold off
+legend('$\omega = 60 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$', '$\omega = 70 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$','$\omega = 80 \frac{rad}{s}$', 'Interpreter','LaTex') 
 xlabel('Rotation speed [rad/s]')
 ylabel('COG [m]')
 zlabel('Robot vertical position [m]')
 grid on
 
-%{
 figure(3)
-surf(SS,CG,robot_pow)
-xlabel('Rotation speed [rad/s]')
-ylabel('COG [m]')
-zlabel('average power [W]')
-grid on
-%}
-
-figure(4)
-scatter3(SS(:),CG(:),COT(:))
+for i = 1:5
+	scatter(DF(i,:),COT(i,:))
+	hold on
+end
+hold off
+legend('$\omega = 60 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$', '$\omega = 70 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$','$\omega = 80 \frac{rad}{s}$', 'Interpreter','LaTex') 
 xlabel('Rotation speed [rad/s]')
 ylabel('COG [m]')
 zlabel('Cost of Transport')
 
-figure(5)
-scatter(robot_speed(:),COT(:),'o')
+figure(4)
+for i = 1:5
+	scatter(robot_speed(i,:),COT(i,:),'o')
+	hold on
+end
+hold off
+legend('$\omega = 60 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$', '$\omega = 70 \frac{rad}{s}$', '$\omega = 65 \frac{rad}{s}$','$\omega = 80 \frac{rad}{s}$', 'Interpreter','LaTex') 
 xlabel('Robot Speed [m/s]')
 ylabel('Cost of Transport')
 

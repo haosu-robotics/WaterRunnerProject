@@ -11,6 +11,7 @@ frame_length = 0.25;
 frame_height = 0.02;
 
 frame_CA = [0 0 0];
+frame_CG = [0,0,0];
 frame_FR = [ frame_length/2 0  frame_width/2 ];
 frame_FL = [ frame_length/2 0 -frame_width/2 ];
 frame_HR = [-frame_length/2 0  frame_width/2 ];
@@ -24,13 +25,14 @@ Iz = 1/12*frame_mass*( frame_length^2 + frame_height^2 );
 frame_inertia = diag([Ix,Iy,Iz]);
 
 %%%%%%% motors parameters %%%%%%%
-speed = 70;   % rotation speed in rad/s
+%speed = 80;   % rotation speed in rad/s
 L6 = 0.17325;    % this is distance between front and hind motors
 
 frame_motor_FR = frame_FR;
 frame_motor_FL = frame_FL;
 frame_motor_HR = frame_motor_FR - [L6 0 0];
 frame_motor_HL = frame_motor_FL - [L6 0 0];
+frame_motor_Tail = (frame_HR + frame_HL)/2;
 
 motor_mass = 0.010;
 motor_radius = 0.01342;
@@ -53,6 +55,8 @@ frame_passive_HL = frame_motor_HL - [L1 0 0];
 
 
 %%%%% leg parameters %%%%%%%%%%%%%
+CF_density = 1790;
+cross_area = 6.8e-6;
 
 L2 = 0.0218;
 L3 = 0.0748;
@@ -64,8 +68,6 @@ L2_CS1 = [0 0 0];     % using adjoining
 L2_CG  = [0 L2/2 0];
 L2_CS2 = [0 L2 0];
 
-CF_density = 1790;
-cross_area = 6.8e-6;
 
 L2_mass = CF_density*cross_area*L2;
 I = 1/12*L2_mass*L2^2;
@@ -109,6 +111,18 @@ L3_mass = CF_density*cross_area*L3;
 I = 1/12*L3_mass*L3^2;
 L3_inertia = diag([I 0 I]);
 
-%%%%%%%%
+%%%%%%%% Tail Parameters %%%%%
 
-totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass);
+%tail_angle = 65 * pi/180;
+L_tail = .1;
+Tail_CS1 = [0 0 0];     % using adjoining
+Tail_CG  = [0 L_tail/2 0];
+Tail_CS2 = [0 L_tail 0];
+
+Tail_mass = CF_density*cross_area*L_tail;
+I = 1/12*Tail_mass*L_tail^2;
+Tail_inertia = diag([I 0 I]);
+
+%%%%%%%%%%%
+
+totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass) + motor_mass + Tail_mass;

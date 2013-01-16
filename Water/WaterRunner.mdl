@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.204"
+    ComputedModelVersion    "1.244"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -22,7 +22,7 @@ Model {
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "111356772"
+  PhysicalModelingChecksum "93425269"
   PhysicalModelingParameterChecksum "3305428420"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Thu Sep 02 21:13:30 2004"
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 20 18:01:09 2012"
-  RTWModifiedTimeStamp	  277927260
-  ModelVersionFormat	  "1.%<AutoIncrement:204>"
+  LastModifiedDate	  "Wed Jan 16 18:07:00 2013"
+  RTWModifiedTimeStamp	  280255372
+  ModelVersionFormat	  "1.%<AutoIncrement:244>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1704,7 +1704,7 @@ Model {
 	  $ObjectID		  50
 	  Version		  "1.12.0"
 	  StartTime		  "0.0"
-	  StopTime		  "3"
+	  StopTime		  "2"
 	  AbsTol		  "1e-3"
 	  FixedStep		  "1e-3"
 	  InitialStep		  "auto"
@@ -1716,7 +1716,7 @@ Model {
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
 	  MaxStep		  "1e-2"
-	  MinStep		  "auto"
+	  MinStep		  "1e-5"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
@@ -2150,8 +2150,8 @@ Model {
 	      CompressAVI	      on
 	      AutoFitVis	      "off"
 	      EnableSelection	      on
-	      LastVizWinPosition      "[2 2 958 976]"
-	      CamPosition	      "[0.784546;0.0276033;12.3846;]"
+	      LastVizWinPosition      "[2 523 1918 455]"
+	      CamPosition	      "[0.788259;0.0309166;13.4817;]"
 	      CamTarget		      "[0.742597;-0.00982635;-0.00911848;]"
 	      CamUpVector	      "[-0.000894773;0.999995;-0.00301701;]"
 	      CamHeight		      "2.55"
@@ -2209,7 +2209,7 @@ Model {
       }
       Name		      "Configuration3"
       CurrentDlgPage	      "SimMechanics 1G"
-      ConfigPrmDlgPosition     [ 275, 112, 1286, 919 ] 
+      ConfigPrmDlgPosition     [ 275, 112, 1314, 947 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -2287,10 +2287,23 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Stop
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
     Name		    "WaterRunner"
-    Location		    [1, 48, 1144, 1079]
+    Location		    [1, 48, 959, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    216
@@ -2302,15 +2315,15 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "84"
+    ZoomFactor		    "90"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1333"
+    SIDHighWatermark	    "1382"
     Block {
       BlockType		      Reference
       Name		      "Body"
       SID		      "276"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [930, 565, 990, 605]
+      Position		      [935, 755, 995, 795]
       ZOrder		      4
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Body"
@@ -2385,11 +2398,26 @@ Model {
       CS20Rot		      "[]"
     }
     Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant"
+      SID		      "1377"
+      Ports		      [1, 1]
+      Position		      [1205, 985, 1235, 1015]
+      ZOrder		      -5
+      LibraryVersion	      "1.260"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      "<"
+      const		      "-.03"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
       BlockType		      Demux
       Name		      "Demux"
       SID		      "1210"
       Ports		      [1, 3]
-      Position		      [185, 191, 190, 229]
+      Position		      [185, 181, 190, 219]
       ZOrder		      -6
       BlockMirror	      on
       ShowName		      off
@@ -2422,7 +2450,7 @@ Model {
       Name		      "Demux1"
       SID		      "1303"
       Ports		      [1, 3]
-      Position		      [200, 341, 205, 379]
+      Position		      [200, 321, 205, 359]
       ZOrder		      -6
       BlockMirror	      on
       ShowName		      off
@@ -2455,7 +2483,7 @@ Model {
       Name		      "Demux2"
       SID		      "1311"
       Ports		      [1, 3]
-      Position		      [1955, 191, 1960, 229]
+      Position		      [1955, 196, 1960, 234]
       ZOrder		      -6
       ShowName		      off
       Outputs		      "3"
@@ -2487,7 +2515,39 @@ Model {
       Name		      "Demux3"
       SID		      "1318"
       Ports		      [1, 3]
-      Position		      [1955, 321, 1960, 359]
+      Position		      [1955, 326, 1960, 364]
+      ZOrder		      -6
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"theta"
+	PropagatedSignals	"theta"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"x-force"
+	PropagatedSignals	"x-force"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"y-force"
+	PropagatedSignals	"y-force"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux4"
+      SID		      "1352"
+      Ports		      [1, 3]
+      Position		      [1615, 491, 1620, 529]
       ZOrder		      -6
       ShowName		      off
       Outputs		      "3"
@@ -2518,7 +2578,7 @@ Model {
       BlockType		      From
       Name		      "From"
       SID		      "1245"
-      Position		      [1130, 525, 1170, 545]
+      Position		      [1245, 650, 1285, 670]
       ZOrder		      -9
       GotoTag		      "xpos"
       TagVisibility	      "global"
@@ -2534,7 +2594,7 @@ Model {
       BlockType		      From
       Name		      "From1"
       SID		      "1251"
-      Position		      [1130, 567, 1170, 583]
+      Position		      [1245, 707, 1285, 723]
       ZOrder		      -9
       GotoTag		      "xvel"
       TagVisibility	      "global"
@@ -2550,7 +2610,7 @@ Model {
       BlockType		      From
       Name		      "From2"
       SID		      "1266"
-      Position		      [1130, 610, 1170, 630]
+      Position		      [1245, 745, 1285, 765]
       ZOrder		      -9
       GotoTag		      "ypos"
       TagVisibility	      "global"
@@ -2566,7 +2626,7 @@ Model {
       BlockType		      From
       Name		      "From3"
       SID		      "1267"
-      Position		      [1130, 652, 1170, 668]
+      Position		      [1245, 787, 1285, 803]
       ZOrder		      -9
       GotoTag		      "yvel"
       TagVisibility	      "global"
@@ -2579,25 +2639,43 @@ Model {
       }
     }
     Block {
+      BlockType		      From
+      Name		      "From4"
+      SID		      "1373"
+      Position		      [1245, 825, 1285, 845]
+      ZOrder		      -9
+      GotoTag		      "theta"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      SID		      "1374"
+      Position		      [1245, 867, 1285, 883]
+      ZOrder		      -9
+      GotoTag		      "omega"
+      TagVisibility	      "global"
+    }
+    Block {
       BlockType		      Reference
-      Name		      "Leg_FL"
-      SID		      "1296"
+      Name		      "Leg FR"
+      SID		      "1368"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [525, 180, 660, 235]
-      BlockMirror	      on
+      Position		      [1500, 187, 1635, 243]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
     Block {
       BlockType		      Reference
-      Name		      "Leg_FR"
-      SID		      "1298"
+      Name		      "Leg FR1"
+      SID		      "1370"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [1500, 180, 1635, 235]
+      Position		      [525, 172, 660, 228]
+      BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2606,10 +2684,10 @@ Model {
       Name		      "Leg_HL"
       SID		      "1297"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [525, 330, 660, 385]
+      Position		      [525, 310, 660, 365]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2618,9 +2696,9 @@ Model {
       Name		      "Leg_HR"
       SID		      "1299"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [1500, 310, 1635, 365]
+      Position		      [1500, 315, 1635, 370]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -2629,7 +2707,7 @@ Model {
       Name		      "Machine\nEnvironment"
       SID		      "1329"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [240, 565, 280, 585]
+      Position		      [245, 765, 285, 785]
       ZOrder		      1
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
@@ -2666,7 +2744,7 @@ Model {
       Name		      "Mux"
       SID		      "1213"
       Ports		      [3, 1]
-      Position		      [100, 191, 105, 229]
+      Position		      [100, 181, 105, 219]
       ZOrder		      -12
       BlockMirror	      on
       ShowName		      off
@@ -2678,7 +2756,7 @@ Model {
       Name		      "Mux1"
       SID		      "1304"
       Ports		      [3, 1]
-      Position		      [115, 341, 120, 379]
+      Position		      [115, 321, 120, 359]
       ZOrder		      -12
       BlockMirror	      on
       ShowName		      off
@@ -2690,7 +2768,7 @@ Model {
       Name		      "Mux2"
       SID		      "1312"
       Ports		      [3, 1]
-      Position		      [2035, 191, 2040, 229]
+      Position		      [2035, 196, 2040, 234]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "3"
@@ -2701,7 +2779,18 @@ Model {
       Name		      "Mux3"
       SID		      "1319"
       Ports		      [3, 1]
-      Position		      [2035, 321, 2040, 359]
+      Position		      [2035, 326, 2040, 364]
+      ZOrder		      -12
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux4"
+      SID		      "1353"
+      Ports		      [3, 1]
+      Position		      [1695, 491, 1700, 529]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "3"
@@ -2711,10 +2800,10 @@ Model {
       BlockType		      Reference
       Name		      "Robot Body"
       SID		      "1291"
-      Ports		      [0, 0, 0, 0, 0, 4, 4]
-      Position		      [970, 159, 1170, 426]
+      Ports		      [0, 0, 0, 0, 0, 5, 4]
+      Position		      [975, 161, 1175, 429]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Robot Body"
       SourceType	      ""
       initRobHeight	      "initRobHeight"
@@ -2724,7 +2813,7 @@ Model {
       Name		      "RootGround1"
       SID		      "275"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [460, 561, 505, 609]
+      Position		      [465, 751, 510, 799]
       LibraryVersion	      "1.1"
       UserDataPersistent      on
       UserData		      "DataTag0"
@@ -2738,8 +2827,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "7"
+      MachineId		      "[4 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -2747,7 +2836,7 @@ Model {
       Name		      "Scope"
       SID		      "1226"
       Ports		      [1]
-      Position		      [30, 194, 60, 226]
+      Position		      [30, 184, 60, 216]
       ZOrder		      -16
       BlockMirror	      on
       Floating		      off
@@ -2785,7 +2874,7 @@ Model {
       Name		      "Scope1"
       SID		      "1305"
       Ports		      [1]
-      Position		      [30, 344, 60, 376]
+      Position		      [30, 324, 60, 356]
       ZOrder		      -16
       BlockMirror	      on
       Floating		      off
@@ -2819,20 +2908,22 @@ Model {
       BlockType		      Scope
       Name		      "Scope2"
       SID		      "1246"
-      Ports		      [4]
-      Position		      [1315, 550, 1355, 615]
+      Ports		      [6]
+      Position		      [1430, 659, 1570, 891]
       ZOrder		      -16
       Floating		      off
-      Location		      [2, 49, 924, 1078]
+      Location		      [925, 49, 1919, 1078]
       Open		      off
-      NumInputPorts	      "4"
-      ZoomMode		      "yonly"
+      NumInputPorts	      "6"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
 	axes3			"%<SignalLabel>"
 	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+	axes6			"%<SignalLabel>"
       }
       List {
 	ListType		ScopeGraphics
@@ -2845,11 +2936,12 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.8365     0.94291     0.12419    0.019436\n0.8365     0.70481     0.12419    0.019436\n0"
-      ".8365     0.46769     0.12419    0.019436\n0.8365     0.22959     0.12419    0.019436"
-      TimeRange		      "5"
-      YMin		      "0~0~-0.06~-0.45"
-      YMax		      "1.75~0.65~0.03~0.25"
+      LegendLocations	      "0.84858     0.92751     0.10915    0.024295\n0.84753     0.76911     0.11016    0.024295\n"
+      "0.84753      0.6107     0.11016    0.024295\n0.84649     0.45229     0.11117    0.024295\n0.86841     0.29389   "
+      "  0.09004    0.024295\n0.86841     0.13548     0.09004    0.024295"
+      TimeRange		      "2               "
+      YMin		      "0~0~-0.005~-0.25~0~0"
+      YMax		      "1.25~1~0.03~0.1~1.25~1"
       SaveToWorkspace	      on
       SaveName		      "position"
       DataFormat	      "StructureWithTime"
@@ -2861,10 +2953,10 @@ Model {
       Name		      "Scope3"
       SID		      "1313"
       Ports		      [1]
-      Position		      [2080, 194, 2110, 226]
+      Position		      [2080, 199, 2110, 231]
       ZOrder		      -16
       Floating		      off
-      Location		      [1, 48, 574, 1077]
+      Location		      [925, 49, 1919, 1078]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -2882,6 +2974,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.86696     0.80692     0.09507    0.064383"
       TimeRange		      "2"
       YMin		      "-2.5"
       YMax		      "2"
@@ -2895,10 +2988,10 @@ Model {
       Name		      "Scope4"
       SID		      "1320"
       Ports		      [1]
-      Position		      [2080, 324, 2110, 356]
+      Position		      [2080, 329, 2110, 361]
       ZOrder		      -16
       Floating		      off
-      Location		      [2, 49, 575, 1078]
+      Location		      [2, 49, 952, 557]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -2916,6 +3009,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.86237     0.80217    0.099474     0.13041"
       TimeRange		      "2"
       YMin		      "-2.5"
       YMax		      "2"
@@ -2925,57 +3019,134 @@ Model {
       SampleTime	      "0"
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope5"
+      SID		      "1354"
+      Ports		      [1]
+      Position		      [1740, 494, 1770, 526]
+      ZOrder		      -16
+      Floating		      off
+      Location		      [2, 49, 923, 547]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[1 1 1]"
+	AxesColor		"[1 1 1]"
+	AxesTickColor		"[0 0 0]"
+	LineColors		"[0 0 1;1 0 0;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.85654       0.767     0.10261     0.13303"
+      TimeRange		      "2"
+      YMin		      "-0.75"
+      YMax		      "2.5"
+      SaveName		      "FootForce4"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      SID		      "1376"
+      Position		      [1345, 967, 1380, 1003]
+      ZOrder		      -4
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Tail"
+      SID		      "1349"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [1185, 480, 1285, 540]
+      BackgroundColor	      "magenta"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/Tail"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Tail Pad"
+      SID		      "1351"
+      Ports		      [0, 1, 0, 0, 0, 1]
+      Position		      [1350, 472, 1520, 548]
+      BackgroundColor	      "orange"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/Tail Pad"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "1380"
+      Ports		      [1]
+      Position		      [1330, 1045, 1390, 1075]
+      ZOrder		      -7
+      VariableName	      "stopped"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
       BlockType		      Reference
       Name		      "Water Foot+HL"
       SID		      "1306"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [260, 321, 450, 399]
+      Position		      [260, 301, 450, 379]
       BlockMirror	      on
-      BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      BackgroundColor	      "orange"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      ""
+      SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "Water Foot_FL"
       SID		      "1300"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [260, 171, 450, 249]
+      Position		      [260, 161, 450, 239]
       BlockMirror	      on
-      BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      BackgroundColor	      "orange"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      ""
+      SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "Water Foot_FR"
       SID		      "1309"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1705, 171, 1895, 249]
-      BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      Position		      [1705, 176, 1895, 254]
+      BackgroundColor	      "orange"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      ""
+      SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "Water Foot_HR"
       SID		      "1321"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1705, 301, 1895, 379]
-      BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.30"
+      Position		      [1705, 306, 1895, 384]
+      BackgroundColor	      "orange"
+      LibraryVersion	      "1.88"
       SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      ""
+      SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "Weld"
       SID		      "274"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [720, 560, 770, 610]
+      Position		      [725, 750, 775, 800]
       ZOrder		      9
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Joints/Weld"
@@ -2994,61 +3165,74 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "motor_FL"
-      SID		      "1292"
+      Name		      "motor FL"
+      SID		      "1367"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [745, 165, 895, 225]
+      Position		      [760, 153, 870, 217]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
-      SourceBlock	      "WaterRunner_lib/motor"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/motor1"
       SourceType	      ""
       speed		      "speed"
-      X0		      "0"
+      X0		      "pi"
       VariableName	      "work_FL"
     }
     Block {
       BlockType		      Reference
-      Name		      "motor_FR"
-      SID		      "1294"
+      Name		      "motor FR"
+      SID		      "1363"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1245, 168, 1395, 222]
+      Position		      [1245, 168, 1355, 232]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
-      SourceBlock	      "WaterRunner_lib/motor"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/motor1"
       SourceType	      ""
       speed		      "speed"
-      X0		      "pi"
+      X0		      "0"
       VariableName	      "work_FR"
     }
     Block {
       BlockType		      Reference
-      Name		      "motor_HL"
-      SID		      "1293"
+      Name		      "motor HL"
+      SID		      "1366"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [745, 293, 895, 357]
+      Position		      [760, 263, 870, 327]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
-      SourceBlock	      "WaterRunner_lib/motor"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/motor1"
       SourceType	      ""
       speed		      "speed"
-      X0		      "pi"
+      X0		      "0"
       VariableName	      "work_HL"
     }
     Block {
       BlockType		      Reference
-      Name		      "motor_HR"
-      SID		      "1295"
+      Name		      "motor HR"
+      SID		      "1365"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1245, 294, 1375, 356]
+      Position		      [1245, 298, 1355, 362]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.30"
-      SourceBlock	      "WaterRunner_lib/motor"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/motor1"
       SourceType	      ""
       speed		      "speed"
-      X0		      "0"
+      X0		      "pi"
       VariableName	      "work_HR"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "motor tail"
+      SID		      "1356"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [1030, 478, 1140, 542]
+      BackgroundColor	      "yellow"
+      LibraryVersion	      "1.88"
+      SourceBlock	      "WaterRunner_lib/motor2"
+      SourceType	      ""
+      tail_angle	      "tail_angle"
+      VariableName	      "work_tail"
     }
     Block {
       BlockType		      Scope
@@ -3098,40 +3282,41 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Robot Body"
       SrcPort		      RConn1
-      DstBlock		      "motor_FR"
+      DstBlock		      "motor FR"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Leg_FR"
+      SrcBlock		      "Leg FR"
       SrcPort		      LConn2
-      Points		      [0, 40]
+      Points		      [0, 35]
       DstBlock		      "Robot Body"
       DstPort		      RConn2
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Leg_FR"
+      SrcBlock		      "Leg FR"
       SrcPort		      LConn1
-      DstBlock		      "motor_FR"
+      DstBlock		      "motor FR"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Robot Body"
       SrcPort		      RConn3
-      DstBlock		      "motor_HR"
+      DstBlock		      "motor HR"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Leg_HR"
       SrcPort		      LConn1
-      DstBlock		      "motor_HR"
+      DstBlock		      "motor HR"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
+      Labels		      [2, 0]
       SrcBlock		      "Leg_HR"
       SrcPort		      LConn2
       Points		      [0, 40]
@@ -3149,20 +3334,19 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Water Foot_FL"
       SrcPort		      LConn1
-      DstBlock		      "Leg_FL"
+      DstBlock		      "Leg FR1"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Robot Body"
       SrcPort		      LConn4
-      Points		      [0, 5; -266, 0; 0, -25]
       DstBlock		      "Leg_HL"
       DstPort		      LConn2
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Leg_FR"
+      SrcBlock		      "Leg FR"
       SrcPort		      RConn1
       DstBlock		      "Water Foot_FR"
       DstPort		      LConn1
@@ -3208,7 +3392,7 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "From"
       SrcPort		      1
-      Points		      [125, 0]
+      Points		      [0, 15]
       DstBlock		      "Scope2"
       DstPort		      1
     }
@@ -3225,16 +3409,22 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "From2"
       SrcPort		      1
-      Points		      [0, -15; 80, 0; 0, -15]
-      DstBlock		      "Scope2"
-      DstPort		      3
+      Points		      [70, 0]
+      Branch {
+	DstBlock		"Scope2"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 20; -170, 0]
+	DstBlock		"Compare\nTo Constant"
+	DstPort			1
+      }
     }
     Line {
       Name		      "y-velocity"
       Labels		      [0, 1]
       SrcBlock		      "From3"
       SrcPort		      1
-      Points		      [125, 0]
       DstBlock		      "Scope2"
       DstPort		      4
     }
@@ -3351,27 +3541,27 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Robot Body"
       SrcPort		      LConn1
-      DstBlock		      "motor_FL"
+      DstBlock		      "motor FL"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "motor_FL"
+      SrcBlock		      "motor FL"
       SrcPort		      RConn1
-      DstBlock		      "Leg_FL"
+      DstBlock		      "Leg FR1"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "motor_HL"
+      SrcBlock		      "motor HL"
       SrcPort		      RConn1
-      Points		      [-40, 0; 0, 20]
+      Points		      [-55, 0; 0, 30]
       DstBlock		      "Leg_HL"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "motor_HL"
+      SrcBlock		      "motor HL"
       SrcPort		      LConn1
       DstBlock		      "Robot Body"
       DstPort		      LConn3
@@ -3384,9 +3574,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Leg_FL"
+      Labels		      [2, 0]
+      SrcBlock		      "Leg FR1"
       SrcPort		      LConn2
-      Points		      [65, 0; 0, 40]
+      Points		      [15, 0; 0, 25]
       DstBlock		      "Robot Body"
       DstPort		      LConn2
     }
@@ -3394,24 +3585,103 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Machine\nEnvironment"
       SrcPort		      RConn1
-      Points		      [75, 0; 0, 10]
       DstBlock		      "RootGround1"
       DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Robot Body"
+      SrcPort		      LConn5
+      Points		      [-15, 0; 0, 105]
+      DstBlock		      "motor tail"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "motor tail"
+      SrcPort		      RConn1
+      DstBlock		      "Tail"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Tail"
+      SrcPort		      RConn1
+      DstBlock		      "Tail Pad"
+      DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      DstBlock		      "Scope5"
+      DstPort		      1
+    }
+    Line {
+      Name		      "y-force"
+      Labels		      [0, 0]
+      SrcBlock		      "Demux4"
+      SrcPort		      3
+      DstBlock		      "Mux4"
+      DstPort		      3
+    }
+    Line {
+      Name		      "x-force"
+      Labels		      [0, 0]
+      SrcBlock		      "Demux4"
+      SrcPort		      2
+      DstBlock		      "Mux4"
+      DstPort		      2
+    }
+    Line {
+      Name		      "theta"
+      Labels		      [0, 0]
+      SrcBlock		      "Demux4"
+      SrcPort		      1
+      DstBlock		      "Mux4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Tail Pad"
+      SrcPort		      1
+      DstBlock		      "Demux4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From5"
+      SrcPort		      1
+      DstBlock		      "Scope2"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "From4"
+      SrcPort		      1
+      DstBlock		      "Scope2"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[30, 0; 0, -15]
+	DstBlock		"Stop Simulation"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 60]
+	DstBlock		"To Workspace"
+	DstPort			1
+      }
     }
     Annotation {
       SID		      "154"
       Name		      "WaterRunner Robot\n(CMU-NanoRobotics Lab) "
-      Position		      [1001, 62]
+      Position		      [1076, 67]
       FontSize		      20
     }
     Annotation {
       SID		      "1214"
       Position		      [1666, 1097]
-    }
-    Annotation {
-      SID		      "1330"
-      Name		      "s"
-      Position		      [81, 484]
     }
   }
 }
