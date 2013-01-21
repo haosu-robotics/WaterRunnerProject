@@ -10,7 +10,7 @@ Model {
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -31,10 +31,10 @@ Model {
   Creator		  "fumiyaiida"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "nitisht"
+  LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 21 15:05:33 2013"
-  RTWModifiedTimeStamp	  280680397
+  LastModifiedDate	  "Mon Jan 21 18:50:19 2013"
+  RTWModifiedTimeStamp	  280694977
   ModelVersionFormat	  "1.%<AutoIncrement:215>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -746,7 +746,7 @@ Model {
   }
   System {
     Name		    "WaterRunner_ground"
-    Location		    [1126, 502, 1918, 1079]
+    Location		    [2, 82, 1565, 830]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    212
@@ -1085,7 +1085,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [1415, 314, 1585, 396]
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Ground Foot"
       SourceType	      ""
     }
@@ -1097,7 +1097,7 @@ Model {
       Position		      [290, 294, 460, 376]
       BlockMirror	      on
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Ground Foot"
       SourceType	      ""
     }
@@ -1109,7 +1109,7 @@ Model {
       Position		      [290, 169, 460, 251]
       BlockMirror	      on
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Ground Foot"
       SourceType	      ""
     }
@@ -1120,7 +1120,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [1415, 184, 1585, 266]
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Ground Foot"
       SourceType	      ""
     }
@@ -1131,7 +1131,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1240, 195, 1375, 250]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -1143,7 +1143,7 @@ Model {
       Position		      [510, 305, 645, 360]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -1154,7 +1154,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1240, 325, 1375, 380]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -1202,7 +1202,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 5, 4]
       Position		      [840, 157, 1040, 423]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Robot Body"
       SourceType	      ""
       initRobHeight	      "initRobHeight"
@@ -1226,8 +1226,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "2"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "4"
+      MachineId		      "[3 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1360,7 +1360,7 @@ Model {
       Position		      [1625, 199, 1710, 251]
       BlockMirror	      on
       BackgroundColor	      "cyan"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/contact_FR"
       SourceType	      "SubSystem"
     }
@@ -1371,7 +1371,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [150, 184, 235, 236]
       BackgroundColor	      "cyan"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/contact_FR"
       SourceType	      "SubSystem"
     }
@@ -1382,7 +1382,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [150, 309, 235, 361]
       BackgroundColor	      "cyan"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/contact_FR"
       SourceType	      "SubSystem"
     }
@@ -1394,7 +1394,7 @@ Model {
       Position		      [1625, 329, 1710, 381]
       BlockMirror	      on
       BackgroundColor	      "cyan"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/contact_FR"
       SourceType	      "SubSystem"
     }
@@ -1406,7 +1406,7 @@ Model {
       Position		      [510, 180, 645, 235]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -1418,7 +1418,7 @@ Model {
       Position		      [690, 148, 800, 212]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_FL"
@@ -1431,7 +1431,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [1085, 163, 1195, 227]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_FR"
@@ -1445,7 +1445,7 @@ Model {
       Position		      [690, 258, 800, 322]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_HL"
@@ -1458,7 +1458,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [1085, 293, 1195, 357]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.134"
+      LibraryVersion	      "1.139"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_HR"
@@ -1799,7 +1799,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 13:50:40
+#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 21:03:37
 #
 #
 

@@ -2,7 +2,7 @@ Library {
   Name			  "WaterRunner_lib"
   Version		  7.9
   MdlSubVersion		  0
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   LockLinksToLibrary	  on
@@ -15,11 +15,11 @@ Library {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "nitisht"
+  LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 21 15:20:29 2013"
-  RTWModifiedTimeStamp	  280682073
-  ModelVersionFormat	  "1.%<AutoIncrement:137>"
+  LastModifiedDate	  "Mon Jan 21 18:49:29 2013"
+  RTWModifiedTimeStamp	  280694967
+  ModelVersionFormat	  "1.%<AutoIncrement:139>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -886,7 +886,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [961, 578, 1919, 1079]
+    Location		    [2, 82, 1582, 847]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -898,7 +898,7 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "144"
+    ZoomFactor		    "106"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "371"
     Block {
@@ -923,7 +923,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Ground Foot"
-	Location		[1, 48, 1919, 548]
+	Location		[1, 82, 1581, 582]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -966,9 +966,9 @@ Library {
 	  BodyColorSelMode	  "COLORPALETTE"
 	  BodyColor		  "[0 0 0]"
 	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$Foot_L1_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
-	  WorkingFrames		  "Left$CS1$Foot_L1_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$Foot"
-	  "_L1_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
+	  CG			  "Left$CG$Foot_L1_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$CS1$false$none"
+	  WorkingFrames		  "Left$CS1$Foot_L1_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$Adjoining$true$none#Right$CS2$"
+	  "Foot_L1_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$CS1$true$none"
 	  CGPos			  "Foot_L1_CG"
 	  CGRot			  "[0 0 0]"
 	  CS0Pos		  "[]"
@@ -1045,14 +1045,14 @@ Library {
 	  BodyColor		  "[0 0 0]"
 	  AttachedToCS		  "CG"
 	  CG			  "Left$CG$Foot_L2_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$false$none"
-	  WorkingFrames		  "Left$CS1$Foot_L2_CS1$Adjoining$Adjoining$m$L3_ori$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$F"
-	  "oot_L2_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
+	  WorkingFrames		  "Left$CS1$Foot_L2_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$"
+	  "Foot_L2_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
 	  CGPos			  "Foot_L2_CG"
 	  CGRot			  "[0 0 0]"
 	  CS0Pos		  "[]"
 	  CS0Rot		  "[]"
 	  CS1Pos		  "Foot_L2_CS1"
-	  CS1Rot		  "L3_ori"
+	  CS1Rot		  "[0 0 0]"
 	  CS2Pos		  "Foot_L2_CS2"
 	  CS2Rot		  "[0 0 0]"
 	  CS3Pos		  "[]"
@@ -1240,7 +1240,7 @@ Library {
       System {
 	Name			"Leg"
 	Location		[1, 578, 959, 1079]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4461,7 +4461,7 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"121"
-	SIDHighWatermark	"452"
+	SIDHighWatermark	"491"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"
@@ -6418,7 +6418,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 13:50:40
+#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 21:03:37
 #
 #
 

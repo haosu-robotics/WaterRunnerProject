@@ -157,7 +157,7 @@ I1_w = (1/12) * Foot_L1_mass*(Foot_L1^2 + footThickness^2);
 I1_t = (1/12) * Foot_L1_mass*(Foot_L1^2 + footWidth^2);
 
 Foot_L1_CS1 = [0 0 0];
-Foot_L1_CS2 = [0 Foot_L1 0];
+Foot_L1_CS2 = [Foot_L1 0 0];
 Foot_L1_CG = Foot_L1_CS2/2;
 
 Foot_L1_inertia = diag([I1_l I1_w I1_t]);
@@ -171,7 +171,7 @@ I2_w = (1/12) * Foot_L2_mass*(Foot_L2^2 + footThickness^2);
 I2_t = (1/12) * Foot_L2_mass*(Foot_L2^2 + footWidth^2);
 
 Foot_L2_CS1 = [0 0 0];
-Foot_L2_CS2 = [0 Foot_L2 0];
+Foot_L2_CS2 = [Foot_L2 0  0];
 Foot_L2_CG = Foot_L2_CS2/2;
 
 Foot_L2_inertia = diag([I2_l I2_w I2_t]);
