@@ -2,8 +2,8 @@ water_level = 0;
 initRobHeight = 0.03;
 
 %%%%%%% motors parameters %%%%%%%
-%speed = 45;   % rotation speed in rad/s
-%duty_factor = .5;
+speed = 70;   % rotation speed in rad/s
+duty_factor = .5;
 switch_angle = 0;
 
 V_H = speed/(2*duty_factor);
@@ -84,7 +84,7 @@ L2_mass = CF_density*cross_area*L2;
 I = 1/12*L2_mass*L2^2;
 L2_inertia = diag([I 0 I]);
 
-%%%%%% calculations 
+%%%%%% calculations %%%%%%
 
 alpha =  2*L1*L4;
 beta  = -2*L2*L4;
@@ -94,7 +94,7 @@ delta = atan2(beta, alpha);
 theta4 = delta + acos(-gamma/(norm([alpha,beta])));
 theta3  = atan2( L4*sin(theta4)-L2 , L1+L4*cos(theta4) );
 
-%%%%%%% L4
+%%%%%%% L4 %%%%%%
 
 
 L4_CS1 = [0 0 0];       %using adjoining
@@ -107,8 +107,7 @@ L4_mass = CF_density*cross_area*L4;
 I = 1/12*L4_mass*L4^2;
 L4_inertia = diag([I 0 I]);
 
-%%%%
-
+%%%%%% L3 %%%%%%
 
 L3_CS1 = [0 0 0];       %using adjoining
 L3_CS2 = [-L3 0 0];
@@ -122,7 +121,7 @@ L3_mass = CF_density*cross_area*L3;
 I = 1/12*L3_mass*L3^2;
 L3_inertia = diag([I 0 I]);
 
-%%%%%%%% Tail Parameters %%%%%
+%%%%%%%% Tail Parameters %%%%%%%
 
 tail_angle = 0 * pi/180;
 L_tail = .1;
@@ -134,6 +133,5 @@ Tail_mass = CF_density*cross_area*L_tail;
 I = 1/12*Tail_mass*L_tail^2;
 Tail_inertia = diag([I 0 I]);
 
-%%%%%%%%%%%
-
+%%%%%
 totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass) + motor_mass + Tail_mass;

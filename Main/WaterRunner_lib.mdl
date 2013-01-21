@@ -17,9 +17,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jan 18 12:04:08 2013"
-  RTWModifiedTimeStamp	  280411444
-  ModelVersionFormat	  "1.%<AutoIncrement:123>"
+  LastModifiedDate	  "Mon Jan 21 15:20:29 2013"
+  RTWModifiedTimeStamp	  280682073
+  ModelVersionFormat	  "1.%<AutoIncrement:137>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -886,7 +886,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [1, 578, 959, 1079]
+    Location		    [961, 578, 1919, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -900,7 +900,323 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "144"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "346"
+    SIDHighWatermark	    "371"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ground Foot"
+      SID		      "352"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [730, 362, 845, 408]
+      BackgroundColor	      "orange"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskDescription	      "Rubber Foot for ground running modeled by PRBM"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Ground Foot"
+	Location		[1, 48, 1919, 548]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"195"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Foot L1"
+	  SID			  "353"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [190, 30, 250, 70]
+	  ZOrder		  4
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Bodies/Body"
+	  SourceType		  "Body"
+	  LConnTagsString	  "CS1"
+	  RConnTagsString	  "CS2"
+	  UpdateFromCAD		  "off"
+	  ClassName		  "Body"
+	  DialogClass		  "MechanicalBodyBlock"
+	  Mass			  "Foot_L1_mass"
+	  MassUnits		  "kg"
+	  InertiaUnits		  "kg*m^2"
+	  Inertia		  "Foot_L1_inertia"
+	  Shape			  "Cylinder"
+	  ShapeDims		  "[1 1]"
+	  ShapeUnits		  "m"
+	  ShapeUse		  "false"
+	  Density		  "1"
+	  DensityUnits		  "kg/m^3"
+	  DensityUse		  "false"
+	  GraphicsMode		  "CONVHULL"
+	  BodyColorSelMode	  "COLORPALETTE"
+	  BodyColor		  "[0 0 0]"
+	  AttachedToCS		  "CG"
+	  CG			  "Left$CG$Foot_L1_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
+	  WorkingFrames		  "Left$CS1$Foot_L1_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$Foot"
+	  "_L1_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
+	  CGPos			  "Foot_L1_CG"
+	  CGRot			  "[0 0 0]"
+	  CS0Pos		  "[]"
+	  CS0Rot		  "[]"
+	  CS1Pos		  "Foot_L1_CS1"
+	  CS1Rot		  "[0 0 0]"
+	  CS2Pos		  "Foot_L1_CS2"
+	  CS2Rot		  "[0 0 0]"
+	  CS3Pos		  "[]"
+	  CS3Rot		  "[]"
+	  CS4Pos		  "[]"
+	  CS4Rot		  "[]"
+	  CS5Pos		  "[]"
+	  CS5Rot		  "[]"
+	  CS6Pos		  "[]"
+	  CS6Rot		  "[]"
+	  CS7Pos		  "[]"
+	  CS7Rot		  "[]"
+	  CS8Pos		  "[]"
+	  CS8Rot		  "[]"
+	  CS9Pos		  "[]"
+	  CS9Rot		  "[]"
+	  CS10Pos		  "[]"
+	  CS10Rot		  "[]"
+	  CS11Pos		  "[]"
+	  CS11Rot		  "[]"
+	  CS12Pos		  "[]"
+	  CS12Rot		  "[]"
+	  CS13Pos		  "[]"
+	  CS13Rot		  "[]"
+	  CS14Pos		  "[]"
+	  CS14Rot		  "[]"
+	  CS15Pos		  "[]"
+	  CS15Rot		  "[]"
+	  CS16Pos		  "[]"
+	  CS16Rot		  "[]"
+	  CS17Pos		  "[]"
+	  CS17Rot		  "[]"
+	  CS18Pos		  "[]"
+	  CS18Rot		  "[]"
+	  CS19Pos		  "[]"
+	  CS19Rot		  "[]"
+	  CS20Pos		  "[]"
+	  CS20Rot		  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Foot L2"
+	  SID			  "354"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [420, 30, 480, 70]
+	  ZOrder		  4
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Bodies/Body"
+	  SourceType		  "Body"
+	  LConnTagsString	  "CS1"
+	  RConnTagsString	  "CS2"
+	  UpdateFromCAD		  "off"
+	  ClassName		  "Body"
+	  DialogClass		  "MechanicalBodyBlock"
+	  Mass			  "Foot_L2_mass"
+	  MassUnits		  "kg"
+	  InertiaUnits		  "kg*m^2"
+	  Inertia		  "Foot_L2_inertia"
+	  Shape			  "Cylinder"
+	  ShapeDims		  "[1 1]"
+	  ShapeUnits		  "m"
+	  ShapeUse		  "false"
+	  Density		  "1"
+	  DensityUnits		  "kg/m^3"
+	  DensityUse		  "false"
+	  GraphicsMode		  "CONVHULL"
+	  BodyColorSelMode	  "COLORPALETTE"
+	  BodyColor		  "[0 0 0]"
+	  AttachedToCS		  "CG"
+	  CG			  "Left$CG$Foot_L2_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$false$none"
+	  WorkingFrames		  "Left$CS1$Foot_L2_CS1$Adjoining$Adjoining$m$L3_ori$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$F"
+	  "oot_L2_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
+	  CGPos			  "Foot_L2_CG"
+	  CGRot			  "[0 0 0]"
+	  CS0Pos		  "[]"
+	  CS0Rot		  "[]"
+	  CS1Pos		  "Foot_L2_CS1"
+	  CS1Rot		  "L3_ori"
+	  CS2Pos		  "Foot_L2_CS2"
+	  CS2Rot		  "[0 0 0]"
+	  CS3Pos		  "[]"
+	  CS3Rot		  "[]"
+	  CS4Pos		  "[]"
+	  CS4Rot		  "[]"
+	  CS5Pos		  "[]"
+	  CS5Rot		  "[]"
+	  CS6Pos		  "[]"
+	  CS6Rot		  "[]"
+	  CS7Pos		  "[]"
+	  CS7Rot		  "[]"
+	  CS8Pos		  "[]"
+	  CS8Rot		  "[]"
+	  CS9Pos		  "[]"
+	  CS9Rot		  "[]"
+	  CS10Pos		  "[]"
+	  CS10Rot		  "[]"
+	  CS11Pos		  "[]"
+	  CS11Rot		  "[]"
+	  CS12Pos		  "[]"
+	  CS12Rot		  "[]"
+	  CS13Pos		  "[]"
+	  CS13Rot		  "[]"
+	  CS14Pos		  "[]"
+	  CS14Rot		  "[]"
+	  CS15Pos		  "[]"
+	  CS15Rot		  "[]"
+	  CS16Pos		  "[]"
+	  CS16Rot		  "[]"
+	  CS17Pos		  "[]"
+	  CS17Rot		  "[]"
+	  CS18Pos		  "[]"
+	  CS18Rot		  "[]"
+	  CS19Pos		  "[]"
+	  CS19Rot		  "[]"
+	  CS20Pos		  "[]"
+	  CS20Rot		  "[]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper"
+	  SID			  "355"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [190, 120, 250, 170]
+	  ZOrder		  2
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$k_PRBM$b_PRBM$0$m$m/s$N$rad$rad/s$N*m#R2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#R3$false$0$0$0$m$m"
+	  "/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Revolute2"
+	  SID			  "356"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [305, 37, 355, 88]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Revolute"
+	  SourceType		  "Revolute"
+	  LConnTagsString	  "__newl0|SA1"
+	  RConnTagsString	  "__newr0"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "1"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic"
+	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	  R1Axis		  "[0 0 1]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Weld"
+	  SID			  "364"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [95, 25, 145, 75]
+	  ZOrder		  9
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Weld"
+	  SourceType		  "Weld"
+	  LConnTagsString	  "__newl0"
+	  RConnTagsString	  "__newr0"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "0"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "weld"
+	  PrimitiveProps	  "W$World$[0 0 0]$weld"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	  WAxis			  "[0 0 0]"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "leg"
+	  SID			  "357"
+	  Position		  [25, 43, 55, 57]
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "end"
+	  SID			  "358"
+	  Position		  [515, 43, 545, 57]
+	  BlockMirror		  on
+	  Port			  "2"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Foot L2"
+	  SrcPort		  LConn1
+	  Points		  [-35, 0]
+	  DstBlock		  "Revolute2"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Revolute2"
+	  SrcPort		  LConn1
+	  DstBlock		  "Foot L1"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "end"
+	  SrcPort		  RConn1
+	  DstBlock		  "Foot L2"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Revolute2"
+	  SrcPort		  LConn2
+	  Points		  [-15, 0; 0, 70]
+	  DstBlock		  "Joint Spring & Damper"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Weld"
+	  SrcPort		  LConn1
+	  DstBlock		  "leg"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Weld"
+	  SrcPort		  RConn1
+	  DstBlock		  "Foot L1"
+	  DstPort		  LConn1
+	}
+      }
+    }
     Block {
       BlockType		      SubSystem
       Name		      "Leg"
@@ -923,8 +1239,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
-	Location		[481, 48, 959, 548]
-	Open			off
+	Location		[1, 578, 959, 1079]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1351,7 +1667,7 @@ Library {
       System {
 	Name			"Robot Body"
 	Location		[1, 48, 1919, 548]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2264,7 +2580,7 @@ Library {
       Name		      "Tail Pad"
       SID		      "279"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [180, 347, 350, 423]
+      Position		      [195, 361, 315, 409]
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2457,7 +2773,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "54"
+	    SIDHighWatermark	    "59"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -2738,7 +3054,7 @@ Library {
       Name		      "Water Foot"
       SID		      "112"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [460, 346, 650, 424]
+      Position		      [495, 360, 605, 410]
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2749,7 +3065,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Foot"
-	Location		[1, 48, 1919, 548]
+	Location		[1, 48, 1919, 600]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2931,7 +3247,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "50"
+	    SIDHighWatermark	    "55"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -4132,7 +4448,7 @@ Library {
       MaskValueString	      "work|0"
       System {
 	Name			"motor"
-	Location		[1, 578, 639, 1079]
+	Location		[1, 48, 1919, 548]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4145,7 +4461,7 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"121"
-	SIDHighWatermark	"335"
+	SIDHighWatermark	"452"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"
@@ -6081,6 +6397,14 @@ Library {
     Annotation {
       SID		      "157"
       Position		      [211, 427]
+    }
+    Annotation {
+      SID		      "351"
+      Position		      [808, 419]
+    }
+    Annotation {
+      SID		      "350"
+      Position		      [809, 422]
     }
   }
 }

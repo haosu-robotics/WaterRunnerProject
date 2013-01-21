@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.291"
+    ComputedModelVersion    "1.295"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jan 19 16:51:55 2013"
-  RTWModifiedTimeStamp	  280515112
-  ModelVersionFormat	  "1.%<AutoIncrement:291>"
+  LastModifiedDate	  "Mon Jan 21 15:07:31 2013"
+  RTWModifiedTimeStamp	  280681648
+  ModelVersionFormat	  "1.%<AutoIncrement:295>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -2332,7 +2332,7 @@ Model {
 	  LifeSpan		  "inf"
 	  MaxStackSize		  "Inherit from target"
 	  BufferReusableBoundary  on
-	  SimCompilerOptimization "Off"
+	  SimCompilerOptimization "On"
 	  AccelVerboseBuild	  off
 	  ParallelExecutionInRapidAccelerator on
 	}
@@ -2430,17 +2430,17 @@ Model {
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
-	  ProdBitPerLong	  32
+	  ProdBitPerLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
-	  ProdBitPerPointer	  32
+	  ProdBitPerPointer	  64
 	  ProdLargestAtomicInteger "Char"
 	  ProdLargestAtomicFloat  "None"
-	  ProdIntDivRoundTo	  "Undefined"
-	  ProdEndianess		  "Unspecified"
-	  ProdWordSize		  32
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
 	  ProdShiftRightIntArith  on
-	  ProdHWDeviceType	  "32-bit Generic"
+	  ProdHWDeviceType	  "Intel->x86-64"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
@@ -2653,7 +2653,7 @@ Model {
 	      WarnOnSingularInitialAssembly on
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0.001"
 	      DisableBodyVisControl   off
@@ -2725,8 +2725,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration4"
-      CurrentDlgPage	      "SimMechanics 1G"
-      ConfigPrmDlgPosition     [ 276, 113, 1345, 978 ] 
+      CurrentDlgPage	      "Optimization"
+      ConfigPrmDlgPosition     [ 276, 113, 1349, 982 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -2820,7 +2820,7 @@ Model {
   }
   System {
     Name		    "WaterRunner"
-    Location		    [1, 48, 1919, 1079]
+    Location		    [1, 48, 1919, 472]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    216
@@ -2834,7 +2834,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "91"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1427"
+    SIDHighWatermark	    "1429"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -3222,7 +3222,7 @@ Model {
       Position		      [525, 172, 660, 228]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -3233,7 +3233,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1500, 187, 1635, 243]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -3245,7 +3245,7 @@ Model {
       Position		      [525, 310, 660, 365]
       BlockMirror	      on
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -3256,7 +3256,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [1500, 315, 1635, 370]
       BackgroundColor	      "magenta"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -3350,7 +3350,7 @@ Model {
       Ports		      [0, 0, 0, 0, 0, 5, 4]
       Position		      [975, 161, 1175, 429]
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Robot Body"
       SourceType	      ""
       initRobHeight	      "initRobHeight"
@@ -3502,7 +3502,7 @@ Model {
       Name		      "Scope3"
       SID		      "1313"
       Ports		      [1]
-      Position		      [2080, 203, 2110, 237]
+      Position		      [2080, 198, 2110, 232]
       ZOrder		      -16
       Floating		      off
       Location		      [642, 539, 1280, 1078]
@@ -3674,7 +3674,7 @@ Model {
       Position		      [260, 301, 450, 379]
       BlockMirror	      on
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      "SubSystem"
     }
@@ -3686,7 +3686,7 @@ Model {
       Position		      [260, 161, 450, 239]
       BlockMirror	      on
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      "SubSystem"
     }
@@ -3697,7 +3697,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [1705, 176, 1895, 254]
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      "SubSystem"
     }
@@ -3708,7 +3708,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [1705, 306, 1895, 384]
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      "SubSystem"
     }
@@ -3741,7 +3741,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [1235, 168, 1345, 232]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_FR"
@@ -3754,7 +3754,7 @@ Model {
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [1235, 298, 1345, 362]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_HR"
@@ -3768,7 +3768,7 @@ Model {
       Position		      [735, 263, 845, 327]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_HL"
@@ -3782,7 +3782,7 @@ Model {
       Position		      [735, 153, 845, 217]
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.123"
+      LibraryVersion	      "1.134"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_FL"
@@ -3852,7 +3852,7 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Leg FR"
       SrcPort		      LConn1
-      Points		      [-125, 0]
+      Points		      [-80, 0; 0, 15]
       DstBlock		      "motor"
       DstPort		      RConn1
     }
@@ -3865,8 +3865,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
+      Labels		      [0, 0]
       SrcBlock		      "Leg_HR"
       SrcPort		      LConn1
+      Points		      [-60, 0; 0, 15]
       DstBlock		      "motor1"
       DstPort		      RConn1
     }
@@ -4022,7 +4024,6 @@ Model {
     Line {
       SrcBlock		      "Mux2"
       SrcPort		      1
-      Points		      [20, 0]
       DstBlock		      "Scope3"
       DstPort		      1
     }
@@ -4196,7 +4197,7 @@ Model {
       Labels		      [1, 0]
       SrcBlock		      "motor"
       SrcPort		      1
-      Points		      [60, 1; 0, -90]
+      Points		      [60, 0; 0, -90]
       DstBlock		      "Demux5"
       DstPort		      1
     }
