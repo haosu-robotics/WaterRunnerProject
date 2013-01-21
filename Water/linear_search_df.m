@@ -3,13 +3,12 @@ close all
 clear all
 
 tic;
-simParams;
 load_system('WaterRunner.mdl');
 
-ss = 40:2.5:100;
-ta = 0:pi/72:pi/2;
+ss = 20:5:100;
+df = .2:.05:.8;
 
-[SS, TA] = meshgrid(ss,ta);
+[SS, DF] = meshgrid(ss,df);
 
 robot_speed = nan(size(SS));
 robot_vert_low  = nan(size(SS));
@@ -19,8 +18,9 @@ robot_angle = nan(size(SS));
 
 for k = 1 : numel(SS)
 	speed = SS(k)
-	tail_angle = TA(k)
-    
+	duty_factor = DF(k)
+    simParams
+
 	sim('WaterRunner.mdl');
     
 	if sum(stopped.Data)
@@ -30,6 +30,9 @@ for k = 1 : numel(SS)
     ind = find(position.time < position.time(end)/2);
     ind = ind(end);
 	avg_h = mean(position.signals(3).values(ind:end));
+	if avg_h < 0
+		continue
+	end
 
 	robot_angle(k) = mean(position.signals(5).values(ind:end));
 
@@ -55,5 +58,5 @@ close_system('WaterRunner.mdl');
 g = 9.81;
 COT = robot_pow ./ (robot_speed * totalMass * g);
 
-save('speed_tail.mat')
+save('speed_df.mat')
 toc;

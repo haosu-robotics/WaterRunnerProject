@@ -1,9 +1,31 @@
-clc
-clear all
-close all
-
 water_level = 0;
 initRobHeight = 0.03;
+
+%%%%%%% motors parameters %%%%%%%
+%speed = 45;   % rotation speed in rad/s
+%duty_factor = .5;
+switch_angle = 0;
+
+V_H = speed/(2*duty_factor);
+V_L = speed/(2*(1 - duty_factor));
+
+pulse_df = duty_factor*100;
+pulse_amplitude = V_H - V_L;
+pulse_period = 2*pi/speed;
+median_speed = (V_H + V_L)/2 - pulse_amplitude/2;
+
+phase_delay = switch_angle/V_L;
+tau = 2*pi/speed/200;
+
+motor_mass = 0.010;
+motor_radius = 0.01342;
+motor_length = 0.03663;
+
+Ix = 1/12*motor_mass*(3*motor_radius^2 + motor_length^2);
+Iy = Ix;
+Iz = motor_mass*motor_radius^2/2;
+
+motor_inertia = diag([Ix,Iy,Iz]);
 
 %%%%%% frame parameters %%%%%%%%%%%%%%%%%%
 frame_width  = 0.125; 
@@ -24,8 +46,6 @@ Iz = 1/12*frame_mass*( frame_length^2 + frame_height^2 );
 
 frame_inertia = diag([Ix,Iy,Iz]);
 
-%%%%%%% motors parameters %%%%%%%
-%speed = 80;   % rotation speed in rad/s
 L6 = 0.17325;    % this is distance between front and hind motors
 
 frame_motor_FR = frame_FR;
@@ -34,15 +54,6 @@ frame_motor_HR = frame_motor_FR - [L6 0 0];
 frame_motor_HL = frame_motor_FL - [L6 0 0];
 frame_motor_Tail = (frame_HR + frame_HL)/2;
 
-motor_mass = 0.010;
-motor_radius = 0.01342;
-motor_length = 0.03663;
-
-Ix = 1/12*motor_mass*(3*motor_radius^2 + motor_length^2);
-Iy = Ix;
-Iz = motor_mass*motor_radius^2/2;
-
-motor_inertia = diag([Ix,Iy,Iz]);
 
 %%%%%%%  passive joint parameters %%%%%%
 
@@ -113,7 +124,7 @@ L3_inertia = diag([I 0 I]);
 
 %%%%%%%% Tail Parameters %%%%%
 
-%tail_angle = 65 * pi/180;
+tail_angle = 0 * pi/180;
 L_tail = .1;
 Tail_CS1 = [0 0 0];     % using adjoining
 Tail_CG  = [0 L_tail/2 0];
