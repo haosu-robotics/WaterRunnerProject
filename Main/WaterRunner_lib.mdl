@@ -17,9 +17,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 21 18:49:29 2013"
-  RTWModifiedTimeStamp	  280694967
-  ModelVersionFormat	  "1.%<AutoIncrement:139>"
+  LastModifiedDate	  "Tue Jan 22 14:35:03 2013"
+  RTWModifiedTimeStamp	  280766100
+  ModelVersionFormat	  "1.%<AutoIncrement:140>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1239,7 +1239,7 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
-	Location		[1, 578, 959, 1079]
+	Location		[2, 74, 1598, 839]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1522,10 +1522,10 @@ Library {
 	  RConnTagsString	  "__newr0"
 	  UpdateFromCAD		  "off"
 	  NumSAPorts		  "0"
-	  CutJoint		  "off"
+	  CutJoint		  "on"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$WORLD$[0 0 1]$revolute"
+	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
 	  ClassName		  "Joint"
 	  DialogClass		  "JointBlock"
 	  R1Axis		  "[0 0 1]"
@@ -1544,7 +1544,7 @@ Library {
 	  RConnTagsString	  "__newr0"
 	  UpdateFromCAD		  "off"
 	  NumSAPorts		  "0"
-	  CutJoint		  "on"
+	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
 	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
@@ -4448,7 +4448,7 @@ Library {
       MaskValueString	      "work|0"
       System {
 	Name			"motor"
-	Location		[1, 48, 1919, 548]
+	Location		[1, 82, 1581, 582]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
