@@ -2,7 +2,7 @@ Library {
   Name			  "WaterRunner_lib"
   Version		  7.9
   MdlSubVersion		  0
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   LockLinksToLibrary	  on
@@ -15,11 +15,11 @@ Library {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 22 14:35:03 2013"
-  RTWModifiedTimeStamp	  280766100
-  ModelVersionFormat	  "1.%<AutoIncrement:140>"
+  LastModifiedDate	  "Thu Jan 24 19:46:16 2013"
+  RTWModifiedTimeStamp	  280954553
+  ModelVersionFormat	  "1.%<AutoIncrement:164>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -644,6 +644,17 @@ Library {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -703,6 +714,9 @@ Library {
       TagVisibility	      "local"
     }
     Block {
+      BlockType		      Ground
+    }
+    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -736,12 +750,30 @@ Library {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      MATLABFcn
       MATLABFcn		      "sin"
       OutputDimensions	      "-1"
       OutputSignalType	      "auto"
       Output1D		      on
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
     }
     Block {
       BlockType		      Mux
@@ -787,29 +819,19 @@ Library {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
       SFunctionDeploymentMode off
-    }
-    Block {
-      BlockType		      Scope
-      ModelBased	      off
-      TickLabels	      "OneTimeTick"
-      ZoomMode		      "on"
-      Grid		      "on"
-      TimeRange		      "auto"
-      YMin		      "-5"
-      YMax		      "5"
-      SaveToWorkspace	      off
-      SaveName		      "ScopeData"
-      DataFormat	      "Array"
-      LimitDataPoints	      on
-      MaxDataPoints	      "5000"
-      Decimation	      "1"
-      SampleInput	      off
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      Selector
@@ -886,7 +908,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [2, 82, 1582, 847]
+    Location		    [1, 48, 1919, 785]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -898,9 +920,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "106"
+    ZoomFactor		    "143"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "371"
+    SIDHighWatermark	    "477"
     Block {
       BlockType		      SubSystem
       Name		      "Ground Foot"
@@ -923,8 +945,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Ground Foot"
-	Location		[1, 82, 1581, 582]
-	Open			on
+	Location		[1088, 48, 1919, 691]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1095,9 +1117,9 @@ Library {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "355"
+	  SID			  "372"
 	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [190, 120, 250, 170]
+	  Position		  [195, 125, 255, 175]
 	  ZOrder		  2
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
@@ -1114,16 +1136,16 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Revolute2"
 	  SID			  "356"
-	  Ports			  [0, 0, 0, 0, 0, 2, 1]
-	  Position		  [305, 37, 355, 88]
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [305, 36, 355, 89]
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Revolute"
 	  SourceType		  "Revolute"
 	  LConnTagsString	  "__newl0|SA1"
-	  RConnTagsString	  "__newr0"
+	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "1"
+	  NumSAPorts		  "2"
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
@@ -1175,7 +1197,6 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "Foot L2"
 	  SrcPort		  LConn1
-	  Points		  [-35, 0]
 	  DstBlock		  "Revolute2"
 	  DstPort		  RConn1
 	}
@@ -1195,14 +1216,6 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Revolute2"
-	  SrcPort		  LConn2
-	  Points		  [-15, 0; 0, 70]
-	  DstBlock		  "Joint Spring & Damper"
-	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
 	  SrcBlock		  "Weld"
 	  SrcPort		  LConn1
 	  DstBlock		  "leg"
@@ -1214,6 +1227,1673 @@ Library {
 	  SrcPort		  RConn1
 	  DstBlock		  "Foot L1"
 	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper"
+	  SrcPort		  LConn1
+	  Points		  [10, 0; 0, -75]
+	  DstBlock		  "Revolute2"
+	  DstPort		  LConn2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ground Reaction"
+      SID		      "385"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [495, 650, 620, 700]
+      ZOrder		      1
+      BackgroundColor	      "black"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Ground Reaction"
+	Location		[1, 48, 1919, 634]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Body Actuator"
+	  SID			  "386"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [105, 190, 145, 230]
+	  ZOrder		  -1
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
+	  SourceType		  "Body Actuator"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Force"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N-m"
+	  ActiveIO		  "off"
+	  Width			  "3"
+	  ClassName		  "BodyActuatorForceTorque"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	  Angle			  "off"
+	  CoordPosition		  "on"
+	  Force			  "on"
+	  Torque		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Body Sensor"
+	  SID			  "387"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [95, 460, 135, 500]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
+	  SourceType		  "Body Sensor"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "on"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[ 3 3 ]"
+	  ActiveIO		  "off"
+	  Width			  "6"
+	  ClassName		  "BodySensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  SID			  "388"
+	  Ports			  [1, 4]
+	  Position		  [260, 422, 265, 538]
+	  ZOrder		  -3
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Ground Friction Model"
+	  SID			  "389"
+	  Ports			  [4, 3, 1]
+	  Position		  [390, 422, 555, 538]
+	  ZOrder		  -4
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Ground Friction Model"
+	    Location		    [41, 44, 992, 885]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "112"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dy [m]"
+	      SID		      "390"
+	      Position		      [45, 178, 75, 192]
+	      ZOrder		      -1
+	      BackgroundColor	      "darkGreen"
+	      NamePlacement	      "alternate"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vy [m/s]"
+	      SID		      "391"
+	      Position		      [25, 218, 55, 232]
+	      ZOrder		      -2
+	      BackgroundColor	      "darkGreen"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "x [m]"
+	      SID		      "392"
+	      Position		      [185, 503, 215, 517]
+	      ZOrder		      -3
+	      BackgroundColor	      "darkGreen"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "vx [m/s]"
+	      SID		      "393"
+	      Position		      [185, 538, 215, 552]
+	      ZOrder		      -4
+	      BackgroundColor	      "darkGreen"
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Contact!"
+	      SID		      "394"
+	      Ports		      []
+	      Position		      [365, 15, 385, 35]
+	      ZOrder		      -5
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "black"
+	      StatesWhenEnabling      "reset"
+	    }
+	    Block {
+	      BlockType		      DataTypeConversion
+	      Name		      "Data Type Conversion"
+	      SID		      "395"
+	      Position		      [335, 646, 380, 664]
+	      ZOrder		      -6
+	      BlockMirror	      on
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      OutDataTypeStr	      "double"
+	      RndMeth		      "Floor"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Friction Switch"
+	      SID		      "396"
+	      Ports		      [2, 1]
+	      Position		      [435, 627, 520, 678]
+	      ZOrder		      -7
+	      BlockMirror	      on
+	      ForegroundColor	      "red"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Friction Switch"
+		Location		[260, 44, 1228, 885]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Slide!"
+		  SID			  "397"
+		  Position		  [120, 208, 150, 222]
+		  ZOrder		  -1
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "darkGreen"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Stick!"
+		  SID			  "398"
+		  Position		  [120, 173, 150, 187]
+		  ZOrder		  -2
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory"
+		  SID			  "399"
+		  Position		  [390, 165, 420, 195]
+		  ZOrder		  -3
+		  ForegroundColor	  "red"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "S-R\nFlip-Flop"
+		  SID			  "400"
+		  Ports			  [2, 2]
+		  Position		  [270, 160, 315, 235]
+		  ZOrder		  -4
+		  ForegroundColor	  "red"
+		  LibraryVersion	  "1.44"
+		  SourceBlock		  "simulink_extras/Flip Flops/S-R\nFlip-Flop"
+		  SourceType		  "SRFlipFlop"
+		  initial_condition	  "1"
+		}
+		Block {
+		  BlockType		  Terminator
+		  Name			  "Terminator"
+		  SID			  "401"
+		  Position		  [340, 205, 360, 225]
+		  ZOrder		  -5
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Stiction"
+		  SID			  "402"
+		  Position		  [495, 173, 525, 187]
+		  ZOrder		  -6
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "darkGreen"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "S-R\nFlip-Flop"
+		  SrcPort		  1
+		  DstBlock		  "Memory"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "S-R\nFlip-Flop"
+		  SrcPort		  2
+		  DstBlock		  "Terminator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Stick!"
+		  SrcPort		  1
+		  DstBlock		  "S-R\nFlip-Flop"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Slide!"
+		  SrcPort		  1
+		  DstBlock		  "S-R\nFlip-Flop"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Memory"
+		  SrcPort		  1
+		  DstBlock		  "Stiction"
+		  DstPort		  1
+		}
+		Annotation {
+		  SID			  "403"
+		  Name			  "Static/Kinetic Friction Switch"
+		  Position		  [266, 106]
+		  FontSize		  18
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain3"
+	      SID		      "404"
+	      Position		      [185, 167, 240, 203]
+	      ZOrder		      -8
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      Gain		      "k_gy"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain4"
+	      SID		      "405"
+	      Position		      [135, 202, 230, 248]
+	      ZOrder		      -9
+	      BackgroundColor	      "green"
+	      ShowName		      off
+	      Gain		      "1/v_gy_max"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      SID		      "406"
+	      Ports		      [1, 1]
+	      Position		      [389, 680, 421, 710]
+	      ZOrder		      -10
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      ForegroundColor	      "red"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      SID		      "407"
+	      Ports		      [2, 1]
+	      Position		      [280, 165, 285, 245]
+	      ZOrder		      -11
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "408"
+	      Ports		      [2, 1]
+	      Position		      [565, 535, 585, 555]
+	      ZOrder		      -12
+	      ShowName		      off
+	      IconShape		      "round"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "X-Axis Kinetic Friction Model"
+	      SID		      "409"
+	      Ports		      [3, 3, 1]
+	      Position		      [295, 765, 520, 885]
+	      ZOrder		      -13
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"X-Axis Kinetic Friction Model"
+		Location		[638, 44, 1606, 885]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "pos [m]"
+		  SID			  "410"
+		  Position		  [515, 343, 545, 357]
+		  ZOrder		  -1
+		  BackgroundColor	  "darkGreen"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vel [m/s]"
+		  SID			  "411"
+		  Position		  [20, 373, 50, 387]
+		  ZOrder		  -2
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "F_Normal [N]"
+		  SID			  "412"
+		  Position		  [235, 193, 265, 207]
+		  ZOrder		  -3
+		  BackgroundColor	  "darkGreen"
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "413"
+		  Ports			  []
+		  Position		  [200, 35, 220, 55]
+		  ZOrder		  -4
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "black"
+		  StatesWhenEnabling	  "reset"
+		  ZeroCross		  off
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs"
+		  SID			  "414"
+		  Position		  [225, 535, 255, 565]
+		  ZOrder		  -5
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  "415"
+		  Position		  [215, 591, 265, 619]
+		  ZOrder		  -6
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  Value			  "vLimit"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "FixPt\nRelational\nOperator"
+		  SID			  "416"
+		  Ports			  [2, 1]
+		  Position		  [560, 489, 580, 616]
+		  ZOrder		  -7
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Operator		  ">"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "boolean"
+		  ZeroCross		  off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory"
+		  SID			  "417"
+		  Position		  [490, 570, 520, 600]
+		  ZOrder		  -8
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Negative"
+		  SID			  "418"
+		  Ports			  [1, 1]
+		  Position		  [355, 530, 395, 570]
+		  ZOrder		  -9
+		  ForegroundColor	  "red"
+		  LibraryVersion	  "1.260"
+		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+		  SourceType		  "Compare To Zero"
+		  relop			  "<"
+		  OutDataTypeStr	  "boolean"
+		  ZeroCross		  on
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  SID			  "419"
+		  Ports			  [2, 1]
+		  Position		  [430, 109, 450, 231]
+		  ZOrder		  -10
+		  ShowName		  off
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Signum
+		  Name			  "Sign1"
+		  SID			  "420"
+		  Position		  [225, 125, 255, 155]
+		  ZOrder		  -11
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "421"
+		  Ports			  [2, 1]
+		  Position		  [290, 540, 310, 560]
+		  ZOrder		  -12
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|+-"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "reverse"
+		  SID			  "422"
+		  Position		  [310, 125, 355, 155]
+		  ZOrder		  -13
+		  Gain			  "-1"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "sliding friction\ncoefficient"
+		  SID			  "423"
+		  Position		  [310, 180, 400, 220]
+		  ZOrder		  -14
+		  BackgroundColor	  "green"
+		  Gain			  "mu_slide"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "posFP [m]"
+		  SID			  "424"
+		  Position		  [630, 343, 660, 357]
+		  ZOrder		  -15
+		  BackgroundColor	  "darkGreen"
+		  AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
+		  IconDisplay		  "Port number"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Stiction!"
+		  SID			  "425"
+		  Position		  [630, 548, 660, 562]
+		  ZOrder		  -16
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "darkGreen"
+		  AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "F_Slide [N]"
+		  SID			  "426"
+		  Position		  [610, 163, 640, 177]
+		  ZOrder		  -17
+		  BackgroundColor	  "darkGreen"
+		  AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "reverse"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "F_Normal [N]"
+		  SrcPort		  1
+		  DstBlock		  "sliding friction\ncoefficient"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "vel [m/s]"
+		  SrcPort		  1
+		  Points		  [0, 0; 80, 0]
+		  Branch {
+		    Points		    [0, -240]
+		    DstBlock		    "Sign1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 170]
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "pos [m]"
+		  SrcPort		  1
+		  DstBlock		  "posFP [m]"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  DstBlock		  "F_Slide [N]"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "sliding friction\ncoefficient"
+		  SrcPort		  1
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sign1"
+		  SrcPort		  1
+		  DstBlock		  "reverse"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "FixPt\nRelational\nOperator"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Stiction!"
+		  DstPort		  1
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "Memory"
+		  SrcPort		  1
+		  DstBlock		  "FixPt\nRelational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "Negative"
+		  SrcPort		  1
+		  Points		  [0, 0; 55, 0]
+		  Branch {
+		    Labels		    [1, 0]
+		    Points		    [0, -30]
+		    DstBlock		    "FixPt\nRelational\nOperator"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Abs"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Negative"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  Points		  [30, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Annotation {
+		  SID			  "429"
+		  Name			  "Kinetic Friction Model"
+		  Position		  [341, 48]
+		  FontSize		  18
+		}
+		Annotation {
+		  SID			  "428"
+		  Name			  "Footpoint Determiner"
+		  Position		  [604, 315]
+		}
+		Annotation {
+		  SID			  "427"
+		  Name			  "Sliding Limit Detector"
+		  Position		  [353, 481]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "X-Axis Static Friction Model"
+	      SID		      "430"
+	      Ports		      [4, 2, 1]
+	      Position		      [290, 455, 520, 600]
+	      ZOrder		      -14
+	      NamePlacement	      "alternate"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"X-Axis Static Friction Model"
+		Location		[260, 44, 1228, 885]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "F_Normal [N]"
+		  SID			  "431"
+		  Position		  [710, 413, 740, 427]
+		  ZOrder		  -1
+		  BlockMirror		  on
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "pos [m]"
+		  SID			  "432"
+		  Position		  [15, 193, 45, 207]
+		  ZOrder		  -2
+		  BackgroundColor	  "darkGreen"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "vel [m/s]"
+		  SID			  "433"
+		  Position		  [15, 233, 45, 247]
+		  ZOrder		  -3
+		  BackgroundColor	  "darkGreen"
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "posFP [m]"
+		  SID			  "434"
+		  Position		  [15, 158, 45, 172]
+		  ZOrder		  -4
+		  BackgroundColor	  "darkGreen"
+		  NamePlacement		  "alternate"
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  EnablePort
+		  Name			  "Enable"
+		  SID			  "435"
+		  Ports			  []
+		  Position		  [355, 25, 375, 45]
+		  ZOrder		  -5
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "black"
+		  StatesWhenEnabling	  "reset"
+		  ZeroCross		  off
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs"
+		  SID			  "436"
+		  Position		  [490, 405, 520, 435]
+		  ZOrder		  -6
+		  BlockMirror		  on
+		  NamePlacement		  "alternate"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Abs
+		  Name			  "Abs."
+		  SID			  "437"
+		  Position		  [490, 495, 520, 525]
+		  ZOrder		  -7
+		  BlockMirror		  on
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Check Vertical Friction"
+		  SID			  "438"
+		  Ports			  [2, 1]
+		  Position		  [795, 201, 810, 274]
+		  ZOrder		  -8
+		  ShowName		  off
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "FixPt\nRelational\nOperator"
+		  SID			  "439"
+		  Ports			  [2, 1]
+		  Position		  [200, 400, 220, 520]
+		  ZOrder		  -9
+		  BlockMirror		  on
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  Operator		  ">"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "boolean"
+		  ZeroCross		  off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain3"
+		  SID			  "440"
+		  Position		  [175, 182, 230, 218]
+		  ZOrder		  -10
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  Gain			  "k_gx"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain4"
+		  SID			  "441"
+		  Position		  [110, 217, 205, 263]
+		  ZOrder		  -11
+		  BackgroundColor	  "green"
+		  ShowName		  off
+		  Gain			  "1/v_gx_max"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Memory
+		  Name			  "Memory"
+		  SID			  "442"
+		  Position		  [250, 475, 280, 505]
+		  ZOrder		  -12
+		  BlockMirror		  on
+		  ForegroundColor	  "red"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux1"
+		  SID			  "443"
+		  Ports			  [2, 1]
+		  Position		  [270, 180, 275, 260]
+		  ZOrder		  -13
+		  ShowName		  off
+		  Inputs		  "2"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Positive"
+		  SID			  "444"
+		  Ports			  [1, 1]
+		  Position		  [355, 445, 395, 485]
+		  ZOrder		  -14
+		  BlockMirror		  on
+		  ForegroundColor	  "red"
+		  ShowName		  off
+		  LibraryVersion	  "1.260"
+		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+		  SourceType		  "Compare To Zero"
+		  relop			  ">"
+		  OutDataTypeStr	  "boolean"
+		  ZeroCross		  on
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Positive1"
+		  SID			  "445"
+		  Ports			  [1, 1]
+		  Position		  [735, 238, 765, 272]
+		  ZOrder		  -15
+		  ForegroundColor	  "red"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  LibraryVersion	  "1.260"
+		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+		  SourceType		  "Compare To Zero"
+		  relop			  ">"
+		  OutDataTypeStr	  "boolean"
+		  ZeroCross		  on
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "446"
+		  Ports			  [2, 1]
+		  Position		  [445, 455, 465, 475]
+		  ZOrder		  -16
+		  BlockMirror		  on
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "-+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum2"
+		  SID			  "447"
+		  Ports			  [2, 1]
+		  Position		  [75, 190, 95, 210]
+		  ZOrder		  -17
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "-+|"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		  Port {
+		    PortNumber		    1
+		    Name		    "dx"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "X-Axis Stiction Force"
+		  SID			  "448"
+		  Position		  [325, 196, 495, 244]
+		  ZOrder		  -18
+		  BackgroundColor	  "magenta"
+		  Expr			  "-u(1) * (1+sgn(u(1))*u(2))"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "stiction\nlimit\nforce"
+		  SID			  "449"
+		  Position		  [555, 400, 635, 440]
+		  ZOrder		  -19
+		  BlockMirror		  on
+		  BackgroundColor	  "green"
+		  NamePlacement		  "alternate"
+		  Gain			  "mu_stick"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "F_Stick [N]"
+		  SID			  "450"
+		  Position		  [960, 233, 990, 247]
+		  ZOrder		  -20
+		  BackgroundColor	  "darkGreen"
+		  AttributesFormatString  "when disabled: %<OutputWhenDisabled>\\ninitial: %<InitialOutput>"
+		  IconDisplay		  "Port number"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Sliding!"
+		  SID			  "451"
+		  Position		  [35, 453, 65, 467]
+		  ZOrder		  -21
+		  BlockMirror		  on
+		  ForegroundColor	  "red"
+		  BackgroundColor	  "darkGreen"
+		  AttributesFormatString  "when disabled: %<OutputWhenDisabled>\\ninitial: %<InitialOutput>"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  OutputWhenDisabled	  "reset"
+		  InitialOutput		  "0"
+		}
+		Line {
+		  SrcBlock		  "Check Vertical Friction"
+		  SrcPort		  1
+		  Points		  [0, 0; 75, 0]
+		  Branch {
+		    Points		    [0, 270]
+		    DstBlock		    "Abs."
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "F_Stick [N]"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Positive1"
+		  SrcPort		  1
+		  DstBlock		  "Check Vertical Friction"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "X-Axis Stiction Force"
+		  SrcPort		  1
+		  DstBlock		  "Check Vertical Friction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "stiction\nlimit\nforce"
+		  SrcPort		  1
+		  DstBlock		  "Abs"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Abs"
+		  SrcPort		  1
+		  Points		  [-30, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "FixPt\nRelational\nOperator"
+		  SrcPort		  1
+		  DstBlock		  "Sliding!"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain4"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Mux1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gain3"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Mux1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mux1"
+		  SrcPort		  1
+		  DstBlock		  "X-Axis Stiction Force"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Abs."
+		  SrcPort		  1
+		  Points		  [-30, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "Positive"
+		  SrcPort		  1
+		  Points		  [0, 0; -45, 0]
+		  Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Memory"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Labels		    [1, 0]
+		    Points		    [0, -35]
+		    DstBlock		    "FixPt\nRelational\nOperator"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  Labels		  [0, 0]
+		  SrcBlock		  "Memory"
+		  SrcPort		  1
+		  DstBlock		  "FixPt\nRelational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Positive"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "vel [m/s]"
+		  SrcPort		  1
+		  DstBlock		  "Gain4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "posFP [m]"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Sum2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "pos [m]"
+		  SrcPort		  1
+		  DstBlock		  "Sum2"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "dx"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Sum2"
+		  SrcPort		  1
+		  DstBlock		  "Gain3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "F_Normal [N]"
+		  SrcPort		  1
+		  Points		  [0, 0; -40, 0]
+		  Branch {
+		    Points		    [0, -165]
+		    DstBlock		    "Positive1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "stiction\nlimit\nforce"
+		    DstPort		    1
+		  }
+		}
+		Annotation {
+		  SID			  "454"
+		  Name			  "Zero multiplication prevents\nhorizontal friction model from\noscillating between static and kinetic\nfr"
+		  "iction when the vertical force is zero but \nthe ground level is not yet reached \nin the upward motion  "
+		  Position		  [780, 326]
+		}
+		Annotation {
+		  SID			  "453"
+		  Name			  "Stiction Limit Detector"
+		  Position		  [298, 385]
+		}
+		Annotation {
+		  SID			  "452"
+		  Name			  "Static Friction Model"
+		  Position		  [489, 38]
+		  FontSize		  18
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Y-Axis Ground Force"
+	      SID		      "455"
+	      Position		      [330, 188, 565, 222]
+	      ZOrder		      -15
+	      BackgroundColor	      "magenta"
+	      Expr		      "- u(1)  *  (1-u(2)) * (u(2)<1)"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fy_Ground[N]"
+	      SID		      "456"
+	      Position		      [780, 198, 810, 212]
+	      ZOrder		      -16
+	      BackgroundColor	      "darkGreen"
+	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
+	      IconDisplay	      "Port number"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fx_Friction [N]"
+	      SID		      "457"
+	      Position		      [695, 538, 725, 552]
+	      ZOrder		      -17
+	      BackgroundColor	      "darkGreen"
+	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen\\ndisabled\\n'%<OutputWhenDisabled>'"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Stiction!"
+	      SID		      "458"
+	      Position		      [280, 648, 310, 662]
+	      ZOrder		      -18
+	      BlockMirror	      on
+	      ForegroundColor	      "red"
+	      BackgroundColor	      "darkGreen"
+	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen\\ndisabled\\n'%<OutputWhenDisabled>'"
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      SrcBlock		      "Y-Axis Ground Force"
+	      SrcPort		      1
+	      Points		      [145, 0]
+	      Branch {
+		Points			[0, 215; -550, 0; 0, 55]
+		Branch {
+		  DstBlock		  "X-Axis Static Friction Model"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 390]
+		  DstBlock		  "X-Axis Kinetic Friction Model"
+		  DstPort		  3
+		}
+	      }
+	      Branch {
+		DstBlock		"Fy_Ground[N]"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "dy [m]"
+	      SrcPort		      1
+	      DstBlock		      "Gain3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "vy [m/s]"
+	      SrcPort		      1
+	      DstBlock		      "Gain4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "x [m]"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		DstBlock		"X-Axis Static Friction Model"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 275]
+		DstBlock		"X-Axis Kinetic Friction Model"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "vx [m/s]"
+	      SrcPort		      1
+	      Points		      [0, 0; 15, 0]
+	      Branch {
+		DstBlock		"X-Axis Static Friction Model"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 280]
+		DstBlock		"X-Axis Kinetic Friction Model"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "X-Axis Kinetic Friction Model"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -50; -280, 0; 0, -155]
+	      DstBlock		      "X-Axis Static Friction Model"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "X-Axis Kinetic Friction Model"
+	      SrcPort		      3
+	      Points		      [50, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "X-Axis Static Friction Model"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Fx_Friction [N]"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Friction Switch"
+	      SrcPort		      1
+	      Points		      [0, 0; -25, 0]
+	      Branch {
+		DstBlock		"X-Axis Static Friction Model"
+		DstPort			enable
+	      }
+	      Branch {
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Data Type Conversion"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "X-Axis Static Friction Model"
+	      SrcPort		      2
+	      Points		      [30, 0; 0, 75]
+	      DstBlock		      "Friction Switch"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "X-Axis Kinetic Friction Model"
+	      SrcPort		      2
+	      Points		      [30, 0; 0, -160]
+	      DstBlock		      "Friction Switch"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "X-Axis Kinetic Friction Model"
+	      DstPort		      enable
+	    }
+	    Line {
+	      SrcBlock		      "Data Type Conversion"
+	      SrcPort		      1
+	      DstBlock		      "Stiction!"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      DstBlock		      "Y-Axis Ground Force"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain3"
+	      SrcPort		      1
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain4"
+	      SrcPort		      1
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Annotation {
+	      SID		      "460"
+	      Name		      "Horizontal Ground Friction Model"
+	      Position		      [401, 388]
+	      FontSize		      18
+	    }
+	    Annotation {
+	      SID		      "459"
+	      Name		      "Vertical Ground Stiction Model"
+	      Position		      [379, 113]
+	      FontSize		      18
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Ground
+	  Name			  "Ground1"
+	  SID			  "461"
+	  Position		  [320, 215, 340, 235]
+	  ZOrder		  -5
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mechanical\nBranching\nBar"
+	  SID			  "462"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [47, 140, 98, 150]
+	  ZOrder		  -6
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  BackgroundColor	  "black"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	  SourceType		  "Mechanical Branching Bar"
+	  LConnTagsString	  "_newl0"
+	  RConnTagsString	  "SA0|SA1"
+	  UpdateFromCAD		  "off"
+	  ClassName		  "BranchingBar"
+	  DialogClass		  "MechanicalBranchingBarBlock"
+	  NumSAPorts		  "2"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "463"
+	  Ports			  [3, 1]
+	  Position		  [260, 185, 265, 235]
+	  ZOrder		  -7
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "464"
+	  Ports			  [2, 1]
+	  Position		  [310, 425, 330, 445]
+	  ZOrder		  -8
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator"
+	  SID			  "465"
+	  Position		  [585, 510, 605, 530]
+	  ZOrder		  -9
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "[y y' x x']"
+	  SID			  "466"
+	  Ports			  [1, 1]
+	  Position		  [170, 437, 210, 523]
+	  ZOrder		  -10
+	  InputPortWidth	  "6"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[2 5 1 4]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "skin contact\nsensor"
+	  SID			  "467"
+	  Ports			  [1, 1]
+	  Position		  [390, 365, 420, 395]
+	  ZOrder		  -11
+	  ForegroundColor	  "red"
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.260"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
+	  SourceType		  "Compare To Zero"
+	  relop			  "<="
+	  OutDataTypeStr	  "boolean"
+	  ZeroCross		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "yGround"
+	  SID			  "468"
+	  Position		  [270, 355, 300, 385]
+	  ZOrder		  -12
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "F"
+	  SID			  "469"
+	  Position		  [60, 95, 90, 110]
+	  ZOrder		  -13
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  ForegroundColor	  "red"
+	  BackgroundColor	  "darkGreen"
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Line {
+	  SrcBlock		  "Ground1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "[y y' x x']"
+	  SrcPort		  1
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  4
+	  DstBlock		  "Ground Friction Model"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "Ground Friction Model"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  DstBlock		  "Ground Friction Model"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "F"
+	  SrcPort		  RConn1
+	  DstBlock		  "Mechanical\nBranching\nBar"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Body Actuator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Body Sensor"
+	  SrcPort		  1
+	  DstBlock		  "[y y' x x']"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn1
+	  Points		  [0, 315]
+	  DstBlock		  "Body Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn2
+	  Points		  [0, 45]
+	  DstBlock		  "Body Actuator"
+	  DstPort		  RConn1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "skin contact\nsensor"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Ground Friction Model"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "yGround"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "skin contact\nsensor"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "Ground Friction Model"
+	  DstPort		  enable
+	}
+	Line {
+	  SrcBlock		  "Ground Friction Model"
+	  SrcPort		  1
+	  Points		  [85, 0; 0, -230]
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Ground Friction Model"
+	  SrcPort		  2
+	  Points		  [100, 0; 0, -285]
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ground Friction Model"
+	  SrcPort		  3
+	  Points		  [0, 0]
+	  DstBlock		  "Terminator"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "470"
+	  Name			  "Planar Ground Interaction Model"
+	  Position		  [336, 47]
+	  FontSize		  20
 	}
       }
     }
@@ -1239,8 +2919,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
-	Location		[2, 74, 1598, 839]
-	Open			off
+	Location		[1, 815, 964, 1079]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1503,7 +3183,7 @@ Library {
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$WORLD$[0 0 1]$revolute"
+	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
 	  ClassName		  "Joint"
 	  DialogClass		  "JointBlock"
 	  R1Axis		  "[0 0 1]"
@@ -1535,7 +3215,7 @@ Library {
 	  Name			  "Revolute3"
 	  SID			  "48"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [425, 100, 475, 150]
+	  Position		  [425, 95, 475, 145]
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Revolute"
@@ -1564,7 +3244,7 @@ Library {
 	  BlockType		  PMIOPort
 	  Name			  "end"
 	  SID			  "50"
-	  Position		  [505, 53, 535, 67]
+	  Position		  [540, 53, 570, 67]
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -1595,7 +3275,6 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "Revolute3"
 	  SrcPort		  LConn1
-	  Points		  [-70, 0; 0, -5]
 	  DstBlock		  "L4_segment"
 	  DstPort		  RConn1
 	}
@@ -1610,7 +3289,7 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "L3_segment"
 	  SrcPort		  RConn1
-	  Points		  [10, 0; 0, 85]
+	  Points		  [10, 0; 0, 80]
 	  DstBlock		  "Revolute3"
 	  DstPort		  RConn1
 	}
@@ -1666,7 +3345,7 @@ Library {
       MaskValueString	      "initRobHeight"
       System {
 	Name			"Robot Body"
-	Location		[1, 48, 1919, 548]
+	Location		[1, 48, 1919, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1891,7 +3570,7 @@ Library {
 	Block {
 	  BlockType		  Reference
 	  Name			  "In-plane"
-	  SID			  "345"
+	  SID			  "375"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [95, 175, 145, 225]
 	  ZOrder		  11
@@ -2080,7 +3759,7 @@ Library {
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P2"
+	  Primitive		  "P1"
 	  Force			  "off"
 	  ForceUnits		  "N"
 	  Torque		  "off"
@@ -2433,6 +4112,10 @@ Library {
 	  DstBlock		  "Joint Sensor2"
 	  DstPort		  LConn1
 	}
+	Annotation {
+	  SID			  "374"
+	  Position		  [376, 311]
+	}
       }
     }
     Block {
@@ -2591,7 +4274,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Tail Pad"
-	Location		[0, 28, 1920, 1080]
+	Location		[1, 48, 1919, 691]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3065,7 +4748,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Foot"
-	Location		[1, 48, 1919, 600]
+	Location		[1, 48, 1086, 691]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3531,8 +5214,8 @@ Library {
       BlockType		      SubSystem
       Name		      "contact_FR"
       SID		      "52"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [195, 643, 335, 697]
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [195, 645, 335, 700]
       BlockMirror	      on
       BackgroundColor	      "cyan"
       MinAlgLoopOccurrences   off
@@ -3544,7 +5227,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"contact_FR"
-	Location		[369, 155, 1381, 940]
+	Location		[1, 664, 747, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3556,7 +5239,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"96"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Custom Joint"
@@ -3575,7 +5258,7 @@ Library {
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic_prismatic_prismatic_revolute"
-	  PrimitiveProps	  "P1$WORLD$[1 0 0]$prismatic#P2$WORLD$[0 1 0]$prismatic#P3$WORLD$[0 0 1]$prismatic#R1$WORLD$[0 0 1]"
+	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic#P3$World$[0 0 1]$prismatic#R1$World$[0 0 1]"
 	  "$revolute"
 	  ClassName		  "Joint"
 	  DialogClass		  "JointBlock"
@@ -3596,38 +5279,6 @@ Library {
 	  BackgroundColor	  "green"
 	  NamePlacement		  "alternate"
 	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "GRF"
-	  SID			  "55"
-	  Ports			  [1]
-	  Position		  [705, 504, 735, 536]
-	  BackgroundColor	  "lightBlue"
-	  Floating		  off
-	  Location		  [6, 279, 903, 746]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  TimeRange		  "10"
-	  YMin			  "-1"
-	  YMax			  "19"
-	  DataFormat		  "StructureWithTime"
-	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3689,7 +5340,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [843, 300, 1284, 602]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3785,14 +5436,14 @@ Library {
 	  Force			  "on"
 	  ForceUnits		  "N"
 	  Torque		  "off"
-	  TorqueUnits		  "N-m"
+	  TorqueUnits		  "N*m"
 	  ReferenceFrame	  "Absolute (INERTIAL)"
 	  ReactionSensedSide	  "Base"
 	  ReactionReferenceFrame  "Absolute (World)"
 	  ReactionForce		  "off"
 	  ReactionForceUnits	  "N"
 	  ReactionMoment	  "off"
-	  ReactionMomentUnits	  "N-m"
+	  ReactionMomentUnits	  "N*m"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -3810,7 +5461,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "X-Axis Sliding Friction Model"
-	    Location		    [770, 119, 1568, 908]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4026,7 +5677,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Y-Axis Ground Interaction Model"
-	    Location		    [731, 329, 1424, 777]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4085,7 +5736,7 @@ Library {
 	      SID		      "82"
 	      Position		      [155, 295, 400, 335]
 	      BackgroundColor	      "magenta"
-	      Expr		      "- 2.5e5*u(1)^3 * ( 1 - 3.3*u(2) )"
+	      Expr		      "- 2.5e9*u(1)^3 * ( 1 - u(2) )"
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -4223,6 +5874,14 @@ Library {
 	  Port			  "2"
 	  Side			  "Left"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "to scope"
+	  SID			  "383"
+	  Position		  [715, 513, 745, 527]
+	  ZOrder		  -9
+	  IconDisplay		  "Port number"
+	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Y-Axis Actuator"
@@ -4340,9 +5999,17 @@ Library {
 	Line {
 	  SrcBlock		  "X-Axis Sliding Friction Model"
 	  SrcPort		  1
-	  Points		  [10, 0; 0, -205]
-	  DstBlock		  "X-Axis Stiction Actuator"
-	  DstPort		  2
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [5, 0; 0, -205]
+	    DstBlock		    "X-Axis Stiction Actuator"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 40]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "inverse"
@@ -4363,12 +6030,6 @@ Library {
 	    DstBlock		    "X-Axis Stiction Actuator"
 	    DstPort		    5
 	  }
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "GRF"
-	  DstPort		  1
 	}
 	Line {
 	  LineType		  "Connection"
@@ -4392,10 +6053,9 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "X-Axis Sensor"
+	  SrcBlock		  "Mux"
 	  SrcPort		  1
-	  Points		  [165, 0; 0, 65]
-	  DstBlock		  "Mux"
+	  DstBlock		  "to scope"
 	  DstPort		  1
 	}
 	Annotation {
@@ -4448,7 +6108,7 @@ Library {
       MaskValueString	      "work|0"
       System {
 	Name			"motor"
-	Location		[1, 82, 1581, 582]
+	Location		[1, 48, 1919, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4461,7 +6121,7 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"121"
-	SIDHighWatermark	"491"
+	SIDHighWatermark	"569"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"
@@ -6394,18 +8054,6 @@ Library {
 	}
       }
     }
-    Annotation {
-      SID		      "157"
-      Position		      [211, 427]
-    }
-    Annotation {
-      SID		      "351"
-      Position		      [808, 419]
-    }
-    Annotation {
-      SID		      "350"
-      Position		      [809, 422]
-    }
   }
 }
 MatData {
@@ -6418,7 +8066,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 21:03:37
+#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 13:50:40
 #
 #
 

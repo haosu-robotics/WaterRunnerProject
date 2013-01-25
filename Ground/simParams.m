@@ -2,7 +2,7 @@ water_level = 0;
 initRobHeight = 0.2;
 
 %%%%%%% motors parameters %%%%%%%
-speed = 70;   % rotation speed in rad/s
+speed = 10;   % rotation speed in rad/s
 duty_factor = .5;
 switch_angle = 0;
 
@@ -124,7 +124,7 @@ L3_inertia = diag([I 0 I]);
 %%%%%%%% Tail Parameters %%%%%%%
 
 tail_angle = 0 * pi/180;
-L_tail = .1;
+L_tail = .2;
 Tail_CS1 = [0 0 0];     % using adjoining
 Tail_CG  = [0 L_tail/2 0];
 Tail_CS2 = [0 L_tail 0];
@@ -143,10 +143,17 @@ footMass = footWidth * footLength * footThickness * footMassDensity;
 
 PRBM_gamma = 0.85;
 
-k_PRBM = .1;
-b_PRBM = 2;
-mu_stick = 0.8;
-mu_slide = 0.7;
+k_PRBM = .5;
+b_PRBM = 2e-5;
+
+%%%%%%%Ground Contact Model %%%%%%
+k_gy = 8e4; %[N/m]  vertical ground interaction stiffness
+v_gy_max = 0.03; %[m/s] maximum vertical ground relaxation speed
+k_gx = 8e3; %[N/m] horizontal ground interaction stiffness
+v_gx_max = 0.03; %[m/s] maximum horizontal ground relaxation speed
+mu_stick = 0.9; %stiction coefficient
+mu_slide = 0.8; % sliding coefficient
+vLimit = 0.01; %[m/s] % slip-stic transition velocity
 
 %%%L1%%%
 Foot_L1 = footLength*(1 - PRBM_gamma);
