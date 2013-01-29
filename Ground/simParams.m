@@ -2,7 +2,7 @@ water_level = 0;
 initRobHeight = 0.2;
 
 %%%%%%% motors parameters %%%%%%%
-speed = 10;   % rotation speed in rad/s
+speed = 50;   % rotation speed in rad/s
 duty_factor = .5;
 switch_angle = 0;
 
@@ -136,9 +136,10 @@ footWidth = .035;
 footLength = .04;
 footThickness = .001;
 footMassDensity = 1140;
-footMass = footWidth * footLength * footThickness * footMassDensity;
 
 PRBM_gamma = 0.85;
+Foot_L1 = footLength*(1 - PRBM_gamma);
+Foot_L2 = footLength* PRBM_gamma;
 
 k_PRBM = .5;
 b_PRBM = 2e-5;
@@ -152,33 +153,5 @@ mu_stick = 0.9; %stiction coefficient
 mu_slide = 0.8; % sliding coefficient
 vLimit = 0.01; %[m/s] % slip-stic transition velocity
 
-%%%L1%%%
-Foot_L1 = footLength*(1 - PRBM_gamma);
-Foot_L1_mass = footMass*(1 - PRBM_gamma);
-
-I1_l = (1/12) * Foot_L1_mass*(footWidth^2 + footThickness^2);
-I1_w = (1/12) * Foot_L1_mass*(Foot_L1^2 + footThickness^2);
-I1_t = (1/12) * Foot_L1_mass*(Foot_L1^2 + footWidth^2);
-
-Foot_L1_CS1 = [0 0 0];
-Foot_L1_CS2 = [Foot_L1 0 0];
-Foot_L1_CG = Foot_L1_CS2/2;
-
-Foot_L1_inertia = diag([I1_l I1_w I1_t]);
-
-%%%L2%%%
-Foot_L2_mass = footMass*PRBM_gamma;
-Foot_L2 = footLength* PRBM_gamma;
-
-I2_l = (1/12) * Foot_L2_mass*(footWidth^2 + footThickness^2);
-I2_w = (1/12) * Foot_L2_mass*(Foot_L2^2 + footThickness^2);
-I2_t = (1/12) * Foot_L2_mass*(Foot_L2^2 + footWidth^2);
-
-Foot_L2_CS1 = [0 0 0];
-Foot_L2_CS2 = [Foot_L2 0  0];
-Foot_L2_CG = Foot_L2_CS2/2;
-
-Foot_L2_inertia = diag([I2_l I2_w I2_t]);
-
 %%%%%
-totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass + footMass) + motor_mass + Tail_mass;
+%totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass + footMass) + motor_mass + Tail_mass;

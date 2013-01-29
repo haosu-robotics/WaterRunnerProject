@@ -5,7 +5,6 @@ Library {
   SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
-  LockLinksToLibrary	  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -17,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 28 16:39:21 2013"
-  RTWModifiedTimeStamp	  281282198
-  ModelVersionFormat	  "1.%<AutoIncrement:226>"
+  LastModifiedDate	  "Tue Jan 29 12:55:33 2013"
+  RTWModifiedTimeStamp	  281359524
+  ModelVersionFormat	  "1.%<AutoIncrement:293>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -895,7 +894,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [937, 48, 1919, 1079]
+    Location		    [1221, 213, 1919, 383]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -909,14 +908,15 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "112"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "569"
+    SIDHighWatermark	    "604"
     Block {
       BlockType		      SubSystem
       Name		      "Ground Foot"
       SID		      "352"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [730, 362, 845, 408]
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [730, 364, 845, 411]
       BackgroundColor	      "orange"
+      LibraryVersion	      "1.230"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -932,8 +932,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Ground Foot"
-	Location		[1088, 48, 1919, 691]
-	Open			off
+	Location		[1221, 593, 1919, 1079]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -944,230 +944,383 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"195"
+	ZoomFactor		"218"
 	Block {
 	  BlockType		  Reference
-	  Name			  "Foot L1"
-	  SID			  "353"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [190, 30, 250, 70]
-	  ZOrder		  4
+	  Name			  "Foot LInk 1"
+	  SID			  "582"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [135, 100, 175, 140]
+	  ZOrder		  3
+	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS2"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "Foot_L1_mass"
+	  SourceBlock		  "sm_lib/Body Elements/Solid"
+	  SourceType		  ""
+	  ClassName		  "Solid"
+	  InertiaType		  "CalculateFromGeometry"
+	  Mass			  "1"
 	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "Foot_L1_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 0]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$Foot_L1_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$CS1$false$none"
-	  WorkingFrames		  "Left$CS1$Foot_L1_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$Adjoining$true$none#Right$CS2$"
-	  "Foot_L1_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$CS1$true$none"
-	  CGPos			  "Foot_L1_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "Foot_L1_CS1"
-	  CS1Rot		  "[0 0 0]"
-	  CS2Pos		  "Foot_L1_CS2"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "[]"
-	  CS3Rot		  "[]"
-	  CS4Pos		  "[]"
-	  CS4Rot		  "[]"
-	  CS5Pos		  "[]"
-	  CS5Rot		  "[]"
-	  CS6Pos		  "[]"
-	  CS6Rot		  "[]"
-	  CS7Pos		  "[]"
-	  CS7Rot		  "[]"
-	  CS8Pos		  "[]"
-	  CS8Rot		  "[]"
-	  CS9Pos		  "[]"
-	  CS9Rot		  "[]"
-	  CS10Pos		  "[]"
-	  CS10Rot		  "[]"
-	  CS11Pos		  "[]"
-	  CS11Rot		  "[]"
-	  CS12Pos		  "[]"
-	  CS12Rot		  "[]"
-	  CS13Pos		  "[]"
-	  CS13Rot		  "[]"
-	  CS14Pos		  "[]"
-	  CS14Rot		  "[]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
+	  CenterOfMass		  "[0 0 0]"
+	  CenterOfMassUnits	  "m"
+	  MomentsOfInertia	  "[1 1 1]"
+	  MomentsOfInertiaUnits	  "kg*m^2"
+	  ProductsOfInertia	  "[0 0 0]"
+	  ProductsOfInertiaUnits  "kg*m^2"
+	  DensityBased		  "on"
+	  Density		  "footMassDensity"
+	  DensityUnits		  "kg/(m^3)"
+	  GraphicType		  "FromGeometry"
+	  MarkerShape		  "Sphere"
+	  MarkerSize		  "10"
+	  MarkerSizeUnits	  "m"
+	  GraphicVisPropType	  "SimpleVisualProperties"
+	  GraphicDiffuseColor	  "[0.5 0.5 0.5]"
+	  GraphicSpecularColor	  "[0.5 0.5 0.5 1.0]"
+	  GraphicAmbientColor	  "[0.15 0.15 0.15 1.0]"
+	  GraphicEmissiveColor	  "[0.0 0.0 0.0 1.0]"
+	  GraphicShininess	  "75"
+	  GraphicOpacity	  "1.0"
+	  GeometryShape		  "Brick"
+	  RectangleSize		  "[1 1]"
+	  RectangleSizeUnits	  "m"
+	  BrickDimensions	  "[footWidth, footThickness, Foot_L1]"
+	  BrickDimensionUnits	  "m"
+	  CylinderRadius	  "1"
+	  CylinderRadiusUnits	  "m"
+	  CylinderLength	  "1"
+	  CylinderLengthUnits	  "m"
+	  SphereRadius		  "1"
+	  SphereRadiusUnits	  "m"
+	  EllipsoidRadii	  "[1 1 1]"
+	  EllipsoidRadiiUnits	  "m"
+	  ExtrusionCrossSection	  "[1 1; -1 1; -1 -1; 1 -1]"
+	  ExtrusionCrossSectionUnits "m"
+	  ExtrusionLength	  "1"
+	  ExtrusionLengthUnits	  "m"
+	  PolygonNumSides	  "3"
+	  PolygonOuterRadius	  "1"
+	  PolygonOuterRadiusUnits "m"
+	  ExtGeomFileUnits	  "m"
+	  BlockFunction		  "simmechanics.library.body_elements.solid"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Foot L2"
-	  SID			  "354"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [420, 30, 480, 70]
-	  ZOrder		  4
+	  Name			  "Foot LInk 2"
+	  SID			  "586"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [560, 100, 600, 140]
+	  ZOrder		  3
+	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS2"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "Foot_L2_mass"
+	  SourceBlock		  "sm_lib/Body Elements/Solid"
+	  SourceType		  ""
+	  ClassName		  "Solid"
+	  InertiaType		  "CalculateFromGeometry"
+	  Mass			  "1"
 	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "Foot_L2_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 0]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$Foot_L2_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$false$none"
-	  WorkingFrames		  "Left$CS1$Foot_L2_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$"
-	  "Foot_L2_CS2$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
-	  CGPos			  "Foot_L2_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "Foot_L2_CS1"
-	  CS1Rot		  "[0 0 0]"
-	  CS2Pos		  "Foot_L2_CS2"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "[]"
-	  CS3Rot		  "[]"
-	  CS4Pos		  "[]"
-	  CS4Rot		  "[]"
-	  CS5Pos		  "[]"
-	  CS5Rot		  "[]"
-	  CS6Pos		  "[]"
-	  CS6Rot		  "[]"
-	  CS7Pos		  "[]"
-	  CS7Rot		  "[]"
-	  CS8Pos		  "[]"
-	  CS8Rot		  "[]"
-	  CS9Pos		  "[]"
-	  CS9Rot		  "[]"
-	  CS10Pos		  "[]"
-	  CS10Rot		  "[]"
-	  CS11Pos		  "[]"
-	  CS11Rot		  "[]"
-	  CS12Pos		  "[]"
-	  CS12Rot		  "[]"
-	  CS13Pos		  "[]"
-	  CS13Rot		  "[]"
-	  CS14Pos		  "[]"
-	  CS14Rot		  "[]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
+	  CenterOfMass		  "[0 0 0]"
+	  CenterOfMassUnits	  "m"
+	  MomentsOfInertia	  "[1 1 1]"
+	  MomentsOfInertiaUnits	  "kg*m^2"
+	  ProductsOfInertia	  "[0 0 0]"
+	  ProductsOfInertiaUnits  "kg*m^2"
+	  DensityBased		  "on"
+	  Density		  "footMassDensity"
+	  DensityUnits		  "kg/(m^3)"
+	  GraphicType		  "FromGeometry"
+	  MarkerShape		  "Sphere"
+	  MarkerSize		  "10"
+	  MarkerSizeUnits	  "m"
+	  GraphicVisPropType	  "SimpleVisualProperties"
+	  GraphicDiffuseColor	  "[0.5 0.5 0.5]"
+	  GraphicSpecularColor	  "[0.5 0.5 0.5 1.0]"
+	  GraphicAmbientColor	  "[0.15 0.15 0.15 1.0]"
+	  GraphicEmissiveColor	  "[0.0 0.0 0.0 1.0]"
+	  GraphicShininess	  "75"
+	  GraphicOpacity	  "1.0"
+	  GeometryShape		  "Brick"
+	  RectangleSize		  "[1 1]"
+	  RectangleSizeUnits	  "m"
+	  BrickDimensions	  "[footWidth, footThickness, Foot_L2]"
+	  BrickDimensionUnits	  "m"
+	  CylinderRadius	  "1"
+	  CylinderRadiusUnits	  "m"
+	  CylinderLength	  "1"
+	  CylinderLengthUnits	  "m"
+	  SphereRadius		  "1"
+	  SphereRadiusUnits	  "m"
+	  EllipsoidRadii	  "[1 1 1]"
+	  EllipsoidRadiiUnits	  "m"
+	  ExtrusionCrossSection	  "[1 1; -1 1; -1 -1; 1 -1]"
+	  ExtrusionCrossSectionUnits "m"
+	  ExtrusionLength	  "1"
+	  ExtrusionLengthUnits	  "m"
+	  PolygonNumSides	  "3"
+	  PolygonOuterRadius	  "1"
+	  PolygonOuterRadiusUnits "m"
+	  ExtGeomFileUnits	  "m"
+	  BlockFunction		  "simmechanics.library.body_elements.solid"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Joint Spring & Damper"
-	  SID			  "372"
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [195, 125, 255, 175]
-	  ZOrder		  2
-	  BlockMirror		  on
+	  Name			  "PS-Simulink\nConverter"
+	  SID			  "589"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [420, 115, 450, 145]
+	  ZOrder		  1
 	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
-	  SourceType		  "Joint Spring & Damper"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "JointSpringDamper"
-	  DialogClass		  "JointSpringDamper"
-	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
-	  "deg$deg/s$N*m#R1$true$k_PRBM$b_PRBM$0$m$m/s$N$rad$rad/s$N*m#R2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#R3$false$0$0$0$m$m"
-	  "/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  Unit			  "1"
+	  AffineConversion	  off
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Revolute2"
-	  SID			  "356"
-	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [305, 36, 355, 89]
-	  ZOrder		  2
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/Revolute"
-	  SourceType		  "Revolute"
-	  LConnTagsString	  "__newl0|SA1"
-	  RConnTagsString	  "__newr0|SA1"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "2"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
-	  ClassName		  "Joint"
-	  DialogClass		  "JointBlock"
-	  R1Axis		  "[0 0 1]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Weld"
-	  SID			  "364"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [95, 25, 145, 75]
+	  Name			  "Revolute Joint"
+	  SID			  "583"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [350, 25, 390, 65]
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/Weld"
-	  SourceType		  "Weld"
-	  LConnTagsString	  "__newl0"
-	  RConnTagsString	  "__newr0"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "0"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "weld"
-	  PrimitiveProps	  "W$World$[0 0 0]$weld"
-	  ClassName		  "Joint"
-	  DialogClass		  "JointBlock"
-	  WAxis			  "[0 0 0]"
+	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
+	  SourceType		  ""
+	  ClassName		  "RevoluteJoint"
+	  SenseConstraintForceX	  "off"
+	  SenseConstraintForceY	  "off"
+	  SenseConstraintForceZ	  "off"
+	  SenseConstraintTorqueX  "off"
+	  SenseConstraintTorqueY  "off"
+	  SenseConstraintTorqueZ  "off"
+	  ConstraintWrenchDir	  "FollowerOnBase"
+	  ConstraintWrenchFrame	  "BaseFrame"
+	  EquilibriumPosition	  "0"
+	  EquilibriumPositionUnits "deg"
+	  SpringStiffness	  "k_PRBM"
+	  SpringStiffnessUnits	  "N*m/rad"
+	  DampingCoefficient	  "b_PRBM"
+	  DampingCoefficientUnits "N*m/(rad/s)"
+	  ActuationMode		  "NoActuation"
+	  SensePosition		  "on"
+	  SenseVelocity		  "off"
+	  SenseAcceleration	  "off"
+	  SenseTorqueForce	  "off"
+	  PositionTargetValue	  "0"
+	  PositionTargetValueUnits "deg"
+	  PositionTargetSpecify	  "off"
+	  PositionTargetPriority  "High"
+	  VelocityTargetValue	  "0"
+	  VelocityTargetValueUnits "deg/s"
+	  VelocityTargetSpecify	  "off"
+	  VelocityTargetPriority  "High"
+	  BlockFunction		  "simmechanics.library.joints.revolute_joint"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform"
+	  SID			  "579"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [95, 25, 135, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "Cartesian"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L1/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform1"
+	  SID			  "581"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [180, 25, 220, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "Cartesian"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L1/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Y"
+	  RotationAngle		  "90"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform2"
+	  SID			  "585"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [515, 25, 555, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "Cartesian"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L2/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "-Y"
+	  RotationAngle		  "90"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform3"
+	  SID			  "587"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [615, 25, 655, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "Cartesian"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L2/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform4"
+	  SID			  "593"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [255, 25, 295, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "None"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L1/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "StandardAxis"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Y"
+	  RotationAngle		  "90"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Rigid \nTransform5"
+	  SID			  "594"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [435, 25, 475, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "None"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Z"
+	  TranslationStandardOffset "0"
+	  TranslationCartesianOffset "[0 0 Foot_L1/2]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "StandardAxis"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "-Y"
+	  RotationAngle		  "90"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
 	}
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "leg"
 	  SID			  "357"
-	  Position		  [25, 43, 55, 57]
+	  Position		  [15, 38, 45, 52]
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -1175,53 +1328,111 @@ Library {
 	  BlockType		  PMIOPort
 	  Name			  "end"
 	  SID			  "358"
-	  Position		  [515, 43, 545, 57]
+	  Position		  [705, 38, 735, 52]
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
 	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Foot L2"
-	  SrcPort		  LConn1
-	  DstBlock		  "Revolute2"
-	  DstPort		  RConn1
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "588"
+	  Position		  [475, 123, 505, 137]
+	  ZOrder		  -23
+	  IconDisplay		  "Port number"
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Revolute2"
-	  SrcPort		  LConn1
-	  DstBlock		  "Foot L1"
-	  DstPort		  RConn1
+	  SrcBlock		  "leg"
+	  SrcPort		  RConn1
+	  DstBlock		  "Rigid \nTransform"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Rigid \nTransform"
+	  SrcPort		  RConn1
+	  Points		  [5, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Rigid \nTransform1"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_DEST"
+	    SrcBlock		    "Foot LInk 1"
+	    SrcPort		    RConn1
+	    Points		    [0, -40]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Rigid \nTransform2"
+	  SrcPort		  RConn1
+	  Points		  [10, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Foot LInk 2"
+	    DstPort		    RConn1
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Rigid \nTransform3"
+	    DstPort		    LConn1
+	  }
 	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "end"
 	  SrcPort		  RConn1
-	  DstBlock		  "Foot L2"
+	  DstBlock		  "Rigid \nTransform3"
 	  DstPort		  RConn1
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Weld"
-	  SrcPort		  LConn1
-	  DstBlock		  "leg"
-	  DstPort		  RConn1
+	  SrcBlock		  "Revolute Joint"
+	  SrcPort		  RConn2
+	  DstBlock		  "PS-Simulink\nConverter"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "PS-Simulink\nConverter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Weld"
+	  SrcBlock		  "Rigid \nTransform1"
 	  SrcPort		  RConn1
-	  DstBlock		  "Foot L1"
+	  DstBlock		  "Rigid \nTransform4"
 	  DstPort		  LConn1
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Joint Spring & Damper"
+	  SrcBlock		  "Revolute Joint"
 	  SrcPort		  LConn1
-	  Points		  [10, 0; 0, -75]
-	  DstBlock		  "Revolute2"
-	  DstPort		  LConn2
+	  DstBlock		  "Rigid \nTransform4"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Revolute Joint"
+	  SrcPort		  RConn1
+	  Points		  [5, 0; 0, 10]
+	  DstBlock		  "Rigid \nTransform5"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Rigid \nTransform5"
+	  SrcPort		  RConn1
+	  DstBlock		  "Rigid \nTransform2"
+	  DstPort		  LConn1
+	}
+	Annotation {
+	  SID			  "604"
+	  Position		  [206, 175]
 	}
       }
     }
@@ -6103,7 +6314,7 @@ Library {
       Ports		      [1, 2, 0, 0, 0, 1, 1]
       Position		      [495, 129, 600, 231]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.191"
+      LibraryVersion	      "1.291"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -6113,7 +6324,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"motor"
-	Location		[1, 755, 935, 1079]
+	Location		[1, 48, 1219, 1079]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6125,12 +6336,12 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"189"
+	ZoomFactor		"132"
 	Block {
 	  BlockType		  Inport
 	  Name			  "desired\nspeed"
 	  SID			  "568"
-	  Position		  [745, 488, 775, 502]
+	  Position		  [745, 603, 775, 617]
 	  ZOrder		  -1
 	  BlockMirror		  on
 	  IconDisplay		  "Port number"
@@ -6148,7 +6359,7 @@ Library {
 	  Name			  "Controlled Voltage\nSource"
 	  SID			  "539"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [315, 560, 355, 600]
+	  Position		  [315, 675, 355, 715]
 	  ZOrder		  6
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
@@ -6171,7 +6382,7 @@ Library {
 	  Name			  "Current Sensor"
 	  SID			  "557"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [295, 475, 335, 515]
+	  Position		  [295, 590, 335, 630]
 	  ZOrder		  1
 	  BlockRotation		  180
 	  BlockMirror		  on
@@ -6196,7 +6407,7 @@ Library {
 	  Name			  "DC Motor"
 	  SID			  "531"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [415, 435, 465, 515]
+	  Position		  [415, 550, 465, 630]
 	  ZOrder		  4
 	  BlockRotation		  180
 	  BlockMirror		  on
@@ -6222,9 +6433,9 @@ Library {
 	  Kv_unit		  "V/rpm"
 	  Ki			  "6.876e-4"
 	  Ki_unit		  "N*m/A"
-	  T_stall		  "0.3171"
+	  T_stall		  "0.001064"
 	  T_stall_unit		  "N*m"
-	  w_max			  "75"
+	  w_max			  "22350"
 	  w_max_unit		  "rpm"
 	  w_rated		  "1.5e+4"
 	  w_rated_unit		  "rpm"
@@ -6267,7 +6478,7 @@ Library {
 	  Name			  "Electrical Reference"
 	  SID			  "540"
 	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [360, 625, 400, 665]
+	  Position		  [360, 740, 400, 780]
 	  ZOrder		  9
 	  BlockRotation		  270
 	  BlockMirror		  on
@@ -6288,10 +6499,37 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Gear Box"
+	  SID			  "603"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [415, 450, 455, 490]
+	  ZOrder		  1
+	  BlockRotation		  90
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "fl_lib/Mechanical/Mechanisms/Gear Box"
+	  SourceType		  "Gear Box"
+	  SourceFile		  "foundation.mechanical.mechanisms.gear_box"
+	  ComponentPath		  "foundation.mechanical.mechanisms.gear_box"
+	  ComponentVariants	  "foundation.mechanical.mechanisms.gear_box"
+	  ComponentVariantNames	  "gear_box"
+	  ClassName		  "gear_box"
+	  SchemaVersion		  "1"
+	  ratio			  "298"
+	  ratio_unit		  "1"
+	  t_in_Log		  "off"
+	  t_out_Log		  "off"
+	  LocalVarNames		  "|t_in|t_out"
+	  LocalVarDescs		  "|t_in|t_out"
+	  LocalVarLogging	  "[0 0]"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Ideal Torque Sensor"
 	  SID			  "534"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [325, 365, 365, 405]
+	  Position		  [415, 365, 455, 405]
 	  ZOrder		  3
 	  BlockRotation		  90
 	  BlockMirror		  on
@@ -6333,7 +6571,7 @@ Library {
 	  Name			  "Mechanical\nRotational Reference"
 	  SID			  "536"
 	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [495, 365, 515, 385]
+	  Position		  [580, 540, 600, 560]
 	  ZOrder		  6
 	  BlockRotation		  270
 	  BlockMirror		  on
@@ -6356,11 +6594,11 @@ Library {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "517"
-	  Ports			  [3, 1]
+	  Ports			  [2, 1]
 	  Position		  [740, 138, 745, 202]
 	  ZOrder		  -12
 	  ShowName		  off
-	  Inputs		  "3"
+	  Inputs		  "2"
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -6368,7 +6606,7 @@ Library {
 	  Name			  "Mux1"
 	  SID			  "563"
 	  Ports			  [3, 1]
-	  Position		  [90, 583, 95, 647]
+	  Position		  [90, 698, 95, 762]
 	  ZOrder		  -12
 	  BlockMirror		  on
 	  ShowName		  off
@@ -6380,22 +6618,22 @@ Library {
 	  Name			  "PID Controller"
 	  SID			  "528"
 	  Ports			  [1, 1]
-	  Position		  [540, 477, 580, 513]
+	  Position		  [540, 592, 580, 628]
 	  ZOrder		  -6
 	  BlockMirror		  on
 	  LibraryVersion	  "1.260"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
 	  SourceType		  "PID 1dof"
 	  Controller		  "PID"
-	  TimeDomain		  "Continuous-time"
-	  SampleTime		  "1"
-	  IntegratorMethod	  "Forward Euler"
-	  FilterMethod		  "Forward Euler"
+	  TimeDomain		  "Discrete-time"
+	  SampleTime		  "1e-3"
+	  IntegratorMethod	  "Trapezoidal"
+	  FilterMethod		  "Trapezoidal"
 	  Form			  "Parallel"
-	  P			  "100"
-	  I			  "10"
-	  D			  "1"
-	  N			  "100"
+	  P			  "7.53683777073434e-05"
+	  I			  "6.58911071099274e-05"
+	  D			  "-4.19629321440508e-07"
+	  N			  "141.411286717587"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"
@@ -6403,10 +6641,10 @@ Library {
 	  IgnoreLimit		  off
 	  ZeroCross		  on
 	  LimitOutput		  on
-	  UpperSaturationLimit	  "15"
-	  LowerSaturationLimit	  "-15"
+	  UpperSaturationLimit	  "10"
+	  LowerSaturationLimit	  "-10"
 	  LinearizeAsGain	  off
-	  AntiWindupMode	  "none"
+	  AntiWindupMode	  "clamping"
 	  Kb			  "1"
 	  TrackingMode		  off
 	  Kt			  "1"
@@ -6490,28 +6728,11 @@ Library {
 	  Name			  "PS-Simulink\nConverter"
 	  SID			  "559"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [190, 540, 220, 570]
+	  Position		  [190, 655, 220, 685]
 	  ZOrder		  1
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
-	  SourceType		  "PS-Simulink\nConverter"
-	  PhysicalDomain	  "network_engine_domain"
-	  LeftPortType		  "input"
-	  RightPortType		  "output"
-	  SubClassName		  "ps_output"
-	  Unit			  "1"
-	  AffineConversion	  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "PS-Simulink\nConverter1"
-	  SID			  "519"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [540, 218, 555, 232]
-	  ZOrder		  1
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
 	  SourceType		  "PS-Simulink\nConverter"
@@ -6544,7 +6765,7 @@ Library {
 	  Name			  "Product"
 	  SID			  "560"
 	  Ports			  [2, 1]
-	  Position		  [150, 577, 180, 608]
+	  Position		  [150, 692, 180, 723]
 	  ZOrder		  -19
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -6633,7 +6854,7 @@ Library {
 	  Name			  "Simulink-PS\nConverter"
 	  SID			  "537"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [425, 552, 455, 588]
+	  Position		  [425, 667, 455, 703]
 	  ZOrder		  2
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
@@ -6713,7 +6934,7 @@ Library {
 	  Name			  "Sum"
 	  SID			  "529"
 	  Ports			  [2, 1]
-	  Position		  [610, 480, 640, 510]
+	  Position		  [610, 595, 640, 625]
 	  ZOrder		  -18
 	  BlockMirror		  on
 	  ShowName		  off
@@ -6727,7 +6948,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Transform \nSensor"
 	  SID			  "509"
-	  Ports			  [0, 0, 0, 0, 0, 1, 3]
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [325, 122, 390, 218]
 	  ZOrder		  3
 	  LibraryVersion	  "1.1"
@@ -6752,7 +6973,7 @@ Library {
 	  SenseRDot		  "off"
 	  SenseAlphaX		  "off"
 	  SenseAlphaY		  "off"
-	  SenseAlphaZ		  "on"
+	  SenseAlphaZ		  "off"
 	  SenseAlpha1		  "off"
 	  SenseAlpha2		  "off"
 	  SenseAlpha3		  "off"
@@ -6831,7 +7052,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "energy"
 	  SID			  "562"
-	  Position		  [20, 608, 50, 622]
+	  Position		  [20, 723, 50, 737]
 	  ZOrder		  -23
 	  BlockMirror		  on
 	  Port			  "2"
@@ -6851,7 +7072,7 @@ Library {
 	    ConnectType		    "DEST_DEST"
 	    SrcBlock		    "Transform \nSensor"
 	    SrcPort		    RConn1
-	    Points		    [95, 0; 0, 145]
+	    Points		    [95, 0; 0, 140]
 	  }
 	}
 	Line {
@@ -6922,24 +7143,10 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "PS-Simulink\nConverter1"
-	  SrcPort		  1
-	  Points		  [95, 0; 0, -35]
-	  DstBlock		  "Mux"
-	  DstPort		  3
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Transform \nSensor"
-	  SrcPort		  RConn3
-	  Points		  [65, 0; 0, 25]
-	  DstBlock		  "PS-Simulink\nConverter1"
-	  DstPort		  LConn1
-	}
-	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "PS-Simulink\nConverter2"
 	  SrcPort		  LConn1
+	  Points		  [-120, 0]
 	  DstBlock		  "Transform \nSensor"
 	  DstPort		  RConn2
 	}
@@ -6953,7 +7160,7 @@ Library {
 	Line {
 	  SrcBlock		  "Math\nFunction"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, 55]
+	  Points		  [25, 0; 0, 60]
 	  DstBlock		  "Mux"
 	  DstPort		  1
 	}
@@ -6979,19 +7186,10 @@ Library {
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "DC Motor"
-	  SrcPort		  RConn2
-	  Points		  [60, 0; 0, -115; -35, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "Mechanical\nRotational Reference"
-	    DstPort		    LConn1
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Ideal Torque Sensor"
-	    SrcPort		    RConn1
-	    Points		    [0, -10; 150, 0]
-	  }
+	  SrcPort		  LConn2
+	  Points		  [-55, 0; 0, -65]
+	  DstBlock		  "Gear Box"
+	  DstPort		  LConn1
 	}
 	Line {
 	  SrcBlock		  "PID Controller"
@@ -7041,16 +7239,8 @@ Library {
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Ideal Torque Sensor"
-	  SrcPort		  LConn1
-	  Points		  [0, 35]
-	  DstBlock		  "DC Motor"
-	  DstPort		  LConn2
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Ideal Torque Sensor"
 	  SrcPort		  RConn2
-	  Points		  [-25, 0; 0, -55]
+	  Points		  [-115, 0; 0, -55]
 	  DstBlock		  "Revolute Joint"
 	  DstPort		  LConn2
 	}
@@ -7103,6 +7293,31 @@ Library {
 	  Points		  [25, 0; 0, 10]
 	  DstBlock		  "DC Motor"
 	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Ideal Torque Sensor"
+	  SrcPort		  LConn1
+	  DstBlock		  "Gear Box"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [540, 505; 0, 65; -60, 0]
+	  DstBlock		  "DC Motor"
+	  DstPort		  RConn2
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Ideal Torque Sensor"
+	    SrcPort		    RConn1
+	    Points		    [95, 0; 0, 155]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    Points		    [50, 0]
+	    DstBlock		    "Mechanical\nRotational Reference"
+	    DstPort		    LConn1
+	  }
 	}
 	Annotation {
 	  SID			  "317"
