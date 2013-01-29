@@ -1,5 +1,7 @@
 water_level = 0;
 initRobHeight = 0.2;
+CF_density = 1790;
+delrin_density = 1420;
 
 %%%%%%% motors parameters %%%%%%%
 speed = 50;   % rotation speed in rad/s
@@ -63,9 +65,9 @@ frame_passive_HL = frame_motor_HL - [L1 0 0];
 
 
 %%%%% leg parameters %%%%%%%%%%%%%
-CF_density = 1790;
 cross_area = 6.8e-6;
-
+CF_thickness = 0.0015;
+CF_width = 0.00436;
 L2 = 0.0218;
 L3 = 0.0748;
 L4 = 0.0468;
@@ -122,14 +124,8 @@ L3_inertia = diag([I 0 I]);
 
 tail_angle = 0 * pi/180;
 L_tail = .2;
-Tail_CS1 = [0 0 0];     % using adjoining
-Tail_CG  = [0 L_tail/2 0];
-Tail_CS2 = [0 L_tail 0];
-
-Tail_mass = CF_density*cross_area*L_tail;
-I = 1/12*Tail_mass*L_tail^2;
-Tail_inertia = diag([I 0 I]);
-
+tail_radius = .03;
+tail_thickness = 0.0008;
 %%%%%%% Ground Foot Parameters %%%%%%%
 
 footWidth = .035;
