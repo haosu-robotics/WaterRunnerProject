@@ -16,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 29 14:47:31 2013"
-  RTWModifiedTimeStamp	  281359524
-  ModelVersionFormat	  "1.%<AutoIncrement:304>"
+  LastModifiedDate	  "Thu Jan 31 20:51:25 2013"
+  RTWModifiedTimeStamp	  281566281
+  ModelVersionFormat	  "1.%<AutoIncrement:305>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -894,7 +894,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [961, 401, 1919, 725]
+    Location		    [1, 48, 959, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -955,7 +955,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -1013,7 +1013,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -1087,7 +1087,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -1160,7 +1160,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -1193,7 +1193,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -1259,7 +1259,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "None"
 	  TranslationLengthUnit	  "m"
@@ -1292,7 +1292,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "None"
 	  TranslationLengthUnit	  "m"
@@ -4362,7 +4362,7 @@ Library {
       System {
 	Name			"Tail"
 	Location		[1, 578, 959, 1079]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4416,7 +4416,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -4483,7 +4483,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -5147,7 +5147,7 @@ Library {
       System {
 	Name			"Water Foot"
 	Location		[1, 48, 959, 548]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5622,7 +5622,7 @@ Library {
 	  ZOrder		  4
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/World Frame"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "WorldFrame"
 	  BlockFunction		  "simmechanics.library.frames_transforms.world_frame"
 	}
@@ -5873,7 +5873,7 @@ Library {
       Ports		      [1, 2, 0, 0, 0, 1, 1]
       Position		      [495, 129, 600, 231]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.291"
+      LibraryVersion	      "*1.304"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5883,7 +5883,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"motor"
-	Location		[1, 48, 1219, 1079]
+	Location		[961, 313, 1919, 548]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6189,10 +6189,10 @@ Library {
 	  IntegratorMethod	  "Trapezoidal"
 	  FilterMethod		  "Trapezoidal"
 	  Form			  "Parallel"
-	  P			  "7.53683777073434e-05"
-	  I			  "6.58911071099274e-05"
-	  D			  "-4.19629321440508e-07"
-	  N			  "141.411286717587"
+	  P			  "0.0173283235120911"
+	  I			  "0.00138858499695777"
+	  D			  "-0.000894996356719209"
+	  N			  "19.3613341350479"
 	  InitialConditionSource  "internal"
 	  InitialConditionForIntegrator	"0"
 	  InitialConditionForFilter "0"

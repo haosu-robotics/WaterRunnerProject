@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.77"
+    ComputedModelVersion    "1.101"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,8 +33,8 @@ Model {
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "3008381334"
-  PhysicalModelingParameterChecksum "480021282"
+  PhysicalModelingChecksum "113116680"
+  PhysicalModelingParameterChecksum "3714893924"
   PhysicalModelingProducts "SimElectronics|SimMechanics|Simscape"
   Created		  "Mon Jan 28 13:10:23 2013"
   Creator		  "nitisht"
@@ -42,9 +42,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jan 29 12:57:30 2013"
-  RTWModifiedTimeStamp	  281359580
-  ModelVersionFormat	  "1.%<AutoIncrement:77>"
+  LastModifiedDate	  "Thu Jan 31 20:51:40 2013"
+  RTWModifiedTimeStamp	  281566281
+  ModelVersionFormat	  "1.%<AutoIncrement:101>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -206,8 +206,8 @@ Model {
 	  OutputSaveName	  "yout"
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
-	  OutputOption		  "RefineOutputTimes"
-	  OutputTimes		  "[]"
+	  OutputOption		  "SpecifiedOutputTimes"
+	  OutputTimes		  "[0:1/30:10]"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -710,6 +710,15 @@ Model {
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
 		  SimMechanicsOpenEditorOnUpdate on
+		  InternalSimMechanicsExplorerSettings "<ExplorerConfiguration><canonicalview>default</canonicalview><TilePanel><Til"
+		  "eInfo><Tiles Columns=\"1\" Count=\"1\" Rows=\"1\"><Column Left=\"2\" Weight=\"1\"/><Column Left=\"1132\"/><Row Top"
+		  "=\"2\" Weight=\"1\"/><Row Top=\"851\"/><Tile Height=\"1\" Width=\"1\" X=\"0\" Y=\"0\"/></Tiles></TileInfo><SceneIn"
+		  "fo><SceneViewer><BGColor><R>0.60000002384185791</R><G>0.60000002384185791</G><B>0.60000002384185791</B></BGColor><"
+		  "Camera><Position><X>0.996490949742659504</X><Y>-0.85396794523846975</Y><Z>0.874758255115372529</Z></Position><Cent"
+		  "er><X>0.202998399854367684</X><Y>-0.0604753953506678849</Y><Z>0.0812657052281652859</Z></Center><Up><X>-0.40824829"
+		  "0463863073</X><Y>0.408248290463863073</Y><Z>0.816496580927726145</Z></Up><Left>-0.464421316705375731</Left><Right>"
+		  "0.464421316705375731</Right><Bottom>-0.299509623788371482</Bottom><Top>0.299509623788371482</Top></Camera></SceneV"
+		  "iewer></SceneInfo></TilePanel></ExplorerConfiguration>"
 		}
 		PropName		"Components"
 	      }
@@ -730,8 +739,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Diagnostics"
-      ConfigPrmDlgPosition     [ 280, 80, 1190, 784 ] 
+      CurrentDlgPage	      "Data Import//Export"
+      ConfigPrmDlgPosition     [ 280, 80, 1196, 790 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -773,17 +782,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      DiscretePulseGenerator
-      PulseType		      "Sample based"
-      TimeSource	      "Use simulation time"
-      Amplitude		      "1"
-      Period		      "2"
-      PulseWidth	      "1"
-      PhaseDelay	      "0"
-      SampleTime	      "1"
-      VectorParams1D	      on
-    }
-    Block {
       BlockType		      Scope
       ModelBased	      off
       TickLabels	      "OneTimeTick"
@@ -801,10 +799,35 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Step
+      Time		      "1"
+      Before		      "0"
+      After		      "1"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
   }
   System {
     Name		    "motor_test"
-    Location		    [1, 48, 1189, 473]
+    Location		    [1, 48, 959, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -818,7 +841,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "109"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "30"
+    SIDHighWatermark	    "44"
     Block {
       BlockType		      Reference
       Name		      "Mechanism \nConfiguration"
@@ -838,49 +861,44 @@ Model {
       BlockFunction	      "simmechanics.library.utilities.mechanism_configuration"
     }
     Block {
-      BlockType		      DiscretePulseGenerator
-      Name		      "Pulse\nGenerator"
-      SID		      "30"
-      Ports		      [0, 1]
-      Position		      [180, 54, 210, 86]
-      ZOrder		      -13
-      PulseType		      "Time based"
-      Amplitude		      "speed"
-      Period		      "1"
-      PulseWidth	      "50"
-    }
-    Block {
       BlockType		      Reference
-      Name		      "Rigid \nTransform"
-      SID		      "24"
+      Name		      "Revolute Joint"
+      SID		      "33"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [610, 160, 650, 200]
-      ZOrder		      2
+      Position		      [1005, 160, 1045, 200]
+      ZOrder		      9
       LibraryVersion	      "1.1"
-      SourceBlock	      "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+      SourceBlock	      "sm_lib/Joints/Revolute Joint"
       SourceType	      ""
-      ClassName		      "RigidTransform"
-      TranslationMethod	      "None"
-      TranslationLengthUnit   "m"
-      TranslationStandardAxis "+Z"
-      TranslationStandardOffset	"0"
-      TranslationCartesianOffset "[0 0 .5]"
-      TranslationROffset      "0"
-      TranslationROffsetUnits "m"
-      TranslationZOffset      "0"
-      TranslationZOffsetUnits "m"
-      TranslationThetaOffset  "0"
-      TranslationThetaOffsetUnits "deg"
-      RotationMethod	      "StandardAxis"
-      RotationAngleUnits      "deg"
-      RotationStandardAxis    "+X"
-      RotationAngle	      "90"
-      RotationArbitraryAxis   "[0 0 1]"
-      FollAlignAxisA	      "+X"
-      BaseAlignAxisA	      "+Y"
-      FollAlignAxisB	      "+Y"
-      BaseAlignAxisB	      "+Z"
-      BlockFunction	      "simmechanics.library.frames_transforms.rigid_transform"
+      ClassName		      "RevoluteJoint"
+      SenseConstraintForceX   "off"
+      SenseConstraintForceY   "off"
+      SenseConstraintForceZ   "off"
+      SenseConstraintTorqueX  "off"
+      SenseConstraintTorqueY  "off"
+      SenseConstraintTorqueZ  "off"
+      ConstraintWrenchDir     "FollowerOnBase"
+      ConstraintWrenchFrame   "BaseFrame"
+      EquilibriumPosition     "0"
+      EquilibriumPositionUnits "rad"
+      SpringStiffness	      "0"
+      SpringStiffnessUnits    "N*m/rad"
+      DampingCoefficient      "0"
+      DampingCoefficientUnits "N*m/(rad/s)"
+      ActuationMode	      "NoActuation"
+      SensePosition	      "off"
+      SenseVelocity	      "off"
+      SenseAcceleration	      "off"
+      SenseTorqueForce	      "off"
+      PositionTargetValue     "0"
+      PositionTargetValueUnits "deg"
+      PositionTargetSpecify   "off"
+      PositionTargetPriority  "High"
+      VelocityTargetValue     "0"
+      VelocityTargetValueUnits "deg/s"
+      VelocityTargetSpecify   "off"
+      VelocityTargetPriority  "High"
+      BlockFunction	      "simmechanics.library.joints.revolute_joint"
     }
     Block {
       BlockType		      Reference
@@ -897,7 +915,73 @@ Model {
       TranslationLengthUnit   "m"
       TranslationStandardAxis "+Z"
       TranslationStandardOffset	"0"
-      TranslationCartesianOffset "[0 0 .5]"
+      TranslationCartesianOffset "[.125 0 0]"
+      TranslationROffset      "0"
+      TranslationROffsetUnits "m"
+      TranslationZOffset      "0"
+      TranslationZOffsetUnits "m"
+      TranslationThetaOffset  "0"
+      TranslationThetaOffsetUnits "deg"
+      RotationMethod	      "None"
+      RotationAngleUnits      "deg"
+      RotationStandardAxis    "+Z"
+      RotationAngle	      "0"
+      RotationArbitraryAxis   "[0 0 1]"
+      FollAlignAxisA	      "+X"
+      BaseAlignAxisA	      "+Y"
+      FollAlignAxisB	      "+Y"
+      BaseAlignAxisB	      "+Z"
+      BlockFunction	      "simmechanics.library.frames_transforms.rigid_transform"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Rigid \nTransform2"
+      SID		      "32"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [900, 160, 940, 200]
+      ZOrder		      2
+      LibraryVersion	      "1.1"
+      SourceBlock	      "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+      SourceType	      ""
+      ClassName		      "RigidTransform"
+      TranslationMethod	      "Cartesian"
+      TranslationLengthUnit   "m"
+      TranslationStandardAxis "+Z"
+      TranslationStandardOffset	"0"
+      TranslationCartesianOffset "[.125 0 0]"
+      TranslationROffset      "0"
+      TranslationROffsetUnits "m"
+      TranslationZOffset      "0"
+      TranslationZOffsetUnits "m"
+      TranslationThetaOffset  "0"
+      TranslationThetaOffsetUnits "deg"
+      RotationMethod	      "None"
+      RotationAngleUnits      "deg"
+      RotationStandardAxis    "+Z"
+      RotationAngle	      "0"
+      RotationArbitraryAxis   "[0 0 1]"
+      FollAlignAxisA	      "+X"
+      BaseAlignAxisA	      "+Y"
+      FollAlignAxisB	      "+Y"
+      BaseAlignAxisB	      "+Z"
+      BlockFunction	      "simmechanics.library.frames_transforms.rigid_transform"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Rigid \nTransform3"
+      SID		      "34"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [1120, 160, 1160, 200]
+      ZOrder		      2
+      LibraryVersion	      "1.1"
+      SourceBlock	      "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+      SourceType	      ""
+      ClassName		      "RigidTransform"
+      TranslationMethod	      "Cartesian"
+      TranslationLengthUnit   "m"
+      TranslationStandardAxis "+Z"
+      TranslationStandardOffset	"0"
+      TranslationCartesianOffset "[.125 0 0]"
       TranslationROffset      "0"
       TranslationROffsetUnits "m"
       TranslationZOffset      "0"
@@ -923,8 +1007,8 @@ Model {
       Position		      [675, 29, 705, 61]
       ZOrder		      -16
       Floating		      off
-      Location		      [762, 704, 1920, 1078]
-      Open		      on
+      Location		      [2, 49, 733, 1078]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -942,7 +1026,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.86073     0.79882    0.091105     0.12199"
+      LegendLocations	      "0.80609     0.92238     0.14432    0.044339"
       TimeRange		      "10"
       YMin		      "-4"
       YMax		      "14"
@@ -958,8 +1042,8 @@ Model {
       Position		      [720, 69, 750, 101]
       ZOrder		      -16
       Floating		      off
-      Location		      [2, 704, 760, 1078]
-      Open		      on
+      Location		      [962, 49, 1920, 547]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -977,7 +1061,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.84702     0.83262     0.13918     0.17714"
       TimeRange		      "10"
       YMin		      "-0.0005"
       YMax		      "0.0005"
@@ -991,7 +1074,7 @@ Model {
       Name		      "Solid"
       SID		      "27"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [735, 335, 775, 375]
+      Position		      [810, 340, 850, 380]
       ZOrder		      3
       BlockRotation	      270
       LibraryVersion	      "1.1"
@@ -1008,7 +1091,7 @@ Model {
       ProductsOfInertia	      "[0 0 0]"
       ProductsOfInertiaUnits  "kg*m^2"
       DensityBased	      "on"
-      Density		      ".1"
+      Density		      "100"
       DensityUnits	      "kg/(m^3)"
       GraphicType	      "FromGeometry"
       MarkerShape	      "Sphere"
@@ -1024,7 +1107,65 @@ Model {
       GeometryShape	      "Brick"
       RectangleSize	      "[1 1]"
       RectangleSizeUnits      "m"
-      BrickDimensions	      "[.001 .001 1]"
+      BrickDimensions	      "[.25 .01 .01]"
+      BrickDimensionUnits     "m"
+      CylinderRadius	      "1"
+      CylinderRadiusUnits     "m"
+      CylinderLength	      "1"
+      CylinderLengthUnits     "m"
+      SphereRadius	      "1"
+      SphereRadiusUnits	      "m"
+      EllipsoidRadii	      "[1 1 1]"
+      EllipsoidRadiiUnits     "m"
+      ExtrusionCrossSection   "[1 1; -1 1; -1 -1; 1 -1]"
+      ExtrusionCrossSectionUnits "m"
+      ExtrusionLength	      "1"
+      ExtrusionLengthUnits    "m"
+      PolygonNumSides	      "3"
+      PolygonOuterRadius      "1"
+      PolygonOuterRadiusUnits "m"
+      ExtGeomFileUnits	      "m"
+      BlockFunction	      "simmechanics.library.body_elements.solid"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Solid1"
+      SID		      "31"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [1240, 330, 1280, 370]
+      ZOrder		      3
+      BlockRotation	      270
+      LibraryVersion	      "1.1"
+      SourceBlock	      "sm_lib/Body Elements/Solid"
+      SourceType	      ""
+      ClassName		      "Solid"
+      InertiaType	      "CalculateFromGeometry"
+      Mass		      "1"
+      MassUnits		      "kg"
+      CenterOfMass	      "[0 0 0]"
+      CenterOfMassUnits	      "m"
+      MomentsOfInertia	      "[1 1 1]"
+      MomentsOfInertiaUnits   "kg*m^2"
+      ProductsOfInertia	      "[0 0 0]"
+      ProductsOfInertiaUnits  "kg*m^2"
+      DensityBased	      "on"
+      Density		      "100"
+      DensityUnits	      "kg/(m^3)"
+      GraphicType	      "FromGeometry"
+      MarkerShape	      "Sphere"
+      MarkerSize	      "10"
+      MarkerSizeUnits	      "m"
+      GraphicVisPropType      "SimpleVisualProperties"
+      GraphicDiffuseColor     "[0.5 0.5 0.5]"
+      GraphicSpecularColor    "[0.5 0.5 0.5 1.0]"
+      GraphicAmbientColor     "[0.15 0.15 0.15 1.0]"
+      GraphicEmissiveColor    "[0.0 0.0 0.0 1.0]"
+      GraphicShininess	      "75"
+      GraphicOpacity	      "1.0"
+      GeometryShape	      "Brick"
+      RectangleSize	      "[1 1]"
+      RectangleSizeUnits      "m"
+      BrickDimensions	      "[.25 .01 .01]"
       BrickDimensionUnits     "m"
       CylinderRadius	      "1"
       CylinderRadiusUnits     "m"
@@ -1075,6 +1216,40 @@ Model {
       DelaysMemoryBudget      "1024"
     }
     Block {
+      BlockType		      Step
+      Name		      "Step"
+      SID		      "43"
+      Position		      [110, 55, 140, 85]
+      ZOrder		      -22
+      After		      "speed"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step1"
+      SID		      "44"
+      Position		      [290, 85, 320, 115]
+      ZOrder		      -22
+      BlockMirror	      on
+      Time		      "4"
+      After		      "speed"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "41"
+      Ports		      [2, 1]
+      Position		      [240, 60, 260, 80]
+      ZOrder		      -18
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Reference
       Name		      "World Frame"
       SID		      "3"
@@ -1095,7 +1270,7 @@ Model {
       Ports		      [1, 2, 0, 0, 0, 1, 1]
       Position		      [445, 62, 555, 158]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.293"
+      LibraryVersion	      "1.305"
       SourceBlock	      "WaterRunner_lib_2/motor"
       SourceType	      "SubSystem"
     }
@@ -1146,30 +1321,70 @@ Model {
       SrcBlock		      "motor"
       SrcPort		      RConn1
       Points		      [10, 0; 0, 40]
-      DstBlock		      "Rigid \nTransform"
+      DstBlock		      "Rigid \nTransform1"
       DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Pulse\nGenerator"
-      SrcPort		      1
-      Points		      [105, 0; 0, 15]
-      DstBlock		      "motor"
-      DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Rigid \nTransform1"
-      SrcPort		      LConn1
-      DstBlock		      "Rigid \nTransform"
-      DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Rigid \nTransform1"
       SrcPort		      RConn1
-      Points		      [5, 0; 0, 135; -25, 0]
-      DstBlock		      "Solid"
+      Points		      [55, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Solid"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Rigid \nTransform2"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Rigid \nTransform2"
+      SrcPort		      RConn1
+      DstBlock		      "Revolute Joint"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Revolute Joint"
+      SrcPort		      RConn1
+      DstBlock		      "Rigid \nTransform3"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Rigid \nTransform3"
+      SrcPort		      RConn1
+      Points		      [85, 0]
+      DstBlock		      "Solid1"
       DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Step"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [80, 0; 0, 15]
+      DstBlock		      "motor"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step1"
+      SrcPort		      1
+      Points		      [-35, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Annotation {
+      SID		      "36"
+      Position		      [253, 167]
     }
   }
 }

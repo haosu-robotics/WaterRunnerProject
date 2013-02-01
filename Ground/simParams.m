@@ -4,7 +4,7 @@ CF_density = 1790;
 delrin_density = 1420;
 
 %%%%%%% motors parameters %%%%%%%
-speed = 50;   % rotation speed in rad/s
+speed = 10;   % rotation speed in rad/s
 duty_factor = .5;
 switch_angle = 0;
 
