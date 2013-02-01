@@ -6,11 +6,11 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.101"
+    ComputedModelVersion    "1.102"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   slprops.hdlmdlprops {
     $PropName		    "HDLParams"
     $ObjectID		    1
@@ -40,11 +40,11 @@ Model {
   Creator		  "nitisht"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "nitisht"
+  LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 31 20:51:40 2013"
-  RTWModifiedTimeStamp	  281566281
-  ModelVersionFormat	  "1.%<AutoIncrement:101>"
+  LastModifiedDate	  "Thu Jan 31 21:55:31 2013"
+  RTWModifiedTimeStamp	  281569894
+  ModelVersionFormat	  "1.%<AutoIncrement:102>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -82,7 +82,6 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "motor_test"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -630,13 +629,6 @@ Model {
 	  Version		  "1.12.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
-	  Array {
-	    Type		    "Cell"
-	    Dimension		    1
-	    Cell		    ""
-	    PropName		    "HDLConfigFile"
-	  }
-	  HDLCActiveTab		  "0"
 	}
 	SSC.SimscapeCC {
 	  $ObjectID		  15
@@ -711,14 +703,14 @@ Model {
 		  Name			  "ExplorerConfigSet"
 		  SimMechanicsOpenEditorOnUpdate on
 		  InternalSimMechanicsExplorerSettings "<ExplorerConfiguration><canonicalview>default</canonicalview><TilePanel><Til"
-		  "eInfo><Tiles Columns=\"1\" Count=\"1\" Rows=\"1\"><Column Left=\"2\" Weight=\"1\"/><Column Left=\"1132\"/><Row Top"
-		  "=\"2\" Weight=\"1\"/><Row Top=\"851\"/><Tile Height=\"1\" Width=\"1\" X=\"0\" Y=\"0\"/></Tiles></TileInfo><SceneIn"
+		  "eInfo><Tiles Columns=\"1\" Count=\"1\" Rows=\"1\"><Column Left=\"2\" Weight=\"1\"/><Column Left=\"1356\"/><Row Top"
+		  "=\"2\" Weight=\"1\"/><Row Top=\"754\"/><Tile Height=\"1\" Width=\"1\" X=\"0\" Y=\"0\"/></Tiles></TileInfo><SceneIn"
 		  "fo><SceneViewer><BGColor><R>0.60000002384185791</R><G>0.60000002384185791</G><B>0.60000002384185791</B></BGColor><"
-		  "Camera><Position><X>0.996490949742659504</X><Y>-0.85396794523846975</Y><Z>0.874758255115372529</Z></Position><Cent"
-		  "er><X>0.202998399854367684</X><Y>-0.0604753953506678849</Y><Z>0.0812657052281652859</Z></Center><Up><X>-0.40824829"
-		  "0463863073</X><Y>0.408248290463863073</Y><Z>0.816496580927726145</Z></Up><Left>-0.464421316705375731</Left><Right>"
-		  "0.464421316705375731</Right><Bottom>-0.299509623788371482</Bottom><Top>0.299509623788371482</Top></Camera></SceneV"
-		  "iewer></SceneInfo></TilePanel></ExplorerConfiguration>"
+		  "Camera><Position><X>0.66247673183035038</X><Y>-0.59043878717823517</Y><Z>0.6010151850206642</Z></Position><Center>"
+		  "<X>0.12014793463835033</X><Y>-0.0481099899862448</Y><Z>0.058686387828674899</Z></Center><Up><X>-0.4082482904638630"
+		  "7</X><Y>0.40824829046386307</Y><Z>0.81649658092772615</Z></Up><Left>-0.57293903549764247</Left><Right>0.5729390354"
+		  "9764247</Right><Bottom>-0.37556193769083468</Bottom><Top>0.37556193769083468</Top></Camera></SceneViewer></SceneIn"
+		  "fo></TilePanel></ExplorerConfiguration>"
 		}
 		PropName		"Components"
 	      }
@@ -827,7 +819,7 @@ Model {
   }
   System {
     Name		    "motor_test"
-    Location		    [1, 48, 959, 1079]
+    Location		    [1, 82, 959, 854]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
