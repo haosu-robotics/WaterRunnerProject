@@ -16,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 06 14:13:30 2013"
-  RTWModifiedTimeStamp	  282060806
-  ModelVersionFormat	  "1.%<AutoIncrement:306>"
+  LastModifiedDate	  "Wed Feb 06 15:54:20 2013"
+  RTWModifiedTimeStamp	  282066855
+  ModelVersionFormat	  "1.%<AutoIncrement:307>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -966,7 +966,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "90"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "908"
+    SIDHighWatermark	    "927"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -5290,6 +5290,784 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "LEG_new"
+      SID		      "909"
+      Ports		      [0, 0, 0, 0, 0, 2, 2]
+      Position		      [685, 478, 820, 547]
+      BlockMirror	      on
+      BackgroundColor	      "gray"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskPromptString	      "L1|L2|L3|L4|L5|Density|bar width|bar hieght"
+      MaskStyleString	      "edit,edit,edit,edit,edit,edit,edit,edit"
+      MaskVariables	      "p_L1=@1;p_L2=@2;p_L3=@3;p_L4=@4;p_L5=@5;p_CF_density=@6;p_bar_w=@7;p_bar_h=@8;"
+      MaskTunableValueString  "on,on,on,on,on,on,on,on"
+      MaskCallbackString      "|||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on"
+      MaskDisplay	      "%image(imread('fourbar.png'));"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "port"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "L1|L2|L3|L4|L5|CF_density|bar_w|bar_h"
+      System {
+	Name			"LEG_new"
+	Location		[810, 82, 1590, 814]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Active To-Tip"
+	  SID			  "910"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [380, 200, 420, 240]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Y"
+	  TranslationStandardOffset "p_L2/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ActiveJoint-CogLink TR"
+	  SID			  "911"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [245, 200, 285, 240]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Y"
+	  TranslationStandardOffset "p_L2/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "ActiveLink"
+	  SID			  "912"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [310, 305, 350, 345]
+	  ZOrder		  3
+	  BlockRotation		  270
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Body Elements/Solid"
+	  SourceType		  ""
+	  ClassName		  "Solid"
+	  InertiaType		  "CalculateFromGeometry"
+	  Mass			  "1"
+	  MassUnits		  "kg"
+	  CenterOfMass		  "[0 0 0]"
+	  CenterOfMassUnits	  "m"
+	  MomentsOfInertia	  "[1 1 1]"
+	  MomentsOfInertiaUnits	  "kg*m^2"
+	  ProductsOfInertia	  "[0 0 0]"
+	  ProductsOfInertiaUnits  "kg*m^2"
+	  DensityBased		  "on"
+	  Density		  "p_CF_density"
+	  DensityUnits		  "kg/(m^3)"
+	  GraphicType		  "FromGeometry"
+	  MarkerShape		  "Sphere"
+	  MarkerSize		  "10"
+	  MarkerSizeUnits	  "m"
+	  GraphicVisPropType	  "SimpleVisualProperties"
+	  GraphicDiffuseColor	  "[0.4 1.0 0.4]"
+	  GraphicSpecularColor	  "[0.5 0.5 0.5 1.0]"
+	  GraphicAmbientColor	  "[0.15 0.15 0.15 1.0]"
+	  GraphicEmissiveColor	  "[0.0 0.0 0.0 1.0]"
+	  GraphicShininess	  "75"
+	  GraphicOpacity	  "1.0"
+	  GeometryShape		  "Brick"
+	  RectangleSize		  "[1 1]"
+	  RectangleSizeUnits	  "m"
+	  BrickDimensions	  "[p_bar_w p_L2 p_bar_h]"
+	  BrickDimensionUnits	  "m"
+	  CylinderRadius	  "1"
+	  CylinderRadiusUnits	  "m"
+	  CylinderLength	  "1"
+	  CylinderLengthUnits	  "m"
+	  SphereRadius		  "1"
+	  SphereRadiusUnits	  "m"
+	  EllipsoidRadii	  "[1 1 1]"
+	  EllipsoidRadiiUnits	  "m"
+	  ExtrusionCrossSection	  "[1 1; -1 1; -1 -1; 1 -1]"
+	  ExtrusionCrossSectionUnits "m"
+	  ExtrusionLength	  "1"
+	  ExtrusionLengthUnits	  "m"
+	  PolygonNumSides	  "3"
+	  PolygonOuterRadius	  "1"
+	  PolygonOuterRadiusUnits "m"
+	  ExtGeomFileUnits	  "m"
+	  BlockFunction		  "simmechanics.library.body_elements.solid"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Body-PassiveJoint TR"
+	  SID			  "913"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [55, 105, 95, 145]
+	  ZOrder		  2
+	  BlockRotation		  270
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "-X"
+	  TranslationStandardOffset "p_L1"
+	  TranslationCartesianOffset "[0 0 0]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+X"
+	  BaseAlignAxisA	  "+Y"
+	  FollAlignAxisB	  "+Y"
+	  BaseAlignAxisB	  "+Z"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Leg"
+	  SID			  "914"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [710, 105, 750, 145]
+	  ZOrder		  3
+	  BlockRotation		  270
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Body Elements/Solid"
+	  SourceType		  ""
+	  ClassName		  "Solid"
+	  InertiaType		  "CalculateFromGeometry"
+	  Mass			  "1"
+	  MassUnits		  "kg"
+	  CenterOfMass		  "[0 0 0]"
+	  CenterOfMassUnits	  "m"
+	  MomentsOfInertia	  "[1 1 1]"
+	  MomentsOfInertiaUnits	  "kg*m^2"
+	  ProductsOfInertia	  "[0 0 0]"
+	  ProductsOfInertiaUnits  "kg*m^2"
+	  DensityBased		  "on"
+	  Density		  "p_CF_density"
+	  DensityUnits		  "kg/(m^3)"
+	  GraphicType		  "FromGeometry"
+	  MarkerShape		  "Sphere"
+	  MarkerSize		  "10"
+	  MarkerSizeUnits	  "m"
+	  GraphicVisPropType	  "SimpleVisualProperties"
+	  GraphicDiffuseColor	  "[0.0 0.0 0.6]"
+	  GraphicSpecularColor	  "[0.5 0.5 0.5 1.0]"
+	  GraphicAmbientColor	  "[0.15 0.15 0.15 1.0]"
+	  GraphicEmissiveColor	  "[0.0 0.0 0.0 1.0]"
+	  GraphicShininess	  "75"
+	  GraphicOpacity	  "1.0"
+	  GeometryShape		  "Brick"
+	  RectangleSize		  "[1 1]"
+	  RectangleSizeUnits	  "m"
+	  BrickDimensions	  "[p_L3+p_L5 p_bar_w p_bar_h]"
+	  BrickDimensionUnits	  "m"
+	  CylinderRadius	  "1"
+	  CylinderRadiusUnits	  "m"
+	  CylinderLength	  "1"
+	  CylinderLengthUnits	  "m"
+	  SphereRadius		  "1"
+	  SphereRadiusUnits	  "m"
+	  EllipsoidRadii	  "[1 1 1]"
+	  EllipsoidRadiiUnits	  "m"
+	  ExtrusionCrossSection	  "[1 1; -1 1; -1 -1; 1 -1]"
+	  ExtrusionCrossSectionUnits "m"
+	  ExtrusionLength	  "1"
+	  ExtrusionLengthUnits	  "m"
+	  PolygonNumSides	  "3"
+	  PolygonOuterRadius	  "1"
+	  PolygonOuterRadiusUnits "m"
+	  ExtGeomFileUnits	  "m"
+	  BlockFunction		  "simmechanics.library.body_elements.solid"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Leg Cog-Right"
+	  SID			  "915"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [785, 25, 825, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+X"
+	  TranslationStandardOffset "(p_L3+p_L5)/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Leg Left-COG"
+	  SID			  "916"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [645, 25, 685, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+X"
+	  TranslationStandardOffset "(p_L3+p_L5)/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Leg Left-COG1"
+	  SID			  "917"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [575, 115, 615, 155]
+	  ZOrder		  2
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+X"
+	  TranslationStandardOffset "p_L3"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Passive To-Tip"
+	  SID			  "918"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [380, 25, 420, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Y"
+	  TranslationStandardOffset "p_L4/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PassiveJoint"
+	  SID			  "919"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [110, 25, 150, 65]
+	  ZOrder		  9
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
+	  SourceType		  ""
+	  ClassName		  "RevoluteJoint"
+	  SenseConstraintForceX	  "off"
+	  SenseConstraintForceY	  "off"
+	  SenseConstraintForceZ	  "off"
+	  SenseConstraintTorqueX  "off"
+	  SenseConstraintTorqueY  "off"
+	  SenseConstraintTorqueZ  "off"
+	  ConstraintWrenchDir	  "FollowerOnBase"
+	  ConstraintWrenchFrame	  "BaseFrame"
+	  EquilibriumPosition	  "0"
+	  EquilibriumPositionUnits "deg"
+	  SpringStiffness	  "0"
+	  SpringStiffnessUnits	  "N*m/deg"
+	  DampingCoefficient	  "0"
+	  DampingCoefficientUnits "N*m/(deg/s)"
+	  ActuationMode		  "NoActuation"
+	  SensePosition		  "off"
+	  SenseVelocity		  "off"
+	  SenseAcceleration	  "off"
+	  SenseTorqueForce	  "off"
+	  PositionTargetValue	  "0"
+	  PositionTargetValueUnits "deg"
+	  PositionTargetSpecify	  "off"
+	  PositionTargetPriority  "High"
+	  VelocityTargetValue	  "0"
+	  VelocityTargetValueUnits "deg/s"
+	  VelocityTargetSpecify	  "off"
+	  VelocityTargetPriority  "High"
+	  BlockFunction		  "simmechanics.library.joints.revolute_joint"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PassiveJoint-CogLink"
+	  SID			  "920"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [245, 25, 285, 65]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
+	  SourceType		  ""
+	  ClassName		  "RigidTransform"
+	  TranslationMethod	  "StandardAxis"
+	  TranslationLengthUnit	  "m"
+	  TranslationStandardAxis "+Y"
+	  TranslationStandardOffset "p_L4/2"
+	  TranslationCartesianOffset "[0 0 0.25]"
+	  TranslationROffset	  "0"
+	  TranslationROffsetUnits "m"
+	  TranslationZOffset	  "0"
+	  TranslationZOffsetUnits "m"
+	  TranslationThetaOffset  "0"
+	  TranslationThetaOffsetUnits "deg"
+	  RotationMethod	  "None"
+	  RotationAngleUnits	  "deg"
+	  RotationStandardAxis	  "+Z"
+	  RotationAngle		  "0"
+	  RotationArbitraryAxis	  "[0 0 1]"
+	  FollAlignAxisA	  "+Y"
+	  BaseAlignAxisA	  "+X"
+	  FollAlignAxisB	  "+Z"
+	  BaseAlignAxisB	  "+Y"
+	  BlockFunction		  "simmechanics.library.frames_transforms.rigid_transform"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PassiveLink"
+	  SID			  "921"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [310, 105, 350, 145]
+	  ZOrder		  3
+	  BlockRotation		  270
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Body Elements/Solid"
+	  SourceType		  ""
+	  ClassName		  "Solid"
+	  InertiaType		  "CalculateFromGeometry"
+	  Mass			  "1"
+	  MassUnits		  "kg"
+	  CenterOfMass		  "[0 0 0]"
+	  CenterOfMassUnits	  "m"
+	  MomentsOfInertia	  "[1 1 1]"
+	  MomentsOfInertiaUnits	  "kg*m^2"
+	  ProductsOfInertia	  "[0 0 0]"
+	  ProductsOfInertiaUnits  "kg*m^2"
+	  DensityBased		  "on"
+	  Density		  "p_CF_density"
+	  DensityUnits		  "kg/(m^3)"
+	  GraphicType		  "FromGeometry"
+	  MarkerShape		  "Sphere"
+	  MarkerSize		  "10"
+	  MarkerSizeUnits	  "m"
+	  GraphicVisPropType	  "SimpleVisualProperties"
+	  GraphicDiffuseColor	  "[0.4 1.0 0.4]"
+	  GraphicSpecularColor	  "[0.5 0.5 0.5 1.0]"
+	  GraphicAmbientColor	  "[0.15 0.15 0.15 1.0]"
+	  GraphicEmissiveColor	  "[0.0 0.0 0.0 1.0]"
+	  GraphicShininess	  "75"
+	  GraphicOpacity	  "1.0"
+	  GeometryShape		  "Brick"
+	  RectangleSize		  "[1 1]"
+	  RectangleSizeUnits	  "m"
+	  BrickDimensions	  "[p_bar_w p_L4 p_bar_h]"
+	  BrickDimensionUnits	  "m"
+	  CylinderRadius	  "1"
+	  CylinderRadiusUnits	  "m"
+	  CylinderLength	  "1"
+	  CylinderLengthUnits	  "m"
+	  SphereRadius		  "1"
+	  SphereRadiusUnits	  "m"
+	  EllipsoidRadii	  "[1 1 1]"
+	  EllipsoidRadiiUnits	  "m"
+	  ExtrusionCrossSection	  "[1 1; -1 1; -1 -1; 1 -1]"
+	  ExtrusionCrossSectionUnits "m"
+	  ExtrusionLength	  "1"
+	  ExtrusionLengthUnits	  "m"
+	  PolygonNumSides	  "3"
+	  PolygonOuterRadius	  "1"
+	  PolygonOuterRadiusUnits "m"
+	  ExtGeomFileUnits	  "m"
+	  BlockFunction		  "simmechanics.library.body_elements.solid"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pin"
+	  SID			  "922"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [515, 25, 555, 65]
+	  ZOrder		  9
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
+	  SourceType		  ""
+	  ClassName		  "RevoluteJoint"
+	  SenseConstraintForceX	  "off"
+	  SenseConstraintForceY	  "off"
+	  SenseConstraintForceZ	  "off"
+	  SenseConstraintTorqueX  "off"
+	  SenseConstraintTorqueY  "off"
+	  SenseConstraintTorqueZ  "off"
+	  ConstraintWrenchDir	  "FollowerOnBase"
+	  ConstraintWrenchFrame	  "BaseFrame"
+	  EquilibriumPosition	  "0"
+	  EquilibriumPositionUnits "deg"
+	  SpringStiffness	  "0"
+	  SpringStiffnessUnits	  "N*m/deg"
+	  DampingCoefficient	  "0"
+	  DampingCoefficientUnits "N*m/(deg/s)"
+	  ActuationMode		  "NoActuation"
+	  SensePosition		  "off"
+	  SenseVelocity		  "off"
+	  SenseAcceleration	  "off"
+	  SenseTorqueForce	  "off"
+	  PositionTargetValue	  "0"
+	  PositionTargetValueUnits "deg"
+	  PositionTargetSpecify	  "off"
+	  PositionTargetPriority  "High"
+	  VelocityTargetValue	  "0"
+	  VelocityTargetValueUnits "deg/s"
+	  VelocityTargetSpecify	  "off"
+	  VelocityTargetPriority  "High"
+	  BlockFunction		  "simmechanics.library.joints.revolute_joint"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pin2"
+	  SID			  "923"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [515, 200, 555, 240]
+	  ZOrder		  9
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
+	  SourceType		  ""
+	  ClassName		  "RevoluteJoint"
+	  SenseConstraintForceX	  "off"
+	  SenseConstraintForceY	  "off"
+	  SenseConstraintForceZ	  "off"
+	  SenseConstraintTorqueX  "off"
+	  SenseConstraintTorqueY  "off"
+	  SenseConstraintTorqueZ  "off"
+	  ConstraintWrenchDir	  "FollowerOnBase"
+	  ConstraintWrenchFrame	  "BaseFrame"
+	  EquilibriumPosition	  "0"
+	  EquilibriumPositionUnits "deg"
+	  SpringStiffness	  "0"
+	  SpringStiffnessUnits	  "N*m/deg"
+	  DampingCoefficient	  "0"
+	  DampingCoefficientUnits "N*m/(deg/s)"
+	  ActuationMode		  "NoActuation"
+	  SensePosition		  "off"
+	  SenseVelocity		  "off"
+	  SenseAcceleration	  "off"
+	  SenseTorqueForce	  "off"
+	  PositionTargetValue	  "0"
+	  PositionTargetValueUnits "deg"
+	  PositionTargetSpecify	  "off"
+	  PositionTargetPriority  "High"
+	  VelocityTargetValue	  "0"
+	  VelocityTargetValueUnits "deg/s"
+	  VelocityTargetSpecify	  "on"
+	  VelocityTargetPriority  "High"
+	  BlockFunction		  "simmechanics.library.joints.revolute_joint"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "out"
+	  SID			  "924"
+	  Position		  [850, 38, 880, 52]
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "in"
+	  SID			  "925"
+	  Position		  [25, 213, 55, 227]
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "base"
+	  SID			  "926"
+	  Position		  [100, 213, 130, 227]
+	  BlockMirror		  on
+	  Port			  "3"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "follower"
+	  SID			  "927"
+	  Position		  [175, 213, 205, 227]
+	  Port			  "4"
+	  Side			  "Right"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "out"
+	  SrcPort		  RConn1
+	  DstBlock		  "Leg Cog-Right"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "PassiveJoint-CogLink"
+	  SrcPort		  LConn1
+	  DstBlock		  "PassiveJoint"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Pin"
+	  SrcPort		  LConn1
+	  DstBlock		  "Passive To-Tip"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [330, 45; -30, 0]
+	  DstBlock		  "PassiveJoint-CogLink"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Passive To-Tip"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "PassiveLink"
+	    SrcPort		    RConn1
+	    Points		    [0, -45]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Leg Left-COG1"
+	  SrcPort		  RConn1
+	  Points		  [0, 50]
+	  DstBlock		  "Pin2"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [595, 45; 0, 55]
+	  DstBlock		  "Leg Left-COG1"
+	  DstPort		  LConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Leg Left-COG"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Pin"
+	    SrcPort		    RConn1
+	    Points		    [25, 0]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [730, 45; 40, 0]
+	  DstBlock		  "Leg Cog-Right"
+	  DstPort		  LConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Leg Left-COG"
+	    DstPort		    RConn1
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Leg"
+	    SrcPort		    RConn1
+	    Points		    [0, -45]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "PassiveJoint"
+	  SrcPort		  LConn1
+	  Points		  [-20, 0]
+	  DstBlock		  "Body-PassiveJoint TR"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Pin2"
+	  SrcPort		  LConn1
+	  DstBlock		  "Active To-Tip"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [330, 220; 0, 70]
+	  DstBlock		  "ActiveLink"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Active To-Tip"
+	    DstPort		    LConn1
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "ActiveJoint-CogLink TR"
+	    SrcPort		    RConn1
+	    Points		    [30, 0]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "follower"
+	  SrcPort		  RConn1
+	  DstBlock		  "ActiveJoint-CogLink TR"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [75, 220; -5, 0]
+	  DstBlock		  "in"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "base"
+	    DstPort		    RConn1
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "Body-PassiveJoint TR"
+	    DstPort		    LConn1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "Motor_new"
       SID		      "796"
       Ports		      [1, 1, 0, 0, 0, 1, 1]
@@ -5975,7 +6753,7 @@ Library {
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -7114,7 +7892,6 @@ Library {
 		Line {
 		  SrcBlock		  "phase Switch"
 		  SrcPort		  1
-		  Points		  [0, 5]
 		  DstBlock		  "Sum7"
 		  DstPort		  2
 		}
@@ -7128,7 +7905,6 @@ Library {
 		Line {
 		  SrcBlock		  "Mod 2pi5"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum6"
 		  DstPort		  1
 		}
@@ -7632,7 +8408,6 @@ Library {
 	Line {
 	  SrcBlock		  "Mod 2pi5"
 	  SrcPort		  1
-	  Points		  [0, -5]
 	  DstBlock		  "Sum6"
 	  DstPort		  1
 	}
