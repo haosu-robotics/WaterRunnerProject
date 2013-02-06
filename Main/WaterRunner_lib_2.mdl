@@ -2,7 +2,7 @@ Library {
   Name			  "WaterRunner_lib_2"
   Version		  7.9
   MdlSubVersion		  0
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
@@ -14,11 +14,11 @@ Library {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 06 14:13:30 2013"
-  RTWModifiedTimeStamp	  282060806
-  ModelVersionFormat	  "1.%<AutoIncrement:306>"
+  LastModifiedDate	  "Wed Feb 06 15:54:42 2013"
+  RTWModifiedTimeStamp	  282063239
+  ModelVersionFormat	  "1.%<AutoIncrement:322>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -952,7 +952,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [10, 82, 790, 831]
+    Location		    [1, 542, 907, 898]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -964,9 +964,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "90"
+    ZoomFactor		    "117"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "908"
+    SIDHighWatermark	    "912"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -4523,8 +4523,8 @@ Library {
       MaskValueString	      "L1|L2|L3|L4|L5|CF_density|bar_w|bar_h"
       System {
 	Name			"HL_leg"
-	Location		[67, 88, 1150, 837]
-	Open			off
+	Location		[1, 48, 907, 512]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4585,7 +4585,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4618,7 +4618,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4652,7 +4652,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4744,7 +4744,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4834,7 +4834,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4870,7 +4870,7 @@ Library {
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4903,7 +4903,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4936,7 +4936,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -4976,7 +4976,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -5010,7 +5010,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -5067,7 +5067,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -5107,7 +5107,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -5295,6 +5295,7 @@ Library {
       Ports		      [1, 1, 0, 0, 0, 1, 1]
       Position		      [685, 129, 790, 231]
       BackgroundColor	      "yellow"
+      LibraryVersion	      "*1.306"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5304,7 +5305,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Motor_new"
-	Location		[6, 82, 1586, 871]
+	Location		[899, 48, 1918, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5316,7 +5317,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"112"
+	ZoomFactor		"157"
 	Block {
 	  BlockType		  Inport
 	  Name			  "desired\nspeed"
@@ -5364,7 +5365,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Motor Dynamics"
-	    Location		    [398, 425, 1293, 831]
+	    Location		    [1, 472, 1919, 760]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5817,7 +5818,7 @@ Library {
 	  Name			  "Mux1"
 	  SID			  "896"
 	  Ports			  [3, 1]
-	  Position		  [1005, 228, 1010, 312]
+	  Position		  [1025, 228, 1030, 312]
 	  ZOrder		  -12
 	  ShowName		  off
 	  Inputs		  "3"
@@ -5933,7 +5934,7 @@ Library {
 	  Name			  "Scope2"
 	  SID			  "900"
 	  Ports			  [3]
-	  Position		  [1210, 254, 1240, 286]
+	  Position		  [1180, 124, 1210, 156]
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [-2, 54, 1594, 865]
@@ -6128,9 +6129,9 @@ Library {
 	Line {
 	  SrcBlock		  "p3"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [-5, 0]
 	  Branch {
-	    Points		    [0, -20]
+	    Points		    [36, 0; 0, -150]
 	    DstBlock		    "Scope2"
 	    DstPort		    3
 	  }
@@ -6142,8 +6143,9 @@ Library {
 	Line {
 	  SrcBlock		  "p2"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [20, 0]
 	  Branch {
+	    Points		    [0, -15; 0, -115]
 	    DstBlock		    "Scope2"
 	    DstPort		    2
 	  }
@@ -6157,7 +6159,7 @@ Library {
 	  SrcPort		  1
 	  Points		  [15, 0]
 	  Branch {
-	    Points		    [0, 20]
+	    Points		    [0, -110]
 	    DstBlock		    "Scope2"
 	    DstPort		    1
 	  }
@@ -6207,7 +6209,7 @@ Library {
 	Line {
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
-	  Points		  [35, 0; 0, 125; -805, 0]
+	  Points		  [55, 3; 0, 124; -845, -2]
 	  DstBlock		  "Sum1"
 	  DstPort		  2
 	}
@@ -7114,7 +7116,6 @@ Library {
 		Line {
 		  SrcBlock		  "phase Switch"
 		  SrcPort		  1
-		  Points		  [0, 5]
 		  DstBlock		  "Sum7"
 		  DstPort		  2
 		}
@@ -7128,7 +7129,6 @@ Library {
 		Line {
 		  SrcBlock		  "Mod 2pi5"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum6"
 		  DstPort		  1
 		}
@@ -7632,7 +7632,6 @@ Library {
 	Line {
 	  SrcBlock		  "Mod 2pi5"
 	  SrcPort		  1
-	  Points		  [0, -5]
 	  DstBlock		  "Sum6"
 	  DstPort		  1
 	}
@@ -7776,7 +7775,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -7843,7 +7842,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -8497,6 +8496,7 @@ Library {
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [495, 360, 605, 410]
       BackgroundColor	      "orange"
+      LibraryVersion	      "1.317"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -8506,8 +8506,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Foot"
-	Location		[1, 82, 959, 582]
-	Open			off
+	Location		[909, 48, 1918, 1079]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8518,13 +8518,15 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"113"
 	Block {
 	  BlockType		  Constant
 	  Name			  "Constant2"
 	  SID			  "100"
-	  Position		  [365, 336, 435, 364]
+	  Position		  [735, 206, 795, 224]
 	  ZOrder		  -4
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
 	  Value			  "water_level"
 	}
 	Block {
@@ -8532,7 +8534,7 @@ Library {
 	  Name			  "Demux"
 	  SID			  "101"
 	  Ports			  [1, 2]
-	  Position		  [800, 396, 805, 434]
+	  Position		  [800, 401, 805, 439]
 	  ZOrder		  -6
 	  ShowName		  off
 	  Outputs		  "2"
@@ -8545,7 +8547,7 @@ Library {
 	  }
 	  Port {
 	    PortNumber		    2
-	    Name		    "y-force"
+	    Name		    "z-force"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -8591,7 +8593,7 @@ Library {
 	  Name			  "Interpreted MATLAB\nFunction"
 	  SID			  "102"
 	  Ports			  [1, 1]
-	  Position		  [575, 415, 645, 445]
+	  Position		  [565, 415, 635, 445]
 	  ZOrder		  -2
 	  BlockMirror		  on
 	  MATLABFcn		  "water_model"
@@ -8607,7 +8609,7 @@ Library {
 	  Name			  "MATLAB Function"
 	  SID			  "103"
 	  Ports			  [1, 1]
-	  Position		  [755, 212, 825, 258]
+	  Position		  [565, 137, 635, 183]
 	  ZOrder		  -4
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -8653,7 +8655,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "55"
+	    SIDHighWatermark	    "5"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -8667,20 +8669,20 @@ Library {
 	      SID		      "103::2"
 	      Ports		      [1, 1]
 	      Position		      [270, 160, 320, 200]
-	      ZOrder		      6
+	      ZOrder		      14
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "103::3"
+	      SID		      "103::1"
 	      Tag		      "Stateflow S-Function WaterRunner_lib_2 2"
 	      Ports		      [1, 2]
 	      Position		      [180, 100, 230, 160]
-	      ZOrder		      5
+	      ZOrder		      13
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[1 2]"
-	      EnableBusSupport	      on
+	      EnableBusSupport	      off
 	      Port {
 		PortNumber		2
 		Name			"y"
@@ -8693,7 +8695,7 @@ Library {
 	      Name		      " Terminator "
 	      SID		      "103::4"
 	      Position		      [460, 171, 480, 189]
-	      ZOrder		      8
+	      ZOrder		      16
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -8703,15 +8705,9 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      " SFunction "
+	      SrcBlock		      "u"
 	      SrcPort		      1
-	      DstBlock		      " Demux "
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
+	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
@@ -8723,9 +8719,15 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "u"
+	      SrcBlock		      " Demux "
 	      SrcPort		      1
-	      DstBlock		      " SFunction "
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
 	      DstPort		      1
 	    }
 	  }
@@ -8733,10 +8735,13 @@ Library {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "105"
+	  SID			  "912"
 	  Ports			  [6, 1]
-	  Position		  [535, 172, 540, 298]
+	  Position		  [586, 320, 729, 325]
 	  ZOrder		  -12
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  Inputs		  "6"
 	  DisplayOption		  "bar"
@@ -8774,7 +8779,7 @@ Library {
 	  Name			  "PS-Sim1"
 	  SID			  "617"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [435, 198, 460, 212]
+	  Position		  [475, 208, 500, 222]
 	  ZOrder		  1
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
@@ -8791,7 +8796,7 @@ Library {
 	  Name			  "PS-Sim2"
 	  SID			  "618"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [445, 218, 470, 232]
+	  Position		  [500, 243, 525, 257]
 	  ZOrder		  1
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
@@ -8808,7 +8813,7 @@ Library {
 	  Name			  "PS-Sim3"
 	  SID			  "619"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [480, 238, 505, 252]
+	  Position		  [445, 268, 470, 282]
 	  ZOrder		  1
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
@@ -8825,7 +8830,7 @@ Library {
 	  Name			  "PS-Sim4"
 	  SID			  "620"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [380, 278, 405, 292]
+	  Position		  [400, 293, 425, 307]
 	  ZOrder		  1
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
@@ -8842,11 +8847,11 @@ Library {
 	  Name			  "Selector"
 	  SID			  "107"
 	  Ports			  [1, 1]
-	  Position		  [725, 381, 765, 459]
+	  Position		  [725, 402, 755, 438]
 	  ZOrder		  -17
-	  InputPortWidth	  "6"
+	  InputPortWidth	  "3"
 	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[4 5]"
+	  Indices		  "[1 2]"
 	  OutputSizes		  "1"
 	}
 	Block {
@@ -8934,8 +8939,8 @@ Library {
 	  SenseAngle3		  "off"
 	  SenseQ		  "off"
 	  SenseR		  "on"
-	  SenseOmegaX		  "on"
-	  SenseOmegaY		  "off"
+	  SenseOmegaX		  "off"
+	  SenseOmegaY		  "on"
 	  SenseOmegaZ		  "off"
 	  SenseOmega1		  "off"
 	  SenseOmega2		  "off"
@@ -8957,8 +8962,8 @@ Library {
 	  SenseAzim		  "off"
 	  SenseDist		  "off"
 	  SenseInc		  "off"
-	  SenseXDot		  "off"
-	  SenseYDot		  "on"
+	  SenseXDot		  "on"
+	  SenseYDot		  "off"
 	  SenseZDot		  "on"
 	  SenseRadDot		  "off"
 	  SenseAzimDot		  "off"
@@ -8982,7 +8987,7 @@ Library {
 	  ZOrder		  4
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/World Frame"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "WorldFrame"
 	  BlockFunction		  "simmechanics.library.frames_transforms.world_frame"
 	}
@@ -9004,11 +9009,11 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  Name			  "y-force"
+	  Name			  "z-force"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Demux"
 	  SrcPort		  2
-	  Points		  [0, -55]
+	  Points		  [10, 0; 0, -60]
 	  DstBlock		  "Mux1"
 	  DstPort		  3
 	}
@@ -9017,14 +9022,13 @@ Library {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
-	  Points		  [0, -45]
+	  Points		  [0, -50]
 	  DstBlock		  "Mux1"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Selector"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, -5]
 	  DstBlock		  "Demux"
 	  DstPort		  1
 	}
@@ -9036,44 +9040,20 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "theta"
-	  Labels		  [3, 0]
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  1
-	  Points		  [0, 50; -35, 0; 0, 55; 40, 0]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Line {
 	  Name			  "Force"
-	  Labels		  [0, 0]
+	  Labels		  [1, 0]
 	  SrcBlock		  "Interpreted MATLAB\nFunction"
 	  SrcPort		  1
-	  Points		  [-65, 0]
+	  Points		  [-50, 0]
 	  Branch {
-	    Labels		    [2, 0]
-	    Points		    [0, -65; 200, 0; 0, 55]
+	    Labels		    [2, 1]
+	    Points		    [0, 80; 195, 0; 0, -90]
 	    DstBlock		    "Selector"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [-20, 0]
+	    Points		    [-25, 0]
 	    DstBlock		    "Demux1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  Points		  [140, 0; 0, 5]
-	  Branch {
-	    Points		    [0, -5]
-	    DstBlock		    "MATLAB Function"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 190]
-	    DstBlock		    "Interpreted MATLAB\nFunction"
 	    DstPort		    1
 	  }
 	}
@@ -9084,15 +9064,15 @@ Library {
 	  DstPort		  RConn1
 	  Branch {
 	    ConnectType		    "SRC_DEST"
-	    SrcBlock		    "External Force \nand Torque"
-	    SrcPort		    RConn1
-	    Points		    [-105, 0; 0, -330]
-	  }
-	  Branch {
-	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "tail"
 	    SrcPort		    RConn1
 	    Points		    [45, 0]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "External Force \nand Torque"
+	    SrcPort		    RConn1
+	    Points		    [-105, 0; 0, -330]
 	  }
 	}
 	Line {
@@ -9110,74 +9090,102 @@ Library {
 	  DstPort		  RConn2
 	}
 	Line {
-	  SrcBlock		  "PS-Sim"
-	  SrcPort		  1
-	  Points		  [6, 0; 0, -20]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "PS-Sim1"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  2
+	  LineType		  "Connection"
+	  SrcBlock		  "Transform \nSensor"
+	  SrcPort		  RConn6
+	  Points		  [10, 0]
+	  DstBlock		  "PS-Sim4"
+	  DstPort		  LConn1
 	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "PS-Sim1"
 	  SrcPort		  LConn1
-	  Points		  [0, 20]
+	  Points		  [0, 10]
 	  DstBlock		  "Transform \nSensor"
 	  DstPort		  RConn3
-	}
-	Line {
-	  SrcBlock		  "PS-Sim2"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  3
 	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Transform \nSensor"
 	  SrcPort		  RConn4
-	  Points		  [55, 0]
+	  Points		  [110, 0]
 	  DstBlock		  "PS-Sim2"
 	  DstPort		  LConn1
-	}
-	Line {
-	  SrcBlock		  "PS-Sim3"
-	  SrcPort		  1
-	  DstBlock		  "Mux"
-	  DstPort		  4
 	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "PS-Sim3"
 	  SrcPort		  LConn1
-	  Points		  [-30, 0; 0, 20]
+	  Points		  [0, -10]
 	  DstBlock		  "Transform \nSensor"
 	  DstPort		  RConn5
 	}
 	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Transform \nSensor"
-	  SrcPort		  RConn6
-	  DstBlock		  "PS-Sim4"
-	  DstPort		  LConn1
+	  Name			  "theta"
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Labels		    [2, 0]
+	    Points		    [120, 0; 0, 190]
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [5, 0]
+	    DstBlock		    "Mux"
+	    DstPort		    5
+	  }
 	}
 	Line {
-	  SrcBlock		  "PS-Sim4"
+	  SrcBlock		  "PS-Sim"
 	  SrcPort		  1
-	  Points		  [45, 0; 0, -20]
+	  Points		  [20, 0; 0, -45]
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  Points		  [0, 100]
+	  DstBlock		  "Interpreted MATLAB\nFunction"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PS-Sim1"
+	  SrcPort		  1
+	  Points		  [165, 0]
 	  DstBlock		  "Mux"
-	  DstPort		  5
+	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Constant2"
 	  SrcPort		  1
-	  Points		  [40, 0; 0, -65]
+	  Points		  [-10, 0]
 	  DstBlock		  "Mux"
 	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "PS-Sim2"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "PS-Sim4"
+	  SrcPort		  1
+	  Points		  [215, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "PS-Sim3"
+	  SrcPort		  1
+	  Points		  [145, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Demux1"
@@ -9243,7 +9251,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"motor"
-	Location		[1, 48, 1219, 1079]
+	Location		[899, 48, 1918, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9744,7 +9752,7 @@ Library {
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -9800,7 +9808,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -10769,7 +10777,7 @@ Library {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 21:03:37
+#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 13:50:40
 #
 #
 
@@ -10901,7 +10909,7 @@ Stateflow {
   chart {
     id			    9
     name		    "Water Foot/MATLAB Function"
-    windowPosition	    [405.75 173.25 200.25 189.75]
+    windowPosition	    [435.75 143.25 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1920 1080 1.25]
     treeNode		    [0 10 0 0]
@@ -10909,7 +10917,8 @@ Stateflow {
     firstJunction	    11
     viewObj		    9
     machine		    1
-    toolbarMode		    LIBRARY_TOOLBAR
+    subviewS {
+    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -10934,7 +10943,7 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = fcn(u)\n%#codegen\n    theta = -1*atan2(u(11),u(10));\n    \ny = theta;"
+      script		      "function y = fcn(u)\n%#codegen\n    theta = -1*atan2(u(2),u(1));\n    \ny = theta;"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
