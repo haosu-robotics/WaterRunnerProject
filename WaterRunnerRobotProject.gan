@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Untitled Gantt Project" company="" webLink="http://" view-date="2013-02-05" view-index="0" gantt-divider-location="449" resource-divider-location="300" version="2.0" locale="en_US">
+<project name="Water Runner Project" company="NanoLab, CMU" webLink="http://nanolab.me.cmu.edu/" view-date="2013-02-03" view-index="0" gantt-divider-location="449" resource-divider-location="300" version="2.0" locale="en_US">
     <description/>
-    <view zooming-state="default:0" id="gantt-chart">
+    <view zooming-state="default:6" id="gantt-chart">
         <field id="tpd3" name="Name" width="65" order="0"/>
         <field id="tpd4" name="Begin date" width="18" order="1"/>
-        <field id="tpd5" name="End date" width="15" order="2"/>
+        <field id="tpd5" name="End date" width="16" order="2"/>
+        <option id="taskLabelUp" value="resources"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="70" order="0"/>
-        <field id="1" name="Default role" width="29" order="1"/>
+        <field id="0" name="Name" width="33" order="0"/>
+        <field id="1" name="Default role" width="33" order="1"/>
+        <field id="tpc0" name="" width="33" order="2"/>
     </view>
     <!-- -->
     <calendars>
@@ -16,7 +18,7 @@
             <day-type id="0"/>
             <day-type id="1"/>
             <calendar id="1" name="default">
-                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <default-week sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
                 <only-show-weekends value="false"/>
                 <overriden-day-types/>
                 <days/>
@@ -36,37 +38,120 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="4" name="Impelentation of Robot Model in 2G" color="#8cb6ce" meeting="false" start="2013-02-05" duration="2" complete="0" expand="true">
-            <task id="5" name="Adapt Ground contanct" color="#8cb6ce" meeting="false" start="2013-02-05" duration="2" complete="0" expand="true"/>
-            <task id="16" name="Porting Water Contact Model" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-            <task id="21" name="Verification with 1G" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true">
-                <task id="24" name="Rotation Speed Search" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-                <task id="25" name="Duty Factor Search" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-                <task id="26" name="COG analysis" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
+        <task id="4" name="Impelentation of Robot Model in 2G" color="#8cb6ce" meeting="false" start="2013-02-05" duration="44" complete="0" expand="true">
+            <depend id="22" type="2" difference="0" hardness="Strong"/>
+            <task id="5" name="Adapt Ground contanct" color="#ffff00" meeting="false" start="2013-02-05" duration="3" complete="0" expand="true"/>
+            <task id="16" name="Porting Water Contact Model" color="#ffff00" meeting="false" start="2013-02-05" duration="3" complete="0" expand="true"/>
+            <task id="21" name="Verification with 1G" color="#8cb6ce" meeting="false" start="2013-03-18" duration="3" complete="0" expand="true">
+                <task id="24" name="Rotation Speed Search" color="#999900" meeting="false" start="2013-03-18" duration="1" complete="0" expand="true">
+                    <depend id="25" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="25" name="Duty Factor Search" color="#999900" meeting="false" start="2013-03-19" duration="1" complete="0" expand="true">
+                    <depend id="26" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="26" name="COG analysis" color="#999900" meeting="false" start="2013-03-20" duration="1" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true">
-            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true">
-                <task id="20" name="Natural Frequency Inestigation" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
+        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-11" duration="21" complete="0" expand="true">
+            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-11" duration="10" complete="0" expand="true">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+                <task id="20" name="Natural Frequency Inestigation" color="#33ff33" meeting="false" start="2013-02-11" duration="5" complete="0" expand="true">
+                    <depend id="32" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="32" name="Study Factor" color="#33ff33" meeting="false" start="2013-02-16" duration="5" complete="0" expand="true"/>
             </task>
-            <task id="18" name="Quadruped Plate" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true">
-                <task id="19" name="Control Deisgn" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
+            <task id="18" name="Quadruped Plate" color="#8cb6ce" meeting="false" start="2013-02-21" duration="11" complete="0" expand="true">
+                <task id="38" name="Dynamics Analysis" color="#339900" meeting="false" start="2013-02-21" duration="4" complete="0" expand="true">
+                    <depend id="19" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="19" name="Simple Control Deisgn" color="#339900" meeting="false" start="2013-02-25" duration="7" complete="0" expand="true">
+                    <depend id="325" type="2" difference="0" hardness="Strong"/>
+                </task>
             </task>
         </task>
-        <task id="22" name="Analysis of Complex Model" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-        <task id="23" name="task_23" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-        <task id="9" name="Hardware" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true">
-            <task id="8" name="Order PCB" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-            <task id="10" name="Design Testing Setup" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-            <task id="11" name="Assemble Robot" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
+        <task id="22" name="Complex Model" color="#8cb6ce" meeting="false" start="2013-03-21" duration="14" complete="0" expand="true">
+            <depend id="369" type="2" difference="0" hardness="Strong"/>
+            <task id="327" name="Analysis" color="#8cb6ce" meeting="false" start="2013-03-21" duration="7" complete="0" expand="true">
+                <depend id="325" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="325" name="Robot Control Design" color="#8cb6ce" meeting="false" start="2013-03-28" duration="7" complete="0" expand="true"/>
         </task>
-        <task id="12" name="IROS13" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-        <task id="13" name="BioLocomotion Talk" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-        <task id="14" name="Auke Meeting" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
-        <task id="15" name="ICRA14" color="#8cb6ce" meeting="false" start="2013-02-05" duration="1" complete="0" expand="true"/>
+        <task id="9" name="Hardware" color="#006666" meeting="false" start="2013-02-05" duration="58" complete="0" expand="true">
+            <depend id="369" type="2" difference="0" hardness="Strong"/>
+            <task id="242" name="Select IMU" color="#006666" meeting="false" start="2013-02-05" duration="3" complete="0" expand="true"/>
+            <task id="8" name="Design &amp; Order PCB" color="#006666" meeting="false" start="2013-02-10" duration="4" complete="0" priority="2" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Rubber"/>
+                <depend id="11" type="2" difference="0" hardness="Rubber"/>
+            </task>
+            <task id="10" name="Design Testing Setup" color="#006666" meeting="false" start="2013-02-15" duration="21" complete="0" expand="true">
+                <depend id="270" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="270" name="Builting The Setup" color="#006666" meeting="false" start="2013-03-08" duration="27" complete="0" expand="true"/>
+            <task id="11" name="Assemble Robot" color="#006666" meeting="false" start="2013-02-28" duration="8" complete="0" expand="true"/>
+        </task>
+        <task id="12" name="IROS13/Writing" color="#8cb6ce" meeting="false" start="2013-03-01" duration="14" complete="0" expand="true">
+            <depend id="13" type="2" difference="0" hardness="Rubber"/>
+            <task id="39" name="First Scratch" color="#ff9999" meeting="false" start="2013-03-01" duration="7" complete="0" expand="true">
+                <depend id="40" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="40" name="Final" color="#ff9999" meeting="false" start="2013-03-08" duration="7" complete="0" expand="true"/>
+        </task>
+        <task id="13" name="BioLocomotion Talk" color="#ff0000" meeting="false" start="2013-03-18" duration="5" complete="0" expand="true"/>
+        <task id="14" name="Auke Meeting" color="#cc00cc" meeting="false" start="2013-02-21" duration="1" complete="0" expand="true"/>
+        <task id="369" name="First Experiments" color="#0000ff" meeting="false" start="2013-04-04" duration="14" complete="0" expand="true"/>
+        <task id="367" name="KDC Project" color="#ff9900" meeting="false" start="2013-04-18" duration="7" complete="0" expand="true"/>
+        <task id="15" name="ICRA14" color="#8cb6ce" meeting="false" start="2013-08-15" duration="30" complete="0" expand="true"/>
     </tasks>
-    <resources/>
-    <allocations/>
+    <resources>
+        <custom-property-definition id="tpc0" name="" type="text"/>
+        <resource id="0" name="Nitish" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="Mahdi" function="1" contacts="" phone=""/>
+        <resource id="2" name="Jason" function="2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="8" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="32" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="38" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="327" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="325" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="39" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="242" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="369" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="367" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="26" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="32" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="38" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="327" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="325" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="369" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="367" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="11" resource-id="1" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="2" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="270" resource-id="2" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="242" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="369" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="367" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="11" resource-id="2" function="2" responsible="true" load="100.0"/>
+    </allocations>
     <vacations/>
     <taskdisplaycolumns>
         <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
@@ -78,10 +163,14 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="293" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="81" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="71" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="283" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="78" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="69" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Simulation Manager"/>
+        <role id="2" name="Hardware Manager"/>
+    </roles>
 </project>
