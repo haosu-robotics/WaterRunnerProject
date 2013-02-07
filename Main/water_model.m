@@ -4,11 +4,11 @@ function y = Foot(u)
     % ind  1 2 3  4   5      6   
 
     %Read in variables
-    position = u(1) %z posiiton
-    velocity = [-1*u(2), u(3)]   %x, z veolcity
-	theta = u(5)
-    omega = -1*u(4)
-	water_level = u(6)
+    position = u(1); %z posiiton
+    velocity = [-1*u(2), u(3)];   %x, z veolcity
+	theta = u(5);
+    omega = 1*u(4);
+	water_level = u(6);
  
     %Hard coded parameters to be replaced with globals
 	radiusDwn = 0.02;
@@ -84,13 +84,13 @@ function y = Foot(u)
             radius = radiusDwn;
 			force2 = 0;
             moment2 = 0;
-            force2 = integral(@force_s, -1*radius, -1*radius + 2*percentSub*radius);
-            moment2 = integral(@moment_s, -1*radius, -1*radius + 2*percentSub*radius);
+            %force2 = integral(@force_s, -1*radius, -1*radius + 2*percentSub*radius);
+            %moment2 = integral(@moment_s, -1*radius, -1*radius + 2*percentSub*radius);
 		end
     end
 
-    force_x = -1 * force1*sin(theta) + force2*cos(theta);
-    force_z =      force1*cos(theta) + force2*sin(theta);
+    force_x = force1*sin(theta) + force2*cos(theta);
+    force_z = force1*cos(theta) + force2*sin(theta);
     torque_y = moment1 + moment2;
     
 	F_3DOF = [force_x force_z torque_y];

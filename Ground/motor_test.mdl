@@ -6,11 +6,11 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.102"
+    ComputedModelVersion    "1.103"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   slprops.hdlmdlprops {
     $PropName		    "HDLParams"
     $ObjectID		    1
@@ -40,11 +40,11 @@ Model {
   Creator		  "nitisht"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 31 21:55:31 2013"
-  RTWModifiedTimeStamp	  281569894
-  ModelVersionFormat	  "1.%<AutoIncrement:102>"
+  LastModifiedDate	  "Wed Feb 06 14:57:06 2013"
+  RTWModifiedTimeStamp	  282063351
+  ModelVersionFormat	  "1.%<AutoIncrement:103>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -82,6 +82,7 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "motor_test"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -629,6 +630,13 @@ Model {
 	  Version		  "1.12.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    ""
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
 	}
 	SSC.SimscapeCC {
 	  $ObjectID		  15
@@ -819,7 +827,7 @@ Model {
   }
   System {
     Name		    "motor_test"
-    Location		    [1, 82, 959, 854]
+    Location		    [1, 620, 1919, 893]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1262,7 +1270,7 @@ Model {
       Ports		      [1, 2, 0, 0, 0, 1, 1]
       Position		      [445, 62, 555, 158]
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.305"
+      LibraryVersion	      "1.307"
       SourceBlock	      "WaterRunner_lib_2/motor"
       SourceType	      "SubSystem"
     }
@@ -1373,10 +1381,6 @@ Model {
       Points		      [-35, 0]
       DstBlock		      "Sum"
       DstPort		      2
-    }
-    Annotation {
-      SID		      "36"
-      Position		      [253, 167]
     }
   }
 }

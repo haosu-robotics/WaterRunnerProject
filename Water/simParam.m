@@ -16,12 +16,12 @@ frame_width  = 0.125;
 frame_length = 0.25;
 frame_height = 0.02;
 
-body_size = [frame_length frame_height frame_width];    % in m
+body_size = [frame_length frame_width frame_height];    % in m
 
-FR_TR = [ frame_length/2    0  frame_width/2 ];
-FL_TR = [ frame_length/2    0 -frame_width/2 ];
-HR_TR = [-frame_length/2+L5 0  frame_width/2 ];
-HL_TR = [-frame_length/2+L5 0 -frame_width/2 ];
+FR_TR = [ frame_length/2    frame_width/2 0];
+FL_TR = [ frame_length/2    -frame_width/2 0];
+HR_TR = [-frame_length/2+L5 frame_width/2 0];
+HL_TR = [-frame_length/2+L5 -frame_width/2 0];
 
 frame_mass = 0.060;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
