@@ -49,6 +49,8 @@ Thumbs.db
 *.swp
 *.m~
 *.mdl.autosave
+*.swn
+*.swo
 
 #Media#
 #####################
