@@ -1,5 +1,6 @@
 # Compiled source #
 ###################
+*.mexa64
 *.com
 *.class
 *.dll
@@ -10,8 +11,8 @@
 *.bbl
 *.out
 *.blg
-SimWriteup/report.pdf
-Simulation/plots*/*
+*/slprj/*
+*.pyc
 
 # Packages #
 ############
@@ -46,5 +47,18 @@ Thumbs.db
 #Temp Files#
 #####################
 *.swp
-*.swo
-*.pyc
+*.m~
+*.mdl.autosave
+
+#Media#
+#####################
+*.png
+*.pdf
+*.fig
+*.avi
+*.mp4
+*.wmv
+*.WMV
+
+#Data#
+*.mat
