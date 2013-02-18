@@ -4,7 +4,7 @@ clear all
 
 SimParam
 
-Amp = leg_length/4;
+Amp = leg_length/2;
 
 load_system('water_hopper.mdl');
 T_des = 20;

@@ -6,11 +6,11 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.20"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -29,11 +29,11 @@ Model {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 08 18:40:10 2013"
-  RTWModifiedTimeStamp	  282245851
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  LastModifiedDate	  "Wed Feb 13 15:51:35 2013"
+  RTWModifiedTimeStamp	  282664904
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -71,6 +71,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "water_hopper"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -136,7 +137,7 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.12.0"
 	  StartTime		  "0.0"
-	  StopTime		  "5"
+	  StopTime		  "100"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -706,7 +707,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 344, 100, 1257, 738 ] 
+      ConfigPrmDlgPosition     [ 344, 100, 1269, 750 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -975,7 +976,7 @@ Model {
   }
   System {
     Name		    "water_hopper"
-    Location		    [10, 82, 790, 832]
+    Location		    [1, 48, 959, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -987,9 +988,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "84"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "113"
+    SIDHighWatermark	    "118"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1265,13 +1266,30 @@ Model {
       Name		      "Compare\nTo Constant"
       SID		      "74"
       Ports		      [1, 1]
-      Position		      [510, 125, 540, 155]
+      Position		      [510, 100, 540, 130]
       ZOrder		      -5
+      NamePlacement	      "alternate"
       LibraryVersion	      "1.260"
       SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
       SourceType	      "Compare To Constant"
       relop		      "<="
-      const		      "-2*leg_length"
+      const		      "-2*Amp"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant1"
+      SID		      "116"
+      Ports		      [1, 1]
+      Position		      [510, 175, 540, 205]
+      ZOrder		      -5
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.260"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      ">"
+      const		      "100"
       OutDataTypeStr	      "boolean"
       ZeroCross		      on
     }
@@ -1449,7 +1467,7 @@ Model {
       Position		      [510, 24, 540, 56]
       ZOrder		      -16
       Floating		      off
-      Location		      [1, 48, 1601, 859]
+      Location		      [2, 49, 960, 547]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -1467,6 +1485,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
+      TimeRange		      "20"
       YMin		      "-0.053045"
       YMax		      "-0.053005"
       SaveToWorkspace	      on
@@ -1513,7 +1532,7 @@ Model {
       Position		      [675, 217, 730, 318]
       ZOrder		      -16
       Floating		      off
-      Location		      [428, 56, 1212, 851]
+      Location		      [2, 49, 960, 1078]
       Open		      off
       NumInputPorts	      "4"
       List {
@@ -1525,7 +1544,7 @@ Model {
       }
       List {
 	ListType		ScopeGraphics
-	FigureColor		"[0.5 0.5 0.5]"
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
 	AxesColor		"[0 0 0]"
 	AxesTickColor		"[1 1 1]"
 	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
@@ -1534,8 +1553,9 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      YMin		      "-5~-5~-5~-5"
-      YMax		      "5~5~5~5"
+      TimeRange		      "20"
+      YMin		      "2.77556e-17~-5~-1.38778e-17~-0.1"
+      YMax		      "0.5~40~0.2~0.5"
       SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -1624,8 +1644,17 @@ Model {
       BlockType		      Stop
       Name		      "Stop Simulation"
       SID		      "73"
-      Position		      [580, 122, 615, 158]
+      Position		      [585, 97, 620, 133]
       ZOrder		      -4
+      NamePlacement	      "alternate"
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation1"
+      SID		      "117"
+      Position		      [585, 172, 620, 208]
+      ZOrder		      -4
+      NamePlacement	      "alternate"
     }
     Block {
       BlockType		      SubSystem
@@ -2268,22 +2297,30 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[0, 100]
-	Branch {
-	  Points		  [0, 90]
-	  Branch {
-	    Labels		    [-1, 1]
-	    DstBlock		    "Scope2"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Sum"
-	    DstPort		    1
-	  }
-	}
+	Points			[-1, 0; 0, 75]
 	Branch {
 	  DstBlock		  "Compare\nTo Constant"
 	  DstPort		  1
+	}
+	Branch {
+	  Points		  [1, 70]
+	  Branch {
+	    Points		    [-1, 45; 1, 0]
+	    Branch {
+	      Labels		      [-1, 1]
+	      DstBlock		      "Scope2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 5]
+	    DstBlock		    "Compare\nTo Constant1"
+	    DstPort		    1
+	  }
 	}
       }
     }
@@ -2423,18 +2460,24 @@ Model {
       DstPort		      3
     }
     Line {
-      SrcBlock		      "Compare\nTo Constant"
-      SrcPort		      1
-      DstBlock		      "Stop Simulation"
-      DstPort		      1
-    }
-    Line {
       LineType		      "Connection"
       SrcBlock		      "pattern and power"
       SrcPort		      LConn1
       Points		      [-40, 0]
       DstBlock		      "Prismatic1"
       DstPort		      LConn2
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant1"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation1"
+      DstPort		      1
     }
     Annotation {
       SID		      "57"
