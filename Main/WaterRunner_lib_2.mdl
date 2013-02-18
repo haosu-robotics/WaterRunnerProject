@@ -16,9 +16,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 06 17:28:44 2013"
+  LastModifiedDate	  "Thu Feb 07 14:36:25 2013"
   RTWModifiedTimeStamp	  282067590
-  ModelVersionFormat	  "1.%<AutoIncrement:338>"
+  ModelVersionFormat	  "1.%<AutoIncrement:339>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -952,7 +952,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [1, 510, 562, 1079]
+    Location		    [1, 698, 1919, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -966,7 +966,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "124"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "951"
+    SIDHighWatermark	    "977"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -1343,7 +1343,7 @@ Library {
       MaskValueString	      "0.8|0.8|-1|0.01|1|1|1|1|1|1"
       System {
 	Name			"Ground\nContact"
-	Location		[227, 82, 1588, 830]
+	Location		[1, 48, 823, 379]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1564,7 +1564,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Ground Friction Model"
-	    Location		    [227, 82, 1588, 847]
+	    Location		    [825, 48, 1919, 1079]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1894,7 +1894,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"t-Axis Kinetic Friction Model"
-		Location		[227, 82, 1588, 847]
+		Location		[825, 48, 1919, 1079]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -4016,7 +4016,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4074,7 +4074,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4148,7 +4148,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -4221,7 +4221,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -4254,7 +4254,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -4320,7 +4320,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "None"
 	  TranslationLengthUnit	  "m"
@@ -4353,7 +4353,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "None"
 	  TranslationLengthUnit	  "m"
@@ -4585,7 +4585,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4618,7 +4618,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4652,7 +4652,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4744,7 +4744,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -4834,7 +4834,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4870,7 +4870,7 @@ Library {
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4903,7 +4903,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -4936,7 +4936,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -4976,7 +4976,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "StandardAxis"
 	  TranslationLengthUnit	  "m"
@@ -5010,7 +5010,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -5067,7 +5067,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -5107,7 +5107,7 @@ Library {
 	  ZOrder		  9
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Joints/Revolute Joint"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RevoluteJoint"
 	  SenseConstraintForceX	  "off"
 	  SenseConstraintForceY	  "off"
@@ -6057,6 +6057,7 @@ Library {
       Ports		      [1, 1, 0, 0, 0, 1, 1]
       Position		      [510, 174, 615, 276]
       BackgroundColor	      "yellow"
+      LibraryVersion	      "*1.338"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -6066,8 +6067,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Motor_new"
-	Location		[564, 48, 1919, 1079]
-	Open			on
+	Location		[961, 698, 1439, 1079]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6078,7 +6079,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"112"
+	ZoomFactor		"158"
 	Block {
 	  BlockType		  Inport
 	  Name			  "desired\nspeed"
@@ -6126,7 +6127,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Motor Dynamics"
-	    Location		    [398, 425, 1293, 831]
+	    Location		    [481, 698, 959, 1079]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6138,7 +6139,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "159"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Control Input"
@@ -6497,18 +6498,19 @@ Library {
 	    }
 	    Line {
 	      LineType		      "Connection"
-	      SrcBlock		      "Ideal Torque Sensor"
-	      SrcPort		      RConn1
-	      Points		      [5, 0; 0, 75; -180, 0]
+	      Points		      [420, 135; 0, 20]
+	      DstBlock		      "Mechanical\nRotational Reference"
+	      DstPort		      LConn1
 	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"DC Motor"
-		DstPort			RConn2
+		ConnectType		"SRC_SRC"
+		Points			[165, 0; 15, 0; 0, -75]
+		DstBlock		"Ideal Torque Sensor"
+		DstPort			RConn1
 	      }
 	      Branch {
-		ConnectType		"DEST_SRC"
-		DstBlock		"Mechanical\nRotational Reference"
-		DstPort			LConn1
+		ConnectType		"SRC_SRC"
+		DstBlock		"DC Motor"
+		DstPort			RConn2
 	      }
 	    }
 	    Line {
@@ -6579,7 +6581,7 @@ Library {
 	  Name			  "Mux1"
 	  SID			  "896"
 	  Ports			  [3, 1]
-	  Position		  [1005, 228, 1010, 312]
+	  Position		  [1025, 228, 1030, 312]
 	  ZOrder		  -12
 	  ShowName		  off
 	  Inputs		  "3"
@@ -6661,41 +6663,10 @@ Library {
 	}
 	Block {
 	  BlockType		  Scope
-	  Name			  "Scope"
-	  SID			  "899"
-	  Ports			  [1]
-	  Position		  [530, 149, 560, 181]
-	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [188, 390, 512, 629]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  off
-	  SaveName		  "ScopeData1"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Scope
 	  Name			  "Scope2"
 	  SID			  "900"
 	  Ports			  [3]
-	  Position		  [1210, 254, 1240, 286]
+	  Position		  [1170, 94, 1200, 126]
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [-2, 54, 1594, 865]
@@ -6790,7 +6761,7 @@ Library {
 	  Name			  "Sum1"
 	  SID			  "902"
 	  Ports			  [2, 1]
-	  Position		  [230, 260, 260, 290]
+	  Position		  [185, 260, 215, 290]
 	  ZOrder		  -18
 	  ShowName		  off
 	  IconShape		  "round"
@@ -6876,6 +6847,39 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Motor Dynamics"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute Joint"
+	  DstPort		  LConn2
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "Gain3"
+	  SrcPort		  1
+	  DstBlock		  "Motor Dynamics"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Motor Dynamics"
+	  SrcPort		  1
+	  DstBlock		  "energy"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 125; -855, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Gain3"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "desired\nspeed"
 	  SrcPort		  1
 	  DstBlock		  "Gain2"
@@ -6890,9 +6894,9 @@ Library {
 	Line {
 	  SrcBlock		  "p3"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [25, 0]
 	  Branch {
-	    Points		    [0, -20]
+	    Points		    [0, -180]
 	    DstBlock		    "Scope2"
 	    DstPort		    3
 	  }
@@ -6904,8 +6908,9 @@ Library {
 	Line {
 	  SrcBlock		  "p2"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [20, 0]
 	  Branch {
+	    Points		    [0, -160]
 	    DstBlock		    "Scope2"
 	    DstPort		    2
 	  }
@@ -6919,7 +6924,7 @@ Library {
 	  SrcPort		  1
 	  Points		  [15, 0]
 	  Branch {
-	    Points		    [0, 20]
+	    Points		    [0, -140]
 	    DstBlock		    "Scope2"
 	    DstPort		    1
 	  }
@@ -6967,13 +6972,6 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  Points		  [35, 0; 0, 125; -805, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Revolute Joint"
 	  SrcPort		  RConn1
@@ -6987,39 +6985,9 @@ Library {
 	  DstBlock		  "Rigid \nTransform"
 	  DstPort		  RConn1
 	}
-	Line {
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "Gain3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Motor Dynamics"
-	  SrcPort		  1
-	  DstBlock		  "energy"
-	  DstPort		  1
-	}
-	Line {
-	  Labels		  [0, 0]
-	  SrcBlock		  "Gain3"
-	  SrcPort		  1
-	  Points		  [25, 0]
-	  Branch {
-	    DstBlock		    "Motor Dynamics"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -110]
-	    DstBlock		    "Scope"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Motor Dynamics"
-	  SrcPort		  RConn1
-	  DstBlock		  "Revolute Joint"
-	  DstPort		  LConn2
+	Annotation {
+	  SID			  "957"
+	  Position		  [417, 425]
 	}
       }
     }
@@ -8535,7 +8503,7 @@ Library {
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -8602,7 +8570,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -9265,7 +9233,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Foot"
-	Location		[1, 48, 562, 480]
+	Location		[946, 48, 1919, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10007,7 +9975,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"motor"
-	Location		[1, 48, 1219, 1079]
+	Location		[589, 48, 1919, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10508,7 +10476,7 @@ Library {
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Rigid \nTransform"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "RigidTransform"
 	  TranslationMethod	  "Cartesian"
 	  TranslationLengthUnit	  "m"
@@ -10564,7 +10532,7 @@ Library {
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Body Elements/Solid"
-	  SourceType		  "Unknown"
+	  SourceType		  ""
 	  ClassName		  "Solid"
 	  InertiaType		  "CalculateFromGeometry"
 	  Mass			  "1"
@@ -11781,6 +11749,12 @@ Stateflow {
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 0]
+    linkNode		    [1 0 17]
+  }
+  target {
+    id			    17
+    name		    "rtw"
+    machine		    1
+    linkNode		    [1 16 0]
   }
 }
