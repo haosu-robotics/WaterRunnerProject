@@ -46,6 +46,7 @@ Thumbs.db
 #Temp Files#
 #####################
 *.swp
+*.swo
 *.m~
 *.mdl.autosave
 
