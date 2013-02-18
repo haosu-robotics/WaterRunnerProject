@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Water Runner Project" company="NanoLab, CMU" webLink="http://nanolab.me.cmu.edu/" view-date="2013-01-27" view-index="0" gantt-divider-location="449" resource-divider-location="300" version="2.0" locale="en_US">
+<project name="Water Runner Project" company="NanoLab, CMU" webLink="http://nanolab.me.cmu.edu/" view-date="2013-01-27" view-index="0" gantt-divider-location="389" resource-divider-location="300" version="2.0" locale="en_US">
     <description/>
-    <view zooming-state="default:6" id="gantt-chart">
-        <field id="tpd3" name="Name" width="62" order="0"/>
-        <field id="tpd4" name="Begin date" width="13" order="1"/>
-        <field id="tpd5" name="End date" width="23" order="2"/>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="61" order="0"/>
+        <field id="tpd4" name="Begin date" width="14" order="1"/>
+        <field id="tpd5" name="End date" width="24" order="2"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="36" order="0"/>
-        <field id="1" name="Default role" width="31" order="1"/>
-        <field id="tpc0" name="" width="31" order="2"/>
+        <field id="0" name="Name" width="34" order="0"/>
+        <field id="1" name="Default role" width="32" order="1"/>
+        <field id="tpc0" name="" width="32" order="2"/>
     </view>
     <!-- -->
     <calendars>
@@ -51,11 +51,10 @@
                 <task id="26" name="COG analysis" color="#999900" meeting="false" start="2013-03-21" duration="1" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-11" duration="21" complete="9" expand="true">
-            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-11" duration="10" complete="20" expand="true">
-                <depend id="14" type="2" difference="0" hardness="Strong"/>
+        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-11" duration="22" complete="27" expand="true">
+            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-11" duration="11" complete="45" expand="true">
                 <depend id="18" type="2" difference="0" hardness="Strong"/>
-                <task id="20" name="Natural Frequency Inestigation" color="#33ff33" meeting="false" start="2013-02-11" duration="5" complete="40" expand="true">
+                <task id="20" name="Natural Frequency Inestigation" color="#33ff33" meeting="false" start="2013-02-11" duration="5" complete="100" expand="true">
                     <notes><![CDATA[DONE:
 Have analytic equation to predict steady-state height
 Sweeps frequency amplitude observed height, power, oscillation
@@ -67,12 +66,14 @@ Look at stability of one leg]]></notes>
                     <depend id="32" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="32" name="Duty Factor" color="#33ff33" meeting="false" start="2013-02-16" duration="5" complete="0" expand="true"/>
+                <task id="374" name="Simple Controller" color="#66ff33" meeting="false" start="2013-02-18" duration="4" complete="0" expand="true"/>
             </task>
-            <task id="18" name="Quadruped Plate" color="#8cb6ce" meeting="false" start="2013-02-21" duration="11" complete="0" expand="true">
-                <task id="38" name="Dynamics Analysis" color="#339900" meeting="false" start="2013-02-21" duration="4" complete="0" expand="true">
+            <task id="18" name="Quadruped Plate" color="#8cb6ce" meeting="false" start="2013-02-22" duration="11" complete="0" expand="true">
+                <task id="38" name="Dynamics Analysis" color="#339900" meeting="false" start="2013-02-22" duration="4" complete="0" expand="true">
+                    <depend id="14" type="2" difference="0" hardness="Strong"/>
                     <depend id="19" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="19" name="Simple Control Deisgn" color="#339900" meeting="false" start="2013-02-25" duration="7" complete="0" expand="true">
+                <task id="19" name="Simple Control Deisgn" color="#339900" meeting="false" start="2013-02-26" duration="7" complete="0" expand="true">
                     <depend id="325" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
@@ -105,7 +106,7 @@ Look at stability of one leg]]></notes>
             <task id="40" name="Final" color="#ff9999" meeting="false" start="2013-03-08" duration="7" complete="0" expand="true"/>
         </task>
         <task id="13" name="BioLocomotion Talk" color="#ff0000" meeting="false" start="2013-03-18" duration="5" complete="0" expand="true"/>
-        <task id="14" name="Auke Meeting" color="#cc00cc" meeting="false" start="2013-02-21" duration="1" complete="0" expand="true"/>
+        <task id="14" name="Auke Meeting" color="#cc00cc" meeting="false" start="2013-02-26" duration="1" complete="0" expand="true"/>
         <task id="369" name="First Experiments" color="#0000ff" meeting="false" start="2013-04-04" duration="14" complete="0" expand="true"/>
         <task id="367" name="KDC Project" color="#ff9900" meeting="false" start="2013-04-18" duration="7" complete="0" expand="true"/>
         <task id="15" name="ICRA14" color="#8cb6ce" meeting="false" start="2013-08-15" duration="30" complete="0" expand="true"/>
@@ -170,9 +171,9 @@ Look at stability of one leg]]></notes>
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="275" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="62" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="106" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="236" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="55" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="92" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
