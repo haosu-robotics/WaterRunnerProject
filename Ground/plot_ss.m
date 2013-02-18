@@ -24,10 +24,12 @@ plot(SS,COT)
 hold on
 xlabel('Rotation speed [rad/s]')
 ylabel('Cost of Transport')
+%ylim([0 10])
 set(gca, 'Color', 'None')
 
 figure(4)
 scatter(robot_speed,COT,'o')
 xlabel('Robot Speed [m/s]')
 ylabel('Cost of Transport')
+%ylim([0 8])
 set(gca, 'Color', 'None')

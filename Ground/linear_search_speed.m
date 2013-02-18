@@ -3,21 +3,27 @@ close all
 clear all
 
 tic;
-load_system('WaterRunner_ground.mdl');
+load_system('WaterRunner_nofeet.mdl');
 
-SS = 2:2:120;
+SS = [0:2:120];
 
 robot_speed = nan(size(SS));
 robot_vert_low  = nan(size(SS));
 robot_vert_high = nan(size(SS));
 robot_pow = nan(size(SS));
 robot_angle = nan(size(SS));
+COT = nan(size(SS));
 
 for k = 1 : numel(SS)
 	speed = SS(k)
     simParams
-
-	sim('WaterRunner_ground.mdl');
+	
+	try
+		sim('WaterRunner_nofeet.mdl');
+	catch
+		disp(sprintf('Error at speed %d rad/s', speed))
+		continue;
+	end
     
 	if sum(stopped.Data)
 		continue
@@ -47,12 +53,12 @@ for k = 1 : numel(SS)
     power = power/(position.time(end)-position.time(ind));
     
     robot_pow(k) = power;
+
+	g = 9.81;
+	COT(k) = robot_pow(k) / (robot_speed(k) * totalMass * g);
+	plot_ss;
 end
 
-close_system('WaterRunner.mdl');
-
-g = 9.81;
-COT = robot_pow ./ (robot_speed * totalMass * g);
 
 save('speed.mat')
 toc;

@@ -17,9 +17,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 24 19:46:16 2013"
-  RTWModifiedTimeStamp	  280954553
-  ModelVersionFormat	  "1.%<AutoIncrement:164>"
+  LastModifiedDate	  "Wed Feb 06 12:42:43 2013"
+  RTWModifiedTimeStamp	  282055351
+  ModelVersionFormat	  "1.%<AutoIncrement:172>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -908,7 +908,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [1, 48, 1919, 785]
+    Location		    [1, 313, 937, 548]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -920,9 +920,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "143"
+    ZoomFactor		    "112"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "477"
+    SIDHighWatermark	    "506"
     Block {
       BlockType		      SubSystem
       Name		      "Ground Foot"
@@ -1242,7 +1242,7 @@ Library {
       BlockType		      SubSystem
       Name		      "Ground Reaction"
       SID		      "385"
-      Ports		      [0, 0, 0, 0, 0, 1]
+      Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [495, 650, 620, 700]
       ZOrder		      1
       BackgroundColor	      "black"
@@ -1255,7 +1255,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Ground Reaction"
-	Location		[1, 48, 1919, 634]
+	Location		[1, 48, 912, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2687,6 +2687,17 @@ Library {
 	}
 	Block {
 	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "478"
+	  Ports			  [3, 1]
+	  Position		  [820, 461, 825, 499]
+	  ZOrder		  -12
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
 	  Name			  "Mux1"
 	  SID			  "463"
 	  Ports			  [3, 1]
@@ -2711,14 +2722,6 @@ Library {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator"
-	  SID			  "465"
-	  Position		  [585, 510, 605, 530]
-	  ZOrder		  -9
-	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Selector
@@ -2768,6 +2771,14 @@ Library {
 	  BackgroundColor	  "darkGreen"
 	  Port			  "1"
 	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "to scope"
+	  SID			  "479"
+	  Position		  [860, 473, 890, 487]
+	  ZOrder		  -23
+	  IconDisplay		  "Port number"
 	}
 	Line {
 	  SrcBlock		  "Ground1"
@@ -2871,22 +2882,44 @@ Library {
 	Line {
 	  SrcBlock		  "Ground Friction Model"
 	  SrcPort		  1
-	  Points		  [85, 0; 0, -230]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
+	  Points		  [85, 0]
+	  Branch {
+	    Points		    [0, -230]
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [70, 0; 0, 40]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Ground Friction Model"
 	  SrcPort		  2
-	  Points		  [100, 0; 0, -285]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
+	  Points		  [100, 0]
+	  Branch {
+	    Points		    [0, -285]
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [20, 0; 0, -10]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Ground Friction Model"
 	  SrcPort		  3
-	  Points		  [0, 0]
-	  DstBlock		  "Terminator"
+	  Points		  [120, 0; 0, -30]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "to scope"
 	  DstPort		  1
 	}
 	Annotation {
@@ -2919,8 +2952,8 @@ Library {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
-	Location		[1, 815, 964, 1079]
-	Open			on
+	Location		[1, 48, 763, 264]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3193,7 +3226,7 @@ Library {
 	  Name			  "Revolute2"
 	  SID			  "47"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [305, 25, 355, 75]
+	  Position		  [305, 24, 355, 76]
 	  ZOrder		  2
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Revolute"
@@ -3244,7 +3277,7 @@ Library {
 	  BlockType		  PMIOPort
 	  Name			  "end"
 	  SID			  "50"
-	  Position		  [540, 53, 570, 67]
+	  Position		  [565, 53, 595, 67]
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -3263,13 +3296,6 @@ Library {
 	  SrcPort		  RConn1
 	  DstBlock		  "Revolute1"
 	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "end"
-	  SrcPort		  RConn1
-	  DstBlock		  "L3_segment"
-	  DstPort		  RConn2
 	}
 	Line {
 	  LineType		  "Connection"
@@ -3314,6 +3340,13 @@ Library {
 	  DstBlock		  "motor"
 	  DstPort		  RConn1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "end"
+	  SrcPort		  RConn1
+	  DstBlock		  "L3_segment"
+	  DstPort		  RConn2
+	}
       }
     }
     Block {
@@ -3345,8 +3378,8 @@ Library {
       MaskValueString	      "initRobHeight"
       System {
 	Name			"Robot Body"
-	Location		[1, 48, 1919, 785]
-	Open			off
+	Location		[939, 48, 1919, 1079]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3357,16 +3390,16 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"133"
+	ZoomFactor		"89"
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux"
 	  SID			  "128"
-	  Ports			  [1, 2]
-	  Position		  [395, 391, 400, 429]
+	  Ports			  [1, 3]
+	  Position		  [395, 391, 400, 479]
 	  ZOrder		  -6
 	  ShowName		  off
-	  Outputs		  "2"
+	  Outputs		  "3"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    1
@@ -3385,11 +3418,11 @@ Library {
 	  BlockType		  Demux
 	  Name			  "Demux1"
 	  SID			  "129"
-	  Ports			  [1, 2]
-	  Position		  [385, 481, 390, 519]
+	  Ports			  [1, 3]
+	  Position		  [385, 516, 390, 604]
 	  ZOrder		  -6
 	  ShowName		  off
-	  Outputs		  "2"
+	  Outputs		  "3"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    1
@@ -3409,7 +3442,7 @@ Library {
 	  Name			  "Demux2"
 	  SID			  "295"
 	  Ports			  [1, 2]
-	  Position		  [385, 616, 390, 654]
+	  Position		  [385, 646, 390, 719]
 	  ZOrder		  -6
 	  ShowName		  off
 	  Outputs		  "2"
@@ -3517,7 +3550,7 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto"
 	  SID			  "131"
-	  Position		  [595, 355, 635, 385]
+	  Position		  [595, 397, 635, 413]
 	  ZOrder		  -10
 	  GotoTag		  "xpos"
 	  TagVisibility		  "global"
@@ -3526,7 +3559,7 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto1"
 	  SID			  "132"
-	  Position		  [590, 475, 630, 505]
+	  Position		  [590, 523, 630, 537]
 	  ZOrder		  -10
 	  GotoTag		  "ypos"
 	  TagVisibility		  "global"
@@ -3535,7 +3568,7 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto2"
 	  SID			  "133"
-	  Position		  [595, 405, 635, 435]
+	  Position		  [595, 427, 635, 443]
 	  ZOrder		  -10
 	  GotoTag		  "xvel"
 	  TagVisibility		  "global"
@@ -3544,7 +3577,7 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto3"
 	  SID			  "134"
-	  Position		  [590, 535, 630, 565]
+	  Position		  [590, 554, 630, 566]
 	  ZOrder		  -10
 	  GotoTag		  "yvel"
 	  TagVisibility		  "global"
@@ -3553,7 +3586,7 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto4"
 	  SID			  "296"
-	  Position		  [590, 610, 630, 640]
+	  Position		  [590, 656, 630, 674]
 	  ZOrder		  -10
 	  GotoTag		  "theta"
 	  TagVisibility		  "global"
@@ -3562,33 +3595,28 @@ Library {
 	  BlockType		  Goto
 	  Name			  "Goto5"
 	  SID			  "297"
-	  Position		  [590, 670, 630, 700]
+	  Position		  [590, 692, 630, 708]
 	  ZOrder		  -10
 	  GotoTag		  "omega"
 	  TagVisibility		  "global"
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "In-plane"
-	  SID			  "375"
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [95, 175, 145, 225]
-	  ZOrder		  11
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/In-plane"
-	  SourceType		  "In-plane"
-	  LConnTagsString	  "__newl0|SA1|SA2"
-	  RConnTagsString	  "__newr0|SA1|SA2"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "4"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic"
-	  ClassName		  "InplaneJoint"
-	  DialogClass		  "JointBlock"
-	  P1Axis		  "[1 0 0]"
-	  P2Axis		  "[0 1 0]"
+	  BlockType		  Goto
+	  Name			  "Goto6"
+	  SID			  "494"
+	  Position		  [595, 457, 635, 473]
+	  ZOrder		  -10
+	  GotoTag		  "xaccel"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto7"
+	  SID			  "495"
+	  Position		  [590, 584, 630, 596]
+	  ZOrder		  -10
+	  GotoTag		  "yaccel"
+	  TagVisibility		  "global"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3630,7 +3658,7 @@ Library {
 	  Name			  "Joint Sensor"
 	  SID			  "137"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 390, 320, 430]
+	  Position		  [280, 415, 320, 455]
 	  ZOrder		  5
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
@@ -3650,7 +3678,7 @@ Library {
 	  CoordPositionUnits	  "m"
 	  Velocity		  "on"
 	  VelocityUnits		  "m/s"
-	  Acceleration		  "off"
+	  Acceleration		  "on"
 	  AccelerationUnits	  "m/s^2"
 	  Quaternion		  "on"
 	  QuaternionDT		  "off"
@@ -3679,7 +3707,7 @@ Library {
 	  Name			  "Joint Sensor1"
 	  SID			  "138"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 480, 320, 520]
+	  Position		  [280, 540, 320, 580]
 	  ZOrder		  5
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
@@ -3699,7 +3727,7 @@ Library {
 	  CoordPositionUnits	  "m"
 	  Velocity		  "on"
 	  VelocityUnits		  "m/s"
-	  Acceleration		  "off"
+	  Acceleration		  "on"
 	  AccelerationUnits	  "m/s^2"
 	  Quaternion		  "on"
 	  QuaternionDT		  "off"
@@ -3728,7 +3756,7 @@ Library {
 	  Name			  "Joint Sensor2"
 	  SID			  "287"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 615, 320, 655]
+	  Position		  [280, 665, 320, 705]
 	  ZOrder		  5
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
@@ -3759,7 +3787,7 @@ Library {
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P1"
+	  Primitive		  "R1"
 	  Force			  "off"
 	  ForceUnits		  "N"
 	  Torque		  "off"
@@ -3810,6 +3838,30 @@ Library {
 	  BodyVisualizationType	  "Use model default body geometries"
 	  BodyColorSelMode	  "Use model default"
 	  DefaultBodyColor	  "[1 0 0]"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Planar"
+	  SID			  "506"
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
+	  Position		  [95, 175, 145, 225]
+	  ZOrder		  4
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Planar"
+	  SourceType		  "Planar"
+	  LConnTagsString	  "__newl0|SA1|SA2"
+	  RConnTagsString	  "__newr0|SA1|SA2"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "4"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic_prismatic"
+	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic#R1$World$[0 0 1]$revolute"
+	  ClassName		  "PlanarJoint"
+	  DialogClass		  "JointBlock"
+	  P1Axis		  "[1 0 0]"
+	  P2Axis		  "[0 1 0]"
+	  R1Axis		  "[0 0 1]"
 	}
 	Block {
 	  BlockType		  Reference
@@ -3919,7 +3971,7 @@ Library {
 	Line {
 	  LineType		  "Connection"
 	  Labels		  [0, 0]
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  RConn1
 	  DstBlock		  "Frame"
 	  DstPort		  LConn1
@@ -3934,7 +3986,7 @@ Library {
 	Line {
 	  LineType		  "Connection"
 	  Labels		  [1, 0]
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  LConn1
 	  Points		  [-29, 0]
 	  DstBlock		  "RootGround"
@@ -4008,7 +4060,7 @@ Library {
 	  SrcBlock		  "Joint Initial Condition"
 	  SrcPort		  RConn1
 	  Points		  [-50, 0; 0, 140]
-	  DstBlock		  "In-plane"
+	  DstBlock		  "Planar"
 	  DstPort		  LConn2
 	}
 	Line {
@@ -4019,9 +4071,9 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  RConn2
-	  Points		  [40, 0; 0, 300]
+	  Points		  [40, 0; 0, 360]
 	  DstBlock		  "Joint Sensor1"
 	  DstPort		  LConn1
 	}
@@ -4036,7 +4088,6 @@ Library {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
-	  Points		  [175, 0]
 	  DstBlock		  "Goto"
 	  DstPort		  1
 	}
@@ -4061,7 +4112,6 @@ Library {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Demux1"
 	  SrcPort		  2
-	  Points		  [90, 0; 0, 40]
 	  DstBlock		  "Goto3"
 	  DstPort		  1
 	}
@@ -4075,9 +4125,9 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  RConn3
-	  Points		  [90, 0; 0, 195]
+	  Points		  [90, 0; 0, 220]
 	  DstBlock		  "Joint Sensor"
 	  DstPort		  LConn1
 	}
@@ -4094,7 +4144,6 @@ Library {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Demux2"
 	  SrcPort		  2
-	  Points		  [90, 0; 0, 40]
 	  DstBlock		  "Goto5"
 	  DstPort		  1
 	}
@@ -4106,11 +4155,23 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
+	  SrcBlock		  "Planar"
 	  SrcPort		  LConn3
-	  Points		  [0, 35; 110, 0; 0, 385]
+	  Points		  [0, 35; 110, 0; 0, 435]
 	  DstBlock		  "Joint Sensor2"
 	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  DstBlock		  "Goto6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "Goto7"
+	  DstPort		  1
 	}
 	Annotation {
 	  SID			  "374"
@@ -4456,7 +4517,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "59"
+	    SIDHighWatermark	    "64"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -4930,7 +4991,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "55"
+	    SIDHighWatermark	    "65"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -6121,7 +6182,7 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"121"
-	SIDHighWatermark	"569"
+	SIDHighWatermark	"764"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"

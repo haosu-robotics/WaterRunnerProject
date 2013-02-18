@@ -2,7 +2,7 @@ water_level = 0;
 initRobHeight = 0.2;
 
 %%%%%%% motors parameters %%%%%%%
-speed = 10;   % rotation speed in rad/s
+speed = 9.5;   % rotation speed in rad/s
 duty_factor = .5;
 switch_angle = 0;
 

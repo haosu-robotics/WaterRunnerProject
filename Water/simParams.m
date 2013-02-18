@@ -123,7 +123,7 @@ L3_inertia = diag([I 0 I]);
 
 %%%%%%%% Tail Parameters %%%%%%%
 
-tail_angle = 0 * pi/180;
+tail_angle = 15 * pi/180;
 L_tail = .1;
 Tail_CS1 = [0 0 0];     % using adjoining
 Tail_CG  = [0 L_tail/2 0];

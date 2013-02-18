@@ -4,7 +4,7 @@ function blkStruct = slblocks
 % Library's name. The name appears in the Library Browser's  
 % contents pane.  
  
-blkStruct.Name = ['Water Runner' sprintf('\n') 'Library'];  
+blkStruct.Name = ['Water Runner' sprintf('\n') 'Library V1'];  
  
 % The function that will be called when the user double-clicks on
 % the library's name. 
