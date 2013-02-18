@@ -3,23 +3,23 @@ world:
     gravity: -9.81
     timeStep: 1.e-3
     timeStepFine: 2.e-6
-    frameRate: .0075
-    endTime: 5.
-    plotTimeStart: 3.
-    plotTimeEnd: 5
+    frameRate: .015
+    endTime: 2.0
+    plotTimeStart: 1.5
+    plotTimeEnd: 2.0
     movie: True
     plots: True
 
 robot:
     len: 0.3
     width: 0.125
-    mass: 0.05
+    mass: 0.025
     Iroll: 5.05e-4
     Ipitch: 1.08e-3
     Iyaw: 1.24e-3
     lCOM: 0.
     hCOM: 0.002
-    initPos: [0, 0.075]
+    initPos: [0, 0.025]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
     leg0Pos: [-0.086625, 0]
@@ -33,7 +33,7 @@ leg:
 
 motor:
     initPos: 0.
-    initSpeed: 12.
+    initSpeed: 70.
     initAccel: 0.
     voltage: 6.
     J: 3.e-10

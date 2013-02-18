@@ -60,7 +60,7 @@ class Foot():
 	def calcForce(self):
 		normalVect = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
 		normalVelComp = np.dot(normalVect, self.speed)
-		
+		#print normalVect, normalVelComp
 		#unfolded state
 		if normalVelComp >= 0:
 			if  self.y_bf(self.radius) > 0:
@@ -72,7 +72,7 @@ class Foot():
 				if self.theta >= 0:
 					self.percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta + np.pi))
 				else:
-					self.percentSub = -1.*self.y_bf(self.radiusUp)/(-2.*self.radiusUp*np.sin(self.theta))
+					self.percentSub = -1.*self.y_bf(self.radius)/(-2.*self.radius*np.sin(self.theta))
 				if self.percentSub > 1:
 					self.percentSub = 1.
 				normal1 = np.array([np.sin(self.theta), -1.*np.cos(self.theta)])
@@ -80,7 +80,6 @@ class Foot():
 				force2 = 0
 		#folded state
 		else:
-			print normalVect, normalVelComp
 			if  self.y_bf(self.radiusUp) > 0:
 				self.loadx = 0.
 				self.loady = 0.
