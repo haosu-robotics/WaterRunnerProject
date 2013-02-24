@@ -1,3 +1,5 @@
+%2D sweep
+
 SimParam;
 
 forceRatio = (r2/r1)^2;
@@ -6,7 +8,7 @@ load_system('water_hopper.mdl');
 T_des = 20;
 
 freqs = 12:8:100;
-amps = 0.01:0.01:0.1;
+amps = 0.06;
 
 [FREQ, AMP] = meshgrid(freqs,amps);
 

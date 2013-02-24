@@ -1,14 +1,14 @@
-function h =  SSheight(omega,Amp,radius,m,forceRatio,numLegs)
-	
+function h =  SSheight2(omega,Amp,radius,m,forceRatio,area)
+	%analytic solution to steady state height
 	C_d = 0.703;
 	density = 1000;
 	g = 9.81;
-	S = pi*radius^2;
+	S = area*(pi*radius^2);
 
 	b = 0.5*C_d*S*density;
 	k = C_d*S*density*g;
 	
-	W = m*g*numLegs;
+	W = m*g;
 	
 	C1 = (omega^2)*b*Amp*(1-forceRatio)/(4*pi);
 	C2 = k*(1 + forceRatio)/(2*pi);
@@ -19,9 +19,4 @@ function h =  SSheight(omega,Amp,radius,m,forceRatio,numLegs)
 
 	h = (-B - sqrt(B^2 - 4*A*C))/(2*A);
 	
-	%{
-	fun = @(h)hfunc2(omega,Amp,b,k,W,forceRatio,numLegs,h);
-	h0 = Amp/2;
-	h = fsolve(fun,h0);
-	%}
 end
