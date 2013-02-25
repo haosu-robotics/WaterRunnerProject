@@ -1,12 +1,16 @@
 global r1 forceRatio mass
 
+T_des = 100;
+
 mass = 0.025;
 numLegs = 4;
 
 Amp = 0.0260;
+amp = Amp;
 leg_length = Amp;
-%freq = 70;
-%y_0 = Amp/2;
+freq = 84;
+df = 0.2;
+y_0 = Amp/2;
 
 r1 = 0.02;
 r2 = r1/4;
@@ -19,3 +23,5 @@ density = 1000;
 g = 9.81;
 C_d = 0.703;
 
+tau = 0.001;
+alpha = 30;

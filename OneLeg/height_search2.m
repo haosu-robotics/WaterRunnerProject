@@ -1,14 +1,12 @@
 %1-D sweep of frequency
 
 SimParam;
-Amp = 0.0260;
-area= 0.7968;
-forceRatio = (r2/r1)^2;
 
-load_system('water_hopper.mdl');
+load_system('water_hopper_df.mdl');
 T_des = 20;
 
 freqs = 12:2:100;
+df = 0.5;
 
 y_sim = nan(size(freqs));
 y_pred = nan(size(freqs));
@@ -17,28 +15,30 @@ power_pred = nan(size(freqs));
 y_pred2 = nan(size(freqs));
 power_pred2 = nan(size(freqs));
 
-robot_vert_avg =  open('height1.mat');
-rheights3 = robot_vert_avg.robot_vert_avg;
+%robot_vert_avg =  open('height1.mat');
+%rheights3 = robot_vert_avg.robot_vert_avg;
 
 for k = 1 : numel(freqs)
     freq = freqs(k)
 
-    y_pred(k) = real(SSheight(freq,Amp,r1,mass,forceRatio,area)+leg_length);
+    y_pred(k) = real(SSheight(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
 	if y_pred(k) < 0
 		y_pred(k) = nan;
 	else
 		power_pred(k) = SSpower(y_pred(k)-leg_length,freq,Amp,r1,forceRatio);
 	end
 
-	y_pred2(k) = real(SSheight2(freq,Amp,r1,mass,forceRatio,area)+leg_length);
+	y_pred2(k) = real(SSheight2(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
 	if y_pred2(k) < 0
 		y_pred2(k) = nan;
-	else
+	end
+	%{
 		power_pred2(k) = SSpower(y_pred2(k)-leg_length,freq,Amp,r1,forceRatio);
 	end
+	%}
 
     y_0 = Amp/2;
-	T_sim = sim('water_hopper.mdl',T_des);
+	T_sim = sim('water_hopper_df.mdl',T_des);
 
     if(T_sim(end) < T_des)
 		continue;
@@ -46,27 +46,30 @@ for k = 1 : numel(freqs)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     Y_ball = ball_position(:,2);
-	Work = Work(:,2);
+	%Work = Work(:,2);
     %%%% Trimming %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     Y_ball(T_sim <T_sim(end)/2) = [];
-	Work(T_sim <T_sim(end)/2) = [];
+	%Work(T_sim <T_sim(end)/2) = [];
 	T_sim(T_sim <T_sim(end)/2) = [];
     T_sim = T_sim - T_sim(1);
 
 	y_sim(k) = mean(Y_ball);
 	if y_sim(k) < 0
 		y_sim(k) = nan;
+	end
+	%{
 	else
 		fit2 = polyfit( T_sim, Work,1);
 		power_sim(k) = fit2(1);
 	end
+	%}
 
 end
 
 save('oneleg1.mat')
 
-figure(1)
-plot(12:2:100,rheights3,'k')
+figure(3)
+%plot(12:2:100,rheights3,'k')
 hold on
 plot(freqs,y_sim,'b')
 plot(freqs,y_pred,'g')
@@ -79,8 +82,10 @@ lgd = legend('Complex Simulation Height','Simple Simulation Height','Numerially 
 title('Amplitude = 0.0260 m, Projected Area = 0.7968')
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
+saveas(gcf,'heightdf.fig')
 
-figure(2)
+%{
+figure(4)
 plot(freqs,abs(y_sim-rheights3)./rheights3*100,'b')
 hold on
 plot(freqs,abs(y_pred-rheights3)./rheights3*100,'g')
@@ -93,7 +98,8 @@ lgd = legend('Simple Simulation Height','Numerially Calculated Height','Analytic
 title('Amplitude = 0.0260 m, Projected Area = 0.7968')
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
-
+saveas(gcf,'heightdferr.fig')
+%}
 %{
 figure(3)
 plot(freqs,power_sim,'b')
