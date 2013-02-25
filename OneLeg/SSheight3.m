@@ -16,12 +16,12 @@ function h =  SSheight3(coeff,omega)
 	
 	W = mass*g;
 	
-	C1 = (omega.^2)*b*Amp*(1-forceRatio)/(4*pi);
-	C2 = k*(1 + forceRatio)/(2*pi);
-	
-	A = C2/Amp;
+	C1 = (omega.^2)*b*Amp*(1/.DF-forceRatio./(1-DF))/(8*pi);
+	C2 = k*(DF + forceRatio*(1- DF))/pi;
+
+	A = C2./Amp;
 	B = -1*(2*C1 + C2*pi/2);
-	C = C1*pi.*Amp/2 + C2*Amp - W;
+	C = C1*pi.*Amp/2 + C2.*Amp - W;
 
 	h = (-B - sqrt(B.^2 - 4*A.*C))./(2*A) + Amp;
 	h(h<0) = 0;

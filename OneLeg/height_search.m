@@ -8,9 +8,9 @@ load_system('water_hopper.mdl');
 T_des = 20;
 
 freqs = 12:8:100;
-amps = 0.06;
+dfs = 0.06;
 
-[FREQ, AMP] = meshgrid(freqs,amps);
+[FREQ, DF] = meshgrid(freqs,amps);
 
 
 y_sim = nan(size(FREQ));
@@ -22,21 +22,17 @@ power_pred2 = nan(size(FREQ));
 
 for k = 1 : numel(FREQ)
     freq = FREQ(k)
-	Amp = AMP(k)
+	df = DF(k)
 	leg_length = Amp;
 
-    y_pred(k) = real(SSheight(freq,Amp,r1,mass,forceRatio,1)+leg_length);
+    y_pred(k) = real(SSheight(freq,df,Amp,r1,mass,forceRatio,1)+leg_length);
 	if y_pred(k) < 0
 		y_pred(k) = nan;
-	else
-		power_pred(k) = SSpower(y_pred(k)-leg_length,freq,Amp,r1,forceRatio);
 	end
 
-	y_pred2(k) = real(SSheight2(freq,Amp,r1,mass,forceRatio,1)+leg_length);
+	y_pred2(k) = real(SSheight2(freq,df,Amp,r1,mass,forceRatio,1)+leg_length);
 	if y_pred2(k) < 0
 		y_pred2(k) = nan;
-	else
-		power_pred2(k) = SSpower(y_pred2(k)-leg_length,freq,Amp,r1,forceRatio);
 	end
 
     y_0 = Amp/2;
@@ -68,37 +64,38 @@ end
 save('oneleg.mat')
 
 figure(1)
-surf(FREQ,AMP,y_sim,'FaceAlpha',0.5,'FaceColor','b')
+surf(FREQ,DF,y_sim,'FaceAlpha',0.5,'FaceColor','b')
 hold on
-surf(FREQ,AMP,y_pred,'FaceAlpha',.5,'FaceColor','g')
-surf(FREQ,AMP,y_pred2,'FaceAlpha',.5,'FaceColor','r')
+surf(FREQ,DF,y_pred,'FaceAlpha',.5,'FaceColor','g')
+surf(FREQ,DF,y_pred2,'FaceAlpha',.5,'FaceColor','r')
 hold off
 %axis([0, 100, 0, .1, -.1, .2])
 xlabel('Frequency [rad/s]')
-ylabel('Amplitude [m]')
+ylabel('Duty Factor [m]')
 zlabel('Height [m]')
 lgd = legend('Simulated Height','Predicted Height 1','Predicted Height 2','Location','NorthEast');
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
 
 figure(2)
-surf(FREQ,AMP,abs(y_pred-y_sim)./y_sim*100,'FaceAlpha',.5,'FaceColor','g')
+surf(FREQ,DF,abs(y_pred-y_sim)./y_sim*100,'FaceAlpha',.5,'FaceColor','g')
 hold on
-surf(FREQ,AMP,abs(y_pred2-y_sim)./y_sim*100,'FaceAlpha',.5,'FaceColor','r')
+surf(FREQ,DF,abs(y_pred2-y_sim)./y_sim*100,'FaceAlpha',.5,'FaceColor','r')
 hold off
 axis([0, 100, 0, .1, 0, 25])
 xlabel('Frequency [rad/s]')
-ylabel('Amplitude [m]')
+ylabel('Duty Factor')
 zlabel('Percent Error')
 lgd = legend('Predicted Height Error 1','Predicted Height Error 2','Location','NorthEast');
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
 
+%{
 figure(3)
-surf(FREQ,AMP,power_sim,'FaceAlpha',0.5,'FaceColor','b')
+surf(FREQ,DF,power_sim,'FaceAlpha',0.5,'FaceColor','b')
 hold on
-surf(FREQ,AMP,power_pred,'FaceAlpha',.5,'FaceColor','g')
-surf(FREQ,AMP,power_pred2,'FaceAlpha',.5,'FaceColor','r')
+surf(FREQ,DF,power_pred,'FaceAlpha',.5,'FaceColor','g')
+surf(FREQ,DF,power_pred2,'FaceAlpha',.5,'FaceColor','r')
 hold off
 %axis([0, 100, 0, .1, -.1, .2])
 xlabel('Frequency [rad/s]')
@@ -109,9 +106,9 @@ set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
 
 figure(4)
-surf(FREQ,AMP,abs(power_pred-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','g')
+surf(FREQ,DF,abs(power_pred-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','g')
 hold on
-surf(FREQ,AMP,abs(power_pred2-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','r')
+surf(FREQ,DF,abs(power_pred2-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','r')
 hold off
 axis([0, 100, 0, .1, 0, 25])
 xlabel('Frequency [rad/s]')
@@ -120,5 +117,5 @@ zlabel('Percent Error')
 lgd = legend('Predicted Power Error 1','Predicted Power Error 2','Location','NorthEast');
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
-
+%}
 

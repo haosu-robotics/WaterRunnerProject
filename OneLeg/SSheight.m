@@ -1,4 +1,4 @@
-function h =  SSheight(omega,A,radius,m,forceRatio,area)
+function h =  SSheight(omega,DF,A,radius,m,forceRatio,area)
 	%numerical solution to steady state height
 	C_d = 0.703;
 	density = 1000;
@@ -10,7 +10,7 @@ function h =  SSheight(omega,A,radius,m,forceRatio,area)
 	
 	W = m*g;
 	
-	fun = @(h)hfunc(omega,A,b,k,W,forceRatio,h);
+	fun = @(h)hfunc(omega,DF,A,b,k,W,forceRatio,h);
 	h0 = A/2;
 	
 	h = fsolve(fun,h0);
