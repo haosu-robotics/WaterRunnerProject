@@ -1,63 +1,25 @@
 Library {
   Name			  "WaterRunner_lib"
-  Version		  8.0
+  Version		  7.9
   MdlSubVersion		  0
   SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
+  LockLinksToLibrary	  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Object {
-    $PropName		    "BdWindowsInfo"
-    $ObjectID		    1
-    $ClassName		    "Simulink.BDWindowsInfo"
-    Object {
-      $PropName		      "WindowsInfo"
-      $ObjectID		      2
-      $ClassName	      "Simulink.WindowInfo"
-      IsActive		      [1]
-      Location		      [0.0, 19.0, 1920.0, 1061.0]
-      Object {
-	$PropName		"ModelBrowserInfo"
-	$ObjectID		3
-	$ClassName		"Simulink.ModelBrowserInfo"
-	Visible			[0]
-	DockPosition		"Left"
-	Width			[50]
-	Height			[50]
-	Filter			[9]
-      }
-      Object {
-	$PropName		"ExplorerBarInfo"
-	$ObjectID		4
-	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
-      }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"112"
-	Extents			[1882.0, 928.0]
-	ZoomFactor		[2.516457414319647]
-	Offset			[19.436623516720605, -16.767051392259983]
-      }
-    }
-  }
   Created		  "Tue Dec 18 17:01:26 2012"
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 19 19:50:49 2013"
-  RTWModifiedTimeStamp	  283203475
-  ModelVersionFormat	  "1.%<AutoIncrement:177>"
+  LastModifiedDate	  "Mon Feb 18 14:47:08 2013"
+  RTWModifiedTimeStamp	  283099624
+  ModelVersionFormat	  "1.%<AutoIncrement:173>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,14 +87,14 @@ Library {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      6
-      Version		      "1.12.1"
+      $ObjectID		      1
+      Version		      "1.12.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  7
-	  Version		  "1.12.1"
+	  $ObjectID		  2
+	  Version		  "1.12.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -166,8 +128,8 @@ Library {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  8
-	  Version		  "1.12.1"
+	  $ObjectID		  3
+	  Version		  "1.12.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -198,8 +160,8 @@ Library {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  9
-	  Version		  "1.12.1"
+	  $ObjectID		  4
+	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -254,8 +216,8 @@ Library {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  10
-	  Version		  "1.12.1"
+	  $ObjectID		  5
+	  Version		  "1.12.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -304,7 +266,7 @@ Library {
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
 	  InvalidFcnCallConnMsg	  "error"
-	  FcnCallInpInsideContextMsg "EnableAllAsWarning"
+	  FcnCallInpInsideContextMsg "Enable All"
 	  SignalLabelMismatchMsg  "none"
 	  UnconnectedInputMsg	  "warning"
 	  UnconnectedOutputMsg	  "warning"
@@ -340,12 +302,10 @@ Library {
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
 	  SFUnconditionalTransitionShadowingDiag "warning"
-	  SFUndirectedBroadcastEventsDiag "warning"
-	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  11
-	  Version		  "1.12.1"
+	  $ObjectID		  6
+	  Version		  "1.12.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -381,8 +341,8 @@ Library {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  12
-	  Version		  "1.12.1"
+	  $ObjectID		  7
+	  Version		  "1.12.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -396,8 +356,8 @@ Library {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  13
-	  Version		  "1.12.1"
+	  $ObjectID		  8
+	  Version		  "1.12.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -411,8 +371,8 @@ Library {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  14
-	  Version		  "1.12.1"
+	  $ObjectID		  9
+	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    9
@@ -431,7 +391,6 @@ Library {
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
-	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
 	  GenerateReport	  off
 	  SaveLog		  off
@@ -448,13 +407,6 @@ Library {
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
-	  PortableWordSizes	  off
-	  GenerateErtSFunction	  off
-	  CreateSILPILBlock	  "None"
-	  CodeExecutionProfiling  off
-	  CodeExecutionProfileVariable "executionProfile"
-	  CodeProfilingSaveOptions "SummaryOnly"
-	  CodeProfilingInstrumentation off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -474,8 +426,8 @@ Library {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      15
-	      Version		      "1.12.1"
+	      $ObjectID		      10
+	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -511,7 +463,6 @@ Library {
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
-	      OperatorAnnotations     off
 	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
@@ -534,15 +485,14 @@ Library {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
-	      InternalIdentifier      "Classic"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      16
-	      Version		      "1.12.1"
+	      $ObjectID		      11
+	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -570,6 +520,7 @@ Library {
 	      CodeReplacementLibrary  "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -600,6 +551,7 @@ Library {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
@@ -660,25 +612,6 @@ Library {
     FontSize		    9
     FontWeight		    "normal"
     FontAngle		    "normal"
-  }
-  MaskDefaults {
-    SelfModifiable	    "off"
-    IconFrame		    "on"
-    IconOpaque		    "on"
-    RunInitForIconRedraw    "off"
-    IconRotate		    "none"
-    PortRotate		    "default"
-    IconUnits		    "autoscale"
-  }
-  MaskParameterDefaults {
-    Evaluate		    "on"
-    Tunable		    "on"
-    NeverSave		    "off"
-    Internal		    "off"
-    ReadOnly		    "off"
-    Enabled		    "on"
-    Visible		    "on"
-    ToolTip		    "on"
   }
   BlockParameterDefaults {
     Block {
@@ -975,8 +908,8 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [0, 19, 987, 1080]
-    Open		    off
+    Location		    [1, 48, 959, 1079]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -989,14 +922,13 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "112"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "528"
+    SIDHighWatermark	    "511"
     Block {
       BlockType		      SubSystem
       Name		      "Ground Foot"
       SID		      "352"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [730, 362, 845, 408]
-      ZOrder		      -1
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1005,15 +937,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		17
-	$ClassName		"Simulink.Mask"
-	Description		"Rubber Foot for ground running modeled by PRBM"
-      }
+      MaskDescription	      "Rubber Foot for ground running modeled by PRBM"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
       System {
 	Name			"Ground Foot"
-	Location		[1054, 45, 1933, 923]
+	Location		[1088, 48, 1919, 691]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1249,7 +1181,6 @@ Library {
 	  Name			  "leg"
 	  SID			  "357"
 	  Position		  [25, 43, 55, 57]
-	  ZOrder		  -6
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -1258,7 +1189,6 @@ Library {
 	  Name			  "end"
 	  SID			  "358"
 	  Position		  [515, 43, 545, 57]
-	  ZOrder		  -7
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -1325,7 +1255,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Ground Reaction"
-	Location		[12, 45, 971, 1311]
+	Location		[1, 48, 912, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1436,7 +1366,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Ground Friction Model"
-	    Location		    [12, 45, 1011, 1121]
+	    Location		    [41, 44, 992, 885]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1531,7 +1461,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"Friction Switch"
-		Location		[226, 45, 1242, 1121]
+		Location		[260, 44, 1228, 885]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -1726,7 +1656,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"X-Axis Kinetic Friction Model"
-		Location		[604, 45, 1620, 1121]
+		Location		[638, 44, 1606, 885]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -1830,7 +1760,7 @@ Library {
 		  Position		  [355, 530, 395, 570]
 		  ZOrder		  -9
 		  ForegroundColor	  "red"
-		  LibraryVersion	  "1.281"
+		  LibraryVersion	  "1.260"
 		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 		  SourceType		  "Compare To Zero"
 		  relop			  "<"
@@ -2067,7 +1997,7 @@ Library {
 	      MaskHideContents	      off
 	      System {
 		Name			"X-Axis Static Friction Model"
-		Location		[226, 45, 1242, 1121]
+		Location		[260, 44, 1228, 885]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -2238,7 +2168,7 @@ Library {
 		  BlockMirror		  on
 		  ForegroundColor	  "red"
 		  ShowName		  off
-		  LibraryVersion	  "1.281"
+		  LibraryVersion	  "1.260"
 		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 		  SourceType		  "Compare To Zero"
 		  relop			  ">"
@@ -2255,7 +2185,7 @@ Library {
 		  ForegroundColor	  "red"
 		  NamePlacement		  "alternate"
 		  ShowName		  off
-		  LibraryVersion	  "1.281"
+		  LibraryVersion	  "1.260"
 		  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 		  SourceType		  "Compare To Zero"
 		  relop			  ">"
@@ -2814,7 +2744,7 @@ Library {
 	  ZOrder		  -11
 	  ForegroundColor	  "red"
 	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.281"
+	  LibraryVersion	  "1.260"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 	  SourceType		  "Compare To Zero"
 	  relop			  "<="
@@ -3006,7 +2936,6 @@ Library {
       SID		      "42"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
       Position		      [490, 487, 625, 543]
-      ZOrder		      -3
       BackgroundColor	      "magenta"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3015,15 +2944,15 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		18
-	$ClassName		"Simulink.Mask"
-	Description		"mask for leg"
-      }
+      MaskDescription	      "mask for leg"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
       System {
 	Name			"Leg"
-	Location		[12, 45, 822, 496]
+	Location		[1, 48, 763, 264]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3341,7 +3270,6 @@ Library {
 	  Name			  "motor"
 	  SID			  "49"
 	  Position		  [25, 43, 55, 57]
-	  ZOrder		  -7
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -3350,7 +3278,6 @@ Library {
 	  Name			  "end"
 	  SID			  "50"
 	  Position		  [565, 53, 595, 67]
-	  ZOrder		  -8
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -3360,7 +3287,6 @@ Library {
 	  Name			  "body"
 	  SID			  "51"
 	  Position		  [25, 113, 55, 127]
-	  ZOrder		  -9
 	  Port			  "3"
 	  Side			  "Left"
 	}
@@ -3429,7 +3355,6 @@ Library {
       SID		      "127"
       Ports		      [0, 0, 0, 0, 0, 5, 4]
       Position		      [165, 36, 365, 304]
-      ZOrder		      -4
       BackgroundColor	      "lightBlue"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3438,24 +3363,23 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		19
-	$ClassName		"Simulink.Mask"
-	Object {
-	  $PropName		  "Parameters"
-	  $ObjectID		  20
-	  $ClassName		  "Simulink.MaskParameter"
-	  Type			  "edit"
-	  Name			  "initRobHeight"
-	  Prompt		  "height"
-	  Value			  "initRobHeight"
-	}
-      }
+      MaskPromptString	      "height"
+      MaskStyleString	      "edit"
+      MaskVariables	      "initRobHeight=@1;"
+      MaskTunableValueString  "on"
+      MaskEnableString	      "on"
+      MaskVisibilityString    "on"
+      MaskToolTipString	      "on"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "initRobHeight"
       System {
 	Name			"Robot Body"
-	Location		[0, 19, 1017, 1080]
-	Open			off
+	Location		[961, 48, 1919, 371]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3466,7 +3390,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"88"
+	ZoomFactor		"89"
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux"
@@ -3697,10 +3621,10 @@ Library {
 	Block {
 	  BlockType		  Reference
 	  Name			  "In-plane"
-	  SID			  "527"
+	  SID			  "511"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [95, 175, 145, 225]
-	  ZOrder		  13
+	  ZOrder		  11
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/In-plane"
 	  SourceType		  "In-plane"
@@ -3734,12 +3658,12 @@ Library {
 	  PhysicalDomain	  "mechanical"
 	  ClassName		  "InitialCondition"
 	  DialogClass		  "InitialConditionBlock"
-	  InitialConditions	  "P1$true$0$m$deg$0$m/s$deg/s#P2$false$initRobHeight$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m/s$de"
-	  "g/s#R1$false$0$m$rad$0$m/s$rad/s#R2$false$0$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m$deg$0$m/s$de"
-	  "g/s"
+	  InitialConditions	  "P1$true$0$m$deg$0$m/s$deg/s#P2$true$initRobHeight$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m/s$deg"
+	  "/s#R1$false$0$m$rad$0$m/s$rad/s#R2$false$0$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m$deg$0$m/s$deg"
+	  "/s"
 	  P1PIC			  "0"
 	  P1VIC			  "0"
-	  P2PIC			  "0"
+	  P2PIC			  "initRobHeight"
 	  P2VIC			  "0"
 	  P3PIC			  "0"
 	  P3VIC			  "0"
@@ -3837,7 +3761,7 @@ Library {
 	  Width			  "2"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P1"
+	  Primitive		  "P2"
 	  Force			  "off"
 	  ForceUnits		  "N"
 	  Torque		  "off"
@@ -3905,7 +3829,6 @@ Library {
 	  SID			  "139"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [32, 420, 68, 450]
-	  ZOrder		  -23
 	  BlockRotation		  270
 	  NamePlacement		  "alternate"
 	  ShowName		  off
@@ -3945,7 +3868,6 @@ Library {
 	  SID			  "140"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [26, 240, 74, 285]
-	  ZOrder		  -24
 	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  UserDataPersistent	  on
@@ -3969,7 +3891,6 @@ Library {
 	  Name			  "Motor_FR"
 	  SID			  "141"
 	  Position		  [415, 43, 445, 57]
-	  ZOrder		  -25
 	  BlockMirror		  on
 	  Port			  "1"
 	  Side			  "Right"
@@ -3979,7 +3900,6 @@ Library {
 	  Name			  "passive_FR"
 	  SID			  "142"
 	  Position		  [415, 183, 445, 197]
-	  ZOrder		  -26
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -3989,7 +3909,6 @@ Library {
 	  Name			  "Motor_FL"
 	  SID			  "143"
 	  Position		  [465, 78, 495, 92]
-	  ZOrder		  -27
 	  BlockMirror		  on
 	  Port			  "3"
 	  Side			  "Left"
@@ -3999,7 +3918,6 @@ Library {
 	  Name			  "passive_FL"
 	  SID			  "144"
 	  Position		  [465, 218, 495, 232]
-	  ZOrder		  -28
 	  BlockMirror		  on
 	  Port			  "4"
 	  Side			  "Left"
@@ -4009,7 +3927,6 @@ Library {
 	  Name			  "Motor_HR"
 	  SID			  "145"
 	  Position		  [530, 113, 560, 127]
-	  ZOrder		  -29
 	  BlockMirror		  on
 	  Port			  "5"
 	  Side			  "Right"
@@ -4019,7 +3936,6 @@ Library {
 	  Name			  "passive_HR"
 	  SID			  "146"
 	  Position		  [530, 253, 560, 267]
-	  ZOrder		  -30
 	  BlockMirror		  on
 	  Port			  "6"
 	  Side			  "Right"
@@ -4029,7 +3945,6 @@ Library {
 	  Name			  "Motor_HL"
 	  SID			  "147"
 	  Position		  [595, 148, 625, 162]
-	  ZOrder		  -31
 	  BlockMirror		  on
 	  Port			  "7"
 	  Side			  "Left"
@@ -4039,7 +3954,6 @@ Library {
 	  Name			  "passive_HL"
 	  SID			  "148"
 	  Position		  [620, 288, 650, 302]
-	  ZOrder		  -32
 	  BlockMirror		  on
 	  Port			  "8"
 	  Side			  "Left"
@@ -4049,7 +3963,6 @@ Library {
 	  Name			  "Motor_Tail"
 	  SID			  "229"
 	  Position		  [415, 318, 445, 332]
-	  ZOrder		  -33
 	  BlockMirror		  on
 	  Port			  "9"
 	  Side			  "Left"
@@ -4071,10 +3984,10 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  Labels		  [0, 1]
+	  Labels		  [1, 0]
 	  SrcBlock		  "In-plane"
 	  SrcPort		  LConn1
-	  Points		  [-30, 0]
+	  Points		  [-29, 0]
 	  DstBlock		  "RootGround"
 	  DstPort		  RConn1
 	}
@@ -4143,11 +4056,11 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
-	  SrcPort		  LConn2
-	  Points		  [-17, 0; 0, -140]
-	  DstBlock		  "Joint Initial Condition"
-	  DstPort		  RConn1
+	  SrcBlock		  "Joint Initial Condition"
+	  SrcPort		  RConn1
+	  Points		  [-50, 0; 0, 140]
+	  DstBlock		  "In-plane"
+	  DstPort		  LConn2
 	}
 	Line {
 	  SrcBlock		  "Joint Sensor"
@@ -4159,7 +4072,7 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "In-plane"
 	  SrcPort		  RConn2
-	  Points		  [38, 0; 0, 360]
+	  Points		  [40, 0; 0, 360]
 	  DstBlock		  "Joint Sensor1"
 	  DstPort		  LConn1
 	}
@@ -4213,7 +4126,7 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "In-plane"
 	  SrcPort		  RConn3
-	  Points		  [66, 0; 0, 220]
+	  Points		  [90, 0; 0, 220]
 	  DstBlock		  "Joint Sensor"
 	  DstPort		  LConn1
 	}
@@ -4271,7 +4184,6 @@ Library {
       SID		      "260"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [215, 480, 315, 540]
-      ZOrder		      -5
       BackgroundColor	      "magenta"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4282,7 +4194,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Tail"
-	Location		[919, 153, 1933, 552]
+	Location		[953, 272, 1919, 436]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4378,7 +4290,6 @@ Library {
 	  Name			  "motor"
 	  SID			  "261"
 	  Position		  [25, 38, 55, 52]
-	  ZOrder		  -2
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -4387,7 +4298,6 @@ Library {
 	  Name			  "end"
 	  SID			  "262"
 	  Position		  [245, 38, 275, 52]
-	  ZOrder		  -3
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -4414,7 +4324,6 @@ Library {
       SID		      "279"
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [195, 361, 315, 409]
-      ZOrder		      -6
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4425,7 +4334,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Tail Pad"
-	Location		[12, 45, 1978, 923]
+	Location		[1, 48, 1919, 691]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4575,18 +4484,16 @@ Library {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  SFBlockType		  "MATLAB Function"
-	  Object {
-	    $PropName		    "MaskObject"
-	    $ObjectID		    21
-	    $ClassName		    "Simulink.Mask"
-	    Type		    "Stateflow"
-	    Description		    "Embedded MATLAB block"
-	    SelfModifiable	    "on"
-	    Display		    "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
-	    "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
-	    IconOpaque		    "off"
-	    IconUnits		    "normalized"
-	  }
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
+	  "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "normalized"
 	  Port {
 	    PortNumber		    1
 	    Name		    "theta"
@@ -4596,7 +4503,7 @@ Library {
 	  }
 	  System {
 	    Name		    "MATLAB Function"
-	    Location		    [223, 338, 826, 833]
+	    Location		    [257, 457, 812, 717]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4609,32 +4516,31 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "73"
+	    SIDHighWatermark	    "69"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
 	      SID		      "271::1"
 	      Position		      [20, 101, 40, 119]
-	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "271::71"
+	      SID		      "271::37"
 	      Ports		      [1, 1]
 	      Position		      [270, 160, 320, 200]
-	      ZOrder		      14
+	      ZOrder		      10
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "271::70"
+	      SID		      "271::36"
 	      Tag		      "Stateflow S-Function WaterRunner_lib 1"
 	      Ports		      [1, 2]
 	      Position		      [180, 100, 230, 160]
-	      ZOrder		      13
+	      ZOrder		      9
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[1 2]"
 	      EnableBusSupport	      off
@@ -4648,16 +4554,15 @@ Library {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "271::73"
+	      SID		      "271::39"
 	      Position		      [460, 171, 480, 189]
-	      ZOrder		      16
+	      ZOrder		      12
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "y"
 	      SID		      "271::5"
 	      Position		      [460, 101, 480, 119]
-	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -4745,7 +4650,6 @@ Library {
 	  Name			  "tail"
 	  SID			  "280"
 	  Position		  [25, 58, 55, 72]
-	  ZOrder		  -18
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -4894,7 +4798,6 @@ Library {
       SID		      "112"
       Ports		      [0, 1, 0, 0, 0, 1]
       Position		      [495, 360, 605, 410]
-      ZOrder		      -7
       BackgroundColor	      "orange"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4905,8 +4808,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Foot"
-	Location		[0, 19, 1920, 1080]
-	Open			on
+	Location		[1, 48, 1086, 691]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4917,7 +4820,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"251"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body Actuator"
@@ -5055,18 +4958,16 @@ Library {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  SFBlockType		  "MATLAB Function"
-	  Object {
-	    $PropName		    "MaskObject"
-	    $ObjectID		    22
-	    $ClassName		    "Simulink.Mask"
-	    Type		    "Stateflow"
-	    Description		    "Embedded MATLAB block"
-	    SelfModifiable	    "on"
-	    Display		    "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
-	    "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
-	    IconOpaque		    "off"
-	    IconUnits		    "normalized"
-	  }
+	  MaskType		  "Stateflow"
+	  MaskDescription	  "Embedded MATLAB block"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/"
+	  "eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  off
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "normalized"
 	  Port {
 	    PortNumber		    1
 	    Name		    "theta"
@@ -5076,7 +4977,7 @@ Library {
 	  }
 	  System {
 	    Name		    "MATLAB Function"
-	    Location		    [223, 338, 826, 833]
+	    Location		    [257, 457, 812, 717]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5089,35 +4990,34 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "84"
+	    SIDHighWatermark	    "70"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
 	      SID		      "103::1"
 	      Position		      [20, 101, 40, 119]
-	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "103::77"
+	      SID		      "103::2"
 	      Ports		      [1, 1]
 	      Position		      [270, 160, 320, 200]
-	      ZOrder		      10
+	      ZOrder		      6
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "103::76"
+	      SID		      "103::3"
 	      Tag		      "Stateflow S-Function WaterRunner_lib 2"
 	      Ports		      [1, 2]
 	      Position		      [180, 100, 230, 160]
-	      ZOrder		      9
+	      ZOrder		      5
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[1 2]"
-	      EnableBusSupport	      off
+	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
 		Name			"y"
@@ -5128,22 +5028,27 @@ Library {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "103::79"
+	      SID		      "103::4"
 	      Position		      [460, 171, 480, 189]
-	      ZOrder		      12
+	      ZOrder		      8
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "y"
 	      SID		      "103::5"
 	      Position		      [460, 101, 480, 119]
-	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "u"
+	      SrcBlock		      " SFunction "
 	      SrcPort		      1
-	      DstBlock		      " SFunction "
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
@@ -5155,15 +5060,9 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      " Demux "
+	      SrcBlock		      "u"
 	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      " SFunction "
-	      SrcPort		      1
-	      DstBlock		      " Demux "
+	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	  }
@@ -5185,13 +5084,6 @@ Library {
 	  ClassName		  "BranchingBar"
 	  DialogClass		  "MechanicalBranchingBarBlock"
 	  NumSAPorts		  "2"
-	}
-	Block {
-	  BlockType		  Memory
-	  Name			  "Memory"
-	  SID			  "528"
-	  Position		  [365, 175, 395, 205]
-	  ZOrder		  5
 	}
 	Block {
 	  BlockType		  Mux
@@ -5232,7 +5124,6 @@ Library {
 	  Name			  "leg"
 	  SID			  "113"
 	  Position		  [25, 63, 55, 77]
-	  ZOrder		  -18
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -5315,8 +5206,8 @@ Library {
 	  Points		  [-65, 0]
 	  Branch {
 	    Labels		    [2, 0]
-	    Points		    [0, -70]
-	    DstBlock		    "Memory"
+	    Points		    [0, -65; 200, 0; 0, 55]
+	    DstBlock		    "Selector"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -5373,13 +5264,6 @@ Library {
 	    DstPort		    1
 	  }
 	}
-	Line {
-	  SrcBlock		  "Memory"
-	  SrcPort		  1
-	  Points		  [95, 0; 0, 60]
-	  DstBlock		  "Selector"
-	  DstPort		  1
-	}
 	Annotation {
 	  SID			  "110"
 	  Position		  [595, 190]
@@ -5392,7 +5276,6 @@ Library {
       SID		      "52"
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [195, 645, 335, 700]
-      ZOrder		      -8
       BlockMirror	      on
       BackgroundColor	      "cyan"
       MinAlgLoopOccurrences   off
@@ -5404,7 +5287,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"contact_FR"
-	Location		[12, 545, 806, 1195]
+	Location		[1, 664, 747, 1079]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5423,7 +5306,6 @@ Library {
 	  SID			  "53"
 	  Ports			  [0, 0, 0, 0, 0, 4, 3]
 	  Position		  [41, 495, 144, 545]
-	  ZOrder		  -1
 	  BlockRotation		  270
 	  BackgroundColor	  "cyan"
 	  LibraryVersion	  "1.1"
@@ -5453,7 +5335,6 @@ Library {
 	  Name			  "F_external"
 	  SID			  "54"
 	  Position		  [335, 220, 365, 250]
-	  ZOrder		  -2
 	  BlockMirror		  on
 	  BackgroundColor	  "green"
 	  NamePlacement		  "alternate"
@@ -5465,7 +5346,6 @@ Library {
 	  SID			  "56"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [185, 569, 260, 611]
-	  ZOrder		  -3
 	  BlockMirror		  on
 	  BackgroundColor	  "orange"
 	  NamePlacement		  "alternate"
@@ -5501,7 +5381,6 @@ Library {
 	  SID			  "57"
 	  Ports			  [2, 1]
 	  Position		  [680, 501, 685, 539]
-	  ZOrder		  -4
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
@@ -5512,7 +5391,6 @@ Library {
 	  SID			  "58"
 	  Ports			  [1, 1]
 	  Position		  [385, 544, 485, 586]
-	  ZOrder		  -5
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -5522,7 +5400,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [12, 45, 1978, 866]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5540,7 +5418,6 @@ Library {
 	      Name		      "Y"
 	      SID		      "59"
 	      Position		      [95, 98, 125, 112]
-	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -5548,7 +5425,6 @@ Library {
 	      Name		      "Fcn2"
 	      SID		      "60"
 	      Position		      [190, 90, 250, 120]
-	      ZOrder		      -2
 	      Expr		      "u<0"
 	    }
 	    Block {
@@ -5556,7 +5432,6 @@ Library {
 	      Name		      "Stance"
 	      SID		      "61"
 	      Position		      [285, 98, 315, 112]
-	      ZOrder		      -3
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -5587,7 +5462,6 @@ Library {
 	  SID			  "64"
 	  Ports			  [0, 3, 0, 0, 0, 1]
 	  Position		  [170, 440, 210, 480]
-	  ZOrder		  -6
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
@@ -5637,7 +5511,6 @@ Library {
 	  SID			  "65"
 	  Ports			  [2, 1, 1]
 	  Position		  [400, 449, 640, 491]
-	  ZOrder		  -7
 	  NamePlacement		  "alternate"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -5648,7 +5521,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "X-Axis Sliding Friction Model"
-	    Location		    [12, 45, 1978, 866]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5666,7 +5539,6 @@ Library {
 	      Name		      "Vx [m/s]"
 	      SID		      "66"
 	      Position		      [100, 178, 130, 192]
-	      ZOrder		      -1
 	      BackgroundColor	      "darkGreen"
 	      NamePlacement	      "alternate"
 	      IconDisplay	      "Port number"
@@ -5676,7 +5548,6 @@ Library {
 	      Name		      "Fy_Ground [N]"
 	      SID		      "67"
 	      Position		      [435, 228, 465, 242]
-	      ZOrder		      -2
 	      BackgroundColor	      "darkGreen"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5687,7 +5558,6 @@ Library {
 	      SID		      "68"
 	      Ports		      []
 	      Position		      [295, 35, 315, 55]
-	      ZOrder		      -3
 	      ForegroundColor	      "red"
 	      BackgroundColor	      "black"
 	      StatesWhenEnabling      "reset"
@@ -5700,7 +5570,6 @@ Library {
 	      SID		      "69"
 	      Ports		      [2, 1]
 	      Position		      [495, 158, 520, 262]
-	      ZOrder		      -4
 	      ShowName		      off
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -5711,14 +5580,12 @@ Library {
 	      Name		      "Sign"
 	      SID		      "70"
 	      Position		      [175, 170, 205, 200]
-	      ZOrder		      -5
 	    }
 	    Block {
 	      BlockType		      Gain
 	      Name		      "reverse"
 	      SID		      "71"
 	      Position		      [240, 170, 285, 200]
-	      ZOrder		      -6
 	      Gain		      "-1"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -5729,7 +5596,6 @@ Library {
 	      Name		      "sliding friction\ncoefficient"
 	      SID		      "72"
 	      Position		      [330, 165, 420, 205]
-	      ZOrder		      -7
 	      BackgroundColor	      "green"
 	      Gain		      "mu_slide"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -5741,7 +5607,6 @@ Library {
 	      Name		      "Fx_sliding [N]"
 	      SID		      "73"
 	      Position		      [575, 203, 605, 217]
-	      ZOrder		      -8
 	      BackgroundColor	      "darkGreen"
 	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
 	      IconDisplay	      "Port number"
@@ -5798,7 +5663,6 @@ Library {
 	  SID			  "75"
 	  Ports			  [5, 0, 0, 0, 0, 0, 1]
 	  Position		  [140, 221, 270, 369]
-	  ZOrder		  -8
 	  BlockMirror		  on
 	  BackgroundColor	  "orange"
 	  NamePlacement		  "alternate"
@@ -5834,7 +5698,6 @@ Library {
 	  SID			  "76"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [160, 691, 250, 729]
-	  ZOrder		  -9
 	  BlockMirror		  on
 	  BackgroundColor	  "orange"
 	  LibraryVersion	  "1.1"
@@ -5865,7 +5728,6 @@ Library {
 	  SID			  "77"
 	  Ports			  [2, 1, 1]
 	  Position		  [405, 623, 640, 667]
-	  ZOrder		  -10
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -5875,7 +5737,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Y-Axis Ground Interaction Model"
-	    Location		    [12, 45, 1978, 866]
+	    Location		    [1, 48, 1919, 634]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5893,7 +5755,6 @@ Library {
 	      Name		      "Py [m]"
 	      SID		      "78"
 	      Position		      [30, 288, 60, 302]
-	      ZOrder		      -1
 	      BackgroundColor	      "darkGreen"
 	      NamePlacement	      "alternate"
 	      IconDisplay	      "Port number"
@@ -5903,7 +5764,6 @@ Library {
 	      Name		      "Vy [m/s]"
 	      SID		      "79"
 	      Position		      [30, 328, 60, 342]
-	      ZOrder		      -2
 	      BackgroundColor	      "darkGreen"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5914,7 +5774,6 @@ Library {
 	      SID		      "80"
 	      Ports		      []
 	      Position		      [295, 35, 315, 55]
-	      ZOrder		      -3
 	      ForegroundColor	      "red"
 	      BackgroundColor	      "black"
 	      StatesWhenEnabling      "reset"
@@ -5927,7 +5786,6 @@ Library {
 	      SID		      "81"
 	      Ports		      [2, 1]
 	      Position		      [105, 275, 110, 355]
-	      ZOrder		      -4
 	      ShowName		      off
 	      Inputs		      "2"
 	      DisplayOption	      "bar"
@@ -5937,7 +5795,6 @@ Library {
 	      Name		      "Y-Axis Ground Force"
 	      SID		      "82"
 	      Position		      [155, 295, 400, 335]
-	      ZOrder		      -5
 	      BackgroundColor	      "magenta"
 	      Expr		      "- 2.5e9*u(1)^3 * ( 1 - u(2) )"
 	    }
@@ -5946,7 +5803,6 @@ Library {
 	      Name		      "Fy_Ground [N]"
 	      SID		      "83"
 	      Position		      [480, 308, 510, 322]
-	      ZOrder		      -6
 	      BackgroundColor	      "darkGreen"
 	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
 	      IconDisplay	      "Port number"
@@ -5991,7 +5847,6 @@ Library {
 	  SID			  "85"
 	  Ports			  [0, 2, 0, 0, 0, 1]
 	  Position		  [165, 625, 215, 665]
-	  ZOrder		  -11
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
@@ -6039,7 +5894,6 @@ Library {
 	  Name			  "inverse"
 	  SID			  "86"
 	  Position		  [305, 276, 340, 314]
-	  ZOrder		  -12
 	  BlockMirror		  on
 	  ShowName		  off
 	  Gain			  "-1"
@@ -6052,7 +5906,6 @@ Library {
 	  Name			  "stiction\ncoefficient"
 	  SID			  "87"
 	  Position		  [326, 370, 414, 410]
-	  ZOrder		  -13
 	  BlockRotation		  270
 	  BackgroundColor	  "green"
 	  Gain			  "mu_stick"
@@ -6065,7 +5918,6 @@ Library {
 	  Name			  "Follower"
 	  SID			  "88"
 	  Position		  [45, 160, 75, 175]
-	  ZOrder		  -14
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  BackgroundColor	  "darkGreen"
@@ -6077,7 +5929,6 @@ Library {
 	  Name			  "Ground"
 	  SID			  "89"
 	  Position		  [40, 805, 70, 820]
-	  ZOrder		  -15
 	  BlockRotation		  270
 	  BackgroundColor	  "darkGreen"
 	  Port			  "2"
@@ -6291,7 +6142,6 @@ Library {
       SID		      "189"
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [495, 233, 605, 297]
-      ZOrder		      -9
       BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -6300,37 +6150,25 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		23
-	$ClassName		"Simulink.Mask"
-	Initialization		"set_param([gcb '/To Workspace'],'VariableName',variableName)"
-	SelfModifiable		"on"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  2
-	  Object {
-	    $ObjectID		    24
-	    Type		    "edit"
-	    Name		    "variableName"
-	    Prompt		    "Variable Name for Work"
-	    Value		    "work"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  Object {
-	    $ObjectID		    25
-	    Type		    "edit"
-	    Name		    "ic_angle"
-	    Prompt		    "initial angle"
-	    Value		    "0"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
+      MaskPromptString	      "Variable Name for Work|initial angle"
+      MaskStyleString	      "edit,edit"
+      MaskVariables	      "variableName=&1;ic_angle=@2;"
+      MaskTunableValueString  "off,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskInitialization      "set_param([gcb '/To Workspace'],'VariableName',variableName)"
+      MaskSelfModifiable      on
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "work|0"
       System {
 	Name			"motor"
-	Location		[12, 45, 1978, 1017]
+	Location		[1, 48, 1919, 785]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6343,7 +6181,7 @@ Library {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"121"
-	SIDHighWatermark	"881"
+	SIDHighWatermark	"803"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"
@@ -6456,7 +6294,6 @@ Library {
 	  SID			  "189:227"
 	  Ports			  [0, 1]
 	  Position		  [220, 137, 310, 193]
-	  ZOrder		  -13
 	  BackgroundColor	  "lightBlue"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -6467,7 +6304,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "PatternGenerator"
-	    Location		    [12, 459, 538, 1195]
+	    Location		    [1, 578, 479, 1079]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6691,7 +6528,6 @@ Library {
 	      Name		      "Pattern"
 	      SID		      "189:256"
 	      Position		      [1400, 213, 1430, 227]
-	      ZOrder		      -24
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -6922,7 +6758,6 @@ Library {
 	  SID			  "189:209"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [80, 29, 170, 81]
-	  ZOrder		  -20
 	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -6933,7 +6768,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "motor_body"
-	    Location		    [486, 111, 864, 448]
+	    Location		    [520, 230, 850, 332]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7051,7 +6886,6 @@ Library {
 	      Name		      "to_rev"
 	      SID		      "189:212"
 	      Position		      [275, 43, 305, 57]
-	      ZOrder		      -3
 	      BlockMirror	      on
 	      Port		      "1"
 	      Side		      "Right"
@@ -7061,7 +6895,6 @@ Library {
 	      Name		      "to_frame"
 	      SID		      "189:213"
 	      Position		      [25, 43, 55, 57]
-	      ZOrder		      -4
 	      Port		      "2"
 	      Side		      "Left"
 	    }
@@ -7093,7 +6926,6 @@ Library {
 	  Name			  "follower"
 	  SID			  "189:214"
 	  Position		  [420, 48, 450, 62]
-	  ZOrder		  -21
 	  BlockMirror		  on
 	  Port			  "1"
 	  Side			  "Right"
@@ -7103,7 +6935,6 @@ Library {
 	  Name			  "base"
 	  SID			  "189:215"
 	  Position		  [25, 48, 55, 62]
-	  ZOrder		  -22
 	  Port			  "2"
 	  Side			  "Left"
 	}
@@ -7225,7 +7056,6 @@ Library {
       SID		      "284"
       Ports		      [0, 1, 0, 0, 0, 1, 1]
       Position		      [495, 133, 605, 197]
-      ZOrder		      -10
       BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7234,54 +7064,23 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		26
-	$ClassName		"Simulink.Mask"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  3
-	  Object {
-	    $ObjectID		    27
-	    Type		    "edit"
-	    Name		    "speed"
-	    Prompt		    "Rotation Speed:"
-	    Value		    "speed"
-	  }
-	  Object {
-	    $ObjectID		    28
-	    Type		    "promote"
-	    Array {
-	      Type		      "Cell"
-	      Dimension		      1
-	      Cell		      "Ramp/X0"
-	      PropName		      "TypeOptions"
-	    }
-	    Name		    "X0"
-	    Prompt		    "Initial output:"
-	    Value		    "0"
-	  }
-	  Object {
-	    $ObjectID		    29
-	    Type		    "promote"
-	    Array {
-	      Type		      "Cell"
-	      Dimension		      1
-	      Cell		      "To Workspace/VariableName"
-	      PropName		      "TypeOptions"
-	    }
-	    Name		    "VariableName"
-	    Prompt		    "Variable name for Work:"
-	    Value		    "work"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
+      MaskPromptString	      "Rotation Speed:|Initial output:|Variable name for Work:"
+      MaskStyleString	      "edit,promote(Ramp/X0),promote(To Workspace/VariableName)"
+      MaskVariables	      "speed=@1;X0=@2;VariableName=&3;"
+      MaskTunableValueString  "on,on,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "speed|0|work"
       System {
 	Name			"motor1"
-	Location		[12, 45, 1978, 855]
+	Location		[1, 48, 1919, 623]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7433,7 +7232,7 @@ Library {
 	  Ports			  [0, 1]
 	  Position		  [470, 240, 500, 270]
 	  ZOrder		  -14
-	  LibraryVersion	  "1.281"
+	  LibraryVersion	  "1.260"
 	  SourceBlock		  "simulink/Sources/Ramp"
 	  SourceType		  "Ramp"
 	  slope			  "-speed"
@@ -7493,7 +7292,6 @@ Library {
 	  SID			  "310"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [80, 29, 170, 81]
-	  ZOrder		  -19
 	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -7504,7 +7302,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "motor_body"
-	    Location		    [927, 459, 1933, 1194]
+	    Location		    [961, 578, 1919, 1078]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7622,7 +7420,6 @@ Library {
 	      Name		      "to_rev"
 	      SID		      "313"
 	      Position		      [275, 43, 305, 57]
-	      ZOrder		      -3
 	      BlockMirror	      on
 	      Port		      "1"
 	      Side		      "Right"
@@ -7632,7 +7429,6 @@ Library {
 	      Name		      "to_frame"
 	      SID		      "314"
 	      Position		      [25, 43, 55, 57]
-	      ZOrder		      -4
 	      Port		      "2"
 	      Side		      "Left"
 	    }
@@ -7664,7 +7460,6 @@ Library {
 	  Name			  "follower"
 	  SID			  "315"
 	  Position		  [555, 48, 585, 62]
-	  ZOrder		  -20
 	  BlockMirror		  on
 	  Port			  "1"
 	  Side			  "Right"
@@ -7674,7 +7469,6 @@ Library {
 	  Name			  "base"
 	  SID			  "316"
 	  Position		  [25, 48, 55, 62]
-	  ZOrder		  -21
 	  Port			  "2"
 	  Side			  "Left"
 	}
@@ -7805,7 +7599,6 @@ Library {
       SID		      "22"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [495, 28, 605, 92]
-      ZOrder		      -11
       BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7814,41 +7607,23 @@ Library {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		30
-	$ClassName		"Simulink.Mask"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  2
-	  Object {
-	    $ObjectID		    31
-	    Type		    "edit"
-	    Name		    "tail_angle"
-	    Prompt		    "Tail angle"
-	    Value		    "speed"
-	  }
-	  Object {
-	    $ObjectID		    32
-	    Type		    "promote"
-	    Array {
-	      Type		      "Cell"
-	      Dimension		      1
-	      Cell		      "To Workspace/VariableName"
-	      PropName		      "TypeOptions"
-	    }
-	    Name		    "VariableName"
-	    Prompt		    "Variable name for Work:"
-	    Value		    "work"
-	    Evaluate		    "off"
-	    Tunable		    "off"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
+      MaskPromptString	      "Tail angle|Variable name for Work:"
+      MaskStyleString	      "edit,promote(To Workspace/VariableName)"
+      MaskVariables	      "tail_angle=@1;VariableName=&2;"
+      MaskTunableValueString  "on,off"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "speed|work"
       System {
 	Name			"servo"
-	Location		[919, 377, 1933, 971]
+	Location		[953, 496, 1919, 855]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8053,7 +7828,6 @@ Library {
 	  SID			  "35"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [80, 29, 170, 81]
-	  ZOrder		  -19
 	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -8064,7 +7838,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "motor_body"
-	    Location		    [486, 111, 864, 448]
+	    Location		    [520, 230, 850, 332]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -8182,7 +7956,6 @@ Library {
 	      Name		      "to_rev"
 	      SID		      "38"
 	      Position		      [275, 43, 305, 57]
-	      ZOrder		      -3
 	      BlockMirror	      on
 	      Port		      "1"
 	      Side		      "Right"
@@ -8192,7 +7965,6 @@ Library {
 	      Name		      "to_frame"
 	      SID		      "39"
 	      Position		      [25, 43, 55, 57]
-	      ZOrder		      -4
 	      Port		      "2"
 	      Side		      "Left"
 	    }
@@ -8224,7 +7996,6 @@ Library {
 	  Name			  "follower"
 	  SID			  "40"
 	  Position		  [555, 48, 585, 62]
-	  ZOrder		  -20
 	  BlockMirror		  on
 	  Port			  "1"
 	  Side			  "Right"
@@ -8234,7 +8005,6 @@ Library {
 	  Name			  "base"
 	  SID			  "41"
 	  Position		  [25, 48, 55, 62]
-	  ZOrder		  -21
 	  Port			  "2"
 	  Side			  "Left"
 	}
@@ -8356,9 +8126,10 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 17:33:50
+#    Stateflow Version 7.6 (R2011b) dated Jan 25 2012, 13:50:40
 #
 #
+
 
 Stateflow {
   machine {
@@ -8367,24 +8138,24 @@ Stateflow {
     created		    "18-Dec-2012 19:35:45"
     isLibrary		    1
     firstTarget		    16
-    sfVersion		    76014001.001
+    sfVersion		    76014001.00040001
   }
   chart {
     id			    2
     name		    "Tail Pad/MATLAB Function"
-    windowPosition	    [522 381 200 423]
+    windowPosition	    [420.75 158.25 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1920 1080 1.25]
     treeNode		    [0 3 0 0]
-    firstTransition	    7
-    firstJunction	    6
+    firstTransition	    5
+    firstJunction	    4
     viewObj		    2
     machine		    1
     toolbarMode		    LIBRARY_TOOLBAR
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    4
+    firstData		    6
     chartFileNumber	    1
     disableImplicitCasting  1
     eml {
@@ -8409,11 +8180,41 @@ Stateflow {
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
-  data {
+  junction {
     id			    4
+    position		    [23.5747 49.5747 7]
+    chart		    2
+    linkNode		    [2 0 0]
+    subviewer		    2
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    5
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    2
+    linkNode		    [2 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    2
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    6
     ssIdNumber		    4
     name		    "u"
-    linkNode		    [2 0 5]
+    linkNode		    [2 0 7]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8429,10 +8230,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    5
+    id			    7
     ssIdNumber		    5
     name		    "y"
-    linkNode		    [2 4 0]
+    linkNode		    [2 6 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8448,39 +8249,6 @@ Stateflow {
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  junction {
-    id			    6
-    position		    [23.5747 49.5747 7]
-    chart		    2
-    linkNode		    [2 0 0]
-    subviewer		    2
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    7
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      6
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    2
-    linkNode		    [2 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
   instance {
     id			    8
     name		    "Tail Pad/MATLAB Function"
@@ -8490,19 +8258,19 @@ Stateflow {
   chart {
     id			    9
     name		    "Water Foot/MATLAB Function"
-    windowPosition	    [503 381 200 423]
+    windowPosition	    [405.75 173.25 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1920 1080 1.25]
     treeNode		    [0 10 0 0]
-    firstTransition	    14
-    firstJunction	    13
+    firstTransition	    12
+    firstJunction	    11
     viewObj		    9
     machine		    1
     toolbarMode		    LIBRARY_TOOLBAR
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    11
+    firstData		    13
     chartFileNumber	    2
     disableImplicitCasting  1
     eml {
@@ -8527,11 +8295,41 @@ Stateflow {
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
-  data {
+  junction {
     id			    11
+    position		    [23.5747 49.5747 7]
+    chart		    9
+    linkNode		    [9 0 0]
+    subviewer		    9
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    12
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [32.125 19.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      11
+      intersection	      [7 0 -1 -1 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    9
+    linkNode		    [9 0 0]
+    dataLimits		    [23.575 23.575 14.625 34.575]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    2
+  }
+  data {
+    id			    13
     ssIdNumber		    4
     name		    "u"
-    linkNode		    [9 0 12]
+    linkNode		    [9 0 14]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8547,10 +8345,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    12
+    id			    14
     ssIdNumber		    5
     name		    "y"
-    linkNode		    [9 11 0]
+    linkNode		    [9 13 0]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8565,39 +8363,6 @@ Stateflow {
       frame		      SF_FRAME_NO
     }
     dataType		    "Inherit: Same as Simulink"
-  }
-  junction {
-    id			    13
-    position		    [23.5747 49.5747 7]
-    chart		    9
-    linkNode		    [9 0 0]
-    subviewer		    9
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    14
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [32.125 19.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      13
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    9
-    linkNode		    [9 0 0]
-    dataLimits		    [23.575 23.575 14.625 34.575]
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
   }
   instance {
     id			    15
