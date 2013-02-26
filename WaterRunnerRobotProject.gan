@@ -7,8 +7,8 @@
         <field id="tpd5" name="End date" width="24" order="2"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="34" order="0"/>
-        <field id="1" name="Default role" width="32" order="1"/>
+        <field id="0" name="Name" width="33" order="0"/>
+        <field id="1" name="Default role" width="33" order="1"/>
         <field id="tpc0" name="" width="32" order="2"/>
     </view>
     <!-- -->
@@ -51,8 +51,8 @@
                 <task id="26" name="COG analysis" color="#999900" meeting="false" start="2013-03-21" duration="1" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-11" duration="22" complete="27" expand="true">
-            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-11" duration="11" complete="45" expand="true">
+        <task id="7" name="Simplistic Models" color="#8cb6ce" meeting="false" start="2013-02-11" duration="22" complete="32" expand="true">
+            <task id="17" name="Monopod Hopper" color="#8cb6ce" meeting="false" start="2013-02-11" duration="11" complete="65" expand="true">
                 <depend id="18" type="2" difference="0" hardness="Strong"/>
                 <task id="20" name="Natural Frequency Inestigation" color="#33ff33" meeting="false" start="2013-02-11" duration="5" complete="100" expand="true">
                     <notes><![CDATA[DONE:
@@ -65,7 +65,7 @@ Look at number of legs as number of legs increases
 Look at stability of one leg]]></notes>
                     <depend id="32" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="32" name="Duty Factor" color="#33ff33" meeting="false" start="2013-02-16" duration="5" complete="0" expand="true"/>
+                <task id="32" name="Duty Factor" color="#33ff33" meeting="false" start="2013-02-16" duration="5" complete="83" expand="true"/>
                 <task id="374" name="Simple Controller" color="#66ff33" meeting="false" start="2013-02-18" duration="4" complete="0" expand="true"/>
             </task>
             <task id="18" name="Quadruped Plate" color="#8cb6ce" meeting="false" start="2013-02-22" duration="11" complete="0" expand="true">
