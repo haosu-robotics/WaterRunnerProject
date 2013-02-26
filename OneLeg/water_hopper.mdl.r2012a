@@ -1,16 +1,16 @@
 Model {
-  Name			  "Hopper_ground_mech"
+  Name			  "water_hopper"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -22,18 +22,18 @@ Model {
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "2973550102"
-  PhysicalModelingParameterChecksum "1888059982"
+  PhysicalModelingChecksum "3580582441"
+  PhysicalModelingParameterChecksum "3033693247"
   PhysicalModelingProducts "SimMechanics"
-  Created		  "Thu Feb 07 11:27:40 2013"
+  Created		  "Thu Feb 07 12:16:34 2013"
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 07 12:16:33 2013"
-  RTWModifiedTimeStamp	  282139331
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Wed Feb 13 15:51:35 2013"
+  RTWModifiedTimeStamp	  282664904
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -70,18 +70,19 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Hopper_ground"
+    model_		    "water_hopper"
     signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Hopper_ground"
+      Cell		      "water_hopper"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
       Type		      "Cell"
-      Dimension		      0
+      Dimension		      1
+      Cell		      []
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -147,15 +148,15 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "1e-2"
+	  MaxStep		  "1e-3"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-6"
+	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "ode23t"
+	  SolverName		  "ode23t"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "DisableAll"
@@ -706,7 +707,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 344, 75, 1256, 781 ] 
+      ConfigPrmDlgPosition     [ 344, 100, 1269, 750 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -748,6 +749,17 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Abs
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -759,29 +771,6 @@ Model {
       SampleTime	      "inf"
       FramePeriod	      "inf"
       PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      EnablePort
-      StatesWhenEnabling      "held"
-      PropagateVarSize	      "Only when enabling"
-      ShowOutputPort	      off
-      ZeroCross		      on
-      PortDimensions	      "1"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "double"
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Fcn
-      Expr		      "sin(u[1])"
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      From
-      IconDisplay	      "Tag"
-      TagVisibility	      "local"
     }
     Block {
       BlockType		      Gain
@@ -797,11 +786,6 @@ Model {
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Goto
-      IconDisplay	      "Tag"
-      TagVisibility	      "local"
     }
     Block {
       BlockType		      Inport
@@ -837,6 +821,21 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -860,6 +859,24 @@ Model {
       SourceOfInitialOutputValue "Dialog"
       OutputWhenDisabled      "held"
       InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      PMIOPort
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Scope
@@ -900,6 +917,9 @@ Model {
       VectorParams1D	      on
     }
     Block {
+      BlockType		      Stop
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -938,10 +958,25 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
-    Name		    "Hopper_ground_mech"
-    Location		    [10, 82, 790, 831]
+    Name		    "water_hopper"
+    Location		    [1, 48, 959, 1079]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -955,24 +990,24 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "186"
+    SIDHighWatermark	    "118"
     Block {
       BlockType		      Reference
       Name		      "Body"
-      SID		      "26"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [103, 370, 147, 445]
+      SID		      "1"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [28, 135, 72, 210]
       ZOrder		      4
       BlockRotation	      270
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Body"
       SourceType	      "Body"
       LConnTagsString	      "CS1"
-      RConnTagsString	      "CS2"
+      RConnTagsString	      "CS2|CS3"
       UpdateFromCAD	      "off"
       ClassName		      "Body"
       DialogClass	      "MechanicalBodyBlock"
-      Mass		      "1"
+      Mass		      "mass"
       MassUnits		      "kg"
       InertiaUnits	      "kg*m^2"
       Inertia		      "eye(3)"
@@ -987,19 +1022,19 @@ Model {
       BodyColorSelMode	      "MACHINE_DEFAULT"
       BodyColor		      "[1 0 0]"
       AttachedToCS	      "CG"
-      CG		      "Left$CG$[0 1 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
-      WorkingFrames	      "Left$CS1$[0 1 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$[0 1 0]$CG$CG$m$"
-      "[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
-      CGPos		      "[0 1 0]"
+      CG		      "Left$CG$[0 0 0]$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
+      WorkingFrames	      "Left$CS1$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$[0 0 0]$CG$CG$m$"
+      "[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS3$[0 0 0]$CG$CG$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
+      CGPos		      "[0 0 0]"
       CGRot		      "[0 0 0]"
       CS0Pos		      "[]"
       CS0Rot		      "[]"
-      CS1Pos		      "[0 1 0]"
+      CS1Pos		      "[0 0 0]"
       CS1Rot		      "[0 0 0]"
-      CS2Pos		      "[0 1 0]"
+      CS2Pos		      "[0 0 0]"
       CS2Rot		      "[0 0 0]"
-      CS3Pos		      "[]"
-      CS3Rot		      "[]"
+      CS3Pos		      "[0 0 0]"
+      CS3Rot		      "[0 0 0]"
       CS4Pos		      "[]"
       CS4Rot		      "[]"
       CS5Pos		      "[]"
@@ -1037,10 +1072,43 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Body Actuator"
+      SID		      "54"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [235, 490, 275, 530]
+      ZOrder		      1
+      BlockMirror	      on
+      LibraryVersion	      "1.1"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Actuator"
+      SourceType	      "Body Actuator"
+      UpdateFromCAD	      "off"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      ActuationStyle	      "Force"
+      AngleUnits	      "deg"
+      ArcVelocityUnits	      "deg/s"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPositionUnits      "m"
+      VelocityUnits	      "m/s"
+      AccelerationUnits	      "m/s^2"
+      ForceUnits	      "N"
+      TorqueUnits	      "N-m"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodyActuatorForceTorque"
+      DialogClass	      "MechanicalActuatorBlock"
+      ReferenceFrame	      "Absolute (World)"
+      Angle		      "off"
+      CoordPosition	      "on"
+      Force		      "on"
+      Torque		      "off"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Body Sensor"
-      SID		      "165"
+      SID		      "2"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [175, 295, 215, 335]
+      Position		      [85, 20, 125, 60]
       ZOrder		      4
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -1067,478 +1135,22 @@ Model {
       QuaternionDDT	      "off"
       QuaternionUnits	      "off"
       OutputVector	      "[1]"
-      ActiveIO		      "off"
-      Width		      "1"
+      ActiveIO		      "on"
+      Width		      "3"
       ClassName		      "BodySensor"
       DialogClass	      "MechanicalSensorBlock"
       ReferenceFrame	      "Absolute (World)"
     }
     Block {
-      BlockType		      Constant
-      Name		      "F_gravity"
-      SID		      "12"
-      Position		      [420, 15, 450, 45]
-      ZOrder		      -4
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      Value		      "9.81"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From"
-      SID		      "19"
-      Position		      [20, 166, 60, 194]
-      ZOrder		      -9
-      GotoTag		      "out_pos"
-    }
-    Block {
-      BlockType		      Goto
-      Name		      "Goto"
-      SID		      "18"
-      Position		      [700, 110, 740, 140]
-      ZOrder		      -10
-      GotoTag		      "out_pos"
-    }
-    Block {
       BlockType		      Reference
-      Name		      "Ground"
-      SID		      "24"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [105, 610, 145, 650]
-      ZOrder		      3
-      BlockRotation	      270
-      LibraryVersion	      "1.1"
-      UserDataPersistent      on
-      UserData		      "DataTag0"
-      SourceBlock	      "mblibv1/Bodies/Ground"
-      SourceType	      "Ground"
-      UpdateFromCAD	      "off"
-      LeftPortType	      "env"
-      RightPortType	      "workingframe"
-      PhysicalDomain	      "Mechanical"
-      DialogClass	      "GroundBlock"
-      ClassName		      "Ground"
-      CoordPosition	      "[0 0 0]"
-      CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
-      ShowEnvPort	      on
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Ground\nContact3"
-      SID		      "30"
-      Ports		      [2, 1]
-      Position		      [560, 533, 655, 577]
-      ZOrder		      180
-      FontSize		      14
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Ground\nContact3"
-	Location		[10, 82, 790, 831]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"145"
-	Block {
-	  BlockType		  Inport
-	  Name			  "y_pos"
-	  SID			  "163"
-	  Position		  [40, 168, 70, 182]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "y_vel"
-	  SID			  "164"
-	  Position		  [40, 223, 70, 237]
-	  ZOrder		  -1
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "32"
-	  Position		  [40, 81, 90, 109]
-	  ZOrder		  -4
-	  Value			  "rest_length"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Ground Friction Model"
-	  SID			  "39"
-	  Ports			  [2, 1, 1]
-	  Position		  [210, 147, 380, 258]
-	  ZOrder		  -10
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Ground Friction Model"
-	    Location		    [227, 82, 1588, 847]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "103"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "delta normal [m]"
-	      SID		      "40"
-	      Position		      [40, 118, 70, 132]
-	      ZOrder		      -1
-	      BackgroundColor	      "darkGreen"
-	      NamePlacement	      "alternate"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "vnormal [m/s]"
-	      SID		      "41"
-	      Position		      [40, 158, 70, 172]
-	      ZOrder		      -2
-	      BackgroundColor	      "darkGreen"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      EnablePort
-	      Name		      "Contact!"
-	      SID		      "46"
-	      Ports		      []
-	      Position		      [220, 15, 240, 35]
-	      ZOrder		      -5
-	      ForegroundColor	      "red"
-	      BackgroundColor	      "black"
-	      StatesWhenEnabling      "reset"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain3"
-	      SID		      "56"
-	      Position		      [155, 107, 210, 143]
-	      ZOrder		      -8
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      Gain		      "k_gy"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain4"
-	      SID		      "57"
-	      Position		      [105, 142, 200, 188]
-	      ZOrder		      -9
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      Gain		      "1/v_gy_max"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux1"
-	      SID		      "59"
-	      Ports		      [2, 1]
-	      Position		      [230, 105, 235, 185]
-	      ZOrder		      -11
-	      ShowName		      off
-	      Inputs		      "2"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Fcn
-	      Name		      "normal-Axis Ground Force"
-	      SID		      "62"
-	      Position		      [265, 127, 420, 163]
-	      ZOrder		      -14
-	      BackgroundColor	      "magenta"
-	      Expr		      "- u(1)  *  (1-u(2)) * (u(2)<1)"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Fn_Ground[N]"
-	      SID		      "140"
-	      Position		      [545, 138, 575, 152]
-	      ZOrder		      -17
-	      BackgroundColor	      "darkGreen"
-	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
-	      IconDisplay	      "Port number"
-	      OutputWhenDisabled      "reset"
-	      InitialOutput	      "0"
-	    }
-	    Line {
-	      SrcBlock		      "Gain4"
-	      SrcPort		      1
-	      DstBlock		      "Mux1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Gain3"
-	      SrcPort		      1
-	      DstBlock		      "Mux1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Mux1"
-	      SrcPort		      1
-	      DstBlock		      "normal-Axis Ground Force"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "vnormal [m/s]"
-	      SrcPort		      1
-	      DstBlock		      "Gain4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "delta normal [m]"
-	      SrcPort		      1
-	      DstBlock		      "Gain3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "normal-Axis Ground Force"
-	      SrcPort		      1
-	      DstBlock		      "Fn_Ground[N]"
-	      DstPort		      1
-	    }
-	    Annotation {
-	      SID		      "144"
-	      Name		      "Normal Ground Stiction Model"
-	      Position		      [304, 73]
-	      FontSize		      18
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum"
-	  SID			  "155"
-	  Ports			  [2, 1]
-	  Position		  [130, 165, 150, 185]
-	  ZOrder		  -13
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "-+|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "skin contact\nsensor"
-	  SID			  "157"
-	  Ports			  [1, 1]
-	  Position		  [205, 105, 235, 135]
-	  ZOrder		  -37
-	  ForegroundColor	  "red"
-	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.260"
-	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
-	  SourceType		  "Compare To Zero"
-	  relop			  "<="
-	  OutDataTypeStr	  "boolean"
-	  ZeroCross		  on
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "GRF"
-	  SID			  "160"
-	  Position		  [415, 198, 445, 212]
-	  ZOrder		  82
-	  ForegroundColor	  "lightBlue"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Sum"
-	  SrcPort		  1
-	  Points		  [15, 0]
-	  Branch {
-	    DstBlock		    "Ground Friction Model"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -55]
-	    DstBlock		    "skin contact\nsensor"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "skin contact\nsensor"
-	  SrcPort		  1
-	  Points		  [55, 0]
-	  DstBlock		  "Ground Friction Model"
-	  DstPort		  enable
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [45, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Ground Friction Model"
-	  SrcPort		  1
-	  DstBlock		  "GRF"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "y_pos"
-	  SrcPort		  1
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "y_vel"
-	  SrcPort		  1
-	  DstBlock		  "Ground Friction Model"
-	  DstPort		  2
-	}
-	Annotation {
-	  SID			  "161"
-	  Name			  "Normal Ground Interaction Model"
-	  Position		  [261, 37]
-	  FontSize		  20
-	}
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "IC1"
-      SID		      "186"
-      Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [255, 430, 295, 470]
-      ZOrder		      7
-      BlockMirror	      on
-      LibraryVersion	      "1.1"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Initial Condition"
-      SourceType	      "Joint Initial Condition"
-      UpdateFromCAD	      "off"
-      LeftPortType	      "blob"
-      RightPortType	      "blob"
-      PhysicalDomain	      "mechanical"
-      ClassName		      "InitialCondition"
-      DialogClass	      "InitialConditionBlock"
-      InitialConditions	      "P1$true$rest_length$m$deg$0$m/s$deg/s#P2$false$0$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m"
-      "/s$deg/s#R1$false$0$m$deg$0$m/s$deg/s#R2$false$0$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m$deg$"
-      "0$m/s$deg/s"
-      P1PIC		      "rest_length"
-      P1VIC		      "0"
-      P2PIC		      "0"
-      P2VIC		      "0"
-      P3PIC		      "0"
-      P3VIC		      "0"
-      R1PIC		      "0"
-      R1VIC		      "0"
-      R2PIC		      "0"
-      R2VIC		      "0"
-      R3PIC		      "0"
-      R3VIC		      "0"
-      SPIC		      "0"
-      SVIC		      "0"
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Intg1"
-      SID		      "3"
-      Ports		      [1, 1]
-      Position		      [485, 110, 515, 140]
-      ZOrder		      -10
-      Port {
-	PortNumber		1
-	Name			"vel"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Intg2"
-      SID		      "4"
-      Ports		      [1, 1]
-      Position		      [565, 110, 595, 140]
-      ZOrder		      -10
-      Port {
-	PortNumber		1
-	Name			"pos"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Joint Actuator"
-      SID		      "28"
-      Ports		      [1, 0, 0, 0, 0, 0, 1]
-      Position		      [405, 620, 445, 660]
-      ZOrder		      2
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.1"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
-      SourceType	      "Joint Actuator"
-      UpdateFromCAD	      "off"
-      PhysicalDomain	      "Mechanical"
-      PortType		      "blob"
-      ActuationStyle	      "Force"
-      AngleUnits	      "deg"
-      ArcVelocityUnits	      "deg/s"
-      ArcAccelerationUnits    "deg/s^2"
-      CoordPositionUnits      "m"
-      VelocityUnits	      "m/s"
-      AccelerationUnits	      "m/s^2"
-      ForceUnits	      "N"
-      TorqueUnits	      "N-m"
-      ActiveIO		      "off"
-      Width		      "1"
-      ClassName		      "JointActuator"
-      DialogClass	      "MechanicalActuatorBlock"
-      Primitive		      "P1"
-      ReferenceFrame	      "Absolute (World)"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Joint Sensor"
-      SID		      "29"
+      Name		      "Body Sensor1"
+      SID		      "58"
       Ports		      [0, 2, 0, 0, 0, 1]
-      Position		      [405, 535, 445, 575]
-      ZOrder		      5
+      Position		      [230, 564, 275, 671]
+      ZOrder		      4
       LibraryVersion	      "1.1"
-      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
-      SourceType	      "Joint Sensor"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
+      SourceType	      "Body Sensor"
       UpdateFromCAD	      "off"
       PhysicalDomain	      "Mechanical"
       PortType		      "blob"
@@ -1561,29 +1173,201 @@ Model {
       QuaternionDDT	      "off"
       QuaternionUnits	      "off"
       OutputVector	      "[1]"
-      ActiveIO		      "off"
-      Width		      "1"
-      ClassName		      "JointSensor"
+      ActiveIO		      "on"
+      Width		      "6"
+      ClassName		      "BodySensor"
       DialogClass	      "MechanicalSensorBlock"
-      Primitive		      "P1"
-      Force		      "off"
-      ForceUnits	      "N"
-      Torque		      "off"
-      TorqueUnits	      "N*m"
       ReferenceFrame	      "Absolute (World)"
-      ReactionSensedSide      "Base"
-      ReactionReferenceFrame  "Absolute (World)"
-      ReactionForce	      "off"
-      ReactionForceUnits      "N"
-      ReactionMoment	      "off"
-      ReactionMomentUnits     "N*m"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Body1"
+      SID		      "53"
+      Ports		      [0, 0, 0, 0, 0, 1, 2]
+      Position		      [173, 385, 217, 460]
+      ZOrder		      4
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "mblibv1/Bodies/Body"
+      SourceType	      "Body"
+      LConnTagsString	      "CS1"
+      RConnTagsString	      "CS2|CS3"
+      UpdateFromCAD	      "off"
+      ClassName		      "Body"
+      DialogClass	      "MechanicalBodyBlock"
+      Mass		      "0"
+      MassUnits		      "kg"
+      InertiaUnits	      "kg*m^2"
+      Inertia		      "eye(3)"
+      Shape		      "Cylinder"
+      ShapeDims		      "[1 1]"
+      ShapeUnits	      "m"
+      ShapeUse		      "false"
+      Density		      "1"
+      DensityUnits	      "kg/m^3"
+      DensityUse	      "false"
+      GraphicsMode	      "MACHINE_DEFAULT"
+      BodyColorSelMode	      "MACHINE_DEFAULT"
+      BodyColor		      "[1 0 0]"
+      AttachedToCS	      "CG"
+      CG		      "Left$CG$[0 -leg_length 0]$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
+      WorkingFrames	      "Left$CS1$[0 0 0]$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$[0"
+      " -leg_length 0]$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS3$[0 -leg_length 0]$CS1$CS1$m$[0 0 0]$"
+      "Euler X-Y-Z$deg$WORLD$true$none"
+      CGPos		      "[0 -leg_length 0]"
+      CGRot		      "[0 0 0]"
+      CS0Pos		      "[]"
+      CS0Rot		      "[]"
+      CS1Pos		      "[0 0 0]"
+      CS1Rot		      "[0 0 0]"
+      CS2Pos		      "[0 -leg_length 0]"
+      CS2Rot		      "[0 0 0]"
+      CS3Pos		      "[0 -leg_length 0]"
+      CS3Rot		      "[0 0 0]"
+      CS4Pos		      "[]"
+      CS4Rot		      "[]"
+      CS5Pos		      "[]"
+      CS5Rot		      "[]"
+      CS6Pos		      "[]"
+      CS6Rot		      "[]"
+      CS7Pos		      "[]"
+      CS7Rot		      "[]"
+      CS8Pos		      "[]"
+      CS8Rot		      "[]"
+      CS9Pos		      "[]"
+      CS9Rot		      "[]"
+      CS10Pos		      "[]"
+      CS10Rot		      "[]"
+      CS11Pos		      "[]"
+      CS11Rot		      "[]"
+      CS12Pos		      "[]"
+      CS12Rot		      "[]"
+      CS13Pos		      "[]"
+      CS13Rot		      "[]"
+      CS14Pos		      "[]"
+      CS14Rot		      "[]"
+      CS15Pos		      "[]"
+      CS15Rot		      "[]"
+      CS16Pos		      "[]"
+      CS16Rot		      "[]"
+      CS17Pos		      "[]"
+      CS17Rot		      "[]"
+      CS18Pos		      "[]"
+      CS18Rot		      "[]"
+      CS19Pos		      "[]"
+      CS19Rot		      "[]"
+      CS20Pos		      "[]"
+      CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant"
+      SID		      "74"
+      Ports		      [1, 1]
+      Position		      [510, 100, 540, 130]
+      ZOrder		      -5
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.260"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      "<="
+      const		      "-2*Amp"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant1"
+      SID		      "116"
+      Ports		      [1, 1]
+      Position		      [510, 175, 540, 205]
+      ZOrder		      -5
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.260"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      ">"
+      const		      "100"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "68"
+      Position		      [395, 440, 425, 470]
+      ZOrder		      -4
+      BlockMirror	      on
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground"
+      SID		      "3"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [15, 400, 55, 440]
+      ZOrder		      3
+      BlockRotation	      270
+      LibraryVersion	      "1.1"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "mblibv1/Bodies/Ground"
+      SourceType	      "Ground"
+      UpdateFromCAD	      "off"
+      LeftPortType	      "env"
+      RightPortType	      "workingframe"
+      PhysicalDomain	      "Mechanical"
+      DialogClass	      "GroundBlock"
+      ClassName		      "Ground"
+      CoordPosition	      "[0 0 0]"
+      CoordPositionUnits      "m"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
+      ShowEnvPort	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Joint Initial Condition"
+      SID		      "98"
+      Ports		      [0, 0, 0, 0, 0, 0, 1]
+      Position		      [85, 335, 125, 375]
+      ZOrder		      7
+      BlockMirror	      on
+      LibraryVersion	      "1.1"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Initial Condition"
+      SourceType	      "Joint Initial Condition"
+      UpdateFromCAD	      "off"
+      LeftPortType	      "blob"
+      RightPortType	      "blob"
+      PhysicalDomain	      "mechanical"
+      ClassName		      "InitialCondition"
+      DialogClass	      "InitialConditionBlock"
+      InitialConditions	      "P1$true$y_0$m$deg$0$m/s$deg/s#P2$false$0$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m/s$deg/s"
+      "#R1$false$0$m$deg$0$m/s$deg/s#R2$false$0$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m$deg$0$m/s$de"
+      "g/s"
+      P1PIC		      "y_0"
+      P1VIC		      "0"
+      P2PIC		      "0"
+      P2VIC		      "0"
+      P3PIC		      "0"
+      P3VIC		      "0"
+      R1PIC		      "0"
+      R1VIC		      "0"
+      R2PIC		      "0"
+      R2VIC		      "0"
+      R3PIC		      "0"
+      R3VIC		      "0"
+      SPIC		      "0"
+      SVIC		      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Machine\nEnvironment"
-      SID		      "23"
+      SID		      "25"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [115, 680, 135, 720]
+      Position		      [25, 460, 45, 500]
       ZOrder		      1
       BlockRotation	      270
       LibraryVersion	      "1.1"
@@ -1594,7 +1378,7 @@ Model {
       ClassName		      "Environment"
       DialogTemplateClass     "MECH.MachineEnvironment"
       SyncWhenCopied	      "off"
-      Gravity		      "[0 -9.81 0]"
+      Gravity		      "[0 -g 0]"
       GravityUnits	      "m/s^2"
       GravityAsSignal	      off
       Dimensionality	      "Auto-detect"
@@ -1617,164 +1401,107 @@ Model {
       DefaultBodyColor	      "[1 0 0]"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Mechanical\nBranching\nBar"
-      SID		      "27"
-      Ports		      [0, 0, 0, 0, 0, 1, 2]
-      Position		      [290, 541, 300, 594]
-      ZOrder		      3
-      BackgroundColor	      "black"
-      LibraryVersion	      "1.1"
-      SourceBlock	      "mblibv1/Utilities/Mechanical\nBranching\nBar"
-      SourceType	      "Mechanical Branching Bar"
-      LConnTagsString	      "_newl0"
-      RConnTagsString	      "SA0|SA1"
-      UpdateFromCAD	      "off"
-      ClassName		      "BranchingBar"
-      DialogClass	      "MechanicalBranchingBarBlock"
-      NumSAPorts	      "2"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "PID Controller"
-      SID		      "15"
-      Ports		      [1, 1]
-      Position		      [205, 107, 245, 143]
-      ZOrder		      -6
-      LibraryVersion	      "1.260"
-      SourceBlock	      "simulink/Continuous/PID Controller"
-      SourceType	      "PID 1dof"
-      Controller	      "PID"
-      TimeDomain	      "Continuous-time"
-      SampleTime	      "1"
-      IntegratorMethod	      "Forward Euler"
-      FilterMethod	      "Forward Euler"
-      Form		      "Parallel"
-      P			      "3964.11703351066"
-      I			      "6337.67154775249"
-      D			      "213.34057643197"
-      N			      "428.843364138649"
-      InitialConditionSource  "internal"
-      InitialConditionForIntegrator "0"
-      InitialConditionForFilter	"0"
-      ExternalReset	      "none"
-      IgnoreLimit	      off
-      ZeroCross		      on
-      LimitOutput	      off
-      UpperSaturationLimit    "inf"
-      LowerSaturationLimit    "-inf"
-      LinearizeAsGain	      off
-      AntiWindupMode	      "none"
-      Kb		      "1"
-      TrackingMode	      off
-      Kt		      "1"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LockScale		      off
-      PParamMin		      "[]"
-      PParamMax		      "[]"
-      PParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      IParamMin		      "[]"
-      IParamMax		      "[]"
-      IParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      DParamMin		      "[]"
-      DParamMax		      "[]"
-      DParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      NParamMin		      "[]"
-      NParamMax		      "[]"
-      NParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbParamMin	      "[]"
-      KbParamMax	      "[]"
-      KbParamDataTypeStr      "Inherit: Inherit via internal rule"
-      KtParamMin	      "[]"
-      KtParamMax	      "[]"
-      KtParamDataTypeStr      "Inherit: Inherit via internal rule"
-      POutMin		      "[]"
-      POutMax		      "[]"
-      POutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IOutMin		      "[]"
-      IOutMax		      "[]"
-      IOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      DOutMin		      "[]"
-      DOutMax		      "[]"
-      DOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      NOutMin		      "[]"
-      NOutMax		      "[]"
-      NOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KbOutMin		      "[]"
-      KbOutMax		      "[]"
-      KbOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      KtOutMin		      "[]"
-      KtOutMax		      "[]"
-      KtOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      IntegratorOutMin	      "[]"
-      IntegratorOutMax	      "[]"
-      IntegratorOutDataTypeStr "Inherit: Inherit via internal rule"
-      FilterOutMin	      "[]"
-      FilterOutMax	      "[]"
-      FilterOutDataTypeStr    "Inherit: Inherit via internal rule"
-      SumOutMin		      "[]"
-      SumOutMax		      "[]"
-      SumOutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SumI1OutMin	      "[]"
-      SumI1OutMax	      "[]"
-      SumI1OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI2OutMin	      "[]"
-      SumI2OutMax	      "[]"
-      SumI2OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI3OutMin	      "[]"
-      SumI3OutMax	      "[]"
-      SumI3OutDataTypeStr     "Inherit: Inherit via internal rule"
-      SumDOutMin	      "[]"
-      SumDOutMax	      "[]"
-      SumDOutDataTypeStr      "Inherit: Inherit via internal rule"
-      SumAccumDataTypeStr     "Inherit: Inherit via internal rule"
-      SumI1AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI2AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumI3AccumDataTypeStr   "Inherit: Inherit via internal rule"
-      SumDAccumDataTypeStr    "Inherit: Inherit via internal rule"
-      SaturationOutMin	      "[]"
-      SaturationOutMax	      "[]"
-      SaturationOutDataTypeStr "Inherit: Same as input"
-      IntegratorContinuousStateAttributes "''"
-      IntegratorStateMustResolveToSignalObject off
-      IntegratorRTWStateStorageClass "Auto"
-      FilterContinuousStateAttributes "''"
-      FilterStateMustResolveToSignalObject off
-      FilterRTWStateStorageClass "Auto"
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "67"
+      Ports		      [3, 1]
+      Position		      [320, 491, 325, 529]
+      ZOrder		      -12
+      BlockMirror	      on
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Reference
       Name		      "Prismatic"
-      SID		      "25"
-      Ports		      [0, 0, 0, 0, 0, 2, 2]
-      Position		      [112, 490, 163, 540]
+      SID		      "27"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [22, 255, 73, 305]
       ZOrder		      1
       BlockRotation	      270
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Joints/Prismatic"
       SourceType	      "Prismatic"
       LConnTagsString	      "__newl0|SA1"
-      RConnTagsString	      "__newr0|SA1"
+      RConnTagsString	      "__newr0"
       UpdateFromCAD	      "off"
-      NumSAPorts	      "2"
+      NumSAPorts	      "1"
       CutJoint		      "off"
       MarkAsCut		      "off"
       Primitives	      "prismatic"
-      PrimitiveProps	      "P1$World$[0 0 1]$prismatic"
+      PrimitiveProps	      "P1$World$[0 1 0]$prismatic"
       ClassName		      "Joint"
       DialogClass	      "JointBlock"
-      P1Axis		      "[0 0 1]"
+      P1Axis		      "[0 1 0]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Prismatic1"
+      SID		      "52"
+      Ports		      [0, 0, 0, 0, 0, 2, 1]
+      Position		      [167, 255, 218, 305]
+      ZOrder		      1
+      BlockRotation	      270
+      BlockMirror	      on
+      LibraryVersion	      "1.1"
+      SourceBlock	      "mblibv1/Joints/Prismatic"
+      SourceType	      "Prismatic"
+      LConnTagsString	      "__newl0|SA1"
+      RConnTagsString	      "__newr0"
+      UpdateFromCAD	      "off"
+      NumSAPorts	      "1"
+      CutJoint		      "off"
+      MarkAsCut		      "off"
+      Primitives	      "prismatic"
+      PrimitiveProps	      "P1$World$[0 1 0]$prismatic"
+      ClassName		      "Joint"
+      DialogClass	      "JointBlock"
+      P1Axis		      "[0 1 0]"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope"
-      SID		      "21"
+      SID		      "56"
       Ports		      [1]
-      Position		      [705, 34, 735, 66]
+      Position		      [510, 24, 540, 56]
       ZOrder		      -16
       Floating		      off
-      Location		      [188, 390, 512, 629]
+      Location		      [2, 49, 960, 547]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "20"
+      YMin		      "-0.053045"
+      YMax		      "-0.053005"
+      SaveToWorkspace	      on
+      SaveName		      "ball_position"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "59"
+      Ports		      [1]
+      Position		      [615, 604, 645, 636]
+      ZOrder		      -16
+      Floating		      off
+      Location		      [-2, 54, 1594, 865]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -1792,16 +1519,121 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
+      SaveToWorkspace	      on
+      SaveName		      "force"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope2"
+      SID		      "71"
+      Ports		      [4]
+      Position		      [675, 217, 730, 318]
+      ZOrder		      -16
+      Floating		      off
+      Location		      [2, 49, 960, 1078]
+      Open		      off
+      NumInputPorts	      "4"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "20"
+      YMin		      "2.77556e-17~-5~-1.38778e-17~-0.1"
+      YMax		      "0.5~40~0.2~0.5"
+      SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope3"
+      SID		      "110"
+      Ports		      [1]
+      Position		      [545, 704, 575, 736]
+      ZOrder		      -16
+      Floating		      off
+      Location		      [169, 321, 493, 560]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      SaveToWorkspace	      on
+      SaveName		      "toe_position"
       LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Selector
       Name		      "Selector"
-      SID		      "166"
+      SID		      "28"
       Ports		      [1, 1]
-      Position		      [280, 296, 320, 334]
+      Position		      [190, 21, 230, 59]
+      ZOrder		      -17
+      InputPortWidth	      "3"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "[2]"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"mass pos"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector1"
+      SID		      "60"
+      Ports		      [1, 1]
+      Position		      [355, 571, 395, 609]
+      ZOrder		      -17
+      InputPortWidth	      "3"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "[2]"
+      OutputSizes	      "1"
+      Port {
+	PortNumber		1
+	Name			"toe pos"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector2"
+      SID		      "64"
+      Ports		      [1, 1]
+      Position		      [355, 626, 395, 664]
       ZOrder		      -17
       InputPortWidth	      "3"
       IndexOptions	      "Index vector (dialog)"
@@ -1809,122 +1641,27 @@ Model {
       OutputSizes	      "1"
     }
     Block {
-      BlockType		      Sin
-      Name		      "Sine Wave"
-      SID		      "16"
-      Ports		      [0, 1]
-      Position		      [30, 110, 60, 140]
-      ZOrder		      -21
-      Amplitude		      "Amp"
-      Frequency		      "Freq"
-      SampleTime	      "0"
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      SID		      "73"
+      Position		      [585, 97, 620, 133]
+      ZOrder		      -4
+      NamePlacement	      "alternate"
     }
     Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "2"
-      Ports		      [2, 1]
-      Position		      [305, 115, 325, 135]
-      ZOrder		      -18
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|+-"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum1"
-      SID		      "8"
-      Ports		      [2, 1]
-      Position		      [305, 190, 325, 210]
-      ZOrder		      -18
-      BlockRotation	      270
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum2"
-      SID		      "14"
-      Ports		      [2, 1]
-      Position		      [425, 115, 445, 135]
-      ZOrder		      -18
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "-+|"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-      Port {
-	PortNumber		1
-	Name			"acc"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum3"
-      SID		      "17"
-      Ports		      [2, 1]
-      Position		      [115, 115, 135, 135]
-      ZOrder		      -18
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|+-"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "g1"
-      SID		      "11"
-      Position		      [365, 110, 395, 140]
-      ZOrder		      -8
-      Gain		      "m_mass"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "g2"
-      SID		      "6"
-      Position		      [475, 185, 505, 215]
-      ZOrder		      -8
-      BlockMirror	      on
-      Gain		      "k_spring"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "g3"
-      SID		      "10"
-      Position		      [580, 235, 610, 265]
-      ZOrder		      -8
-      BlockMirror	      on
-      Gain		      "b_damper"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
+      BlockType		      Stop
+      Name		      "Stop Simulation1"
+      SID		      "117"
+      Position		      [585, 172, 620, 208]
+      ZOrder		      -4
+      NamePlacement	      "alternate"
     }
     Block {
       BlockType		      SubSystem
-      Name		      "spring_damper"
-      SID		      "167"
+      Name		      "Subsystem"
+      SID		      "77"
       Ports		      [2, 1]
-      Position		      [560, 453, 655, 497]
-      ZOrder		      180
-      FontSize		      14
+      Position		      [515, 561, 555, 674]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1932,10 +1669,16 @@ Model {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
+      Port {
+	PortNumber		1
+	Name			"force"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
       System {
-	Name			"spring_damper"
-	Location		[675, 135, 1455, 884]
-	Open			on
+	Name			"Subsystem"
+	Location		[159, 334, 909, 656]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1946,20 +1689,20 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"145"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
-	  Name			  "y_pos"
-	  SID			  "168"
-	  Position		  [40, 168, 70, 182]
+	  Name			  "pos"
+	  SID			  "78"
+	  Position		  [25, 58, 55, 72]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "y_vel"
-	  SID			  "169"
-	  Position		  [40, 223, 70, 237]
+	  Name			  "vel"
+	  SID			  "79"
+	  Position		  [25, 228, 55, 242]
 	  ZOrder		  -1
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1967,180 +1710,93 @@ Model {
 	Block {
 	  BlockType		  Constant
 	  Name			  "Constant"
-	  SID			  "170"
-	  Position		  [40, 80, 70, 110]
+	  SID			  "80"
+	  Position		  [480, 25, 510, 55]
 	  ZOrder		  -4
 	  Value			  "0"
 	}
 	Block {
-	  BlockType		  SubSystem
-	  Name			  "Ground Friction Model"
-	  SID			  "171"
-	  Ports			  [2, 1, 1]
-	  Position		  [210, 147, 380, 258]
-	  ZOrder		  -10
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Ground Friction Model"
-	    Location		    [227, 82, 1588, 847]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "103"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "delta normal [m]"
-	      SID		      "172"
-	      Position		      [40, 118, 70, 132]
-	      ZOrder		      -1
-	      BackgroundColor	      "darkGreen"
-	      NamePlacement	      "alternate"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "vnormal [m/s]"
-	      SID		      "173"
-	      Position		      [40, 158, 70, 172]
-	      ZOrder		      -2
-	      BackgroundColor	      "darkGreen"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      EnablePort
-	      Name		      "Contact!"
-	      SID		      "174"
-	      Ports		      []
-	      Position		      [220, 15, 240, 35]
-	      ZOrder		      -5
-	      ForegroundColor	      "red"
-	      BackgroundColor	      "black"
-	      StatesWhenEnabling      "reset"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain3"
-	      SID		      "175"
-	      Position		      [155, 107, 210, 143]
-	      ZOrder		      -8
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      Gain		      "k_gy"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain4"
-	      SID		      "176"
-	      Position		      [105, 142, 200, 188]
-	      ZOrder		      -9
-	      BackgroundColor	      "green"
-	      ShowName		      off
-	      Gain		      "1/v_gy_max"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux1"
-	      SID		      "177"
-	      Ports		      [2, 1]
-	      Position		      [230, 105, 235, 185]
-	      ZOrder		      -11
-	      ShowName		      off
-	      Inputs		      "2"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Fcn
-	      Name		      "normal-Axis Ground Force"
-	      SID		      "178"
-	      Position		      [265, 127, 420, 163]
-	      ZOrder		      -14
-	      BackgroundColor	      "magenta"
-	      Expr		      "- u(1)  *  (1-u(2)) * (u(2)<1)"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Fn_Ground[N]"
-	      SID		      "179"
-	      Position		      [545, 138, 575, 152]
-	      ZOrder		      -17
-	      BackgroundColor	      "darkGreen"
-	      AttributesFormatString  "initial = '%<InitialOutput>'\\nwhen disabled = '%<OutputWhenDisabled>'"
-	      IconDisplay	      "Port number"
-	      OutputWhenDisabled      "reset"
-	      InitialOutput	      "0"
-	    }
-	    Line {
-	      SrcBlock		      "normal-Axis Ground Force"
-	      SrcPort		      1
-	      DstBlock		      "Fn_Ground[N]"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "delta normal [m]"
-	      SrcPort		      1
-	      DstBlock		      "Gain3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "vnormal [m/s]"
-	      SrcPort		      1
-	      DstBlock		      "Gain4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Mux1"
-	      SrcPort		      1
-	      DstBlock		      "normal-Axis Ground Force"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain3"
-	      SrcPort		      1
-	      DstBlock		      "Mux1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain4"
-	      SrcPort		      1
-	      DstBlock		      "Mux1"
-	      DstPort		      2
-	    }
-	    Annotation {
-	      SID		      "180"
-	      Name		      "Normal Ground Stiction Model"
-	      Position		      [304, 73]
-	      FontSize		      18
-	    }
-	  }
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "81"
+	  Position		  [440, 218, 540, 252]
+	  ZOrder		  -8
+	  Gain			  "C_d*density"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  SID			  "82"
+	  Position		  [190, 140, 230, 170]
+	  ZOrder		  -8
+	  Gain			  "-0.5"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  SID			  "83"
+	  Position		  [305, 265, 345, 295]
+	  ZOrder		  -8
+	  Gain			  "S1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain3"
+	  SID			  "84"
+	  Position		  [200, 50, 230, 80]
+	  ZOrder		  -8
+	  Gain			  "g"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain4"
+	  SID			  "85"
+	  Position		  [305, 140, 345, 170]
+	  ZOrder		  -8
+	  Gain			  "S2"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain5"
+	  SID			  "93"
+	  Position		  [195, 265, 235, 295]
+	  ZOrder		  -8
+	  Gain			  "0.5"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Math\nFunction"
+	  SID			  "86"
+	  Ports			  [1, 1]
+	  Position		  [130, 140, 160, 170]
+	  ZOrder		  -13
+	  Operator		  "square"
 	}
 	Block {
 	  BlockType		  Sum
 	  Name			  "Sum"
-	  SID			  "181"
+	  SID			  "87"
 	  Ports			  [2, 1]
-	  Position		  [130, 165, 150, 185]
-	  ZOrder		  -13
+	  Position		  [255, 145, 275, 165]
+	  ZOrder		  -18
 	  ShowName		  off
 	  IconShape		  "round"
 	  Inputs		  "-+|"
@@ -2149,204 +1805,459 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "skin contact\nsensor"
-	  SID			  "182"
-	  Ports			  [1, 1]
-	  Position		  [205, 105, 235, 135]
-	  ZOrder		  -37
-	  ForegroundColor	  "red"
-	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.260"
-	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
-	  SourceType		  "Compare To Zero"
-	  relop			  "<="
-	  OutDataTypeStr	  "boolean"
-	  ZeroCross		  on
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "92"
+	  Ports			  [2, 1]
+	  Position		  [255, 270, 275, 290]
+	  ZOrder		  -18
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  SID			  "88"
+	  Position		  [375, 215, 425, 255]
+	  ZOrder		  -19
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  SID			  "89"
+	  Position		  [570, 90, 620, 130]
+	  ZOrder		  -19
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "SD_force"
-	  SID			  "183"
-	  Position		  [415, 198, 445, 212]
-	  ZOrder		  82
-	  ForegroundColor	  "lightBlue"
+	  Name			  "force"
+	  SID			  "90"
+	  Position		  [695, 103, 725, 117]
+	  ZOrder		  -23
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "y_vel"
+	  SrcBlock		  "vel"
 	  SrcPort		  1
-	  DstBlock		  "Ground Friction Model"
-	  DstPort		  2
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -80]
+	    DstBlock		    "Math\nFunction"
+	    DstPort		    1
+	  }
 	}
 	Line {
-	  SrcBlock		  "y_pos"
+	  SrcBlock		  "Math\nFunction"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    DstBlock		    "Gain1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "Gain5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain1"
 	  SrcPort		  1
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Ground Friction Model"
+	  SrcBlock		  "pos"
 	  SrcPort		  1
-	  DstBlock		  "SD_force"
-	  DstPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    DstBlock		    "Gain3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
 	}
 	Line {
-	  SrcBlock		  "Constant"
+	  SrcBlock		  "Gain3"
 	  SrcPort		  1
-	  Points		  [65, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "skin contact\nsensor"
-	  SrcPort		  1
-	  Points		  [55, 0]
-	  DstBlock		  "Ground Friction Model"
-	  DstPort		  enable
+	  Points		  [30, 0; 0, 60]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [20, 0; 0, 65; -20, 0]
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Sum"
 	  SrcPort		  1
-	  Points		  [15, 0]
-	  Branch {
-	    Points		    [0, -55]
-	    DstBlock		    "skin contact\nsensor"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Ground Friction Model"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Gain4"
+	  DstPort		  1
 	}
-	Annotation {
-	  SID			  "184"
-	  Name			  "Normal Ground Interaction Model"
-	  Position		  [261, 37]
-	  FontSize		  20
+	Line {
+	  SrcBlock		  "Gain4"
+	  SrcPort		  1
+	  Points		  [0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  Points		  [0, -30]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  DstBlock		  "force"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [0, -110]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 55]
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain5"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  2
 	}
       }
     }
-    Line {
-      Name		      "vel"
-      Labels		      [1, 0]
-      SrcBlock		      "Intg1"
-      SrcPort		      1
-      Points		      [10, 0]
-      Branch {
-	Points			[0, 75]
-	DstBlock		"g2"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Intg2"
-	DstPort			1
-      }
-    }
-    Line {
-      Name		      "pos"
-      Labels		      [0, 1]
-      SrcBlock		      "Intg2"
-      SrcPort		      1
-      Points		      [30, 0]
-      Branch {
-	Points			[0, 125]
-	DstBlock		"g3"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Goto"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -75]
-	DstBlock		"Scope"
-	DstPort			1
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "72"
+      Ports		      [2, 1]
+      Position		      [480, 270, 500, 290]
+      ZOrder		      -18
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "+|-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"prismatic length"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
       }
     }
-    Line {
-      SrcBlock		      "g3"
-      SrcPort		      1
-      Points		      [-260, 0]
-      DstBlock		      "Sum1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "g2"
-      SrcPort		      1
-      DstBlock		      "Sum1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Sum1"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      Labels		      [0, 0]
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "g1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "PID Controller"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "g1"
-      SrcPort		      1
-      DstBlock		      "Sum2"
-      DstPort		      2
-    }
-    Line {
-      Name		      "acc"
-      Labels		      [0, 0]
-      SrcBlock		      "Sum2"
-      SrcPort		      1
-      DstBlock		      "Intg1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "F_gravity"
-      SrcPort		      1
-      DstBlock		      "Sum2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sine Wave"
-      SrcPort		      1
-      DstBlock		      "Sum3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum3"
-      SrcPort		      1
-      DstBlock		      "PID Controller"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From"
-      SrcPort		      1
-      Points		      [60, 0]
-      DstBlock		      "Sum3"
-      DstPort		      2
+    Block {
+      BlockType		      SubSystem
+      Name		      "pattern and power"
+      SID		      "104"
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [260, 177, 390, 243]
+      BackgroundColor	      "cyan"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"pattern and power"
+	Location		[10, 82, 790, 831]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs"
+	  SID			  "107"
+	  Position		  [290, 155, 320, 185]
+	  ZOrder		  -1
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "108"
+	  Ports			  [1, 1]
+	  Position		  [360, 155, 390, 185]
+	  ZOrder		  -10
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Actuator"
+	  SID			  "49"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [140, 60, 180, 100]
+	  ZOrder		  2
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuator"
+	  SourceType		  "Joint Actuator"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Motion"
+	  AngleUnits		  "deg"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N*m"
+	  ActiveIO		  "on"
+	  Width			  "3"
+	  ClassName		  "JointActuator"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  Primitive		  "P1"
+	  ReferenceFrame	  "Absolute (World)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Sensor"
+	  SID			  "101"
+	  Ports			  [0, 2, 0, 0, 0, 1]
+	  Position		  [140, 150, 180, 190]
+	  ZOrder		  5
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
+	  SourceType		  "Joint Sensor"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "off"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[1]"
+	  ActiveIO		  "on"
+	  Width			  "2"
+	  ClassName		  "JointSensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  Primitive		  "P1"
+	  Force			  "on"
+	  ForceUnits		  "N"
+	  Torque		  "off"
+	  TorqueUnits		  "N*m"
+	  ReferenceFrame	  "Absolute (World)"
+	  ReactionSensedSide	  "Base"
+	  ReactionReferenceFrame  "Absolute (World)"
+	  ReactionForce		  "off"
+	  ReactionForceUnits	  "N"
+	  ReactionMoment	  "off"
+	  ReactionMomentUnits	  "N*m"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "112"
+	  Ports			  [2, 1]
+	  Position		  [225, 150, 255, 190]
+	  ZOrder		  -13
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope1"
+	  SID			  "111"
+	  Ports			  [1]
+	  Position		  [445, 154, 475, 186]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [188, 390, 512, 629]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  SaveToWorkspace	  on
+	  SaveName		  "Work"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "Sine Wave"
+	  SID			  "50"
+	  Ports			  [0, 1]
+	  Position		  [225, 65, 255, 95]
+	  ZOrder		  -21
+	  BlockMirror		  on
+	  Amplitude		  "[Amp Amp*freq -Amp*freq^2]"
+	  Frequency		  "freq"
+	  Phase			  "[0 pi/2 0]"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "bar"
+	  SID			  "100"
+	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Position		  [80, 34, 90, 216]
+	  ZOrder		  3
+	  BackgroundColor	  "black"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	  SourceType		  "Mechanical Branching Bar"
+	  LConnTagsString	  "_newl0"
+	  RConnTagsString	  "SA0|SA1"
+	  UpdateFromCAD		  "off"
+	  ClassName		  "BranchingBar"
+	  DialogClass		  "MechanicalBranchingBarBlock"
+	  NumSAPorts		  "2"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Conn1"
+	  SID			  "105"
+	  Position		  [25, 118, 55, 132]
+	  Port			  "1"
+	  Side			  "Left"
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "bar"
+	  SrcPort		  RConn1
+	  DstBlock		  "Joint Actuator"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Sensor"
+	  SrcPort		  LConn1
+	  DstBlock		  "bar"
+	  DstPort		  RConn2
+	}
+	Line {
+	  SrcBlock		  "Sine Wave"
+	  SrcPort		  1
+	  DstBlock		  "Joint Actuator"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Conn1"
+	  SrcPort		  RConn1
+	  DstBlock		  "bar"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Abs"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Abs"
+	  SrcPort		  1
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Joint Sensor"
+	  SrcPort		  2
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Machine\nEnvironment"
-      SrcPort		      RConn1
-      DstBlock		      "Ground"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Prismatic"
+      SrcBlock		      "Body Sensor"
       SrcPort		      LConn1
-      DstBlock		      "Ground"
+      Points		      [-30, 0]
+      DstBlock		      "Body"
       DstPort		      RConn1
     }
     Line {
@@ -2358,34 +2269,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Mechanical\nBranching\nBar"
-      SrcPort		      LConn1
-      Points		      [-125, 0]
-      DstBlock		      "Prismatic"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Joint Sensor"
-      SrcPort		      LConn1
-      DstBlock		      "Mechanical\nBranching\nBar"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Joint Actuator"
+      SrcBlock		      "Machine\nEnvironment"
       SrcPort		      RConn1
-      Points		      [-35, 0; 0, -60]
-      DstBlock		      "Mechanical\nBranching\nBar"
-      DstPort		      RConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Body Sensor"
-      SrcPort		      LConn1
-      Points		      [-35, 0]
-      DstBlock		      "Body"
-      DstPort		      RConn1
+      DstBlock		      "Ground"
+      DstPort		      LConn1
     }
     Line {
       SrcBlock		      "Body Sensor"
@@ -2394,44 +2281,211 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Joint Sensor"
-      SrcPort		      1
-      Points		      [20, 0]
-      Branch {
-	DstBlock		"Ground\nContact3"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -80]
-	DstBlock		"spring_damper"
-	DstPort			1
-      }
+      LineType		      "Connection"
+      SrcBlock		      "Ground"
+      SrcPort		      RConn1
+      DstBlock		      "Prismatic"
+      DstPort		      LConn1
     }
     Line {
-      SrcBlock		      "Joint Sensor"
-      SrcPort		      2
-      Points		      [35, 0]
+      Name		      "mass pos"
+      SrcBlock		      "Selector"
+      SrcPort		      1
+      Points		      [255, 0]
       Branch {
-	DstBlock		"Ground\nContact3"
-	DstPort			2
+	DstBlock		"Scope"
+	DstPort			1
       }
       Branch {
-	Points			[0, -80]
-	DstBlock		"spring_damper"
-	DstPort			2
+	Points			[-1, 0; 0, 75]
+	Branch {
+	  DstBlock		  "Compare\nTo Constant"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [1, 70]
+	  Branch {
+	    Points		    [-1, 45; 1, 0]
+	    Branch {
+	      Labels		      [-1, 1]
+	      DstBlock		      "Scope2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 5]
+	    DstBlock		    "Compare\nTo Constant1"
+	    DstPort		    1
+	  }
+	}
       }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "IC1"
+      SrcBlock		      "Body1"
+      SrcPort		      LConn1
+      DstBlock		      "Prismatic1"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Body Actuator"
       SrcPort		      RConn1
-      Points		      [-90, 0]
-      DstBlock		      "Prismatic"
+      Points		      [-35, 0]
+      DstBlock		      "Body1"
+      DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Body Sensor1"
+      SrcPort		      1
+      DstBlock		      "Selector1"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Body Sensor1"
+      SrcPort		      LConn1
+      Points		      [-10, 0]
+      DstBlock		      "Body1"
       DstPort		      RConn2
     }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Prismatic1"
+      SrcPort		      LConn1
+      Points		      [0, -150; -120, 0]
+      DstBlock		      "Body"
+      DstPort		      RConn2
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Joint Initial Condition"
+      SrcPort		      RConn1
+      Points		      [-10, 0]
+      DstBlock		      "Prismatic"
+      DstPort		      LConn2
+    }
+    Line {
+      SrcBlock		      "Body Sensor1"
+      SrcPort		      2
+      DstBlock		      "Selector2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "toe pos"
+      SrcBlock		      "Selector1"
+      SrcPort		      1
+      Points		      [90, 0]
+      Branch {
+	Points			[0, -285]
+	Branch {
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Branch {
+	  Labels		  [-1, 1]
+	  DstBlock		  "Scope2"
+	  DstPort		  4
+	}
+      }
+      Branch {
+	DstBlock		"Subsystem"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 130]
+	DstBlock		"Scope3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Selector2"
+      SrcPort		      1
+      DstBlock		      "Subsystem"
+      DstPort		      2
+    }
+    Line {
+      Name		      "force"
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -110]
+	Branch {
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Branch {
+	  Labels		  [-1, 1]
+	  Points		  [0, -255]
+	  DstBlock		  "Scope2"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Body Actuator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [-20, 0; 0, 45]
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 20]
+	DstBlock		"Mux1"
+	DstPort			3
+      }
+    }
+    Line {
+      Name		      "prismatic length"
+      Labels		      [-1, 1]
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Scope2"
+      DstPort		      3
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "pattern and power"
+      SrcPort		      LConn1
+      Points		      [-40, 0]
+      DstBlock		      "Prismatic1"
+      DstPort		      LConn2
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant1"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation1"
+      DstPort		      1
+    }
     Annotation {
-      SID		      "9"
-      Position		      [308, 115]
+      SID		      "57"
+      Position		      [286, 31]
+    }
+    Annotation {
+      SID		      "61"
+      Position		      [496, 651]
     }
   }
 }
@@ -2439,7 +2493,7 @@ MatData {
   NumRecords		  1
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    4     8    (    !          %    \"     $    9     0         0    &0   $AO<'!E<E]G<F]U;F"
-    "1?;65C:\"]'<F]U;F0         "
+    Data		    "  %)30     .    2     8    (    !          %    \"     $    3     0         0    $P   '=A=&5R7VAO<'!E<B"
+    "]'<F]U;F0       "
   }
 }
