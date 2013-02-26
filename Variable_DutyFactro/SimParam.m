@@ -16,5 +16,10 @@ density = 1000;
 g = 9.81;
 C_d = 0.703;
 
+b_water = 0.5*C_d*S1*density;
+k_water = C_d*S1*density*g;
+FRatio = 1/16;
+
+
 tau = 0.001;
-alpha = 10;
+alpha = 30;
