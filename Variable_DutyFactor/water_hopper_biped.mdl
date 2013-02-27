@@ -6,11 +6,11 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.61"
+    ComputedModelVersion    "1.66"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1616.0, 876.0]
+      Location		      [0.0, 961.0, 1364.0, 204.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -40,7 +40,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -53,39 +53,39 @@ Model {
 	Dimension		4
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "309"
-	  Extents		  [1564.0, 697.0]
-	  ZoomFactor		  [0.98455907583209434]
-	  Offset		  [5.780436802973977, 129.1599093866171]
+	  Extents		  [896.0, 918.0]
+	  ZoomFactor		  [0.85696655559669266]
+	  Offset		  [3.6633064516129039, -60.991026425691217]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "274"
-	  Extents		  [748.0, 681.0]
+	  Extents		  [1057.0, 918.0]
 	  ZoomFactor		  [0.77005347593582885]
-	  Offset		  [0.0, -2.1805555555555429]
+	  Offset		  [-4.1805555555555429, -2.1805555555555429]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "265"
-	  Extents		  [748.0, 681.0]
+	  Extents		  [1057.0, 918.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [10.625, -170.5]
+	  Offset		  [10.375, -170.5]
 	}
 	Object {
 	  $ObjectID		  8
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [0.78016726403823178]
-	  Offset		  [-4.1333269525267387, -63.009512774064461]
+	  Extents		  [1326.0, 61.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-115.125, -91.76171875]
 	}
 	PropName		"EditorsInfo"
       }
@@ -98,11 +98,11 @@ Model {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 26 19:07:29 2013"
-  RTWModifiedTimeStamp	  283800221
-  ModelVersionFormat	  "1.%<AutoIncrement:61>"
+  LastModifiedDate	  "Tue Feb 26 20:25:59 2013"
+  RTWModifiedTimeStamp	  283809757
+  ModelVersionFormat	  "1.%<AutoIncrement:66>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1125,7 +1125,7 @@ Model {
   }
   System {
     Name		    "water_hopper_biped"
-    Location		    [0, 0, 800, 860]
+    Location		    [0, 961, 1364, 1165]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1137,7 +1137,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "78"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "375"
     Block {
@@ -2702,7 +2702,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem2"
-	Location		[-8, -8, 1608, 868]
+	Location		[0, 559, 934, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2714,7 +2714,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"98"
+	ZoomFactor		"85"
 	Block {
 	  BlockType		  Inport
 	  Name			  "y"
@@ -3277,8 +3277,8 @@ Model {
 	  Position		  [765, 724, 795, 756]
 	  ZOrder		  79
 	  Floating		  off
-	  Location		  [-6, 54, 1594, 865]
-	  Open			  on
+	  Location		  [2, 49, 825, 551]
+	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -4389,7 +4389,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"pattern and power1"
-	Location		[0, 0, 800, 860]
+	Location		[825, 19, 1920, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4622,7 +4622,7 @@ Model {
 	  }
 	  System {
 	    Name		    "pattern"
-	    Location		    [0, 0, 800, 860]
+	    Location		    [825, 19, 1920, 1080]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4848,8 +4848,8 @@ Model {
 	      ZOrder		      21
 	      BlockMirror	      on
 	      Floating		      off
-	      Location		      [188, 390, 715, 780]
-	      Open		      on
+	      Location		      [827, 49, 1920, 1078]
+	      Open		      off
 	      NumInputPorts	      "1"
 	      List {
 		ListType		AxesTitles
@@ -6530,7 +6530,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 22:31:44
+#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 17:33:50
 #
 #
 
@@ -6541,8 +6541,6 @@ Stateflow {
     created		    "26-Feb-2013 17:24:34"
     isLibrary		    0
     firstTarget		    9
-    debug {
-    }
     sfVersion		    76014001.001
   }
   chart {
@@ -6583,13 +6581,13 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = fcn(u)\n\nmass = 0.05;\nleg_length = 0.06;\nA = leg_length;\nomega = 60;\nforceRatio"
-      " = 1/16;\n\nh = u(1)-leg_length;\nDF = u(2);\n\n\n\nr1 = 0.02;\nS1 = pi*r1^2;\ndensity = 1000;\ng = 9.81;\nC_d ="
-      " 0.703;\n\nb = 0.5*C_d*S1*density;\nk = C_d*S1*density*g;\nW = mass*g;\n\n \nF = (omega^2*b/(8*pi)*((pi/2 - asin"
-      "(h/A))*A^2 - h*sqrt(A^2 - h^2))*(1/DF - forceRatio/(1-DF)) ...\n    - k/(pi)*((pi/2 - asin(h/A))*h - sqrt(A^2 - "
-      "h^2))*(DF + forceRatio*(1-DF))) - W;\n\nF_ap = (omega^2*b/(8*pi)*((pi/2 - asin(h/A))*A^2 - h*sqrt(A^2 - h^2))*( "
-      "(1/0.6-forceRatio/(1-0.6)) + ( -.6^-2 - forceRatio*(1-0.6)^-2)*DF ) ...\n    - k/(pi)*((pi/2 - asin(h/A))*h - sq"
-      "rt(A^2 - h^2))*(DF + forceRatio*(1-DF))) - W;\n\ny = [F F_ap];"
+      script		      " function y = fcn(u)\n\nmass = 0.05;\nleg_length = 0.06;\nA = leg_length;\nomega = 60;\nforceRati"
+      "o = 1/16;\n\nh = u(1)-leg_length;\nDF = u(2);\n\n\n\nr1 = 0.02;\nS1 = pi*r1^2;\ndensity = 1000;\ng = 9.81;\nC_d "
+      "= 0.703;\n\nb = 0.5*C_d*S1*density;\nk = C_d*S1*density*g;\nW = mass*g;\n\n \nF = (omega^2*b/(8*pi)*((pi/2 - asi"
+      "n(h/A))*A^2 - h*sqrt(A^2 - h^2))*(1/DF - forceRatio/(1-DF)) ...\n    - k/(pi)*((pi/2 - asin(h/A))*h - sqrt(A^2 -"
+      " h^2))*(DF + forceRatio*(1-DF))) - W;\n\nDF_0 = 0.6;\nF_ap = (omega^2*b/(8*pi)*((pi/2 - asin(h/A))*A^2 - h*sqrt("
+      "A^2 - h^2))*((1/DF_0-forceRatio/(1-DF_0)) + ( -DF_0^-2 - forceRatio*(1-DF_0)^-2)*(DF - DF_0)) ...\n    - k/(pi)*"
+      "((pi/2 - asin(h/A))*h - sqrt(A^2 - h^2))*(DF + forceRatio*(1-DF))) - W;\n\ny = [F F_ap];"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
