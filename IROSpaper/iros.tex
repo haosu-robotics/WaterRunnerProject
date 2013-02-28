@@ -9,15 +9,9 @@
 % on the last page of the document
 
 
-
-% The following packages can be found on http:\\www.ctan.org
 \usepackage{graphics} % for pdf, bitmapped graphics files
-%\usepackage{epsfig} % for postscript graphics files
-%\usepackage{mathptmx} % assumes new font selection scheme installed
-%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{subcaption}
 \usepackage{amsmath} % assumes amsmath package installed
-%\usepackage{amssymb}  % assumes amsmath package installed
-\usepackage{hyperref}
 \usepackage{todonotes}
 
 \title{\LARGE \bf
@@ -50,18 +44,48 @@ Roll and Pitch Motion Control for Legged Locomotion \\ on the Water Surface
 
 \section{LEGGED LOCOMOTION MODEL}
 
-Before we can design a controller to stabilize the roll and pitch motion of the robot, we must first understand the dynamics of the system. Previous works, \cite{glasheen1996hydrodynamic}, \cite{floyd2008design}, \cite{hsieh2004running}, have considered the coupled vertical and horizontal kinematics and dynamics of the basilisk lizard and a water runner robot inspired by this animal. Both the lizard and the robot produce lift by slapping and stroking their feet through the water to generate lift via drag forces. The high speed of the vertical foot entry creates and air cavity through which the foot is retracted, thereby greatly reducing downwards drag forces during this phase.
+Before we can design a controller to stabilize the roll and pitch motion of the robot, we must first understand the dynamics of the system. Previous works, \cite{glasheen1996hydrodynamic}, \cite{floyd2008design}, \cite{hsieh2004running}, have considered the coupled vertical and horizontal kinematics and dynamics of the basilisk lizard. These works found that the Basilisk Lizard produces lift and thrust by cycling its feet through the water surface in three distinct phases: slap, stroke, and recovery. In the slap and stroke phases, the lizard generates vertical and horizontal forces primarily via fluid drag on the foot. Then during the retraction phase, the lizard withdraws its foot within the lingering air cavity produced by the high velocity of the foot during the slap phase, thereby greatly reducing downwards drag forces during this phase. 
 
-The above studies provide detailed descriptions of forces generated during water surface locomotion, but their complexity can limit intuition and preclude the development of analytical expressions for generated force and robot state.  Therefore, to simplify and focus our analysis on the dynamics required to understand pitch and roll motions, we will only consider vertical dynamics in the following analysis. 
+The above studies provide detailed descriptions of forces generated during water surface locomotion, but their complexity can limit intuition and preclude the development of analytical expressions for generated force and robot state.  Therefore, to simplify and focus our analysis on the dynamics required to understand pitch and roll motions, we will only consider vertical dynamics produced by a simplified foot trajectory in the following analysis. 
 
+Figure~\ref{fig:trajrob} shows the foot trajectory  and the corresponding phase diagram of the previously built water runner robot \cite{park2010roll}. In contrast, figure~\ref{fig:trajsimp} shows a simplified circular foot trajectory and its corresponding phase diagram. We can see from the phase diagrams of the two trajectories that, especially during the plunge and stroke stages, the $y$-kinematics of the simplified foot trajectory and the actual foot trajectory are quite similar. This suggests that the $y$-dynamics produced by these two trajectories may also be similar.
 
-Galsheen and McMahon \cite{glasheen1996vertical} found that the time-varying vertical forces exerted by water during impact of disks follow the relation
+\begin{figure}[tb]
+	\centering
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/foot_trajs.pdf}
+		\caption{The water runner robot's foot locus in blue, with three instantaneous configurations of the leg's four-bar mechanism shown in grey. The circular path traced by the joint at the end of the input link is traced in green. In red is the phase diagram of this legged system.}
+		\label{fig:trajrob}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/foot_trajs2.pdf}
+		\caption{A simplified circular foot locus in blue, with three instantaneous leg configurations shown in grey. In red is the phase diagram of this model.}
+		\label{fig:trajsimp}
+	\end{subfigure}
+	\caption{Trajectories and phase portraits for the water runner robot and a simplified model. Note that the orientation of the foot pad of the actual robot follows the orientation of the leg, whereas the orientation of the foot pad in the simplified mode is constant.}
+	\label{fig:traj}
+\end{figure}
+
+Because we are neglecting the horizontal kinematics of the system, the simplified circular foot trajectory can be further simplified to a foot mounted on a prismatic joint traveling vertically. We can calculate the force generated by a foot traveling on this trajectory via the equation obtained by Galsheen and McMahon \cite{glasheen1996vertical}, which states that the time-varying forces exerted by water during vertical impact of disks follows,
 
 \begin{equation}
 	F(t) = - C_D^* \left[\frac{1}{2} S \rho \dot{y}(t) |\dot{y}(t) | + S \rho g y(t) \right]
+	\label{eq:force_t}
 \end{equation}
 
 \noindent where $F(t)$ is the time varying drag force, $C_D^* \approx 0.703$ is the drag coefficient, $\rho$ is the density of water, $g$ is the acceleration due to gravity, $S = \pi r_{eff}^2$ is the effective circular area of the disk, and $y(t)$ and $\dot{y}(t)$ are the time-varying vertical position and velocity of the disk measured in a coordinate system where positive $y$ opposes the gravity vector. 
+
+Equation~\ref{eq:force_t} shows that the magnitude of the force force has a quadratic dependence on foot pad speed, as one would expect given the high-Reynolds number regime in which the foot operates. Therefore, the robot should generate significantly more lift by plunging its foot into the water faster than it retracts its foot.
+
+We now introduce a new parameter, duty factor $(DF)$, which is the ratio of the time the foot spends travelling downwards over the total time of one cycle. With this definition, we can find the angular velocity during the downwards half of the trajectory $\omega_1$ and the angular velocity during the upwards half of the trajectory $\omega_2$, given an average angular velocity $\omega$.
+
+\begin{align}
+	\omega_1 &= \frac{\omega}{2 DF} \\
+	\omega_2 &= \frac{\omega}{2 (1 - DF)}
+\end{align}
 
 \section{CONCLUSIONS}
 

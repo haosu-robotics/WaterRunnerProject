@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font', family='serif')
 
 def calcAngles(theta1):
 	'''Takes input link angle, performs 4 bar kinematics calcs and returns angles of all links'''
@@ -80,7 +83,7 @@ for theta1 in np.linspace(0,2*np.pi,360):
 	
 	if i == 180 or i == 180+36 or i == 180 + 72:
 		legPts = np.array([O, A, F, B, C])
-		plt.plot(legPts[:,0],legPts[:,1],'k',lw = 0.3, color = str(np.mod(i+180,360)/(90.)))
+		plt.plot(legPts[:,0],legPts[:,1],'k',lw = 0.3, color = str((252. - i)/90.))
 	i += 1
 
 plt.plot(footPts[:,0],footPts[:,1],lw = 1.5)
@@ -98,7 +101,7 @@ plt.gca().axes.set_xticks([])
 plt.gca().axes.set_yticks([])
 plt.xlabel('y-velocity')
 plt.ylabel('y-position')
-plt.plot(footSpeed[:,1],footPts[:,1],lw = 1.5)
+plt.plot(footSpeed[:,1],footPts[:,1],'r',lw = 1.5)
 #plt.axis('equal')
 plt.savefig('legspeed.pdf', bbox_inches='tight')
 
@@ -114,7 +117,7 @@ for theta1 in np.linspace(0,2*np.pi,360):
 	if i == 180 or i == 180+36 or i == 180 + 72:
 		x = r*np.cos(theta1)
 		y = r*np.sin(theta1)			
-		plt.plot([0,x],[0,y],'k',lw = 0.5, color = str(np.mod(i+180,360)/(90.)))
+		plt.plot([0,x],[0,y],'k',lw = 0.5, color = str((252. - i)/90.))
 	i += 1
 
 plt.plot(r*np.cos(theta),r*np.sin(theta),lw = 2)
@@ -129,7 +132,7 @@ plt.ylabel('y-position')
 plt.gca().axes.set_xticks([])
 plt.gca().axes.set_yticks([])
 
-plt.plot(70*r*np.cos(theta),r*np.sin(theta),lw = 1.5)
+plt.plot(70*r*np.cos(theta),r*np.sin(theta),'r',lw = 1.5)
 #plt.axis('equal')
 plt.savefig('leg2speed.pdf', bbox_inches='tight')
 
