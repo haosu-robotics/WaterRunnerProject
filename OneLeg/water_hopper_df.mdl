@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.32"
+    ComputedModelVersion    "1.33"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 911.0, 1061.0]
+      Location		      [0.0, 19.0, 1920.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,9 +55,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[873.0, 919.0]
-	ZoomFactor		[1.0]
-	Offset			[-227.0, 6.0]
+	Extents			[1882.0, 919.0]
+	ZoomFactor		[1.2168170154652098]
+	Offset			[-400.82909389029186, 8.4945724607182953]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 25 14:04:55 2013"
+  LastModifiedDate	  "Tue Feb 26 12:35:59 2013"
   RTWModifiedTimeStamp	  283692125
-  ModelVersionFormat	  "1.%<AutoIncrement:32>"
+  ModelVersionFormat	  "1.%<AutoIncrement:33>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -756,7 +756,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 310, 210, 1267, 936 ] 
+      ConfigPrmDlgPosition     [ 310, 210, 1271, 940 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1069,7 +1069,7 @@ Model {
   }
   System {
     Name		    "water_hopper_df"
-    Location		    [0, 19, 911, 1080]
+    Location		    [0, 19, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1081,7 +1081,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "121"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "162"
     Block {
@@ -1609,7 +1609,7 @@ Model {
       Position		      [675, 217, 730, 318]
       ZOrder		      -16
       Floating		      off
-      Location		      [2, 49, 911, 795]
+      Location		      [2, 49, 911, 1078]
       Open		      off
       NumInputPorts	      "4"
       ZoomMode		      "xonly"
@@ -1632,8 +1632,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "10"
-      YMin		      "-0.025~-2.5~-1.73472e-18~-0.075"
-      YMax		      "0.125~15~0.055~0.125"
+      YMin		      "-0.1~-5~-1.73472e-18~-0.1"
+      YMax		      "0.4~50~0.055~0.4"
       SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off

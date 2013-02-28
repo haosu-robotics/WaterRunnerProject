@@ -9,7 +9,7 @@ Amp = 0.0260;
 amp = Amp;
 leg_length = Amp;
 freq = 84;
-df = 0.2;
+df = 0.1;
 y_0 = Amp/2;
 
 r1 = 0.02;

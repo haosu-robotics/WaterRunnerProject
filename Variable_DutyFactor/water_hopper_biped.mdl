@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.66"
+    ComputedModelVersion    "1.67"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 961.0, 1364.0, 204.0]
+      Location		      [0.0, 19.0, 1305.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -48,46 +48,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		4
-	Object {
-	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "309"
-	  Extents		  [896.0, 918.0]
-	  ZoomFactor		  [0.85696655559669266]
-	  Offset		  [3.6633064516129039, -60.991026425691217]
-	}
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "274"
-	  Extents		  [1057.0, 918.0]
-	  ZoomFactor		  [0.77005347593582885]
-	  Offset		  [-4.1805555555555429, -2.1805555555555429]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "265"
-	  Extents		  [1057.0, 918.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [10.375, -170.5]
-	}
-	Object {
-	  $ObjectID		  8
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1326.0, 61.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [-115.125, -91.76171875]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"309"
+	Extents			[1267.0, 919.0]
+	ZoomFactor		[1.0356658027890906]
+	Offset			[-80.68755175322903, 29.35385873520201]
       }
     }
   }
@@ -100,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 26 20:25:59 2013"
-  RTWModifiedTimeStamp	  283809757
-  ModelVersionFormat	  "1.%<AutoIncrement:66>"
+  LastModifiedDate	  "Wed Feb 27 10:43:36 2013"
+  RTWModifiedTimeStamp	  283862602
+  ModelVersionFormat	  "1.%<AutoIncrement:67>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -137,7 +107,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    9
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "water_hopper"
     signals_		    []
@@ -197,13 +167,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      10
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  11
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "3"
@@ -238,7 +208,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  12
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -270,7 +240,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  13
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -326,7 +296,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  14
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -416,7 +386,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  15
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -453,7 +423,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  16
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -468,7 +438,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  17
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -483,7 +453,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  18
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -546,7 +516,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      19
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -613,7 +583,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      20
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -694,7 +664,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  21
+	  $ObjectID		  18
 	  Version		  "1.0"
 	  Array {
 	    Type		    "Cell"
@@ -706,7 +676,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    MECH.SimMechanicsCC {
-	      $ObjectID		      22
+	      $ObjectID		      19
 	      Version		      "1.12.1"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
@@ -739,14 +709,14 @@ Model {
 	      OVRRIDBodyVisualizationType "NONE"
 	    }
 	    simmechanics.ConfigurationSet {
-	      $ObjectID		      23
+	      $ObjectID		      20
 	      Version		      "1.12.1"
 	      Description	      "SimMechanics 2G"
 	      Array {
 		Type			"Handle"
 		Dimension		2
 		simmechanics.DiagnosticsConfigSet {
-		  $ObjectID		  24
+		  $ObjectID		  21
 		  Version		  "1.12.1"
 		  Description		  "Diagnostics"
 		  Name			  "DiagnosticsConfigSet"
@@ -760,7 +730,7 @@ Model {
 		  SimMechanicsJointTargetOverSpecification "error"
 		}
 		simmechanics.ExplorerConfigSet {
-		  $ObjectID		  25
+		  $ObjectID		  22
 		  Version		  "1.12.1"
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
@@ -793,11 +763,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    10
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    26
+    $ObjectID		    23
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1125,8 +1095,8 @@ Model {
   }
   System {
     Name		    "water_hopper_biped"
-    Location		    [0, 961, 1364, 1165]
-    Open		    on
+    Location		    [0, 19, 1115, 1080]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1603,8 +1573,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "1"
+      MachineId		      "[2 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -2702,7 +2672,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem2"
-	Location		[0, 559, 934, 1080]
+	Location		[0, 19, 1305, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2714,7 +2684,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"85"
+	ZoomFactor		"103"
 	Block {
 	  BlockType		  Inport
 	  Name			  "y"
@@ -2830,7 +2800,7 @@ Model {
 	  SFBlockType		  "MATLAB Function"
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    27
+	    $ObjectID		    24
 	    $ClassName		    "Simulink.Mask"
 	    Type		    "Stateflow"
 	    Description		    "Embedded MATLAB block"
@@ -3117,8 +3087,8 @@ Model {
 	  Position		  [290, 296, 320, 329]
 	  ZOrder		  41
 	  Floating		  off
-	  Location		  [765, 63, 1549, 858]
-	  Open			  off
+	  Location		  [1307, 49, 1920, 511]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -3153,7 +3123,7 @@ Model {
 	  Position		  [805, 559, 835, 591]
 	  ZOrder		  68
 	  Floating		  off
-	  Location		  [188, 390, 512, 629]
+	  Location		  [2, 49, 1286, 1078]
 	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
@@ -3215,7 +3185,7 @@ Model {
 	  Position		  [1000, 429, 1030, 461]
 	  ZOrder		  74
 	  Floating		  off
-	  Location		  [188, 390, 512, 629]
+	  Location		  [1117, 49, 1920, 1078]
 	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
@@ -3246,7 +3216,7 @@ Model {
 	  Position		  [1000, 489, 1030, 521]
 	  ZOrder		  76
 	  Floating		  off
-	  Location		  [823, 297, 1366, 737]
+	  Location		  [1117, 499, 1920, 1078]
 	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
@@ -3277,9 +3247,10 @@ Model {
 	  Position		  [765, 724, 795, 756]
 	  ZOrder		  79
 	  Floating		  off
-	  Location		  [2, 49, 825, 551]
-	  Open			  off
+	  Location		  [1307, 543, 1920, 1078]
+	  Open			  on
 	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
@@ -3316,7 +3287,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [-8, -8, 1608, 868]
+	    Location		    [0, 19, 1286, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3469,7 +3440,7 @@ Model {
 	      Position		      [380, 174, 410, 206]
 	      ZOrder		      71
 	      Floating		      off
-	      Location		      [188, 390, 512, 629]
+	      Location		      [2, 49, 1286, 1078]
 	      Open		      off
 	      NumInputPorts	      "1"
 	      List {
@@ -4389,8 +4360,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"pattern and power1"
-	Location		[825, 19, 1920, 1080]
-	Open			on
+	Location		[0, 19, 1115, 1080]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4585,27 +4556,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    28
+	    $ObjectID		    25
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		29
+		$ObjectID		26
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		30
+		$ObjectID		27
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		31
+		$ObjectID		28
 		Type			"promote"
 		Array {
 		  Type			  "Cell"
@@ -4622,8 +4593,8 @@ Model {
 	  }
 	  System {
 	    Name		    "pattern"
-	    Location		    [825, 19, 1920, 1080]
-	    Open		    on
+	    Location		    [934, 19, 1917, 1080]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5492,27 +5463,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    32
+	    $ObjectID		    29
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		33
+		$ObjectID		30
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		34
+		$ObjectID		31
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		32
 		Type			"promote"
 		Array {
 		  Type			  "Cell"

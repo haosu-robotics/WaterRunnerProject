@@ -57,9 +57,15 @@ end
 
 save('oneleg.mat')
 
+load height.mat
+freqs2 = 12:4:100;
+dfs2 = 0.3:.05:.7;
+[FREQ2, DF2] = meshgrid(freqs2,dfs2);
+
 figure(1)
-surf(FREQ,DF,y_sim,'FaceAlpha',0.5,'FaceColor','b')
+surf(FREQ2,DF2,robot_vert_avg,'FaceAlpha',0.5,'FaceColor','k')
 hold on
+surf(FREQ,DF,y_sim,'FaceAlpha',0.5,'FaceColor','b')
 surf(FREQ,DF,y_pred,'FaceAlpha',.5,'FaceColor','g')
 surf(FREQ,DF,y_pred2,'FaceAlpha',.5,'FaceColor','r')
 hold off
@@ -67,7 +73,7 @@ hold off
 xlabel('Frequency [rad/s]')
 ylabel('Duty Factor [m]')
 zlabel('Height [m]')
-lgd = legend('Simulated Height','Predicted Height 1','Predicted Height 2','Location','NorthEast');
+lgd = legend('Robot Simulation Height','Simple Simulation Height','Numerically Calculated Height',' Analytically Calculated Height','Location','NorthEast');
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
 saveas(gcf,'heightdf.fig')
