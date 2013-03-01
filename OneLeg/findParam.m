@@ -6,7 +6,6 @@ load_system('water_hopper.mdl');
 T_des = 20;
 
 freqs = 12:2:100;
-dfs = 
 amps = 0.02:0.0025:0.035;
 areas = 0.5:0.025:1;
 

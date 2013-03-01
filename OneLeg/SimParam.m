@@ -1,21 +1,19 @@
-global r1 forceRatio mass
-
-T_des = 100;
+global r1 forceRatio mass DF
 
 mass = 0.025;
 numLegs = 4;
 
-Amp = 0.0260;
+Amp = 0.0249;
 amp = Amp;
 leg_length = Amp;
-freq = 84;
-df = 0.1;
+%freq = 84;
+DF = 0.5;
 y_0 = Amp/2;
 
 r1 = 0.02;
 r2 = r1/4;
 forceRatio = (r2^2)/(r1^2);
-area= 0.7968;
+area= 0.9185;
 S1 = (pi*r1^2)*area;
 S2 = (pi*r2^2)*area;
 

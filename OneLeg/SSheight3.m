@@ -1,9 +1,9 @@
-function h =  SSheight3(coeff,omega)
+function hvec =  SSheight3(coeff,omega)
 	%version of steady state height equation for least squares fitting to simulated robot data
 
-	global r1 forceRatio mass
+	global r1 forceRatio mass DF
 
-	Amp = coeff(1);
+	A = coeff(1);
 	area = coeff(2);
 
 	C_d = 0.703;
@@ -16,6 +16,16 @@ function h =  SSheight3(coeff,omega)
 	
 	W = mass*g;
 	
+	hvec = zeros(size(omega));
+	i = 1;
+	for omega1 = omega
+		fun = @(h)hfunc(omega1,DF,A,b,k,W,forceRatio,h);
+		h0 = A/2;
+		hvec(i) = fsolve(fun,h0) + A;
+		i = i + 1;
+	end
+
+	%{
 	C1 = (omega.^2)*b*Amp*(1/.DF-forceRatio./(1-DF))/(8*pi);
 	C2 = k*(DF + forceRatio*(1- DF))/pi;
 
@@ -24,5 +34,6 @@ function h =  SSheight3(coeff,omega)
 	C = C1*pi.*Amp/2 + C2.*Amp - W;
 
 	h = (-B - sqrt(B.^2 - 4*A.*C))./(2*A) + Amp;
-	h(h<0) = 0;
+	%}
+	hvec(hvec<0) = 0;
 end
