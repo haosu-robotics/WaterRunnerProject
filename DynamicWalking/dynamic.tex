@@ -8,9 +8,9 @@
 \usepackage{amsmath}
 \usepackage{sectsty}
 \sectionfont{\large}
+\usepackage{todonotes}
 
-\title{\Large Roll and Pitch Motion Control for Legged Locomotion on the Water Surface}
-
+\title{\large \textbf{Angular Motion Control Using a Closed-Loop CPG for a Water-Running Robot}}
 \author{\small Nitish Thatte, Mahdi Khoramshahi, Metin Sitti \\
         \small Carnegie Mellon University \\
         \small \{nitisht, khoram\} at andrew.cmu.edu, metin at cmu.edu
@@ -19,7 +19,6 @@
 \begin{document}
 
 \maketitle
-
 \section{Motivation}
 \input{motivation}
 
@@ -48,15 +47,19 @@
 		\caption{Foot Trajectory}
 		\label{fig:traj}
 	\end{subfigure}
+	\vspace{-0.25in}
 	\caption{}
+	\vspace{-0.15in}
 \end{figure}
 
 \section{Current Results}
+\input{results}
 
 \section{Best Possible Outcome}
+\input{outcome}
 
 \section*{Acknowledgment}
-This material is based upon work supported by the National Science Foundation Graduate Research Fellowships. Any opinion, findings, and conclusions or recommendations expressed in this material are those of the authors(s) and do not necessarily reflect the views of the National Science Foundation.
+This material is based upon work supported by the National Science Foundation Graduate Research Fellowships. 
 
 \bibliographystyle{plain}
 \bibliography{dynamic}
