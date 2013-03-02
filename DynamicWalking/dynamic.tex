@@ -28,10 +28,37 @@
 \section*{State of the Art}
 \input{stateArt}
 
+<<<<<<< HEAD
 \section*{Own Approach}
 To control the roll and pitch motion of the robot we propose a novel, closed-loop CPG that modulates the velocity of each foot during the downwards and upwards phases of their trajectories (Duty Factor), while simultaneously maintaining the phase relation between feet to perform trot gait. This approach takes advantage of non-linear fluid drag forces to generate differing forces on each foot, thereby imparting moments on the robot. 
 	
 We start with designing height controller for simplified one-leg water-hopper. To deal with the hybrid and time-variant nature of the system we utilize a time averaging approach. We then approximate the generated force by foot trajectory as an linear expression with respect to duty factor. Finally we design our controller output (duty factor) to achieve a desired virtual model, here a spring with adjustable stiffness. In order to take care of unmodeled dynamics and uncertainties, A PID-controller is also added to outer control loop.\\
+=======
+\section{Own Approach}
+\input{approach}
+
+\begin{figure}[tb]
+	\centering
+	\begin{subfigure}[c]{0.24\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/robot.png}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.24\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{figures/traj.pdf}
+	\end{subfigure}
+
+	\begin{subfigure}[c]{0.24\textwidth}
+		\caption{Robot Design}
+		\label{fig:robot}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.24\textwidth}
+		\caption{Foot Trajectory}
+		\label{fig:traj}
+	\end{subfigure}
+	\caption{}
+\end{figure}
+>>>>>>> 8d96567e3150335b9bd621f036a34b51884dd421
 
 %Finally, we design a non-linear PID controller based on this force law, which attempts to minimize the error between the height of each corner of %the robot and a desired height, thereby achieving the desired roll and pitch angles.
 
