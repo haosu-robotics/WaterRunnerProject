@@ -4,16 +4,17 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
 \usepackage{amsmath}
 \usepackage{sectsty}
 \sectionfont{\large}
 \usepackage{todonotes}
 
 \title{\large \textbf{Angular Motion Control Using a Closed-Loop CPG for a Water-Running Robot}}
-\author{\small Nitish Thatte, Mahdi Khoramshahi, Metin Sitti \\
-        \small Carnegie Mellon University \\
-        \small \{nitisht, khoram\} at andrew.cmu.edu, metin at cmu.edu
+\author{\small ${^1}$Nitish Thatte, ${^2}$Mahdi Khoramshahi, ${^3}$Auke Isjpeert, and  ${^4}$Metin Sitti \\
+        \small $^{\{1,2,4\}}$Carnegie Mellon University, $^{3}$\'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne\\
+        \small \{nitisht, khoram, msitti\}@andrew.cmu.edu, auke.ijspeert@epfl.ch
 }
 \date{}
 \begin{document}
@@ -47,9 +48,9 @@
 		\caption{Foot Trajectory}
 		\label{fig:traj}
 	\end{subfigure}
-	\vspace{-0.25in}
-	\caption{}
 	\vspace{-0.15in}
+	\caption{}
+	\vspace{-0.10in}
 \end{figure}
 
 \section{Current Results}
@@ -59,7 +60,7 @@
 \input{outcome}
 
 \section*{Acknowledgment}
-This material is based upon work supported by the National Science Foundation Graduate Research Fellowships. 
+This material is based upon work supported by a National Science Foundation Graduate Research Fellowship. 
 
 \bibliographystyle{plain}
 \bibliography{dynamic}
