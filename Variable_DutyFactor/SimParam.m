@@ -23,3 +23,4 @@ FRatio = 1/16;
 
 tau = 0.001;
 alpha = 30;
+t_fil = 0.2;
