@@ -28,7 +28,7 @@ for k = 1 : numel(FREQ)
 		y_pred(k) = nan;
 	end
 
-	y_pred2(k) = real(SSheight2(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
+	y_pred2(k) = real(SSheight12(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
 	if y_pred2(k) < 0
 		y_pred2(k) = nan;
 	end
@@ -52,7 +52,6 @@ for k = 1 : numel(FREQ)
 	if y_sim(k) < 0 || y_sim(k) > .100
 		y_sim(k) = nan;
 	end
-	%}
 end
 
 save('oneleg.mat')
@@ -73,16 +72,16 @@ hold off
 xlabel('Frequency [rad/s]')
 ylabel('Duty Factor [m]')
 zlabel('Height [m]')
-lgd = legend('Robot Simulation Height','Simple Simulation Height','Numerically Calculated Height',' Analytically Calculated Height','Location','NorthEast');
+lgd = legend('Robot Simulation Height','Simple Simulation Height','Calculated: omega, DF','Calculated: omega_1, omega_2','Location','NorthEast');
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
 saveas(gcf,'heightdf.fig')
 
 figure(2)
 ax(1) = subplot(121);
-	h = pcolor(FREQ,DF,abs(y_pred-y_sim)./y_sim*100);
+	h = pcolor(FREQ,DF,abs(y_pred2-y_pred)./y_pred*100);
 	set(h,'FaceColor','interp')
-	title('Numerically Calculated Height Error')
+	title('Calculated: omega, DF')
 	caxis([0 50])
 	axis([44 100 .2 .8])
 	xlabel('Frequency [rad/s]')
@@ -91,7 +90,7 @@ ax(1) = subplot(121);
 ax(2) = subplot(122);
 	h = pcolor(FREQ,DF,abs(y_pred2-y_sim)./y_sim*100);
 	set(h,'FaceColor','interp')
-	title('Analytically Calculated Height Error')
+	title('Calculated: omega_1, omega_2')
 	axis([44 100 .2 .8])
 	caxis([0 50])
 	xlabel('Frequency [rad/s]')
@@ -105,34 +104,3 @@ end
 set(gca, 'Color', 'None')
 %clabel('Percent Error')
 saveas(gcf,'heightdferr.fig')
-
-
-%{
-figure(3)
-surf(FREQ,DF,power_sim,'FaceAlpha',0.5,'FaceColor','b')
-hold on
-surf(FREQ,DF,power_pred,'FaceAlpha',.5,'FaceColor','g')
-surf(FREQ,DF,power_pred2,'FaceAlpha',.5,'FaceColor','r')
-hold off
-%axis([0, 100, 0, .1, -.1, .2])
-xlabel('Frequency [rad/s]')
-ylabel('Amplitude [m]')
-zlabel('Power [W]')
-lgd = legend('Simulated Power','Predicted Power 1','Predicted Power 2','Location','NorthEast');
-set(gca, 'Color', 'None')
-set(lgd, 'Color', 'None')
-
-figure(4)
-surf(FREQ,DF,abs(power_pred-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','g')
-hold on
-surf(FREQ,DF,abs(power_pred2-power_sim)./power_sim*100,'FaceAlpha',.5,'FaceColor','r')
-hold off
-axis([0, 100, 0, .1, 0, 25])
-xlabel('Frequency [rad/s]')
-ylabel('Amplitude [m]')
-zlabel('Percent Error')
-lgd = legend('Predicted Power Error 1','Predicted Power Error 2','Location','NorthEast');
-set(gca, 'Color', 'None')
-set(lgd, 'Color', 'None')
-%}
-

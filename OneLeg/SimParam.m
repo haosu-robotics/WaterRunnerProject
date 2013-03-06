@@ -1,5 +1,6 @@
 global r1 forceRatio mass DF
 
+%T_des = 20;
 mass = 0.025;
 numLegs = 4;
 

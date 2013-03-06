@@ -47,6 +47,7 @@ Thumbs.db
 #####################
 *.swp
 *.swo
+*.swn
 *.m~
 *.mdl.autosave
 
@@ -56,6 +57,7 @@ Thumbs.db
 *.pdf
 *.avi
 *.mp4
+*.graffle
 
 #Data#
 *.mat
