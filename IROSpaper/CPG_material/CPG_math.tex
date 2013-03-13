@@ -106,6 +106,35 @@ This minimization is equivalent to following minimization
 
 Therefore, to provide achieve better converge to desired phase lags, it is very important to reduce variance of CPG inputs ($\zeta_i$). we will take advantage of dynamical null-space and we will define this constraint (Low variance input) as an task for controller.
 
+\section*{Input Scheduling}
+In order to control downward and upward motion separately, we split each CPG node input ($\zeta_i$) in two parts as follow:
+\begin{eqnarray}\label{eq:one_node}
+	\dot \phi_i &=& \omega_{b} + \sum_{j \neq i} k_{ij} \sin \left( \phi_j - \phi_i - \tilde{\varphi}_{ij} \right ) + \zeta_i^+ + \zeta_i^-\\
+	\Gamma_i    &=& A \cos(\phi_i)
+\end{eqnarray}
+
+This input have the property $\zeta_i^+  \zeta_i^- = 0$, which means they cannot be active simultaneously. Upward and downward motions can be determined by checking the sign of $\sin(\phi)$ as shown in Fig??.
+
+\begin{figure}[thpb]
+	\centering
+		\centering
+		\includegraphics[scale = 0.7]{phase_plot_cropped.pdf}
+		\centering
+		\caption{phase}
+		\label{fig:CPG Network}
+
+\end{figure}
+
+
+
+Splited CPG forces ($\omega^+$ , $\omega^-$) is provided by our controller. Thus, in order to build up our CPG force ($\zeta_i$), we will use: 
+
+\begin{eqnarray}\label{eq:spliting}
+	\zeta_i^+ &=& \frac{1}{2}[1+sign(\sin\phi)] \omega^+\\
+	\zeta_i^- &=& \frac{1}{2}[1-sign(\sin\phi)] \omega^-\\
+	\zeta_i &=& \zeta_i^+ + \zeta_i^-
+\end{eqnarray}
+
 
 
 \end{document}
