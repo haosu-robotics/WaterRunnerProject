@@ -6,7 +6,7 @@ numLegs = 4;
 
 Amp = 0.0249;
 amp = Amp;
-omega_0 = [65 65]';
+omega_0 = [60 60]';
 leg_length = Amp;
 freq = 84;
 DF = 0.5;
