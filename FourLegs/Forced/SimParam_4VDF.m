@@ -62,10 +62,11 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-cw_FR_FL = 0;
-cw_HR_HL = 0;
-cw_FR_HR = 0;
-cw_FL_HL = 0;
+c_gain = 30;
+cw_FR_FL = c_gain;
+cw_HR_HL = c_gain;
+cw_FR_HR = c_gain;
+cw_FL_HL = c_gain;
 
 tau = 0.001;
 alpha = 30;
