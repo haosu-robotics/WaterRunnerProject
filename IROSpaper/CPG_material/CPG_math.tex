@@ -10,11 +10,94 @@
 \usepackage{parskip}
 
 \begin{document}
-\title{CPG formalization}
-\author{Mahdi Khoramshahi}
+\title{Controller Formalization}
+\author{Mahdi Khoramshahi \and Nitish Thatte}
 \maketitle
 
-\todo[inline]{I'll discuss the controller and motivation up here}
+\section*{Inverse Dynamics Controller}
+
+We wish to control a quadrupedal robot with the following per leg linear relationship between leg rotation speed and generated force
+
+\begin{equation}
+	F_i = A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^-
+\end{equation}
+
+Where $i \in \{1,2,3,4\}$ corresponds to one of the four legs and $\omega_i^+$ and $\omega_i^-$ are the leg velocities for the upwards and downwards parts of the trajectories respectively. Our goal is to control the height, pitch, and roll of the robot. We can write the Newton-Euler equations for these degrees of freedom:
+
+\begin{align}
+	m \ddot{y} &= \sum_{i=1}^4 (A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^-) - mg \\
+	I_x \ddot{\theta} &= l_x \left[ \sum_{i = \{1,2\}} \left(A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^- \right) - \sum_{i = \{3,4\}} \left(A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^- \right) \right] \\
+	I_z \ddot{\phi} &= l_z \left[ \sum_{i = \{1,4\}} \left(A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^- \right) - \sum_{i = \{2,3\}} \left(A_i + B_i^+ \omega_i^+ + B_i^- \omega_i^- \right) \right]
+\end{align}
+
+Where $m$ is the mass of the robot, $I_x$ and $I_z$ are the moments of inertia about the $x$ and $z$-axes respectively, and $l_x$ and $l_z$ are the distances to the center of mass in the $x$ and $z$ directions respectively. In matrix form these equations are 
+
+\begin{equation}
+	\begin{bmatrix} m & 0 & 0 \\ 0 & I_{x} & 0 \\ 0 & 0 & I_{z} \end{bmatrix} 
+	\begin{bmatrix} \ddot{y} \\ \ddot{\theta} \\ \ddot{\phi} \end{bmatrix} = 
+	\begin{bmatrix} \sum A_i - mg \\ \bar{L}_x^T \bar{A} \\ \bar{L}_z^T \bar{A} \end{bmatrix} +
+	\begin{bmatrix} \bar{B}_+^T & \bar{B}_-^T \\ \bar{B}_+^T \hat{L}_x & \bar{B}_-^T \hat{L}_x \\ \bar{B}_+^T \hat{L}_z & \bar{B}_-^T \hat{L}_z \end{bmatrix} 
+	\begin{bmatrix} \bar{\omega}^+ \\ \bar{\omega}^- \end{bmatrix}
+	\label{eq:Newton-Euler}
+\end{equation}
+
+Where 
+
+\begin{align}
+	\bar{L}_x &= l_x \begin{bmatrix} 1 \\ 1 \\ -1 \\ -1 \end{bmatrix} \\
+	\hat{L}_x &= l_x \begin{bmatrix} 1 & 0 & 0 & 0\\ 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0\\ 0 & 0 & 0 & -1 \end{bmatrix} \\
+	\bar{L}_z &= l_z \begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix} \\
+	\hat{L}_z &= l_z \begin{bmatrix} 1 & 0 & 0 & 0\\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0\\ 0 & 0 & 0 & 1 \end{bmatrix}
+\end{align}
+
+We can write equation~\ref{eq:Newton-Euler} compactly as
+
+\begin{equation}
+	M \ddot{\bar{x}} = A + B \bar{\omega}
+	\label{eq:Newton-Euler-Mat}
+\end{equation}
+
+Where $\bar{x} = [y, \ \theta, \ \phi]^T$ is the state of the robot and $\bar{\omega} = [\bar{\omega}^+, \ \bar{\omega}^-]^T$.
+
+In order to achieve a desired state $x_0$ we employ virtual model control using a virtual spring. Therefore, our desired dynamics are
+
+\begin{equation}
+	\ddot{\bar{x}} = K_p (\bar{x}_0 - \bar{x})
+	\label{eq:virtSpring}
+\end{equation}
+
+We wish to find a $\bar{\omega}$ that will achieve the above dynamics so we will now solve for a suitable $\bar{\omega}$. Plugging equation~\ref{eq:virtSpring} into equation~\ref{eq:Newton-Euler-Mat} and rearranging yields
+
+\begin{equation}
+	B \bar{\omega} = M K_p (\bar{x}_0 - \bar{x}) - A
+\end{equation}
+
+We cannot simply invert $B$ in order to solve for $\bar{\omega}$ as it is not a square matrix.  Rather, in our case the size of $B$ is $3 \times 8$. Therefore, there are potentially an infinite set of $\bar{\omega}$s that will satisfy our desired dynamics. In order to find one suitable $\bar{\omega}$, we can formulate a constrained optimization that will provide the solution closest to a specified $\bar{\omega}_0$ that adheres to our virtual model:
+
+\begin{equation}
+	\bar{\omega} = \arg \min \frac{1}{2} (\bar{\omega} - \bar{\omega}_0)^T (\bar{\omega} - \bar{\omega}_0) \textrm{~such that~} B \bar{\omega} = M K_p (\bar{x}_0 - \bar{x}) - A
+\end{equation}
+
+We can solve the above optimization by incorporating the constraint into the cost function using the Lagrange Multipliers Method.
+
+\begin{equation}
+	\bar{\omega} = \arg \min \frac{1}{2} (\bar{\omega} - \bar{\omega}_0)^T (\bar{\omega} - \bar{\omega}_0) + \bar{\lambda}^T  (M K_p (\bar{x}_0 - \bar{x}) - A - B \bar{\omega})
+\end{equation}
+
+The solution to the above minimization is
+
+\begin{equation}
+	\bar{\omega} = B^\dagger [M K_p (\bar{x}_0 - \bar{x}) - A] + (I - B^\dagger B) \bar{\omega}_0
+	\label{eq:controller}
+\end{equation}
+
+Where $B^\dagger = B^T (B B^T)^{-1}$ is the Moore-Penrose pseudoinverse of $B$ and $I - B^\dagger B$ is the nullspace projector of $B$. Multiplication of the nullspace projector by $\bar{\omega}_0$ will return as much of $\bar{\omega}_0$ as possible while adhering to our desired spring-like dynamics.
+
+In order to implement the high-level controller for robot-state derived above, we will also need a lower-level of control to guide each leg to along the trajectories specified by $\bar{\omega}$. To do this, we turn to a closed-loop central pattern generator (CPG) network.
+
+\section*{CPG Network}
+
+\todo{This section needs a bit more introduction. I added a small transition to the topic as my last sentence}
 Equations for one node in the network.
 
 \begin{align}\label{eq:one_node}
@@ -88,7 +171,7 @@ Using the following linear transformation, $\varphi_{ij} = \phi_j - \phi_i - \ti
 	\dot\varphi_{34}&= -2k\sin \left(\varphi_{34}\right)+k\sin\left(\varphi_{13}\right)- k\sin\left(\varphi_{24}\right) + \zeta_4-\zeta_3 \label{eq:cpg_net3_4}
 \end{align}
 
-Using a small angle approximation, we can express the above equations as the following linear autonomous system:
+Using a small angle approximation, \todo{You should mention that you are also going to neglect forcing terms} we can express the above equations as the following linear autonomous system:
 
 \begin{equation}
   	\dot{\Phi} = \frac{d}{dt} \Phi =\frac{d}{dt}
@@ -100,7 +183,7 @@ Using a small angle approximation, we can express the above equations as the fol
 	 0 &  1 & -1 & -2 
 	\end{array} \right] \Phi = \hat{A}\Phi.
 \end{equation}
-	
+
 The eigenvalues of $\hat{A}$ are $-4k$, $-2k$ , $-2k$, and $0$. We expect one zero eigenvalue-value due to the loop in our CPG network, which creates the following linear relationship between phase lags
 
 \begin{equation}
@@ -121,7 +204,7 @@ This minimization is equivalent to the following minimization
 	\label{eq:one_node2}
 \end{equation}
 
-Therefore, to better achieve convergence to our desired phase lags, it is very important to reduce variance of CPG inputs ($\zeta_i$). We take advantage of the dynamical nullspace and define this constraint (low variance input) as a task for the controller.
+Therefore, to better achieve convergence to our desired phase lags, it is important to reduce variance of CPG inputs ($\zeta_i$). We take advantage of the dynamical nullspace, $(I - B^\dagger B) \bar{\omega}_0$, from our controller (equation~\ref{eq:controller}) and define this constraint (low variance input) as a task for the controller.
 
 \section*{Input Scheduling}
 
