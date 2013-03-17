@@ -1,12 +1,12 @@
 Model {
-  Name			  "water_4hopper_VDF"
+  Name			  "water_4hopper_open"
   Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.243"
+    ComputedModelVersion    "1.240"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 964.0, 1061.0]
+      Location		      [0.0, 19.0, 957.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,9 +55,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[926.0, 919.0]
-	ZoomFactor		[0.8]
-	Offset			[328.26349432915003, -171.31751506698322]
+	Extents			[919.0, 919.0]
+	ZoomFactor		[0.6]
+	Offset			[79.298682558360184, -469.17800385253332]
       }
     }
   }
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 17 00:37:36 2013"
-  RTWModifiedTimeStamp	  285378495
-  ModelVersionFormat	  "1.%<AutoIncrement:243>"
+  LastModifiedDate	  "Sun Mar 17 00:34:54 2013"
+  RTWModifiedTimeStamp	  285368937
+  ModelVersionFormat	  "1.%<AutoIncrement:240>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -109,12 +109,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "water_4hopper_2"
+    model_		    "water_4hopper_open"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "water_4hopper_2"
+      Cell		      "water_4hopper_open"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1128,8 +1128,8 @@ Model {
     }
   }
   System {
-    Name		    "water_4hopper_VDF"
-    Location		    [0, 19, 964, 1080]
+    Name		    "water_4hopper_open"
+    Location		    [0, 19, 957, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1141,9 +1141,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6207"
+    SIDHighWatermark	    "6198"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1446,7 +1446,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CPG_Network2"
-	Location		[0, 19, 941, 1080]
+	Location		[0, 516, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2741,7 +2741,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Front_Right"
-	    Location		    [0, 19, 962, 1080]
+	    Location		    [0, 516, 1920, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6574,7 +6574,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Hand of God"
-	Location		[0, 19, 983, 1080]
+	Location		[0, 516, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6637,8 +6637,8 @@ Model {
 	  ClassName		  "Ground"
 	  CoordPosition		  "[0 0 0]"
 	  CoordPositionUnits	  "m"
-	  StateVectorMgrId	  "1"
-	  MachineId		  "[2 0]"
+	  StateVectorMgrId	  "0"
+	  MachineId		  "[1 0]"
 	  ShowEnvPort		  on
 	}
 	Block {
@@ -7042,7 +7042,7 @@ Model {
       }
       System {
 	Name			"Inverse Dynamics1"
-	Location		[0, 19, 964, 1080]
+	Location		[0, 19, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10041,21 +10041,21 @@ Model {
 		Type			"edit"
 		Name			"P"
 		Prompt			"Proportional Gain"
-		Value			"K_p"
+		Value			"zeros(3)"
 	      }
 	      Object {
 		$ObjectID		55
 		Type			"edit"
 		Name			"I"
 		Prompt			"Integral Gain"
-		Value			"K_i"
+		Value			"zeros(3)"
 	      }
 	      Object {
 		$ObjectID		56
 		Type			"edit"
 		Name			"D"
 		Prompt			"Derivative Gain"
-		Value			"K_d"
+		Value			"zeros(3)"
 	      }
 	      Object {
 		$ObjectID		57
@@ -10069,7 +10069,7 @@ Model {
 	  }
 	  System {
 	    Name		    "PID"
-	    Location		    [0, 19, 894, 1080]
+	    Location		    [0, 516, 1920, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11294,10 +11294,10 @@ Model {
       Name		      "Scope1"
       SID		      "3557"
       Ports		      [1]
-      Position		      [1520, 708, 1550, 742]
+      Position		      [1520, 663, 1550, 697]
       ZOrder		      242
       Floating		      off
-      Location		      [966, 49, 1919, 372]
+      Location		      [959, 49, 1920, 385]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
@@ -11317,8 +11317,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "5"
-      YMax		      "105"
+      YMin		      "55"
+      YMax		      "60"
       SaveName		      "ball_position1"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -11331,7 +11331,7 @@ Model {
       Position		      [1385, 20, 1415, 55]
       ZOrder		      201
       Floating		      off
-      Location		      [966, 404, 1919, 1078]
+      Location		      [959, 417, 1920, 1078]
       Open		      on
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
@@ -11352,8 +11352,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "-0.02~-20"
-      YMax		      "0.035~30"
+      YMin		      "-0.025~-30"
+      YMax		      "0.04~45"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"
@@ -11716,7 +11716,7 @@ Model {
       }
       System {
 	Name			"averaging2"
-	Location		[0, 19, 972, 1080]
+	Location		[0, 516, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12580,7 +12580,7 @@ Model {
       }
       System {
 	Name			"averaging6"
-	Location		[0, 19, 972, 1080]
+	Location		[0, 516, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12757,7 +12757,7 @@ Model {
       BlockType		      Constant
       Name		      "degrees"
       SID		      "2457"
-      Position		      [1430, 360, 1460, 390]
+      Position		      [1450, 305, 1480, 335]
       ZOrder		      197
       BlockRotation	      270
       BlockMirror	      on
@@ -12767,24 +12767,8 @@ Model {
       BlockType		      Constant
       Name		      "degrees1"
       SID		      "6097"
-      Position		      [1310, 375, 1340, 405]
-      ZOrder		      329
-      BlockRotation	      270
-      BlockMirror	      on
-      Value		      ".02"
-      Port {
-	PortNumber		1
-	Name			"height"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "degrees2"
-      SID		      "6207"
-      Position		      [1370, 320, 1400, 350]
-      ZOrder		      334
+      Position		      [1370, 305, 1400, 335]
+      ZOrder		      321
       BlockRotation	      270
       BlockMirror	      on
       Value		      "0"
@@ -12794,7 +12778,7 @@ Model {
       Name		      "leg L1"
       SID		      "6100"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [585, 670, 645, 810]
+      Position		      [585, 685, 645, 825]
       ZOrder		      322
       BlockRotation	      270
       BlockMirror	      on
@@ -12822,7 +12806,7 @@ Model {
       }
       System {
 	Name			"leg L1"
-	Location		[0, 19, 972, 1080]
+	Location		[0, 388, 972, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -13662,7 +13646,7 @@ Model {
       Name		      "leg L2"
       SID		      "6133"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [700, 670, 760, 810]
+      Position		      [700, 685, 760, 825]
       ZOrder		      323
       BlockRotation	      270
       BlockMirror	      on
@@ -14530,7 +14514,7 @@ Model {
       Name		      "leg L3"
       SID		      "6166"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [815, 670, 875, 810]
+      Position		      [815, 685, 875, 825]
       ZOrder		      324
       BlockRotation	      270
       BlockMirror	      on
@@ -15398,7 +15382,7 @@ Model {
       Name		      "leg L4"
       SID		      "2869"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [470, 670, 530, 810]
+      Position		      [470, 685, 530, 825]
       ZOrder		      212
       BlockRotation	      270
       BlockMirror	      on
@@ -15426,7 +15410,7 @@ Model {
       }
       System {
 	Name			"leg L4"
-	Location		[0, 19, 972, 1080]
+	Location		[0, 516, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -15790,7 +15774,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [0, 19, 941, 1080]
+	    Location		    [0, 516, 1920, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -16261,6 +16245,22 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      Constant
+      Name		      "m"
+      SID		      "5287"
+      Position		      [1305, 305, 1335, 335]
+      ZOrder		      262
+      BlockRotation	      270
+      BlockMirror	      on
+      Value		      ".02"
+      Port {
+	PortNumber		1
+	Name			"height"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Hand of God"
@@ -16299,11 +16299,39 @@ Model {
     Line {
       Name		      "height"
       Labels		      [1, 1]
-      SrcBlock		      "degrees1"
+      SrcBlock		      "m"
       SrcPort		      1
-      Points		      [0, 47; 40, 0]
-      DstBlock		      "Mux3"
-      DstPort		      1
+      Points		      [0, 120; 23, 0]
+      Branch {
+	Points			[0, 29; 62, 0; 0, 45]
+	Branch {
+	  Points		  [20, 0; 0, 1]
+	  Branch {
+	    Points		    [20, 0]
+	    Branch {
+	      Points		      [20, 0]
+	      DstBlock		      "Inverse Dynamics1"
+	      DstPort		      6
+	    }
+	    Branch {
+	      DstBlock		      "Inverse Dynamics1"
+	      DstPort		      5
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Inverse Dynamics1"
+	    DstPort		    4
+	  }
+	}
+	Branch {
+	  DstBlock		  "Inverse Dynamics1"
+	  DstPort		  3
+	}
+      }
+      Branch {
+	DstBlock		"Mux3"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Mux3"
@@ -16515,7 +16543,7 @@ Model {
     Line {
       SrcBlock		      "CPG_Network2"
       SrcPort		      4
-      Points		      [-100, 0; 0, -95]
+      Points		      [-100, 0; 0, -80]
       DstBlock		      "leg L3"
       DstPort		      1
     }
@@ -16552,7 +16580,7 @@ Model {
     Line {
       SrcBlock		      "averaging2"
       SrcPort		      1
-      Points		      [0, 260; 100, 0]
+      Points		      [0, 273; 100, 0]
       DstBlock		      "Inverse Dynamics1"
       DstPort		      1
     }
@@ -16583,36 +16611,15 @@ Model {
     Line {
       SrcBlock		      "degrees"
       SrcPort		      1
+      Points		      [0, 32; -20, 0]
       DstBlock		      "Gain2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "averaging5"
+      SrcBlock		      "degrees1"
       SrcPort		      1
-      Points		      [0, 54; 1195, 0]
-      DstBlock		      "Inverse Dynamics1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "averaging4"
-      SrcPort		      1
-      Points		      [0, 42; 1140, 0]
-      DstBlock		      "Inverse Dynamics1"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "averaging3"
-      SrcPort		      1
-      Points		      [0, 20; 425, 0]
-      DstBlock		      "Inverse Dynamics1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "averaging1"
-      SrcPort		      1
-      Points		      [0, 31; 325, 0]
-      DstBlock		      "Inverse Dynamics1"
-      DstPort		      5
+      DstBlock		      "Gain1"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Inverse Dynamics1"
@@ -16625,6 +16632,7 @@ Model {
       SrcPort		      1
       Points		      [0, 15]
       Branch {
+	Points			[69, 0; 0, -45]
 	DstBlock		"Scope1"
 	DstPort			1
       }
@@ -16633,20 +16641,14 @@ Model {
 	DstPort			1
       }
     }
-    Line {
-      SrcBlock		      "degrees2"
-      SrcPort		      1
-      DstBlock		      "Gain1"
-      DstPort		      1
-    }
   }
 }
 MatData {
   NumRecords		  2
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    6     8    (    !          %    \"     $    D     0         0    )    '=A=&5R7S1H;W!P97"
-    ")?5D1&+TAA;F0@;V8@1V]D+T=R;W5N9      "
+    Data		    "  %)30     .    6     8    (    !          %    \"     $    E     0         0    )0   '=A=&5R7S1H;W!P97"
+    ")?;W!E;B](86YD(&]F($=O9\"]'<F]U;F0    "
   }
   DataRecord {
     Tag			    DataTag1
@@ -16663,7 +16665,7 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "water_4hopper_VDF"
+    name		    "water_4hopper_open"
     created		    "27-Feb-2013 15:47:23"
     isLibrary		    0
     firstTarget		    2
