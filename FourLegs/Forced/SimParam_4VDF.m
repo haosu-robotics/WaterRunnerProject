@@ -51,13 +51,13 @@ b_water = 0.5*C_d*S1*density;
 k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
-wave = .025;
+wave = eps;
 wavefreq = .5;
 
 %%% PID gains %%%%
 K_p = [500 0 0 ; 0 1000 0; 0 0 1000];
 K_i = [1000 0 0 ; 0 10000 0; 0  0 10000];
-K_d = [50 0 0; 0 600 0; 0 0 600];
+K_d = [25 0 0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
 
 %%%%% CPG params %%%%%
