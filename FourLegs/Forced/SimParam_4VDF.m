@@ -9,7 +9,7 @@ frame_width  = 0.125;
 frame_length = 0.25;
 frame_height = 0.02;
 
-CG_pos =[frame_length*0.0 0 0];
+CG_pos =[frame_length*0 0 0];
 
 TR_FR = [ frame_length/2 0  frame_width/2 ];
 TR_FL = [ frame_length/2 0 -frame_width/2 ];
@@ -23,10 +23,10 @@ Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
 frame_inertia = diag([Ix,Iy,Iz]);
 
 mass_matrix = [mass 0 0; 0 Ix 0 ; 0 0 Iz];
-Lx = frame_length/2*[-1 -1 1 1]';
-Lxmat = frame_length/2*[-1 0 0 0 ; 0 -1 0 0 ; 0 0 1 0 ; 0 0 0 1];
-Lz = frame_width/2*[-1 1 1 -1]';
-Lzmat = frame_width/2*[-1 0 0 0 ; 0 1 0 0 ; 0 0 1 0 ; 0 0 0 -1];
+Lx = frame_width/2*[-1 -1 1 1]';
+Lxmat = frame_width/2*[-1 0 0 0 ; 0 -1 0 0 ; 0 0 1 0 ; 0 0 0 1];
+Lz = frame_length/2*[-1 1 1 -1]';
+Lzmat = frame_length/2*[-1 0 0 0 ; 0 1 0 0 ; 0 0 1 0 ; 0 0 0 -1];
 
 %%%%% Water Model params %%%%%
 
@@ -55,9 +55,9 @@ wave = eps;
 wavefreq = .5;
 
 %%% PID gains %%%%
-K_p = [500 0 0 ; 0 1000 0; 0 0 1000];
-K_i = [1000 0 0 ; 0 10000 0; 0  0 10000];
-K_d = [25 0 0; 0 300 0; 0 0 300];
+K_p = [500 0 0 ; 0 750 0; 0 0 1000];
+K_i = [1000 0 0 ; 0 7500 0; 0  0 10000];
+K_d = [25 0 0; 0 300 0; 0 0 200];
 Filter_Coef = 1000;
 
 %%%%% CPG params %%%%%
@@ -72,6 +72,6 @@ cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
 cw_FL_HL = c_gain;
 
-tau = 0.001;
+tau = 0.005;
 alpha = 30;
 t_fil =0.05;

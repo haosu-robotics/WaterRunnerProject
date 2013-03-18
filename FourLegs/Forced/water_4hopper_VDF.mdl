@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.252"
+    ComputedModelVersion    "1.256"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 244.0, 1039.0, 836.0]
+      Location		      [0.0, 19.0, 885.0, 651.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,21 +53,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "4636"
-	  Extents		  [1001.0, 693.0]
+	  LoadSaveID		  "3058"
+	  Extents		  [847.0, 508.0]
 	  ZoomFactor		  [0.8]
-	  Offset		  [-146.37580482812768, 38.526157985188775]
+	  Offset		  [611.17600456323237, 26.386492044716647]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1262.0, 662.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [515.18848262358256, 98.500071426224821]
+	  Extents		  [847.0, 508.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [919.20587997711732, 136.62723421390663]
 	}
 	PropName		"EditorsInfo"
       }
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Mar 18 12:28:46 2013"
-  RTWModifiedTimeStamp	  285378495
-  ModelVersionFormat	  "1.%<AutoIncrement:252>"
+  LastModifiedDate	  "Mon Mar 18 15:25:11 2013"
+  RTWModifiedTimeStamp	  285518745
+  ModelVersionFormat	  "1.%<AutoIncrement:256>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -201,7 +201,7 @@ Model {
 	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-5"
+	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
@@ -768,7 +768,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 481, 181, 1493, 953 ] 
+      ConfigPrmDlgPosition     [ 482, 182, 1496, 956 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1150,7 +1150,7 @@ Model {
   }
   System {
     Name		    "water_4hopper_VDF"
-    Location		    [0, 275, 1300, 1080]
+    Location		    [0, 19, 885, 670]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1162,9 +1162,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6411"
+    SIDHighWatermark	    "6416"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1467,8 +1467,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CPG_Network2"
-	Location		[0, 244, 1039, 1080]
-	Open			on
+	Location		[1056, 549, 1920, 814]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2816,7 +2816,7 @@ Model {
 	  System {
 	    Name		    "Front_Right"
 	    Location		    [0, 604, 948, 1080]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4513,44 +4513,7 @@ Model {
 	  Position		  [645, 749, 675, 781]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [1041, 49, 1920, 624]
-	  Open			  on
-	  NumInputPorts		  "1"
-	  ZoomMode		  "yonly"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  ShowLegends		  on
-	  LegendLocations	  "0.884     0.57675    0.079067     0.15109"
-	  TimeRange		  "30"
-	  YMin			  "-10"
-	  YMax			  "120"
-	  SaveToWorkspace	  on
-	  SaveName		  "Output2"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "Scope3"
-	  SID			  "4807"
-	  Ports			  [1]
-	  Position		  [645, 369, 675, 401]
-	  ZOrder		  144
-	  Floating		  off
-	  Location		  [2, 49, 961, 298]
+	  Location		  [887, 49, 1920, 727]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
@@ -4569,7 +4532,44 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.88722      0.5711    0.074557      0.3489"
+	  LegendLocations	  "0.88393     0.70747     0.06728     0.12813"
+	  TimeRange		  "30"
+	  YMin			  "-20"
+	  YMax			  "130"
+	  SaveToWorkspace	  on
+	  SaveName		  "Output2"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope3"
+	  SID			  "4807"
+	  Ports			  [1]
+	  Position		  [645, 369, 675, 401]
+	  ZOrder		  144
+	  Floating		  off
+	  Location		  [2, 49, 1037, 224]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  on
+	  LegendLocations	  "0.8933     0.39843    0.069082     0.49643"
 	  TimeRange		  "10"
 	  YMin			  "-0.025"
 	  YMax			  "0.025"
@@ -6917,8 +6917,8 @@ Model {
 	  ClassName		  "Ground"
 	  CoordPosition		  "[0 0 0]"
 	  CoordPositionUnits	  "m"
-	  StateVectorMgrId	  "1"
-	  MachineId		  "[2 0]"
+	  StateVectorMgrId	  "3"
+	  MachineId		  "[4 0]"
 	  ShowEnvPort		  on
 	}
 	Block {
@@ -7322,8 +7322,8 @@ Model {
       }
       System {
 	Name			"Inverse Dynamics1"
-	Location		[0, 604, 948, 1080]
-	Open			off
+	Location		[0, 19, 885, 670]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -7334,7 +7334,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "x"
@@ -10314,6 +10314,92 @@ Model {
 	  LockScale		  off
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Mean4"
+	  SID			  "6413"
+	  Ports			  [1, 1]
+	  Position		  [1280, 357, 1300, 373]
+	  ZOrder		  282
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.532"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag5"
+	  SourceBlock		  "dspstat3/Mean"
+	  SourceType		  "Mean"
+	  run			  off
+	  reset_popup		  "None"
+	  InputProcessing	  "Columns as channels (frame based)"
+	  directionMode		  "Each column"
+	  dimension		  "1"
+	  treatSBRowAsCol	  on
+	  roiEnable		  off
+	  roiType		  "Rectangles"
+	  roiPortion		  "Entire ROI"
+	  roiOutput		  "Individual statistics for each ROI"
+	  roiFlag		  off
+	  additionalParams	  off
+	  allowOverrides	  on
+	  outputMode		  "Same as accumulator"
+	  outputWordLength	  "32"
+	  outputFracLength	  "30"
+	  outputDataTypeStr	  "Inherit: Same as accumulator"
+	  outputLastDataTypeStr	  "Inherit: Same as accumulator"
+	  outputMin		  "[]"
+	  outputMax		  "[]"
+	  accumMode		  "Same as input"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  accumDataTypeStr	  "Inherit: Same as input"
+	  accumLastDataTypeStr	  "Inherit: Same as input"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Mean5"
+	  SID			  "6415"
+	  Ports			  [1, 1]
+	  Position		  [1280, 407, 1300, 423]
+	  ZOrder		  284
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.532"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag6"
+	  SourceBlock		  "dspstat3/Mean"
+	  SourceType		  "Mean"
+	  run			  off
+	  reset_popup		  "None"
+	  InputProcessing	  "Columns as channels (frame based)"
+	  directionMode		  "Each column"
+	  dimension		  "1"
+	  treatSBRowAsCol	  on
+	  roiEnable		  off
+	  roiType		  "Rectangles"
+	  roiPortion		  "Entire ROI"
+	  roiOutput		  "Individual statistics for each ROI"
+	  roiFlag		  off
+	  additionalParams	  off
+	  allowOverrides	  on
+	  outputMode		  "Same as accumulator"
+	  outputWordLength	  "32"
+	  outputFracLength	  "30"
+	  outputDataTypeStr	  "Inherit: Same as accumulator"
+	  outputLastDataTypeStr	  "Inherit: Same as accumulator"
+	  outputMin		  "[]"
+	  outputMax		  "[]"
+	  accumMode		  "Same as input"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  accumDataTypeStr	  "Inherit: Same as input"
+	  accumLastDataTypeStr	  "Inherit: Same as input"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	}
+	Block {
 	  BlockType		  Memory
 	  Name			  "Memory"
 	  SID			  "3208"
@@ -10389,6 +10475,32 @@ Model {
 	  Ports			  [2, 1]
 	  Position		  [1385, 423, 1390, 447]
 	  ZOrder		  280
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux13"
+	  SID			  "6414"
+	  Ports			  [2, 1]
+	  Position		  [1315, 353, 1320, 377]
+	  ZOrder		  283
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux14"
+	  SID			  "6416"
+	  Ports			  [2, 1]
+	  Position		  [1315, 403, 1320, 427]
+	  ZOrder		  285
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  ShowName		  off
@@ -10544,7 +10656,7 @@ Model {
 	  }
 	  System {
 	    Name		    "PID"
-	    Location		    [0, 19, 894, 1080]
+	    Location		    [0, 494, 1043, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -10556,7 +10668,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
@@ -10863,7 +10975,7 @@ Model {
 	  Position		  [1400, 155, 1430, 185]
 	  ZOrder		  271
 	  InputPortMap		  "u0"
-	  UpperLimit		  "100"
+	  UpperLimit		  "120"
 	  LowerLimit		  "10"
 	}
 	Block {
@@ -11766,60 +11878,95 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  SrcBlock		  "Mux13"
+	  SrcPort		  1
+	  DstBlock		  "Mean4"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "Mean"
 	  SrcPort		  1
-	  Points		  [-53, 0; 0, 10]
+	  Points		  [-10, 0]
+	  DstBlock		  "Mux13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mean1"
+	  SrcPort		  1
+	  Points		  [-9, 0; 0, -5]
+	  DstBlock		  "Mux13"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux14"
+	  SrcPort		  1
+	  DstBlock		  "Mean5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mean2"
+	  SrcPort		  1
+	  Points		  [-9, 0; 0, 5]
+	  DstBlock		  "Mux14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mean3"
+	  SrcPort		  1
+	  Points		  [-9, 0; 0, -15]
+	  DstBlock		  "Mux14"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mean4"
+	  SrcPort		  1
+	  Points		  [-17, 0]
 	  Branch {
-	    Points		    [0, 40]
-	    DstBlock		    "Mux1"
-	    DstPort		    5
+	    Points		    [0, 30]
+	    Branch {
+	      Points		      [0, 10]
+	      DstBlock		      "Mux1"
+	      DstPort		      6
+	    }
+	    Branch {
+	      DstBlock		      "Mux1"
+	      DstPort		      5
+	    }
 	  }
 	  Branch {
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -10]
 	    DstBlock		    "Mux1"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  SrcBlock		  "Mean1"
+	  SrcBlock		  "Mean5"
 	  SrcPort		  1
-	  Points		  [-40, 0]
+	  Points		  [-7, 0]
 	  Branch {
-	    Points		    [0, 30]
+	    Points		    [0, 10]
 	    DstBlock		    "Mux1"
-	    DstPort		    6
+	    DstPort		    8
 	  }
-	  Branch {
-	    Points		    [0, -10]
-	    DstBlock		    "Mux1"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mean2"
-	  SrcPort		  1
-	  Points		  [-9, 0; 0, 11; -72, 0; 0, -1]
 	  Branch {
 	    DstBlock		    "Mux1"
 	    DstPort		    7
 	  }
 	  Branch {
-	    Points		    [0, -40]
-	    DstBlock		    "Mux1"
-	    DstPort		    3
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mean3"
-	  SrcPort		  1
-	  Points		  [-66, 0; 0, -10]
-	  Branch {
-	    Points		    [0, -40]
-	    DstBlock		    "Mux1"
-	    DstPort		    4
-	  }
-	  Branch {
-	    DstBlock		    "Mux1"
-	    DstPort		    8
+	    Points		    [0, -30]
+	    Branch {
+	      DstBlock		      "Mux1"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [0, -10]
+	      DstBlock		      "Mux1"
+	      DstPort		      3
+	    }
 	  }
 	}
       }
@@ -11856,7 +12003,7 @@ Model {
       Position		      [1520, 708, 1550, 742]
       ZOrder		      242
       Floating		      off
-      Location		      [1041, 656, 1920, 1077]
+      Location		      [887, 759, 1920, 1078]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -11890,10 +12037,10 @@ Model {
       Position		      [1250, 55, 1280, 90]
       ZOrder		      201
       Floating		      off
-      Location		      [2, 49, 1039, 242]
+      Location		      [2, 700, 885, 1078]
       Open		      on
       NumInputPorts	      "2"
-      ZoomMode		      "yonly"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -11911,8 +12058,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "-0.015~-30"
-      YMax		      "0.04~30"
+      YMin		      "-0.015~-17.5"
+      YMax		      "0.065~15"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"
@@ -13190,7 +13337,7 @@ Model {
       }
       System {
 	Name			"averaging6"
-	Location		[0, 516, 1920, 1080]
+	Location		[0, 319, 903, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -17234,18 +17381,6 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Sum1"
-      SrcPort		      1
-      DstBlock		      "Gain1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "degrees"
-      SrcPort		      1
-      DstBlock		      "Gain2"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "averaging6"
       SrcPort		      1
       Points		      [0, 20]
@@ -17258,10 +17393,22 @@ Model {
 	DstPort			1
       }
     }
+    Line {
+      SrcBlock		      "degrees"
+      SrcPort		      1
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
   }
 }
 MatData {
-  NumRecords		  5
+  NumRecords		  7
   DataRecord {
     Tag			    DataTag0
     Data		    "  %)30     .    6     8    (    !          %    \"     $    D     0         0    )    '=A=&5R7S1H;W!P97"
@@ -17284,6 +17431,16 @@ MatData {
   }
   DataRecord {
     Tag			    DataTag4
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag6
     Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
     "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
   }
