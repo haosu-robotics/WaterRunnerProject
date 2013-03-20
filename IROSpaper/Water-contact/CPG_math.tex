@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{ tipa }
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{graphicx}
+\usepackage[font={footnotesize,it}]{caption}
+\usepackage[margin=0.5in]{geometry} %remove comment after todonotes are dealt with
+\usepackage[textwidth=1.5in]{todonotes}
+\usepackage{parskip}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+
+\begin{document}
+\title{Water Contact Simplification}
+\author{Mahdi Khoramshahi}
+\maketitle
+
+
+
+
+Based on literature, force on generated foot pad can be calculated as follow:
+\begin{align}\label{eq:spliting}
+	F_w &= C_{D}^* \rho \int_{-R}^{-R+2sR} \sqrt{( R^2-z^2)} (2gh(z)+v(z)\abs{v(z)})dz\\
+	h(z)&= (y_{water}-y_{BF})(1-\frac{z+R}{2sR})\\
+	v(z) &= \vec{V}(z)^{'} \cdot \vec{n}\\
+	s   &= \frac{y_{water}-y_{BF}}{y_{TF}-y_{BF}}
+\end{align}
+
+Equation could be more simple if  position of center of foot ($y_c$),foot angle ($\theta$), normal linear and angular velocity at center of foot($v_n$,$\dot{\theta}$).
+
+\begin{align}\label{eq:spliting}
+	h(z)&= (y_{water}-y_{c})-z\sin\theta\\
+	v(z) &= v_n + \dot{\theta}z\\
+	s   &= 0.5+\frac{y_{water}-y_c}{2R\sin\theta}
+\end{align}
+
+
+\begin{tikzpicture}
+
+  %color one strip
+  \begin{scope}
+    \clip (0,0) circle (2cm);
+    \fill[blue!20] (2cm,1.2cm) rectangle (-2cm, -2cm);
+    \fill[yellow!40] (2cm,-1.45cm) rectangle (-2cm, -1.75cm);
+  \end{scope}
+
+  %outer line
+  \draw (0,0) circle (2cm);
+
+	% water level
+	\draw (-3,1.2) -- (3,1.2) [blue]; 
+	% to z
+	\draw (-1.22,-1.6) -- (3,-1.6) [red]; 
+	% to end
+	\draw (-3,-2) -- (3,-2) [black]; 
+	% to center
+	\draw (0,0) -- (3,0) [black];
+	\node (0,0)[draw=none,fill=none] [label={[xshift=-.25cm, yshift=-0.15cm] {\scriptsize $O$}}] {};
+    \draw (0,0) circle (0.025cm) [fill= black];
+
+	\draw [<->] (-2,-1.45) -- (-2,-1.75)   node [draw=none,fill=none] [label={[xshift=-.25cm, yshift=-0.15cm] {\scriptsize $dz$}}] {};
+
+	\draw [decorate,decoration={brace,amplitude=4pt,mirror},xshift=2pt,yshift=0pt](3,-1.6) -- (3,0) node [black,midway,xshift=.3cm] {$z$};
+	\draw [decorate,decoration={brace,amplitude=4pt,mirror},xshift=15pt,yshift=0pt](3,-2) -- (3,0) node [black,midway,xshift=.3cm] {$R$};
+
+\end{tikzpicture}
+\\
+\\
+
+We are going to use analytic solution to following integrals. 
+\begin{align}\label{eq:two_int}
+I_k(r) &=\int _{-R}^{r} ( {\it a} z+{\it b} )~ \sqrt{R^2-z^2}dz\\
+I_b(r) &=\int _{-R}^{r} ( {\it a} z+{\it b} )^2 \sqrt{R^2-z^2}dz
+\end{align}
+
+for sake of simplicity we define following function for $-R<r<R$.
+\begin{align}\label{eq:simplie}
+l(r) &= \sqrt{R^2-r^2}\\
+\phi(r) &= \arcsin(\frac{r}{R})
+\end{align}
+
+The analytic solution to integral in \eqref{eq:two_int} is as follow:
+\begin{align}\label{eq:integrals}
+	  \int _{-R}^{r} (az+b ) l(z)dz &=  \frac{\pi b R^2}{4} - \frac{a{l(r)}^3}{3}  +\frac{b R^2\phi(r)}{2}+ \frac{brl(r)}{2}\\
+	                                &=  \frac{bR^2}{2} \left(\phi(r) + \frac{\pi}{2}\right) + \frac{br}{2} l(r) - \frac{a}{3} l(r)^3 \\
+	  \int _{-R}^{r} (az+b)^2 l(z)dz &=  \frac{\pi R^2}{16}(a^2 R^2 + 4 b^2) + \frac{R^2 \phi(r)}{8}(a^2 R^2 + 4b^2) + \frac{rl(r)}{8} (a^2 R^2 + 4b^2)-
+	  al(r)^3 (\frac{a}{4}+\frac{2b}{3})\\
+	  &=  \frac{1}{8}(a^2 R^2 + 4 b^2) \left(\left(\phi(r)+\frac{\pi}{2}\right)R^2 + rl(r)\right) - al(r)^3 (\frac{a}{4}+\frac{2b}{3}) 
+\end{align}
+
+Now we are going to deal with absolute in following integral
+\begin{align}\label{eq:two_int}
+\tilde{I}_b = \int _{-R}^{r} v(z) \abs{v(z) }~l(z)dz
+\end{align}
+luckily $v(z)$ only change once over $z$; let assume that it happens at $r_0$. we can rewrite the integral as:
+\begin{align}\label{eq:two_int}
+\tilde{I}_b(r,r_0) &= \mathrm{sign}\left(v(r_0^-)\right) \left( \int _{-R}^{r_0} v(z)^2~ l(z)dz - \int _{r_0}^{r} v(z)^2~ l(z)dz \right)\\
+			&= \mathrm{sign}\left(v(r_0^-)\right) \left( \int _{-R}^{r_0} v(z)^2~ l(z)dz - \left( \int _{-R}^{r} v(z)^2~ l(z)dz ) -  
+			\int _{-R}^{r_0} v(z)^2~ l(z)dz \right) \right)\\
+			&= \mathrm{sign}\left(v(r_0^-)\right) \left( 2 \int _{-R}^{r_0} v(z)^2~ l(z)dz - \int _{-R}^{r} v(z)^2~ l(z)dz ) \right)\\
+			&= \mathrm{sign}\left(v(r_0^-)\right) \left( 2I_b(r_0) - I_b(r) \right)
+\end{align}
+
+
+\end{document}
