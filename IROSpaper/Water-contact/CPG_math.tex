@@ -31,14 +31,38 @@ Based on literature, force on generated foot pad can be calculated as follow:
 	s   &= \frac{y_{water}-y_{BF}}{y_{TF}-y_{BF}}
 \end{align}
 
-Equation could be more simple if  position of center of foot ($y_c$),foot angle ($\theta$), normal linear and angular velocity at center of foot($v_n$,$\dot{\theta}$).
+Equation could be more simple if  position of center of foot ($y_c$),foot angle ($\theta$), normal linear and angular velocity at center of foot($v_n$,$\dot{\theta}$). Therefore, change of variables is: 
 
 \begin{align}\label{eq:spliting}
-	h(z)&= (y_{water}-y_{c})-z\sin\theta\\
-	v(z) &= v_n + \dot{\theta}z\\
-	s   &= 0.5+\frac{y_{water}-y_c}{2R\sin\theta}
+	\left( y_{TF},y_{BF} \right) &\Leftrightarrow \left( y_c, \theta \right)\\
+	y_{TF} &= y_c + R~\mathrm{sin}(\theta)\\
+	y_{BF} &= y_c - R~\mathrm{sin}(\theta)
 \end{align}
 
+now we can rewrite 
+
+
+
+\begin{align}\label{eq:spliting}
+	h(z)&= (y_{water}-y_{c})-z\mathrm{sin}\theta\\
+	v(z) &= v_n + \dot{\theta}z\\
+	s   &= 0.5+\frac{y_{water}-y_c}{2R\mathrm{sin}\theta}
+\end{align}
+
+Upper boundary for integral can be simplified this way:
+
+\begin{align}\label{eq:spliting}
+	r_u &= -R+2sR \\
+	r_u &= -R+ 2 \left( 0.5+\frac{y_{water}-y_c}{2R\sin\theta} \right) R \\
+	r_u &= \frac{ \left( y_{water}-{y_c} \right) }{\mathrm{sin}\theta}
+\end{align}
+
+Integral can be seen as two less complicated integral:
+\begin{align}\label{eq:spliting}
+	F_w =& C_{D}^* \rho \int_{-R}^{-R+2sR} \sqrt{( R^2-z^2)} (2gh(z)+v(z)\abs{v(z)})dz\\
+		=& ~C_{D}^* \rho \int_{-R}^{-R+2sR} \sqrt{( R^2-z^2)} (2gh(z))dz \\
+		 & + C_{D}^* \rho \int_{-R}^{-R+2sR} \sqrt{( R^2-z^2)} (v(z)\abs{v(z)})dz
+\end{align}
 
 \begin{tikzpicture}
 
@@ -69,8 +93,7 @@ Equation could be more simple if  position of center of foot ($y_c$),foot angle 
 	\draw [decorate,decoration={brace,amplitude=4pt,mirror},xshift=15pt,yshift=0pt](3,-2) -- (3,0) node [black,midway,xshift=.3cm] {$R$};
 
 \end{tikzpicture}
-\\
-\\
+
 
 We are going to use analytic solution to following integrals. 
 \begin{align}\label{eq:two_int}
@@ -89,21 +112,35 @@ The analytic solution to integral in \eqref{eq:two_int} is as follow:
 	  \int _{-R}^{r} (az+b ) l(z)dz &=  \frac{\pi b R^2}{4} - \frac{a{l(r)}^3}{3}  +\frac{b R^2\phi(r)}{2}+ \frac{brl(r)}{2}\\
 	                                &=  \frac{bR^2}{2} \left(\phi(r) + \frac{\pi}{2}\right) + \frac{br}{2} l(r) - \frac{a}{3} l(r)^3 \\
 	  \int _{-R}^{r} (az+b)^2 l(z)dz &=  \frac{\pi R^2}{16}(a^2 R^2 + 4 b^2) + \frac{R^2 \phi(r)}{8}(a^2 R^2 + 4b^2) + \frac{rl(r)}{8} (a^2 R^2 + 4b^2)-
-	  al(r)^3 (\frac{a}{4}+\frac{2b}{3})\\
-	  &=  \frac{1}{8}(a^2 R^2 + 4 b^2) \left(\left(\phi(r)+\frac{\pi}{2}\right)R^2 + rl(r)\right) - al(r)^3 (\frac{a}{4}+\frac{2b}{3}) 
+	  al(r)^3 (\frac{ar}{4}+\frac{2b}{3})\\
+	  &=  \frac{1}{8}(a^2 R^2 + 4 b^2) \left(\left(\phi(r)+\frac{\pi}{2}\right)R^2 + rl(r)\right) - al(r)^3 (\frac{ar}{4}+\frac{2b}{3}) 
 \end{align}
 
 Now we are going to deal with absolute in following integral
 \begin{align}\label{eq:two_int}
 \tilde{I}_b = \int _{-R}^{r} v(z) \abs{v(z) }~l(z)dz
 \end{align}
-luckily $v(z)$ only change once over $z$; let assume that it happens at $r_0$. we can rewrite the integral as:
+luckily $v(z)$ only change once over $z$; let assume that it happens at $r_0$. we first define: 
+
+\begin{align}\label{eq:two_int}\
+	v(r_0) &= 0\\	
+	v_n + \dot{\theta}r_0 &= 0\\
+	&\Rightarrow r_0 = ~ \frac{v_n}{\dot{\theta}}~, ~(~\dot{\theta} \neq 0)
+\end{align}
+
+\begin{align}\label{eq:two_int}\
+	S(z)  &= \mathrm{sign}\left(v(z)\right)\\
+	r_0^+ &= r_o + \epsilon\\
+	r_0^- &= r_o - \epsilon
+\end{align}
+
+we can rewrite the integral as:
 \begin{align}\label{eq:two_int}
-\tilde{I}_b(r,r_0) &= \mathrm{sign}\left(v(r_0^-)\right) \left( \int _{-R}^{r_0} v(z)^2~ l(z)dz - \int _{r_0}^{r} v(z)^2~ l(z)dz \right)\\
-			&= \mathrm{sign}\left(v(r_0^-)\right) \left( \int _{-R}^{r_0} v(z)^2~ l(z)dz - \left( \int _{-R}^{r} v(z)^2~ l(z)dz ) -  
-			\int _{-R}^{r_0} v(z)^2~ l(z)dz \right) \right)\\
-			&= \mathrm{sign}\left(v(r_0^-)\right) \left( 2 \int _{-R}^{r_0} v(z)^2~ l(z)dz - \int _{-R}^{r} v(z)^2~ l(z)dz ) \right)\\
-			&= \mathrm{sign}\left(v(r_0^-)\right) \left( 2I_b(r_0) - I_b(r) \right)
+\tilde{I}_b &= S(r_0^-) \int _{-R}^{r_0} v(z)^2~ l(z)dz + S(r_0^+) \int _{r_0}^{r} v(z)^2~ l(z)dz \\
+			&= S(r_0^-) \int _{-R}^{r_0} v(z)^2~ l(z)dz + S(r_0^+) \left( \int _{-R}^{r} v(z)^2~ l(z)dz ) -  
+			\int _{-R}^{r_0} v(z)^2~ l(z)dz \right)\\
+			&= \left( (S(r_0^-)-S(r_0^+) \right)  \int _{-R}^{r_0} v(z)^2~ l(z)dz + S(r_0^+) \int _{-R}^{r} v(z)^2~ l(z)dz ) \\
+			&= \left( (S(r_0^-)-S(r_0^+) \right)  I_b(r_0) + S(r_0^+) I_b(r)
 \end{align}
 
 
