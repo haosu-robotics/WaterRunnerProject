@@ -1,4 +1,8 @@
-clear
+%%%%% Desired State %%%%%
+height_des = 0.1;
+stepSizeRoll = 0;
+stepSizePitch = 0;
+
 
 %%%%% body params %%%%%
 mass = 0.1;
@@ -23,10 +27,14 @@ Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
 frame_inertia = diag([Ix,Iy,Iz]);
 
 mass_matrix = [mass 0 0; 0 Ix 0 ; 0 0 Iz];
-Lx = frame_width/2*[-1 -1 1 1]';
-Lxmat = frame_width/2*[-1 0 0 0 ; 0 -1 0 0 ; 0 0 1 0 ; 0 0 0 1];
-Lz = frame_length/2*[-1 1 1 -1]';
-Lzmat = frame_length/2*[-1 0 0 0 ; 0 1 0 0 ; 0 0 1 0 ; 0 0 0 -1];
+%Lx = frame_width/2*[-1 -1 1 1]';
+%Lxmat = frame_width/2*[-1 0 0 0 ; 0 -1 0 0 ; 0 0 1 0 ; 0 0 0 1];
+%Lz = frame_length/2*[-1 1 1 -1]';
+%Lzmat = frame_length/2*[-1 0 0 0 ; 0 1 0 0 ; 0 0 1 0 ; 0 0 0 -1];
+Lx = frame_width/2*[1 1 -1 -1]';
+Lxmat = frame_width/2*[1 0 0 0 ; 0 1 0 0 ; 0 0 -1 0 ; 0 0 0 -1];
+Lz = frame_length/2*[1 -1 -1 1]';
+Lzmat = frame_length/2*[1 0 0 0 ; 0 -1 0 0 ; 0 0 -1 0 ; 0 0 0 1];
 
 %%%%% Water Model params %%%%%
 
@@ -34,11 +42,11 @@ Amp = leg_length;
 amp = Amp;
 freq = 60;
 omega_0 = freq*ones(8,1);
-omega_1 = freq*ones(2,1);
+omega_1 = freq*ones(4,1);
 
-y_0 = leg_length/2;
+y_0 = .01;
 
-r1 = 0.020;
+r1 = 0.02;
 r2 = r1/4;
 S1 = pi*r1^2*0.9185;
 S2 = pi*r2^2*0.9185;
@@ -51,13 +59,15 @@ b_water = 0.5*C_d*S1*density;
 k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
-wave = eps;
-wavefreq = .5;
+waveAmp = 0.01;
+rand('seed',1);
+wavePhase = 2*pi*rand(1,4);
+waveFreq = 0.5;
 
 %%% PID gains %%%%
-K_p = [500 0 0 ; 0 750 0; 0 0 1000];
-K_i = [1000 0 0 ; 0 7500 0; 0  0 10000];
-K_d = [25 0 0; 0 300 0; 0 0 200];
+K_p = [500 0 0 ; 0 750 0; 0 0 750];
+K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
+K_d = [0 0  0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
 
 %%%%% CPG params %%%%%
