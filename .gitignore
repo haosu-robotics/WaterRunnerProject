@@ -63,4 +63,9 @@ Thumbs.db
 *.WMV
 
 #Data#
+###################
 *.mat
+
+#Dircetories#
+####################
+presentations/
