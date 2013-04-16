@@ -7,3 +7,6 @@
 [submodule "Water-Runner-Simulation-V2"]
 	path = Water-Runner-Simulation-V2
 	url = https://github.com/nthatte/Water-Runner-Simulation-V2.git
+[submodule "WaterRunnerCode"]
+	path = WaterRunnerCode
+	url = git@github.com:nthatte/WaterRunnerCode.git
