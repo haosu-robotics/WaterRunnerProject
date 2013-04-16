@@ -61,3 +61,15 @@ Thumbs.db
 
 #Data#
 *.mat
+
+#Random#
+#####################
+FourLegs/Forced/controller_test.mdl
+FourLegs/Forced/slprj/
+FourLegs/Forced/stepResponse/
+FourLegs/Forced/water_4hopper_VDF_1DOF.mdl
+OneLeg/ParamFit/
+OneLeg/ParamFit_heavy/
+OneLeg/heightCompDf/
+OneLeg/heightdf.fig
+
