@@ -15,8 +15,8 @@ power_pred = nan(size(freqs));
 y_pred2 = nan(size(freqs));
 power_pred2 = nan(size(freqs));
 
-%robot_vert_avg =  open('height1.mat');
-%rheights3 = robot_vert_avg.robot_vert_avg;
+robot_vert_avg =  open('height3.mat');
+rheights3 = robot_vert_avg.robot_vert_avg;
 
 for k = 1 : numel(freqs)
     freq = freqs(k)
@@ -69,7 +69,7 @@ end
 save('oneleg1.mat')
 
 figure(3)
-plot(12:2:100,rheights3,'k')
+plot(12:8:100,rheights3,'k')
 hold on
 %plot(freqs,y_sim,'b')
 plot(freqs,y_pred,'r')
@@ -78,7 +78,7 @@ hold off
 axis([40, 100, 0 0.035])
 xlabel('Frequency [rad/s]')
 ylabel('Height [m]')
-lgd = legend('Simulated Robot Height','Best-Fit Height','Location','NorthWest','boxoff');
+lgd = legend('Simulated Robot Height','Best-Fit Simple Model Height','Location','NorthWest','boxoff');
 %title('Amplitude = 0.0249 m, Projected Area = 0.9185')
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')
