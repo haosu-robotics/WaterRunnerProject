@@ -1,6 +1,6 @@
 function y = Foot(u)
 
-    % u = [z x'z' wy  theta  water_level]
+    % u = [y x'y' wz  theta_z  water_level]
     % ind  1 2 3  4   5      6   
 
     %Read in variables
@@ -12,7 +12,7 @@ function y = Foot(u)
  
     %Hard coded parameters to be replaced with globals
 	radiusDwn = 0.02;
-    radiusUp = 0.005;
+    radiusUp = radiusDwn;%0.005;
     dragCoeff = 0.703;
     density = 1000.;
     gravity = -9.81;

@@ -18,20 +18,25 @@ frame_height = 0.02;
 
 body_size = [frame_length frame_width frame_height];    % in m
 
-FR_TR = [ frame_length/2    frame_width/2 0];
-FL_TR = [ frame_length/2    -frame_width/2 0];
-HR_TR = [-frame_length/2+L5 frame_width/2 0];
-HL_TR = [-frame_length/2+L5 -frame_width/2 0];
+FR_TR = [ frame_length/2    -frame_width/2 0];
+FL_TR = [ frame_length/2    frame_width/2 0];
+HR_TR = [-frame_length/2+L5 -frame_width/2 0];
+HL_TR = [-frame_length/2+L5 frame_width/2 0];
 
-frame_mass = 0.060;
+frame_mass = 0.060/2;
+
+I_shaft = 1e-2;
+%%%%%%%% tail
+Ta_TR = [-frame_length/2   0             0];
+tail_length = 0.1;
+tail_dim = [tail_length bar_w bar_h ];
+tail_density = CF_density;
+tail_angle = 10;
+tail_pad_radius = 0.02;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Motor Parameters %%%%%%%%%%%%%%%%%%%%%%
 speed = 70;
-
-motor_mass = 0.010;
-motor_radius = 0.01342;
-motor_length = 0.03663;
-tau = 2*pi/speed/200;
 
 motor_radius = 0.01342;
 motor_length = 0.03663;
@@ -57,3 +62,21 @@ PVA_gains = [0.0 0.05 0.00];
 %%%%% Water Model Parameters %%%%%
 
 water_level = 0;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+freq = 20;
+
+FR_FL_lag = -pi;     % l1
+HR_HL_lag = pi;    % l2
+FR_HR_lag = -pi;     % l3
+FL_HL_lag = pi;    % l4
+
+c_gain = 100;
+cw_FR_FL = c_gain;
+cw_HR_HL = c_gain;
+cw_FR_HR = c_gain;
+cw_FL_HL = c_gain;
+
+tau = 0.005;
+alpha = 30;
+t_fil =0.05;
