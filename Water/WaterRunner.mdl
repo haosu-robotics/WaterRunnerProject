@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.330"
+    ComputedModelVersion    "1.358"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -61,58 +61,49 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		5
+	Dimension		4
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "5687"
-	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [1.5388725621159498]
-	  Offset		  [120.90243055555555, -15.765885416666663]
-	}
-	Object {
-	  $ObjectID		  7
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [643.08715165721037, 485.80772569444412]
+	  ZoomFactor		  [1.5]
+	  Offset		  [514.38888888888891, 319.24609375]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "233"
+	  Extents		  [748.0, 681.0]
+	  ZoomFactor		  [1.68]
+	  Offset		  [46.666666666666657, -52.023809523809518]
 	}
 	Object {
 	  $ObjectID		  8
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "16"
+	  LoadSaveID		  "4623"
 	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [1.68]
-	  Offset		  [312.38095238095241, 16.666666666666664]
+	  ZoomFactor		  [1.25]
+	  Offset		  [412.92500000000018, -14.899999999999977]
 	}
 	Object {
 	  $ObjectID		  9
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "5943:1359"
+	  LoadSaveID		  "5943"
 	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [1.12]
-	  Offset		  [0.0, 0.0]
-	}
-	Object {
-	  $ObjectID		  10
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "5944"
-	  Extents		  [748.0, 681.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [466.0, -13.0]
+	  ZoomFactor		  [0.72]
+	  Offset		  [1180.5555555555557, -244.41666666666669]
 	}
 	PropName		"EditorsInfo"
       }
     }
   }
-  PhysicalModelingChecksum "2905226244"
-  PhysicalModelingParameterChecksum "1341751242"
+  PhysicalModelingChecksum "884551100"
+  PhysicalModelingParameterChecksum "547781764"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -120,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 27 16:11:34 2013"
-  RTWModifiedTimeStamp	  288974910
-  ModelVersionFormat	  "1.%<AutoIncrement:330>"
+  LastModifiedDate	  "Sat Apr 27 18:50:12 2013"
+  RTWModifiedTimeStamp	  288983005
+  ModelVersionFormat	  "1.%<AutoIncrement:358>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -157,7 +148,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    11
+    $ObjectID		    10
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "WaterRunner"
     signals_		    []
@@ -217,16 +208,16 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      12
+      $ObjectID		      11
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		10
 	Simulink.SolverCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "0.6"
+	  StopTime		  "3"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -258,7 +249,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -290,7 +281,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -346,7 +337,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -436,7 +427,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -473,7 +464,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  18
+	  $ObjectID		  17
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -488,7 +479,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -503,7 +494,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  20
+	  $ObjectID		  19
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -566,7 +557,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      21
+	      $ObjectID		      20
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -633,7 +624,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      22
+	      $ObjectID		      21
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -714,13 +705,13 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  23
+	  $ObjectID		  22
 	  Version		  "1.12.1"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  24
+	  $ObjectID		  23
 	  Version		  "1.0"
 	  Array {
 	    Type		    "Cell"
@@ -732,7 +723,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    MECH.SimMechanicsCC {
-	      $ObjectID		      25
+	      $ObjectID		      24
 	      Version		      "1.12.1"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
@@ -765,14 +756,14 @@ Model {
 	      OVRRIDBodyVisualizationType "NONE"
 	    }
 	    simmechanics.ConfigurationSet {
-	      $ObjectID		      26
+	      $ObjectID		      25
 	      Version		      "1.12.1"
 	      Description	      "SimMechanics 2G"
 	      Array {
 		Type			"Handle"
 		Dimension		2
 		simmechanics.DiagnosticsConfigSet {
-		  $ObjectID		  27
+		  $ObjectID		  26
 		  Version		  "1.12.1"
 		  Description		  "Diagnostics"
 		  Name			  "DiagnosticsConfigSet"
@@ -786,7 +777,7 @@ Model {
 		  SimMechanicsJointTargetOverSpecification "error"
 		}
 		simmechanics.ExplorerConfigSet {
-		  $ObjectID		  28
+		  $ObjectID		  27
 		  Version		  "1.12.1"
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
@@ -828,11 +819,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    12
+    $ObjectID		    11
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    29
+    $ObjectID		    28
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -968,15 +959,6 @@ Model {
       IgnoreLimit	      off
       ZeroCross		      on
       ContinuousStateAttributes	"''"
-    }
-    Block {
-      BlockType		      Memory
-      X0		      "0"
-      InheritSampleTime	      off
-      LinearizeMemory	      off
-      LinearizeAsDelay	      off
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
     }
     Block {
       BlockType		      Mux
@@ -1128,9 +1110,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5948"
+    SIDHighWatermark	    "5982"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1140,7 +1122,7 @@ Model {
       ZOrder		      -1
       BlockRotation	      270
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Body"
       SourceType	      "SubSystem"
     }
@@ -1331,20 +1313,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    30
+	    $ObjectID		    29
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		31
+		$ObjectID		30
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FL_HL_lag"
 	      }
 	      Object {
-		$ObjectID		32
+		$ObjectID		31
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1513,20 +1495,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    33
+	    $ObjectID		    32
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		34
+		$ObjectID		33
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_FL_lag"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		34
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1695,20 +1677,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    36
+	    $ObjectID		    35
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		37
+		$ObjectID		36
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_HR_lag"
 	      }
 	      Object {
-		$ObjectID		38
+		$ObjectID		37
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -2072,11 +2054,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    39
+	    $ObjectID		    38
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      40
+	      $ObjectID		      39
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2221,11 +2203,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    41
+	    $ObjectID		    40
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      42
+	      $ObjectID		      41
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2531,20 +2513,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    43
+	    $ObjectID		    42
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		44
+		$ObjectID		43
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"HR_HL_lag"
 	      }
 	      Object {
-		$ObjectID		45
+		$ObjectID		44
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -2712,11 +2694,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    46
+	    $ObjectID		    45
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      47
+	      $ObjectID		      46
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2861,11 +2843,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    48
+	    $ObjectID		    47
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      49
+	      $ObjectID		      48
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -5047,6 +5029,18 @@ Model {
       GotoTag		      "HL_v"
     }
     Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "5950"
+      Position		      [550, 1300, 580, 1330]
+      ZOrder		      405
+      BlockMirror	      on
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "887"
@@ -5088,7 +5082,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5111,7 +5105,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5134,7 +5128,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5157,7 +5151,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5201,7 +5195,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "180"
@@ -5217,7 +5211,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "0"
@@ -5233,7 +5227,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "-180"
@@ -5249,7 +5243,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "0"
@@ -5411,7 +5405,7 @@ Model {
       PositionTargetValueUnits "m"
       PositionTargetSpecify   "on"
       PositionTargetPriority  "High"
-      VelocityTargetValue     "0"
+      VelocityTargetValue     "2"
       VelocityTargetValueUnits "m/s"
       VelocityTargetSpecify   "on"
       VelocityTargetPriority  "High"
@@ -5458,49 +5452,6 @@ Model {
       VelocityTargetSpecify   "on"
       VelocityTargetPriority  "High"
       BlockFunction	      "simmechanics.library.joints.prismatic_joint"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Revolute Joint"
-      SID		      "5645"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [710, 435, 750, 475]
-      ZOrder		      393
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.1"
-      SourceBlock	      "sm_lib/Joints/Revolute Joint"
-      SourceType	      "Revolute Joint"
-      ClassName		      "RevoluteJoint"
-      SenseConstraintForceX   "off"
-      SenseConstraintForceY   "off"
-      SenseConstraintForceZ   "off"
-      SenseConstraintTorqueX  "off"
-      SenseConstraintTorqueY  "off"
-      SenseConstraintTorqueZ  "off"
-      ConstraintWrenchDir     "FollowerOnBase"
-      ConstraintWrenchFrame   "BaseFrame"
-      EquilibriumPosition     "0"
-      EquilibriumPositionUnits "deg"
-      SpringStiffness	      "0"
-      SpringStiffnessUnits    "N*m/deg"
-      DampingCoefficient      "0"
-      DampingCoefficientUnits "N*m/(deg/s)"
-      ActuationMode	      "NoActuation"
-      SensePosition	      "off"
-      SenseVelocity	      "off"
-      SenseAcceleration	      "off"
-      SenseTorqueForce	      "off"
-      PositionTargetValue     "0"
-      PositionTargetValueUnits "deg"
-      PositionTargetSpecify   "off"
-      PositionTargetPriority  "High"
-      VelocityTargetValue     "0"
-      VelocityTargetValueUnits "deg/s"
-      VelocityTargetSpecify   "off"
-      VelocityTargetPriority  "High"
-      BlockFunction	      "simmechanics.library.joints.revolute_joint"
     }
     Block {
       BlockType		      Reference
@@ -5574,7 +5525,7 @@ Model {
       Name		      "Rigid  Transform3"
       SID		      "5647"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [710, 360, 750, 400]
+      Position		      [710, 365, 750, 405]
       ZOrder		      395
       BlockRotation	      270
       BlockMirror	      on
@@ -5668,8 +5619,8 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      YMin		      "0~-9~-5"
-      YMax		      "1.1~1~5"
+      YMin		      "0~-2.5~-0.04"
+      YMax		      "0.325~0.75~0.045"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -5716,7 +5667,7 @@ Model {
       Position		      [1325, 179, 1355, 211]
       ZOrder		      353
       Floating		      off
-      Location		      [965, 49, 1920, 1078]
+      Location		      [640, 216, 1595, 1063]
       Open		      off
       NumInputPorts	      "4"
       List {
@@ -5741,6 +5692,47 @@ Model {
       YMin		      "-0.1~0.005~1~-0.2"
       YMax		      "0.9~0.05~2.5~0.3"
       SaveName		      "ScopeData3"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope3"
+      SID		      "5949"
+      Ports		      [5]
+      Position		      [455, 1230, 485, 1320]
+      ZOrder		      404
+      BlockMirror	      on
+      Floating		      off
+      Location		      [9, 56, 793, 851]
+      Open		      off
+      NumInputPorts	      "5"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.5 0.5 0.5]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      on
+      LegendLocations	      "0.76318      0.9283      0.1977    0.025577\n0.76318     0.73962      0.1977    0.025577\n"
+      "0.76318      0.5522      0.1977    0.025577\n0.86905     0.36478    0.091837    0.025577\n0.75298      0.1761   "
+      "  0.10204    0.025577"
+      YMin		      "0~-15~-0.125~-7.5~0"
+      YMax		      "1.1~2.5~0.1~7.5~130"
+      SaveName		      "ScopeData4"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -5849,7 +5841,7 @@ Model {
       Name		      "Subsystem1"
       SID		      "5649"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1255, 367, 1375, 423]
+      Position		      [1255, 427, 1375, 483]
       ZOrder		      397
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -5872,7 +5864,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"157"
 	Block {
 	  BlockType		  Reference
 	  Name			  "PassiveLink"
@@ -5894,7 +5886,7 @@ Model {
 	  ProductsOfInertia	  "[0 0 0]"
 	  ProductsOfInertiaUnits  "kg*m^2"
 	  DensityBased		  "on"
-	  Density		  "tail_density"
+	  Density		  "tail_density*0"
 	  DensityUnits		  "kg/(m^3)"
 	  GraphicType		  "FromGeometry"
 	  MarkerShape		  "Sphere"
@@ -6003,7 +5995,7 @@ Model {
 	  Name			  "Water Contact HR1"
 	  SID			  "5652"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [70, 25, 180, 85]
+	  Position		  [75, 22, 185, 88]
 	  ZOrder		  275
 	  BlockMirror		  on
 	  BackgroundColor	  "[0.000000, 0.819608, 0.819608]"
@@ -6029,14 +6021,14 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "113"
+	    ZoomFactor		    "86"
 	    Block {
 	      BlockType		      Reference
-	      Name		      "6-DOF Joint1"
-	      SID		      "5653"
-	      Ports		      [0, 0, 0, 0, 0, 1, 2]
-	      Position		      [860, 254, 925, 341]
-	      ZOrder		      186
+	      Name		      "6-DOF Joint2"
+	      SID		      "5955"
+	      Ports		      [0, 0, 0, 0, 0, 3, 2]
+	      Position		      [1200, 285, 1300, 405]
+	      ZOrder		      351
 	      BlockMirror	      on
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "sm_lib/Joints/6-DOF Joint"
@@ -6056,7 +6048,7 @@ Model {
 	      PxSpringStiffnessUnits  "N/m"
 	      PxDampingCoefficient    "0"
 	      PxDampingCoefficientUnits	"N/(m/s)"
-	      PxActuationMode	      "NoActuation"
+	      PxActuationMode	      "TorqueForceActuation"
 	      PxSensePosition	      "off"
 	      PxSenseVelocity	      "off"
 	      PxSenseAcceleration     "off"
@@ -6075,7 +6067,7 @@ Model {
 	      PySpringStiffnessUnits  "N/m"
 	      PyDampingCoefficient    "0"
 	      PyDampingCoefficientUnits	"N/(m/s)"
-	      PyActuationMode	      "NoActuation"
+	      PyActuationMode	      "TorqueForceActuation"
 	      PySensePosition	      "on"
 	      PySenseVelocity	      "off"
 	      PySenseAcceleration     "off"
@@ -6168,271 +6160,122 @@ Model {
 	      BlockFunction	      "simmechanics.library.joints.sixdof_joint"
 	    }
 	    Block {
+	      BlockType		      From
+	      Name		      "From"
+	      SID		      "5956"
+	      Position		      [1850, 313, 1880, 337]
+	      ZOrder		      366
+	      BlockMirror	      on
+	      GotoTag		      "y_c"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "From1"
+	      SID		      "5957"
+	      Position		      [1585, 445, 1625, 465]
+	      ZOrder		      370
+	      BlockMirror	      on
+	      GotoTag		      "angle"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      SID		      "5958"
+	      Position		      [1585, 370, 1615, 400]
+	      ZOrder		      373
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Gain		      "-1"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      SID		      "5980"
+	      Position		      [1385, 330, 1415, 360]
+	      ZOrder		      378
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      Gain		      "-1"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto"
+	      SID		      "5959"
+	      Position		      [1050, 365, 1080, 385]
+	      ZOrder		      367
+	      BlockMirror	      on
+	      GotoTag		      "y_c"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "Goto1"
+	      SID		      "5960"
+	      Position		      [1835, 100, 1880, 120]
+	      ZOrder		      369
+	      GotoTag		      "angle"
+	    }
+	    Block {
 	      BlockType		      Reference
-	      Name		      "6-DOF Joint4"
-	      SID		      "5654"
-	      Ports		      [0, 0, 0, 0, 0, 2, 3]
-	      Position		      [620, 269, 680, 411]
-	      ZOrder		      345
-	      BlockMirror	      on
-	      LibraryVersion	      "1.1"
-	      SourceBlock	      "sm_lib/Joints/6-DOF Joint"
-	      SourceType	      "6-DOF Joint"
-	      ClassName		      "SixDofJoint"
-	      SenseConstraintForceX   "off"
-	      SenseConstraintForceY   "off"
-	      SenseConstraintForceZ   "off"
-	      SenseConstraintTorqueX  "off"
-	      SenseConstraintTorqueY  "off"
-	      SenseConstraintTorqueZ  "off"
-	      ConstraintWrenchDir     "FollowerOnBase"
-	      ConstraintWrenchFrame   "BaseFrame"
-	      PxEquilibriumPosition   "0"
-	      PxEquilibriumPositionUnits "m"
-	      PxSpringStiffness	      "0"
-	      PxSpringStiffnessUnits  "N/m"
-	      PxDampingCoefficient    "0"
-	      PxDampingCoefficientUnits	"N/(m/s)"
-	      PxActuationMode	      "NoActuation"
-	      PxSensePosition	      "off"
-	      PxSenseVelocity	      "off"
-	      PxSenseAcceleration     "off"
-	      PxSenseTorqueForce      "off"
-	      PxPositionTargetValue   "0"
-	      PxPositionTargetValueUnits "m"
-	      PxPositionTargetSpecify "off"
-	      PxPositionTargetPriority "High"
-	      PxVelocityTargetValue   "0"
-	      PxVelocityTargetValueUnits "m/s"
-	      PxVelocityTargetSpecify "off"
-	      PxVelocityTargetPriority "High"
-	      PyEquilibriumPosition   "0"
-	      PyEquilibriumPositionUnits "m"
-	      PySpringStiffness	      "0"
-	      PySpringStiffnessUnits  "N/m"
-	      PyDampingCoefficient    "0"
-	      PyDampingCoefficientUnits	"N/(m/s)"
-	      PyActuationMode	      "TorqueForceActuation"
-	      PySensePosition	      "off"
-	      PySenseVelocity	      "off"
-	      PySenseAcceleration     "off"
-	      PySenseTorqueForce      "off"
-	      PyPositionTargetValue   "0"
-	      PyPositionTargetValueUnits "m"
-	      PyPositionTargetSpecify "off"
-	      PyPositionTargetPriority "High"
-	      PyVelocityTargetValue   "0"
-	      PyVelocityTargetValueUnits "m/s"
-	      PyVelocityTargetSpecify "off"
-	      PyVelocityTargetPriority "High"
-	      PzEquilibriumPosition   "0"
-	      PzEquilibriumPositionUnits "m"
-	      PzSpringStiffness	      "0"
-	      PzSpringStiffnessUnits  "N/m"
-	      PzDampingCoefficient    "0"
-	      PzDampingCoefficientUnits	"N/(m/s)"
-	      PzActuationMode	      "NoActuation"
-	      PzSensePosition	      "off"
-	      PzSenseVelocity	      "off"
-	      PzSenseAcceleration     "off"
-	      PzSenseTorqueForce      "off"
-	      PzPositionTargetValue   "0"
-	      PzPositionTargetValueUnits "m"
-	      PzPositionTargetSpecify "off"
-	      PzPositionTargetPriority "High"
-	      PzVelocityTargetValue   "0"
-	      PzVelocityTargetValueUnits "m/s"
-	      PzVelocityTargetSpecify "off"
-	      PzVelocityTargetPriority "High"
-	      SphDefPosRotationMethod "None"
-	      SphDefPosRotationAngleUnits "deg"
-	      SphDefPosRotationStandardAxis "+Z"
-	      SphDefPosRotationAngle  "0"
-	      SphDefPosRotationArbitraryAxis "[0 0 1]"
-	      SphDefPosFollAlignAxisA "+X"
-	      SphDefPosBaseAlignAxisA "+Y"
-	      SphDefPosFollAlignAxisB "+Y"
-	      SphDefPosBaseAlignAxisB "+Z"
-	      SphEqPosRotationMethod  "None"
-	      SphEqPosRotationAngleUnits "deg"
-	      SphEqPosRotationStandardAxis "+Z"
-	      SphEqPosRotationAngle   "0"
-	      SphEqPosRotationArbitraryAxis "[0 0 1]"
-	      SphEqPosFollAlignAxisA  "+X"
-	      SphEqPosBaseAlignAxisA  "+Y"
-	      SphEqPosFollAlignAxisB  "+Y"
-	      SphEqPosBaseAlignAxisB  "+Z"
-	      SphSpringStiffness      "0"
-	      SphSpringStiffnessUnits "N*m/deg"
-	      SphDampingCoefficient   "0"
-	      SphDampingCoefficientUnits "N*m/(deg/s)"
-	      SphActuateTorqueX	      "off"
-	      SphActuateTorqueY	      "off"
-	      SphActuateTorqueZ	      "off"
-	      SphActuateTorque	      "off"
-	      SphActuationMode	      "NoActuation"
-	      SphActuationFrame	      "BaseFrame"
-	      SphSensePosition	      "on"
-	      SphSenseVelocityX	      "off"
-	      SphSenseVelocityY	      "off"
-	      SphSenseVelocityZ	      "on"
-	      SphSenseVelocity	      "off"
-	      SphSenseAccelerationX   "off"
-	      SphSenseAccelerationY   "off"
-	      SphSenseAccelerationZ   "off"
-	      SphSenseAcceleration    "off"
-	      SphSenseTorqueX	      "off"
-	      SphSenseTorqueY	      "off"
-	      SphSenseTorqueZ	      "off"
-	      SphSenseTorqueForce     "off"
-	      SphSensingFrame	      "BaseFrame"
-	      SphPositionTargetRotationMethod "None"
-	      SphPositionTargetRotationAngleUnits "deg"
-	      SphPositionTargetRotationStandardAxis "+Z"
-	      SphPositionTargetRotationAngle "0"
-	      SphPositionTargetRotationArbitraryAxis "[0 0 1]"
-	      SphPositionTargetFollAlignAxisA "+X"
-	      SphPositionTargetBaseAlignAxisA "+Y"
-	      SphPositionTargetFollAlignAxisB "+Y"
-	      SphPositionTargetBaseAlignAxisB "+Z"
-	      SphPositionTargetSpecify "off"
-	      SphPositionTargetPriority	"High"
-	      SphVelocityTargetValue  "[0 0 0]"
-	      SphVelocityTargetValueUnits "deg/s"
-	      SphVelocityTargetSpecify "off"
-	      SphVelocityTargetPriority	"High"
-	      SphVelocityTargetInFollowerFrame "on"
-	      BlockFunction	      "simmechanics.library.joints.sixdof_joint"
-	    }
-	    Block {
-	      BlockType		      Memory
-	      Name		      "Memory"
-	      SID		      "5655"
-	      Position		      [915, 465, 945, 495]
-	      ZOrder		      348
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Quat to Euler"
-	      SID		      "5656"
+	      Name		      "Quat to Euler1"
+	      SID		      "5961"
 	      Ports		      [1, 1]
-	      Position		      [470, 327, 520, 353]
-	      ZOrder		      24
-	      BlockMirror	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
+	      Position		      [1455, 142, 1505, 168]
+	      ZOrder		      363
+	      LibraryVersion	      "1.390"
+	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Quat to Euler1"
+	      SourceType	      "SubSystem"
 	      Port {
 		PortNumber		1
 		Name			"phi"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
-	      System {
-		Name			"Quat to Euler"
-		Location		[-8, -8, 1608, 868]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"93"
-		Block {
-		  BlockType		  Inport
-		  Name			  "Q"
-		  SID			  "5657"
-		  Position		  [360, 150, 390, 165]
-		  ZOrder		  22
-		  BlockRotation		  270
-		  BlockMirror		  on
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Fcn
-		  Name			  "f3"
-		  SID			  "5658"
-		  Position		  [260, 210, 320, 240]
-		  ZOrder		  20
-		  BlockMirror		  on
-		  Expr			  "atan2( 2*(u(1)*u(4) + u(2)*u(3)) , 1-2*(u(3)^2+u(4)^2) )"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "phi_z"
-		  SID			  "5659"
-		  Position		  [145, 218, 175, 232]
-		  ZOrder		  25
-		  BlockMirror		  on
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "f3"
-		  SrcPort		  1
-		  DstBlock		  "phi_z"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Q"
-		  SrcPort		  1
-		  Points		  [0, 55]
-		  DstBlock		  "f3"
-		  DstPort		  1
-		}
-	      }
 	    }
 	    Block {
 	      BlockType		      Scope
 	      Name		      "Scope"
-	      SID		      "5660"
-	      Ports		      [2]
-	      Position		      [990, 556, 1020, 589]
-	      ZOrder		      349
+	      SID		      "5981"
+	      Ports		      [1]
+	      Position		      [1660, 574, 1690, 606]
+	      ZOrder		      379
 	      Floating		      off
-	      Location		      [9, 56, 793, 851]
+	      Location		      [188, 390, 512, 629]
 	      Open		      off
-	      NumInputPorts	      "2"
-	      ZoomMode		      "xonly"
+	      NumInputPorts	      "1"
 	      List {
 		ListType		AxesTitles
 		axes1			"%<SignalLabel>"
-		axes2			"%<SignalLabel>"
-	      }
-	      List {
-		ListType		ScopeGraphics
-		FigureColor		"[0.5 0.5 0.5]"
-		AxesColor		"[0 0 0]"
-		AxesTickColor		"[1 1 1]"
-		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-		LineStyles		"-|-|-|-|-|-"
-		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-		MarkerStyles		"none|none|none|none|none|none"
 	      }
 	      ShowLegends	      off
-	      YMin		      "-0.15~-0.6"
-	      YMax		      "0.175~0.9"
 	      SaveName		      "ScopeData2"
 	      DataFormat	      "StructureWithTime"
-	      LimitDataPoints	      off
 	      SampleTime	      "0"
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Transform  Sensor1"
-	      SID		      "5661"
-	      Ports		      [0, 0, 0, 0, 0, 1, 2]
-	      Position		      [630, 120, 670, 160]
-	      ZOrder		      343
+	      Name		      "Subsystem1"
+	      SID		      "5963"
+	      Ports		      [2, 2]
+	      Position		      [1500, 372, 1555, 423]
+	      ZOrder		      371
 	      BlockMirror	      on
+	      LibraryVersion	      "1.390"
+	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Subsystem1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Transform  Sensor"
+	      SID		      "5965"
+	      Ports		      [0, 0, 0, 0, 0, 1, 4]
+	      Position		      [1200, 98, 1295, 252]
+	      ZOrder		      359
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "sm_lib/Frames and\n Transforms/Transform \nSensor"
 	      SourceType	      "Transform Sensor"
@@ -6443,11 +6286,11 @@ Model {
 	      SenseAngle1	      "off"
 	      SenseAngle2	      "off"
 	      SenseAngle3	      "off"
-	      SenseQ		      "off"
+	      SenseQ		      "on"
 	      SenseR		      "off"
 	      SenseOmegaX	      "off"
 	      SenseOmegaY	      "off"
-	      SenseOmegaZ	      "off"
+	      SenseOmegaZ	      "on"
 	      SenseOmega1	      "off"
 	      SenseOmega2	      "off"
 	      SenseOmega3	      "off"
@@ -6486,11 +6329,12 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "World Frame"
-	      SID		      "5662"
+	      Name		      "World Frame1"
+	      SID		      "5966"
 	      Ports		      [0, 0, 0, 0, 0, 0, 1]
-	      Position		      [505, 220, 545, 260]
-	      ZOrder		      218
+	      Position		      [1445, 287, 1475, 323]
+	      ZOrder		      353
+	      BlockMirror	      on
 	      NamePlacement	      "alternate"
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "sm_lib/Frames and\n Transforms/World Frame"
@@ -6500,13 +6344,12 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "p1"
-	      SID		      "5663"
+	      Name		      "p"
+	      SID		      "5967"
 	      Ports		      [1, 0, 0, 0, 0, 0, 1]
-	      Position		      [710, 357, 740, 393]
-	      ZOrder		      206
+	      Position		      [1345, 372, 1370, 398]
+	      ZOrder		      350
 	      BlockMirror	      on
-	      NamePlacement	      "alternate"
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "nesl_utility/Simulink-PS\nConverter"
 	      SourceType	      "Simulink-PS\nConverter"
@@ -6527,11 +6370,56 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "pd4"
-	      SID		      "5664"
+	      Name		      "p2"
+	      SID		      "5968"
+	      Ports		      [1, 0, 0, 0, 0, 0, 1]
+	      Position		      [1345, 332, 1370, 358]
+	      ZOrder		      368
+	      BlockMirror	      on
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "nesl_utility/Simulink-PS\nConverter"
+	      SourceType	      "Simulink-PS\nConverter"
+	      PhysicalDomain	      "network_engine_domain"
+	      LeftPortType	      "input"
+	      RightPortType	      "output"
+	      SubClassName	      "ps_input"
+	      PseudoPeriodic	      off
+	      Frequencies	      "[]"
+	      NoiseDistribution	      "none"
+	      NoiseParameters	      "[]"
+	      Unit		      "1"
+	      AffineConversion	      off
+	      InputFilterTimeConstant ".001"
+	      UdotUserProvided	      "[]"
+	      SimscapeFilterOrder     "1"
+	      InputFiltering	      "off"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "px1"
+	      SID		      "5969"
 	      Ports		      [0, 1, 0, 0, 0, 1]
-	      Position		      [550, 325, 580, 355]
-	      ZOrder		      13
+	      Position		      [1385, 145, 1410, 165]
+	      ZOrder		      364
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
+	      SourceType	      "PS-Simulink\nConverter"
+	      PhysicalDomain	      "network_engine_domain"
+	      LeftPortType	      "input"
+	      RightPortType	      "output"
+	      SubClassName	      "ps_output"
+	      PseudoPeriodic	      off
+	      Frequencies	      "[]"
+	      Unit		      "1"
+	      AffineConversion	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "px2"
+	      SID		      "5970"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [1135, 365, 1160, 385]
+	      ZOrder		      358
 	      BlockMirror	      on
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
@@ -6547,12 +6435,11 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "ps"
-	      SID		      "5665"
+	      Name		      "px3"
+	      SID		      "5971"
 	      Ports		      [0, 1, 0, 0, 0, 1]
-	      Position		      [550, 370, 580, 400]
-	      ZOrder		      184
-	      BlockMirror	      on
+	      Position		      [1385, 225, 1410, 245]
+	      ZOrder		      360
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
@@ -6567,32 +6454,11 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "px"
-	      SID		      "5666"
+	      Name		      "px4"
+	      SID		      "5972"
 	      Ports		      [0, 1, 0, 0, 0, 1]
-	      Position		      [790, 305, 820, 335]
-	      ZOrder		      187
-	      BlockMirror	      on
-	      LibraryVersion	      "1.1"
-	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
-	      SourceType	      "PS-Simulink\nConverter"
-	      PhysicalDomain	      "network_engine_domain"
-	      LeftPortType	      "input"
-	      RightPortType	      "output"
-	      SubClassName	      "ps_output"
-	      PseudoPeriodic	      off
-	      Frequencies	      "[]"
-	      Unit		      "1"
-	      AffineConversion	      off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "px5"
-	      SID		      "5667"
-	      Ports		      [0, 1, 0, 0, 0, 1]
-	      Position		      [470, 140, 495, 160]
-	      ZOrder		      344
-	      BlockMirror	      on
+	      Position		      [1385, 185, 1410, 205]
+	      ZOrder		      365
 	      LibraryVersion	      "1.1"
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
@@ -6610,8 +6476,9 @@ Model {
 	      Name		      "water_model"
 	      SID		      "5668"
 	      Ports		      [4, 1]
-	      Position		      [805, 403, 885, 557]
-	      ZOrder		      274
+	      Position		      [1685, 308, 1765, 462]
+	      ZOrder		      374
+	      BlockMirror	      on
 	      BackgroundColor	      "[0.419608, 0.588235, 0.239216]"
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -6622,41 +6489,41 @@ Model {
 	      MaskHideContents	      off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		50
+		$ObjectID		49
 		$ClassName		"Simulink.Mask"
 		Array {
 		  Type			  "Simulink.MaskParameter"
 		  Dimension		  5
 		  Object {
-		    $ObjectID		    51
+		    $ObjectID		    50
 		    Type		    "edit"
 		    Name		    "Cd"
 		    Prompt		    "Drag Coefficient "
 		    Value		    "0.703"
 		  }
 		  Object {
-		    $ObjectID		    52
+		    $ObjectID		    51
 		    Type		    "edit"
 		    Name		    "density"
 		    Prompt		    "Density"
 		    Value		    "1000"
 		  }
 		  Object {
-		    $ObjectID		    53
+		    $ObjectID		    52
 		    Type		    "edit"
 		    Name		    "y_w"
 		    Prompt		    "Water level"
 		    Value		    "water_level"
 		  }
 		  Object {
-		    $ObjectID		    54
+		    $ObjectID		    53
 		    Type		    "edit"
 		    Name		    "R"
 		    Prompt		    "Foot Radius"
 		    Value		    "tail_pad_radius"
 		  }
 		  Object {
-		    $ObjectID		    55
+		    $ObjectID		    54
 		    Type		    "edit"
 		    Name		    "g"
 		    Prompt		    "Gravity constant (use negative)"
@@ -6667,7 +6534,7 @@ Model {
 	      }
 	      System {
 		Name			"water_model"
-		Location		[0, 0, 800, 860]
+		Location		[-8, -8, 1608, 868]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -6679,7 +6546,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"105"
+		ZoomFactor		"224"
 		Block {
 		  BlockType		  Inport
 		  Name			  "y_c"
@@ -6950,7 +6817,6 @@ Model {
 		    Line {
 		    SrcBlock		    "Fcn1"
 		    SrcPort		    1
-		    Points		    [-5, 0]
 		    DstBlock		    "Product"
 		    DstPort		    1
 		    }
@@ -7016,7 +6882,7 @@ Model {
 		    BlockType		    Inport
 		    Name		    "r0"
 		    SID			    "5793"
-		    Position		    [31, 280, 61, 295]
+		    Position		    [30, 280, 60, 295]
 		    ZOrder		    357
 		    BlockRotation	    270
 		    Port		    "2"
@@ -7049,7 +6915,7 @@ Model {
 		    BlockType		    Outport
 		    Name		    "r00"
 		    SID			    "5794"
-		    Position		    [418, 53, 448, 67]
+		    Position		    [420, 53, 450, 67]
 		    ZOrder		    358
 		    IconDisplay		    "Port number"
 		    }
@@ -7111,7 +6977,7 @@ Model {
 		  System {
 		    Name		    "Subsystem2"
 		    Location		    [0, 0, 800, 860]
-		    Open		    on
+		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
 		    ScreenColor		    "white"
@@ -8999,9 +8865,8 @@ Model {
 	      BlockType		      PMIOPort
 	      Name		      "Foot"
 	      SID		      "5773"
-	      Position		      [790, 143, 820, 157]
-	      ZOrder		      216
-	      BlockMirror	      on
+	      Position		      [1050, 308, 1080, 322]
+	      ZOrder		      377
 	      NamePlacement	      "alternate"
 	      Port		      "1"
 	      Side		      "Left"
@@ -9010,170 +8875,183 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Fb"
 	      SID		      "5774"
-	      Position		      [1010, 473, 1040, 487]
-	      ZOrder		      273
+	      Position		      [1590, 503, 1620, 517]
+	      ZOrder		      376
+	      BlockMirror	      on
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Memory"
-	      SrcPort		      1
-	      Points		      [24, 0]
+	      LineType		      "Connection"
+	      Points		      [1346, 305; 84, 0]
+	      DstBlock		      "World Frame1"
+	      DstPort		      RConn1
 	      Branch {
-		DstBlock		"Fb"
-		DstPort			1
+		ConnectType		"SRC_DEST"
+		SrcBlock		"Transform  Sensor"
+		SrcPort			RConn1
+		Points			[36, 0; 0, 190]
 	      }
 	      Branch {
-		Points			[0, -105]
-		DstBlock		"p1"
-		DstPort			1
+		ConnectType		"SRC_DEST"
+		SrcBlock		"6-DOF Joint2"
+		SrcPort			LConn1
+		Points			[31, 0]
 	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      Points		      [1142, 315; 0, -140; 43, 0]
+	      DstBlock		      "Transform  Sensor"
+	      DstPort		      LConn1
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"Foot"
+		SrcPort			RConn1
+		Points			[47, 0]
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"6-DOF Joint2"
+		SrcPort			RConn1
+		Points			[-43, 0]
+	      }
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Transform  Sensor"
+	      SrcPort		      RConn4
+	      DstBlock		      "px3"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "px4"
+	      SrcPort		      LConn1
+	      DstBlock		      "Transform  Sensor"
+	      DstPort		      RConn3
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "p2"
+	      SrcPort		      RConn1
+	      DstBlock		      "6-DOF Joint2"
+	      DstPort		      LConn2
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "p"
+	      SrcPort		      RConn1
+	      DstBlock		      "6-DOF Joint2"
+	      DstPort		      LConn3
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "px2"
+	      SrcPort		      LConn1
+	      DstBlock		      "6-DOF Joint2"
+	      DstPort		      RConn2
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "px1"
+	      SrcPort		      LConn1
+	      DstBlock		      "Transform  Sensor"
+	      DstPort		      RConn2
 	    }
 	    Line {
 	      SrcBlock		      "water_model"
 	      SrcPort		      1
-	      Points		      [10, 0]
+	      Points		      [-30, 0]
 	      Branch {
-		Points			[0, 85]
-		DstBlock		"Scope"
+		Points			[0, 125]
+		DstBlock		"Fb"
 		DstPort			1
 	      }
 	      Branch {
-		DstBlock		"Memory"
+		DstBlock		"Gain"
 		DstPort			1
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "px5"
+	      SrcBlock		      "px3"
 	      SrcPort		      1
-	      Points		      [-58, 0; 0, 350]
+	      Points		      [390, 0; 0, 170]
 	      DstBlock		      "water_model"
 	      DstPort		      3
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "px5"
-	      SrcPort		      LConn1
-	      DstBlock		      "Transform  Sensor1"
-	      DstPort		      RConn2
-	    }
-	    Line {
 	      Name		      "phi"
-	      Labels		      [0, 0]
-	      SrcBlock		      "Quat to Euler"
+	      SrcBlock		      "Quat to Euler1"
 	      SrcPort		      1
-	      Points		      [-10, 0; 0, 120; 323, 0]
+	      Points		      [195, 0]
 	      Branch {
-		Points			[0, 117; 79, 0; 0, 3]
-		DstBlock		"Scope"
-		DstPort			2
+		Points			[0, -45]
+		DstBlock		"Goto1"
+		DstPort			1
 	      }
 	      Branch {
+		Labels			[-1, 1]
+		Points			[87, 0; 0, 210]
 		DstBlock		"water_model"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "6-DOF Joint4"
-	      SrcPort		      LConn2
-	      DstBlock		      "p1"
-	      DstPort		      RConn1
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      Points		      [587, 240; -27, 0]
-	      DstBlock		      "World Frame"
-	      DstPort		      RConn1
-	      Branch {
-		ConnectType		"SRC_DEST"
-		SrcBlock		"Transform  Sensor1"
-		SrcPort			RConn1
-		Points			[-28, 0; 0, 110]
-	      }
-	      Branch {
-		ConnectType		"SRC_SRC"
-		Points			[0, 3]
-		Branch {
-		  ConnectType		  "DEST_DEST"
-		  SrcBlock		  "6-DOF Joint4"
-		  SrcPort		  RConn1
-		  Points		  [-18, 0; 0, -52]
-		}
-		Branch {
-		  ConnectType		  "DEST_DEST"
-		  SrcBlock		  "6-DOF Joint1"
-		  SrcPort		  LConn1
-		  Points		  [19, 0; 0, -57; -372, 0]
-		}
-	      }
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "6-DOF Joint4"
-	      SrcPort		      LConn1
-	      Points		      [77, 0; 0, -30]
-	      Branch {
-		ConnectType		"DEST_SRC"
-		Points			[0, -125]
-		Branch {
-		  ConnectType		  "DEST_SRC"
-		  DstBlock		  "Foot"
-		  DstPort		  RConn1
-		}
-		Branch {
-		  ConnectType		  "DEST_DEST"
-		  SrcBlock		  "Transform  Sensor1"
-		  SrcPort		  LConn1
-		  Points		  [87, 0; 0, 10]
-		}
-	      }
-	      Branch {
-		ConnectType		"DEST_DEST"
-		SrcBlock		"6-DOF Joint1"
-		SrcPort			RConn1
-		Points			[-73, 0]
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "pd4"
+	      SrcBlock		      "px1"
 	      SrcPort		      1
-	      DstBlock		      "Quat to Euler"
+	      DstBlock		      "Quat to Euler1"
 	      DstPort		      1
 	    }
 	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "6-DOF Joint4"
-	      SrcPort		      RConn2
-	      DstBlock		      "pd4"
-	      DstPort		      LConn1
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "6-DOF Joint4"
-	      SrcPort		      RConn3
-	      DstBlock		      "ps"
-	      DstPort		      LConn1
-	    }
-	    Line {
-	      LineType		      "Connection"
-	      SrcBlock		      "px"
-	      SrcPort		      LConn1
-	      DstBlock		      "6-DOF Joint1"
-	      DstPort		      RConn2
-	    }
-	    Line {
-	      SrcBlock		      "px"
+	      SrcBlock		      "px4"
 	      SrcPort		      1
-	      Points		      [-9, 0; 0, 100]
-	      DstBlock		      "water_model"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "ps"
-	      SrcPort		      1
-	      Points		      [-104, 0; 0, 155]
+	      Points		      [407, 0; 0, 250]
 	      DstBlock		      "water_model"
 	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "px2"
+	      SrcPort		      1
+	      DstBlock		      "Goto"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From"
+	      SrcPort		      1
+	      DstBlock		      "water_model"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "From1"
+	      SrcPort		      1
+	      Points		      [-4, 0; 0, -45]
+	      DstBlock		      "Subsystem1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      2
+	      Points		      [-57, 0; 0, -65]
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "p"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      DstBlock		      "p2"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -9367,17 +9245,17 @@ Model {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Water Contact HR1"
-	  SrcPort		  LConn1
-	  Points		  [46, 0; 0, 52]
+	  Points		  [241, 107; 0, 43; -1, 0]
+	  DstBlock		  "tail_tr_3"
+	  DstPort		  RConn1
 	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [0, 43]
-	    DstBlock		    "tail_tr_3"
-	    DstPort		    RConn1
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Water Contact HR1"
+	    SrcPort		    LConn1
+	    Points		    [41, 0; 0, 52]
 	  }
 	  Branch {
-	    ConnectType		    "DEST_DEST"
+	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "pad tran"
 	    SrcPort		    LConn1
 	    Points		    [0, -93; -139, 0]
@@ -9461,13 +9339,13 @@ Model {
       BlockType		      Reference
       Name		      "Water Contact FR"
       SID		      "5943"
-      Ports		      [0, 4, 0, 0, 0, 1]
-      Position		      [609, 1020, 666, 1130]
+      Ports		      [0, 5, 0, 0, 0, 1]
+      Position		      [611, 1020, 669, 1130]
       ZOrder		      398
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -9481,13 +9359,13 @@ Model {
       BlockType		      Reference
       Name		      "Water Contact FR1"
       SID		      "5944"
-      Ports		      [0, 4, 0, 0, 0, 1]
-      Position		      [824, 1020, 881, 1130]
+      Ports		      [0, 5, 0, 0, 0, 1]
+      Position		      [826, 1020, 884, 1130]
       ZOrder		      399
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -9501,13 +9379,13 @@ Model {
       BlockType		      Reference
       Name		      "Water Contact FR2"
       SID		      "5946"
-      Ports		      [0, 4, 0, 0, 0, 1]
-      Position		      [1039, 1020, 1096, 1130]
+      Ports		      [0, 5, 0, 0, 0, 1]
+      Position		      [1041, 1020, 1099, 1130]
       ZOrder		      401
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -9521,13 +9399,13 @@ Model {
       BlockType		      Reference
       Name		      "Water Contact FR3"
       SID		      "5947"
-      Ports		      [0, 4, 0, 0, 0, 1]
-      Position		      [1254, 1015, 1311, 1125]
+      Ports		      [0, 5, 0, 0, 0, 1]
+      Position		      [1256, 1015, 1314, 1125]
       ZOrder		      402
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.381"
+      LibraryVersion	      "1.390"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -9742,12 +9620,19 @@ Model {
     }
     Line {
       Name		      "FR"
-      Labels		      [2, 0]
       SrcBlock		      "Water Contact FR"
       SrcPort		      3
       Points		      [0, 40]
-      DstBlock		      "Mux2"
-      DstPort		      4
+      Branch {
+	Points			[0, 120]
+	DstBlock		"Scope3"
+	DstPort			4
+      }
+      Branch {
+	Labels			[1, 0]
+	DstBlock		"Mux2"
+	DstPort			4
+      }
     }
     Line {
       LineType		      "Connection"
@@ -9966,7 +9851,6 @@ Model {
     Line {
       SrcBlock		      "Mux3"
       SrcPort		      1
-      Points		      [50, 0]
       DstBlock		      "Scope"
       DstPort		      2
     }
@@ -9994,9 +9878,16 @@ Model {
     Line {
       SrcBlock		      "Water Contact FR"
       SrcPort		      1
-      Points		      [0, 50]
-      DstBlock		      "Mux1"
-      DstPort		      4
+      Points		      [0, 50; 1, 0]
+      Branch {
+	Points			[0, 50]
+	DstBlock		"Scope3"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux1"
+	DstPort			4
+      }
     }
     Line {
       LineType		      "Connection"
@@ -10020,20 +9911,13 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Rigid  Transform3"
       SrcPort		      LConn1
-      Points		      [0, -5]
+      Points		      [0, -10]
       DstBlock		      "Prismatic  Joint2"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Rigid  Transform3"
-      SrcPort		      RConn1
-      DstBlock		      "Revolute Joint"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Revolute Joint"
       SrcPort		      RConn1
       DstBlock		      "Rigid  Transform4"
       DstPort		      LConn1
@@ -10070,9 +9954,16 @@ Model {
     Line {
       SrcBlock		      "Water Contact FR"
       SrcPort		      2
-      Points		      [0, 95]
-      DstBlock		      "Mux3"
-      DstPort		      4
+      Points		      [0, 95; 1, 0]
+      Branch {
+	Points			[0, 25]
+	DstBlock		"Scope3"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Mux3"
+	DstPort			4
+      }
     }
     Line {
       SrcBlock		      "Mux4"
@@ -10106,8 +9997,32 @@ Model {
       SrcBlock		      "Water Contact FR"
       SrcPort		      4
       Points		      [0, 140]
-      DstBlock		      "Mux4"
-      DstPort		      4
+      Branch {
+	DstBlock		"Scope3"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Mux4"
+	DstPort			4
+      }
+    }
+    Line {
+      SrcBlock		      "Water Contact FR"
+      SrcPort		      5
+      Points		      [0, 180]
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      DstBlock		      "Scope3"
+      DstPort		      5
+    }
+    Annotation {
+      SID		      "5982"
+      Name		      "put revelout here "
+      Position		      [733, 452]
     }
     Annotation {
       SID		      "1081"

@@ -31,8 +31,8 @@ Ta_TR = [-frame_length/2   0             0];
 tail_length = 0.1;
 tail_dim = [tail_length bar_w bar_h ];
 tail_density = CF_density;
-tail_angle = 20;
-tail_pad_radius = 0.03;
+tail_angle = 15;
+tail_pad_radius = 0.035;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Motor Parameters %%%%%%%%%%%%%%%%%%%%%%

@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"0"
 	Extents			[748.0, 692.0]
 	ZoomFactor		[0.8]
-	Offset			[8.49166666666656, -34.725000000000051]
+	Offset			[-7.5, -34.725000000000023]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Metti"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 27 16:10:13 2013"
-  RTWModifiedTimeStamp	  288978521
-  ModelVersionFormat	  "1.%<AutoIncrement:381>"
+  LastModifiedDate	  "Sat Apr 27 18:37:57 2013"
+  RTWModifiedTimeStamp	  288983327
+  ModelVersionFormat	  "1.%<AutoIncrement:390>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1055,7 +1055,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1661"
+    SIDHighWatermark	    "1709"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -11866,13 +11866,13 @@ Library {
       BlockType		      SubSystem
       Name		      "Water Contact FR"
       SID		      "1345"
-      Ports		      [0, 4, 0, 0, 0, 1]
-      Position		      [749, 55, 806, 165]
-      ZOrder		      402
+      Ports		      [0, 5, 0, 0, 0, 1]
+      Position		      [751, 55, 809, 165]
+      ZOrder		      398
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "*1.380"
+      LibraryVersion	      "*1.389"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11894,150 +11894,13 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"90"
-	Block {
-	  BlockType		  Reference
-	  Name			  "6-DOF Joint"
-	  SID			  "1346"
-	  Ports			  [0, 0, 0, 0, 0, 2, 3]
-	  Position		  [615, 229, 685, 411]
-	  ZOrder		  18
-	  BlockMirror		  on
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "sm_lib/Joints/6-DOF Joint"
-	  SourceType		  "6-DOF Joint"
-	  ClassName		  "SixDofJoint"
-	  SenseConstraintForceX	  "off"
-	  SenseConstraintForceY	  "off"
-	  SenseConstraintForceZ	  "off"
-	  SenseConstraintTorqueX  "off"
-	  SenseConstraintTorqueY  "off"
-	  SenseConstraintTorqueZ  "off"
-	  ConstraintWrenchDir	  "FollowerOnBase"
-	  ConstraintWrenchFrame	  "BaseFrame"
-	  PxEquilibriumPosition	  "0"
-	  PxEquilibriumPositionUnits "m"
-	  PxSpringStiffness	  "0"
-	  PxSpringStiffnessUnits  "N/m"
-	  PxDampingCoefficient	  "0"
-	  PxDampingCoefficientUnits "N/(m/s)"
-	  PxActuationMode	  "NoActuation"
-	  PxSensePosition	  "off"
-	  PxSenseVelocity	  "off"
-	  PxSenseAcceleration	  "off"
-	  PxSenseTorqueForce	  "off"
-	  PxPositionTargetValue	  "0"
-	  PxPositionTargetValueUnits "m"
-	  PxPositionTargetSpecify "off"
-	  PxPositionTargetPriority "High"
-	  PxVelocityTargetValue	  "0"
-	  PxVelocityTargetValueUnits "m/s"
-	  PxVelocityTargetSpecify "off"
-	  PxVelocityTargetPriority "High"
-	  PyEquilibriumPosition	  "0"
-	  PyEquilibriumPositionUnits "m"
-	  PySpringStiffness	  "0"
-	  PySpringStiffnessUnits  "N/m"
-	  PyDampingCoefficient	  "0"
-	  PyDampingCoefficientUnits "N/(m/s)"
-	  PyActuationMode	  "TorqueForceActuation"
-	  PySensePosition	  "off"
-	  PySenseVelocity	  "off"
-	  PySenseAcceleration	  "off"
-	  PySenseTorqueForce	  "off"
-	  PyPositionTargetValue	  "0"
-	  PyPositionTargetValueUnits "m"
-	  PyPositionTargetSpecify "off"
-	  PyPositionTargetPriority "High"
-	  PyVelocityTargetValue	  "0"
-	  PyVelocityTargetValueUnits "m/s"
-	  PyVelocityTargetSpecify "off"
-	  PyVelocityTargetPriority "High"
-	  PzEquilibriumPosition	  "0"
-	  PzEquilibriumPositionUnits "m"
-	  PzSpringStiffness	  "0"
-	  PzSpringStiffnessUnits  "N/m"
-	  PzDampingCoefficient	  "0"
-	  PzDampingCoefficientUnits "N/(m/s)"
-	  PzActuationMode	  "NoActuation"
-	  PzSensePosition	  "off"
-	  PzSenseVelocity	  "off"
-	  PzSenseAcceleration	  "off"
-	  PzSenseTorqueForce	  "off"
-	  PzPositionTargetValue	  "0"
-	  PzPositionTargetValueUnits "m"
-	  PzPositionTargetSpecify "off"
-	  PzPositionTargetPriority "High"
-	  PzVelocityTargetValue	  "0"
-	  PzVelocityTargetValueUnits "m/s"
-	  PzVelocityTargetSpecify "off"
-	  PzVelocityTargetPriority "High"
-	  SphDefPosRotationMethod "None"
-	  SphDefPosRotationAngleUnits "deg"
-	  SphDefPosRotationStandardAxis	"+Z"
-	  SphDefPosRotationAngle  "0"
-	  SphDefPosRotationArbitraryAxis "[0 0 1]"
-	  SphDefPosFollAlignAxisA "+X"
-	  SphDefPosBaseAlignAxisA "+Y"
-	  SphDefPosFollAlignAxisB "+Y"
-	  SphDefPosBaseAlignAxisB "+Z"
-	  SphEqPosRotationMethod  "None"
-	  SphEqPosRotationAngleUnits "deg"
-	  SphEqPosRotationStandardAxis "+Z"
-	  SphEqPosRotationAngle	  "0"
-	  SphEqPosRotationArbitraryAxis	"[0 0 1]"
-	  SphEqPosFollAlignAxisA  "+X"
-	  SphEqPosBaseAlignAxisA  "+Y"
-	  SphEqPosFollAlignAxisB  "+Y"
-	  SphEqPosBaseAlignAxisB  "+Z"
-	  SphSpringStiffness	  "0"
-	  SphSpringStiffnessUnits "N*m/deg"
-	  SphDampingCoefficient	  "0"
-	  SphDampingCoefficientUnits "N*m/(deg/s)"
-	  SphActuateTorqueX	  "off"
-	  SphActuateTorqueY	  "off"
-	  SphActuateTorqueZ	  "off"
-	  SphActuateTorque	  "off"
-	  SphActuationMode	  "NoActuation"
-	  SphActuationFrame	  "BaseFrame"
-	  SphSensePosition	  "on"
-	  SphSenseVelocityX	  "off"
-	  SphSenseVelocityY	  "off"
-	  SphSenseVelocityZ	  "on"
-	  SphSenseVelocity	  "off"
-	  SphSenseAccelerationX	  "off"
-	  SphSenseAccelerationY	  "off"
-	  SphSenseAccelerationZ	  "off"
-	  SphSenseAcceleration	  "off"
-	  SphSenseTorqueX	  "off"
-	  SphSenseTorqueY	  "off"
-	  SphSenseTorqueZ	  "off"
-	  SphSenseTorqueForce	  "off"
-	  SphSensingFrame	  "BaseFrame"
-	  SphPositionTargetRotationMethod "None"
-	  SphPositionTargetRotationAngleUnits "deg"
-	  SphPositionTargetRotationStandardAxis	"+Z"
-	  SphPositionTargetRotationAngle "0"
-	  SphPositionTargetRotationArbitraryAxis "[0 0 1]"
-	  SphPositionTargetFollAlignAxisA "+X"
-	  SphPositionTargetBaseAlignAxisA "+Y"
-	  SphPositionTargetFollAlignAxisB "+Y"
-	  SphPositionTargetBaseAlignAxisB "+Z"
-	  SphPositionTargetSpecify "off"
-	  SphPositionTargetPriority "High"
-	  SphVelocityTargetValue  "[0 0 0]"
-	  SphVelocityTargetValueUnits "deg/s"
-	  SphVelocityTargetSpecify "off"
-	  SphVelocityTargetPriority "High"
-	  SphVelocityTargetInFollowerFrame "on"
-	  BlockFunction		  "simmechanics.library.joints.sixdof_joint"
-	}
+	ZoomFactor		"72"
 	Block {
 	  BlockType		  Reference
 	  Name			  "6-DOF Joint1"
 	  SID			  "1347"
-	  Ports			  [0, 0, 0, 0, 0, 2, 4]
-	  Position		  [965, 236, 1030, 364]
+	  Ports			  [0, 0, 0, 0, 0, 3, 2]
+	  Position		  [1350, 190, 1450, 310]
 	  ZOrder		  186
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
@@ -12058,9 +11921,9 @@ Library {
 	  PxSpringStiffnessUnits  "N/m"
 	  PxDampingCoefficient	  "0"
 	  PxDampingCoefficientUnits "N/(m/s)"
-	  PxActuationMode	  "NoActuation"
+	  PxActuationMode	  "TorqueForceActuation"
 	  PxSensePosition	  "off"
-	  PxSenseVelocity	  "on"
+	  PxSenseVelocity	  "off"
 	  PxSenseAcceleration	  "off"
 	  PxSenseTorqueForce	  "off"
 	  PxPositionTargetValue	  "0"
@@ -12079,7 +11942,7 @@ Library {
 	  PyDampingCoefficientUnits "N/(m/s)"
 	  PyActuationMode	  "TorqueForceActuation"
 	  PySensePosition	  "on"
-	  PySenseVelocity	  "on"
+	  PySenseVelocity	  "off"
 	  PySenseAcceleration	  "off"
 	  PySenseTorqueForce	  "off"
 	  PyPositionTargetValue	  "0"
@@ -12170,13 +12033,60 @@ Library {
 	  BlockFunction		  "simmechanics.library.joints.sixdof_joint"
 	}
 	Block {
-	  BlockType		  SubSystem
-	  Name			  "Quat to Euler"
-	  SID			  "1348"
-	  Ports			  [1, 1]
-	  Position		  [480, 307, 530, 333]
-	  ZOrder		  24
+	  BlockType		  From
+	  Name			  "From"
+	  SID			  "1687"
+	  Position		  [1985, 258, 2015, 282]
+	  ZOrder		  312
 	  BlockMirror		  on
+	  GotoTag		  "y_c"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  SID			  "1694"
+	  Position		  [1730, 385, 1770, 405]
+	  ZOrder		  319
+	  BlockMirror		  on
+	  GotoTag		  "angle"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "1701"
+	  Position		  [1730, 340, 1760, 370]
+	  ZOrder		  322
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  SID			  "1688"
+	  Position		  [1200, 270, 1230, 290]
+	  ZOrder		  313
+	  BlockMirror		  on
+	  GotoTag		  "y_c"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto1"
+	  SID			  "1693"
+	  Position		  [1885, 25, 1930, 45]
+	  ZOrder		  318
+	  GotoTag		  "angle"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Quat to Euler1"
+	  SID			  "1678"
+	  Ports			  [1, 1]
+	  Position		  [1605, 47, 1655, 73]
+	  ZOrder		  306
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -12191,7 +12101,7 @@ Library {
 	    DataLoggingNameMode	    "SignalName"
 	  }
 	  System {
-	    Name		    "Quat to Euler"
+	    Name		    "Quat to Euler1"
 	    Location		    [-8, -8, 1608, 868]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -12208,7 +12118,7 @@ Library {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Q"
-	      SID		      "1349"
+	      SID		      "1679"
 	      Position		      [360, 150, 390, 165]
 	      ZOrder		      22
 	      BlockRotation	      270
@@ -12218,7 +12128,7 @@ Library {
 	    Block {
 	      BlockType		      Fcn
 	      Name		      "f3"
-	      SID		      "1350"
+	      SID		      "1680"
 	      Position		      [260, 210, 320, 240]
 	      ZOrder		      20
 	      BlockMirror	      on
@@ -12227,23 +12137,23 @@ Library {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "phi_z"
-	      SID		      "1351"
+	      SID		      "1681"
 	      Position		      [145, 218, 175, 232]
 	      ZOrder		      25
 	      BlockMirror	      on
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
+	      SrcBlock		      "f3"
+	      SrcPort		      1
+	      DstBlock		      "phi_z"
+	      DstPort		      1
+	    }
+	    Line {
 	      SrcBlock		      "Q"
 	      SrcPort		      1
 	      Points		      [0, 55]
 	      DstBlock		      "f3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "f3"
-	      SrcPort		      1
-	      DstBlock		      "phi_z"
 	      DstPort		      1
 	    }
 	  }
@@ -12253,8 +12163,9 @@ Library {
 	  Name			  "Subsystem"
 	  SID			  "1352"
 	  Ports			  [4, 2]
-	  Position		  [825, 426, 925, 559]
+	  Position		  [1850, 256, 1950, 389]
 	  ZOrder		  271
+	  BlockMirror		  on
 	  BackgroundColor	  "yellow"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -12277,7 +12188,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "129"
+	    ZoomFactor		    "132"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "y_c"
@@ -12573,7 +12484,7 @@ Library {
 		    BlockType		    Fcn
 		    Name		    "Fcn"
 		    SID			    "1374"
-		    Position		    [120, 185, 180, 215]
+		    Position		    [130, 185, 190, 215]
 		    ZOrder		    30
 		    Expr		    "sin(u(1))"
 		    }
@@ -12623,12 +12534,36 @@ Library {
 		    LowerLimit		    "-R"
 		    }
 		    Block {
+		    BlockType		    Saturate
+		    Name		    "sat1"
+		    SID			    "1707"
+		    Ports		    [1, 1]
+		    Position		    [80, 192, 95, 208]
+		    ZOrder		    56
+		    NamePlacement	    "alternate"
+		    InputPortMap	    "u0"
+		    UpperLimit		    "pi"
+		    LowerLimit		    "0"
+		    }
+		    Block {
 		    BlockType		    Outport
 		    Name		    "up_b"
 		    SID			    "1379"
 		    Position		    [440, 133, 470, 147]
 		    ZOrder		    41
 		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "sat1"
+		    SrcPort		    1
+		    DstBlock		    "Fcn"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "angle"
+		    SrcPort		    1
+		    DstBlock		    "sat1"
+		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "sat"
@@ -12639,7 +12574,7 @@ Library {
 		    Line {
 		    SrcBlock		    "Fcn"
 		    SrcPort		    1
-		    Points		    [30, 0; 0, -50]
+		    Points		    [20, 0; 0, -50]
 		    DstBlock		    "Mux"
 		    DstPort		    2
 		    }
@@ -12666,12 +12601,6 @@ Library {
 		    SrcBlock		    "Fcn1"
 		    SrcPort		    1
 		    DstBlock		    "sat"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "angle"
-		    SrcPort		    1
-		    DstBlock		    "Fcn"
 		    DstPort		    1
 		    }
 		    Line {
@@ -14636,7 +14565,7 @@ Library {
 		  MaskHideContents	  off
 		  System {
 		    Name		    "spring_force"
-		    Location		    [-8, -8, 1608, 868]
+		    Location		    [0, 0, 800, 860]
 		    Open		    off
 		    ModelBrowserVisibility  off
 		    ModelBrowserWidth	    200
@@ -15078,6 +15007,7 @@ Library {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
+		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -15533,12 +15463,30 @@ Library {
 		    LowerLimit		    "-R"
 		    }
 		    Block {
+		    BlockType		    Saturate
+		    Name		    "sat1"
+		    SID			    "1708"
+		    Ports		    [1, 1]
+		    Position		    [80, 192, 95, 208]
+		    ZOrder		    57
+		    NamePlacement	    "alternate"
+		    InputPortMap	    "u0"
+		    UpperLimit		    "pi"
+		    LowerLimit		    "0"
+		    }
+		    Block {
 		    BlockType		    Outport
 		    Name		    "up_b"
 		    SID			    "1522"
 		    Position		    [440, 133, 470, 147]
 		    ZOrder		    41
 		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "sat1"
+		    SrcPort		    1
+		    DstBlock		    "Fcn"
+		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "sat"
@@ -15581,7 +15529,7 @@ Library {
 		    Line {
 		    SrcBlock		    "angle"
 		    SrcPort		    1
-		    DstBlock		    "Fcn"
+		    DstBlock		    "sat1"
 		    DstPort		    1
 		    }
 		    Line {
@@ -18290,13 +18238,169 @@ Library {
 	  }
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem1"
+	  SID			  "1695"
+	  Ports			  [2, 2]
+	  Position		  [1650, 342, 1705, 393]
+	  ZOrder		  320
+	  BlockMirror		  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Subsystem1"
+	    Location		    [0, 0, 800, 860]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "153"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "F_drag"
+	      SID		      "1696"
+	      Position		      [375, 20, 405, 35]
+	      ZOrder		      318
+	      BlockRotation	      270
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "angle"
+	      SID		      "1697"
+	      Position		      [330, 78, 360, 92]
+	      ZOrder		      319
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "1692"
+	      Ports		      [2, 1]
+	      Position		      [225, 36, 230, 74]
+	      ZOrder		      317
+	      BlockMirror	      on
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "fcosq"
+	      SID		      "1690"
+	      Position		      [170, 25, 195, 45]
+	      ZOrder		      315
+	      BlockMirror	      on
+	      Expr		      "u(1)*cos(u(2))"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "fsinq"
+	      SID		      "1691"
+	      Position		      [170, 65, 195, 85]
+	      ZOrder		      316
+	      BlockMirror	      on
+	      Expr		      "u(1)*sin(u(2))"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fy"
+	      SID		      "1698"
+	      Position		      [25, 28, 55, 42]
+	      ZOrder		      320
+	      BlockMirror	      on
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Fx"
+	      SID		      "1699"
+	      Position		      [30, 68, 60, 82]
+	      ZOrder		      321
+	      BlockMirror	      on
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "fsinq"
+	      SrcPort		      1
+	      DstBlock		      "Fx"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      Points		      [-6, 0]
+	      Branch {
+		Points			[0, 20]
+		DstBlock		"fsinq"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -15; -1, 0; 0, -5]
+		DstBlock		"fcosq"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "F_drag"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "fcosq"
+	      SrcPort		      1
+	      DstBlock		      "Fy"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "angle"
+	      SrcPort		      1
+	      Points		      [-44, 0; 0, -20]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "1700"
+	  Ports			  [2, 1]
+	  Position		  [1615, 280, 1635, 300]
+	  ZOrder		  321
+	  BlockMirror		  on
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Transform  Sensor"
 	  SID			  "1647"
-	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [645, 145, 685, 185]
+	  Ports			  [0, 0, 0, 0, 0, 1, 4]
+	  Position		  [1350, 3, 1445, 157]
 	  ZOrder		  295
-	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Transform \nSensor"
 	  SourceType		  "Transform Sensor"
@@ -18307,11 +18411,11 @@ Library {
 	  SenseAngle1		  "off"
 	  SenseAngle2		  "off"
 	  SenseAngle3		  "off"
-	  SenseQ		  "off"
+	  SenseQ		  "on"
 	  SenseR		  "off"
 	  SenseOmegaX		  "off"
 	  SenseOmegaY		  "off"
-	  SenseOmegaZ		  "off"
+	  SenseOmegaZ		  "on"
 	  SenseOmega1		  "off"
 	  SenseOmega2		  "off"
 	  SenseOmega3		  "off"
@@ -18353,8 +18457,9 @@ Library {
 	  Name			  "World Frame"
 	  SID			  "1648"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [520, 197, 550, 233]
+	  Position		  [1595, 192, 1625, 228]
 	  ZOrder		  218
+	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/World Frame"
@@ -18367,7 +18472,7 @@ Library {
 	  Name			  "p"
 	  SID			  "1649"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [1065, 317, 1095, 353]
+	  Position		  [1495, 277, 1520, 303]
 	  ZOrder		  185
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
@@ -18390,13 +18495,12 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "p1"
-	  SID			  "1650"
+	  Name			  "p2"
+	  SID			  "1689"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [715, 347, 745, 383]
-	  ZOrder		  206
+	  Position		  [1495, 237, 1520, 263]
+	  ZOrder		  314
 	  BlockMirror		  on
-	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
 	  SourceType		  "Simulink-PS\nConverter"
@@ -18417,72 +18521,11 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "pd4"
-	  SID			  "1651"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [550, 305, 580, 335]
-	  ZOrder		  13
-	  BlockMirror		  on
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
-	  SourceType		  "PS-Simulink\nConverter"
-	  PhysicalDomain	  "network_engine_domain"
-	  LeftPortType		  "input"
-	  RightPortType		  "output"
-	  SubClassName		  "ps_output"
-	  PseudoPeriodic	  off
-	  Frequencies		  "[]"
-	  Unit			  "1"
-	  AffineConversion	  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "ps"
-	  SID			  "1652"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [550, 365, 580, 395]
-	  ZOrder		  184
-	  BlockMirror		  on
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
-	  SourceType		  "PS-Simulink\nConverter"
-	  PhysicalDomain	  "network_engine_domain"
-	  LeftPortType		  "input"
-	  RightPortType		  "output"
-	  SubClassName		  "ps_output"
-	  PseudoPeriodic	  off
-	  Frequencies		  "[]"
-	  Unit			  "1"
-	  AffineConversion	  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "px"
-	  SID			  "1653"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [910, 275, 935, 295]
-	  ZOrder		  187
-	  BlockMirror		  on
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
-	  SourceType		  "PS-Simulink\nConverter"
-	  PhysicalDomain	  "network_engine_domain"
-	  LeftPortType		  "input"
-	  RightPortType		  "output"
-	  SubClassName		  "ps_output"
-	  PseudoPeriodic	  off
-	  Frequencies		  "[]"
-	  Unit			  "1"
-	  AffineConversion	  off
-	}
-	Block {
-	  BlockType		  Reference
 	  Name			  "px1"
-	  SID			  "1654"
+	  SID			  "1685"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [910, 335, 935, 355]
-	  ZOrder		  292
-	  BlockMirror		  on
+	  Position		  [1535, 50, 1560, 70]
+	  ZOrder		  310
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
 	  SourceType		  "PS-Simulink\nConverter"
@@ -18500,7 +18543,7 @@ Library {
 	  Name			  "px2"
 	  SID			  "1655"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [875, 305, 900, 325]
+	  Position		  [1285, 270, 1310, 290]
 	  ZOrder		  280
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
@@ -18520,9 +18563,27 @@ Library {
 	  Name			  "px3"
 	  SID			  "1656"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [410, 165, 435, 185]
+	  Position		  [1535, 130, 1560, 150]
 	  ZOrder		  299
-	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  PseudoPeriodic	  off
+	  Frequencies		  "[]"
+	  Unit			  "1"
+	  AffineConversion	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "px4"
+	  SID			  "1686"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [1535, 90, 1560, 110]
+	  ZOrder		  311
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
 	  SourceType		  "PS-Simulink\nConverter"
@@ -18539,9 +18600,8 @@ Library {
 	  BlockType		  PMIOPort
 	  Name			  "Foot"
 	  SID			  "1657"
-	  Position		  [790, 158, 820, 172]
+	  Position		  [1200, 213, 1230, 227]
 	  ZOrder		  216
-	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  Port			  "1"
 	  Side			  "Left"
@@ -18550,16 +18610,18 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Fk"
 	  SID			  "1658"
-	  Position		  [1170, 453, 1200, 467]
+	  Position		  [1770, 318, 1800, 332]
 	  ZOrder		  272
+	  BlockMirror		  on
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Fb"
 	  SID			  "1659"
-	  Position		  [1170, 488, 1200, 502]
+	  Position		  [1770, 423, 1800, 437]
 	  ZOrder		  273
+	  BlockMirror		  on
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -18567,7 +18629,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Vy"
 	  SID			  "1660"
-	  Position		  [635, 608, 665, 622]
+	  Position		  [2170, 133, 2200, 147]
 	  ZOrder		  275
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -18576,198 +18638,230 @@ Library {
 	  BlockType		  Outport
 	  Name			  "y"
 	  SID			  "1661"
-	  Position		  [635, 653, 665, 667]
+	  Position		  [1200, 323, 1230, 337]
 	  ZOrder		  300
+	  BlockMirror		  on
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "px"
-	  SrcPort		  LConn1
-	  DstBlock		  "6-DOF Joint1"
-	  DstPort		  RConn2
+	Block {
+	  BlockType		  Outport
+	  Name			  "angle"
+	  SID			  "1673"
+	  Position		  [2115, 53, 2145, 67]
+	  ZOrder		  301
+	  Port			  "5"
+	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "pd4"
-	  SrcPort		  1
-	  DstBlock		  "Quat to Euler"
+	  SrcBlock		  "Subsystem1"
+	  SrcPort		  2
+	  Points		  [-77, 0; 0, -130]
+	  DstBlock		  "p2"
 	  DstPort		  1
 	}
 	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "6-DOF Joint"
-	  SrcPort		  LConn1
-	  Points		  [72, 0; 0, -20]
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "6-DOF Joint1"
-	    SrcPort		    RConn1
-	    Points		    [-178, 0]
-	  }
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [0, -90]
-	    Branch {
-	      ConnectType	      "DEST_DEST"
-	      SrcBlock		      "Transform  Sensor"
-	      SrcPort		      LConn1
-	      Points		      [72, 0]
-	    }
-	    Branch {
-	      ConnectType	      "DEST_SRC"
-	      DstBlock		      "Foot"
-	      DstPort		      RConn1
-	    }
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "6-DOF Joint1"
-	  SrcPort		  LConn1
-	  Points		  [0, -54; -458, 0]
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    Points		    [587, 215; 0, 1]
-	    Branch {
-	      ConnectType	      "SRC_DEST"
-	      SrcBlock		      "Transform  Sensor"
-	      SrcPort		      RConn1
-	      Points		      [-43, 0; 0, 60]
-	    }
-	    Branch {
-	      ConnectType	      "SRC_SRC"
-	      DstBlock		      "World Frame"
-	      DstPort		      RConn1
-	    }
-	  }
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [0, 44]
-	    DstBlock		    "6-DOF Joint"
-	    DstPort		    RConn1
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "p"
-	  SrcPort		  RConn1
-	  DstBlock		  "6-DOF Joint1"
-	  DstPort		  LConn2
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "p1"
-	  SrcPort		  RConn1
-	  DstBlock		  "6-DOF Joint"
-	  DstPort		  LConn2
-	}
-	Line {
-	  Name			  "phi"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Quat to Euler"
+	  SrcBlock		  "Subsystem"
 	  SrcPort		  1
-	  Points		  [-27, 0; 0, 155]
-	  DstBlock		  "Subsystem"
+	  Points		  [-26, 0]
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "Fk"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Subsystem1"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "p"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  Points		  [-5, 0]
+	  DstBlock		  "Subsystem1"
 	  DstPort		  2
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "px2"
-	  SrcPort		  LConn1
+	  SrcBlock		  "p2"
+	  SrcPort		  RConn1
 	  DstBlock		  "6-DOF Joint1"
+	  DstPort		  LConn2
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "px2"
+	  SrcPort		  1
+	  Points		  [-11, 0]
+	  Branch {
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 50]
+	    DstBlock		    "y"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "px4"
+	  SrcPort		  1
+	  Points		  [556, 0; 0, 275]
+	  DstBlock		  "Subsystem"
+	  DstPort		  4
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Transform  Sensor"
+	  SrcPort		  RConn4
+	  DstBlock		  "px3"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "px4"
+	  SrcPort		  LConn1
+	  DstBlock		  "Transform  Sensor"
 	  DstPort		  RConn3
 	}
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "px1"
 	  SrcPort		  LConn1
-	  DstBlock		  "6-DOF Joint1"
-	  DstPort		  RConn4
-	}
-	Line {
-	  SrcBlock		  "px2"
-	  SrcPort		  1
-	  Points		  [-75, 0; 0, 125; 2, 0]
-	  Branch {
-	    DstBlock		    "Subsystem"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 254; -181, 0; 0, -34]
-	    DstBlock		    "y"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "px3"
-	  SrcPort		  1
-	  Points		  [-4, 0; 0, 335; 1, 0]
-	  Branch {
-	    Points		    [0, 105]
-	    DstBlock		    "Vy"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Subsystem"
-	    DstPort		    3
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "px3"
-	  SrcPort		  LConn1
 	  DstBlock		  "Transform  Sensor"
 	  DstPort		  RConn2
 	}
 	Line {
+	  SrcBlock		  "px1"
+	  SrcPort		  1
+	  DstBlock		  "Quat to Euler1"
+	  DstPort		  1
+	}
+	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "pd4"
+	  SrcBlock		  "p"
+	  SrcPort		  RConn1
+	  DstBlock		  "6-DOF Joint1"
+	  DstPort		  LConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "px2"
 	  SrcPort		  LConn1
-	  DstBlock		  "6-DOF Joint"
+	  DstBlock		  "6-DOF Joint1"
 	  DstPort		  RConn2
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "ps"
-	  SrcPort		  LConn1
-	  DstBlock		  "6-DOF Joint"
-	  DstPort		  RConn3
-	}
-	Line {
-	  SrcBlock		  "Subsystem"
-	  SrcPort		  1
-	  Points		  [180, 0]
+	  Points		  [1292, 220; -47, 0]
+	  DstBlock		  "Foot"
+	  DstPort		  RConn1
 	  Branch {
-	    DstBlock		    "p"
-	    DstPort		    1
+	    ConnectType		    "SRC_SRC"
+	    Points		    [0, -140]
+	    DstBlock		    "Transform  Sensor"
+	    DstPort		    LConn1
 	  }
 	  Branch {
-	    DstBlock		    "Fk"
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "6-DOF Joint1"
+	    SrcPort		    RConn1
+	    Points		    [-43, 0]
+	  }
+	}
+	Line {
+	  LineType		  "Connection"
+	  Points		  [1496, 210; 84, 0]
+	  DstBlock		  "World Frame"
+	  DstPort		  RConn1
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "6-DOF Joint1"
+	    SrcPort		    LConn1
+	    Points		    [31, 0]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Transform  Sensor"
+	    SrcPort		    RConn1
+	    Points		    [36, 0; 0, 190]
+	  }
+	}
+	Line {
+	  Name			  "phi"
+	  SrcBlock		  "Quat to Euler1"
+	  SrcPort		  1
+	  Points		  [195, 0]
+	  Branch {
+	    Points		    [211, 0]
+	    Branch {
+	      Labels		      [-1, 1]
+	      Points		      [0, 245]
+	      DstBlock		      "Subsystem"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "angle"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "px3"
+	  SrcPort		  1
+	  Points		  [535, 0]
+	  Branch {
+	    Points		    [0, 200]
+	    DstBlock		    "Subsystem"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Vy"
 	    DstPort		    1
 	  }
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  Points		  [143, 0]
+	  Points		  [-12, 0]
 	  Branch {
-	    Points		    [0, -30]
+	    Points		    [0, 75]
 	    DstBlock		    "Fb"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 61; -310, 0; 0, -221]
-	    DstBlock		    "p1"
+	    DstBlock		    "Gain"
 	    DstPort		    1
 	  }
-	}
-	Line {
-	  SrcBlock		  "ps"
-	  SrcPort		  1
-	  Points		  [-9, 0; 0, 165]
-	  DstBlock		  "Subsystem"
-	  DstPort		  4
 	}
       }
     }
