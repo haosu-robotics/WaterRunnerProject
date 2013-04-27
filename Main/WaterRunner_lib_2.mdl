@@ -2,7 +2,7 @@ Library {
   Name			  "WaterRunner_lib_2"
   Version		  8.0
   MdlSubVersion		  0
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 800.0, 860.0]
+      Location		      [800.0, 19.0, 1119.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[748.0, 692.0]
-	ZoomFactor		[1.0]
-	Offset			[108.5, -3.5]
+	Extents			[1081.0, 928.0]
+	ZoomFactor		[1.25]
+	Offset			[108.58333333333331, -111.51171874999989]
       }
     }
   }
@@ -53,11 +53,11 @@ Library {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 18 17:45:54 2013"
-  RTWModifiedTimeStamp	  288203948
-  ModelVersionFormat	  "1.%<AutoIncrement:372>"
+  LastModifiedDate	  "Sat Apr 27 12:52:41 2013"
+  RTWModifiedTimeStamp	  288967957
+  ModelVersionFormat	  "1.%<AutoIncrement:376>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1041,7 +1041,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [0, 0, 800, 860]
+    Location		    [800, 19, 1919, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1053,9 +1053,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1314"
+    SIDHighWatermark	    "1343"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -8028,7 +8028,7 @@ Library {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "*1.371"
+      LibraryVersion	      "*1.374"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -8052,7 +8052,7 @@ Library {
       }
       System {
 	Name			"Motor FR1"
-	Location		[-8, -8, 1608, 868]
+	Location		[800, 19, 1919, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8064,7 +8064,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"94"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "desired\n speed"
@@ -8096,7 +8096,7 @@ Library {
 	  Name			  "PID Controller"
 	  SID			  "1275"
 	  Ports			  [1, 1]
-	  Position		  [520, 272, 560, 308]
+	  Position		  [505, 272, 545, 308]
 	  ZOrder		  23
 	  LibraryVersion	  "1.281"
 	  SourceBlock		  "simulink/Continuous/PID Controller"
@@ -8216,7 +8216,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Reseting"
-	    Location		    [800, 0, 1600, 860]
+	    Location		    [0, 19, 1920, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -8289,7 +8289,6 @@ Library {
 	    Line {
 	      SrcBlock		      "Gain1"
 	      SrcPort		      1
-	      Points		      [0, 5]
 	      DstBlock		      "Sum3"
 	      DstPort		      2
 	    }
@@ -8359,6 +8358,38 @@ Library {
 	  InputPortMap		  "u0"
 	  UpperLimit		  "300"
 	  LowerLimit		  "-300"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  SID			  "1329"
+	  Ports			  [1]
+	  Position		  [970, 314, 1000, 346]
+	  ZOrder		  234
+	  Floating		  off
+	  Location		  [2, 131, 971, 553]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  ShowLegends		  off
+	  YMin			  "-70"
+	  YMax			  "-67"
+	  SaveName		  "ScopeData4"
+	  DataFormat		  "StructureWithTime"
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Sum
@@ -8452,6 +8483,12 @@ Library {
 	  Side			  "Left"
 	}
 	Line {
+	  SrcBlock		  "PID Controller"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
 	  SrcBlock		  "Memory"
 	  SrcPort		  1
 	  DstBlock		  "sps"
@@ -8519,9 +8556,16 @@ Library {
 	Line {
 	  SrcBlock		  "p2"
 	  SrcPort		  1
-	  Points		  [9, 0; 0, 70; -449, 0]
-	  DstBlock		  "Sum1"
-	  DstPort		  2
+	  Points		  [9, 0; 0, 40]
+	  Branch {
+	    Points		    [0, 30; -449, 0]
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Scope"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Gain2"
@@ -15092,7 +15136,7 @@ Library {
 	      Position		      [465, 338, 545, 492]
 	      ZOrder		      277
 	      BackgroundColor	      "darkGreen"
-	      LibraryVersion	      "1.353"
+	      LibraryVersion	      "1.373"
 	      SourceBlock	      "WaterRunner_lib_2/Water Contact/Subsystem/water_model"
 	      SourceType	      "Unknown"
 	      Cd		      "0.703"
@@ -17941,7 +17985,7 @@ Library {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 22:31:44
+#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 17:33:50
 #
 #
 

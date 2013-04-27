@@ -23,7 +23,7 @@ FL_TR = [ frame_length/2    frame_width/2 0];
 HR_TR = [-frame_length/2+L5 -frame_width/2 0];
 HL_TR = [-frame_length/2+L5 frame_width/2 0];
 
-frame_mass = 0.060/2;
+frame_mass = 0.1;
 
 I_shaft = 1e-2;
 %%%%%%%% tail
@@ -31,12 +31,12 @@ Ta_TR = [-frame_length/2   0             0];
 tail_length = 0.1;
 tail_dim = [tail_length bar_w bar_h ];
 tail_density = CF_density;
-tail_angle = 10;
-tail_pad_radius = 0.02;
+tail_angle = 20;
+tail_pad_radius = 0.03;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Motor Parameters %%%%%%%%%%%%%%%%%%%%%%
-speed = 70;
+%speed = 70;
 
 motor_radius = 0.01342;
 motor_length = 0.03663;
@@ -44,6 +44,16 @@ motor_length = 0.03663;
 motor_mass = 0.010;
 motor_volume = (pi*motor_radius^2)*motor_length;
 motor_density = motor_mass/motor_volume;
+
+mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4)
+Ix = 1/12*mass*( frame_width^2 +  frame_height^2 );
+Iy = 1/12*mass*( frame_width^2 +  frame_length^2 );
+Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
+
+frame_inertia = diag([Ix,Iy,Iz]);
+
+mass_matrix = [mass 0 0; 0 Ix 0 ; 0 0 Iz];
+
 
 %%%%%%%%%%%%%%%%%% Ground Contact Model %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -62,9 +72,35 @@ PVA_gains = [0.0 0.05 0.00];
 %%%%% Water Model Parameters %%%%%
 
 water_level = 0;
+leg_length = 0.0249;
+Amp = leg_length;
+amp = Amp;
+
+y_0 = .01;
+
+r1 = 0.02;
+r2 = r1/4;
+S1 = pi*r1^2*0.9185;
+S2 = pi*r2^2*0.9185;
+
+density = 1000;
+g = 9.81;
+C_d = 0.703;
+
+b_water = 0.5*C_d*S1*density;
+k_water = C_d*S1*density*g;
+Fratio = 1/16;
+
+%%% PID gains %%%%
+K_p = [500 0 0 ; 0 750 0; 0 0 750];
+K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
+K_d = [0 0  0; 0 300 0; 0 0 300];
+Filter_Coef = 1000;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-freq = 20;
+freq = 80;
+speed = freq;
+omega_0 = freq*ones(8,1);
 
 FR_FL_lag = -pi;     % l1
 HR_HL_lag = pi;    % l2
