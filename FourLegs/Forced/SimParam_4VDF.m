@@ -59,15 +59,22 @@ b_water = 0.5*C_d*S1*density;
 k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
-waveAmp = 0.01;
+%%%% unobserved height waves %%%%%
+waveAmp = 0;
 rand('seed',1);
 wavePhase = 2*pi*rand(1,4);
 waveFreq = 0.5;
 
+%%%% disturbance torque waves %%%%%
+dTorqueAmp = 1e-2;
+rand('seed',1);
+dTorquePhase = 2*pi*rand(1,4);
+dTorqueFreq = 0.5;
+
 %%% PID gains %%%%
 K_p = [500 0 0 ; 0 750 0; 0 0 750];
 K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
-K_d = [0 0  0; 0 300 0; 0 0 300];
+K_d = [50 0  0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
 
 %%%%% CPG params %%%%%

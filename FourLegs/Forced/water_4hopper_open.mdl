@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.309"
+    ComputedModelVersion    "1.311"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1920.0, 1061.0]
+      Location		      [0.0, 19.0, 960.0, 530.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1882.0, 918.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [352.18562978217977, -96.891752582077174]
+	  Extents		  [922.0, 387.0]
+	  ZoomFactor		  [0.3]
+	  Offset		  [-1065.2911590092453, -346.05084289385206]
 	}
 	Object {
 	  $ObjectID		  6
@@ -73,8 +73,8 @@ Model {
       }
     }
   }
-  PhysicalModelingChecksum "138083124"
-  PhysicalModelingParameterChecksum "4191095584"
+  PhysicalModelingChecksum "1360229205"
+  PhysicalModelingParameterChecksum "230489522"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Tue Feb 19 19:16:24 2013"
   Creator		  "Metti"
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 29 20:32:15 2013"
-  RTWModifiedTimeStamp	  286465704
-  ModelVersionFormat	  "1.%<AutoIncrement:309>"
+  LastModifiedDate	  "Sat Apr 27 21:11:33 2013"
+  RTWModifiedTimeStamp	  288988527
+  ModelVersionFormat	  "1.%<AutoIncrement:311>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1100,7 +1100,7 @@ Model {
   }
   System {
     Name		    "water_4hopper_open"
-    Location		    [0, 19, 1920, 1080]
+    Location		    [0, 19, 960, 549]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1112,15 +1112,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "30"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6932"
+    SIDHighWatermark	    "6939"
     Block {
       BlockType		      Reference
       Name		      "Body"
       SID		      "2"
-      Ports		      [0, 0, 0, 0, 0, 6, 4]
-      Position		      [460, 415, 915, 475]
+      Ports		      [0, 0, 0, 0, 0, 7, 4]
+      Position		      [462, 415, 918, 475]
       ZOrder		      4
       BlockRotation	      270
       BlockMirror	      on
@@ -1129,7 +1129,7 @@ Model {
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Body"
       SourceType	      "Body"
-      LConnTagsString	      "CG|CS1|CS6|CS7|CS8|CS9"
+      LConnTagsString	      "CG|CS10|CS1|CS6|CS7|CS8|CS9"
       RConnTagsString	      "CS2|CS3|CS4|CS5"
       UpdateFromCAD	      "off"
       ClassName		      "Body"
@@ -1150,12 +1150,13 @@ Model {
       BodyColor		      "[1 0 0]"
       AttachedToCS	      "CG"
       CG		      "Left$CG$CG_pos$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
-      WorkingFrames	      "Left$CS1$[0 0 0]$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$TR"
-      "_FR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS6$TR_FR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$tru"
-      "e$none#Right$CS3$TR_FL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS7$TR_FL$CS1$CS1$m$[0 0 0]$Euler "
-      "X-Y-Z$deg$WORLD$true$none#Right$CS4$TR_HR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS8$TR_HR$CS1$C"
-      "S1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS5$TR_HL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#L"
-      "eft$CS9$TR_HL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
+      WorkingFrames	      "Left$CS10$CG_pos$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS1$[0 0 0]$Adjoini"
+      "ng$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$TR_FR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$t"
+      "rue$none#Left$CS6$TR_FR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS3$TR_FL$CS1$CS1$m$[0 0 0]$Eule"
+      "r X-Y-Z$deg$WORLD$true$none#Left$CS7$TR_FL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS4$TR_HR$CS1"
+      "$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS8$TR_HR$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#"
+      "Right$CS5$TR_HL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Left$CS9$TR_HL$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$d"
+      "eg$WORLD$true$none"
       CGPos		      "CG_pos"
       CGRot		      "[0 0 0]"
       CS0Pos		      "[]"
@@ -1178,8 +1179,8 @@ Model {
       CS8Rot		      "[0 0 0]"
       CS9Pos		      "TR_HL"
       CS9Rot		      "[0 0 0]"
-      CS10Pos		      "[]"
-      CS10Rot		      "[]"
+      CS10Pos		      "CG_pos"
+      CS10Rot		      "[0 0 0]"
       CS11Pos		      "[]"
       CS11Rot		      "[]"
       CS12Pos		      "[]"
@@ -1200,6 +1201,41 @@ Model {
       CS19Rot		      "[]"
       CS20Pos		      "[]"
       CS20Rot		      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Body Actuator1"
+      SID		      "6933"
+      Ports		      [1, 0, 0, 0, 0, 0, 1]
+      Position		      [540, 345, 580, 385]
+      ZOrder		      419
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.1"
+      SourceBlock	      "mblibv1/Sensors & \nActuators/Body Actuator"
+      SourceType	      "Body Actuator"
+      UpdateFromCAD	      "off"
+      PhysicalDomain	      "Mechanical"
+      PortType		      "blob"
+      ActuationStyle	      "Force"
+      AngleUnits	      "deg"
+      ArcVelocityUnits	      "deg/s"
+      ArcAccelerationUnits    "deg/s^2"
+      CoordPositionUnits      "m"
+      VelocityUnits	      "m/s"
+      AccelerationUnits	      "m/s^2"
+      ForceUnits	      "N"
+      TorqueUnits	      "N*m"
+      ActiveIO		      "on"
+      Width		      "3"
+      ClassName		      "BodyActuatorForceTorque"
+      DialogClass	      "MechanicalActuatorBlock"
+      ReferenceFrame	      "Absolute (World)"
+      Angle		      "off"
+      CoordPosition	      "on"
+      Force		      "off"
+      Torque		      "on"
     }
     Block {
       BlockType		      Reference
@@ -1295,7 +1331,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CPG_Network2"
-	Location		[960, 549, 1920, 1080]
+	Location		[0, 19, 960, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4341,7 +4377,7 @@ Model {
 	  Position		  [645, 749, 675, 781]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [2, 49, 960, 1078]
+	  Location		  [2, 579, 960, 1078]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
@@ -4360,7 +4396,7 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.88961     0.88132    0.072547    0.084427"
+	  LegendLocations	  "0.88961     0.83648    0.072547      0.1741"
 	  TimeRange		  "20              "
 	  YMin			  "68.75"
 	  YMax			  "71.5"
@@ -6592,7 +6628,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "6902"
-      Position		      [1405, 745, 1435, 775]
+      Position		      [1405, 745, 1505, 775]
       ZOrder		      402
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -6626,7 +6662,7 @@ Model {
       Name		      "Hand of God"
       SID		      "790"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [544, 185, 606, 235]
+      Position		      [594, 265, 656, 315]
       ZOrder		      138
       BlockRotation	      270
       BlockMirror	      on
@@ -7104,6 +7140,20 @@ Model {
       NumSAPorts	      "2"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "6934"
+      Ports		      [3, 1]
+      Position		      [361, 235, 399, 240]
+      ZOrder		      422
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Scope
       Name		      "Scope6"
       SID		      "2733"
@@ -7131,8 +7181,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "-0.004~-3.5"
-      YMax		      "0.017~3.5"
+      YMin		      "0.0025~-11"
+      YMax		      "0.01~11"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"
@@ -7164,6 +7214,60 @@ Model {
       IndexOptions	      "Index vector (dialog)"
       Indices		      "[1 3]"
       OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave"
+      SID		      "6935"
+      Ports		      [0, 1]
+      Position		      [300, 100, 330, 130]
+      ZOrder		      420
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Amplitude		      "dTorqueAmp"
+      Frequency		      "dTorqueFreq"
+      Phase		      "dTorquePhase(1)"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave1"
+      SID		      "6936"
+      Ports		      [0, 1]
+      Position		      [420, 105, 450, 135]
+      ZOrder		      424
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Amplitude		      "dTorqueAmp"
+      Frequency		      "dTorqueFreq"
+      Phase		      "dTorquePhase(2)"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport Delay"
+      SID		      "6937"
+      Ports		      [1, 1]
+      Position		      [300, 155, 330, 185]
+      ZOrder		      421
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      DelayTime		      "5"
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport Delay1"
+      SID		      "6938"
+      Ports		      [1, 1]
+      Position		      [420, 160, 450, 190]
+      ZOrder		      425
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      DelayTime		      "5"
     }
     Block {
       BlockType		      SubSystem
@@ -10285,7 +10389,7 @@ Model {
       }
       System {
 	Name			"leg L4"
-	Location		[960, 19, 1920, 1080]
+	Location		[0, 19, 960, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11139,12 +11243,22 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      Constant
+      Name		      "m1"
+      SID		      "6939"
+      Position		      [355, 55, 385, 85]
+      ZOrder		      423
+      BlockRotation	      270
+      BlockMirror	      on
+      Value		      "0"
+    }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Hand of God"
       SrcPort		      RConn1
       DstBlock		      "Body"
-      DstPort		      LConn2
+      DstPort		      LConn3
     }
     Line {
       SrcBlock		      "Integrator1"
@@ -11157,6 +11271,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L4"
       SrcPort		      LConn1
+      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn4
     }
@@ -11164,6 +11279,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L3"
       SrcPort		      LConn1
+      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn3
     }
@@ -11171,6 +11287,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L2"
       SrcPort		      LConn1
+      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn2
     }
@@ -11178,13 +11295,13 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L1"
       SrcPort		      LConn1
+      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn1
     }
     Line {
       SrcBlock		      "Body Sensor5"
       SrcPort		      1
-      Points		      [70, 0]
       DstBlock		      "Selector5"
       DstPort		      1
     }
@@ -11308,7 +11425,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Body"
       SrcPort		      LConn1
-      Points		      [0, -125; -26, 0; 0, -175]
+      Points		      [0, -125; -21, 0; 0, -175]
       DstBlock		      "Mechanical Branching Bar"
       DstPort		      LConn1
     }
@@ -11341,6 +11458,53 @@ Model {
       Points		      [5, 0; 0, 15]
       DstBlock		      "Scope6"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sine Wave"
+      SrcPort		      1
+      DstBlock		      "Transport Delay"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [0, 74; 180, 0]
+      DstBlock		      "Body Actuator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Transport Delay"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Transport Delay1"
+      SrcPort		      1
+      Points		      [0, 25]
+      DstBlock		      "Mux1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "m1"
+      SrcPort		      1
+      Points		      [0, 13; -32, 0; 0, 94; 42, 0]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sine Wave1"
+      SrcPort		      1
+      DstBlock		      "Transport Delay1"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Body Actuator1"
+      SrcPort		      RConn1
+      DstBlock		      "Body"
+      DstPort		      LConn2
     }
   }
 }
