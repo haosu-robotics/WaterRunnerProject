@@ -5,38 +5,30 @@ SimParam;
 load_system('water_hopper_df.mdl');
 T_des = 20;
 
-freqs = 12:2:100;
+freqs = 40:4:100;
 df = 0.5;
 
 y_sim = nan(size(freqs));
 y_pred = nan(size(freqs));
-power_sim = nan(size(freqs));
-power_pred = nan(size(freqs));
 y_pred2 = nan(size(freqs));
-power_pred2 = nan(size(freqs));
 
-robot_vert_avg =  open('height3.mat');
+robot_vert_avg =  open('heightV2.mat');
 rheights3 = robot_vert_avg.robot_vert_avg;
 
 for k = 1 : numel(freqs)
     freq = freqs(k)
-
+	
+	%{
     y_pred(k) = real(SSheight(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
 	if y_pred(k) < 0
 		y_pred(k) = nan;
-	else
-		power_pred(k) = SSpower(y_pred(k)-leg_length,freq,Amp,r1,forceRatio);
 	end
 
 	y_pred2(k) = real(SSheight2(freq,df,Amp,r1,mass,forceRatio,area)+leg_length);
 	if y_pred2(k) < 0
 		y_pred2(k) = nan;
 	end
-	%{
-		power_pred2(k) = SSpower(y_pred2(k)-leg_length,freq,Amp,r1,forceRatio);
-	end
 	%}
-
     y_0 = Amp/2;
 	T_sim = sim('water_hopper_df.mdl',T_des);
 
@@ -46,10 +38,8 @@ for k = 1 : numel(freqs)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     Y_ball = ball_position(:,2);
-	%Work = Work(:,2);
     %%%% Trimming %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     Y_ball(T_sim <T_sim(end)/2) = [];
-	%Work(T_sim <T_sim(end)/2) = [];
 	T_sim(T_sim <T_sim(end)/2) = [];
     T_sim = T_sim - T_sim(1);
 
@@ -57,22 +47,16 @@ for k = 1 : numel(freqs)
 	if y_sim(k) < 0
 		y_sim(k) = nan;
 	end
-	%{
-	else
-		fit2 = polyfit( T_sim, Work,1);
-		power_sim(k) = fit2(1);
-	end
-	%}
 
 end
 
-save('oneleg1.mat')
+save('onelegV2.mat')
 
 figure(3)
-plot(12:8:100,rheights3,'k')
+plot(40:4:100,rheights3,'k')
 hold on
-%plot(freqs,y_sim,'b')
-plot(freqs,y_pred,'r')
+plot(freqs,y_sim,'b')
+%plot(freqs,y_pred,'r')
 %plot(freqs,y_pred2,'r')
 hold off
 axis([40, 100, 0 0.035])
