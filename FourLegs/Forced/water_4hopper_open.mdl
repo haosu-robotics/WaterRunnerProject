@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.311"
+    ComputedModelVersion    "1.315"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 960.0, 530.0]
+      Location		      [0.0, 19.0, 1095.0, 716.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,18 +56,18 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [922.0, 387.0]
-	  ZoomFactor		  [0.3]
-	  Offset		  [-1065.2911590092453, -346.05084289385206]
+	  Extents		  [1057.0, 573.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [250.67238942688778, 430.02374569591228]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "6483"
-	  Extents		  [922.0, 918.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [0.0, 0.0]
+	  Extents		  [1113.0, 693.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [-60.800000000000068, -10.39999999999992]
 	}
 	PropName		"EditorsInfo"
       }
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 27 21:11:33 2013"
+  LastModifiedDate	  "Sun Apr 28 15:45:12 2013"
   RTWModifiedTimeStamp	  288988527
-  ModelVersionFormat	  "1.%<AutoIncrement:311>"
+  ModelVersionFormat	  "1.%<AutoIncrement:315>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -109,7 +109,7 @@ Model {
   StatusBar		  on
   BrowserShowLibraryLinks off
   BrowserLookUnderMasks	  off
-  SimulationMode	  "normal"
+  SimulationMode	  "rapid-accelerator"
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -201,7 +201,7 @@ Model {
 	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-3"
+	  RelTol		  "1e-4"
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
@@ -768,7 +768,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 483, 183, 1507, 967 ] 
+      ConfigPrmDlgPosition     [ 484, 184, 1510, 970 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1100,7 +1100,7 @@ Model {
   }
   System {
     Name		    "water_4hopper_open"
-    Location		    [0, 19, 960, 549]
+    Location		    [0, 19, 1095, 735]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1112,7 +1112,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "30"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "6939"
     Block {
@@ -1120,7 +1120,7 @@ Model {
       Name		      "Body"
       SID		      "2"
       Ports		      [0, 0, 0, 0, 0, 7, 4]
-      Position		      [462, 415, 918, 475]
+      Position		      [457, 565, 913, 625]
       ZOrder		      4
       BlockRotation	      270
       BlockMirror	      on
@@ -1207,7 +1207,7 @@ Model {
       Name		      "Body Actuator1"
       SID		      "6933"
       Ports		      [1, 0, 0, 0, 0, 0, 1]
-      Position		      [540, 345, 580, 385]
+      Position		      [535, 480, 575, 520]
       ZOrder		      419
       BlockRotation	      270
       BlockMirror	      on
@@ -1242,7 +1242,7 @@ Model {
       Name		      "Body Sensor5"
       SID		      "2727"
       Ports		      [0, 2, 0, 0, 0, 1]
-      Position		      [710, 137, 760, 193]
+      Position		      [735, 412, 785, 468]
       ZOrder		      200
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -1280,7 +1280,7 @@ Model {
       Name		      "Body Sensor6"
       SID		      "6614"
       Ports		      [0, 2, 0, 0, 0, 1]
-      Position		      [710, 17, 760, 73]
+      Position		      [735, 292, 785, 348]
       ZOrder		      382
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -1318,7 +1318,7 @@ Model {
       Name		      "CPG_Network2"
       SID		      "4636"
       Ports		      [8, 4]
-      Position		      [1010, 669, 1130, 851]
+      Position		      [1010, 619, 1130, 801]
       ZOrder		      257
       BlockMirror	      on
       BackgroundColor	      "[0.000000, 0.819608, 0.000000]"
@@ -4377,7 +4377,7 @@ Model {
 	  Position		  [645, 749, 675, 781]
 	  ZOrder		  255
 	  Floating		  off
-	  Location		  [2, 579, 960, 1078]
+	  Location		  [2, 765, 1095, 1078]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
@@ -4396,7 +4396,7 @@ Model {
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  ShowLegends		  on
-	  LegendLocations	  "0.88961     0.83648    0.072547      0.1741"
+	  LegendLocations	  "0.89409     0.78475    0.063586     0.27756"
 	  TimeRange		  "20              "
 	  YMin			  "68.75"
 	  YMax			  "71.5"
@@ -6628,7 +6628,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "6902"
-      Position		      [1405, 745, 1505, 775]
+      Position		      [1405, 695, 1505, 725]
       ZOrder		      402
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -6639,7 +6639,7 @@ Model {
       Name		      "Demux2"
       SID		      "4905"
       Ports		      [1, 8]
-      Position		      [1295, 680, 1300, 840]
+      Position		      [1295, 630, 1300, 790]
       ZOrder		      255
       BlockMirror	      on
       ShowName		      off
@@ -6650,7 +6650,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "5288"
-      Position		      [1050, 170, 1070, 190]
+      Position		      [1075, 445, 1095, 465]
       ZOrder		      263
       Gain		      "180/pi"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -6662,12 +6662,11 @@ Model {
       Name		      "Hand of God"
       SID		      "790"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [594, 265, 656, 315]
+      Position		      [589, 475, 651, 525]
       ZOrder		      138
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "yellow"
-      NamePlacement	      "alternate"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -7117,7 +7116,7 @@ Model {
       Name		      "Integrator1"
       SID		      "2730"
       Ports		      [1, 1]
-      Position		      [935, 222, 955, 248]
+      Position		      [960, 497, 980, 523]
       ZOrder		      206
       NamePlacement	      "alternate"
     }
@@ -7126,7 +7125,7 @@ Model {
       Name		      "Mechanical Branching Bar"
       SID		      "6615"
       Ports		      [0, 0, 0, 0, 0, 1, 2]
-      Position		      [655, 71, 665, 124]
+      Position		      [680, 346, 690, 399]
       ZOrder		      383
       BackgroundColor	      "black"
       LibraryVersion	      "1.1"
@@ -7144,7 +7143,7 @@ Model {
       Name		      "Mux1"
       SID		      "6934"
       Ports		      [3, 1]
-      Position		      [361, 235, 399, 240]
+      Position		      [356, 410, 394, 415]
       ZOrder		      422
       BlockRotation	      270
       BlockMirror	      on
@@ -7158,12 +7157,13 @@ Model {
       Name		      "Scope6"
       SID		      "2733"
       Ports		      [2]
-      Position		      [1250, 155, 1280, 190]
+      Position		      [1275, 430, 1305, 465]
       ZOrder		      201
       Floating		      off
-      Location		      [962, 49, 1920, 1078]
+      Location		      [1097, 49, 1920, 1078]
       Open		      on
       NumInputPorts	      "2"
+      ZoomMode		      "yonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -7181,8 +7181,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "0.0025~-11"
-      YMax		      "0.01~11"
+      YMin		      "-25~-35000"
+      YMax		      "250~15000"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"
@@ -7194,7 +7194,7 @@ Model {
       Name		      "Selector5"
       SID		      "3049"
       Ports		      [1, 1]
-      Position		      [850, 131, 890, 169]
+      Position		      [875, 406, 915, 444]
       ZOrder		      229
       NamePlacement	      "alternate"
       InputPortWidth	      "3"
@@ -7207,7 +7207,7 @@ Model {
       Name		      "Selector6"
       SID		      "3050"
       Ports		      [1, 1]
-      Position		      [850, 216, 890, 254]
+      Position		      [875, 491, 915, 529]
       ZOrder		      230
       NamePlacement	      "alternate"
       InputPortWidth	      "3"
@@ -7220,7 +7220,7 @@ Model {
       Name		      "Sine Wave"
       SID		      "6935"
       Ports		      [0, 1]
-      Position		      [300, 100, 330, 130]
+      Position		      [295, 275, 325, 305]
       ZOrder		      420
       BlockRotation	      270
       BlockMirror	      on
@@ -7235,7 +7235,7 @@ Model {
       Name		      "Sine Wave1"
       SID		      "6936"
       Ports		      [0, 1]
-      Position		      [420, 105, 450, 135]
+      Position		      [415, 280, 445, 310]
       ZOrder		      424
       BlockRotation	      270
       BlockMirror	      on
@@ -7250,7 +7250,7 @@ Model {
       Name		      "Transport Delay"
       SID		      "6937"
       Ports		      [1, 1]
-      Position		      [300, 155, 330, 185]
+      Position		      [295, 330, 325, 360]
       ZOrder		      421
       BlockRotation	      270
       BlockMirror	      on
@@ -7262,7 +7262,7 @@ Model {
       Name		      "Transport Delay1"
       SID		      "6938"
       Ports		      [1, 1]
-      Position		      [420, 160, 450, 190]
+      Position		      [415, 335, 445, 365]
       ZOrder		      425
       BlockRotation	      270
       BlockMirror	      on
@@ -7274,7 +7274,7 @@ Model {
       Name		      "averaging1"
       SID		      "6913"
       Ports		      [1, 1]
-      Position		      [1115, 192, 1160, 228]
+      Position		      [1140, 467, 1185, 503]
       ZOrder		      404
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7487,7 +7487,7 @@ Model {
       Name		      "averaging12"
       SID		      "6923"
       Ports		      [1, 1]
-      Position		      [1105, 132, 1150, 168]
+      Position		      [1130, 407, 1175, 443]
       ZOrder		      405
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7700,7 +7700,7 @@ Model {
       Name		      "leg L1"
       SID		      "6799"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [470, 785, 530, 925]
+      Position		      [470, 820, 530, 960]
       ZOrder		      399
       BlockRotation	      270
       BlockMirror	      on
@@ -8587,7 +8587,7 @@ Model {
       Name		      "leg L2"
       SID		      "6832"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [585, 785, 645, 925]
+      Position		      [585, 820, 645, 960]
       ZOrder		      400
       BlockRotation	      270
       BlockMirror	      on
@@ -9474,7 +9474,7 @@ Model {
       Name		      "leg L3"
       SID		      "6865"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [700, 785, 760, 925]
+      Position		      [700, 820, 760, 960]
       ZOrder		      401
       BlockRotation	      270
       BlockMirror	      on
@@ -10361,7 +10361,7 @@ Model {
       Name		      "leg L4"
       SID		      "6483"
       Ports		      [1, 1, 0, 0, 0, 1]
-      Position		      [815, 785, 875, 925]
+      Position		      [815, 820, 875, 960]
       ZOrder		      362
       BlockRotation	      270
       BlockMirror	      on
@@ -10389,7 +10389,7 @@ Model {
       }
       System {
 	Name			"leg L4"
-	Location		[0, 19, 960, 1080]
+	Location		[0, 19, 1151, 855]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10401,7 +10401,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "PVA"
@@ -10768,7 +10768,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [0, 19, 941, 1080]
+	    Location		    [0, 19, 1151, 855]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11247,7 +11247,7 @@ Model {
       BlockType		      Constant
       Name		      "m1"
       SID		      "6939"
-      Position		      [355, 55, 385, 85]
+      Position		      [350, 230, 380, 260]
       ZOrder		      423
       BlockRotation	      270
       BlockMirror	      on
@@ -11271,7 +11271,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L4"
       SrcPort		      LConn1
-      Points		      [0, -280]
+      Points		      [0, 0]
       DstBlock		      "Body"
       DstPort		      RConn4
     }
@@ -11279,7 +11279,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L3"
       SrcPort		      LConn1
-      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn3
     }
@@ -11287,7 +11286,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L2"
       SrcPort		      LConn1
-      Points		      [0, -280]
       DstBlock		      "Body"
       DstPort		      RConn2
     }
@@ -11295,7 +11293,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "leg L1"
       SrcPort		      LConn1
-      Points		      [0, -280]
+      Points		      [0, 0]
       DstBlock		      "Body"
       DstPort		      RConn1
     }
@@ -11390,14 +11388,14 @@ Model {
     Line {
       SrcBlock		      "CPG_Network2"
       SrcPort		      3
-      Points		      [0, -35; -290, 0]
+      Points		      [-290, 0]
       DstBlock		      "leg L3"
       DstPort		      1
     }
     Line {
       SrcBlock		      "CPG_Network2"
       SrcPort		      4
-      Points		      [-64, 0; 0, -68; -111, 0]
+      Points		      [-175, 0]
       DstBlock		      "leg L4"
       DstPort		      1
     }
@@ -11425,7 +11423,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Body"
       SrcPort		      LConn1
-      Points		      [0, -125; -21, 0; 0, -175]
+      Points		      [0, -9; -32, 0; 0, -166]
       DstBlock		      "Mechanical Branching Bar"
       DstPort		      LConn1
     }
@@ -11468,7 +11466,7 @@ Model {
     Line {
       SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [0, 74; 180, 0]
+      Points		      [0, 25; 180, 0]
       DstBlock		      "Body Actuator1"
       DstPort		      1
     }

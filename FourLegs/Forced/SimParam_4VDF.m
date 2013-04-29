@@ -73,7 +73,7 @@ dTorqueFreq = 0.5;
 
 %%% PID gains %%%%
 K_p = [500 0 0 ; 0 750 0; 0 0 750];
-K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
+K_i = [1000 0 0 ; 0 7500 0; 0 0 7500];
 K_d = [50 0  0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
 
@@ -83,7 +83,7 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-c_gain = 100;
+c_gain = 25;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
