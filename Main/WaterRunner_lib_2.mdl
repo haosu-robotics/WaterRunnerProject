@@ -2,7 +2,7 @@ Library {
   Name			  "WaterRunner_lib_2"
   Version		  8.0
   MdlSubVersion		  0
-  SavedCharacterEncoding  "windows-1252"
+  SavedCharacterEncoding  "UTF-8"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [800.0, 0.0, 800.0, 860.0]
+      Location		      [1368.0, 19.0, 552.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,7 +43,7 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[748.0, 692.0]
+	Extents			[514.0, 928.0]
 	ZoomFactor		[0.8]
 	Offset			[-7.5, -34.725000000000023]
       }
@@ -53,11 +53,11 @@ Library {
   Creator		  "Metti"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Metti"
+  LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 27 18:37:57 2013"
-  RTWModifiedTimeStamp	  288983327
-  ModelVersionFormat	  "1.%<AutoIncrement:390>"
+  LastModifiedDate	  "Sun Apr 28 19:07:05 2013"
+  RTWModifiedTimeStamp	  289076821
+  ModelVersionFormat	  "1.%<AutoIncrement:391>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1041,7 +1041,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [800, 0, 1600, 860]
+    Location		    [1368, 19, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1055,7 +1055,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1709"
+    SIDHighWatermark	    "1719"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -1065,7 +1065,7 @@ Library {
       ZOrder		      -1
       BlockRotation	      270
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.356"
+      LibraryVersion	      "1.390"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -15007,7 +15007,6 @@ Library {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -17936,7 +17935,6 @@ Library {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -21226,7 +21224,7 @@ Library {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 22:31:44
+#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 17:33:50
 #
 #
 

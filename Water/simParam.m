@@ -1,4 +1,11 @@
-clear all
+%%%%%%%%Desired State%%%%%%%%%%%%%
+y_0 = .01;
+stepSizeRoll = 0;
+stepSizePitch = 0;
+
+%%%% disturbance torque waves %%%%%
+dTorqueAmp = 0;
+dTorqueFreq = 0.5;
 
 %%%%%%%%%%%%%%%%%%%%%%% Leg properties %%%%%%%%%%%%%%%%%%%%
 L1 = .0615;
@@ -31,13 +38,11 @@ Ta_TR = [-frame_length/2   0             0];
 tail_length = 0.1;
 tail_dim = [tail_length bar_w bar_h ];
 tail_density = CF_density;
-tail_angle = 15;
+tail_angle = 20;
 tail_pad_radius = 0.035;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Motor Parameters %%%%%%%%%%%%%%%%%%%%%%
-%speed = 70;
-
 motor_radius = 0.01342;
 motor_length = 0.03663;
 
@@ -45,7 +50,7 @@ motor_mass = 0.010;
 motor_volume = (pi*motor_radius^2)*motor_length;
 motor_density = motor_mass/motor_volume;
 
-mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4)
+mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4);
 Ix = 1/12*mass*( frame_width^2 +  frame_height^2 );
 Iy = 1/12*mass*( frame_width^2 +  frame_length^2 );
 Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
@@ -54,6 +59,12 @@ frame_inertia = diag([Ix,Iy,Iz]);
 
 mass_matrix = [mass 0 0; 0 Ix 0 ; 0 0 Iz];
 
+marm_x = [1 1 -1 -1]';
+marm_y = [1 -1 -1 1]';
+Lx = frame_width/2*marm_x;
+Lxmat = frame_width/2*diag(marm_x);
+Lz = frame_length/2*marm_y;
+Lzmat = frame_length/2*diag(marm_y);
 
 %%%%%%%%%%%%%%%%%% Ground Contact Model %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -72,16 +83,15 @@ PVA_gains = [0.0 0.05 0.00];
 %%%%% Water Model Parameters %%%%%
 
 water_level = 0;
-leg_length = 0.0249;
+leg_length = 0.0428;
 Amp = leg_length;
 amp = Amp;
 
-y_0 = .01;
-
 r1 = 0.02;
 r2 = r1/4;
-S1 = pi*r1^2*0.9185;
-S2 = pi*r2^2*0.9185;
+area = 0.5449;
+S1 = pi*r1^2*area;
+S2 = pi*r2^2*area;
 
 density = 1000;
 g = 9.81;
@@ -92,13 +102,21 @@ k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
 %%% PID gains %%%%
-K_p = [500 0 0 ; 0 750 0; 0 0 750];
-K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
-K_d = [0 0  0; 0 300 0; 0 0 300];
+%K_p = zeros(3);
+%K_i = zeros(3);
+%K_d = zeros(3);
+%Filter_Coef = 1000;
+
+K_p = [200 0 0 ; 0 750 0; 0 0 0];
+K_i = [500 0 0 ; 0 7500 0; 0 0 0];
+K_d = [10 0  0; 0 100 0; 0 0 0];
 Filter_Coef = 1000;
 
+%%% AntiWind Gain %%%%
+K_e = diag([0 1 1]);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-freq = 80;
+freq = 60;
 speed = freq;
 omega_0 = freq*ones(8,1);
 
@@ -107,7 +125,7 @@ HR_HL_lag = pi;    % l2
 FR_HR_lag = -pi;     % l3
 FL_HL_lag = pi;    % l4
 
-c_gain = 100;
+c_gain = 25;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
