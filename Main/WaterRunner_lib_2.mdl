@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1368.0, 19.0, 552.0, 1061.0]
+      Location		      [0.0, 19.0, 1119.0, 431.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,7 +43,7 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[514.0, 928.0]
+	Extents			[1081.0, 298.0]
 	ZoomFactor		[0.8]
 	Offset			[-7.5, -34.725000000000023]
       }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 28 19:07:05 2013"
-  RTWModifiedTimeStamp	  289076821
-  ModelVersionFormat	  "1.%<AutoIncrement:391>"
+  LastModifiedDate	  "Mon Apr 29 21:40:25 2013"
+  RTWModifiedTimeStamp	  289172377
+  ModelVersionFormat	  "1.%<AutoIncrement:394>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1041,7 +1041,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [1368, 19, 1920, 1080]
+    Location		    [0, 19, 1119, 450]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1055,7 +1055,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1719"
+    SIDHighWatermark	    "1736"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -11872,7 +11872,7 @@ Library {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "*1.389"
+      LibraryVersion	      "*1.393"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11882,7 +11882,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Contact FR"
-	Location		[0, 0, 800, 860]
+	Location		[0, 263, 1155, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11894,7 +11894,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"72"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Reference
 	  Name			  "6-DOF Joint1"
@@ -12081,6 +12081,14 @@ Library {
 	  GotoTag		  "angle"
 	}
 	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "1721"
+	  Ports			  [1, 1]
+	  Position		  [1700, 160, 1730, 190]
+	  ZOrder		  324
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "Quat to Euler1"
 	  SID			  "1678"
@@ -12102,7 +12110,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Quat to Euler1"
-	    Location		    [-8, -8, 1608, 868]
+	    Location		    [0, 19, 1300, 669]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15007,6 +15015,7 @@ Library {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
+		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -17935,6 +17944,7 @@ Library {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
+		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -18396,8 +18406,8 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Transform  Sensor"
 	  SID			  "1647"
-	  Ports			  [0, 0, 0, 0, 0, 1, 4]
-	  Position		  [1350, 3, 1445, 157]
+	  Ports			  [0, 0, 0, 0, 0, 1, 5]
+	  Position		  [1350, 7, 1445, 163]
 	  ZOrder		  295
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "sm_lib/Frames and\n Transforms/Transform \nSensor"
@@ -18411,7 +18421,7 @@ Library {
 	  SenseAngle3		  "off"
 	  SenseQ		  "on"
 	  SenseR		  "off"
-	  SenseOmegaX		  "off"
+	  SenseOmegaX		  "on"
 	  SenseOmegaY		  "off"
 	  SenseOmegaZ		  "on"
 	  SenseOmega1		  "off"
@@ -18595,6 +18605,25 @@ Library {
 	  AffineConversion	  off
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "px5"
+	  SID			  "1720"
+	  Ports			  [0, 1, 0, 0, 0, 1]
+	  Position		  [1535, 175, 1560, 195]
+	  ZOrder		  323
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
+	  SourceType		  "PS-Simulink\nConverter"
+	  PhysicalDomain	  "network_engine_domain"
+	  LeftPortType		  "input"
+	  RightPortType		  "output"
+	  SubClassName		  "ps_output"
+	  PseudoPeriodic	  off
+	  Frequencies		  "[]"
+	  Unit			  "1"
+	  AffineConversion	  off
+	}
+	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Foot"
 	  SID			  "1657"
@@ -18608,7 +18637,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Fk"
 	  SID			  "1658"
-	  Position		  [1770, 318, 1800, 332]
+	  Position		  [1650, 303, 1680, 317]
 	  ZOrder		  272
 	  BlockMirror		  on
 	  IconDisplay		  "Port number"
@@ -18652,25 +18681,56 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "px4"
+	  SrcPort		  LConn1
+	  Points		  [-49, 0; 0, 15]
+	  DstBlock		  "Transform  Sensor"
+	  DstPort		  RConn4
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "px3"
+	  SrcPort		  LConn1
+	  Points		  [-49, 0; 0, 5]
+	  DstBlock		  "Transform  Sensor"
+	  DstPort		  RConn5
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "px5"
+	  SrcPort		  LConn1
+	  Points		  [-5, 0; 0, -100]
+	  DstBlock		  "Transform  Sensor"
+	  DstPort		  RConn3
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  1
+	  Points		  [-158, 0]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Fk"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "px5"
+	  SrcPort		  1
+	  Points		  [7, 0; 0, -10]
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "Subsystem1"
 	  SrcPort		  2
 	  Points		  [-77, 0; 0, -130]
 	  DstBlock		  "p2"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Subsystem"
-	  SrcPort		  1
-	  Points		  [-26, 0]
-	  Branch {
-	    Points		    [0, 35]
-	    DstBlock		    "Fk"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Sum"
-	    DstPort		    1
-	  }
 	}
 	Line {
 	  SrcBlock		  "Gain"
@@ -18734,22 +18794,9 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Transform  Sensor"
-	  SrcPort		  RConn4
-	  DstBlock		  "px3"
-	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "px4"
-	  SrcPort		  LConn1
-	  DstBlock		  "Transform  Sensor"
-	  DstPort		  RConn3
-	}
-	Line {
-	  LineType		  "Connection"
 	  SrcBlock		  "px1"
 	  SrcPort		  LConn1
+	  Points		  [-60, 0]
 	  DstBlock		  "Transform  Sensor"
 	  DstPort		  RConn2
 	}
@@ -18780,7 +18827,7 @@ Library {
 	  DstPort		  RConn1
 	  Branch {
 	    ConnectType		    "SRC_SRC"
-	    Points		    [0, -140]
+	    Points		    [0, -135]
 	    DstBlock		    "Transform  Sensor"
 	    DstPort		    LConn1
 	  }
@@ -18806,7 +18853,7 @@ Library {
 	    ConnectType		    "SRC_DEST"
 	    SrcBlock		    "Transform  Sensor"
 	    SrcPort		    RConn1
-	    Points		    [36, 0; 0, 190]
+	    Points		    [36, 0; 0, 185]
 	  }
 	}
 	Line {

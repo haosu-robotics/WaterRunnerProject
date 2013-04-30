@@ -1,11 +1,11 @@
 %%%%%%%%Desired State%%%%%%%%%%%%%
-y_0 = .01;
+y_0 = .015;
 stepSizeRoll = 0;
 stepSizePitch = 0;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 0;
-dTorqueFreq = 0.5;
+dTorqueAmp = 5e-4;
+dTorqueFreq = 1;
 
 %%%%%%%%%%%%%%%%%%%%%%% Leg properties %%%%%%%%%%%%%%%%%%%%
 L1 = .0615;
@@ -38,7 +38,7 @@ Ta_TR = [-frame_length/2   0             0];
 tail_length = 0.1;
 tail_dim = [tail_length bar_w bar_h ];
 tail_density = CF_density;
-tail_angle = 20;
+tail_angle = 22;
 tail_pad_radius = 0.035;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,14 +102,10 @@ k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
 %%% PID gains %%%%
-%K_p = zeros(3);
-%K_i = zeros(3);
-%K_d = zeros(3);
-%Filter_Coef = 1000;
 
-K_p = [200 0 0 ; 0 750 0; 0 0 0];
-K_i = [500 0 0 ; 0 7500 0; 0 0 0];
-K_d = [10 0  0; 0 100 0; 0 0 0];
+K_p = [200 0 0 ; 0 150 0; 0 0 0];
+K_i = [500 0 0 ; 0 325 0; 0 0 0];
+K_d = [10 0  0; 0 10 0; 0 0 0];
 Filter_Coef = 1000;
 
 %%% AntiWind Gain %%%%
@@ -125,7 +121,7 @@ HR_HL_lag = pi;    % l2
 FR_HR_lag = -pi;     % l3
 FL_HL_lag = pi;    % l4
 
-c_gain = 25;
+c_gain = 0.25;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
