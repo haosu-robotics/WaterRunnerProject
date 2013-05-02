@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.315"
+    ComputedModelVersion    "1.316"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1095.0, 716.0]
+      Location		      [0.0, 19.0, 1920.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1057.0, 573.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [250.67238942688778, 430.02374569591228]
+	  Extents		  [1882.0, 918.0]
+	  ZoomFactor		  [0.6]
+	  Offset		  [-112.06402086452835, 29.391950841620208]
 	}
 	Object {
 	  $ObjectID		  6
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 28 15:45:12 2013"
+  LastModifiedDate	  "Mon Apr 29 11:59:56 2013"
   RTWModifiedTimeStamp	  288988527
-  ModelVersionFormat	  "1.%<AutoIncrement:315>"
+  ModelVersionFormat	  "1.%<AutoIncrement:316>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1100,7 +1100,7 @@ Model {
   }
   System {
     Name		    "water_4hopper_open"
-    Location		    [0, 19, 1095, 735]
+    Location		    [0, 19, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1112,7 +1112,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "6939"
     Block {
@@ -4378,7 +4378,7 @@ Model {
 	  ZOrder		  255
 	  Floating		  off
 	  Location		  [2, 765, 1095, 1078]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
 	  List {
@@ -7161,7 +7161,7 @@ Model {
       ZOrder		      201
       Floating		      off
       Location		      [1097, 49, 1920, 1078]
-      Open		      on
+      Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
       List {
@@ -7181,8 +7181,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "-25~-35000"
-      YMax		      "250~15000"
+      YMin		      "0.002~-15"
+      YMax		      "0.01~15"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"

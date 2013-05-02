@@ -1,6 +1,6 @@
 %%%%% Desired State %%%%%
 height_des = 0.1;
-stepSizeRoll = 0;
+stepSizeRoll = 5;
 stepSizePitch = 0;
 
 
@@ -66,16 +66,19 @@ wavePhase = 2*pi*rand(1,4);
 waveFreq = 0.5;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 1e-2;
+dTorqueAmp = 0;
 rand('seed',1);
 dTorquePhase = 2*pi*rand(1,4);
 dTorqueFreq = 0.5;
 
 %%% PID gains %%%%
-K_p = [500 0 0 ; 0 750 0; 0 0 750];
-K_i = [1000 0 0 ; 0 7500 0; 0 0 7500];
-K_d = [50 0  0; 0 300 0; 0 0 300];
+%K_p = [500 0 0 ; 0 750 0; 0 0 750];
+%K_i = [1000 0 0 ; 0 7500 0; 0 0 7500];
+%K_d = [50 0  0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
+K_p = [500 0 0 ; 0 100 0; 0 0 0];
+K_i = [1000 0 0 ; 0 500 0; 0 0 0];
+K_d = [50 0  0; 0 1 0; 0 0 0];
 
 %%%%% CPG params %%%%%
 FR_FL_lag = pi;     % l1
@@ -83,7 +86,7 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-c_gain = 25;
+c_gain = 1;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
