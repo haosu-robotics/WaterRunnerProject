@@ -1,12 +1,13 @@
 %%%%% Initial State %%%%%%
-y0 = 0.015;
-theta0 = 0;phi0 = 0;
+y0 = 0.020;
+theta0 = 0;
+phi0 = 0;
 x0 = [y0; 0; theta0; 0; phi0; 0; 1];
 
 %%%%% Desired State %%%%%%
-y = 0.015;
+y = 0.020;
 theta = 0 * pi/180;
-phi = 0;
+phi = 0 * pi/180;
 w = 60;
 xdes = [y, theta, phi];
 
@@ -27,11 +28,11 @@ length = 0.25/2;
 M = [mass 0 0; 0 Ix 0 ; 0 0 Iz]; %mass matrix
   
 marm_x = [1 1 -1 -1]';
-marm_y = [1 -1 -1 1]';
+marm_z = [1 -1 -1 1]';
 Lx = width*marm_x;
 Lxmat = width*diag(marm_x);
-Lz = length*marm_y;
-Lzmat = length*diag(marm_y);
+Lz = length*marm_z;
+Lzmat = length*diag(marm_z);
 
 %%%%% Water model params %%%%%%
 density = 1000;
@@ -112,21 +113,25 @@ Cs = [1, 0, 0, 0, 0, 0, 0;
 Ds = zeros(3,8);
 
 %%%%% PID Gains - Ziegler Nichols Method %%%%%
-Kuy = 160;
+Kuy = 170;
 Tuy = 0.5;
 Kpy = 0.2*Kuy;
 Kiy = 2*Kpy/Tuy;
 Kdy = Kpy*Tuy/3;
 
-KuRoll = 0;
-TuRoll = 200;
-KpRoll = 0.6*KuRoll;
-KiRoll = 2*KpRoll/TuRoll;
-KdRoll = KpRoll*TuRoll/8;
+Kuth = 490;
+Tuth = 0.275;
+Kpth = 0.2*Kuth;
+Kith = 2*Kpth/Tuth;
+Kdth = Kpth*Tuth/3;
 
-K_p = [Kpy 0 0 ; 0 0 0; 0 0 0];
-K_i = [Kiy 0 0 ; 0 0 0; 0 0 0];
-K_d = [Kdy 0 0 ; 0 0 0; 0 0 0];
+Kuph = 484;
+Tuph = 0.3;
+Kpph = 0.2*Kuph;
+Kiph = 2*Kpph/Tuph;
+Kdph = Kpph*Tuph/3;
+
+K_p = [Kpy 0 0 ; 0 Kpth 0; 0 0 Kpph];
+K_i = [Kiy 0 0; 0 Kith 0; 0 0 Kiph];
+K_d = [Kdy 0 0 ; 0 Kdth 0; 0 0 Kdph];
 Filter_Coef = 1000;
-
-
