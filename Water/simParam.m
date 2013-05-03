@@ -4,7 +4,7 @@ stepSizeRoll = 0;
 stepSizePitch = 0;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 5e-4;
+dTorqueAmp = 0;
 dTorqueFreq = 1;
 
 %%%%%%%%%%%%%%%%%%%%%%% Leg properties %%%%%%%%%%%%%%%%%%%%
@@ -38,7 +38,7 @@ Ta_TR = [-frame_length/2   0             0];
 tail_length = 0.1;
 tail_dim = [tail_length bar_w bar_h ];
 tail_density = CF_density;
-tail_angle = 22;
+tail_angle = 20;
 tail_pad_radius = 0.035;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,10 +50,10 @@ motor_mass = 0.010;
 motor_volume = (pi*motor_radius^2)*motor_length;
 motor_density = motor_mass/motor_volume;
 
-mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4);
-Ix = 1/12*mass*( frame_width^2 +  frame_height^2 );
-Iy = 1/12*mass*( frame_width^2 +  frame_length^2 );
-Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
+mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4)
+Ix = 1/12*mass*( frame_width^2 +  frame_height^2 )
+Iy = 1/12*mass*( frame_width^2 +  frame_length^2 )
+Iz = 1/12*mass*( frame_length^2 + frame_height^2 )
 
 frame_inertia = diag([Ix,Iy,Iz]);
 
@@ -121,7 +121,7 @@ HR_HL_lag = pi;    % l2
 FR_HR_lag = -pi;     % l3
 FL_HL_lag = pi;    % l4
 
-c_gain = 0.25;
+c_gain = 0;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;

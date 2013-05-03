@@ -11,7 +11,7 @@
 *.bbl
 *.out
 *.blg
-*/slprj/*
+slprj/
 
 # Packages #
 ############
@@ -48,6 +48,7 @@ Thumbs.db
 *.swp
 *.m~
 *.mdl.autosave
+*.mdl.original
 
 #Media#
 #####################

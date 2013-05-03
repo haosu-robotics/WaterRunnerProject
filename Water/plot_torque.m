@@ -6,7 +6,7 @@ figure(1)
 subplot(211);
 	plot(time,height,'LineWidth',2);
 	ylabel('height [m]');
-	axis([0, 15, -0.015, 0.035]);
+	axis([0, 10, -0.015, 0.035]);
 subplot(212);
 	plot(time,angles(:,1),'b','LineWidth',2);
 	hold on
@@ -14,7 +14,7 @@ subplot(212);
 	hold off 
 	ylabel('angle [degrees]');
 	xlabel('time');
-	axis([0, 15, -15, 15]);
+	axis([0, 10, -20, 20]);
 	legend('roll','pitch','Location','NorthEast')
 
 sim('WaterRunner_closed2');
@@ -25,7 +25,7 @@ subplot(211);
 	hold on
 	plot(time,height,'--');
 	ylabel('height [m]');
-	axis([0, 15, -0.015, 0.035]);
+	axis([0, 10, -0.015, 0.035]);
 subplot(212);
 	hold on
 	plot(time,angles(:,1),'b--');
@@ -33,5 +33,5 @@ subplot(212);
 	hold off 
 	ylabel('angle [degrees]');
 	xlabel('time');
-	axis([0, 15, -15, 15]);
+	axis([0, 10, -20, 20]);
 	legend('roll','pitch','Location','NorthWest')

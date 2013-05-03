@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.438"
+    ComputedModelVersion    "1.446"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -42,7 +42,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1920.0, 1061.0]
+      Location		      [960.0, 19.0, 960.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -67,9 +67,9 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1882.0, 918.0]
-	  ZoomFactor		  [0.6]
-	  Offset		  [-44.973034207550995, -50.473034207550427]
+	  Extents		  [922.0, 918.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [506.02656152667936, 609.33683765946614]
 	}
 	Object {
 	  $ObjectID		  7
@@ -77,15 +77,15 @@ Model {
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "239"
 	  Extents		  [922.0, 388.0]
-	  ZoomFactor		  [1.68]
-	  Offset		  [46.666666666666657, 16.666666666666657]
+	  ZoomFactor		  [1.0]
+	  Offset		  [95.753607107825587, 7.3046811120344159]
 	}
 	PropName		"EditorsInfo"
       }
     }
   }
-  PhysicalModelingChecksum "2614391144"
-  PhysicalModelingParameterChecksum "2273344376"
+  PhysicalModelingChecksum "2704804422"
+  PhysicalModelingParameterChecksum "3192927187"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -93,9 +93,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 30 10:45:01 2013"
-  RTWModifiedTimeStamp	  289174765
-  ModelVersionFormat	  "1.%<AutoIncrement:438>"
+  LastModifiedDate	  "Thu May 02 17:11:36 2013"
+  RTWModifiedTimeStamp	  289415283
+  ModelVersionFormat	  "1.%<AutoIncrement:446>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -120,7 +120,7 @@ Model {
   StatusBar		  on
   BrowserShowLibraryLinks off
   BrowserLookUnderMasks	  off
-  SimulationMode	  "normal"
+  SimulationMode	  "rapid-accelerator"
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -199,7 +199,7 @@ Model {
 	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "5"
+	  StopTime		  "15"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -956,6 +956,21 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -1050,15 +1065,6 @@ Model {
       VectorParams1D	      on
     }
     Block {
-      BlockType		      Step
-      Time		      "1"
-      Before		      "0"
-      After		      "1"
-      SampleTime	      "-1"
-      VectorParams1D	      on
-      ZeroCross		      on
-    }
-    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -1124,7 +1130,7 @@ Model {
   }
   System {
     Name		    "WaterRunner_closed2"
-    Location		    [0, 19, 1920, 1080]
+    Location		    [960, 19, 1920, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1136,9 +1142,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "60"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6884"
+    SIDHighWatermark	    "6897"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1148,7 +1154,7 @@ Model {
       ZOrder		      -1
       BlockRotation	      270
       BackgroundColor	      "lightBlue"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Body"
       SourceType	      "SubSystem"
     }
@@ -1169,7 +1175,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CPG_Network2"
-	Location		[0, 19, 1170, 671]
+	Location		[0, 19, 951, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1181,7 +1187,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"50"
 	Block {
 	  BlockType		  Inport
 	  Name			  "FR_w_neg"
@@ -1292,6 +1298,15 @@ Model {
 	  Position		  [485, 1140, 565, 1170]
 	  ZOrder		  305
 	  Value			  "FR_FL_lag"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  SID			  "6894"
+	  Position		  [727, 930, 753, 950]
+	  ZOrder		  318
+	  BlockRotation		  270
+	  Value			  "2*pi"
 	}
 	Block {
 	  BlockType		  From
@@ -3110,6 +3125,15 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Math
+	  Name			  "Math Function"
+	  SID			  "6893"
+	  Ports			  [2, 1]
+	  Position		  [770, 827, 800, 858]
+	  ZOrder		  317
+	  Operator		  "mod"
+	}
+	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "681"
@@ -3135,7 +3159,7 @@ Model {
 	  Name			  "Mux2"
 	  SID			  "6756"
 	  Ports			  [4, 1]
-	  Position		  [765, 758, 770, 912]
+	  Position		  [725, 758, 730, 912]
 	  ZOrder		  291
 	  ShowName		  off
 	  DisplayOption		  "bar"
@@ -3148,7 +3172,7 @@ Model {
 	  Position		  [530, 366, 560, 399]
 	  ZOrder		  144
 	  Floating		  off
-	  Location		  [2, 480, 1119, 1078]
+	  Location		  [962, 49, 1920, 547]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
@@ -3169,8 +3193,8 @@ Model {
 	  }
 	  ShowLegends		  on
 	  TimeRange		  "5"
-	  YMin			  "56.3~0"
-	  YMax			  "57.4~6.5"
+	  YMin			  "58.5~0"
+	  YMax			  "63~6.5"
 	  SaveToWorkspace	  on
 	  SaveName		  "Output"
 	  DataFormat		  "StructureWithTime"
@@ -3236,13 +3260,13 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "Sum4"
-	  SID			  "6757"
+	  SID			  "6895"
 	  Ports			  [3, 1]
 	  Position		  [595, 885, 615, 905]
-	  ZOrder		  296
+	  ZOrder		  319
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "--+"
+	  Inputs		  "+--"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -3256,7 +3280,7 @@ Model {
 	  ZOrder		  294
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "--+"
+	  Inputs		  "+--"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -3264,13 +3288,13 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "Sum6"
-	  SID			  "6759"
+	  SID			  "6896"
 	  Ports			  [3, 1]
 	  Position		  [595, 1015, 615, 1035]
-	  ZOrder		  300
+	  ZOrder		  320
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "--+"
+	  Inputs		  "+--"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -3278,13 +3302,13 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "Sum7"
-	  SID			  "6760"
+	  SID			  "6897"
 	  Ports			  [3, 1]
 	  Position		  [595, 1145, 615, 1165]
-	  ZOrder		  304
+	  ZOrder		  321
 	  ShowName		  off
 	  IconShape		  "round"
-	  Inputs		  "--+"
+	  Inputs		  "+--"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -4748,7 +4772,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "phase_lags\n"
 	  SID			  "6761"
-	  Position		  [840, 828, 870, 842]
+	  Position		  [840, 838, 870, 852]
 	  ZOrder		  308
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -5189,12 +5213,6 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Sum5"
-	  SrcPort		  1
-	  DstBlock		  "Mux2"
-	  DstPort		  1
-	}
-	Line {
 	  SrcBlock		  "From21"
 	  SrcPort		  1
 	  Points		  [150, 0]
@@ -5211,13 +5229,6 @@ Model {
 	  SrcBlock		  "Constant1"
 	  SrcPort		  1
 	  DstBlock		  "Sum4"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum4"
-	  SrcPort		  1
-	  Points		  [21, 0; 0, -80]
-	  DstBlock		  "Mux2"
 	  DstPort		  2
 	}
 	Line {
@@ -5241,13 +5252,6 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Sum6"
-	  SrcPort		  1
-	  Points		  [41, 0; 0, -170]
-	  DstBlock		  "Mux2"
-	  DstPort		  3
-	}
-	Line {
 	  SrcBlock		  "From25"
 	  SrcPort		  1
 	  Points		  [140, 0]
@@ -5268,13 +5272,6 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Sum7"
-	  SrcPort		  1
-	  Points		  [74, 0; 0, -260]
-	  DstBlock		  "Mux2"
-	  DstPort		  4
-	}
-	Line {
 	  SrcBlock		  "From27"
 	  SrcPort		  1
 	  Points		  [140, 0]
@@ -5291,8 +5288,48 @@ Model {
 	Line {
 	  SrcBlock		  "Mux2"
 	  SrcPort		  1
+	  DstBlock		  "Math Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  DstBlock		  "Mux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  Points		  [11, 0; 0, -80]
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum6"
+	  SrcPort		  1
+	  Points		  [29, 0; 0, -170]
+	  DstBlock		  "Mux2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum7"
+	  SrcPort		  1
+	  Points		  [67, 0; 0, -260]
+	  DstBlock		  "Mux2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Math Function"
+	  SrcPort		  1
 	  DstBlock		  "phase_lags\n"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  Points		  [0, -75]
+	  DstBlock		  "Math Function"
+	  DstPort		  2
 	}
       }
     }
@@ -5302,7 +5339,7 @@ Model {
       SID		      "6820"
       Position		      [1460, 200, 1490, 230]
       ZOrder		      563
-      Value		      "y_0"
+      Value		      "y"
     }
     Block {
       BlockType		      Constant
@@ -5526,7 +5563,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5549,7 +5586,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5572,7 +5609,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "gray"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5595,7 +5632,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "[0.501961, 0.501961, 0.501961]"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/LEG_new"
       SourceType	      ""
       p_L1		      "L1"
@@ -5721,7 +5758,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "180"
@@ -5737,7 +5774,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "0"
@@ -5753,7 +5790,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "[1.000000, 0.258824, 0.819608]"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "-180"
@@ -5769,7 +5806,7 @@ Model {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Motor FR1"
       SourceType	      ""
       init_ang		      "0"
@@ -5880,7 +5917,7 @@ Model {
       Form		      "Parallel"
       P			      "100"
       I			      "10"
-      D			      "0"
+      D			      "1"
       N			      "1000"
       InitialConditionSource  "internal"
       InitialConditionForIntegrator "0"
@@ -5989,7 +6026,7 @@ Model {
       Form		      "Parallel"
       P			      "100"
       I			      "10"
-      D			      "0"
+      D			      "1"
       N			      "1000"
       InitialConditionSource  "internal"
       InitialConditionForIntegrator "0"
@@ -6292,7 +6329,7 @@ Model {
       SenseVelocity	      "off"
       SenseAcceleration	      "off"
       SenseTorqueForce	      "off"
-      PositionTargetValue     "y_0"
+      PositionTargetValue     "y"
       PositionTargetValueUnits "m"
       PositionTargetSpecify   "on"
       PositionTargetPriority  "High"
@@ -6636,7 +6673,7 @@ Model {
       ZOrder		      353
       BlockRotation	      270
       Floating		      off
-      Location		      [2, 49, 1920, 1078]
+      Location		      [2, 49, 960, 1078]
       Open		      on
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
@@ -6656,9 +6693,9 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      TimeRange		      "5               "
-      YMin		      "-0.0075~-4"
-      YMax		      "0.02~11"
+      TimeRange		      "5"
+      YMin		      "-0.01~-10"
+      YMax		      "0.02~10"
       SaveToWorkspace	      on
       SaveName		      "position"
       DataFormat	      "StructureWithTime"
@@ -6772,7 +6809,7 @@ Model {
       ZOrder		      529
       NamePlacement	      "alternate"
       Floating		      off
-      Location		      [1172, 49, 1920, 626]
+      Location		      [2, 579, 931, 1078]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -6792,8 +6829,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "15"
-      YMin		      "-7"
-      YMax		      "8"
+      YMin		      "5.20417e-18"
+      YMax		      "0.095"
       SaveToWorkspace	      on
       SaveName		      "command_omega1"
       DataFormat	      "StructureWithTime"
@@ -6940,318 +6977,6 @@ Model {
       MaxModeIter	      "2"
       LinearAlgebra	      "Sparse"
       DelaysMemoryBudget      "1024"
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      "6763"
-      Ports		      [0, 2]
-      Position		      [1334, 300, 1376, 375]
-      ZOrder		      530
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem"
-	Location		[0, 19, 1186, 671]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain1"
-	  SID			  "6764"
-	  Position		  [105, 160, 135, 190]
-	  ZOrder		  270
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Gain			  "pi/180"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "roll"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "Gain2"
-	  SID			  "6765"
-	  Position		  [165, 160, 195, 190]
-	  ZOrder		  272
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  Gain			  "pi/180"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "pitch"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "6766"
-	  Ports			  [2, 1]
-	  Position		  [126, 205, 164, 210]
-	  ZOrder		  394
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step"
-	  SID			  "6767"
-	  Position		  [40, 65, 70, 95]
-	  ZOrder		  335
-	  NamePlacement		  "alternate"
-	  Time			  "3"
-	  After			  "stepSizeRoll"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step1"
-	  SID			  "6768"
-	  Position		  [85, 20, 115, 50]
-	  ZOrder		  338
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "6"
-	  After			  "-2*stepSizeRoll"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step2"
-	  SID			  "6769"
-	  Position		  [125, 65, 155, 95]
-	  ZOrder		  339
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "9"
-	  After			  "stepSizeRoll"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step3"
-	  SID			  "6770"
-	  Position		  [170, 65, 200, 95]
-	  ZOrder		  384
-	  NamePlacement		  "alternate"
-	  Time			  "5"
-	  After			  "stepSizePitch"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step4"
-	  SID			  "6771"
-	  Position		  [215, 30, 245, 60]
-	  ZOrder		  386
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "10"
-	  After			  "-2*stepSizePitch"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step5"
-	  SID			  "6772"
-	  Position		  [255, 65, 285, 95]
-	  ZOrder		  387
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "15"
-	  After			  "stepSizePitch"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "6773"
-	  Ports			  [3, 1]
-	  Position		  [90, 70, 110, 90]
-	  ZOrder		  337
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "+++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum3"
-	  SID			  "6774"
-	  Ports			  [3, 1]
-	  Position		  [220, 70, 240, 90]
-	  ZOrder		  385
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "+++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "m"
-	  SID			  "6775"
-	  Position		  [20, 130, 50, 160]
-	  ZOrder		  329
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  Value			  "y_0"
-	  Port {
-	    PortNumber		    1
-	    Name		    "height"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "desired height"
-	  SID			  "6776"
-	  Position		  [60, 330, 90, 345]
-	  ZOrder		  395
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "desired angle"
-	  SID			  "6777"
-	  Position		  [195, 330, 225, 345]
-	  ZOrder		  396
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  Name			  "height"
-	  Labels		  [0, 0]
-	  SrcBlock		  "m"
-	  SrcPort		  1
-	  Points		  [0, 100; 40, 0]
-	  DstBlock		  "desired height"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Step"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Step1"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Step2"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  Points		  [0, 23; 20, 0]
-	  DstBlock		  "Gain1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Step4"
-	  SrcPort		  1
-	  DstBlock		  "Sum3"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Step3"
-	  SrcPort		  1
-	  DstBlock		  "Sum3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Step5"
-	  SrcPort		  1
-	  DstBlock		  "Sum3"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Sum3"
-	  SrcPort		  1
-	  Points		  [0, 20; -50, 0]
-	  DstBlock		  "Gain2"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "roll"
-	  Labels		  [1, 1]
-	  SrcBlock		  "Gain1"
-	  SrcPort		  1
-	  Points		  [0, 5; 15, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "pitch"
-	  Labels		  [1, 0]
-	  SrcBlock		  "Gain2"
-	  SrcPort		  1
-	  Points		  [0, 2; -25, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  Points		  [0, 55; 65, 0]
-	  DstBlock		  "desired angle"
-	  DstPort		  1
-	}
-      }
     }
     Block {
       BlockType		      Sum
@@ -7716,7 +7441,7 @@ Model {
 	      Ports		      [1, 1]
 	      Position		      [1455, 142, 1505, 168]
 	      ZOrder		      363
-	      LibraryVersion	      "1.394"
+	      LibraryVersion	      "1.397"
 	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Quat to Euler1"
 	      SourceType	      "SubSystem"
 	      Port {
@@ -7734,7 +7459,7 @@ Model {
 	      Position		      [1500, 372, 1555, 423]
 	      ZOrder		      371
 	      BlockMirror	      on
-	      LibraryVersion	      "1.394"
+	      LibraryVersion	      "1.397"
 	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Subsystem1"
 	      SourceType	      "SubSystem"
 	    }
@@ -11062,7 +10787,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -11082,7 +10807,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -11102,7 +10827,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -11122,7 +10847,7 @@ Model {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.398"
       SourceBlock	      "WaterRunner_lib_2/Water Contact FR"
       SourceType	      "SubSystem"
       Port {
@@ -11237,7 +10962,7 @@ Model {
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
-	    Value		    "y_0"
+	    Value		    "y"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -11451,7 +11176,7 @@ Model {
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
-	    Value		    "y_0"
+	    Value		    "y"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -11665,7 +11390,7 @@ Model {
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
-	    Value		    "y_0"
+	    Value		    "y"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -11879,7 +11604,7 @@ Model {
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
-	    Value		    "y_0"
+	    Value		    "y"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -12522,7 +12247,7 @@ Model {
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
-	    Value		    "y_0"
+	    Value		    "y"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -12706,7 +12431,7 @@ Model {
       BlockType		      Constant
       Name		      "theta1"
       SID		      "6717"
-      Position		      [1995, 420, 2025, 450]
+      Position		      [1930, 420, 2025, 450]
       ZOrder		      463
       NamePlacement	      "alternate"
       Value		      "zeros(1,2)"

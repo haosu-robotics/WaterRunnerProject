@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1119.0, 431.0]
+      Location		      [0.0, 19.0, 960.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,7 +43,7 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1081.0, 298.0]
+	Extents			[922.0, 928.0]
 	ZoomFactor		[0.8]
 	Offset			[-7.5, -34.725000000000023]
       }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 29 21:40:25 2013"
-  RTWModifiedTimeStamp	  289172377
-  ModelVersionFormat	  "1.%<AutoIncrement:394>"
+  LastModifiedDate	  "Thu May 02 17:11:25 2013"
+  RTWModifiedTimeStamp	  289415482
+  ModelVersionFormat	  "1.%<AutoIncrement:398>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1041,7 +1041,7 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib_2"
-    Location		    [0, 19, 1119, 450]
+    Location		    [0, 19, 960, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1055,7 +1055,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1736"
+    SIDHighWatermark	    "1750"
     Block {
       BlockType		      SubSystem
       Name		      "Body"
@@ -8028,7 +8028,7 @@ Library {
       BlockMirror	      on
       BackgroundColor	      "magenta"
       NamePlacement	      "alternate"
-      LibraryVersion	      "*1.374"
+      LibraryVersion	      "1.396"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -8052,7 +8052,7 @@ Library {
       }
       System {
 	Name			"Motor FR1"
-	Location		[800, 19, 1919, 1080]
+	Location		[0, 19, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8342,7 +8342,7 @@ Library {
 	  PositionTargetValueUnits "deg"
 	  PositionTargetSpecify	  "on"
 	  PositionTargetPriority  "High"
-	  VelocityTargetValue	  "-speed"
+	  VelocityTargetValue	  "-freq"
 	  VelocityTargetValueUnits "rad/s"
 	  VelocityTargetSpecify	  "on"
 	  VelocityTargetPriority  "High"
@@ -11872,7 +11872,7 @@ Library {
       BlockRotation	      270
       BlockMirror	      on
       BackgroundColor	      "blue"
-      LibraryVersion	      "*1.393"
+      LibraryVersion	      "*1.397"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11882,7 +11882,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Water Contact FR"
-	Location		[0, 263, 1155, 1080]
+	Location		[0, 19, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12036,7 +12036,7 @@ Library {
 	  BlockType		  From
 	  Name			  "From"
 	  SID			  "1687"
-	  Position		  [1985, 258, 2015, 282]
+	  Position		  [1980, 268, 2010, 292]
 	  ZOrder		  312
 	  BlockMirror		  on
 	  GotoTag		  "y_c"
@@ -12045,7 +12045,7 @@ Library {
 	  BlockType		  From
 	  Name			  "From1"
 	  SID			  "1694"
-	  Position		  [1730, 385, 1770, 405]
+	  Position		  [1730, 395, 1770, 415]
 	  ZOrder		  319
 	  BlockMirror		  on
 	  GotoTag		  "angle"
@@ -12054,7 +12054,7 @@ Library {
 	  BlockType		  Gain
 	  Name			  "Gain"
 	  SID			  "1701"
-	  Position		  [1730, 340, 1760, 370]
+	  Position		  [1730, 350, 1760, 380]
 	  ZOrder		  322
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -12079,14 +12079,6 @@ Library {
 	  Position		  [1885, 25, 1930, 45]
 	  ZOrder		  318
 	  GotoTag		  "angle"
-	}
-	Block {
-	  BlockType		  Integrator
-	  Name			  "Integrator"
-	  SID			  "1721"
-	  Ports			  [1, 1]
-	  Position		  [1700, 160, 1730, 190]
-	  ZOrder		  324
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -12171,7 +12163,7 @@ Library {
 	  Name			  "Subsystem"
 	  SID			  "1352"
 	  Ports			  [4, 2]
-	  Position		  [1850, 256, 1950, 389]
+	  Position		  [1855, 266, 1955, 399]
 	  ZOrder		  271
 	  BlockMirror		  on
 	  BackgroundColor	  "yellow"
@@ -18250,7 +18242,7 @@ Library {
 	  Name			  "Subsystem1"
 	  SID			  "1695"
 	  Ports			  [2, 2]
-	  Position		  [1650, 342, 1705, 393]
+	  Position		  [1650, 352, 1705, 403]
 	  ZOrder		  320
 	  BlockMirror		  on
 	  MinAlgLoopOccurrences	  off
@@ -18406,7 +18398,7 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Transform  Sensor"
 	  SID			  "1647"
-	  Ports			  [0, 0, 0, 0, 0, 1, 5]
+	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [1350, 7, 1445, 163]
 	  ZOrder		  295
 	  LibraryVersion	  "1.1"
@@ -18421,7 +18413,7 @@ Library {
 	  SenseAngle3		  "off"
 	  SenseQ		  "on"
 	  SenseR		  "off"
-	  SenseOmegaX		  "on"
+	  SenseOmegaX		  "off"
 	  SenseOmegaY		  "off"
 	  SenseOmegaZ		  "on"
 	  SenseOmega1		  "off"
@@ -18465,7 +18457,7 @@ Library {
 	  Name			  "World Frame"
 	  SID			  "1648"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [1595, 192, 1625, 228]
+	  Position		  [1590, 207, 1620, 243]
 	  ZOrder		  218
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -18605,25 +18597,6 @@ Library {
 	  AffineConversion	  off
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "px5"
-	  SID			  "1720"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [1535, 175, 1560, 195]
-	  ZOrder		  323
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "nesl_utility/PS-Simulink\nConverter"
-	  SourceType		  "PS-Simulink\nConverter"
-	  PhysicalDomain	  "network_engine_domain"
-	  LeftPortType		  "input"
-	  RightPortType		  "output"
-	  SubClassName		  "ps_output"
-	  PseudoPeriodic	  off
-	  Frequencies		  "[]"
-	  Unit			  "1"
-	  AffineConversion	  off
-	}
-	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Foot"
 	  SID			  "1657"
@@ -18637,7 +18610,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Fk"
 	  SID			  "1658"
-	  Position		  [1650, 303, 1680, 317]
+	  Position		  [1660, 248, 1690, 262]
 	  ZOrder		  272
 	  BlockMirror		  on
 	  IconDisplay		  "Port number"
@@ -18646,7 +18619,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Fb"
 	  SID			  "1659"
-	  Position		  [1770, 423, 1800, 437]
+	  Position		  [1770, 433, 1800, 447]
 	  ZOrder		  273
 	  BlockMirror		  on
 	  Port			  "2"
@@ -18684,9 +18657,23 @@ Library {
 	  LineType		  "Connection"
 	  SrcBlock		  "px4"
 	  SrcPort		  LConn1
-	  Points		  [-49, 0; 0, 15]
+	  Points		  [-49, 0; 0, 5]
 	  DstBlock		  "Transform  Sensor"
-	  DstPort		  RConn4
+	  DstPort		  RConn3
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  1
+	  Points		  [-108, 0; 0, -10]
+	  Branch {
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 0; 0, -35]
+	    DstBlock		    "Fk"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  LineType		  "Connection"
@@ -18694,41 +18681,12 @@ Library {
 	  SrcPort		  LConn1
 	  Points		  [-49, 0; 0, 5]
 	  DstBlock		  "Transform  Sensor"
-	  DstPort		  RConn5
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "px5"
-	  SrcPort		  LConn1
-	  Points		  [-5, 0; 0, -100]
-	  DstBlock		  "Transform  Sensor"
-	  DstPort		  RConn3
-	}
-	Line {
-	  SrcBlock		  "Subsystem"
-	  SrcPort		  1
-	  Points		  [-158, 0]
-	  Branch {
-	    DstBlock		    "Sum"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 20]
-	    DstBlock		    "Fk"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "px5"
-	  SrcPort		  1
-	  Points		  [7, 0; 0, -10]
-	  DstBlock		  "Integrator"
-	  DstPort		  1
+	  DstPort		  RConn4
 	}
 	Line {
 	  SrcBlock		  "Subsystem1"
 	  SrcPort		  2
-	  Points		  [-77, 0; 0, -130]
+	  Points		  [-77, 0; 0, -140]
 	  DstBlock		  "p2"
 	  DstPort		  1
 	}
@@ -18788,7 +18746,7 @@ Library {
 	Line {
 	  SrcBlock		  "px4"
 	  SrcPort		  1
-	  Points		  [556, 0; 0, 275]
+	  Points		  [556, 0; 0, 285]
 	  DstBlock		  "Subsystem"
 	  DstPort		  4
 	}
@@ -18840,7 +18798,7 @@ Library {
 	}
 	Line {
 	  LineType		  "Connection"
-	  Points		  [1496, 210; 84, 0]
+	  Points		  [1496, 210; 0, 15; 79, 0]
 	  DstBlock		  "World Frame"
 	  DstPort		  RConn1
 	  Branch {
@@ -18865,7 +18823,7 @@ Library {
 	    Points		    [211, 0]
 	    Branch {
 	      Labels		      [-1, 1]
-	      Points		      [0, 245]
+	      Points		      [0, 255]
 	      DstBlock		      "Subsystem"
 	      DstPort		      2
 	    }
@@ -18885,7 +18843,7 @@ Library {
 	  SrcPort		  1
 	  Points		  [535, 0]
 	  Branch {
-	    Points		    [0, 200]
+	    Points		    [0, 210]
 	    DstBlock		    "Subsystem"
 	    DstPort		    3
 	  }
@@ -18897,7 +18855,7 @@ Library {
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  Points		  [-12, 0]
+	  Points		  [-17, 0]
 	  Branch {
 	    Points		    [0, 75]
 	    DstBlock		    "Fb"
