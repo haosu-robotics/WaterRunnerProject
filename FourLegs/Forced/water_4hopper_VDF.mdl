@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.406"
+    ComputedModelVersion    "1.407"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 423.0, 1094.0, 657.0]
+      Location		      [0.0, 19.0, 960.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,18 +56,18 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1056.0, 514.0]
+	  Extents		  [922.0, 918.0]
 	  ZoomFactor		  [0.8]
-	  Offset		  [724.27763790055008, 358.87994107345304]
+	  Offset		  [724.27763790055008, 358.879941073453]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "5473"
-	  Extents		  [905.0, 388.0]
+	  Extents		  [922.0, 918.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-124.59999999999997, -20.185524528666182]
+	  Offset		  [-124.59999999999997, -20.185524528666178]
 	}
 	PropName		"EditorsInfo"
       }
@@ -82,9 +82,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 01 11:05:12 2013"
+  LastModifiedDate	  "Thu May 02 17:42:07 2013"
   RTWModifiedTimeStamp	  289258695
-  ModelVersionFormat	  "1.%<AutoIncrement:406>"
+  ModelVersionFormat	  "1.%<AutoIncrement:407>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1155,7 +1155,7 @@ Model {
   }
   System {
     Name		    "water_4hopper_VDF"
-    Location		    [0, 423, 1094, 1080]
+    Location		    [0, 19, 960, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -6948,8 +6948,8 @@ Model {
 	  ClassName		  "Ground"
 	  CoordPosition		  "[0 0 0]"
 	  CoordPositionUnits	  "m"
-	  StateVectorMgrId	  "0"
-	  MachineId		  "[1 0]"
+	  StateVectorMgrId	  "-1"
+	  MachineId		  "[0 0]"
 	  ShowEnvPort		  on
 	}
 	Block {
@@ -11288,7 +11288,7 @@ Model {
 	  }
 	  System {
 	    Name		    "PID"
-	    Location		    [0, 549, 943, 1080]
+	    Location		    [0, 19, 960, 1080]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13032,8 +13032,8 @@ Model {
       Position		      [1495, 743, 1525, 777]
       ZOrder		      242
       Floating		      off
-      Location		      [1096, 49, 1920, 305]
-      Open		      on
+      Location		      [962, 49, 1920, 370]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -13108,8 +13108,8 @@ Model {
       BlockMirror	      on
       NamePlacement	      "alternate"
       Floating		      off
-      Location		      [1096, 337, 1920, 1078]
-      Open		      on
+      Location		      [962, 261, 1920, 441]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
       List {
@@ -13127,7 +13127,6 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.76819     0.61789     0.19478     0.11724"
       TimeRange		      "30"
       YMin		      "0"
       YMax		      "6.5"
@@ -13145,8 +13144,8 @@ Model {
       Position		      [1150, 155, 1180, 190]
       ZOrder		      201
       Floating		      off
-      Location		      [2, 49, 1094, 421]
-      Open		      on
+      Location		      [2, 49, 960, 1078]
+      Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
       List {

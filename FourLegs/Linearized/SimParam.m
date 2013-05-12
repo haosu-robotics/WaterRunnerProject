@@ -6,11 +6,11 @@ x0 = [y0; 0; theta0; 0; phi0; 0; 1];
 
 %%%%% Desired State %%%%%
 y = 0.02;
-theta = 0 *pi/180;
+theta = 5 *pi/180;
 phi = 0 *pi/180;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 1e-2;
+dTorqueAmp = 0;
 rand('seed',1);
 dTorquePhase = 2*pi*rand(1,4);
 dTorqueFreq = 0.5;
@@ -55,6 +55,8 @@ Lzmat = frame_length/2*diag(marm_z);
 
 A = leg_length;
 Amp = A;
+amp = A;
+
 r1 = 0.02;
 r2 = r1/4;
 area = 0.5449;

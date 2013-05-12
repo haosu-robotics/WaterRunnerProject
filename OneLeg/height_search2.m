@@ -55,14 +55,14 @@ save('onelegV2.mat')
 figure(3)
 plot(40:4:100,rheights3,'k')
 hold on
-plot(freqs,y_sim,'b')
+plot(freqs,y_sim,'r')
 %plot(freqs,y_pred,'r')
 %plot(freqs,y_pred2,'r')
 hold off
-axis([40, 100, 0 0.035])
+axis([40, 100, 0 0.06])
 xlabel('Frequency [rad/s]')
 ylabel('Height [m]')
-lgd = legend('Simulated Robot Height','Best-Fit Simple Model Height','Location','NorthWest','boxoff');
+lgd = legend('Simulated Robot Height','Best-Fit Simple Model Height','Location','NorthWest');
 %title('Amplitude = 0.0249 m, Projected Area = 0.9185')
 set(gca, 'Color', 'None')
 set(lgd, 'Color', 'None')

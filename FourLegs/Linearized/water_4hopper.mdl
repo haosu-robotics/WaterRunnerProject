@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.482"
+    ComputedModelVersion    "1.484"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1089.0, 669.0]
+      Location		      [0.0, 19.0, 983.0, 504.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -50,33 +50,42 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		3
+	Dimension		4
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1051.0, 526.0]
-	  ZoomFactor		  [0.5]
-	  Offset		  [-162.81400602409622, -62.650602409638509]
+	  Extents		  [945.0, 361.0]
+	  ZoomFactor		  [0.8]
+	  Offset		  [355.33756477553391, 246.09973242633407]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "7321"
-	  Extents		  [1049.0, 387.0]
+	  Extents		  [922.0, 918.0]
 	  ZoomFactor		  [0.8]
-	  Offset		  [-134.01078576878558, -192.07957158995552]
+	  Offset		  [-134.01078576878558, -192.07957158995555]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "7404"
-	  Extents		  [1049.0, 387.0]
+	  Extents		  [922.0, 918.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [-164.62161712259706, 44.765710453521507]
+	  Offset		  [-164.62161712259706, 44.765710453521478]
+	}
+	Object {
+	  $ObjectID		  8
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "4636"
+	  Extents		  [1882.0, 918.0]
+	  ZoomFactor		  [1.5]
+	  Offset		  [10.666666666666657, 56.666666666666657]
 	}
 	PropName		"EditorsInfo"
       }
@@ -91,9 +100,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu May 02 15:31:51 2013"
-  RTWModifiedTimeStamp	  289395551
-  ModelVersionFormat	  "1.%<AutoIncrement:482>"
+  LastModifiedDate	  "Thu May 02 21:53:08 2013"
+  RTWModifiedTimeStamp	  289418217
+  ModelVersionFormat	  "1.%<AutoIncrement:484>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -128,7 +137,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    9
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "water_4hopper"
     overrideMode_	    [0.0]
@@ -187,13 +196,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      10
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "30"
@@ -228,7 +237,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -260,7 +269,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -316,7 +325,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -406,7 +415,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -443,7 +452,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -458,7 +467,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  17
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -473,7 +482,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  18
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -536,7 +545,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      19
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -603,7 +612,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      20
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -684,7 +693,7 @@ Model {
 	  }
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  20
+	  $ObjectID		  21
 	  Version		  "1.0"
 	  Array {
 	    Type		    "Cell"
@@ -696,7 +705,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    MECH.SimMechanicsCC {
-	      $ObjectID		      21
+	      $ObjectID		      22
 	      Version		      "1.12.1"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
@@ -729,14 +738,14 @@ Model {
 	      OVRRIDBodyVisualizationType "NONE"
 	    }
 	    simmechanics.ConfigurationSet {
-	      $ObjectID		      22
+	      $ObjectID		      23
 	      Version		      "1.12.1"
 	      Description	      "SimMechanics 2G"
 	      Array {
 		Type			"Handle"
 		Dimension		2
 		simmechanics.DiagnosticsConfigSet {
-		  $ObjectID		  23
+		  $ObjectID		  24
 		  Version		  "1.12.1"
 		  Description		  "Diagnostics"
 		  Name			  "DiagnosticsConfigSet"
@@ -750,7 +759,7 @@ Model {
 		  SimMechanicsJointTargetOverSpecification "error"
 		}
 		simmechanics.ExplorerConfigSet {
-		  $ObjectID		  24
+		  $ObjectID		  25
 		  Version		  "1.12.1"
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
@@ -783,11 +792,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    10
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    25
+    $ObjectID		    26
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1142,7 +1151,7 @@ Model {
   }
   System {
     Name		    "water_4hopper"
-    Location		    [0, 19, 1089, 688]
+    Location		    [0, 19, 983, 523]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1154,9 +1163,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "50"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "7458"
+    SIDHighWatermark	    "7462"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1294,8 +1303,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"CPG_Network2"
-	Location		[0, 19, 1087, 549]
-	Open			off
+	Location		[0, 19, 1920, 1080]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1449,20 +1458,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    26
+	    $ObjectID		    27
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		27
+		$ObjectID		28
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FL_HL_lag"
 	      }
 	      Object {
-		$ObjectID		28
+		$ObjectID		29
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1631,20 +1640,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    29
+	    $ObjectID		    30
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		30
+		$ObjectID		31
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_FL_lag"
 	      }
 	      Object {
-		$ObjectID		31
+		$ObjectID		32
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1813,20 +1822,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    32
+	    $ObjectID		    33
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		33
+		$ObjectID		34
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_HR_lag"
 	      }
 	      Object {
-		$ObjectID		34
+		$ObjectID		35
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -2226,27 +2235,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    35
+	    $ObjectID		    36
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		36
+		$ObjectID		37
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		37
+		$ObjectID		38
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		38
+		$ObjectID		39
 		Type			"edit"
 		Name			"init_phi"
 		Prompt			"Initial Phase"
@@ -2660,27 +2669,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    39
+	    $ObjectID		    40
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		40
+		$ObjectID		41
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		41
+		$ObjectID		42
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		42
+		$ObjectID		43
 		Type			"edit"
 		Name			"init_phi"
 		Prompt			"Initial Phase"
@@ -3291,20 +3300,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    43
+	    $ObjectID		    44
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		44
+		$ObjectID		45
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"HR_HL_lag"
 	      }
 	      Object {
-		$ObjectID		45
+		$ObjectID		46
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -3472,27 +3481,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    46
+	    $ObjectID		    47
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		47
+		$ObjectID		48
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		48
+		$ObjectID		49
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		49
+		$ObjectID		50
 		Type			"edit"
 		Name			"init_phi"
 		Prompt			"Initial Phase"
@@ -3906,27 +3915,27 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    50
+	    $ObjectID		    51
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      3
 	      Object {
-		$ObjectID		51
+		$ObjectID		52
 		Type			"edit"
 		Name			"Amp"
 		Prompt			"Amplitude"
 		Value			"amp"
 	      }
 	      Object {
-		$ObjectID		52
+		$ObjectID		53
 		Type			"edit"
 		Name			"Offset"
 		Prompt			"Offset"
 		Value			"0"
 	      }
 	      Object {
-		$ObjectID		53
+		$ObjectID		54
 		Type			"edit"
 		Name			"init_phi"
 		Prompt			"Initial Phase"
@@ -6598,7 +6607,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controller"
-	Location		[0, 19, 1087, 549]
+	Location		[0, 19, 960, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6708,34 +6717,34 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    54
+	    $ObjectID		    55
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      4
 	      Object {
-		$ObjectID		55
+		$ObjectID		56
 		Type			"edit"
 		Name			"P"
 		Prompt			"Proportional Gain"
 		Value			"K_p"
 	      }
 	      Object {
-		$ObjectID		56
+		$ObjectID		57
 		Type			"edit"
 		Name			"I"
 		Prompt			"Integral Gain"
 		Value			"K_i"
 	      }
 	      Object {
-		$ObjectID		57
+		$ObjectID		58
 		Type			"edit"
 		Name			"D"
 		Prompt			"Derivative Gain"
 		Value			"K_d"
 	      }
 	      Object {
-		$ObjectID		58
+		$ObjectID		59
 		Type			"edit"
 		Name			"N"
 		Prompt			"Filter Coefficient"
@@ -7976,6 +7985,18 @@ Model {
     }
     Block {
       BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "7459"
+      Ports		      [1, 3]
+      Position		      [1551, 275, 1609, 280]
+      ZOrder		      551
+      BlockRotation	      270
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
       Name		      "Demux2"
       SID		      "4905"
       Ports		      [1, 8]
@@ -8467,6 +8488,18 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "7460"
+      Ports		      [2, 1]
+      Position		      [1571, 195, 1609, 200]
+      ZOrder		      552
+      BlockRotation	      270
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Observer"
       SID		      "7404"
@@ -8482,7 +8515,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Observer"
-	Location		[0, 19, 1087, 549]
+	Location		[0, 19, 960, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8606,20 +8639,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    59
+	    $ObjectID		    60
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		60
+		$ObjectID		61
 		Type			"edit"
 		Name			"T_win"
 		Prompt			"window (s)"
 		Value			"2*pi/freq*4"
 	      }
 	      Object {
-		$ObjectID		61
+		$ObjectID		62
 		Type			"edit"
 		Name			"x_init"
 		Prompt			"Initial condition"
@@ -8819,20 +8852,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    62
+	    $ObjectID		    63
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		63
+		$ObjectID		64
 		Type			"edit"
 		Name			"T_win"
 		Prompt			"window (s)"
 		Value			"2*pi/freq*4"
 	      }
 	      Object {
-		$ObjectID		64
+		$ObjectID		65
 		Type			"edit"
 		Name			"x_init"
 		Prompt			"Initial condition"
@@ -9108,7 +9141,7 @@ Model {
       Position		      [1520, 723, 1550, 757]
       ZOrder		      242
       Floating		      off
-      Location		      [1091, 49, 1920, 661]
+      Location		      [2, 553, 983, 1078]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -9147,7 +9180,7 @@ Model {
       NamePlacement	      "alternate"
       Floating		      off
       Location		      [2, 718, 1089, 1077]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -9216,14 +9249,14 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope6"
-      SID		      "2733"
+      Name		      "Scope4"
+      SID		      "7461"
       Ports		      [2]
-      Position		      [1072, 20, 1128, 90]
-      ZOrder		      201
+      Position		      [1547, 5, 1603, 75]
+      ZOrder		      550
       BlockRotation	      270
       Floating		      off
-      Location		      [1091, 693, 1920, 1078]
+      Location		      [985, 49, 1920, 1078]
       Open		      on
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
@@ -9244,8 +9277,46 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "30"
-      YMin		      "-0.03~-15"
-      YMax		      "0.05~10"
+      YMin		      "0.0125~-0.0225"
+      YMax		      "0.0275~0.02"
+      SaveToWorkspace	      on
+      SaveName		      "ball_position1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope6"
+      SID		      "2733"
+      Ports		      [2]
+      Position		      [1072, 20, 1128, 90]
+      ZOrder		      201
+      BlockRotation	      270
+      Floating		      off
+      Location		      [2, 553, 983, 1078]
+      Open		      on
+      NumInputPorts	      "2"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      TimeRange		      "30"
+      YMin		      "0.0125~-0.0225"
+      YMax		      "0.0275~0.02"
       SaveToWorkspace	      on
       SaveName		      "ball_position"
       DataFormat	      "StructureWithTime"
@@ -9282,8 +9353,62 @@ Model {
       SampleTime	      "0"
     }
     Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "7391"
+      Ports		      [2, 1]
+      Position		      [1460, 340, 1480, 360]
+      ZOrder		      540
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "-+|"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "3560"
+      Ports		      [2, 1]
+      Position		      [1365, 730, 1385, 750]
+      ZOrder		      244
+      BlockMirror	      on
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport Delay"
+      SID		      "7051"
+      Ports		      [1, 1]
+      Position		      [315, 260, 345, 290]
+      ZOrder		      412
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      DelayTime		      "5"
+    }
+    Block {
+      BlockType		      TransportDelay
+      Name		      "Transport Delay1"
+      SID		      "7057"
+      Ports		      [1, 1]
+      Position		      [425, 260, 455, 290]
+      ZOrder		      418
+      BlockRotation	      270
+      BlockMirror	      on
+      DelayTime		      "5"
+    }
+    Block {
       BlockType		      SubSystem
-      Name		      "Subsystem"
+      Name		      "desired output"
       SID		      "7086"
       Ports		      [0, 1]
       Position		      [1449, 230, 1491, 305]
@@ -9299,8 +9424,8 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Subsystem"
-	Location		[0, 19, 1087, 1080]
+	Name			"desired output"
+	Location		[0, 19, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9475,7 +9600,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "desired state"
+	  Name			  "desired output"
 	  SID			  "7375"
 	  Position		  [120, 350, 150, 365]
 	  ZOrder		  540
@@ -9555,64 +9680,10 @@ Model {
 	Line {
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
-	  DstBlock		  "desired state"
+	  DstBlock		  "desired output"
 	  DstPort		  1
 	}
       }
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "7391"
-      Ports		      [2, 1]
-      Position		      [1460, 340, 1480, 360]
-      ZOrder		      540
-      BlockRotation	      270
-      BlockMirror	      on
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "-+|"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum2"
-      SID		      "3560"
-      Ports		      [2, 1]
-      Position		      [1365, 730, 1385, 750]
-      ZOrder		      244
-      BlockMirror	      on
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|+-"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      TransportDelay
-      Name		      "Transport Delay"
-      SID		      "7051"
-      Ports		      [1, 1]
-      Position		      [315, 260, 345, 290]
-      ZOrder		      412
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      DelayTime		      "5"
-    }
-    Block {
-      BlockType		      TransportDelay
-      Name		      "Transport Delay1"
-      SID		      "7057"
-      Ports		      [1, 1]
-      Position		      [425, 260, 455, 290]
-      ZOrder		      418
-      BlockRotation	      270
-      BlockMirror	      on
-      DelayTime		      "5"
     }
     Block {
       BlockType		      SubSystem
@@ -9633,11 +9704,11 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		65
+	$ObjectID		66
 	$ClassName		"Simulink.Mask"
 	Object {
 	  $PropName		  "Parameters"
-	  $ObjectID		  66
+	  $ObjectID		  67
 	  $ClassName		  "Simulink.MaskParameter"
 	  Type			  "edit"
 	  Name			  "wphase"
@@ -10520,11 +10591,11 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		67
+	$ObjectID		68
 	$ClassName		"Simulink.Mask"
 	Object {
 	  $PropName		  "Parameters"
-	  $ObjectID		  68
+	  $ObjectID		  69
 	  $ClassName		  "Simulink.MaskParameter"
 	  Type			  "edit"
 	  Name			  "wphase"
@@ -11407,11 +11478,11 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		69
+	$ObjectID		70
 	$ClassName		"Simulink.Mask"
 	Object {
 	  $PropName		  "Parameters"
-	  $ObjectID		  70
+	  $ObjectID		  71
 	  $ClassName		  "Simulink.MaskParameter"
 	  Type			  "edit"
 	  Name			  "wphase"
@@ -12294,11 +12365,11 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		71
+	$ObjectID		72
 	$ClassName		"Simulink.Mask"
 	Object {
 	  $PropName		  "Parameters"
-	  $ObjectID		  72
+	  $ObjectID		  73
 	  $ClassName		  "Simulink.MaskParameter"
 	  Type			  "edit"
 	  Name			  "wphase"
@@ -13184,6 +13255,18 @@ Model {
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
+    Block {
+      BlockType		      Gain
+      Name		      "to Degrees1"
+      SID		      "7462"
+      Position		      [1575, 100, 1605, 130]
+      ZOrder		      553
+      BlockRotation	      270
+      Gain		      "180/pi"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Hand of God"
@@ -13292,7 +13375,6 @@ Model {
     Line {
       SrcBlock		      "Sine Wave"
       SrcPort		      1
-      Points		      [0, 0]
       DstBlock		      "Transport Delay"
       DstPort		      1
     }
@@ -13337,15 +13419,9 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Subsystem"
+      SrcBlock		      "desired output"
       SrcPort		      1
       DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Controller"
       DstPort		      2
     }
     Line {
@@ -13445,7 +13521,6 @@ Model {
     Line {
       SrcBlock		      "to Degrees"
       SrcPort		      1
-      Points		      [0, -5]
       DstBlock		      "Scope6"
       DstPort		      2
     }
@@ -13459,6 +13534,50 @@ Model {
       SrcBlock		      "Sum2"
       SrcPort		      1
       DstBlock		      "Demux2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [0, 49]
+      Branch {
+	Points			[110, 0]
+	DstBlock		"Demux1"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Controller"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      3
+      DstBlock		      "Mux2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "to Degrees1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "to Degrees1"
+      SrcPort		      1
+      DstBlock		      "Scope4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      DstBlock		      "Scope4"
       DstPort		      1
     }
   }
