@@ -1,12 +1,12 @@
 Model {
-  Name			  "WaterRunner"
+  Name			  "WaterRunner_oneleg"
   Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.316"
+    ComputedModelVersion    "1.311"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,7 +31,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 960.0, 1061.0]
+      Location		      [0.0, 19.0, 1061.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,16 +53,16 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"1420"
-	Extents			[922.0, 919.0]
-	ZoomFactor		[1.25]
-	Offset			[-52.471296626335359, -228.91591115613997]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1023.0, 919.0]
+	ZoomFactor		[0.767580452920143]
+	Offset			[13.928183229813513, 53.760869565217391]
       }
     }
   }
-  PhysicalModelingChecksum "1654254011"
-  PhysicalModelingParameterChecksum "3248930250"
+  PhysicalModelingChecksum "3045881408"
+  PhysicalModelingParameterChecksum "3305428420"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Thu Sep 02 21:13:30 2004"
   Creator		  "fumiyaiida"
@@ -70,9 +70,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 26 23:34:08 2013"
-  RTWModifiedTimeStamp	  288920046
-  ModelVersionFormat	  "1.%<AutoIncrement:316>"
+  LastModifiedDate	  "Tue Feb 19 19:06:23 2013"
+  RTWModifiedTimeStamp	  283201571
+  ModelVersionFormat	  "1.%<AutoIncrement:311>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -109,11 +109,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "WaterRunner"
+    model_		    "WaterRunner_oneleg"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "WaterRunner"
+      Cell		      "WaterRunner_oneleg"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -163,7 +163,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    5
+    Dimension		    6
     Simulink.ConfigSet {
       $ObjectID		      7
       Version		      "1.12.1"
@@ -2322,7 +2322,7 @@ Model {
 	  $ObjectID		  72
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "10"
+	  StopTime		  "20"
 	  AbsTol		  "auto"
 	  FixedStep		  "1e-3"
 	  InitialStep		  "auto"
@@ -2340,8 +2340,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode15s"
-	  SolverName		  "ode15s"
+	  Solver		  "ode23t"
+	  SolverName		  "ode23t"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "DisableAll"
@@ -2637,7 +2637,7 @@ Model {
 	  GenerateWebview	  off
 	  GenerateCodeMetricsReport off
 	  GenerateCodeReplacementReport	off
-	  RTWCompilerOptimization "On"
+	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
 	  Array {
@@ -2764,7 +2764,7 @@ Model {
 	      WarnOnSingularInitialAssembly on
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0.001"
 	      DisableBodyVisControl   off
@@ -2837,18 +2837,546 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration4"
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 276, 113, 1397, 1030 ] 
+      CurrentDlgPage	      "SimMechanics 1G"
+      ConfigPrmDlgPosition     [ 276, 113, 1365, 998 ] 
+    }
+    Simulink.ConfigSet {
+      $ObjectID		      87
+      Version		      "1.12.1"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  88
+	  Version		  "1.12.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10"
+	  AbsTol		  "auto"
+	  FixedStep		  "1e-3"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode15s"
+	  SolverName		  "ode15s"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "DisableAll"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  89
+	  Version		  "1.12.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  90
+	  Version		  "1.12.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "On"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  91
+	  Version		  "1.12.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  92
+	  Version		  "1.12.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "Intel->x86-64"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  64
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Zero"
+	  TargetEndianess	  "LittleEndian"
+	  TargetWordSize	  64
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "MATLAB Host"
+	  TargetUnknown		  off
+	  ProdEqTarget		  off
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  93
+	  Version		  "1.12.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  94
+	  Version		  "1.12.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  95
+	  Version		  "1.12.1"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      96
+	      Version		      "1.12.1"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      128
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Classic"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      97
+	      Version		      "1.12.1"
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SSC.SimscapeCC {
+	  $ObjectID		  98
+	  Version		  "1.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    MECH.SimMechanicsCC {
+	      $ObjectID		      99
+	      Version		      "1.12.1"
+	      Name		      "SimMechanics"
+	      WarnOnRedundantConstraints on
+	      WarnOnSingularInitialAssembly on
+	      ShowCutJoints	      off
+	      VisOnUpdateDiagram      off
+	      VisDuringSimulation     off
+	      EnableVisSimulationTime on
+	      VisSampleTime	      "0.001"
+	      DisableBodyVisControl   off
+	      ShowCG		      off
+	      ShowCS		      off
+	      ShowOnlyPortCS	      off
+	      HighlightModel	      on
+	      FramesToBeSkipped	      "0"
+	      AnimationDelay	      "1"
+	      RecordAVI		      off
+	      CompressAVI	      on
+	      AutoFitVis	      "off"
+	      EnableSelection	      on
+	      LastVizWinPosition      "[2 523 1918 455]"
+	      CamPosition	      "[0.788259;0.0309166;13.4817;]"
+	      CamTarget		      "[0.742597;-0.00982635;-0.00911848;]"
+	      CamUpVector	      "[-0.000894773;0.999995;-0.00301701;]"
+	      CamHeight		      "2.55"
+	      CamViewAngle	      "0"
+	      VisBackgroundColor      "[0.9;0.9;0.95;]"
+	      DefaultBodyColor	      "[1;0;0;]"
+	      MDLBodyVisualizationType "Convex hull from body CS locations"
+	      OVRRIDBodyVisualizationType "NONE"
+	    }
+	    simmechanics.ConfigurationSet {
+	      $ObjectID		      100
+	      Version		      "1.12.1"
+	      Description	      "SimMechanics 2G"
+	      Array {
+		Type			"Handle"
+		Dimension		2
+		simmechanics.DiagnosticsConfigSet {
+		  $ObjectID		  101
+		  Version		  "1.12.1"
+		  Description		  "Diagnostics"
+		  Name			  "DiagnosticsConfigSet"
+		  SimMechanicsInvalidVisualProperty "warning"
+		  SimMechanicsCrossSectionNullEdge "warning"
+		  SimMechanicsUnconnectedFramePorts "warning"
+		  SimMechanicsRedundantBlock "warning"
+		  SimMechanicsConflictingReferenceFrames "warning"
+		  SimMechanicsRigidlyBoundBlock	"error"
+		  SimMechanicsUnsatisfiedHighPriorityTargets "warning"
+		  SimMechanicsJointTargetOverSpecification "error"
+		}
+		simmechanics.ExplorerConfigSet {
+		  $ObjectID		  102
+		  Version		  "1.12.1"
+		  Description		  "Explorer"
+		  Name			  "ExplorerConfigSet"
+		  SimMechanicsOpenEditorOnUpdate on
+		}
+		PropName		"Components"
+	      }
+	      Name		      "SimMechanics2G"
+	    }
+	    PropName		    "Components"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  ExplicitSolverDiagnosticOptions "warning"
+	  GlobalZcOffDiagnosticOptions "warning"
+	  SimscapeLogType	  "none"
+	  SimscapeLogSimulationStatistics off
+	  SimscapeLogName	  "simlog"
+	  SimscapeLogDecimation	  1
+	  SimscapeLogLimitData	  on
+	  SimscapeLogDataHistory  5000
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration5"
+      CurrentDlgPage	      "SimMechanics 1G"
+      ConfigPrmDlgPosition     [ 276, 113, 1377, 1010 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    71
+    $ObjectID		    87
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    87
+    $ObjectID		    103
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -2921,20 +3449,12 @@ Model {
       TagVisibility	      "local"
     }
     Block {
-      BlockType		      Goto
-      IconDisplay	      "Tag"
-      TagVisibility	      "local"
-    }
-    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
       UseBusObject	      off
       BusObject		      "BusObject"
       NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      PMIOPort
     }
     Block {
       BlockType		      Scope
@@ -2958,32 +3478,6 @@ Model {
       BlockType		      Stop
     }
     Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
-      Variant		      off
-      GeneratePreprocessorConditionals off
-    }
-    Block {
-      BlockType		      Terminator
-    }
-    Block {
       BlockType		      ToWorkspace
       VariableName	      "simulink_output"
       MaxDataPoints	      "1000"
@@ -2995,9 +3489,9 @@ Model {
     }
   }
   System {
-    Name		    "WaterRunner"
-    Location		    [0, 19, 960, 1080]
-    Open		    off
+    Name		    "WaterRunner_oneleg"
+    Location		    [0, 19, 1061, 1080]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    216
     ScreenColor		    "white"
@@ -3008,15 +3502,15 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "76"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1445"
+    SIDHighWatermark	    "1446"
     Block {
       BlockType		      Reference
       Name		      "Body"
       SID		      "276"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [935, 755, 995, 795]
+      Position		      [795, 560, 855, 600]
       ZOrder		      4
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Body"
@@ -3095,7 +3589,7 @@ Model {
       Name		      "Compare\nTo Constant"
       SID		      "1377"
       Ports		      [1, 1]
-      Position		      [1205, 1045, 1235, 1075]
+      Position		      [1090, 805, 1120, 835]
       ZOrder		      -5
       LibraryVersion	      "1.281"
       SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
@@ -3107,108 +3601,10 @@ Model {
     }
     Block {
       BlockType		      Demux
-      Name		      "Demux"
-      SID		      "1210"
-      Ports		      [1, 3]
-      Position		      [185, 181, 190, 219]
-      ZOrder		      -6
-      BlockMirror	      on
-      ShowName		      off
-      Outputs		      "3"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"theta"
-	PropagatedSignals	"theta"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		2
-	Name			"x-force"
-	PropagatedSignals	"x-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		3
-	Name			"y-force"
-	PropagatedSignals	"y-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux1"
-      SID		      "1303"
-      Ports		      [1, 3]
-      Position		      [200, 321, 205, 359]
-      ZOrder		      -6
-      BlockMirror	      on
-      ShowName		      off
-      Outputs		      "3"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"theta"
-	PropagatedSignals	"theta"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		2
-	Name			"x-force"
-	PropagatedSignals	"x-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		3
-	Name			"y-force"
-	PropagatedSignals	"y-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Demux
       Name		      "Demux2"
       SID		      "1311"
       Ports		      [1, 3]
-      Position		      [1955, 196, 1960, 234]
-      ZOrder		      -6
-      ShowName		      off
-      Outputs		      "3"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"theta"
-	PropagatedSignals	"theta"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		2
-	Name			"x-force"
-	PropagatedSignals	"x-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		3
-	Name			"y-force"
-	PropagatedSignals	"y-force"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux3"
-      SID		      "1318"
-      Ports		      [1, 3]
-      Position		      [1955, 326, 1960, 364]
+      Position		      [1095, 226, 1100, 264]
       ZOrder		      -6
       ShowName		      off
       Outputs		      "3"
@@ -3240,38 +3636,8 @@ Model {
       Name		      "Demux5"
       SID		      "1400"
       Ports		      [1, 3]
-      Position		      [1480, 76, 1485, 114]
+      Position		      [620, 106, 625, 144]
       ZOrder		      -6
-      ShowName		      off
-      Outputs		      "3"
-      DisplayOption	      "bar"
-      Port {
-	PortNumber		1
-	Name			"theta"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		2
-	Name			"omega"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-      Port {
-	PortNumber		3
-	Name			"alpha"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux6"
-      SID		      "1413"
-      Ports		      [1, 3]
-      Position		      [645, 76, 650, 114]
-      ZOrder		      -6
-      BlockMirror	      on
       ShowName		      off
       Outputs		      "3"
       DisplayOption	      "bar"
@@ -3298,7 +3664,7 @@ Model {
       BlockType		      From
       Name		      "From"
       SID		      "1245"
-      Position		      [1245, 650, 1285, 670]
+      Position		      [1130, 410, 1170, 430]
       ZOrder		      -9
       GotoTag		      "xpos"
       TagVisibility	      "global"
@@ -3314,7 +3680,7 @@ Model {
       BlockType		      From
       Name		      "From1"
       SID		      "1251"
-      Position		      [1245, 697, 1285, 713]
+      Position		      [1130, 467, 1170, 483]
       ZOrder		      -9
       GotoTag		      "xvel"
       TagVisibility	      "global"
@@ -3330,7 +3696,7 @@ Model {
       BlockType		      From
       Name		      "From2"
       SID		      "1266"
-      Position		      [1245, 745, 1285, 765]
+      Position		      [1130, 505, 1170, 525]
       ZOrder		      -9
       GotoTag		      "ypos"
       TagVisibility	      "global"
@@ -3346,7 +3712,7 @@ Model {
       BlockType		      From
       Name		      "From3"
       SID		      "1267"
-      Position		      [1245, 787, 1285, 803]
+      Position		      [1130, 547, 1170, 563]
       ZOrder		      -9
       GotoTag		      "yvel"
       TagVisibility	      "global"
@@ -3362,7 +3728,7 @@ Model {
       BlockType		      From
       Name		      "From4"
       SID		      "1373"
-      Position		      [1245, 825, 1285, 845]
+      Position		      [1130, 585, 1170, 605]
       ZOrder		      -9
       GotoTag		      "xaccel"
       TagVisibility	      "global"
@@ -3377,7 +3743,7 @@ Model {
       BlockType		      From
       Name		      "From5"
       SID		      "1374"
-      Position		      [1245, 867, 1285, 883]
+      Position		      [1130, 627, 1170, 643]
       ZOrder		      -9
       GotoTag		      "yaccel"
       TagVisibility	      "global"
@@ -3392,7 +3758,7 @@ Model {
       BlockType		      From
       Name		      "From6"
       SID		      "1444"
-      Position		      [1245, 915, 1285, 935]
+      Position		      [1130, 675, 1170, 695]
       ZOrder		      -9
       GotoTag		      "theta"
       TagVisibility	      "global"
@@ -3401,473 +3767,20 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      "1445"
-      Position		      [1245, 967, 1285, 983]
+      Position		      [1130, 727, 1170, 743]
       ZOrder		      -9
       GotoTag		      "omega"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      Reference
-      Name		      "Leg FL"
-      SID		      "1370"
-      Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [525, 172, 660, 228]
-      ZOrder		      -20
-      BlockMirror	      on
-      BackgroundColor	      "magenta"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Leg"
-      SourceType	      ""
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "Leg FR"
       SID		      "1368"
       Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [1500, 187, 1635, 243]
-      ZOrder		      -21
+      Position		      [640, 217, 775, 273]
+      ZOrder		      -17
       BackgroundColor	      "magenta"
-      AncestorBlock	      "WaterRunner_lib/Leg"
-      LibraryVersion	      "*1.177"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		88
-	$ClassName		"Simulink.Mask"
-	Description		"mask for leg"
-      }
-      System {
-	Name			"Leg FR"
-	Location		[0, 19, 742, 1080]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"195"
-	SIDHighWatermark	"536"
-	SIDPrevWatermark	"533"
-	Block {
-	  BlockType		  Reference
-	  Name			  "L2_segment"
-	  SID			  "1368:43"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [190, 30, 250, 70]
-	  ZOrder		  4
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS2"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "L2_mass"
-	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "L2_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 0]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$L2_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
-	  WorkingFrames		  "Left$CS1$L2_CS1$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$L2_CS2$CS"
-	  "1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
-	  CGPos			  "L2_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "L2_CS1"
-	  CS1Rot		  "[0 0 0]"
-	  CS2Pos		  "L2_CS2"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "[]"
-	  CS3Rot		  "[]"
-	  CS4Pos		  "[]"
-	  CS4Rot		  "[]"
-	  CS5Pos		  "[]"
-	  CS5Rot		  "[]"
-	  CS6Pos		  "[]"
-	  CS6Rot		  "[]"
-	  CS7Pos		  "[]"
-	  CS7Rot		  "[]"
-	  CS8Pos		  "[]"
-	  CS8Rot		  "[]"
-	  CS9Pos		  "[]"
-	  CS9Rot		  "[]"
-	  CS10Pos		  "[]"
-	  CS10Rot		  "[]"
-	  CS11Pos		  "[]"
-	  CS11Rot		  "[]"
-	  CS12Pos		  "[]"
-	  CS12Rot		  "[]"
-	  CS13Pos		  "[]"
-	  CS13Rot		  "[]"
-	  CS14Pos		  "[]"
-	  CS14Rot		  "[]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "L3_segment"
-	  SID			  "1368:44"
-	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [420, 30, 480, 70]
-	  ZOrder		  4
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS2|CS3"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "L3_mass"
-	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "L3_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 0]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$L3_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$false$none"
-	  WorkingFrames		  "Left$CS1$L3_CS1$Adjoining$Adjoining$m$L3_ori$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$L3_CS2"
-	  "$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none#Right$CS3$L3_CS3$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
-	  CGPos			  "L3_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "L3_CS1"
-	  CS1Rot		  "L3_ori"
-	  CS2Pos		  "L3_CS2"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "L3_CS3"
-	  CS3Rot		  "[0 0 0]"
-	  CS4Pos		  "[]"
-	  CS4Rot		  "[]"
-	  CS5Pos		  "[]"
-	  CS5Rot		  "[]"
-	  CS6Pos		  "[]"
-	  CS6Rot		  "[]"
-	  CS7Pos		  "[]"
-	  CS7Rot		  "[]"
-	  CS8Pos		  "[]"
-	  CS8Rot		  "[]"
-	  CS9Pos		  "[]"
-	  CS9Rot		  "[]"
-	  CS10Pos		  "[]"
-	  CS10Rot		  "[]"
-	  CS11Pos		  "[]"
-	  CS11Rot		  "[]"
-	  CS12Pos		  "[]"
-	  CS12Rot		  "[]"
-	  CS13Pos		  "[]"
-	  CS13Rot		  "[]"
-	  CS14Pos		  "[]"
-	  CS14Rot		  "[]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "L4_segment"
-	  SID			  "1368:45"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [190, 100, 250, 140]
-	  ZOrder		  4
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS2"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "L4_mass"
-	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "L4_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 0]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$L4_CG$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$false$none"
-	  WorkingFrames		  "Left$CS1$L4_CS1$Adjoining$Adjoining$m$L4_ori$Euler X-Y-Z$rad$Adjoining$true$none#Right$CS2$L4_CS2"
-	  "$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$rad$CS1$true$none"
-	  CGPos			  "L4_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "L4_CS1"
-	  CS1Rot		  "L4_ori"
-	  CS2Pos		  "L4_CS2"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "[]"
-	  CS3Rot		  "[]"
-	  CS4Pos		  "[]"
-	  CS4Rot		  "[]"
-	  CS5Pos		  "[]"
-	  CS5Rot		  "[]"
-	  CS6Pos		  "[]"
-	  CS6Rot		  "[]"
-	  CS7Pos		  "[]"
-	  CS7Rot		  "[]"
-	  CS8Pos		  "[]"
-	  CS8Rot		  "[]"
-	  CS9Pos		  "[]"
-	  CS9Rot		  "[]"
-	  CS10Pos		  "[]"
-	  CS10Rot		  "[]"
-	  CS11Pos		  "[]"
-	  CS11Rot		  "[]"
-	  CS12Pos		  "[]"
-	  CS12Rot		  "[]"
-	  CS13Pos		  "[]"
-	  CS13Rot		  "[]"
-	  CS14Pos		  "[]"
-	  CS14Rot		  "[]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Revolute1"
-	  SID			  "1368:46"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [80, 95, 130, 145]
-	  ZOrder		  2
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/Revolute"
-	  SourceType		  "Revolute"
-	  LConnTagsString	  "__newl0"
-	  RConnTagsString	  "__newr0"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "0"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
-	  ClassName		  "Joint"
-	  DialogClass		  "JointBlock"
-	  R1Axis		  "[0 0 1]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Revolute2"
-	  SID			  "1368:47"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [305, 24, 355, 76]
-	  ZOrder		  2
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/Revolute"
-	  SourceType		  "Revolute"
-	  LConnTagsString	  "__newl0"
-	  RConnTagsString	  "__newr0"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "0"
-	  CutJoint		  "on"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
-	  ClassName		  "Joint"
-	  DialogClass		  "JointBlock"
-	  R1Axis		  "[0 0 1]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Revolute3"
-	  SID			  "1368:48"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [425, 95, 475, 145]
-	  ZOrder		  2
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/Revolute"
-	  SourceType		  "Revolute"
-	  LConnTagsString	  "__newl0"
-	  RConnTagsString	  "__newr0"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "0"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
-	  ClassName		  "Joint"
-	  DialogClass		  "JointBlock"
-	  R1Axis		  "[0 0 1]"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "motor"
-	  SID			  "1368:49"
-	  Position		  [25, 43, 55, 57]
-	  ZOrder		  -7
-	  Port			  "1"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "end"
-	  SID			  "1368:50"
-	  Position		  [605, 53, 635, 67]
-	  ZOrder		  -8
-	  BlockMirror		  on
-	  Port			  "2"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "body"
-	  SID			  "1368:51"
-	  Position		  [25, 113, 55, 127]
-	  ZOrder		  -9
-	  Port			  "3"
-	  Side			  "Left"
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "L2_segment"
-	  SrcPort		  LConn1
-	  DstBlock		  "motor"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Revolute2"
-	  SrcPort		  LConn1
-	  DstBlock		  "L2_segment"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "L3_segment"
-	  SrcPort		  LConn1
-	  DstBlock		  "Revolute2"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "L3_segment"
-	  SrcPort		  RConn1
-	  Points		  [10, 0; 0, 80]
-	  DstBlock		  "Revolute3"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Revolute1"
-	  SrcPort		  RConn1
-	  DstBlock		  "L4_segment"
-	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Revolute3"
-	  SrcPort		  LConn1
-	  DstBlock		  "L4_segment"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "body"
-	  SrcPort		  RConn1
-	  DstBlock		  "Revolute1"
-	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "end"
-	  SrcPort		  RConn1
-	  DstBlock		  "L3_segment"
-	  DstPort		  RConn2
-	}
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Leg_HL"
-      SID		      "1297"
-      Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [525, 310, 660, 365]
-      ZOrder		      -22
-      BlockMirror	      on
-      BackgroundColor	      "magenta"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Leg"
-      SourceType	      ""
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Leg_HR"
-      SID		      "1299"
-      Ports		      [0, 0, 0, 0, 0, 2, 1]
-      Position		      [1500, 315, 1635, 370]
-      ZOrder		      -23
-      BackgroundColor	      "magenta"
-      LibraryVersion	      "1.177"
+      LibraryVersion	      "1.174"
       SourceBlock	      "WaterRunner_lib/Leg"
       SourceType	      ""
     }
@@ -3876,7 +3789,7 @@ Model {
       Name		      "Machine\nEnvironment"
       SID		      "1329"
       Ports		      [0, 0, 0, 0, 0, 0, 1]
-      Position		      [245, 765, 285, 785]
+      Position		      [105, 570, 145, 590]
       ZOrder		      1
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
@@ -3910,906 +3823,38 @@ Model {
     }
     Block {
       BlockType		      Mux
-      Name		      "Mux"
-      SID		      "1213"
-      Ports		      [3, 1]
-      Position		      [100, 181, 105, 219]
-      ZOrder		      -12
-      BlockMirror	      on
-      ShowName		      off
-      Inputs		      "3"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "1304"
-      Ports		      [3, 1]
-      Position		      [115, 321, 120, 359]
-      ZOrder		      -12
-      BlockMirror	      on
-      ShowName		      off
-      Inputs		      "3"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
       Name		      "Mux2"
       SID		      "1312"
       Ports		      [3, 1]
-      Position		      [2035, 196, 2040, 234]
+      Position		      [1175, 226, 1180, 264]
       ZOrder		      -12
       ShowName		      off
       Inputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux3"
-      SID		      "1319"
-      Ports		      [3, 1]
-      Position		      [2035, 326, 2040, 364]
-      ZOrder		      -12
-      ShowName		      off
-      Inputs		      "3"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "Robot Body"
       SID		      "1291"
       Ports		      [0, 0, 0, 0, 0, 5, 4]
-      Position		      [975, 161, 1175, 429]
-      ZOrder		      -29
+      Position		      [115, 191, 315, 459]
+      ZOrder		      -20
       BackgroundColor	      "lightBlue"
-      AncestorBlock	      "WaterRunner_lib/Robot Body"
-      LibraryVersion	      "*1.177"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		89
-	$ClassName		"Simulink.Mask"
-	Object {
-	  $PropName		  "Parameters"
-	  $ObjectID		  90
-	  $ClassName		  "Simulink.MaskParameter"
-	  Type			  "edit"
-	  Name			  "initRobHeight"
-	  Prompt		  "height"
-	  Value			  "initRobHeight"
-	}
-      }
-      System {
-	Name			"Robot Body"
-	Location		[0, 282, 1920, 1080]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"88"
-	SIDHighWatermark	"528"
-	SIDPrevWatermark	"528"
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "1291:128"
-	  Ports			  [1, 3]
-	  Position		  [395, 391, 400, 479]
-	  ZOrder		  -6
-	  ShowName		  off
-	  Outputs		  "3"
-	  DisplayOption		  "bar"
-	  Port {
-	    PortNumber		    1
-	    Name		    "x-position"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "x-velocity"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux1"
-	  SID			  "1291:129"
-	  Ports			  [1, 3]
-	  Position		  [385, 516, 390, 604]
-	  ZOrder		  -6
-	  ShowName		  off
-	  Outputs		  "3"
-	  DisplayOption		  "bar"
-	  Port {
-	    PortNumber		    1
-	    Name		    "y-position"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "y-velocity"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux2"
-	  SID			  "1291:295"
-	  Ports			  [1, 2]
-	  Position		  [385, 646, 390, 719]
-	  ZOrder		  -6
-	  ShowName		  off
-	  Outputs		  "2"
-	  DisplayOption		  "bar"
-	  Port {
-	    PortNumber		    1
-	    Name		    "theta"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    2
-	    Name		    "omega"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Frame"
-	  SID			  "1291:130"
-	  Ports			  [0, 0, 0, 0, 0, 1, 9]
-	  Position		  [255, 40, 375, 330]
-	  ZOrder		  4
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Body"
-	  SourceType		  "Body"
-	  LConnTagsString	  "CS1"
-	  RConnTagsString	  "CS6|CS7|CS8|CS9|CS10|CS11|CS12|CS13|CS14"
-	  UpdateFromCAD		  "off"
-	  ClassName		  "Body"
-	  DialogClass		  "MechanicalBodyBlock"
-	  Mass			  "frame_mass"
-	  MassUnits		  "kg"
-	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "frame_inertia"
-	  Shape			  "Cylinder"
-	  ShapeDims		  "[1 1]"
-	  ShapeUnits		  "m"
-	  ShapeUse		  "false"
-	  Density		  "1"
-	  DensityUnits		  "kg/m^3"
-	  DensityUse		  "false"
-	  GraphicsMode		  "CONVHULL"
-	  BodyColorSelMode	  "COLORPALETTE"
-	  BodyColor		  "[0 0 1]"
-	  AttachedToCS		  "CG"
-	  CG			  "Left$CG$frame_CG$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
-	  WorkingFrames		  "Left$CS1$frame_CA$World$World$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$frame_FR$World$"
-	  "World$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Right$CS4$frame_FL$World$World$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$fal"
-	  "se$none#Right$CS3$frame_HR$World$World$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Right$CS5$frame_HL$WORLD$WORLD$m$"
-	  "[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none#Right$CS6$frame_motor_FR$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$"
-	  "none#Right$CS7$frame_motor_FL$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS8$frame_motor_HR$WORLD$"
-	  "WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS9$frame_motor_HL$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORL"
-	  "D$true$none#Right$CS10$frame_passive_FR$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS11$frame_pass"
-	  "ive_FL$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS12$frame_passive_HR$WORLD$WORLD$m$[0 0 0]$Eule"
-	  "r X-Y-Z$deg$WORLD$true$none#Right$CS13$frame_passive_HL$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right"
-	  "$CS14$frame_motor_Tail$WORLD$WORLD$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
-	  CGPos			  "frame_CG"
-	  CGRot			  "[0 0 0]"
-	  CS0Pos		  "[]"
-	  CS0Rot		  "[]"
-	  CS1Pos		  "frame_CA"
-	  CS1Rot		  "[0 0 0]"
-	  CS2Pos		  "frame_FR"
-	  CS2Rot		  "[0 0 0]"
-	  CS3Pos		  "frame_HR"
-	  CS3Rot		  "[0 0 0]"
-	  CS4Pos		  "frame_FL"
-	  CS4Rot		  "[0 0 0]"
-	  CS5Pos		  "frame_HL"
-	  CS5Rot		  "[0 0 0]"
-	  CS6Pos		  "frame_motor_FR"
-	  CS6Rot		  "[0 0 0]"
-	  CS7Pos		  "frame_motor_FL"
-	  CS7Rot		  "[0 0 0]"
-	  CS8Pos		  "frame_motor_HR"
-	  CS8Rot		  "[0 0 0]"
-	  CS9Pos		  "frame_motor_HL"
-	  CS9Rot		  "[0 0 0]"
-	  CS10Pos		  "frame_passive_FR"
-	  CS10Rot		  "[0 0 0]"
-	  CS11Pos		  "frame_passive_FL"
-	  CS11Rot		  "[0 0 0]"
-	  CS12Pos		  "frame_passive_HR"
-	  CS12Rot		  "[0 0 0]"
-	  CS13Pos		  "frame_passive_HL"
-	  CS13Rot		  "[0 0 0]"
-	  CS14Pos		  "frame_motor_Tail"
-	  CS14Rot		  "[0 0 0]"
-	  CS15Pos		  "[]"
-	  CS15Rot		  "[]"
-	  CS16Pos		  "[]"
-	  CS16Rot		  "[]"
-	  CS17Pos		  "[]"
-	  CS17Rot		  "[]"
-	  CS18Pos		  "[]"
-	  CS18Rot		  "[]"
-	  CS19Pos		  "[]"
-	  CS19Rot		  "[]"
-	  CS20Pos		  "[]"
-	  CS20Rot		  "[]"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto"
-	  SID			  "1291:131"
-	  Position		  [595, 397, 635, 413]
-	  ZOrder		  -10
-	  GotoTag		  "xpos"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto1"
-	  SID			  "1291:132"
-	  Position		  [590, 523, 630, 537]
-	  ZOrder		  -10
-	  GotoTag		  "ypos"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto2"
-	  SID			  "1291:133"
-	  Position		  [595, 427, 635, 443]
-	  ZOrder		  -10
-	  GotoTag		  "xvel"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto3"
-	  SID			  "1291:134"
-	  Position		  [590, 554, 630, 566]
-	  ZOrder		  -10
-	  GotoTag		  "yvel"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto4"
-	  SID			  "1291:296"
-	  Position		  [590, 656, 630, 674]
-	  ZOrder		  -10
-	  GotoTag		  "theta"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto5"
-	  SID			  "1291:297"
-	  Position		  [590, 692, 630, 708]
-	  ZOrder		  -10
-	  GotoTag		  "omega"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto6"
-	  SID			  "1291:494"
-	  Position		  [595, 457, 635, 473]
-	  ZOrder		  -10
-	  GotoTag		  "xaccel"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Goto
-	  Name			  "Goto7"
-	  SID			  "1291:495"
-	  Position		  [590, 584, 630, 596]
-	  ZOrder		  -10
-	  GotoTag		  "yaccel"
-	  TagVisibility		  "global"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "In-plane"
-	  SID			  "1291:527"
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [95, 175, 145, 225]
-	  ZOrder		  13
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Joints/In-plane"
-	  SourceType		  "In-plane"
-	  LConnTagsString	  "__newl0|SA1|SA2"
-	  RConnTagsString	  "__newr0|SA1|SA2"
-	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "4"
-	  CutJoint		  "off"
-	  MarkAsCut		  "off"
-	  Primitives		  "prismatic"
-	  PrimitiveProps	  "P1$World$[1 0 0]$prismatic#P2$World$[0 1 0]$prismatic"
-	  ClassName		  "InplaneJoint"
-	  DialogClass		  "JointBlock"
-	  P1Axis		  "[1 0 0]"
-	  P2Axis		  "[0 1 0]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Joint Initial Condition"
-	  SID			  "1291:136"
-	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [100, 40, 140, 80]
-	  ZOrder		  7
-	  BlockMirror		  on
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
-	  SourceType		  "Joint Initial Condition"
-	  UpdateFromCAD		  "off"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
-	  PhysicalDomain	  "mechanical"
-	  ClassName		  "InitialCondition"
-	  DialogClass		  "InitialConditionBlock"
-	  InitialConditions	  "P1$true$0$m$deg$0$m/s$deg/s#P2$false$initRobHeight$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m/s$de"
-	  "g/s#R1$false$0$m$rad$0$m/s$rad/s#R2$false$0$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m$deg$0$m/s$de"
-	  "g/s"
-	  P1PIC			  "0"
-	  P1VIC			  "0"
-	  P2PIC			  "0"
-	  P2VIC			  "0"
-	  P3PIC			  "0"
-	  P3VIC			  "0"
-	  R1PIC			  "0"
-	  R1VIC			  "0"
-	  R2PIC			  "0"
-	  R2VIC			  "0"
-	  R3PIC			  "0"
-	  R3VIC			  "0"
-	  SPIC			  "0"
-	  SVIC			  "0"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Joint Sensor"
-	  SID			  "1291:137"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 415, 320, 455]
-	  ZOrder		  5
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
-	  SourceType		  "Joint Sensor"
-	  UpdateFromCAD		  "off"
-	  PhysicalDomain	  "Mechanical"
-	  PortType		  "blob"
-	  Muxed			  "on"
-	  Pose			  "off"
-	  Angle			  "on"
-	  AngleUnits		  "deg"
-	  ArcVelocity		  "off"
-	  ArcVelocityUnits	  "deg/s"
-	  ArcAcceleration	  "off"
-	  ArcAccelerationUnits	  "deg/s^2"
-	  CoordPosition		  "on"
-	  CoordPositionUnits	  "m"
-	  Velocity		  "on"
-	  VelocityUnits		  "m/s"
-	  Acceleration		  "on"
-	  AccelerationUnits	  "m/s^2"
-	  Quaternion		  "on"
-	  QuaternionDT		  "off"
-	  QuaternionDDT		  "off"
-	  QuaternionUnits	  "off"
-	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
-	  Width			  "3"
-	  ClassName		  "JointSensor"
-	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P1"
-	  Force			  "off"
-	  ForceUnits		  "N"
-	  Torque		  "off"
-	  TorqueUnits		  "N*m"
-	  ReferenceFrame	  "Absolute (World)"
-	  ReactionSensedSide	  "Base"
-	  ReactionReferenceFrame  "Absolute (World)"
-	  ReactionForce		  "off"
-	  ReactionForceUnits	  "N"
-	  ReactionMoment	  "off"
-	  ReactionMomentUnits	  "N*m"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Joint Sensor1"
-	  SID			  "1291:138"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 540, 320, 580]
-	  ZOrder		  5
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
-	  SourceType		  "Joint Sensor"
-	  UpdateFromCAD		  "off"
-	  PhysicalDomain	  "Mechanical"
-	  PortType		  "blob"
-	  Muxed			  "on"
-	  Pose			  "off"
-	  Angle			  "on"
-	  AngleUnits		  "deg"
-	  ArcVelocity		  "off"
-	  ArcVelocityUnits	  "deg/s"
-	  ArcAcceleration	  "off"
-	  ArcAccelerationUnits	  "deg/s^2"
-	  CoordPosition		  "on"
-	  CoordPositionUnits	  "m"
-	  Velocity		  "on"
-	  VelocityUnits		  "m/s"
-	  Acceleration		  "on"
-	  AccelerationUnits	  "m/s^2"
-	  Quaternion		  "on"
-	  QuaternionDT		  "off"
-	  QuaternionDDT		  "off"
-	  QuaternionUnits	  "off"
-	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
-	  Width			  "3"
-	  ClassName		  "JointSensor"
-	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P2"
-	  Force			  "off"
-	  ForceUnits		  "N"
-	  Torque		  "off"
-	  TorqueUnits		  "N*m"
-	  ReferenceFrame	  "Absolute (World)"
-	  ReactionSensedSide	  "Base"
-	  ReactionReferenceFrame  "Absolute (World)"
-	  ReactionForce		  "off"
-	  ReactionForceUnits	  "N"
-	  ReactionMoment	  "off"
-	  ReactionMomentUnits	  "N*m"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Joint Sensor2"
-	  SID			  "1291:287"
-	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [280, 665, 320, 705]
-	  ZOrder		  5
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
-	  SourceType		  "Joint Sensor"
-	  UpdateFromCAD		  "off"
-	  PhysicalDomain	  "Mechanical"
-	  PortType		  "blob"
-	  Muxed			  "on"
-	  Pose			  "off"
-	  Angle			  "on"
-	  AngleUnits		  "rad"
-	  ArcVelocity		  "on"
-	  ArcVelocityUnits	  "rad/s"
-	  ArcAcceleration	  "off"
-	  ArcAccelerationUnits	  "deg/s^2"
-	  CoordPosition		  "on"
-	  CoordPositionUnits	  "m"
-	  Velocity		  "on"
-	  VelocityUnits		  "m/s"
-	  Acceleration		  "off"
-	  AccelerationUnits	  "m/s^2"
-	  Quaternion		  "on"
-	  QuaternionDT		  "off"
-	  QuaternionDDT		  "off"
-	  QuaternionUnits	  "off"
-	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
-	  Width			  "2"
-	  ClassName		  "JointSensor"
-	  DialogClass		  "MechanicalSensorBlock"
-	  Primitive		  "P1"
-	  Force			  "off"
-	  ForceUnits		  "N"
-	  Torque		  "off"
-	  TorqueUnits		  "N*m"
-	  ReferenceFrame	  "Absolute (World)"
-	  ReactionSensedSide	  "Base"
-	  ReactionReferenceFrame  "Absolute (World)"
-	  ReactionForce		  "off"
-	  ReactionForceUnits	  "N"
-	  ReactionMoment	  "off"
-	  ReactionMomentUnits	  "N*m"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Machine\nEnvironment"
-	  SID			  "1291:139"
-	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [32, 420, 68, 450]
-	  ZOrder		  -23
-	  BlockRotation		  270
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Bodies/Machine\nEnvironment"
-	  SourceType		  "Machine Environment"
-	  PortType		  "env"
-	  PhysicalDomain	  "Mechanical"
-	  ClassName		  "Environment"
-	  DialogTemplateClass	  "MECH.MachineEnvironment"
-	  SyncWhenCopied	  "off"
-	  Gravity		  "[0 -9.81 0]"
-	  GravityUnits		  "m/s^2"
-	  GravityAsSignal	  off
-	  Dimensionality	  "Auto-detect"
-	  AnalysisType		  "Forward dynamics"
-	  LinearAssemblyTolerance "1e-3"
-	  LinearAssemblyToleranceUnits "m"
-	  AngularAssemblyTolerance "1e-3"
-	  AngularAssemblyToleranceUnits	"rad"
-	  ConstraintSolverType	  "Stabilizing"
-	  ConstraintRelTolerance  "1e-4"
-	  ConstraintAbsTolerance  "1e-4"
-	  UseRobustSingularityHandling off
-	  RedundancyAnalysisToleranceType "Automatically select tolerance"
-	  RedundancyAnalysisTolerance "1e-14"
-	  StatePerturbationType	  "Fixed"
-	  PerturbationSize	  "1e-5"
-	  VisualizeMachine	  on
-	  BodyVisualizationType	  "Use model default body geometries"
-	  BodyColorSelMode	  "Use model default"
-	  DefaultBodyColor	  "[1 0 0]"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "RootGround"
-	  SID			  "1291:140"
-	  Ports			  [0, 0, 0, 0, 0, 1, 1]
-	  Position		  [26, 240, 74, 285]
-	  ZOrder		  -24
-	  BlockRotation		  270
-	  LibraryVersion	  "1.1"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag0"
-	  SourceBlock		  "mblibv1/Bodies/Ground"
-	  SourceType		  "Ground"
-	  UpdateFromCAD		  "on"
-	  LeftPortType		  "env"
-	  RightPortType		  "workingframe"
-	  PhysicalDomain	  "Mechanical"
-	  DialogClass		  "GroundBlock"
-	  ClassName		  "Ground"
-	  CoordPosition		  "[0 0 0]"
-	  CoordPositionUnits	  "m"
-	  StateVectorMgrId	  "1"
-	  MachineId		  "[1 1]"
-	  ShowEnvPort		  on
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Motor_FR"
-	  SID			  "1291:141"
-	  Position		  [415, 43, 445, 57]
-	  ZOrder		  -25
-	  BlockMirror		  on
-	  Port			  "1"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "passive_FR"
-	  SID			  "1291:142"
-	  Position		  [415, 183, 445, 197]
-	  ZOrder		  -26
-	  BlockMirror		  on
-	  Port			  "2"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Motor_FL"
-	  SID			  "1291:143"
-	  Position		  [465, 78, 495, 92]
-	  ZOrder		  -27
-	  BlockMirror		  on
-	  Port			  "3"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "passive_FL"
-	  SID			  "1291:144"
-	  Position		  [465, 218, 495, 232]
-	  ZOrder		  -28
-	  BlockMirror		  on
-	  Port			  "4"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Motor_HR"
-	  SID			  "1291:145"
-	  Position		  [530, 113, 560, 127]
-	  ZOrder		  -29
-	  BlockMirror		  on
-	  Port			  "5"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "passive_HR"
-	  SID			  "1291:146"
-	  Position		  [530, 253, 560, 267]
-	  ZOrder		  -30
-	  BlockMirror		  on
-	  Port			  "6"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Motor_HL"
-	  SID			  "1291:147"
-	  Position		  [595, 148, 625, 162]
-	  ZOrder		  -31
-	  BlockMirror		  on
-	  Port			  "7"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "passive_HL"
-	  SID			  "1291:148"
-	  Position		  [620, 288, 650, 302]
-	  ZOrder		  -32
-	  BlockMirror		  on
-	  Port			  "8"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Motor_Tail"
-	  SID			  "1291:229"
-	  Position		  [415, 318, 445, 332]
-	  ZOrder		  -33
-	  BlockMirror		  on
-	  Port			  "9"
-	  Side			  "Left"
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  3
-	  DstBlock		  "Goto7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  DstBlock		  "Goto6"
-	  DstPort		  1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
-	  SrcPort		  LConn3
-	  Points		  [0, 35; 110, 0; 0, 435]
-	  DstBlock		  "Joint Sensor2"
-	  DstPort		  LConn1
-	}
-	Line {
-	  SrcBlock		  "Joint Sensor2"
-	  SrcPort		  1
-	  DstBlock		  "Demux2"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "omega"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux2"
-	  SrcPort		  2
-	  DstBlock		  "Goto5"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "theta"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux2"
-	  SrcPort		  1
-	  DstBlock		  "Goto4"
-	  DstPort		  1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
-	  SrcPort		  RConn3
-	  Points		  [66, 0; 0, 220]
-	  DstBlock		  "Joint Sensor"
-	  DstPort		  LConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Motor_Tail"
-	  SrcPort		  RConn1
-	  Points		  [-5, 0; 0, -20]
-	  DstBlock		  "Frame"
-	  DstPort		  RConn9
-	}
-	Line {
-	  Name			  "y-velocity"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux1"
-	  SrcPort		  2
-	  DstBlock		  "Goto3"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "y-position"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux1"
-	  SrcPort		  1
-	  DstBlock		  "Goto1"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "x-velocity"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  DstBlock		  "Goto2"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "x-position"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  DstBlock		  "Goto"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Joint Sensor1"
-	  SrcPort		  1
-	  DstBlock		  "Demux1"
-	  DstPort		  1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
-	  SrcPort		  RConn2
-	  Points		  [38, 0; 0, 360]
-	  DstBlock		  "Joint Sensor1"
-	  DstPort		  LConn1
-	}
-	Line {
-	  SrcBlock		  "Joint Sensor"
-	  SrcPort		  1
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "In-plane"
-	  SrcPort		  LConn2
-	  Points		  [-17, 0; 0, -140]
-	  DstBlock		  "Joint Initial Condition"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn8
-	  Points		  [0, 20]
-	  DstBlock		  "passive_HL"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn7
-	  Points		  [0, 15]
-	  DstBlock		  "passive_HR"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn6
-	  Points		  [0, 10]
-	  DstBlock		  "passive_FL"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn5
-	  Points		  [0, 5]
-	  DstBlock		  "passive_FR"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn4
-	  DstBlock		  "Motor_HL"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn3
-	  Points		  [0, -5]
-	  DstBlock		  "Motor_HR"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn2
-	  Points		  [0, -10]
-	  DstBlock		  "Motor_FL"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Frame"
-	  SrcPort		  RConn1
-	  Points		  [0, -15]
-	  DstBlock		  "Motor_FR"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  Labels		  [0, 1]
-	  SrcBlock		  "In-plane"
-	  SrcPort		  LConn1
-	  Points		  [-30, 0]
-	  DstBlock		  "RootGround"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RootGround"
-	  SrcPort		  LConn1
-	  DstBlock		  "Machine\nEnvironment"
-	  DstPort		  RConn1
-	}
-	Line {
-	  LineType		  "Connection"
-	  Labels		  [0, 0]
-	  SrcBlock		  "In-plane"
-	  SrcPort		  RConn1
-	  DstBlock		  "Frame"
-	  DstPort		  LConn1
-	}
-	Annotation {
-	  SID			  "1291:374"
-	  Position		  [376, 311]
-	}
-      }
+      LibraryVersion	      "1.174"
+      SourceBlock	      "WaterRunner_lib/Robot Body"
+      SourceType	      ""
+      initRobHeight	      "initRobHeight"
     }
     Block {
       BlockType		      Reference
       Name		      "RootGround1"
       SID		      "275"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [465, 751, 510, 799]
-      ZOrder		      -30
+      Position		      [325, 556, 370, 604]
+      ZOrder		      -21
       LibraryVersion	      "1.1"
       UserDataPersistent      on
-      UserData		      "DataTag1"
+      UserData		      "DataTag0"
       SourceBlock	      "mblibv1/Bodies/Ground"
       SourceType	      "Ground"
       UpdateFromCAD	      "on"
@@ -4820,97 +3865,22 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "4"
+      MachineId		      "[3 0]"
       ShowEnvPort	      on
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "1226"
-      Ports		      [1]
-      Position		      [30, 184, 60, 216]
-      ZOrder		      -16
-      BlockMirror	      on
-      Floating		      off
-      Location		      [2, 49, 960, 1078]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[1 1 1]"
-	AxesColor		"[1 1 1]"
-	AxesTickColor		"[0 0 0]"
-	LineColors		"[0 0 1;1 0 0;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.86404     0.89796    0.098643    0.064383"
-      TimeRange		      "2"
-      YMin		      "-2.5"
-      YMax		      "2"
-      SaveToWorkspace	      on
-      SaveName		      "FootForce_FL"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "1305"
-      Ports		      [1]
-      Position		      [30, 324, 60, 356]
-      ZOrder		      -16
-      BlockMirror	      on
-      Floating		      off
-      Location		      [2, 49, 960, 1078]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[1 1 1]"
-	AxesColor		"[1 1 1]"
-	AxesTickColor		"[0 0 0]"
-	LineColors		"[0 0 1;1 0 0;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.86352     0.90233    0.098643    0.064383"
-      TimeRange		      "2"
-      YMin		      "-2.5"
-      YMax		      "2"
-      SaveToWorkspace	      on
-      SaveName		      "FootForce_HL"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope2"
       SID		      "1246"
       Ports		      [4]
-      Position		      [1450, 788, 1590, 1022]
+      Position		      [1335, 548, 1475, 782]
       ZOrder		      -16
       Floating		      off
-      Location		      [962, 49, 1920, 547]
-      Open		      on
+      Location		      [1, 48, 1060, 709]
+      Open		      off
       NumInputPorts	      "4"
-      ZoomMode		      "yonly"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -4929,11 +3899,11 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.84878     0.94242     0.11326    0.050201\n0.84774     0.70432      0.1143    0.050201\n"
-      "0.84774      0.4672      0.1143    0.050201\n 0.8467     0.22813     0.11534    0.050201"
-      TimeRange		      "10"
-      YMin		      "-0.25~0~-0.005~-0.3"
-      YMax		      "2~2.5~0.035~0.4"
+      LegendLocations	      "0.85401     0.76365     0.10246    0.037821\n0.85301     0.57295      0.1034    0.037821\n"
+      "0.85301     0.38225      0.1034    0.037821\n0.85202     0.19155     0.10434    0.037821"
+      TimeRange		      "2"
+      YMin		      "-12.5~-20~-0.05~-2"
+      YMax		      "20~25~0.4~3.5"
       SaveToWorkspace	      on
       SaveName		      "position"
       DataFormat	      "StructureWithTime"
@@ -4945,10 +3915,10 @@ Model {
       Name		      "Scope3"
       SID		      "1313"
       Ports		      [1]
-      Position		      [2080, 198, 2110, 232]
+      Position		      [1220, 228, 1250, 262]
       ZOrder		      -16
       Floating		      off
-      Location		      [2, 49, 742, 1078]
+      Location		      [1, 48, 1060, 709]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -4967,87 +3937,12 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
+      LegendLocations	      "0.86642     0.92507    0.089235     0.10023"
       TimeRange		      "2"
-      YMin		      "-2.5"
-      YMax		      "2"
+      YMin		      "-2"
+      YMax		      "6"
       SaveToWorkspace	      on
       SaveName		      "FootForce_FR"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope4"
-      SID		      "1320"
-      Ports		      [1]
-      Position		      [2080, 329, 2110, 361]
-      ZOrder		      -16
-      Floating		      off
-      Location		      [2, 49, 960, 1078]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "xonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[1 1 1]"
-	AxesColor		"[1 1 1]"
-	AxesTickColor		"[0 0 0]"
-	LineColors		"[0 0 1;1 0 0;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      on
-      LegendLocations	      "0.86352     0.90233    0.098643    0.064383"
-      TimeRange		      "2"
-      YMin		      "-2.5"
-      YMax		      "2"
-      SaveToWorkspace	      on
-      SaveName		      "FootForce_HR"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope6"
-      SID		      "1414"
-      Ports		      [3]
-      Position		      [525, 78, 555, 112]
-      ZOrder		      -16
-      BlockMirror	      on
-      Floating		      off
-      Location		      [962, 539, 1920, 1078]
-      Open		      off
-      NumInputPorts	      "3"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-	axes2			"%<SignalLabel>"
-	axes3			"%<SignalLabel>"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[1 1 1]"
-	AxesColor		"[1 1 1]"
-	AxesTickColor		"[0 0 0]"
-	LineColors		"[0 0 1;1 0 0;0 0.498039215686275 0;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      TimeRange		      "2"
-      YMin		      "-20~-90~-50000"
-      YMax		      "-2.5~0~30000"
-      SaveToWorkspace	      on
-      SaveName		      "MotorMotion1"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -5057,7 +3952,7 @@ Model {
       Name		      "Scope7"
       SID		      "1402"
       Ports		      [3]
-      Position		      [1555, 78, 1585, 112]
+      Position		      [695, 108, 725, 142]
       ZOrder		      -16
       Floating		      off
       Location		      [2, 539, 960, 1078]
@@ -5093,47 +3988,15 @@ Model {
       BlockType		      Stop
       Name		      "Stop Simulation"
       SID		      "1376"
-      Position		      [1345, 1027, 1380, 1063]
+      Position		      [1230, 787, 1265, 823]
       ZOrder		      -4
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Tail"
-      SID		      "1441"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1135, 480, 1235, 540]
-      ZOrder		      -39
-      BackgroundColor	      "magenta"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Tail"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Tail Pad"
-      SID		      "1442"
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1300, 486, 1420, 534]
-      ZOrder		      -40
-      BackgroundColor	      "orange"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Tail Pad"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator"
-      SID		      "1443"
-      Position		      [1490, 500, 1510, 520]
-      ZOrder		      -5
-      NamePlacement	      "alternate"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
       SID		      "1380"
       Ports		      [1]
-      Position		      [1330, 1105, 1390, 1135]
+      Position		      [1215, 865, 1275, 895]
       ZOrder		      -7
       VariableName	      "stopped"
       MaxDataPoints	      "inf"
@@ -5142,51 +4005,13 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Water Foot+HL"
-      SID		      "1306"
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [260, 301, 450, 379]
-      ZOrder		      -43
-      BlockMirror	      on
-      BackgroundColor	      "orange"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Water Foot_FL"
-      SID		      "1300"
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [260, 161, 450, 239]
-      ZOrder		      -44
-      BlockMirror	      on
-      BackgroundColor	      "orange"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Water Foot_FR"
       SID		      "1309"
       Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1705, 176, 1895, 254]
-      ZOrder		      -45
+      Position		      [845, 206, 1035, 284]
+      ZOrder		      -27
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/Water Foot"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Water Foot_HR"
-      SID		      "1321"
-      Ports		      [0, 1, 0, 0, 0, 1]
-      Position		      [1705, 306, 1895, 384]
-      ZOrder		      -46
-      BackgroundColor	      "orange"
-      LibraryVersion	      "1.177"
+      LibraryVersion	      "1.174"
       SourceBlock	      "WaterRunner_lib/Water Foot"
       SourceType	      "SubSystem"
     }
@@ -5195,7 +4020,7 @@ Model {
       Name		      "Weld"
       SID		      "274"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [725, 750, 775, 800]
+      Position		      [585, 555, 635, 605]
       ZOrder		      9
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Joints/Weld"
@@ -5217,72 +4042,14 @@ Model {
       Name		      "motor"
       SID		      "1420"
       Ports		      [0, 1, 0, 0, 0, 1, 1]
-      Position		      [1235, 168, 1345, 232]
-      ZOrder		      -48
-      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
-      LibraryVersion	      "1.177"
+      Position		      [375, 198, 485, 262]
+      ZOrder		      -29
+      BackgroundColor	      "yellow"
+      LibraryVersion	      "1.174"
       SourceBlock	      "WaterRunner_lib/motor"
       SourceType	      ""
       variableName	      "work_FR"
       ic_angle		      "0"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "motor1"
-      SID		      "1421"
-      Ports		      [0, 1, 0, 0, 0, 1, 1]
-      Position		      [1235, 298, 1345, 362]
-      ZOrder		      -49
-      BackgroundColor	      "yellow"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/motor"
-      SourceType	      ""
-      variableName	      "work_HR"
-      ic_angle		      "pi"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "motor2"
-      SID		      "1422"
-      Ports		      [0, 1, 0, 0, 0, 1, 1]
-      Position		      [735, 263, 845, 327]
-      ZOrder		      -50
-      BlockMirror	      on
-      BackgroundColor	      "yellow"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/motor"
-      SourceType	      ""
-      variableName	      "work_HL"
-      ic_angle		      "0"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "motor3"
-      SID		      "1423"
-      Ports		      [0, 1, 0, 0, 0, 1, 1]
-      Position		      [735, 153, 845, 217]
-      ZOrder		      -51
-      BlockMirror	      on
-      BackgroundColor	      "yellow"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/motor"
-      SourceType	      ""
-      variableName	      "work_FL"
-      ic_angle		      "pi"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "servo"
-      SID		      "1440"
-      Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [975, 478, 1085, 542]
-      ZOrder		      -52
-      BackgroundColor	      "yellow"
-      LibraryVersion	      "1.177"
-      SourceBlock	      "WaterRunner_lib/servo"
-      SourceType	      ""
-      tail_angle	      "tail_angle"
-      VariableName	      "work_tail"
     }
     Block {
       BlockType		      Scope
@@ -5290,7 +4057,7 @@ Model {
       SID		      "1208"
       Ports		      []
       Position		      [185, 14, 215, 46]
-      ZOrder		      -53
+      ZOrder		      -30
       IOType		      "viewer"
       Floating		      on
       Location		      [2, 49, 1920, 637]
@@ -5355,91 +4122,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Robot Body"
-      SrcPort		      RConn3
-      DstBlock		      "motor1"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      Labels		      [0, 0]
-      SrcBlock		      "Leg_HR"
-      SrcPort		      LConn1
-      Points		      [-60, 0; 0, 15]
-      DstBlock		      "motor1"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Leg_HR"
-      SrcPort		      LConn2
-      Points		      [0, 40]
-      DstBlock		      "Robot Body"
-      DstPort		      RConn4
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Water Foot+HL"
-      SrcPort		      LConn1
-      DstBlock		      "Leg_HL"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Water Foot_FL"
-      SrcPort		      LConn1
-      DstBlock		      "Leg FL"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Robot Body"
-      SrcPort		      LConn4
-      DstBlock		      "Leg_HL"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
       SrcBlock		      "Leg FR"
       SrcPort		      RConn1
       DstBlock		      "Water Foot_FR"
       DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Water Foot_FL"
-      SrcPort		      1
-      DstBlock		      "Demux"
-      DstPort		      1
-    }
-    Line {
-      Name		      "theta"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      Name		      "x-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "Mux"
-      DstPort		      2
-    }
-    Line {
-      Name		      "y-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux"
-      SrcPort		      3
-      DstBlock		      "Mux"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      DstBlock		      "Scope"
-      DstPort		      1
     }
     Line {
       Name		      "y-position"
@@ -5448,51 +4134,15 @@ Model {
       SrcPort		      1
       Points		      [70, 0; 0, 20]
       Branch {
-	Points			[0, 160]
-	DstBlock		"Scope2"
-	DstPort			3
-      }
-      Branch {
 	Points			[-170, 0]
 	DstBlock		"Compare\nTo Constant"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "Water Foot+HL"
-      SrcPort		      1
-      DstBlock		      "Demux1"
-      DstPort		      1
-    }
-    Line {
-      Name		      "theta"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux1"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      Name		      "x-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux1"
-      SrcPort		      2
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      Name		      "y-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux1"
-      SrcPort		      3
-      DstBlock		      "Mux1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "Scope1"
-      DstPort		      1
+      Branch {
+	Points			[0, 160]
+	DstBlock		"Scope2"
+	DstPort			3
+      }
     }
     Line {
       SrcBlock		      "Mux2"
@@ -5529,80 +4179,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Demux2"
       DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Leg_HR"
-      SrcPort		      RConn1
-      DstBlock		      "Water Foot_HR"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Mux3"
-      SrcPort		      1
-      DstBlock		      "Scope4"
-      DstPort		      1
-    }
-    Line {
-      Name		      "y-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux3"
-      SrcPort		      3
-      DstBlock		      "Mux3"
-      DstPort		      3
-    }
-    Line {
-      Name		      "x-force"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux3"
-      SrcPort		      2
-      DstBlock		      "Mux3"
-      DstPort		      2
-    }
-    Line {
-      Name		      "theta"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux3"
-      SrcPort		      1
-      DstBlock		      "Mux3"
-      DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Robot Body"
-      SrcPort		      LConn1
-      DstBlock		      "motor3"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "motor2"
-      SrcPort		      RConn1
-      Points		      [-30, 0; 0, 15]
-      DstBlock		      "Leg_HL"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "motor2"
-      SrcPort		      LConn1
-      DstBlock		      "Robot Body"
-      DstPort		      LConn3
-    }
-    Line {
-      SrcBlock		      "Water Foot_HR"
-      SrcPort		      1
-      DstBlock		      "Demux3"
-      DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      Labels		      [2, 0]
-      SrcBlock		      "Leg FL"
-      SrcPort		      LConn2
-      Points		      [15, 0; 0, 25]
-      DstBlock		      "Robot Body"
-      DstPort		      LConn2
     }
     Line {
       LineType		      "Connection"
@@ -5659,119 +4235,50 @@ Model {
       DstPort		      1
     }
     Line {
-      LineType		      "Connection"
-      SrcBlock		      "Leg FL"
-      SrcPort		      LConn1
-      Points		      [25, 0; 0, 15]
-      DstBlock		      "motor3"
-      DstPort		      RConn1
-    }
-    Line {
-      Name		      "alpha"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux6"
-      SrcPort		      3
-      DstBlock		      "Scope6"
-      DstPort		      3
-    }
-    Line {
-      Name		      "omega"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux6"
-      SrcPort		      2
-      DstBlock		      "Scope6"
-      DstPort		      2
-    }
-    Line {
-      Name		      "theta"
-      Labels		      [0, 0]
-      SrcBlock		      "Demux6"
-      SrcPort		      1
-      DstBlock		      "Scope6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "motor3"
-      SrcPort		      1
-      Points		      [-24, 0; 0, -74]
-      DstBlock		      "Demux6"
-      DstPort		      1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Robot Body"
-      SrcPort		      LConn5
-      Points		      [-10, 0; 0, 105]
-      DstBlock		      "servo"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "servo"
-      SrcPort		      RConn1
-      DstBlock		      "Tail"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Tail Pad"
-      SrcPort		      LConn1
-      DstBlock		      "Tail"
-      DstPort		      RConn1
-    }
-    Line {
-      SrcBlock		      "Tail Pad"
-      SrcPort		      1
-      DstBlock		      "Terminator"
-      DstPort		      1
-    }
-    Line {
       Name		      "x-position"
+      Labels		      [0, 0]
       SrcBlock		      "From"
       SrcPort		      1
-      Points		      [115, 0; 0, 155]
+      Points		      [145, 0]
       DstBlock		      "Scope2"
       DstPort		      1
     }
     Line {
       Name		      "x-velocity"
+      Labels		      [0, 0]
       SrcBlock		      "From1"
       SrcPort		      1
-      Points		      [93, 0; 0, 170]
+      Points		      [135, 0; 0, 160]
       DstBlock		      "Scope2"
       DstPort		      2
     }
     Line {
       Name		      "y-velocity"
+      Labels		      [0, 0]
       SrcBlock		      "From3"
       SrcPort		      1
-      Points		      [33, 0; 0, 200]
+      Points		      [60, 0; 0, 200]
       DstBlock		      "Scope2"
       DstPort		      4
     }
     Annotation {
       SID		      "154"
       Name		      "WaterRunner Robot\n(CMU-NanoRobotics Lab) "
-      Position		      [1076, 67]
+      Position		      [216, 97]
       FontSize		      20
     }
     Annotation {
       SID		      "1214"
-      Position		      [1666, 1097]
+      Position		      [1551, 857]
     }
   }
 }
 MatData {
-  NumRecords		  2
+  NumRecords		  1
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    6     8    (    !          %    \"     $    A     0         0    (0   %=A=&5R4G5N;F5R+U"
-    ")O8F]T($)O9'DO4F]O=$=R;W5N9          "
-  }
-  DataRecord {
-    Tag			    DataTag1
-    Data		    "  %)30     .    2     8    (    !          %    \"     $    7     0         0    %P   %=A=&5R4G5N;F5R+U"
-    ")O;W1'<F]U;F0Q  "
+    Data		    "  %)30     .    4     8    (    !          %    \"     $    >     0         0    '@   %=A=&5R4G5N;F5R7V"
+    "]N96QE9R]2;V]T1W)O=6YD,0  "
   }
 }
 # Finite State Machines
@@ -5783,7 +4290,7 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "WaterRunner"
+    name		    "WaterRunner_oneleg"
     created		    "12-Dec-2012 18:04:41"
     isLibrary		    0
     firstTarget		    2

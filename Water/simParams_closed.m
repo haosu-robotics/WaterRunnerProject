@@ -121,11 +121,6 @@ L3_mass = CF_density*cross_area*L3;
 I = 1/12*L3_mass*L3^2;
 L3_inertia = diag([I 0 I]);
 
-Lx = frame_width/2*[1 1 -1 -1]';
-Lxmat = frame_width/2*[1 0 0 0 ; 0 1 0 0 ; 0 0 -1 0 ; 0 0 0 -1];
-Lz = frame_length/2*[1 -1 -1 1]';
-Lzmat = frame_length/2*[1 0 0 0 ; 0 -1 0 0 ; 0 0 -1 0 ; 0 0 0 1];
-
 %%%%%%%% Tail Parameters %%%%%%%
 
 tail_angle = 15 * pi/180;
@@ -139,10 +134,23 @@ I = 1/12*Tail_mass*L_tail^2;
 Tail_inertia = diag([I 0 I]);
 
 %%%%%
-totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass) + motor_mass + Tail_mass
+mass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass) + motor_mass + Tail_mass
+Ix = 1/12*mass*( frame_width^2 +  frame_height^2 );
+Iy = 1/12*mass*( frame_width^2 +  frame_length^2 );
+Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
+
+frame_inertia = diag([Ix,Iy,Iz]);
+
+mass_matrix = [mass 0 0; 0 Ix 0 ; 0 0 Iz];
+
+Lx = frame_width/2*[1 1 -1 -1]';
+Lxmat = frame_width/2*[1 0 0 0 ; 0 1 0 0 ; 0 0 -1 0 ; 0 0 0 -1];
+Lz = frame_length/2*[1 -1 -1 1]';
+Lzmat = frame_length/2*[1 0 0 0 ; 0 -1 0 0 ; 0 0 -1 0 ; 0 0 0 1];
 
 %%%%% Water Model params %%%%%
 
+leg_length = 0.0249;
 Amp = leg_length;
 amp = Amp;
 freq = 60;
@@ -164,12 +172,16 @@ b_water = 0.5*C_d*S1*density;
 k_water = C_d*S1*density*g;
 Fratio = 1/16;
 
+waveAmp = 0.01;
+rand('seed',1);
+wavePhase = 2*pi*rand(1,4);
+waveFreq = 0.5;
+
 %%% PID gains %%%%
 K_p = [500 0 0 ; 0 750 0; 0 0 750];
 K_i = [800 0 0 ; 0 7500 0; 0 0 7500];
 K_d = [0 0  0; 0 300 0; 0 0 300];
 Filter_Coef = 1000;
-
 
 %%%%% CPG params %%%%%
 FR_FL_lag = pi;     % l1

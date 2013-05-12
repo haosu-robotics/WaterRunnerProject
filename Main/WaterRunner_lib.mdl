@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 19.0, 1920.0, 1061.0]
+      Location		      [0.0, 19.0, 1151.0, 430.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"112"
-	Extents			[1882.0, 928.0]
-	ZoomFactor		[2.516457414319647]
-	Offset			[19.436623516720605, -16.767051392259983]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1113.0, 297.0]
+	ZoomFactor		[0.6]
+	Offset			[-528.29630269557379, -15.510692142732514]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 19 19:50:49 2013"
-  RTWModifiedTimeStamp	  283203475
-  ModelVersionFormat	  "1.%<AutoIncrement:177>"
+  LastModifiedDate	  "Sat Apr 27 00:07:42 2013"
+  RTWModifiedTimeStamp	  288921258
+  ModelVersionFormat	  "1.%<AutoIncrement:179>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -975,8 +975,8 @@ Library {
   }
   System {
     Name		    "WaterRunner_lib"
-    Location		    [0, 19, 987, 1080]
-    Open		    off
+    Location		    [0, 19, 1151, 449]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -987,9 +987,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "112"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "528"
+    SIDHighWatermark	    "534"
     Block {
       BlockType		      SubSystem
       Name		      "Ground Foot"
@@ -4609,7 +4609,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "73"
+	    SIDHighWatermark	    "78"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -4906,7 +4906,7 @@ Library {
       System {
 	Name			"Water Foot"
 	Location		[0, 19, 1920, 1080]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4917,7 +4917,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"251"
+	ZoomFactor		"250"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body Actuator"
@@ -5089,7 +5089,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "84"
+	    SIDHighWatermark	    "89"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -6330,7 +6330,7 @@ Library {
       }
       System {
 	Name			"motor"
-	Location		[12, 45, 1978, 1017]
+	Location		[0, 19, 1337, 624]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6342,8 +6342,8 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"121"
-	SIDHighWatermark	"881"
+	ZoomFactor		"100"
+	SIDHighWatermark	"920"
 	Block {
 	  BlockType		  Abs
 	  Name			  "Abs"
@@ -6467,7 +6467,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "PatternGenerator"
-	    Location		    [12, 459, 538, 1195]
+	    Location		    [0, 19, 1337, 624]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6479,7 +6479,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "95"
+	    ZoomFactor		    "80"
 	    Block {
 	      BlockType		      Clock
 	      Name		      "Clock"
@@ -6497,7 +6497,7 @@ Library {
 	      BlockRotation	      270
 	      BlockMirror	      on
 	      NamePlacement	      "alternate"
-	      LibraryVersion	      "1.260"
+	      LibraryVersion	      "1.281"
 	      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 	      SourceType	      "Compare To Constant"
 	      relop		      ">"
@@ -7200,16 +7200,13 @@ Library {
 	  SrcPort		  1
 	  Points		  [20, 0]
 	  Branch {
-	    Points		    [0, 0]
-	    Branch {
-	      DstBlock		      "Joint Actuator1"
-	      DstPort		      1
-	    }
-	    Branch {
-	      Points		      [0, 20]
-	      DstBlock		      "Selector1"
-	      DstPort		      1
-	    }
+	    DstBlock		    "Joint Actuator1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Selector1"
+	    DstPort		    1
 	  }
 	  Branch {
 	    Points		    [44, 0; 0, -25]
@@ -7801,6 +7798,526 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "motor_closed"
+      SID		      "534"
+      Ports		      [1, 1, 0, 0, 0, 1, 1]
+      Position		      [710, 48, 820, 112]
+      ZOrder		      381
+      BackgroundColor	      "[0.909804, 0.819608, 0.321569]"
+      LibraryVersion	      "*1.178"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		30
+	$ClassName		"Simulink.Mask"
+	SelfModifiable		"on"
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  31
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "edit"
+	  Name			  "ic_angle"
+	  Prompt		  "Initial angle"
+	  Value			  "0"
+	}
+      }
+      System {
+	Name			"motor_closed"
+	Location		[0, 624, 1337, 1080]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	SIDHighWatermark	"924"
+	Block {
+	  BlockType		  Inport
+	  Name			  "V"
+	  SID			  "534:923"
+	  Position		  [80, 158, 110, 172]
+	  ZOrder		  7
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "534:290"
+	  Position		  [330, 150, 360, 180]
+	  ZOrder		  -8
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Actuator1"
+	  SID			  "534:192"
+	  Ports			  [1, 0, 0, 0, 0, 0, 1]
+	  Position		  [365, 100, 405, 140]
+	  ZOrder		  2
+	  BlockRotation		  270
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuator"
+	  SourceType		  "Joint Actuator"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  ActuationStyle	  "Motion"
+	  AngleUnits		  "rad"
+	  ArcVelocityUnits	  "rad/s"
+	  ArcAccelerationUnits	  "rad/s^2"
+	  CoordPositionUnits	  "m"
+	  VelocityUnits		  "m/s"
+	  AccelerationUnits	  "m/s^2"
+	  ForceUnits		  "N"
+	  TorqueUnits		  "N*m"
+	  ActiveIO		  "on"
+	  Width			  "3"
+	  ClassName		  "JointActuator"
+	  DialogClass		  "MechanicalActuatorBlock"
+	  Primitive		  "R1"
+	  ReferenceFrame	  "Absolute (World)"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "PatternGenerator"
+	  SID			  "534:227"
+	  Ports			  [1, 1]
+	  Position		  [220, 137, 310, 193]
+	  ZOrder		  -13
+	  BackgroundColor	  "[0.380392, 0.741176, 0.988235]"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "PatternGenerator"
+	    Location		    [0, 624, 1337, 1080]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "V"
+	      SID		      "534:922"
+	      Position		      [970, 213, 1000, 227]
+	      ZOrder		      1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "534:924"
+	      Position		      [1080, 78, 1135, 112]
+	      ZOrder		      2
+	      Value		      "ic_angle"
+	    }
+	    Block {
+	      BlockType		      Derivative
+	      Name		      "Derivative1"
+	      SID		      "534:271"
+	      Position		      [1270, 275, 1300, 305]
+	      ZOrder		      -1
+	    }
+	    Block {
+	      BlockType		      Integrator
+	      Name		      "Integrator"
+	      SID		      "534:281"
+	      Ports		      [1, 1]
+	      Position		      [1215, 135, 1245, 165]
+	      ZOrder		      -2
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux2"
+	      SID		      "534:232"
+	      Ports		      [3, 1]
+	      Position		      [1370, 111, 1375, 329]
+	      ZOrder		      -12
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "534:282"
+	      Ports		      [2, 1]
+	      Position		      [1290, 140, 1310, 160]
+	      ZOrder		      -18
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "PVA"
+	      SID		      "534:256"
+	      Position		      [1400, 213, 1430, 227]
+	      ZOrder		      -24
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [160, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "V"
+	      SrcPort		      1
+	      Points		      [77, 0]
+	      Branch {
+		DstBlock		"Mux2"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -70]
+		DstBlock		"Integrator"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 70]
+		DstBlock		"Derivative1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Mux2"
+	      SrcPort		      1
+	      DstBlock		      "PVA"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Derivative1"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Revolute"
+	  SID			  "534:206"
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
+	  Position		  [230, 27, 280, 78]
+	  ZOrder		  2
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Revolute"
+	  SourceType		  "Revolute"
+	  LConnTagsString	  "__newl0|SA1"
+	  RConnTagsString	  "__newr0"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "1"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic"
+	  PrimitiveProps	  "R1$World$[0 0 1]$revolute"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	  R1Axis		  "[0 0 1]"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "motor_body"
+	  SID			  "534:209"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [80, 29, 170, 81]
+	  ZOrder		  -20
+	  BackgroundColor	  "[1.000000, 0.501961, 0.000000]"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "motor_body"
+	    Location		    [486, 111, 864, 448]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Body1"
+	      SID		      "534:210"
+	      Ports		      [0, 0, 0, 0, 0, 1, 1]
+	      Position		      [190, 30, 250, 70]
+	      ZOrder		      4
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Bodies/Body"
+	      SourceType	      "Body"
+	      LConnTagsString	      "CS1"
+	      RConnTagsString	      "CS2"
+	      UpdateFromCAD	      "off"
+	      ClassName		      "Body"
+	      DialogClass	      "MechanicalBodyBlock"
+	      Mass		      "motor_mass"
+	      MassUnits		      "kg"
+	      InertiaUnits	      "kg*m^2"
+	      Inertia		      "motor_inertia"
+	      Shape		      "Cylinder"
+	      ShapeDims		      "[1 1]"
+	      ShapeUnits	      "m"
+	      ShapeUse		      "false"
+	      Density		      "1"
+	      DensityUnits	      "kg/m^3"
+	      DensityUse	      "false"
+	      GraphicsMode	      "CONVHULL"
+	      BodyColorSelMode	      "COLORPALETTE"
+	      BodyColor		      "[0.87059 0.4902 0]"
+	      AttachedToCS	      "CG"
+	      CG		      "Left$CG$[0 0 0]$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$false$none"
+	      WorkingFrames	      "Left$CS1$[0 0 0]$Adjoining$Adjoining$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none#Right$CS2$["
+	      "0 0 0]$CS1$CS1$m$[0 0 0]$Euler X-Y-Z$deg$WORLD$true$none"
+	      CGPos		      "[0 0 0]"
+	      CGRot		      "[0 0 0]"
+	      CS0Pos		      "[]"
+	      CS0Rot		      "[]"
+	      CS1Pos		      "[0 0 0]"
+	      CS1Rot		      "[0 0 0]"
+	      CS2Pos		      "[0 0 0]"
+	      CS2Rot		      "[0 0 0]"
+	      CS3Pos		      "[]"
+	      CS3Rot		      "[]"
+	      CS4Pos		      "[]"
+	      CS4Rot		      "[]"
+	      CS5Pos		      "[]"
+	      CS5Rot		      "[]"
+	      CS6Pos		      "[]"
+	      CS6Rot		      "[]"
+	      CS7Pos		      "[]"
+	      CS7Rot		      "[]"
+	      CS8Pos		      "[]"
+	      CS8Rot		      "[]"
+	      CS9Pos		      "[]"
+	      CS9Rot		      "[]"
+	      CS10Pos		      "[]"
+	      CS10Rot		      "[]"
+	      CS11Pos		      "[]"
+	      CS11Rot		      "[]"
+	      CS12Pos		      "[]"
+	      CS12Rot		      "[]"
+	      CS13Pos		      "[]"
+	      CS13Rot		      "[]"
+	      CS14Pos		      "[]"
+	      CS14Rot		      "[]"
+	      CS15Pos		      "[]"
+	      CS15Rot		      "[]"
+	      CS16Pos		      "[]"
+	      CS16Rot		      "[]"
+	      CS17Pos		      "[]"
+	      CS17Rot		      "[]"
+	      CS18Pos		      "[]"
+	      CS18Rot		      "[]"
+	      CS19Pos		      "[]"
+	      CS19Rot		      "[]"
+	      CS20Pos		      "[]"
+	      CS20Rot		      "[]"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Weld1"
+	      SID		      "534:211"
+	      Ports		      [0, 0, 0, 0, 0, 1, 1]
+	      Position		      [80, 25, 130, 75]
+	      ZOrder		      9
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Joints/Weld"
+	      SourceType	      "Weld"
+	      LConnTagsString	      "__newl0"
+	      RConnTagsString	      "__newr0"
+	      UpdateFromCAD	      "off"
+	      NumSAPorts	      "0"
+	      CutJoint		      "off"
+	      MarkAsCut		      "off"
+	      Primitives	      "weld"
+	      PrimitiveProps	      "W$World$[0 0 0]$weld"
+	      ClassName		      "Joint"
+	      DialogClass	      "JointBlock"
+	      WAxis		      "[0 0 0]"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "to_rev"
+	      SID		      "534:212"
+	      Position		      [275, 43, 305, 57]
+	      ZOrder		      -3
+	      BlockMirror	      on
+	      Port		      "1"
+	      Side		      "Right"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "to_frame"
+	      SID		      "534:213"
+	      Position		      [25, 43, 55, 57]
+	      ZOrder		      -4
+	      Port		      "2"
+	      Side		      "Left"
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Body1"
+	      SrcPort		      LConn1
+	      DstBlock		      "Weld1"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "to_rev"
+	      SrcPort		      RConn1
+	      DstBlock		      "Body1"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "to_frame"
+	      SrcPort		      RConn1
+	      DstBlock		      "Weld1"
+	      DstPort		      LConn1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "follower"
+	  SID			  "534:214"
+	  Position		  [420, 48, 450, 62]
+	  ZOrder		  -21
+	  BlockMirror		  on
+	  Port			  "1"
+	  Side			  "Right"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "base"
+	  SID			  "534:215"
+	  Position		  [25, 48, 55, 62]
+	  ZOrder		  -22
+	  Port			  "2"
+	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "to scope"
+	  SID			  "534:261"
+	  Position		  [505, 158, 535, 172]
+	  ZOrder		  -23
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "V"
+	  SrcPort		  1
+	  DstBlock		  "PatternGenerator"
+	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Revolute"
+	  SrcPort		  LConn1
+	  Points		  [-15, 0; 0, 15]
+	  DstBlock		  "motor_body"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "follower"
+	  SrcPort		  RConn1
+	  DstBlock		  "Revolute"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "base"
+	  SrcPort		  RConn1
+	  DstBlock		  "motor_body"
+	  DstPort		  LConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Actuator1"
+	  SrcPort		  RConn1
+	  Points		  [0, 10; -175, 0; 0, -30]
+	  DstBlock		  "Revolute"
+	  DstPort		  LConn2
+	}
+	Line {
+	  SrcBlock		  "PatternGenerator"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "to scope"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Joint Actuator1"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "servo"
       SID		      "22"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
@@ -7816,20 +8333,20 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		30
+	$ObjectID		32
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    31
+	    $ObjectID		    33
 	    Type		    "edit"
 	    Name		    "tail_angle"
 	    Prompt		    "Tail angle"
 	    Value		    "speed"
 	  }
 	  Object {
-	    $ObjectID		    32
+	    $ObjectID		    34
 	    Type		    "promote"
 	    Array {
 	      Type		      "Cell"

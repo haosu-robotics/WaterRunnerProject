@@ -1,8 +1,8 @@
-tic;
-load_system('WaterRunner.mdl');
 
-ss = 12:8:100;
-dfs = .5;
+tic;
+
+ss = 30:10:100;
+dfs = 0.3:0.10:0.7;
 [SS, DF] = meshgrid(ss,dfs);
 
 robot_speed = nan(size(SS));
@@ -10,17 +10,15 @@ robot_vert_avg  = nan(size(SS));
 robot_pow = nan(size(SS));
 robot_angle = nan(size(SS));
 
-for k = 1 : numel(SS)
+matlabpool close
+matlabpool local 2
+parfor k = 1 : numel(SS)
 	speed = SS(k)
 	duty_factor  = DF(k)
-	simParams
-
-	try
-		sim('WaterRunner.mdl');
-	catch
-		continue
-	end
-   
+	load_system('WaterRunner.mdl');
+	
+	sim('WaterRunner.mdl');
+    
 	if sum(stopped.Data)
 		continue
 	end
@@ -43,14 +41,16 @@ for k = 1 : numel(SS)
     
     robot_pow(k) = power;
 end
+matlabpool close
 
-save('height3.mat','robot_vert_avg');
+save('height2.mat','robot_vert_avg');
 close_system('WaterRunner.mdl');
 
 figure(1)
-plot(SS,robot_vert_avg);
+surf(SS,DF,robot_vert_avg);
 xlabel('Rotation speed [rad/s]')
-ylabel('Robot average vertical position [m]')
+ylabel('Duty Factor')
+zlabel('Robot average vertical position [m]')
 set(gca, 'Color', 'None')
 
 %{
