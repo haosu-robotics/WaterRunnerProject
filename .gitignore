@@ -49,6 +49,7 @@ Thumbs.db
 *.swp
 *.m~
 *.mdl.autosave
+*.mdl.original
 *.swn
 *.swo
 
