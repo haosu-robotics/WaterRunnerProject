@@ -50,10 +50,10 @@ motor_mass = 0.010;
 motor_volume = (pi*motor_radius^2)*motor_length;
 motor_density = motor_mass/motor_volume;
 
-mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4)
-Ix = 1/12*mass*( frame_width^2 +  frame_height^2 )
-Iy = 1/12*mass*( frame_width^2 +  frame_length^2 )
-Iz = 1/12*mass*( frame_length^2 + frame_height^2 )
+mass = frame_mass + 4*motor_mass + tail_density*prod(tail_dim) + 4*CF_density*bar_h*bar_w*(L1 + L2 +L3 + L4);
+Ix = 1/12*mass*( frame_width^2 +  frame_height^2 );
+Iy = 1/12*mass*( frame_width^2 +  frame_length^2 );
+Iz = 1/12*mass*( frame_length^2 + frame_height^2 );
 
 frame_inertia = diag([Ix,Iy,Iz]);
 
@@ -112,8 +112,9 @@ Filter_Coef = 1000;
 K_e = diag([0 1 1]);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-freq = 60;
-speed = freq;
+%freq = 60;
+%speed = freq;
+freq = speed;
 omega_0 = freq*ones(8,1);
 
 FR_FL_lag = -pi;     % l1

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.518"
+    ComputedModelVersion    "1.529"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -42,7 +42,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 551.0, 817.0, 529.0]
+      Location		      [724.0, 19.0, 1196.0, 1061.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,27 +65,27 @@ Model {
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "6889"
-	  Extents		  [779.0, 386.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [19.178529127909755, 119.44392860811158]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1158.0, 918.0]
+	  ZoomFactor		  [0.66358364530573288]
+	  Offset		  [271.02743362831859, -13.579642560840629]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "6811"
-	  Extents		  [1884.0, 939.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-12.824999999999989, -270.6]
+	  LoadSaveID		  "1"
+	  Extents		  [1882.0, 918.0]
+	  ZoomFactor		  [1.01]
+	  Offset		  [-65.297029702970292, 11.138613861386148]
 	}
 	PropName		"EditorsInfo"
       }
     }
   }
-  PhysicalModelingChecksum "3379964397"
-  PhysicalModelingParameterChecksum "3342384336"
+  PhysicalModelingChecksum "1017899691"
+  PhysicalModelingParameterChecksum "40180034"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -93,9 +93,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu May 02 21:47:20 2013"
-  RTWModifiedTimeStamp	  289420596
-  ModelVersionFormat	  "1.%<AutoIncrement:518>"
+  LastModifiedDate	  "Sat May 11 20:58:22 2013"
+  RTWModifiedTimeStamp	  290206699
+  ModelVersionFormat	  "1.%<AutoIncrement:529>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -199,7 +199,7 @@ Model {
 	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "15"
+	  StopTime		  "5"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -345,7 +345,7 @@ Model {
 	  MaxConsecutiveZCsMsg	  "error"
 	  MaskedZcDiagnostic	  "warning"
 	  IgnoredZcDiagnostic	  "warning"
-	  SolverPrmCheckMsg	  "warning"
+	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
 	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
@@ -801,8 +801,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 332, 44, 1299, 780 ] 
+      CurrentDlgPage	      "Diagnostics"
+      ConfigPrmDlgPosition     [ 332, 44, 1303, 784 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -956,6 +956,15 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Math
       Operator		      "exp"
       OutputSignalType	      "auto"
@@ -1081,13 +1090,7 @@ Model {
       VectorParams1D	      on
     }
     Block {
-      BlockType		      Step
-      Time		      "1"
-      Before		      "0"
-      After		      "1"
-      SampleTime	      "-1"
-      VectorParams1D	      on
-      ZeroCross		      on
+      BlockType		      Stop
     }
     Block {
       BlockType		      SubSystem
@@ -1158,8 +1161,8 @@ Model {
   }
   System {
     Name		    "WaterRunner_closed"
-    Location		    [0, 551, 817, 1080]
-    Open		    off
+    Location		    [724, 19, 1920, 1080]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1170,9 +1173,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "66"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6961"
+    SIDHighWatermark	    "6972"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -5164,6 +5167,39 @@ Model {
       }
     }
     Block {
+      BlockType		      Reference
+      Name		      "Compare To Constant"
+      SID		      "6964"
+      Ports		      [1, 1]
+      Position		      [930, 275, 960, 305]
+      ZOrder		      571
+      BlockRotation	      270
+      LibraryVersion	      "1.281"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      ">="
+      const		      "45"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare To Constant1"
+      SID		      "6968"
+      Ports		      [1, 1]
+      Position		      [820, 275, 850, 305]
+      ZOrder		      574
+      BlockRotation	      270
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.281"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      relop		      "<="
+      const		      "-45"
+      OutDataTypeStr	      "boolean"
+      ZeroCross		      on
+    }
+    Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "6686"
@@ -5188,8 +5224,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Controller"
-	Location		[-1, -1, 1921, 1081]
-	Open			on
+	Location		[724, 661, 1920, 1079]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5200,7 +5236,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "output error"
@@ -6433,6 +6469,30 @@ Model {
     }
     Block {
       BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "6966"
+      Ports		      [1, 2]
+      Position		      [901, 245, 939, 250]
+      ZOrder		      573
+      BlockRotation	      270
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      SID		      "6969"
+      Ports		      [1, 2]
+      Position		      [821, 235, 859, 240]
+      ZOrder		      576
+      BlockRotation	      270
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
       Name		      "Demux7"
       SID		      "6138"
       Ports		      [1, 4]
@@ -6547,8 +6607,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Hand of God"
-	Location		[0, 551, 817, 1080]
-	Open			on
+	Location		[704, 19, 1920, 1080]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6559,7 +6619,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Rigid  Transform1"
@@ -6773,7 +6833,6 @@ Model {
 	  Position		  [20, 248, 50, 282]
 	  ZOrder		  539
 	  BlockMirror		  on
-	  Commented		  on
 	  Floating		  off
 	  Location		  [2, 49, 960, 1078]
 	  Open			  off
@@ -6813,7 +6872,6 @@ Model {
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  Commented		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "nesl_utility/Simulink-PS\nConverter"
 	  SourceType		  "Simulink-PS\nConverter"
@@ -6842,7 +6900,6 @@ Model {
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  Commented		  on
 	  Amplitude		  "dTorqueAmp"
 	  Frequency		  "dTorqueFreq"
 	  SampleTime		  "0"
@@ -6857,7 +6914,6 @@ Model {
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  Commented		  on
 	  DelayTime		  "2"
 	}
 	Block {
@@ -7020,7 +7076,7 @@ Model {
 	  SenseVelocity		  "off"
 	  SenseAcceleration	  "off"
 	  SenseTorqueForce	  "off"
-	  PositionTargetValue	  "y"
+	  PositionTargetValue	  "y0"
 	  PositionTargetValueUnits "m"
 	  PositionTargetSpecify	  "on"
 	  PositionTargetPriority  "High"
@@ -7246,6 +7302,44 @@ Model {
       p_bar_w		      "bar_w"
       p_bar_h		      "bar_h"
       init_pas_ang	      "0"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical Operator"
+      SID		      "6965"
+      Ports		      [2, 1]
+      Position		      [907, 175, 938, 205]
+      ZOrder		      572
+      BlockRotation	      270
+      Operator		      "OR"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical Operator1"
+      SID		      "6970"
+      Ports		      [2, 1]
+      Position		      [827, 165, 858, 195]
+      ZOrder		      575
+      BlockRotation	      270
+      NamePlacement	      "alternate"
+      Operator		      "OR"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical Operator2"
+      SID		      "6971"
+      Ports		      [2, 1]
+      Position		      [862, 75, 893, 105]
+      ZOrder		      577
+      BlockRotation	      270
+      NamePlacement	      "alternate"
+      Operator		      "OR"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Reference
@@ -7537,10 +7631,10 @@ Model {
       BlockRotation	      270
       NamePlacement	      "alternate"
       Floating		      off
-      Location		      [819, 563, 1920, 1078]
-      Open		      on
+      Location		      [726, 49, 1920, 478]
+      Open		      off
       NumInputPorts	      "1"
-      ZoomMode		      "yonly"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -7557,8 +7651,8 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "15"
-      YMin		      "32.5"
-      YMax		      "75"
+      YMin		      "47.5"
+      YMax		      "72.5"
       SaveToWorkspace	      on
       SaveName		      "command_omega"
       DataFormat	      "StructureWithTime"
@@ -7573,7 +7667,7 @@ Model {
       Position		      [1915, 495, 1945, 530]
       ZOrder		      529
       Floating		      off
-      Location		      [819, 49, 1920, 531]
+      Location		      [2, 49, 724, 1078]
       Open		      on
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
@@ -7593,11 +7687,11 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      off
-      TimeRange		      "15"
-      YMin		      "30~2.25"
-      YMax		      "70~3.5"
+      TimeRange		      "5"
+      YMin		      "45~2.55"
+      YMax		      "58~3.2"
       SaveToWorkspace	      on
-      SaveName		      "command_omega1"
+      SaveName		      "cpg_omega"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -7611,8 +7705,8 @@ Model {
       ZOrder		      549
       BlockRotation	      270
       Floating		      off
-      Location		      [2, 49, 817, 549]
-      Open		      on
+      Location		      [726, 49, 1920, 659]
+      Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
       List {
@@ -7632,10 +7726,10 @@ Model {
       }
       ShowLegends	      off
       TimeRange		      "15"
-      YMin		      "-0.035~-25"
-      YMax		      "0.025~25"
+      YMin		      "-0.02~-22.5"
+      YMax		      "0.0225~17.5"
       SaveToWorkspace	      on
-      SaveName		      "ball_position"
+      SaveName		      "output"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -7761,6 +7855,14 @@ Model {
       MaxModeIter	      "2"
       LinearAlgebra	      "Sparse"
       DelaysMemoryBudget      "1024"
+    }
+    Block {
+      BlockType		      Stop
+      Name		      "Stop Simulation"
+      SID		      "6962"
+      Position		      [862, 10, 898, 45]
+      ZOrder		      569
+      BlockRotation	      270
     }
     Block {
       BlockType		      Sum
@@ -11371,7 +11473,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"desired output"
-	Location		[-1, -1, 1921, 1081]
+	Location		[704, 587, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11383,7 +11485,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux1"
@@ -11397,64 +11499,6 @@ Model {
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step"
-	  SID			  "6801"
-	  Position		  [145, 130, 175, 160]
-	  ZOrder		  335
-	  NamePlacement		  "alternate"
-	  Time			  "5"
-	  After			  "theta"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step1"
-	  SID			  "6802"
-	  Position		  [190, 85, 220, 115]
-	  ZOrder		  338
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "10"
-	  After			  "-2*theta"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step2"
-	  SID			  "6803"
-	  Position		  [230, 130, 260, 160]
-	  ZOrder		  339
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  Time			  "15"
-	  After			  "theta"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum1"
-	  SID			  "6807"
-	  Ports			  [3, 1]
-	  Position		  [195, 135, 215, 155]
-	  ZOrder		  337
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "+++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	  Port {
-	    PortNumber		    1
-	    Name		    "roll"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
 	}
 	Block {
 	  BlockType		  Constant
@@ -11471,6 +11515,16 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "m1"
+	  SID			  "6967"
+	  Position		  [130, 130, 160, 160]
+	  ZOrder		  541
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  Value			  "theta"
 	}
 	Block {
 	  BlockType		  Outport
@@ -11492,37 +11546,16 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Step"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Step1"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Step2"
-	  SrcPort		  1
-	  DstBlock		  "Sum1"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "roll"
-	  Labels		  [1, 0]
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  Points		  [0, 135]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Line {
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
 	  DstBlock		  "desired output"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "m1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
 	}
       }
     }
@@ -11542,7 +11575,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"observer"
-	Location		[-1, -1, 1921, 1081]
+	Location		[704, 19, 1920, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11554,7 +11587,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Gain
 	  Name			  "Gain"
@@ -11842,7 +11875,7 @@ Model {
 		Type			"edit"
 		Name			"x_init"
 		Prompt			"Initial condition"
-		Value			"y"
+		Value			"y0"
 	      }
 	      PropName		      "Parameters"
 	    }
@@ -13392,8 +13425,23 @@ Model {
     Line {
       SrcBlock		      "to Degrees1"
       SrcPort		      1
-      DstBlock		      "Scope7"
-      DstPort		      2
+      Points		      [0, -4]
+      Branch {
+	Points			[-120, 0]
+	Branch {
+	  Points		  [-110, 0]
+	  DstBlock		  "Compare To Constant1"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Compare To Constant"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	DstBlock		"Scope7"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Demux"
@@ -13527,6 +13575,66 @@ Model {
 	DstBlock		"CPG_Network"
 	DstPort			5
       }
+    }
+    Line {
+      SrcBlock		      "Compare To Constant"
+      SrcPort		      1
+      Points		      [0, -5]
+      DstBlock		      "Demux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      Points		      [0, -14; 5, 0]
+      DstBlock		      "Logical Operator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      DstBlock		      "Logical Operator"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Compare To Constant1"
+      SrcPort		      1
+      Points		      [0, -12; 5, 0]
+      DstBlock		      "Demux2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      1
+      Points		      [0, -14; 5, 0]
+      DstBlock		      "Logical Operator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      2
+      DstBlock		      "Logical Operator1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Logical Operator1"
+      SrcPort		      1
+      Points		      [0, -24; 25, 0]
+      DstBlock		      "Logical Operator2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Logical Operator"
+      SrcPort		      1
+      Points		      [-40, 0]
+      DstBlock		      "Logical Operator2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Logical Operator2"
+      SrcPort		      1
+      DstBlock		      "Stop Simulation"
+      DstPort		      1
     }
     Annotation {
       SID		      "1081"

@@ -8,8 +8,8 @@ y = 0.015;
 theta = 0 *pi/180;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 0;
-dTorqueFreq = 1;
+dTorqueAmp = 8e-3;
+dTorqueFreq = (2*pi);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Robot Parameters %%%%%%%%%%%%%%%%%%%%%%
@@ -124,7 +124,7 @@ Bc = [2*B1',       2*B2';
 pinvBc = pinv(Bc);
 nullProj = eye(4) - pinvBc*Bc;
 
-Gc = [sum(G) - mass*g ; Lx'*G ];
+Gc = [2*sum(G) - mass*g ; Lx'*G ];
 
 %%%%% PID Gains - Ziegler Nichols Method %%%%%
 Kuy = 170;
@@ -146,7 +146,7 @@ K_i = [Kiy 0 ; 0 Kith/2];
 K_d = [Kdy 0 ; 0 Kdth  ];
 Filter_Coef = 1000;
 
-Kdf = 0.50; %duty factor preference gain
+Kdf = 0.25; %duty factor preference gain
 Ke = diag([0 1]); %antiwindup
 
 %%%%% CPG params %%%%%
@@ -155,7 +155,7 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-c_gain = 10;
+c_gain = 1;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;

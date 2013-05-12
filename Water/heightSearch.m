@@ -3,14 +3,14 @@ load_system('WaterRunner.mdl');
 
 ss = 40:4:100;
 
-robot_vert_avg  = nan(size(ss));
+robot_vert_avg2  = nan(size(ss));
 
 for k = 1 : numel(ss)
 	speed = ss(k)
 	simParam;
 
 	try
-		sim('WaterRunner.mdl');
+		sim('WaterRunner_open.mdl');
 	catch
 		continue
 	end
@@ -26,13 +26,13 @@ for k = 1 : numel(ss)
 		continue
 	end
 
-    robot_vert_avg (k) =  avg_h;
+    robot_vert_avg2 (k) =  avg_h;
 end
 
-save('height.mat','robot_vert_avg');
+save('height.mat','robot_vert_avg2');
 close_system('WaterRunner.mdl');
 
 figure(1)
-plot(ss,robot_vert_avg);
+plot(ss,robot_vert_avg2);
 xlabel('Rotation speed [rad/s]')
 ylabel('Robot average vertical position [m]')
