@@ -15,7 +15,7 @@ Equating~\ref{eq:PID} and~\ref{eq:rob_dyn} and solving for $\vec{\omega}$ gives 
                  &\quad + (\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0 \label{eq:control}
 \end{align}
 
-\noindent Where $B^{\dagger}$ is the psuedo-inverse of our dynamics matrix, $\mathbbm{1}$ is the identity matrix. The term $(\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0$ projects $\vec{\omega}_0$ into the nullspace of our dynamics matrix. Therefore, the control inputs obtained by this control law will be as close to $\vec{\omega}_0$ as possible while providing our desired dynamics. As a result, we can use $\vec{\omega}_0$ to shape the control input to meet other desired objectives.
+\noindent Where $B^{\dagger}$ is the psuedo-inverse of our dynamics matrix and $\mathbbm{1}$ is the identity matrix. The term $(\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0$ projects $\vec{\omega}_0$ into the nullspace of our dynamics matrix. Therefore, the control inputs obtained by this control law will be as close to $\vec{\omega}_0$ as possible while providing our desired accelerations. As a result, we can use $\vec{\omega}_0$ to shape the control input to meet other desired objectives.
 
 In our tests, we used a mix of two averaging schemes to specify $\omega_0$ at time step $t+1$ based on the leg velocities at the previous timestep $t$ The first scheme is as follows:
 
@@ -23,11 +23,11 @@ In our tests, we used a mix of two averaging schemes to specify $\omega_0$ at ti
     \begin{bmatrix} \omega_1^L \\ \omega_1^R \\ \omega_2^L \\ \omega_2^R \end{bmatrix}_{t+1} = \begin{bmatrix} (\omega_1^L + \omega_2^L)/2 \\(\omega_1^R + \omega_2^R)/2 \\ (\omega_1^L + \omega_2^L)/2 \\ (\omega_1^R + \omega_2^R)/2 \end{bmatrix}_{t}
 \end{equation}
 
-This scheme should encourage upwards and downwards velocities that are close to each other, which may be beneficial for reducing motor accelerations and wear. The second scheme persues the opposite goal:
+\noindent This scheme should encourage upwards and downwards velocities that are close to each other, which may be beneficial for reducing motor accelerations and wear. The second scheme persues the opposite goal,
 
 \begin{equation}
     \begin{bmatrix} \omega_1^L \\ \omega_1^R \\ \omega_2^L \\ \omega_2^R \end{bmatrix}_{t+1} = \begin{bmatrix} (\omega_1^L + \omega_1^R)/2 \\(\omega_1^L + \omega_1^R)/2 \\ (\omega_2^L + \omega_2^R)/2 \\ (\omega_2^L + \omega_2^R)/2 \end{bmatrix}_{t}
 \end{equation}
 
-\noindent And should encourage reliance on large differences between downwards and upwards velocities to produce force. This approach may be desirable in order to keep the legs in a certain gait, as it will prefer that the average frequencies of the legs remains constant and equal between the left and right legs of the robot. 
+\noindent and should encourage reliance on large differences between downwards and upwards velocities to produce force. This approach may be desirable in order to keep the legs in a certain gait, as it will prefer that the average frequencies of the legs remains constant and equal between the left and right legs of the robot. 
 
