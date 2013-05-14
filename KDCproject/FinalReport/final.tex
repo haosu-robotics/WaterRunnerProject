@@ -1,4 +1,4 @@
-\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+\documentclass[letterpaper, 11 pt, conference]{ieeeconf}  % Comment this line out
                                                           % if you need a4paper
 
 \IEEEoverridecommandlockouts{}                            % This command is only
@@ -12,7 +12,6 @@
 \usepackage{subcaption}
 \usepackage{amsmath} % assumes amsmath package installed
 \usepackage{bbm}
-\usepackage{todonotes}
 %\usepackage{endfloat}
 \usepackage{comment}
 
@@ -20,12 +19,7 @@
     Roll and Height Control for Legged Locomotion on the Water Surface
 }
 
-\author{Nitish Thatte$^{1}$, Mahdi Khoramshahi$^{2}$, and Jason Rebello$^{3}$% <-this % stops a space
-%\thanks{*This work was not supported by any organization}% <-this % stops a space
-\thanks{$^{1}${\tt\small nitisht at andrew.cmu.edu}}%
-\thanks{$^{2}${\tt\small khoram at andrew.cmu.edu}}
-\thanks{$^{3}${\tt\small jrebello at cmu.edu}}
-}
+\author{Nitish Thatte, Mahdi Khoramshahi, and Jason Rebello}
 
 \begin{document}
 
@@ -40,7 +34,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{INTRODUCTION}
-The Basilisk Lizard's striking ability to sustain highly dynamic legged locomotion on a range of surfaces from hard-ground to water is a remarkable feat \cite{glasheen1996hydrodynamic}. Most legged robots would have difficulty emulating this animal's ability to robustly locomote on yielding or deforming surfaces. Therefore, to explore the dynamics of legged locomotion in this regime, we are studying the design of a bio-inspired water-running robot. Analyzing water-running dynamics may also help us gain insight into mobility on other yielding surfaces, such as granular media and mud. It is crucial that we develop locomotion models for these surfaces as robots continue to venture out of the laboratory and into the real world.
+\input{Intro}
 
 \section{LEGGED LOCOMOTION MODEL}
 \input{LegModel}
