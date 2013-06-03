@@ -54,6 +54,7 @@ Thumbs.db
 #####################
 *.png
 *.pdf
+*.eps
 *.fig
 *.avi
 *.mp4
