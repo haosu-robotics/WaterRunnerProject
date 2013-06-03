@@ -8,8 +8,8 @@ y = 0.015;
 theta = 0 *pi/180;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 8e-3;
-dTorqueFreq = (2*pi);
+%dTorqueAmp = 4e-3;
+dTorqueFreq = (2*pi)/2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Robot Parameters %%%%%%%%%%%%%%%%%%%%%%
@@ -94,6 +94,8 @@ w0 = 60; %initial guess
 freq = findSSinput(y,b_water,k_water,A,Fratio,mass*g/4,w0);
 w = freq;
 omega_0 = freq*ones(4,1);
+phase_0 = [0 pi 0 pi];
+%Cgain = 0;
 
 %Compute Taylor Series Terms%
 
@@ -146,7 +148,7 @@ K_i = [Kiy 0 ; 0 Kith/2];
 K_d = [Kdy 0 ; 0 Kdth  ];
 Filter_Coef = 1000;
 
-Kdf = 0.25; %duty factor preference gain
+Kdf = 0; %duty factor preference gain
 Ke = diag([0 1]); %antiwindup
 
 %%%%% CPG params %%%%%

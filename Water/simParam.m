@@ -4,7 +4,7 @@ stepSizeRoll = 0;
 stepSizePitch = 0;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 0;
+dTorqueAmp = 5e-4;
 dTorqueFreq = 1;
 
 %%%%%%%%%%%%%%%%%%%%%%% Leg properties %%%%%%%%%%%%%%%%%%%%
@@ -112,8 +112,8 @@ Filter_Coef = 1000;
 K_e = diag([0 1 1]);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%freq = 60;
-%speed = freq;
+freq = 60;
+speed = freq;
 freq = speed;
 omega_0 = freq*ones(8,1);
 
