@@ -1,0 +1,38 @@
+\textcolor{prime}{\textsf{Central Pattern Generator (CPG)}} \\
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=7.5in]{cpg-crop.pdf}
+    \caption{The CPG helps maintain a trot gait}
+    \label{fig:CPG_Network}
+\end{figure}
+\vspace{-0.25in}
+
+\vspace{1EX}
+\textcolor{prime}{\textsf{Inverse Dynamics}} \\
+\begin{itemize}
+\item We use an inverse dynamics approach to reject disturbances
+\item Formulation: Obtain desired acceleration via task-space PID. Plug into equation~\ref{eq:rob_dyn} and solve for control input $\vec{\omega}$
+
+    \begin{equation*}
+        \vec{\omega} = B^{\dagger} \left[M \mathrm{PID}(\vec{y}_d - \vec{y})- A \vec{y} - G \right] + (\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0 \label{eq:control}
+    \end{equation*}
+
+\item We use a heuristic to set $\vec{\omega}_0$ so that the nullspace is used to find control inputs that help system converge to trot gait
+\begin{equation}
+    \vec{\omega}_0^t = \underbrace{\frac{1}{2}\begin{bmatrix}
+        \omega_l^- + \omega_l^+ \\
+        \omega_l^- + \omega_l^+ \\
+        \omega_r^- + \omega_r^+ \\
+        \omega_r^- + \omega_r^+ \\
+    \end{bmatrix}}_{\text{term 1}} + 
+    \underbrace{k \begin{bmatrix}
+        \sin \left( \phi_r - \phi_l - \phi_{\mathrm{des}} \right) \\
+        \sin \left( \phi_r - \phi_l - \phi_{\mathrm{des}} \right) \\
+        \sin \left( \phi_l - \phi_r - \phi_{\mathrm{des}} \right) \\
+        \sin \left( \phi_l - \phi_r - \phi_{\mathrm{des}} \right) \\
+    \end{bmatrix}}_{\text{term 2}}
+    \label{eq:hu}
+\end{equation}
+
+\item Term 1 ensures that the leg speed at the next timestep is closed to the last used leg speed. Term 2 helps find leg speeds that will bring the robot back to a trot gait.
+\end{itemize}

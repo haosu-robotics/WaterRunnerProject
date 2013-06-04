@@ -1,0 +1,46 @@
+\begin{figure}[tb]
+\centering
+\begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width = \textwidth]{foot_traj_orig.eps}
+    \caption{Real Foot locus and phase portrait.}% The circular path traced by end of the input link is traced in green.} 
+    \label{fig:trajrob}
+\end{subfigure}
+\quad
+\begin{subfigure}[t]{0.47\textwidth}
+    \centering
+    \includegraphics[width = \textwidth]{foot_traj_simple.eps}
+    \caption{Simplified foot locus and phase portrait.} 
+    \label{fig:trajsimp}
+\end{subfigure}
+\vspace{0.5EX}
+\caption{Real and simplified leg trajectories (blue) and phase portraits (red).}
+\label{fig:traj}
+\end{figure}
+\vspace{2EX}
+
+\textcolor{prime}{\textsf{Leg Model}}
+\begin{itemize}
+    \item Only considers average vertical forces generated in one cycle of simplified trajectory
+    \item Assumes velocity of leg $\gg$ of body oscillations
+    \item Allows for different foot velocties during downwards and upwards phases of trajectory
+    \item We integrate the following force equation~\cite{glasheen1996vertical} over simplified trajectory
+        \begin{equation}
+            F(t) = - C_D^* \left[\frac{1}{2} S \rho \dot{y}_f(t) |\dot{y}_f(t) | + S \rho g y_f(t) \right]
+            \label{eq:force_t}
+        \end{equation}
+\hspace{1EM} \small{$C_D^*$ coefficient of friction, $S$ area of foot, $\rho$ density, $y_f$ position of foot, $g$ gravity}
+\end{itemize}
+\vspace{1EX}
+
+\textcolor{prime}{\textsf{Robot Model}} \\
+We linearize the result of integrating equation~\ref{eq:force_t} and write the height and roll dynamics in the form
+
+\begin{equation}
+    M \ddot{\vec{y}} = A \vec{y} + G + B \vec{\omega} 
+    \label{eq:rob_dyn}
+\end{equation}
+
+\hspace{1EM} $\vec{y} = [y, \theta]^T = $\  height and roll \\
+
+\hspace{1EM} $\vec{\omega} = [\omega^-_l, \omega^+_l, \omega^-_r, \omega^+_r]^T = $\ downwards and upwards leg frequencies for left \\ \hspace{1EM} and right sides of robot
