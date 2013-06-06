@@ -9,6 +9,7 @@
 *.so
 *.aux
 *.bbl
+*.snm
 *.out
 *.blg
 slprj/
@@ -53,6 +54,8 @@ Thumbs.db
 #Media#
 #####################
 *.png
+*.jpg
+*.JPG
 *.pdf
 *.eps
 *.fig

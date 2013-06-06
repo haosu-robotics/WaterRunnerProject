@@ -1,8 +1,8 @@
 \textcolor{prime}{\textsf{Central Pattern Generator (CPG)}} \\
 \begin{figure}[h]
 	\centering
-    \includegraphics[width=7.5in]{cpg-crop.pdf}
-    \caption{The CPG helps maintain a trot gait}
+    \includegraphics[height=2.9in]{cpg-crop.pdf}
+    \caption{The CPG helps maintain a trot gait. Blue circles represent leg osccilators, black arrows represent phase couplings, and red arrows represent external forcing terms.}
     \label{fig:CPG_Network}
 \end{figure}
 \vspace{-0.25in}
@@ -17,22 +17,29 @@
         \vec{\omega} = B^{\dagger} \left[M \mathrm{PID}(\vec{y}_d - \vec{y})- A \vec{y} - G \right] + (\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0 \label{eq:control}
     \end{equation*}
 
-\item We use a heuristic to set $\vec{\omega}_0$ so that the nullspace is used to find control inputs that help system converge to trot gait
+\item We use a heuristic to set $\vec{\omega}_0$ at each time step so that the nullspace is used to find control inputs that help the system converge to trot gait
 \begin{equation}
-    \vec{\omega}_0^t = \underbrace{\frac{1}{2}\begin{bmatrix}
-        \omega_l^- + \omega_l^+ \\
-        \omega_l^- + \omega_l^+ \\
-        \omega_r^- + \omega_r^+ \\
-        \omega_r^- + \omega_r^+ \\
+    \vec{\omega}_0^{t+1} = \underbrace{\frac{1}{2}\begin{bmatrix}
+        {\omega_l^-}^t + {\omega_l^+}^t \\
+        {\omega_l^-}^t + {\omega_l^+}^t \\
+        {\omega_r^-}^t + {\omega_r^+}^t \\
+        {\omega_r^-}^t + {\omega_r^+}^t \\
     \end{bmatrix}}_{\text{term 1}} + 
-    \underbrace{k \begin{bmatrix}
-        \sin \left( \phi_r - \phi_l - \phi_{\mathrm{des}} \right) \\
-        \sin \left( \phi_r - \phi_l - \phi_{\mathrm{des}} \right) \\
-        \sin \left( \phi_l - \phi_r - \phi_{\mathrm{des}} \right) \\
-        \sin \left( \phi_l - \phi_r - \phi_{\mathrm{des}} \right) \\
+    \underbrace{\vphantom{\frac{1}{2}\begin{bmatrix}
+        {\omega_l^-}^t + {\omega_l^+}^t \\
+        {\omega_l^-}^t + {\omega_l^+}^t \\
+        {\omega_r^-}^t + {\omega_r^+}^t \\
+        {\omega_r^-}^t + {\omega_r^+}^t \\
+    \end{bmatrix}}
+    k \begin{bmatrix}
+        \sin \left( \phi_r^t - \phi_l^t - \pi \right) \\
+        \sin \left( \phi_r^t - \phi_l^t - \pi \right) \\
+        \sin \left( \phi_l^t - \phi_r^t + \pi \right) \\
+        \sin \left( \phi_l^t - \phi_r^t + \pi \right) \\
     \end{bmatrix}}_{\text{term 2}}
     \label{eq:hu}
 \end{equation}
 
-\item Term 1 ensures that the leg speed at the next timestep is closed to the last used leg speed. Term 2 helps find leg speeds that will bring the robot back to a trot gait.
+\item Term 1: leg speeds at the next timestep are close to those at the last time step
+\item Term 2: leg speeds that help bring the robot back to a trot gait
 \end{itemize}
