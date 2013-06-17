@@ -8,12 +8,8 @@ y = 0.015;
 theta = 0 *pi/180;
 
 %%%% disturbance torque waves %%%%%
-dTorqueAmp = 0;
+%dTorqueAmp = 4e-3;
 dTorqueFreq = (2*pi)/2;
-
-%%%% disturbance torque waves %%%%%
-%dWaveAmp = 0; 
-dWaveFreq = (2*pi)/2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Robot Parameters %%%%%%%%%%%%%%%%%%%%%%
@@ -99,7 +95,7 @@ freq = findSSinput(y,b_water,k_water,A,Fratio,mass*g/4,w0);
 w = freq;
 omega_0 = freq*ones(4,1);
 phase_0 = [0 pi 0 pi];
-%Cgain = 10;
+%Cgain = 0;
 
 %Compute Taylor Series Terms%
 
@@ -161,7 +157,7 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-c_gain = 10;
+c_gain = 1;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;

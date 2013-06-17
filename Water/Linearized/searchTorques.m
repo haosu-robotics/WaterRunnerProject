@@ -1,4 +1,6 @@
-torques = [3e-3, 3.5e-3, 4e-3, 4.5e-3, 5.0e-3];
+simParam;
+
+torques = [2.5e-3, 3e-3, 3.25e-3, 3.5e-3];
 
 if 1
 	closedResponse1 = cell(size(torques));
@@ -8,12 +10,9 @@ if 1
 
 	i = 1;
 	for dTorqueAmp = torques
-		clearvars -except closedResponse1 closedResponse2 phases1 phases2 i torques dTorqueAmp
-		simParam;
-
 		dTorqueAmp
 		Cgain = 10
-		sim('WaterRunner_open');
+		sim('WaterRunner_closed3');
 		
 		time = output.time;
 		[~, angles] = output.signals.values;
@@ -21,9 +20,6 @@ if 1
 		phase = cpg_omega.signals(2).values(:,4); 
 		phases1{i} = [time,phase];
 		
-		clearvars -except closedResponse1 closedResponse2 phases1 phases2 i torques dTorqueAmp
-		simParam;
-
 		dTorqueAmp
 		Cgain = 0
 		sim('WaterRunner_closed3');
@@ -36,7 +32,6 @@ if 1
 	end
 end
 
-save('data5.mat','closedResponse1','phases1','closedResponse2','phases2')
 figure(1)
 subplot(211);
 	hold all
