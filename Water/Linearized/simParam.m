@@ -8,8 +8,13 @@ y = 0.015;
 theta = 0 *pi/180;
 
 %%%% disturbance torque waves %%%%%
-%dTorqueAmp = 4e-3;
+dTorqueAmp = 0; %4.5e-3;
 dTorqueFreq = (2*pi)/2;
+
+%%%% disturbance height waves %%%%%
+%dWaveAmp = 5e-3;
+dWaveAmp = 0;
+dWaveFreq = (2*pi)/2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%% Robot Parameters %%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +41,6 @@ HR_TR = [-frame_length/2+L5 -frame_width/2 0];
 HL_TR = [-frame_length/2+L5 frame_width/2 0];
 
 frame_mass = 0.1;
-
 
 %%%%%%%%%%%%%%%%%%%%%% Tail Parameters %%%%%%%%%%%%%%%%%%%%%%%%
 Ta_TR = [-frame_length/2 0 0];
@@ -70,11 +74,13 @@ Lxmat = frame_width/2*diag(marm_x);
 %%%%% Water Model Parameters %%%%%
 
 water_level = 0;
+%A = 0.0337;
 A = 0.0428;
 Amp = A;
 
 r1 = 0.02;
 r2 = r1/4;
+%area = 0.7291;
 area = 0.5449;
 S1 = pi*r1^2*area;
 S2 = pi*r2^2*area;
@@ -89,13 +95,13 @@ Fratio = 1/16;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%Controller Parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Calculate Steady-State frequncy from Desired height %%%%%
+%%%%%% Calculate Steady-State frequncy from Desired height %%%%%
 w0 = 60; %initial guess
 freq = findSSinput(y,b_water,k_water,A,Fratio,mass*g/4,w0);
 w = freq;
 omega_0 = freq*ones(4,1);
 phase_0 = [0 pi 0 pi];
-%Cgain = 0;
+Cgain = 10;
 
 %Compute Taylor Series Terms%
 
@@ -130,14 +136,12 @@ Gc = [2*sum(G) - mass*g ; Lx'*G ];
 
 %%%%% PID Gains - Ziegler Nichols Method %%%%%
 Kuy = 170;
-%Kuy = 100;
 Tuy = 0.5;
 Kpy = 0.2*Kuy;
 Kiy = 2*Kpy/Tuy;
 Kdy = Kpy*Tuy/3;
 
 Kuth = 490;
-%Kuth = 0;
 Tuth = 0.275;
 Kpth = 0.2*Kuth;
 Kith = 2*Kpth/Tuth;
@@ -157,7 +161,7 @@ HR_HL_lag = -pi;    % l2
 FR_HR_lag = pi;     % l3
 FL_HL_lag = -pi;    % l4
 
-c_gain = 1;
+c_gain = 10;
 cw_FR_FL = c_gain;
 cw_HR_HL = c_gain;
 cw_FR_HR = c_gain;
