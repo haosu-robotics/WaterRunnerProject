@@ -1,3 +1,4 @@
+\vspace{-1EX}
 \begin{figure}[tb]
 \centering
 \begin{subfigure}[t]{0.47\textwidth}
@@ -17,19 +18,18 @@
 \caption{Real and simplified leg trajectories (blue) and phase portraits (red).}
 \label{fig:traj}
 \end{figure}
-\vspace{2EX}
 
 \textcolor{prime}{\textsf{Leg Model}}
 \begin{itemize}
     \item Only considers time-averaged vertical forces generated in one cycle of a simplified trajectory
     \item Assumes velocity of legs $\gg$ velocity of body oscillations
-    \item Allows for different foot velocties during the downwards and upwards phases of trajectory
+    \item Allows for different foot velocties during the downwards and upwards phases of the trajectory
     \item We integrate the following force equation~\cite{glasheen1996vertical} over the simplified trajectory
         \begin{equation}
             F(t) = - C_D^* \left[\frac{1}{2} S \rho \dot{y}_f(t) |\dot{y}_f(t) | + S \rho g y_f(t) \right]
             \label{eq:force_t}
         \end{equation}
-\hspace{1EM} $C_D^*$ coefficient of friction, $S$ area of foot, $\rho$ water density, $y_f$ position of \\ \hspace{1EM} foot, $g$ acceleration of gravity
+\hspace{1EM} $C_D^*$ drag coefficient, $S$ area of foot, $\rho$ water density, $y_f$ position of foot, \\ \hspace{1EM} $g$ acceleration of gravity
 \end{itemize}
 \vspace{1EX}
 
@@ -43,4 +43,4 @@ We linearize the result of integrating equation~\ref{eq:force_t} and write the h
 
 \hspace{1EM} $\vec{y} = [y, \theta]^T = $\  height and roll \\
 
-\hspace{1EM} $\vec{\omega} = [\omega^-_l, \omega^+_l, \omega^-_r, \omega^+_r]^T = $\ downwards and upwards leg frequencies for left \\ \hspace{1EM} and right sides of robot
+\hspace{1EM} $\vec{\omega} = [\omega^-_l, \omega^+_l, \omega^-_r, \omega^+_r]^T = $\ plunge and retract leg frequencies for left \\ \hspace{1EM} and right sides of robot

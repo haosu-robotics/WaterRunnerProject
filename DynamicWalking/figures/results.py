@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*- 
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
@@ -23,9 +21,9 @@ pgf_with_custom_preamble = {
 }
 mpl.rcParams.update(pgf_with_custom_preamble)
 
-torques = np.array([3e-3, 3.5e-3, 4e-3, 4.5e-3, 5e-3])
+heights = np.array([5e-3, 6e-3, 7e-3, 8e-3])
 
-data = sio.loadmat('data.mat')
+data = sio.loadmat('data1.mat')
 closedResponse1= np.array(data['closedResponse1'][0])
 closedResponse2= np.array(data['closedResponse2'][0])
 phases1= np.array(data['phases1'][0])
@@ -40,8 +38,8 @@ ax1.spines['top'].set_visible(False)
 ax1.xaxis.set_ticks_position('bottom')
 ax1.yaxis.set_ticks_position('left')
 
-for i in np.arange(torques.shape[0]):
-    plt.plot(closedResponse1[i][:,0],closedResponse1[i][:,1], linewidth=2, label = str(torques[i]*1e3) + ' mN-m')
+for i in np.arange(heights.shape[0]):
+    plt.plot(closedResponse1[i][:,0],closedResponse1[i][:,1], linewidth=2, label = str(heights[i]*1e3) + ' mm')
 
 #set title
 plt.title('Roll Angle Response')
@@ -52,13 +50,13 @@ ax1.title.set_position((curpos[0], curpos[1] + 0.025))
 plt.ylabel('roll angle [deg]')
 labelx = -0.06
 ax1.yaxis.set_label_coords(labelx, 0.5)
-plt.legend(bbox_to_anchor=(1.05, -0.75),loc = 3,borderaxespad=0.,frameon=False)
+plt.legend(bbox_to_anchor=(1.05, -0.75),loc = 3,borderaxespad=0.,frameon=False,title='Amplitude')
 plt.axis([0, 8, -30, 10])
 
 #phase relationships
 ax2 = plt.subplot(212)
-for i in np.arange(torques.shape[0]):
-    plt.plot(phases1[i][:,0],phases1[i][:,1], linewidth=2, label = str(torques[i]*1e3) + ' mN-m')
+for i in np.arange(heights.shape[0]):
+    plt.plot(phases1[i][:,0],phases1[i][:,1], linewidth=2, label = str(heights[i]*1e3) + ' mm')
 
 #set title
 plt.title('Leg Phase Difference')
@@ -94,8 +92,8 @@ ax1.spines['right'].set_visible(False)
 ax1.spines['top'].set_visible(False)
 ax1.xaxis.set_ticks_position('bottom')
 ax1.yaxis.set_ticks_position('left')
-for i in np.arange(torques.shape[0]):
-    plt.plot(closedResponse2[i][:,0],closedResponse2[i][:,1], linewidth=2, label = str(torques[i]*1e3) + ' mN-m')
+for i in np.arange(heights.shape[0]):
+    plt.plot(closedResponse2[i][:,0],closedResponse2[i][:,1], linewidth=2, label = str(heights[i]*1e3) + ' mm')
 
 #set title
 plt.title('Roll Angle Response')
@@ -105,7 +103,7 @@ ax1.title.set_position((curpos[0], curpos[1] + 0.025))
 #set and align axis labels
 plt.ylabel('roll angle [deg]')
 ax1.yaxis.set_label_coords(labelx, 0.5)
-plt.legend(bbox_to_anchor=(1.05, -0.75),loc = 3,borderaxespad=0.,frameon=False)
+plt.legend(bbox_to_anchor=(1.05, -0.75),loc = 3,borderaxespad=0.,frameon=False,title='Amplitude')
 plt.axis([0, 8, -30, 10])
 
 #phase relationships
@@ -114,8 +112,8 @@ ax2.spines['right'].set_visible(False)
 ax2.spines['top'].set_visible(False)
 ax2.xaxis.set_ticks_position('bottom')
 ax2.yaxis.set_ticks_position('left')
-for i in np.arange(torques.shape[0]):
-    plt.plot(phases2[i][:,0],phases2[i][:,1], linewidth=2, label = str(torques[i]*1e3) + ' mN-m')
+for i in np.arange(heights.shape[0]):
+    plt.plot(phases2[i][:,0],phases2[i][:,1], linewidth=2, label = str(heights[i]*1e3) + ' mm')
 
 #set title
 plt.title('Leg Phase Difference')

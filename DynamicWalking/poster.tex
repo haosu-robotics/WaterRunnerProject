@@ -17,7 +17,7 @@
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usepackage[orientation=landscape,size=custom,width=121.92,height=91.44,scale=1.3]{beamerposter}
 % Display a grid to help align images
-%\beamertemplategridbackground[1 in]
+%\beamertemplategridbackground[.5 in]
 
 \usepackage{lipsum}
 \usepackage[absolute,overlay]{textpos}
@@ -25,11 +25,11 @@
 \setlength{\TPVertModule}{1 in}
 
 \title{Roll and height control for legged locomotion on the water surface}
-\author{$\mathsf{^1}$Nitish Thatte \and $\mathsf{^1}$Mahdi Khoramshahi \and $\mathsf{^2}$Auke Isjpeert \and  $\mathsf{^1}$Metin Sitti}
+\author{$\mathsf{^1}$Nitish Thatte \and $\mathsf{^1}$Mahdi Khoramshahi \and $\mathsf{^2}$Auke Ijspeert \and  $\mathsf{^1}$Metin Sitti}
 \institute{$\mathsf{^1}$Carnegie Mellon University \hspace{1EM} $\mathsf{^2}$\'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne
 }
 
-\footer{\texttt{nitisht@andrew.cmu.edu, m80.khoramshahi@gmail.com, auke.ijspeert@epfl.ch, metin@cmu.edu}}
+\footer{\texttt{nitisht@andrew.cmu.edu, khoramsh@andrew.cmu.edu, auke.ijspeert@epfl.ch, sitti@cmu.edu}}
 
 \begin{document}
 
@@ -61,8 +61,8 @@
         \begin{column}{.3\linewidth}
             \begin{figure}[h]
                 \centering
-                \includegraphics[height = 6.5in]{basilisk-lizard.jpg}
-                \caption{A Basilisk Lizard running on the water surface}
+                \includegraphics[width = \textwidth]{schematic-crop.pdf}
+                \caption{\textrm{Schematic of control system}}
             \end{figure}
 
             \begin{block}{Conclusion}
@@ -74,10 +74,9 @@
                 \small
                 \input{acknowledgement.tex}
             \end{block}
-
-            \vspace{0.5in}
             \begin{block}{References}
                 \small
+                \vspace{-.25in}
                 \setbeamertemplate{bibliography item}[text] 
                 \bibliographystyle{IEEEtran}
                 \bibliography{ref}

@@ -1,6 +1,6 @@
 all: .PHONY poster.pdf
 
-figs := RI_large.jpg cpg-crop.pdf cpg.pdf foot_traj_orig.eps foot_traj_simple.eps wheuristic.pdf woheuristic.pdf robot.JPG boom.jpg basilisk-lizard.jpg
+figs := RI_large.jpg cpg-crop.pdf schematic-crop.pdf foot_traj_orig.eps foot_traj_simple.eps wheuristic.pdf woheuristic.pdf robot.JPG basilisk-lizard.jpg
 figs := $(figs:%=figures/%)
 
 .PHONY : 
