@@ -143,6 +143,7 @@ totalMass = frame_mass + 4*(motor_mass + L2_mass + L3_mass + L4_mass) + motor_ma
 
 %%%%% Water Model params %%%%%
 
+leg_length = 0.0249;
 Amp = leg_length;
 amp = Amp;
 freq = 60;

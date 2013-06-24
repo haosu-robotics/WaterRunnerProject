@@ -51,6 +51,7 @@ Thumbs.db
 *.m~
 *.mdl.autosave
 *.mdl.original
+*.mdl.r2012b
 
 #Media#
 #####################
