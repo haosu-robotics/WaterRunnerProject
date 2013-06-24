@@ -11,7 +11,7 @@ We specify our desired behavior using a virtual model with a spring, damper, and
 Plugging equation~\ref{eq:PID} into equation~\ref{eq:rob_dyn} and solving for $\vec{\omega}$ gives our control law:
 
 \begin{align}
-    \vec{\omega} &= B^{\dagger} \left[ M K_p \vec{e} + K_i \int_0^t \vec{e} d \tau + K_d \frac{d}{dt} \vec{e} - A \vec{y} - G \right] \notag \\
+    \vec{\omega} &= B^{\dagger} \left[ M \left(K_p \vec{e} + K_i \int_0^t \vec{e} d \tau + K_d \frac{d}{dt} \vec{e} \right)- A \vec{y} - G \right] \notag \\
                  &\quad + (\mathbbm{1} - B^{\dagger} B) \vec{\omega}_0 \label{eq:control}
 \end{align}
 

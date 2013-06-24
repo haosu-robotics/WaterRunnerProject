@@ -1,18 +1,19 @@
 \begin{figure*}[t]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width = \textwidth]{figures/torques_small.pdf}
         \caption{1 Hz}
         \label{fig:results1Hz}
     \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
+    \quad
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width = \textwidth]{figures/torques_small2.pdf}
         \caption{2 Hz}
         \label{fig:results2Hz}
     \end{subfigure}
-    \caption{Closed and open loop sytem response to sinusoidal disturbance torques at two frequencies and various amplitiudes. Disturbance starts two seconds into simulation.}
+    \caption{Closed and open loop sytem response to sinusoidal disturbance torques at two frequencies and various amplitiudes. Disturbance starts at the two second mark.}
 \end{figure*}
 
 We implemented the controller described in the previous section in order to regulate the height and roll of the water runner robot in simulation. To tune the gains on our virtual model, we used the Ziegler-Nichols Method as our virtual model is simply a PID controller in task-space. We assigned $\omega_0$ by averaging the leg frequencies used in the last time step.
@@ -26,13 +27,14 @@ Finally, figure~\ref{fig:omega0} shows the variation in leg frequencies that can
 
 \begin{figure*}[t]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width = \textwidth]{figures/omega25.pdf}
         \caption{$\omega_0$ set according to 25/75 mix of averaging schemes.}
         \label{fig:omega25}
     \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
+    \quad
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[width = \textwidth]{figures/omega75.pdf}
         \caption{$\omega_0$ set according to 75/25 mix of averaging schemes.}
