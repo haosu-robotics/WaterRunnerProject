@@ -1,0 +1,45 @@
+<h1>Water-Runner-Simulation-V2/Water</h1>
+
+<h2>Models</h2>
+
+<p>There are three models in this folder:</p>
+
+<ol>
+<li><p>WaterRunner_closed.slx - This model includes the full water runner model with a feedback linearizing controller used for the <a href="../../Documents/KDCproject/FinalReport/final.pdf" title="KDC project final report">KDC project</a>. This controller uses a system model linearized about the current position in order to control the height, roll, and pitch of the robot.</p></li>
+<li><p>WaterRunner_closed2.slx - This model includes the full water runner model and a controller that controls the height and roll of the robot by assuming the left and the right hand sides of the robot are decoupled. It then uses a PID controller to control the height of the left and the right hand sides of the robot. The pitch is controlled passively via the tail.</p></li>
+<li><p>WaterRunner_open.mdl - This model includes the full water runner model with no controller on height or roll or CPG maintaining phase differences. All legs driven at specified frequency.</p></li>
+<li><p>WaterRunner.mdl - This model includes the full water runner model with no controller on height or roll. There is a CPG that maintains phase differences between legs.</p></li>
+</ol>
+
+<h2>simParam.m</h2>
+
+<p>This file contains setup parameters and options and should be run before the simulation is started. There are several sections of parameters in this file:</p>
+
+<ol>
+<li>Initial and desired conditions and disturbance inputs.</li>
+<li>Robot Parameters
+<ol>
+<li>Leg link lengths and frame size</li>
+<li>Robot mass is calculated from geometry and density of legs and assumed mass of the body.</li>
+</ol></li>
+<li>Water Model Parameters
+<ol>
+<li>Foot area</li>
+<li>Foot area folding ratio</li>
+<li>Drag coefficient</li>
+<li>Gravity</li>
+</ol></li>
+<li>Controller Parameters
+<ol>
+<li>PID gains tuned via Ziegler Nichols Method</li>
+<li>CPG parameters including phase lags between legs and CPG gain</li>
+</ol></li>
+</ol>
+
+<h2>heightSearch.m</h2>
+
+<p>Runs the WaterRunner.mdl model while sweeping leg frequency and then plots and saves in a .mat file the average steady state heights.</p>
+
+<h2>Linearized/</h2>
+
+<p>This folder contains Simulink models with the controller <a href="../../Documents/DynamicWalking/poster.pdf" title="Dynamic Walking 2013 poster">presented at the dynamic walking conference</a>. This controller only attempts to control height and roll, and uses a model linearized about the desired position.</p>
