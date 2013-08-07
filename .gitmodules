@@ -1,6 +1,3 @@
-[submodule "Hopper"]
-	path = Hopper
-	url = https://github.com/nthatte/Hopper.git
 [submodule "Water-Runner-Simulation"]
 	path = Water-Runner-Simulation
 	url = https://github.com/nthatte/Water-Runner-Simulation.git
