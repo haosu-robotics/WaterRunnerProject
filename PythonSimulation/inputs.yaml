@@ -19,7 +19,7 @@ robot:
     Iyaw: 1.24e-3
     lCOM: 0.
     hCOM: 0.002
-    initPos: [0, 0.025]
+    initPos: [0, 0.070]
     initSpeed: [0., 0.]
     initAccel: [0., 0.]
     leg0Pos: [-0.086625, 0]
@@ -33,7 +33,7 @@ leg:
 
 motor:
     initPos: 0.
-    initSpeed: 70.
+    initSpeed: 20.
     initAccel: 0.
     voltage: 6.
     J: 3.e-10

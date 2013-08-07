@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\begin{document}
+\pagestyle{empty}
+
+\newcommand{\tld}{\large {\raise-1ex\hbox{$\scriptstyle\sim$}}}
+
+% Define block styles
+\tikzstyle{nothing} = []
+\tikzstyle{circ} = [circle, draw, fill=white!20,text width=1em, text centered, minimum height=1em]
+\tikzstyle{bcirc} = [fill,shape=circle,minimum size=5pt,inner sep=0pt]
+\tikzstyle{bigblock} = [rectangle, draw, fill=white!20,text width=14em, text centered, minimum height=14em]
+\tikzstyle{block} = [rectangle, draw, fill=white!20,text width=8em, text centered, minimum height=3em]
+\tikzstyle{arrow} = [draw, -latex']
+\tikzstyle{greyed} = [black!50]
+\tikzstyle{arrow2} = [draw, <->, >=latex]
+
+\begin{tikzpicture}[auto]
+  % Place nodes
+  \node [draw=none,fill=none](center) {}; 
+  \node [circ, fill=green, node distance = 1.2cm, above right of=center] (fr) {\tld};  %Right front hip
+  \node [circ, fill=green, node distance = 1.2cm, above left of=center] (fl) {\tld};		%Left front hip	
+  \node [circ, fill=green, node distance = 1.2cm, below right of=center] (hr) {\tld};     % right hind hip
+  \node [circ, fill=green, node distance = 1.2cm, below left of=center] (hl) {\tld};     % left hind hip
+
+  \node [draw=none,fill=none, node distance = 2.5cm, above right of=center](F_FR) {$\zeta$\tiny $_{FR}$}; 
+  \node [draw=none,fill=none, node distance = 2.5cm, above left of=center](F_FL) {$\zeta$\tiny $_{FL}$}; 
+  \node [draw=none,fill=none, node distance = 2.5cm, below right of=center](F_HR) {$\zeta$\tiny $_{HR}$}; 
+  \node [draw=none,fill=none, node distance = 2.5cm, below left of=center](F_HL) {$\zeta$\tiny $_{HL}$}; 
+
+  \draw (2.5,0) ++(135:1.2) node[left=-0.25cm] {\tiny FR};
+  \draw (2.5,0) ++(135:1.2) node[left= 2.85cm] {\tiny FL};
+
+  \draw (2.5,-1.7) ++(135:1.2) node[left=-0.25cm] {\tiny HR};
+  \draw (2.5,-1.7) ++(135:1.2) node[left= 2.85cm] {\tiny HL};
+  
+
+
+  
+  % Draw edges
+
+  \path [arrow2] (fr) -- (fl);
+  \path [arrow2] (fr) -- (hr);
+  \path [arrow2] (hl) -- (fl);
+  \path [arrow2] (hl) -- (hr);
+  
+  \path [arrow2,greyed,dashed] (fr) -- (hl);
+  \path [arrow2,greyed,dashed] (fl) -- (hr);
+
+  \path [arrow,red] (F_FR) -- (fr);
+  \path [arrow,red] (F_FL) -- (fl);
+  \path [arrow,red] (F_HR) -- (hr);
+  \path [arrow,red] (F_HL) -- (hl);
+
+  
+
+ \end{tikzpicture}
+
+
+\end{document}

@@ -121,9 +121,9 @@ while Robot.time < endtime:
 #plot results
 if movie == True:
 	if platform == 'darwin':	
-		os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/a.mp4')
+		os.system('ffmpeg -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/mov.mp4')
 	else:
-		os.system('avconv -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/a.mp4')
+		os.system('avconv -i ./movie/leg%d.png -s 700x522 -r 30 -qscale 1 -y ./movie/mov.mp4')
 
 if plots == True:
 	time.pop()

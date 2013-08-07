@@ -1,0 +1,63 @@
+\documentclass[letterpaper, 11 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+
+\IEEEoverridecommandlockouts{}                            % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins{}
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage[margin=5 pt]{subcaption}
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{bbm}
+%\usepackage{endfloat}
+\usepackage{comment}
+
+\title{\LARGE \bf
+    Roll and Height Control for Legged Locomotion on the Water Surface
+}
+
+\author{Nitish Thatte, Mahdi Khoramshahi, and Jason Rebello}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+	\input{Abstract}
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+\input{Intro}
+
+\section{LEGGED LOCOMOTION MODEL}
+\input{LegModel}
+
+\section{CONTROLLER DESIGN}
+\input{Controller}
+
+\section{RESULTS}
+\input{Results}
+
+\section{CONCLUSIONS}
+\input{Conclusions}
+
+%\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{IEEEtran}
+\bibliography{final}
+
+\end{document}
