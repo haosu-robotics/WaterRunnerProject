@@ -1,7 +1,7 @@
 global r1 forceRatio mass df
 simParam2;
 
-load_system('WaterRunner_open4.slx');
+load_system('WaterRunner_open.slx');
 
 freqs = 55:5:80;
 y_avg = nan(size(freqs));
@@ -17,7 +17,7 @@ for k = 1 : numel(freqs)
 	w2 = freq/(2*(1-df))
 	T_des = 5;
 	try
-		T_sim = sim('WaterRunner_open4.slx',T_des);
+		T_sim = sim('WaterRunner_open.slx',T_des);
 	catch
 		continue;
 	end

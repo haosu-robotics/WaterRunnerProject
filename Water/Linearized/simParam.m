@@ -12,7 +12,7 @@ dTorqueAmp = 0;
 dTorqueFreq = (2*pi)/2;
 
 %%%% disturbance torque waves %%%%%
-%dWaveAmp = 0; 
+dWaveAmp = 0; 
 dWaveFreq = (2*pi)/2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -99,7 +99,6 @@ freq = findSSinput(y,b_water,k_water,A,Fratio,mass*g/4,w0);
 w = freq;
 omega_0 = freq*ones(4,1);
 phase_0 = [0 pi 0 pi];
-%Cgain = 10;
 
 %Compute Taylor Series Terms%
 
@@ -132,6 +131,8 @@ nullProj = eye(4) - pinvBc*Bc;
 
 Gc = [2*sum(G) - mass*g ; Lx'*G ];
 
+Cgain = 10; %Coupling gain for nullspace projection term of inverse dynamics
+
 %%%%% PID Gains - Ziegler Nichols Method %%%%%
 Kuy = 170;
 %Kuy = 100;
@@ -154,6 +155,7 @@ Filter_Coef = 1000;
 
 Kdf = 0; %duty factor preference gain
 Ke = diag([0 1]); %antiwindup
+
 
 %%%%% CPG params %%%%%
 FR_FL_lag = pi;     % l1

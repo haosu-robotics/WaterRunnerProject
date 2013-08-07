@@ -42,7 +42,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [5.0, 0.0, 1440.0, 878.0]
+      Location		      [5.0, 22.0, 1440.0, 900.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -66,14 +66,14 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1404.0, 716.0]
+	Extents			[1404.0, 738.0]
 	ZoomFactor		[0.6]
-	Offset			[-142.193329467612, 616.52529896131819]
+	Offset			[-142.19332946761187, 616.52529896131819]
       }
     }
   }
-  PhysicalModelingChecksum "739893831"
-  PhysicalModelingParameterChecksum "1788239116"
+  PhysicalModelingChecksum "2224801236"
+  PhysicalModelingParameterChecksum "3445437206"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -81,7 +81,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 27 17:28:20 2013"
+  LastModifiedDate	  "Tue Aug 06 12:04:03 2013"
   RTWModifiedTimeStamp	  291576490
   ModelVersionFormat	  "1.%<AutoIncrement:401>"
   ConfigurationManager	  "None"
@@ -1097,7 +1097,7 @@ Model {
   }
   System {
     Name		    "WaterRunner"
-    Location		    [5, 0, 1445, 878]
+    Location		    [5, 22, 1445, 922]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -5819,8 +5819,8 @@ Model {
       Position		      [1385, 201, 1415, 234]
       ZOrder		      353
       Floating		      off
-      Location		      [6, 52, 564, 878]
-      Open		      on
+      Location		      [6, 52, 572, 883]
+      Open		      off
       NumInputPorts	      "2"
       List {
 	ListType		AxesTitles
@@ -12871,7 +12871,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -15799,7 +15798,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -20027,7 +20025,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -22955,7 +22952,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -27183,7 +27179,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -30111,7 +30106,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -34339,7 +34333,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -37267,7 +37260,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -38270,7 +38262,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Water Contact FR3"
       SrcPort		      LConn1
-      Points		      [0, 0]
       DstBlock		      "Leg HL"
       DstPort		      RConn1
     }

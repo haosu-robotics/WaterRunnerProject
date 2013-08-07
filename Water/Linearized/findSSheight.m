@@ -1,11 +1,12 @@
 function wss = findSSheight(w1, w2, b, k, A, alpha, Weight, h0)
-%Solve force function for input that will create an average force equal to the weight
+%Solve force function for steady state height for a given w1 and w2 
+%steady state height will create an average force equal to the weight
 
 %b = damping constant
 %k = spring constant
 %A = amplitude = leg_length
 %alpha = forceRatio
-%w0 initial guess for steady state input
+%h0 initial guess for steady state height
 
 F = @(h)Force(h, w1, w2, b, k, A, alpha, Weight)
 %options = optimset('Display','off'); %solver options

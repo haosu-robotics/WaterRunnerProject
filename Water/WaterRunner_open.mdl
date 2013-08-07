@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.446"
+    ComputedModelVersion    "1.447"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -42,7 +42,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 1440.0, 874.0]
+      Location		      [0.0, 0.0, 1440.0, 900.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -66,14 +66,14 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1404.0, 712.0]
+	Extents			[1404.0, 738.0]
 	ZoomFactor		[1.0]
-	Offset			[329.96643417901942, 359.50397869387461]
+	Offset			[356.14091384243011, 369.01807878521112]
       }
     }
   }
-  PhysicalModelingChecksum "2892271353"
-  PhysicalModelingParameterChecksum "3770619492"
+  PhysicalModelingChecksum "2439933216"
+  PhysicalModelingParameterChecksum "883843913"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -81,9 +81,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 27 17:41:58 2013"
-  RTWModifiedTimeStamp	  291577313
-  ModelVersionFormat	  "1.%<AutoIncrement:446>"
+  LastModifiedDate	  "Tue Aug 06 12:02:54 2013"
+  RTWModifiedTimeStamp	  297691369
+  ModelVersionFormat	  "1.%<AutoIncrement:447>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1106,7 +1106,7 @@ Model {
   }
   System {
     Name		    "WaterRunner_open"
-    Location		    [0, 0, 1440, 874]
+    Location		    [0, 0, 1440, 900]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1120,7 +1120,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6793"
+    SIDHighWatermark	    "6796"
     Block {
       BlockType		      Reference
       Name		      "Body"
@@ -1148,12 +1148,35 @@ Model {
     Block {
       BlockType		      Constant
       Name		      "Constant1"
-      SID		      "6793"
-      Position		      [1230, 690, 1260, 720]
-      ZOrder		      545
+      SID		      "6794"
+      Position		      [995, 675, 1025, 705]
+      ZOrder		      546
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
+      Value		      "freq"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "6795"
+      Position		      [780, 675, 810, 705]
+      ZOrder		      547
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Value		      "freq"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "6796"
+      Position		      [565, 680, 595, 710]
+      ZOrder		      548
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      Value		      "freq"
     }
     Block {
       BlockType		      Gain
@@ -9037,7 +9060,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -11965,7 +11987,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -16193,7 +16214,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -19121,7 +19141,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -23349,7 +23368,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -26277,7 +26295,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -30505,7 +30522,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -33433,7 +33449,6 @@ Model {
 		Line {
 		  SrcBlock		  "Product1"
 		  SrcPort		  1
-		  Points		  [0, -5]
 		  DstBlock		  "Sum"
 		  DstPort		  1
 		}
@@ -34961,17 +34976,20 @@ Model {
       DstPort		      RConn2
     }
     Line {
-      Points		      [580, 715; 0, 5]
+      SrcBlock		      "Constant3"
+      SrcPort		      1
       DstBlock		      "Motor FR1"
       DstPort		      1
     }
     Line {
-      Points		      [795, 715; 0, 5]
+      SrcBlock		      "Constant2"
+      SrcPort		      1
       DstBlock		      "Motor FR2"
       DstPort		      1
     }
     Line {
-      Points		      [1010, 715; 0, 5]
+      SrcBlock		      "Constant1"
+      SrcPort		      1
       DstBlock		      "Motor FR4"
       DstPort		      1
     }

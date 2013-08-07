@@ -1,12 +1,12 @@
 Model {
   Name			  "WaterRunner_closed2"
-  Version		  8.0
+  Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.446"
+    ComputedModelVersion    "1.447"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -42,7 +42,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [960.0, 19.0, 960.0, 1061.0]
+      Location		      [0.0, 0.0, 1440.0, 900.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -59,33 +59,21 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [922.0, 918.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [506.02656152667936, 609.33683765946614]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "239"
-	  Extents		  [922.0, 388.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [95.753607107825587, 7.3046811120344159]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1404.0, 737.0]
+	ZoomFactor		[0.5599262085964517]
+	Offset			[74.263366096614632, 54.996705306770096]
       }
     }
   }
-  PhysicalModelingChecksum "2704804422"
-  PhysicalModelingParameterChecksum "3192927187"
+  PhysicalModelingChecksum "2614391144"
+  PhysicalModelingParameterChecksum "2273344376"
   PhysicalModelingProducts "SimMechanics|Simscape"
   Created		  "Wed Feb 06 14:21:28 2013"
   Creator		  "nitisht"
@@ -93,9 +81,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "nitisht"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu May 02 17:11:36 2013"
-  RTWModifiedTimeStamp	  289415283
-  ModelVersionFormat	  "1.%<AutoIncrement:446>"
+  LastModifiedDate	  "Tue Aug 06 11:49:48 2013"
+  RTWModifiedTimeStamp	  297690583
+  ModelVersionFormat	  "1.%<AutoIncrement:447>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -130,7 +118,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "WaterRunner_closed2"
     signals_		    []
@@ -190,14 +178,14 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
-      Version		      "1.12.1"
+      $ObjectID		      8
+      Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		10
 	Simulink.SolverCC {
-	  $ObjectID		  10
-	  Version		  "1.12.1"
+	  $ObjectID		  9
+	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "15"
 	  AbsTol		  "auto"
@@ -231,8 +219,8 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
-	  Version		  "1.12.1"
+	  $ObjectID		  10
+	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -263,8 +251,8 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
-	  Version		  "1.12.1"
+	  $ObjectID		  11
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -319,8 +307,8 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
-	  Version		  "1.12.1"
+	  $ObjectID		  12
+	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -409,12 +397,13 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
-	  Version		  "1.12.1"
+	  $ObjectID		  13
+	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  64
+	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  64
@@ -424,17 +413,20 @@ Model {
 	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  64
 	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "Intel->x86-64"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -446,8 +438,8 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
-	  Version		  "1.12.1"
+	  $ObjectID		  14
+	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -461,8 +453,8 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
-	  Version		  "1.12.1"
+	  $ObjectID		  15
+	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -476,8 +468,8 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
-	  Version		  "1.12.1"
+	  $ObjectID		  16
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    9
@@ -520,6 +512,7 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -539,8 +532,8 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
-	      Version		      "1.12.1"
+	      $ObjectID		      17
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -584,7 +577,7 @@ Model {
 	      IncDataTypeInIds	      off
 	      MangleLength	      1
 	      CustomSymbolStrGlobalVar "$R$N$M"
-	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrType     "$N$R$M_T"
 	      CustomSymbolStrField    "$N$M"
 	      CustomSymbolStrFcn      "$R$N$M$F"
 	      CustomSymbolStrFcnArg   "rt$I$N$M"
@@ -599,15 +592,15 @@ Model {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
-	      InternalIdentifier      "Classic"
+	      InternalIdentifier      "Shortened"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
-	      Version		      "1.12.1"
+	      $ObjectID		      18
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -620,13 +613,13 @@ Model {
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
 		Cell			"CPPClassGenCompliant"
-		Cell			"MultiInstanceERTCode"
+		Cell			"PortableWordSizes"
 		Cell			"PurelyIntegerCode"
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
 		Cell			"SupportNonInlinedSFcns"
-		Cell			"PortableWordSizes"
+		Cell			"GenerateAllocFcn"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
@@ -665,10 +658,12 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      off
+	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -687,8 +682,8 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  20
-	  Version		  "1.12.1"
+	  $ObjectID		  19
+	  Version		  "1.13.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
 	  Array {
@@ -700,7 +695,7 @@ Model {
 	  HDLCActiveTab		  "0"
 	}
 	SSC.SimscapeCC {
-	  $ObjectID		  21
+	  $ObjectID		  20
 	  Version		  "1.0"
 	  Array {
 	    Type		    "Cell"
@@ -712,8 +707,8 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    MECH.SimMechanicsCC {
-	      $ObjectID		      22
-	      Version		      "1.12.1"
+	      $ObjectID		      21
+	      Version		      "1.13.0"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
 	      WarnOnSingularInitialAssembly off
@@ -745,15 +740,15 @@ Model {
 	      OVRRIDBodyVisualizationType "NONE"
 	    }
 	    simmechanics.ConfigurationSet {
-	      $ObjectID		      23
-	      Version		      "1.12.1"
+	      $ObjectID		      22
+	      Version		      "1.13.0"
 	      Description	      "SimMechanics 2G"
 	      Array {
 		Type			"Handle"
 		Dimension		2
 		simmechanics.DiagnosticsConfigSet {
-		  $ObjectID		  24
-		  Version		  "1.12.1"
+		  $ObjectID		  23
+		  Version		  "1.13.0"
 		  Description		  "Diagnostics"
 		  Name			  "DiagnosticsConfigSet"
 		  SimMechanicsInvalidVisualProperty "warning"
@@ -766,8 +761,8 @@ Model {
 		  SimMechanicsJointTargetOverSpecification "error"
 		}
 		simmechanics.ExplorerConfigSet {
-		  $ObjectID		  25
-		  Version		  "1.12.1"
+		  $ObjectID		  24
+		  Version		  "1.13.0"
 		  Description		  "Explorer"
 		  Name			  "ExplorerConfigSet"
 		  SimMechanicsOpenEditorOnUpdate on
@@ -808,11 +803,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    26
+    $ObjectID		    25
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -919,6 +914,7 @@ Model {
     }
     Block {
       BlockType		      Goto
+      GotoTag		      "A"
       IconDisplay	      "Tag"
       TagVisibility	      "local"
     }
@@ -1074,6 +1070,7 @@ Model {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -1130,7 +1127,7 @@ Model {
   }
   System {
     Name		    "WaterRunner_closed2"
-    Location		    [960, 19, 1920, 1080]
+    Location		    [0, 0, 1440, 900]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1142,7 +1139,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "56"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "6897"
     Block {
@@ -1386,20 +1383,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    27
+	    $ObjectID		    26
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		28
+		$ObjectID		27
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FL_HL_lag"
 	      }
 	      Object {
-		$ObjectID		29
+		$ObjectID		28
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1568,20 +1565,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    30
+	    $ObjectID		    29
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		31
+		$ObjectID		30
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_FL_lag"
 	      }
 	      Object {
-		$ObjectID		32
+		$ObjectID		31
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -1750,20 +1747,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    33
+	    $ObjectID		    32
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		34
+		$ObjectID		33
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"FR_HR_lag"
 	      }
 	      Object {
-		$ObjectID		35
+		$ObjectID		34
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -2203,11 +2200,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    36
+	    $ObjectID		    35
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      37
+	      $ObjectID		      36
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2352,11 +2349,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    38
+	    $ObjectID		    37
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      39
+	      $ObjectID		      38
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2662,20 +2659,20 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    40
+	    $ObjectID		    39
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      2
 	      Object {
-		$ObjectID		41
+		$ObjectID		40
 		Type			"edit"
 		Name			"d_phase"
 		Prompt			"Phase Lag"
 		Value			"HR_HL_lag"
 	      }
 	      Object {
-		$ObjectID		42
+		$ObjectID		41
 		Type			"edit"
 		Name			"coupling_weight"
 		Prompt			"Coupling Weight"
@@ -2843,11 +2840,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    43
+	    $ObjectID		    42
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      44
+	      $ObjectID		      43
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -2992,11 +2989,11 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    45
+	    $ObjectID		    44
 	    $ClassName		    "Simulink.Mask"
 	    Object {
 	      $PropName		      "Parameters"
-	      $ObjectID		      46
+	      $ObjectID		      45
 	      $ClassName	      "Simulink.MaskParameter"
 	      Type		      "edit"
 	      Name		      "init_phi"
@@ -5906,7 +5903,7 @@ Model {
       Ports		      [1, 1]
       Position		      [1665, 192, 1705, 228]
       ZOrder		      565
-      LibraryVersion	      "1.281"
+      LibraryVersion	      "1.274"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       Controller	      "PID"
@@ -6015,7 +6012,7 @@ Model {
       Ports		      [1, 1]
       Position		      [1665, 282, 1705, 318]
       ZOrder		      569
-      LibraryVersion	      "1.281"
+      LibraryVersion	      "1.274"
       SourceBlock	      "simulink/Continuous/PID Controller"
       SourceType	      "PID 1dof"
       Controller	      "PID"
@@ -6128,9 +6125,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6147,9 +6144,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6166,9 +6163,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6186,9 +6183,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6206,9 +6203,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6226,9 +6223,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6246,9 +6243,9 @@ Model {
       SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
       SourceType	      "PS-Simulink\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_output"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_output"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       Unit		      "1"
@@ -6673,8 +6670,8 @@ Model {
       ZOrder		      353
       BlockRotation	      270
       Floating		      off
-      Location		      [2, 49, 960, 1078]
-      Open		      on
+      Location		      [6, 51, 964, 899]
+      Open		      off
       NumInputPorts	      "2"
       ZoomMode		      "yonly"
       List {
@@ -6851,19 +6848,19 @@ Model {
       SourceBlock	      "nesl_utility/Simulink-PS\nConverter"
       SourceType	      "Simulink-PS\nConverter"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "ps_input"
       LeftPortType	      "input"
       RightPortType	      "output"
-      SubClassName	      "ps_input"
       PseudoPeriodic	      off
       Frequencies	      "[]"
       NoiseDistribution	      "none"
       NoiseParameters	      "[]"
       Unit		      "1"
       AffineConversion	      off
+      InputFiltering	      "off"
+      SimscapeFilterOrder     "1"
       InputFilterTimeConstant ".001"
       UdotUserProvided	      "[]"
-      SimscapeFilterOrder     "1"
-      InputFiltering	      "off"
     }
     Block {
       BlockType		      Sin
@@ -6955,18 +6952,19 @@ Model {
       SourceBlock	      "nesl_utility/Solver\nConfiguration"
       SourceType	      "Solver\nConfiguration"
       PhysicalDomain	      "network_engine_domain"
+      SubClassName	      "solver"
       LeftPortType	      "input"
       RightPortType	      "generic"
-      SubClassName	      "solver"
       Accelerate	      off
-      Profile		      off
-      UseLocalSampling	      off
-      FrequencyDomain	      off
       Tones		      "[]"
       Harmonics		      "[]"
-      UseCCode		      off
       SimulateNoise	      off
+      Profile		      off
+      UseLocalSampling	      off
       EnableSwitchedLinearOptims on
+      FrequencyDomain	      off
+      UseCCode		      off
+      UseNewInitialization    off
       DoDC		      off
       ResidualTolerance	      "1e-3"
       UseLocalSolver	      off
@@ -7441,7 +7439,7 @@ Model {
 	      Ports		      [1, 1]
 	      Position		      [1455, 142, 1505, 168]
 	      ZOrder		      363
-	      LibraryVersion	      "1.397"
+	      LibraryVersion	      "1.398"
 	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Quat to Euler1"
 	      SourceType	      "SubSystem"
 	      Port {
@@ -7459,7 +7457,7 @@ Model {
 	      Position		      [1500, 372, 1555, 423]
 	      ZOrder		      371
 	      BlockMirror	      on
-	      LibraryVersion	      "1.397"
+	      LibraryVersion	      "1.398"
 	      SourceBlock	      "WaterRunner_lib_2/Water Contact FR/Subsystem1"
 	      SourceType	      "SubSystem"
 	    }
@@ -7548,19 +7546,19 @@ Model {
 	      SourceBlock	      "nesl_utility/Simulink-PS\nConverter"
 	      SourceType	      "Simulink-PS\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_input"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_input"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      NoiseDistribution	      "none"
 	      NoiseParameters	      "[]"
 	      Unit		      "1"
 	      AffineConversion	      off
+	      InputFiltering	      "off"
+	      SimscapeFilterOrder     "1"
 	      InputFilterTimeConstant ".001"
 	      UdotUserProvided	      "[]"
-	      SimscapeFilterOrder     "1"
-	      InputFiltering	      "off"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -7574,19 +7572,19 @@ Model {
 	      SourceBlock	      "nesl_utility/Simulink-PS\nConverter"
 	      SourceType	      "Simulink-PS\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_input"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_input"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      NoiseDistribution	      "none"
 	      NoiseParameters	      "[]"
 	      Unit		      "1"
 	      AffineConversion	      off
+	      InputFiltering	      "off"
+	      SimscapeFilterOrder     "1"
 	      InputFilterTimeConstant ".001"
 	      UdotUserProvided	      "[]"
-	      SimscapeFilterOrder     "1"
-	      InputFiltering	      "off"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -7599,9 +7597,9 @@ Model {
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_output"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_output"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      Unit		      "1"
@@ -7619,9 +7617,9 @@ Model {
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_output"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_output"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      Unit		      "1"
@@ -7638,9 +7636,9 @@ Model {
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_output"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_output"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      Unit		      "1"
@@ -7657,9 +7655,9 @@ Model {
 	      SourceBlock	      "nesl_utility/PS-Simulink\nConverter"
 	      SourceType	      "PS-Simulink\nConverter"
 	      PhysicalDomain	      "network_engine_domain"
+	      SubClassName	      "ps_output"
 	      LeftPortType	      "input"
 	      RightPortType	      "output"
-	      SubClassName	      "ps_output"
 	      PseudoPeriodic	      off
 	      Frequencies	      "[]"
 	      Unit		      "1"
@@ -7683,41 +7681,41 @@ Model {
 	      MaskHideContents	      off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		47
+		$ObjectID		46
 		$ClassName		"Simulink.Mask"
 		Array {
 		  Type			  "Simulink.MaskParameter"
 		  Dimension		  5
 		  Object {
-		    $ObjectID		    48
+		    $ObjectID		    47
 		    Type		    "edit"
 		    Name		    "Cd"
 		    Prompt		    "Drag Coefficient "
 		    Value		    "0.703"
 		  }
 		  Object {
-		    $ObjectID		    49
+		    $ObjectID		    48
 		    Type		    "edit"
 		    Name		    "density"
 		    Prompt		    "Density"
 		    Value		    "1000"
 		  }
 		  Object {
-		    $ObjectID		    50
+		    $ObjectID		    49
 		    Type		    "edit"
 		    Name		    "y_w"
 		    Prompt		    "Water level"
 		    Value		    "water_level"
 		  }
 		  Object {
-		    $ObjectID		    51
+		    $ObjectID		    50
 		    Type		    "edit"
 		    Name		    "R"
 		    Prompt		    "Foot Radius"
 		    Value		    "tail_pad_radius"
 		  }
 		  Object {
-		    $ObjectID		    52
+		    $ObjectID		    51
 		    Type		    "edit"
 		    Name		    "g"
 		    Prompt		    "Gravity constant (use negative)"
@@ -8031,6 +8029,7 @@ Model {
 		    SID			    "6035"
 		    Name		    "sign handle the case when angle of tail pass 180 or 0"
 		    Position		    [288, 288]
+		    ZOrder		    -1
 		    }
 		  }
 		}
@@ -10945,20 +10944,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		53
+	$ObjectID		52
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    54
+	    $ObjectID		    53
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    55
+	    $ObjectID		    54
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -11159,20 +11158,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		56
+	$ObjectID		55
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    57
+	    $ObjectID		    56
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    58
+	    $ObjectID		    57
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -11373,20 +11372,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		59
+	$ObjectID		58
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    60
+	    $ObjectID		    59
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    61
+	    $ObjectID		    60
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -11587,20 +11586,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		62
+	$ObjectID		61
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    63
+	    $ObjectID		    62
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    64
+	    $ObjectID		    63
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -11800,20 +11799,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		65
+	$ObjectID		64
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    66
+	    $ObjectID		    65
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    67
+	    $ObjectID		    66
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -12016,20 +12015,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		68
+	$ObjectID		67
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    69
+	    $ObjectID		    68
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    70
+	    $ObjectID		    69
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -12230,20 +12229,20 @@ Model {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		71
+	$ObjectID		70
 	$ClassName		"Simulink.Mask"
 	Array {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    72
+	    $ObjectID		    71
 	    Type		    "edit"
 	    Name		    "T_win"
 	    Prompt		    "window (s)"
 	    Value		    "2*pi/freq"
 	  }
 	  Object {
-	    $ObjectID		    73
+	    $ObjectID		    72
 	    Type		    "edit"
 	    Name		    "x_init"
 	    Prompt		    "Initial condition"
@@ -12426,15 +12425,6 @@ Model {
 	  DstPort		  1
 	}
       }
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "theta1"
-      SID		      "6717"
-      Position		      [1930, 420, 2025, 450]
-      ZOrder		      463
-      NamePlacement	      "alternate"
-      Value		      "zeros(1,2)"
     }
     Line {
       LineType		      "Connection"
@@ -13384,9 +13374,8 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "theta1"
+      SrcBlock		      "Sum2"
       SrcPort		      1
-      Points		      [65, 0; 0, -135]
       DstBlock		      "Demux7"
       DstPort		      1
     }
@@ -13394,11 +13383,13 @@ Model {
       SID		      "1081"
       Name		      "  "
       Position		      [477, 1132]
+      ZOrder		      -1
     }
     Annotation {
       SID		      "243"
       Name		      " "
       Position		      [1124, 1181]
+      ZOrder		      -2
     }
   }
 }
@@ -13417,7 +13408,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 17:33:50
+#    Stateflow Version 7.6 (R2013a) dated Jan 19 2013, 14:12:58
 #
 #
 
@@ -13428,7 +13419,7 @@ Stateflow {
     created		    "06-Feb-2013 14:25:03"
     isLibrary		    0
     firstTarget		    2
-    sfVersion		    76014001.001
+    sfVersion		    76014001.0015
   }
   target {
     id			    2

@@ -1,5 +1,6 @@
 function wss = findSSinput(y, b, k, A, alpha, Weight, w0)
-%Solve force function for input that will create an average force equal to the weight
+%Solve force function for steady state leg frequnciy for a given desired height
+%Steady state input will create an average force equal to the weight
 
 %y, theta, phi = state variables
 %b = damping constant
