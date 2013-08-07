@@ -2,34 +2,50 @@
 
 <p>This folder contains four python simulations of planer water runner robots:</p>
 
-<pre><code>1. testRob.py
-    * Single leg
-    * Hard ground
+<ol>
+<li><p>testRob.py</p>
 
-2. testRobWater.py
-    * Single leg
-    * Water
+<ul>
+<li>Single leg</li>
+<li>Hard ground</li>
+</ul></li>
+<li><p>testRobWater.py</p>
 
-3. testTwoLeg.py
-    * Two legs
-    * Hard ground
+<ul>
+<li>Single leg</li>
+<li>Water</li>
+</ul></li>
+<li><p>testTwoLeg.py</p>
 
-4. testTwoLegWater.py
-    * Two legs
-    * Water
-</code></pre>
+<ul>
+<li>Two legs</li>
+<li>Hard ground</li>
+</ul></li>
+<li><p>testTwoLegWater.py</p>
+
+<ul>
+<li>Two legs</li>
+<li>Water</li>
+</ul></li>
+</ol>
 
 <p>The inputs.yaml file contains all settings for the simulations including robot and motor geometric and inertial properties, world properties such as gravity, and initial conditions. For water running and ground running respectively the following ballpark settings should be used:</p>
 
-<pre><code>* For water running:
-    * robot.initPos = [0, 0.25]
-    * motor.initSpeed = 70.
+<ul>
+<li><p>For water running:</p>
 
-* For ground running:
-    * robot.initPos = [0, 0.70]
-    * motor.initSpeed = 20.
-</code></pre>
+<ul>
+<li>robot.initPos = [0, 0.25]</li>
+<li>motor.initSpeed = 70.</li>
+</ul></li>
+<li><p>For ground running:</p>
+
+<ul>
+<li>robot.initPos = [0, 0.70]</li>
+<li>motor.initSpeed = 20.</li>
+</ul></li>
+</ul>
 
 <p>The simulations can be ran on a computer with python and the required packages by running ./<em>name of simulation</em>.py. The simulations will run for the amount of time specified in the inputs.yaml file or until the user presses Ctrl-C. When the simulation ends via either of these two methods, an animation of the movie is saved in the movie folder and data is plotted and saved in the plots folder.</p>
 
-<p>For more information regarding the calculations performed by this simulation see <a href="../Documents/SimWriteup/report.pdf">this document</a></p>
+<p>For more information regarding the calculations performed by this simulation see <a href="../Documents/SimWriteup/report.pdf">this document</a>.</p>

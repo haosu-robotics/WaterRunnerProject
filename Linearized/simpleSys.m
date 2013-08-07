@@ -89,7 +89,7 @@ nullProj = eye(8) - pinvBc*Bc;
 
 Gc = [sum(G) - mass*g ; Lx'*G ; Lz'*G];
 
-%Matrices for System%%%
+%Matrices for Plant%%%
 As = [0,            1, 0,             0, 0,             0, 0;
 	  sum(Ay)/mass, 0, sum(Ath)/mass, 0, sum(Aph)/mass, 0, sum(G)/mass-g;
 	  0,            0, 0,             1, 0,             0, 0;

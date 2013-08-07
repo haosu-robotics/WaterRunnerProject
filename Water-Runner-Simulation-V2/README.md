@@ -1,6 +1,8 @@
 Water-Runner-Simulation-V2
 ==========================
 
+This directory contains models built using Simulink SimMechanics Second Generation.
+
 Water
 -----
 
