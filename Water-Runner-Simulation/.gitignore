@@ -1,0 +1,79 @@
+# Compiled source #
+###################
+*.mexa64
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.aux
+*.bbl
+*.out
+*.blg
+slprj/
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+#Temp Files#
+#####################
+*.swp
+*.swo
+*.swn
+*.m~
+*.mdl.autosave
+*.mdl.original
+*.mdl.r2012b
+
+#Media#
+#####################
+*.fig
+*.eps
+*.png
+*.pdf
+*.avi
+*.mp4
+*.graffle
+
+#Data#
+*.mat
+
+#Random#
+#####################
+FourLegs/Forced/controller_test.mdl
+FourLegs/Forced/slprj/
+FourLegs/Forced/stepResponse/
+FourLegs/Forced/water_4hopper_VDF_1DOF.mdl
+OneLeg/ParamFit/
+OneLeg/ParamFit_heavy/
+OneLeg/heightCompDf/
+OneLeg/heightdf.fig
+
