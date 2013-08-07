@@ -1,0 +1,3 @@
+[submodule "WaterRunnerCode/Arduino-Makefile"]
+	path = WaterRunnerCode/Arduino-Makefile
+	url = https://github.com/sudar/Arduino-Makefile.git
