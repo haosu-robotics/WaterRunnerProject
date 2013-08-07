@@ -1,0 +1,23 @@
+<h1>Water Runner Board Problems</h1>
+
+<ul>
+<li>Use absolute encoders instead of incremental encoders
+<ul>
+<li>Absolute encoders output analog signal proportional to the angle</li>
+</ul></li>
+<li>Vias near diodes are too close to pads, causing shorts</li>
+<li>Use JST ZE series connectors everywhere instead of JST NSH connectors
+<ul>
+<li>NSH connectors are too small requiring small wire that breaks easily</li>
+<li>28 gauge wire we have for the current ZE connector on the board is <br />
+thicker than usual and barely fits</li>
+</ul></li>
+<li>Do not put any circuitry above the Arduino's USB connection as it is grounded
+<ul>
+<li>A ground plane covering this area is acceptable</li>
+</ul></li>
+<li>Screw terminal for +7V line is not necessary
+<ul>
+<li>Use Arduino power supply instead</li>
+</ul></li>
+</ul>
