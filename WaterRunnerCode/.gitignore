@@ -1,0 +1,23 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.elf
+*.hex
+*.mk
+*.d
+*.pyc
+build-mega2560/
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Temp Files
+*.swp
+*.DS_Store
